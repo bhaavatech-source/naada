@@ -1,0 +1,4257 @@
+{
+  "schemaVersion": 2,
+  "raga": {
+    "number": 43,
+    "name": "Gavāmbhodi",
+    "devanagari": "गवांभोदि",
+    "telugu": "గవాంభోది",
+    "family": "melakarta"
+  },
+  "generatedAt": "2026-10-20T11:40:13.961Z",
+  "candidateCount": 36,
+  "meanScore": 0.77,
+  "phrases": [
+    {
+      "id": "mel-43-2s-saadhaka-0001",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 2,
+      "actualSeconds": 3,
+      "level": "saadhaka",
+      "swaras": [
+        "p",
+        "n",
+        "S"
+      ],
+      "semitones": [
+        7,
+        9,
+        12
+      ],
+      "tempoBpm": 100,
+      "notation": "p , n S ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "n",
+          "variant": "N1",
+          "semitone": 9,
+          "ratio": 1.666667,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "S",
+          "variant": "S",
+          "semitone": 12,
+          "ratio": 2,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.727,
+        "parts": {
+          "motion": 0.916,
+          "recovery": 1,
+          "arch": 0.273,
+          "climax": 1,
+          "accent": 0,
+          "rhythmVariety": 0.85,
+          "cadence": 1,
+          "start": 0.764,
+          "identity": 1,
+          "variety": 1,
+          "tension": 0.505,
+          "motif": 0.7,
+          "shape": 0.333
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-5s-saadhaka-0001",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 5,
+      "actualSeconds": 4.8,
+      "level": "saadhaka",
+      "swaras": [
+        "s",
+        "g",
+        "r",
+        "m",
+        "g",
+        "s"
+      ],
+      "semitones": [
+        0,
+        3,
+        1,
+        6,
+        3,
+        0
+      ],
+      "tempoBpm": 100,
+      "notation": "s , g r m g s ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 3,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 1
+        },
+        {
+          "index": 4,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 5,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.849,
+        "parts": {
+          "motion": 0.9,
+          "recovery": 1,
+          "arch": 0.909,
+          "climax": 1,
+          "accent": 0.673,
+          "rhythmVariety": 0.835,
+          "cadence": 0.86,
+          "start": 1,
+          "identity": 0.7,
+          "variety": 0.8,
+          "tension": 0.634,
+          "motif": 0.889,
+          "shape": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-10s-saadhaka-0001",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 10,
+      "actualSeconds": 10.2,
+      "level": "saadhaka",
+      "swaras": [
+        "s",
+        "r",
+        "r",
+        "g",
+        "g",
+        "m",
+        "p",
+        "r",
+        "g",
+        "s"
+      ],
+      "semitones": [
+        0,
+        1,
+        1,
+        3,
+        3,
+        6,
+        7,
+        1,
+        3,
+        0
+      ],
+      "tempoBpm": 100,
+      "notation": "s , r r g , g m p , , r g , , s ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 3,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 4,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 5,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 1
+        },
+        {
+          "index": 6,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 3
+        },
+        {
+          "index": 7,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 8,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 3,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 9,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.777,
+        "parts": {
+          "motion": 0.824,
+          "recovery": 1,
+          "arch": 0.918,
+          "climax": 1,
+          "accent": 0.528,
+          "rhythmVariety": 0.65,
+          "cadence": 0.86,
+          "start": 1,
+          "identity": 0.55,
+          "variety": 0.833,
+          "tension": 0.598,
+          "motif": 0.772,
+          "shape": 0.7
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-2s-nipuṇa-0001",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 2,
+      "actualSeconds": 2.5,
+      "level": "nipuṇa",
+      "swaras": [
+        "n,",
+        "r",
+        "s"
+      ],
+      "semitones": [
+        -3,
+        1,
+        0
+      ],
+      "tempoBpm": 120,
+      "notation": "n, , r s ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.742,
+        "parts": {
+          "motion": 0.916,
+          "recovery": 1,
+          "arch": 0.675,
+          "climax": 1,
+          "accent": 0.228,
+          "rhythmVariety": 0.85,
+          "cadence": 1,
+          "start": 0.704,
+          "identity": 0.6,
+          "variety": 1,
+          "tension": 0.601,
+          "motif": 0.7,
+          "shape": 0.333
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-5s-nipuṇa-0001",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 5,
+      "actualSeconds": 5,
+      "level": "nipuṇa",
+      "swaras": [
+        "n,",
+        "s",
+        "r",
+        "s",
+        "r",
+        "g",
+        "s"
+      ],
+      "semitones": [
+        -3,
+        0,
+        1,
+        0,
+        1,
+        3,
+        0
+      ],
+      "tempoBpm": 120,
+      "notation": "n, , s r s , r g s ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 3,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 4,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 5,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 6,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.811,
+        "parts": {
+          "motion": 0.972,
+          "recovery": 1,
+          "arch": 0.633,
+          "climax": 1,
+          "accent": 0.91,
+          "rhythmVariety": 0.896,
+          "cadence": 0.86,
+          "start": 0.704,
+          "identity": 0.7,
+          "variety": 0.8,
+          "tension": 0.522,
+          "motif": 0.656,
+          "shape": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-10s-nipuṇa-0001",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 10,
+      "actualSeconds": 10,
+      "level": "nipuṇa",
+      "swaras": [
+        "s",
+        "n,",
+        "r",
+        "s",
+        "g",
+        "r",
+        "m",
+        "p",
+        "g",
+        "r",
+        "g",
+        "r",
+        "s"
+      ],
+      "semitones": [
+        0,
+        -3,
+        1,
+        0,
+        3,
+        1,
+        6,
+        7,
+        3,
+        1,
+        3,
+        1,
+        0
+      ],
+      "tempoBpm": 120,
+      "notation": "s , n, r , s g , r m , p g , r g , r s ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 3,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 1
+        },
+        {
+          "index": 4,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 5,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 6,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 7,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 1
+        },
+        {
+          "index": 8,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 9,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 10,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 11,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 12,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.843,
+        "parts": {
+          "motion": 0.944,
+          "recovery": 1,
+          "arch": 0.893,
+          "climax": 1,
+          "accent": 0.224,
+          "rhythmVariety": 0.905,
+          "cadence": 1,
+          "start": 1,
+          "identity": 1,
+          "variety": 1,
+          "tension": 0.526,
+          "motif": 0.643,
+          "shape": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-2s-praveena-0001",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 2,
+      "actualSeconds": 2.14,
+      "level": "praveena",
+      "swaras": [
+        "n,",
+        "r",
+        "s"
+      ],
+      "semitones": [
+        -3,
+        1,
+        0
+      ],
+      "tempoBpm": 140,
+      "notation": "n, , r s ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.742,
+        "parts": {
+          "motion": 0.916,
+          "recovery": 1,
+          "arch": 0.675,
+          "climax": 1,
+          "accent": 0.228,
+          "rhythmVariety": 0.85,
+          "cadence": 1,
+          "start": 0.704,
+          "identity": 0.6,
+          "variety": 1,
+          "tension": 0.601,
+          "motif": 0.7,
+          "shape": 0.333
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-5s-praveena-0001",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 5,
+      "actualSeconds": 5.14,
+      "level": "praveena",
+      "swaras": [
+        "s",
+        "g",
+        "m",
+        "m",
+        "d",
+        "n",
+        "p"
+      ],
+      "semitones": [
+        0,
+        3,
+        6,
+        6,
+        8,
+        9,
+        7
+      ],
+      "tempoBpm": 140,
+      "notation": "s , g m m , , d n p , ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 1
+        },
+        {
+          "index": 3,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 3,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 4,
+          "swara": "d",
+          "variant": "D1",
+          "semitone": 8,
+          "ratio": 1.580247,
+          "durationBeats": 1
+        },
+        {
+          "index": 5,
+          "swara": "n",
+          "variant": "N1",
+          "semitone": 9,
+          "ratio": 1.666667,
+          "durationBeats": 1
+        },
+        {
+          "index": 6,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 3
+        }
+      ],
+      "quality": {
+        "total": 0.835,
+        "parts": {
+          "motion": 0.833,
+          "recovery": 1,
+          "arch": 0.685,
+          "climax": 1,
+          "accent": 0.65,
+          "rhythmVariety": 0.747,
+          "cadence": 0.748,
+          "start": 1,
+          "identity": 1,
+          "variety": 1,
+          "tension": 0.586,
+          "motif": 0.889,
+          "shape": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-10s-praveena-0001",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 10,
+      "actualSeconds": 9.86,
+      "level": "praveena",
+      "swaras": [
+        "s",
+        "n,",
+        "r",
+        "g",
+        "g",
+        "r",
+        "m",
+        "g",
+        "s",
+        "n,",
+        "n,",
+        "s"
+      ],
+      "semitones": [
+        0,
+        -3,
+        1,
+        3,
+        3,
+        1,
+        6,
+        3,
+        0,
+        -3,
+        -3,
+        0
+      ],
+      "tempoBpm": 140,
+      "notation": "s , , n, r , , g g , , r m , , g s n, n, , , s ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 3
+        },
+        {
+          "index": 1,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 3,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 3,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 4,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 3,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 5,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 6,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 3,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 7,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 8,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 1
+        },
+        {
+          "index": 9,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1
+        },
+        {
+          "index": 10,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 3,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 11,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.843,
+        "parts": {
+          "motion": 0.863,
+          "recovery": 1,
+          "arch": 0.869,
+          "climax": 1,
+          "accent": 0.51,
+          "rhythmVariety": 0.795,
+          "cadence": 1,
+          "start": 1,
+          "identity": 1,
+          "variety": 0.833,
+          "tension": 0.672,
+          "motif": 0.522,
+          "shape": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-2s-saadhaka-0002",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 2,
+      "actualSeconds": 3,
+      "level": "saadhaka",
+      "swaras": [
+        "g",
+        "m",
+        "p"
+      ],
+      "semitones": [
+        3,
+        6,
+        7
+      ],
+      "tempoBpm": 100,
+      "notation": "g , m p ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.667,
+        "parts": {
+          "motion": 1,
+          "recovery": 1,
+          "arch": 0.468,
+          "climax": 1,
+          "accent": 0,
+          "rhythmVariety": 0.85,
+          "cadence": 0.888,
+          "start": 0.574,
+          "identity": 0.4,
+          "variety": 1,
+          "tension": 0.582,
+          "motif": 0.7,
+          "shape": 0.333
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-5s-saadhaka-0002",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 5,
+      "actualSeconds": 4.8,
+      "level": "saadhaka",
+      "swaras": [
+        "s",
+        "r",
+        "g",
+        "m",
+        "m",
+        "p"
+      ],
+      "semitones": [
+        0,
+        1,
+        3,
+        6,
+        6,
+        7
+      ],
+      "tempoBpm": 100,
+      "notation": "s , r g m m p ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 3,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 1
+        },
+        {
+          "index": 4,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 1
+        },
+        {
+          "index": 5,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.785,
+        "parts": {
+          "motion": 0.899,
+          "recovery": 1,
+          "arch": 0.428,
+          "climax": 1,
+          "accent": 0.65,
+          "rhythmVariety": 0.835,
+          "cadence": 0.888,
+          "start": 1,
+          "identity": 0.7,
+          "variety": 1,
+          "tension": 0.605,
+          "motif": 0.889,
+          "shape": 0.333
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-10s-saadhaka-0002",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 10,
+      "actualSeconds": 10.2,
+      "level": "saadhaka",
+      "swaras": [
+        "s",
+        "r",
+        "g",
+        "g",
+        "m",
+        "g",
+        "p",
+        "m",
+        "s",
+        "r",
+        "s"
+      ],
+      "semitones": [
+        0,
+        1,
+        3,
+        3,
+        6,
+        3,
+        7,
+        6,
+        0,
+        1,
+        0
+      ],
+      "tempoBpm": 100,
+      "notation": "s , r g g m g p m , s , , r s , ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 3,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 4,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 1
+        },
+        {
+          "index": 5,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 6,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 1
+        },
+        {
+          "index": 7,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 8,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 3
+        },
+        {
+          "index": 9,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 10,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 3
+        }
+      ],
+      "quality": {
+        "total": 0.777,
+        "parts": {
+          "motion": 0.892,
+          "recovery": 1,
+          "arch": 0.603,
+          "climax": 1,
+          "accent": 0.411,
+          "rhythmVariety": 0.81,
+          "cadence": 1,
+          "start": 1,
+          "identity": 0.7,
+          "variety": 0.833,
+          "tension": 0.444,
+          "motif": 0.667,
+          "shape": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-2s-nipuṇa-0002",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 2,
+      "actualSeconds": 2.5,
+      "level": "nipuṇa",
+      "swaras": [
+        "p",
+        "n",
+        "S"
+      ],
+      "semitones": [
+        7,
+        9,
+        12
+      ],
+      "tempoBpm": 120,
+      "notation": "p n , S ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 1
+        },
+        {
+          "index": 1,
+          "swara": "n",
+          "variant": "N1",
+          "semitone": 9,
+          "ratio": 1.666667,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 2,
+          "swara": "S",
+          "variant": "S",
+          "semitone": 12,
+          "ratio": 2,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.729,
+        "parts": {
+          "motion": 0.916,
+          "recovery": 1,
+          "arch": 0.281,
+          "climax": 1,
+          "accent": 0,
+          "rhythmVariety": 0.85,
+          "cadence": 1,
+          "start": 0.764,
+          "identity": 1,
+          "variety": 1,
+          "tension": 0.526,
+          "motif": 0.7,
+          "shape": 0.333
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-5s-nipuṇa-0002",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 5,
+      "actualSeconds": 5,
+      "level": "nipuṇa",
+      "swaras": [
+        "s",
+        "n,",
+        "g",
+        "r",
+        "s"
+      ],
+      "semitones": [
+        0,
+        -3,
+        3,
+        1,
+        0
+      ],
+      "tempoBpm": 120,
+      "notation": "s , , n, g , , r s ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 3
+        },
+        {
+          "index": 1,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 3,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 3,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 4,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.811,
+        "parts": {
+          "motion": 0.897,
+          "recovery": 1,
+          "arch": 0.787,
+          "climax": 1,
+          "accent": 0.733,
+          "rhythmVariety": 0.616,
+          "cadence": 1,
+          "start": 1,
+          "identity": 0.55,
+          "variety": 0.8,
+          "tension": 0.636,
+          "motif": 0.7,
+          "shape": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-10s-nipuṇa-0002",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 10,
+      "actualSeconds": 10,
+      "level": "nipuṇa",
+      "swaras": [
+        "s",
+        "n,",
+        "r",
+        "g",
+        "m",
+        "g",
+        "g",
+        "m",
+        "p",
+        "p",
+        "g",
+        "r",
+        "s"
+      ],
+      "semitones": [
+        0,
+        -3,
+        1,
+        3,
+        6,
+        3,
+        3,
+        6,
+        7,
+        7,
+        3,
+        1,
+        0
+      ],
+      "tempoBpm": 120,
+      "notation": "s , n, r , g m , g g m p p , g , , r s ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 3,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 4,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 5,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 6,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 7,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 1
+        },
+        {
+          "index": 8,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 1
+        },
+        {
+          "index": 9,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 2
+        },
+        {
+          "index": 10,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 3,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 11,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 12,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.837,
+        "parts": {
+          "motion": 0.888,
+          "recovery": 1,
+          "arch": 0.991,
+          "climax": 0.6,
+          "accent": 0.576,
+          "rhythmVariety": 0.822,
+          "cadence": 1,
+          "start": 1,
+          "identity": 1,
+          "variety": 1,
+          "tension": 0.572,
+          "motif": 0.538,
+          "shape": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-2s-praveena-0002",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 2,
+      "actualSeconds": 2.14,
+      "level": "praveena",
+      "swaras": [
+        "p,",
+        "n,",
+        "s"
+      ],
+      "semitones": [
+        -5,
+        -3,
+        0
+      ],
+      "tempoBpm": 140,
+      "notation": "p, , n, s ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "p,",
+          "variant": "P",
+          "semitone": -5,
+          "ratio": 0.75,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.727,
+        "parts": {
+          "motion": 0.916,
+          "recovery": 1,
+          "arch": 0.273,
+          "climax": 1,
+          "accent": 0,
+          "rhythmVariety": 0.85,
+          "cadence": 1,
+          "start": 0.764,
+          "identity": 1,
+          "variety": 1,
+          "tension": 0.505,
+          "motif": 0.7,
+          "shape": 0.333
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-5s-praveena-0002",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 5,
+      "actualSeconds": 5.14,
+      "level": "praveena",
+      "swaras": [
+        "m,",
+        "d,",
+        "p,",
+        "d,",
+        "s",
+        "n,",
+        "p,"
+      ],
+      "semitones": [
+        -6,
+        -4,
+        -5,
+        -4,
+        0,
+        -3,
+        -5
+      ],
+      "tempoBpm": 140,
+      "notation": "m, , d, p, d, , , s n, p, , ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "m,",
+          "variant": "M2",
+          "semitone": -6,
+          "ratio": 0.711914,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "d,",
+          "variant": "D1",
+          "semitone": -4,
+          "ratio": 0.790123,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "p,",
+          "variant": "P",
+          "semitone": -5,
+          "ratio": 0.75,
+          "durationBeats": 1
+        },
+        {
+          "index": 3,
+          "swara": "d,",
+          "variant": "D1",
+          "semitone": -4,
+          "ratio": 0.790123,
+          "durationBeats": 3,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 4,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 1
+        },
+        {
+          "index": 5,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1
+        },
+        {
+          "index": 6,
+          "swara": "p,",
+          "variant": "P",
+          "semitone": -5,
+          "ratio": 0.75,
+          "durationBeats": 3
+        }
+      ],
+      "quality": {
+        "total": 0.788,
+        "parts": {
+          "motion": 0.916,
+          "recovery": 1,
+          "arch": 0.9,
+          "climax": 1,
+          "accent": 0.148,
+          "rhythmVariety": 0.747,
+          "cadence": 0.748,
+          "start": 0.507,
+          "identity": 1,
+          "variety": 1,
+          "tension": 0.422,
+          "motif": 0.889,
+          "shape": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-10s-praveena-0002",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 10,
+      "actualSeconds": 9.86,
+      "level": "praveena",
+      "swaras": [
+        "s",
+        "n,",
+        "d,",
+        "r",
+        "n,",
+        "n,",
+        "r",
+        "g",
+        "g",
+        "m",
+        "r",
+        "s",
+        "r",
+        "n,",
+        "n,",
+        "s"
+      ],
+      "semitones": [
+        0,
+        -3,
+        -4,
+        1,
+        -3,
+        -3,
+        1,
+        3,
+        3,
+        6,
+        1,
+        0,
+        1,
+        -3,
+        -3,
+        0
+      ],
+      "tempoBpm": 140,
+      "notation": "s , n, , d, r , n, , n, r g g , m r s , r n, n, s ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 2,
+          "swara": "d,",
+          "variant": "D1",
+          "semitone": -4,
+          "ratio": 0.790123,
+          "durationBeats": 1
+        },
+        {
+          "index": 3,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 4,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 5,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1
+        },
+        {
+          "index": 6,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 7,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 8,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 9,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 1
+        },
+        {
+          "index": 10,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 11,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 12,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 13,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1
+        },
+        {
+          "index": 14,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1
+        },
+        {
+          "index": 15,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.814,
+        "parts": {
+          "motion": 0.827,
+          "recovery": 1,
+          "arch": 0.686,
+          "climax": 1,
+          "accent": 0.246,
+          "rhythmVariety": 0.899,
+          "cadence": 1,
+          "start": 1,
+          "identity": 1,
+          "variety": 1,
+          "tension": 0.625,
+          "motif": 0.652,
+          "shape": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-2s-saadhaka-0003",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 2,
+      "actualSeconds": 3,
+      "level": "saadhaka",
+      "swaras": [
+        "m",
+        "d",
+        "p"
+      ],
+      "semitones": [
+        6,
+        8,
+        7
+      ],
+      "tempoBpm": 100,
+      "notation": "m , d p ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "d",
+          "variant": "D1",
+          "semitone": 8,
+          "ratio": 1.580247,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.648,
+        "parts": {
+          "motion": 0.916,
+          "recovery": 1,
+          "arch": 0.762,
+          "climax": 1,
+          "accent": 0.279,
+          "rhythmVariety": 0.85,
+          "cadence": 0.888,
+          "start": 0.507,
+          "identity": 0,
+          "variety": 1,
+          "tension": 0.41,
+          "motif": 0.7,
+          "shape": 0.333
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-5s-saadhaka-0003",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 5,
+      "actualSeconds": 4.8,
+      "level": "saadhaka",
+      "swaras": [
+        "s",
+        "r",
+        "g",
+        "r",
+        "s"
+      ],
+      "semitones": [
+        0,
+        1,
+        3,
+        1,
+        0
+      ],
+      "tempoBpm": 100,
+      "notation": "s , r g , r s ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 3,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 4,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.782,
+        "parts": {
+          "motion": 1,
+          "recovery": 1,
+          "arch": 0.932,
+          "climax": 1,
+          "accent": 0.731,
+          "rhythmVariety": 0.883,
+          "cadence": 1,
+          "start": 1,
+          "identity": 0,
+          "variety": 0.6,
+          "tension": 0.614,
+          "motif": 0.7,
+          "shape": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-10s-saadhaka-0003",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 10,
+      "actualSeconds": 10.2,
+      "level": "saadhaka",
+      "swaras": [
+        "s",
+        "r",
+        "s",
+        "r",
+        "g",
+        "m",
+        "s",
+        "r",
+        "s"
+      ],
+      "semitones": [
+        0,
+        1,
+        0,
+        1,
+        3,
+        6,
+        0,
+        1,
+        0
+      ],
+      "tempoBpm": 100,
+      "notation": "s , r s , r g , , m s , , r s , ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 3,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 4,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 3,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 5,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 1
+        },
+        {
+          "index": 6,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 3
+        },
+        {
+          "index": 7,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 8,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 3
+        }
+      ],
+      "quality": {
+        "total": 0.775,
+        "parts": {
+          "motion": 0.949,
+          "recovery": 1,
+          "arch": 0.632,
+          "climax": 1,
+          "accent": 0.546,
+          "rhythmVariety": 0.609,
+          "cadence": 1,
+          "start": 1,
+          "identity": 0.55,
+          "variety": 0.667,
+          "tension": 0.448,
+          "motif": 0.73,
+          "shape": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-2s-nipuṇa-0003",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 2,
+      "actualSeconds": 2.5,
+      "level": "nipuṇa",
+      "swaras": [
+        "p",
+        "n",
+        "S"
+      ],
+      "semitones": [
+        7,
+        9,
+        12
+      ],
+      "tempoBpm": 120,
+      "notation": "p , n S ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "n",
+          "variant": "N1",
+          "semitone": 9,
+          "ratio": 1.666667,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "S",
+          "variant": "S",
+          "semitone": 12,
+          "ratio": 2,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.727,
+        "parts": {
+          "motion": 0.916,
+          "recovery": 1,
+          "arch": 0.273,
+          "climax": 1,
+          "accent": 0,
+          "rhythmVariety": 0.85,
+          "cadence": 1,
+          "start": 0.764,
+          "identity": 1,
+          "variety": 1,
+          "tension": 0.505,
+          "motif": 0.7,
+          "shape": 0.333
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-5s-nipuṇa-0003",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 5,
+      "actualSeconds": 5,
+      "level": "nipuṇa",
+      "swaras": [
+        "s",
+        "r",
+        "g",
+        "r",
+        "s"
+      ],
+      "semitones": [
+        0,
+        1,
+        3,
+        1,
+        0
+      ],
+      "tempoBpm": 120,
+      "notation": "s , , r g , , r s ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 3
+        },
+        {
+          "index": 1,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 3,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 3,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 4,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.792,
+        "parts": {
+          "motion": 1,
+          "recovery": 1,
+          "arch": 0.989,
+          "climax": 1,
+          "accent": 0.922,
+          "rhythmVariety": 0.616,
+          "cadence": 1,
+          "start": 1,
+          "identity": 0,
+          "variety": 0.6,
+          "tension": 0.623,
+          "motif": 0.7,
+          "shape": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-10s-nipuṇa-0003",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 10,
+      "actualSeconds": 10,
+      "level": "nipuṇa",
+      "swaras": [
+        "s",
+        "r",
+        "g",
+        "s",
+        "r",
+        "g",
+        "m",
+        "p",
+        "d",
+        "r",
+        "g",
+        "r",
+        "s"
+      ],
+      "semitones": [
+        0,
+        1,
+        3,
+        0,
+        1,
+        3,
+        6,
+        7,
+        8,
+        1,
+        3,
+        1,
+        0
+      ],
+      "tempoBpm": 120,
+      "notation": "s , r g s , r g m , p d r , g , r s , ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 3,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 4,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 5,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 6,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 7,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 1
+        },
+        {
+          "index": 8,
+          "swara": "d",
+          "variant": "D1",
+          "semitone": 8,
+          "ratio": 1.580247,
+          "durationBeats": 1
+        },
+        {
+          "index": 9,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 10,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 11,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 12,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 3
+        }
+      ],
+      "quality": {
+        "total": 0.817,
+        "parts": {
+          "motion": 0.935,
+          "recovery": 1,
+          "arch": 0.872,
+          "climax": 1,
+          "accent": 0.387,
+          "rhythmVariety": 0.822,
+          "cadence": 1,
+          "start": 1,
+          "identity": 0.7,
+          "variety": 1,
+          "tension": 0.556,
+          "motif": 0.778,
+          "shape": 0.6
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-2s-praveena-0003",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 2,
+      "actualSeconds": 2.14,
+      "level": "praveena",
+      "swaras": [
+        "s",
+        "n,",
+        "p,"
+      ],
+      "semitones": [
+        0,
+        -3,
+        -5
+      ],
+      "tempoBpm": 140,
+      "notation": "s , n, p, ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "p,",
+          "variant": "P",
+          "semitone": -5,
+          "ratio": 0.75,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.721,
+        "parts": {
+          "motion": 0.916,
+          "recovery": 1,
+          "arch": 0.047,
+          "climax": 0.25,
+          "accent": 0.983,
+          "rhythmVariety": 0.85,
+          "cadence": 0.748,
+          "start": 1,
+          "identity": 1,
+          "variety": 1,
+          "tension": 0.505,
+          "motif": 0.7,
+          "shape": 0.333
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-5s-praveena-0003",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 5,
+      "actualSeconds": 5.14,
+      "level": "praveena",
+      "swaras": [
+        "s",
+        "n,",
+        "r",
+        "s",
+        "m",
+        "r",
+        "s"
+      ],
+      "semitones": [
+        0,
+        -3,
+        1,
+        0,
+        6,
+        1,
+        0
+      ],
+      "tempoBpm": 140,
+      "notation": "s , n, r , s m r , , s ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 3,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 1
+        },
+        {
+          "index": 4,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 1
+        },
+        {
+          "index": 5,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 3,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 6,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.771,
+        "parts": {
+          "motion": 0.876,
+          "recovery": 1,
+          "arch": 0.65,
+          "climax": 1,
+          "accent": 0.688,
+          "rhythmVariety": 0.683,
+          "cadence": 1,
+          "start": 1,
+          "identity": 1,
+          "variety": 0.8,
+          "tension": 0.523,
+          "motif": 0,
+          "shape": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-10s-praveena-0003",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 10,
+      "actualSeconds": 9.86,
+      "level": "praveena",
+      "swaras": [
+        "s",
+        "g",
+        "r",
+        "s",
+        "g",
+        "r",
+        "m",
+        "r",
+        "m",
+        "s",
+        "g",
+        "s",
+        "n,",
+        "p,"
+      ],
+      "semitones": [
+        0,
+        3,
+        1,
+        0,
+        3,
+        1,
+        6,
+        1,
+        6,
+        0,
+        3,
+        0,
+        -3,
+        -5
+      ],
+      "tempoBpm": 140,
+      "notation": "s , g r s g r , m , r m , s g , s , n, , p, , ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 3,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 1
+        },
+        {
+          "index": 4,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 5,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 6,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 7,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 8,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 9,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 1
+        },
+        {
+          "index": 10,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 11,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 12,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 13,
+          "swara": "p,",
+          "variant": "P",
+          "semitone": -5,
+          "ratio": 0.75,
+          "durationBeats": 3
+        }
+      ],
+      "quality": {
+        "total": 0.812,
+        "parts": {
+          "motion": 0.865,
+          "recovery": 1,
+          "arch": 0.703,
+          "climax": 0.6,
+          "accent": 0.653,
+          "rhythmVariety": 0.822,
+          "cadence": 0.748,
+          "start": 1,
+          "identity": 1,
+          "variety": 1,
+          "tension": 0.495,
+          "motif": 0.889,
+          "shape": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-2s-saadhaka-0004",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 2,
+      "actualSeconds": 3,
+      "level": "saadhaka",
+      "swaras": [
+        "m",
+        "n",
+        "S"
+      ],
+      "semitones": [
+        6,
+        9,
+        12
+      ],
+      "tempoBpm": 100,
+      "notation": "m n , S ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 1
+        },
+        {
+          "index": 1,
+          "swara": "n",
+          "variant": "N1",
+          "semitone": 9,
+          "ratio": 1.666667,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 2,
+          "swara": "S",
+          "variant": "S",
+          "semitone": 12,
+          "ratio": 2,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.644,
+        "parts": {
+          "motion": 0.794,
+          "recovery": 0,
+          "arch": 0.353,
+          "climax": 1,
+          "accent": 0,
+          "rhythmVariety": 0.85,
+          "cadence": 1,
+          "start": 0.507,
+          "identity": 1,
+          "variety": 1,
+          "tension": 0.321,
+          "motif": 0.7,
+          "shape": 0.333
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-5s-saadhaka-0004",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 5,
+      "actualSeconds": 4.8,
+      "level": "saadhaka",
+      "swaras": [
+        "s",
+        "r",
+        "r",
+        "m",
+        "g",
+        "s"
+      ],
+      "semitones": [
+        0,
+        1,
+        1,
+        6,
+        3,
+        0
+      ],
+      "tempoBpm": 100,
+      "notation": "s , r r m g s ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 3,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 1
+        },
+        {
+          "index": 4,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 5,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.777,
+        "parts": {
+          "motion": 0.833,
+          "recovery": 1,
+          "arch": 0.911,
+          "climax": 1,
+          "accent": 0.663,
+          "rhythmVariety": 0.835,
+          "cadence": 0.86,
+          "start": 1,
+          "identity": 0.7,
+          "variety": 0.8,
+          "tension": 0.567,
+          "motif": 0.311,
+          "shape": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-10s-saadhaka-0004",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 10,
+      "actualSeconds": 10.2,
+      "level": "saadhaka",
+      "swaras": [
+        "s",
+        "r",
+        "r",
+        "g",
+        "s",
+        "r",
+        "r",
+        "g",
+        "m",
+        "s",
+        "r",
+        "s"
+      ],
+      "semitones": [
+        0,
+        1,
+        1,
+        3,
+        0,
+        1,
+        1,
+        3,
+        6,
+        0,
+        1,
+        0
+      ],
+      "tempoBpm": 100,
+      "notation": "s , r r , g s r r g , m s , r s ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 3,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 4,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 1
+        },
+        {
+          "index": 5,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 6,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 7,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 8,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 1
+        },
+        {
+          "index": 9,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 10,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 11,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.771,
+        "parts": {
+          "motion": 0.856,
+          "recovery": 1,
+          "arch": 0.784,
+          "climax": 1,
+          "accent": 0.425,
+          "rhythmVariety": 0.891,
+          "cadence": 1,
+          "start": 1,
+          "identity": 0.55,
+          "variety": 0.667,
+          "tension": 0.474,
+          "motif": 0.656,
+          "shape": 0.889
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-2s-nipuṇa-0004",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 2,
+      "actualSeconds": 2.5,
+      "level": "nipuṇa",
+      "swaras": [
+        "d",
+        "n",
+        "S"
+      ],
+      "semitones": [
+        8,
+        9,
+        12
+      ],
+      "tempoBpm": 120,
+      "notation": "d , n S ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "d",
+          "variant": "D1",
+          "semitone": 8,
+          "ratio": 1.580247,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "n",
+          "variant": "N1",
+          "semitone": 9,
+          "ratio": 1.666667,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "S",
+          "variant": "S",
+          "semitone": 12,
+          "ratio": 2,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.711,
+        "parts": {
+          "motion": 1,
+          "recovery": 1,
+          "arch": 0.187,
+          "climax": 1,
+          "accent": 0,
+          "rhythmVariety": 0.85,
+          "cadence": 1,
+          "start": 0.538,
+          "identity": 1,
+          "variety": 1,
+          "tension": 0.374,
+          "motif": 0.7,
+          "shape": 0.333
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-5s-nipuṇa-0004",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 5,
+      "actualSeconds": 5,
+      "level": "nipuṇa",
+      "swaras": [
+        "r",
+        "s",
+        "n,",
+        "m",
+        "g",
+        "r",
+        "s"
+      ],
+      "semitones": [
+        1,
+        0,
+        -3,
+        6,
+        3,
+        1,
+        0
+      ],
+      "tempoBpm": 120,
+      "notation": "r , s n, m , g r s ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1
+        },
+        {
+          "index": 3,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 4,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 5,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 6,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.783,
+        "parts": {
+          "motion": 0.897,
+          "recovery": 1,
+          "arch": 0.786,
+          "climax": 1,
+          "accent": 0.453,
+          "rhythmVariety": 0.896,
+          "cadence": 1,
+          "start": 0.52,
+          "identity": 0.85,
+          "variety": 1,
+          "tension": 0.396,
+          "motif": 0.511,
+          "shape": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-10s-nipuṇa-0004",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 10,
+      "actualSeconds": 10,
+      "level": "nipuṇa",
+      "swaras": [
+        "s",
+        "n,",
+        "r",
+        "s",
+        "s",
+        "r",
+        "s",
+        "m",
+        "p",
+        "m",
+        "g",
+        "s",
+        "n,",
+        "n,",
+        "s"
+      ],
+      "semitones": [
+        0,
+        -3,
+        1,
+        0,
+        0,
+        1,
+        0,
+        6,
+        7,
+        6,
+        3,
+        0,
+        -3,
+        -3,
+        0
+      ],
+      "tempoBpm": 120,
+      "notation": "s , n, r s s r , s m , p m , g s n, n, s ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 3,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 1
+        },
+        {
+          "index": 4,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 1
+        },
+        {
+          "index": 5,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 6,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 1
+        },
+        {
+          "index": 7,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 8,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 1
+        },
+        {
+          "index": 9,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 10,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 11,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 1
+        },
+        {
+          "index": 12,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1
+        },
+        {
+          "index": 13,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1
+        },
+        {
+          "index": 14,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.799,
+        "parts": {
+          "motion": 0.875,
+          "recovery": 0,
+          "arch": 0.909,
+          "climax": 1,
+          "accent": 0.461,
+          "rhythmVariety": 0.835,
+          "cadence": 1,
+          "start": 1,
+          "identity": 1,
+          "variety": 1,
+          "tension": 0.48,
+          "motif": 0.633,
+          "shape": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-2s-praveena-0004",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 2,
+      "actualSeconds": 2.14,
+      "level": "praveena",
+      "swaras": [
+        "d",
+        "n",
+        "S"
+      ],
+      "semitones": [
+        8,
+        9,
+        12
+      ],
+      "tempoBpm": 140,
+      "notation": "d n , S ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "d",
+          "variant": "D1",
+          "semitone": 8,
+          "ratio": 1.580247,
+          "durationBeats": 1
+        },
+        {
+          "index": 1,
+          "swara": "n",
+          "variant": "N1",
+          "semitone": 9,
+          "ratio": 1.666667,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 2,
+          "swara": "S",
+          "variant": "S",
+          "semitone": 12,
+          "ratio": 2,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.712,
+        "parts": {
+          "motion": 1,
+          "recovery": 1,
+          "arch": 0.184,
+          "climax": 1,
+          "accent": 0,
+          "rhythmVariety": 0.85,
+          "cadence": 1,
+          "start": 0.538,
+          "identity": 1,
+          "variety": 1,
+          "tension": 0.405,
+          "motif": 0.7,
+          "shape": 0.333
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-5s-praveena-0004",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 5,
+      "actualSeconds": 5.14,
+      "level": "praveena",
+      "swaras": [
+        "n,",
+        "r",
+        "s",
+        "g",
+        "r",
+        "n,",
+        "s"
+      ],
+      "semitones": [
+        -3,
+        1,
+        0,
+        3,
+        1,
+        -3,
+        0
+      ],
+      "tempoBpm": 140,
+      "notation": "n, , r s , g r , , n, s ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 2
+        },
+        {
+          "index": 1,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        },
+        {
+          "index": 3,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 4,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 3,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 5,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1
+        },
+        {
+          "index": 6,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2
+        }
+      ],
+      "quality": {
+        "total": 0.77,
+        "parts": {
+          "motion": 0.916,
+          "recovery": 1,
+          "arch": 0.752,
+          "climax": 1,
+          "accent": 0.362,
+          "rhythmVariety": 0.683,
+          "cadence": 1,
+          "start": 0.704,
+          "identity": 0.7,
+          "variety": 0.8,
+          "tension": 0.606,
+          "motif": 0.578,
+          "shape": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    },
+    {
+      "id": "mel-43-10s-praveena-0004",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "durationSeconds": 10,
+      "actualSeconds": 9.86,
+      "level": "praveena",
+      "swaras": [
+        "n,",
+        "s",
+        "r",
+        "g",
+        "g",
+        "r",
+        "g",
+        "m",
+        "p",
+        "s",
+        "n,",
+        "p,"
+      ],
+      "semitones": [
+        -3,
+        0,
+        1,
+        3,
+        3,
+        1,
+        3,
+        6,
+        7,
+        0,
+        -3,
+        -5
+      ],
+      "tempoBpm": 140,
+      "notation": "n, , , s r g , g r , , g m , , p s , , n, p, , ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 3
+        },
+        {
+          "index": 1,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1
+        },
+        {
+          "index": 3,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 2,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 4,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 5,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 3,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 6,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1
+        },
+        {
+          "index": 7,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 3,
+          "gamakaHint": "kampita"
+        },
+        {
+          "index": 8,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 1
+        },
+        {
+          "index": 9,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 3
+        },
+        {
+          "index": 10,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1
+        },
+        {
+          "index": 11,
+          "swara": "p,",
+          "variant": "P",
+          "semitone": -5,
+          "ratio": 0.75,
+          "durationBeats": 3
+        }
+      ],
+      "quality": {
+        "total": 0.796,
+        "parts": {
+          "motion": 0.883,
+          "recovery": 0,
+          "arch": 0.972,
+          "climax": 1,
+          "accent": 0.567,
+          "rhythmVariety": 0.795,
+          "cadence": 0.748,
+          "start": 0.704,
+          "identity": 1,
+          "variety": 1,
+          "tension": 0.643,
+          "motif": 0.811,
+          "shape": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "scaleMembership": "pass",
+        "contour": "pass",
+        "status": "needs-review",
+        "notes": [
+          "Scored on melodic shape, rhythm, cadence and rāga-colour heuristics — not on rāga grammar.",
+          "Gamaka is only hinted; phrase grammar and stylistic usage have not been validated by a musician."
+        ]
+      }
+    }
+  ]
+}

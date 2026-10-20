@@ -1,0 +1,740 @@
+{
+  "schemaVersion": 2,
+  "type": "experimental-raga-transitions",
+  "pair": {
+    "a": {
+      "number": 3,
+      "name": "Gānamūrti"
+    },
+    "b": {
+      "number": 55,
+      "name": "Śyāmalāṅgi"
+    },
+    "distance": 4,
+    "relation": [
+      "graha-bhedam"
+    ]
+  },
+  "candidates": [
+    {
+      "id": "transition-03-55-1",
+      "type": "two-raga-transition",
+      "from": {
+        "number": 3,
+        "name": "Gānamūrti"
+      },
+      "to": {
+        "number": 55,
+        "name": "Śyāmalāṅgi"
+      },
+      "relation": [
+        "graha-bhedam"
+      ],
+      "changedSvaras": [
+        "R1→R2",
+        "G1→G2",
+        "M1→M2",
+        "N3→N1"
+      ],
+      "splitIndex": 3,
+      "durationSeconds": 8,
+      "actualSeconds": 8,
+      "level": "nipuṇa",
+      "swaras": [
+        "s",
+        "r",
+        "s",
+        "r",
+        "g",
+        "m",
+        "m",
+        "g",
+        "r",
+        "r",
+        "s"
+      ],
+      "semitones": [
+        0,
+        1,
+        0,
+        2,
+        3,
+        6,
+        6,
+        3,
+        2,
+        2,
+        0
+      ],
+      "tempoBpm": 120,
+      "notation": "s , r s , r g m m g r , r s , ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2,
+          "section": "from"
+        },
+        {
+          "index": 1,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 2,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2,
+          "section": "from"
+        },
+        {
+          "index": 3,
+          "swara": "r",
+          "variant": "R2",
+          "semitone": 2,
+          "ratio": 1.125,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 4,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 5,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 6,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 7,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 8,
+          "swara": "r",
+          "variant": "R2",
+          "semitone": 2,
+          "ratio": 1.125,
+          "durationBeats": 2,
+          "gamakaHint": "kampita",
+          "section": "to"
+        },
+        {
+          "index": 9,
+          "swara": "r",
+          "variant": "R2",
+          "semitone": 2,
+          "ratio": 1.125,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 10,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 3,
+          "section": "to"
+        }
+      ],
+      "quality": {
+        "total": 0.849,
+        "parts": {
+          "motion": 0.899,
+          "recovery": 1,
+          "arch": 0.899,
+          "climax": 0.6,
+          "accent": 0.111,
+          "rhythmVariety": 0.872,
+          "cadence": 1,
+          "start": 1,
+          "identity": 0.7,
+          "variety": 0.667,
+          "tension": 0.594,
+          "motif": 0.91,
+          "shape": 1,
+          "changedAccent": 1,
+          "boundary": 1,
+          "pivot": 1,
+          "stepInto": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "status": "needs-review",
+        "notes": [
+          "The pivot svara is shared by both rāgas; the second half passes through a svara that changes.",
+          "Scores measure musical shape, not traditional rāga-bhedam practice. Listen and review before use."
+        ]
+      }
+    },
+    {
+      "id": "transition-03-55-2",
+      "type": "two-raga-transition",
+      "from": {
+        "number": 3,
+        "name": "Gānamūrti"
+      },
+      "to": {
+        "number": 55,
+        "name": "Śyāmalāṅgi"
+      },
+      "relation": [
+        "graha-bhedam"
+      ],
+      "changedSvaras": [
+        "R1→R2",
+        "G1→G2",
+        "M1→M2",
+        "N3→N1"
+      ],
+      "splitIndex": 4,
+      "durationSeconds": 8,
+      "actualSeconds": 8,
+      "level": "nipuṇa",
+      "swaras": [
+        "s",
+        "n,",
+        "d,",
+        "s",
+        "n,",
+        "d,",
+        "g",
+        "r",
+        "m",
+        "p"
+      ],
+      "semitones": [
+        0,
+        -1,
+        -4,
+        0,
+        -3,
+        -4,
+        3,
+        2,
+        6,
+        7
+      ],
+      "tempoBpm": 120,
+      "notation": "s , n, d, s , n, d, g , r m , p , ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2,
+          "section": "from"
+        },
+        {
+          "index": 1,
+          "swara": "n,",
+          "variant": "N3",
+          "semitone": -1,
+          "ratio": 0.9375,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 2,
+          "swara": "d,",
+          "variant": "D1",
+          "semitone": -4,
+          "ratio": 0.790123,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 3,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2,
+          "section": "from"
+        },
+        {
+          "index": 4,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 5,
+          "swara": "d,",
+          "variant": "D1",
+          "semitone": -4,
+          "ratio": 0.790123,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 6,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 2,
+          "gamakaHint": "kampita",
+          "section": "to"
+        },
+        {
+          "index": 7,
+          "swara": "r",
+          "variant": "R2",
+          "semitone": 2,
+          "ratio": 1.125,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 8,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 2,
+          "gamakaHint": "kampita",
+          "section": "to"
+        },
+        {
+          "index": 9,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 3,
+          "section": "to"
+        }
+      ],
+      "quality": {
+        "total": 0.838,
+        "parts": {
+          "motion": 0.894,
+          "recovery": 1,
+          "arch": 0.045,
+          "climax": 1,
+          "accent": 0.54,
+          "rhythmVariety": 0.763,
+          "cadence": 0.888,
+          "start": 1,
+          "identity": 1,
+          "variety": 1,
+          "tension": 0.591,
+          "motif": 0.694,
+          "shape": 1,
+          "changedAccent": 1,
+          "boundary": 1,
+          "pivot": 1,
+          "stepInto": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "status": "needs-review",
+        "notes": [
+          "The pivot svara is shared by both rāgas; the second half passes through a svara that changes.",
+          "Scores measure musical shape, not traditional rāga-bhedam practice. Listen and review before use."
+        ]
+      }
+    },
+    {
+      "id": "transition-55-03-1",
+      "type": "two-raga-transition",
+      "from": {
+        "number": 55,
+        "name": "Śyāmalāṅgi"
+      },
+      "to": {
+        "number": 3,
+        "name": "Gānamūrti"
+      },
+      "relation": [
+        "graha-bhedam"
+      ],
+      "changedSvaras": [
+        "R2→R1",
+        "G2→G1",
+        "M2→M1",
+        "N1→N3"
+      ],
+      "splitIndex": 3,
+      "durationSeconds": 8,
+      "actualSeconds": 8,
+      "level": "nipuṇa",
+      "swaras": [
+        "s",
+        "r",
+        "s",
+        "r",
+        "g",
+        "m",
+        "g",
+        "p",
+        "r",
+        "s"
+      ],
+      "semitones": [
+        0,
+        2,
+        0,
+        1,
+        2,
+        5,
+        2,
+        7,
+        1,
+        0
+      ],
+      "tempoBpm": 120,
+      "notation": "s , r s , r g , m g p , r s , ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2,
+          "section": "from"
+        },
+        {
+          "index": 1,
+          "swara": "r",
+          "variant": "R2",
+          "semitone": 2,
+          "ratio": 1.125,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 2,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2,
+          "section": "from"
+        },
+        {
+          "index": 3,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 4,
+          "swara": "g",
+          "variant": "G1",
+          "semitone": 2,
+          "ratio": 1.125,
+          "durationBeats": 2,
+          "gamakaHint": "kampita",
+          "section": "to"
+        },
+        {
+          "index": 5,
+          "swara": "m",
+          "variant": "M1",
+          "semitone": 5,
+          "ratio": 1.333333,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 6,
+          "swara": "g",
+          "variant": "G1",
+          "semitone": 2,
+          "ratio": 1.125,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 7,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 2,
+          "section": "to"
+        },
+        {
+          "index": 8,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 9,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 3,
+          "section": "to"
+        }
+      ],
+      "quality": {
+        "total": 0.836,
+        "parts": {
+          "motion": 0.936,
+          "recovery": 0,
+          "arch": 0.81,
+          "climax": 1,
+          "accent": 0,
+          "rhythmVariety": 0.763,
+          "cadence": 1,
+          "start": 1,
+          "identity": 1,
+          "variety": 0.833,
+          "tension": 0.505,
+          "motif": 0.792,
+          "shape": 1,
+          "changedAccent": 1,
+          "boundary": 1,
+          "pivot": 1,
+          "stepInto": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "status": "needs-review",
+        "notes": [
+          "The pivot svara is shared by both rāgas; the second half passes through a svara that changes.",
+          "Scores measure musical shape, not traditional rāga-bhedam practice. Listen and review before use."
+        ]
+      }
+    },
+    {
+      "id": "transition-55-03-2",
+      "type": "two-raga-transition",
+      "from": {
+        "number": 55,
+        "name": "Śyāmalāṅgi"
+      },
+      "to": {
+        "number": 3,
+        "name": "Gānamūrti"
+      },
+      "relation": [
+        "graha-bhedam"
+      ],
+      "changedSvaras": [
+        "R2→R1",
+        "G2→G1",
+        "M2→M1",
+        "N1→N3"
+      ],
+      "splitIndex": 7,
+      "durationSeconds": 8,
+      "actualSeconds": 8,
+      "level": "nipuṇa",
+      "swaras": [
+        "s",
+        "d,",
+        "r",
+        "n,",
+        "g",
+        "n,",
+        "s",
+        "r",
+        "d,",
+        "n,",
+        "s"
+      ],
+      "semitones": [
+        0,
+        -4,
+        2,
+        -3,
+        3,
+        -3,
+        0,
+        1,
+        -4,
+        -1,
+        0
+      ],
+      "tempoBpm": 120,
+      "notation": "s , d, r , n, g n, s , r d, n, , s ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2,
+          "section": "from"
+        },
+        {
+          "index": 1,
+          "swara": "d,",
+          "variant": "D1",
+          "semitone": -4,
+          "ratio": 0.790123,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 2,
+          "swara": "r",
+          "variant": "R2",
+          "semitone": 2,
+          "ratio": 1.125,
+          "durationBeats": 2,
+          "gamakaHint": "kampita",
+          "section": "from"
+        },
+        {
+          "index": 3,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 4,
+          "swara": "g",
+          "variant": "G2",
+          "semitone": 3,
+          "ratio": 1.185185,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 5,
+          "swara": "n,",
+          "variant": "N1",
+          "semitone": -3,
+          "ratio": 0.833333,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 6,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2,
+          "section": "from"
+        },
+        {
+          "index": 7,
+          "swara": "r",
+          "variant": "R1",
+          "semitone": 1,
+          "ratio": 1.053498,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 8,
+          "swara": "d,",
+          "variant": "D1",
+          "semitone": -4,
+          "ratio": 0.790123,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 9,
+          "swara": "n,",
+          "variant": "N3",
+          "semitone": -1,
+          "ratio": 0.9375,
+          "durationBeats": 2,
+          "gamakaHint": "kampita",
+          "section": "to"
+        },
+        {
+          "index": 10,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2,
+          "section": "to"
+        }
+      ],
+      "quality": {
+        "total": 0.832,
+        "parts": {
+          "motion": 0.802,
+          "recovery": 0.75,
+          "arch": 0.206,
+          "climax": 1,
+          "accent": 0.571,
+          "rhythmVariety": 0.904,
+          "cadence": 1,
+          "start": 1,
+          "identity": 1,
+          "variety": 0.833,
+          "tension": 0.583,
+          "motif": 0.519,
+          "shape": 1,
+          "changedAccent": 1,
+          "boundary": 1,
+          "pivot": 1,
+          "stepInto": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "status": "needs-review",
+        "notes": [
+          "The pivot svara is shared by both rāgas; the second half passes through a svara that changes.",
+          "Scores measure musical shape, not traditional rāga-bhedam practice. Listen and review before use."
+        ]
+      }
+    }
+  ]
+}

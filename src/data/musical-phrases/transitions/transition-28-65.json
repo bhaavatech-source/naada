@@ -1,0 +1,708 @@
+{
+  "schemaVersion": 2,
+  "type": "experimental-raga-transitions",
+  "pair": {
+    "a": {
+      "number": 28,
+      "name": "Harikāmbhōji"
+    },
+    "b": {
+      "number": 65,
+      "name": "Mechakālyāṇi"
+    },
+    "distance": 2,
+    "relation": [
+      "two-svara-change",
+      "graha-bhedam"
+    ]
+  },
+  "candidates": [
+    {
+      "id": "transition-28-65-1",
+      "type": "two-raga-transition",
+      "from": {
+        "number": 28,
+        "name": "Harikāmbhōji"
+      },
+      "to": {
+        "number": 65,
+        "name": "Mechakālyāṇi"
+      },
+      "relation": [
+        "two-svara-change",
+        "graha-bhedam"
+      ],
+      "changedSvaras": [
+        "M1→M2",
+        "N2→N3"
+      ],
+      "splitIndex": 5,
+      "durationSeconds": 8,
+      "actualSeconds": 8,
+      "level": "nipuṇa",
+      "swaras": [
+        "s",
+        "n,",
+        "r",
+        "r",
+        "s",
+        "g",
+        "g",
+        "m",
+        "p"
+      ],
+      "semitones": [
+        0,
+        -2,
+        2,
+        2,
+        0,
+        4,
+        4,
+        6,
+        7
+      ],
+      "tempoBpm": 120,
+      "notation": "s , n, r r , s g g , , m , p , ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 2,
+          "section": "from"
+        },
+        {
+          "index": 1,
+          "swara": "n,",
+          "variant": "N2",
+          "semitone": -2,
+          "ratio": 0.888889,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 2,
+          "swara": "r",
+          "variant": "R2",
+          "semitone": 2,
+          "ratio": 1.125,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 3,
+          "swara": "r",
+          "variant": "R2",
+          "semitone": 2,
+          "ratio": 1.125,
+          "durationBeats": 2,
+          "gamakaHint": "kampita",
+          "section": "from"
+        },
+        {
+          "index": 4,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 5,
+          "swara": "g",
+          "variant": "G3",
+          "semitone": 4,
+          "ratio": 1.265625,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 6,
+          "swara": "g",
+          "variant": "G3",
+          "semitone": 4,
+          "ratio": 1.265625,
+          "durationBeats": 3,
+          "gamakaHint": "kampita",
+          "section": "to"
+        },
+        {
+          "index": 7,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 2,
+          "gamakaHint": "kampita",
+          "section": "to"
+        },
+        {
+          "index": 8,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 3,
+          "section": "to"
+        }
+      ],
+      "quality": {
+        "total": 0.838,
+        "parts": {
+          "motion": 0.833,
+          "recovery": 1,
+          "arch": 0.272,
+          "climax": 1,
+          "accent": 0.473,
+          "rhythmVariety": 0.609,
+          "cadence": 0.888,
+          "start": 1,
+          "identity": 1,
+          "variety": 1,
+          "tension": 0.727,
+          "motif": 0.697,
+          "shape": 0.7,
+          "changedAccent": 1,
+          "boundary": 1,
+          "pivot": 1,
+          "stepInto": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "status": "needs-review",
+        "notes": [
+          "The pivot svara is shared by both rāgas; the second half passes through a svara that changes.",
+          "Scores measure musical shape, not traditional rāga-bhedam practice. Listen and review before use."
+        ]
+      }
+    },
+    {
+      "id": "transition-28-65-2",
+      "type": "two-raga-transition",
+      "from": {
+        "number": 28,
+        "name": "Harikāmbhōji"
+      },
+      "to": {
+        "number": 65,
+        "name": "Mechakālyāṇi"
+      },
+      "relation": [
+        "two-svara-change",
+        "graha-bhedam"
+      ],
+      "changedSvaras": [
+        "M1→M2",
+        "N2→N3"
+      ],
+      "splitIndex": 6,
+      "durationSeconds": 8,
+      "actualSeconds": 8,
+      "level": "nipuṇa",
+      "swaras": [
+        "r",
+        "s",
+        "r",
+        "g",
+        "r",
+        "s",
+        "g",
+        "m",
+        "g",
+        "s"
+      ],
+      "semitones": [
+        2,
+        0,
+        2,
+        4,
+        2,
+        0,
+        4,
+        6,
+        4,
+        0
+      ],
+      "tempoBpm": 120,
+      "notation": "r , s r , g r , s g m , g s , ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "r",
+          "variant": "R2",
+          "semitone": 2,
+          "ratio": 1.125,
+          "durationBeats": 2,
+          "section": "from"
+        },
+        {
+          "index": 1,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 2,
+          "swara": "r",
+          "variant": "R2",
+          "semitone": 2,
+          "ratio": 1.125,
+          "durationBeats": 2,
+          "gamakaHint": "kampita",
+          "section": "from"
+        },
+        {
+          "index": 3,
+          "swara": "g",
+          "variant": "G3",
+          "semitone": 4,
+          "ratio": 1.265625,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 4,
+          "swara": "r",
+          "variant": "R2",
+          "semitone": 2,
+          "ratio": 1.125,
+          "durationBeats": 2,
+          "gamakaHint": "kampita",
+          "section": "from"
+        },
+        {
+          "index": 5,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 6,
+          "swara": "g",
+          "variant": "G3",
+          "semitone": 4,
+          "ratio": 1.265625,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 7,
+          "swara": "m",
+          "variant": "M2",
+          "semitone": 6,
+          "ratio": 1.423828,
+          "durationBeats": 2,
+          "gamakaHint": "kampita",
+          "section": "to"
+        },
+        {
+          "index": 8,
+          "swara": "g",
+          "variant": "G3",
+          "semitone": 4,
+          "ratio": 1.265625,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 9,
+          "swara": "s",
+          "variant": "S",
+          "semitone": 0,
+          "ratio": 1,
+          "durationBeats": 3,
+          "section": "to"
+        }
+      ],
+      "quality": {
+        "total": 0.838,
+        "parts": {
+          "motion": 0.963,
+          "recovery": 1,
+          "arch": 0.683,
+          "climax": 1,
+          "accent": 0.164,
+          "rhythmVariety": 0.763,
+          "cadence": 0.86,
+          "start": 0.636,
+          "identity": 1,
+          "variety": 0.667,
+          "tension": 0.625,
+          "motif": 0.575,
+          "shape": 1,
+          "changedAccent": 1,
+          "boundary": 1,
+          "pivot": 1,
+          "stepInto": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "status": "needs-review",
+        "notes": [
+          "The pivot svara is shared by both rāgas; the second half passes through a svara that changes.",
+          "Scores measure musical shape, not traditional rāga-bhedam practice. Listen and review before use."
+        ]
+      }
+    },
+    {
+      "id": "transition-65-28-1",
+      "type": "two-raga-transition",
+      "from": {
+        "number": 65,
+        "name": "Mechakālyāṇi"
+      },
+      "to": {
+        "number": 28,
+        "name": "Harikāmbhōji"
+      },
+      "relation": [
+        "two-svara-change",
+        "graha-bhedam"
+      ],
+      "changedSvaras": [
+        "M2→M1",
+        "N3→N2"
+      ],
+      "splitIndex": 5,
+      "durationSeconds": 8,
+      "actualSeconds": 8,
+      "level": "nipuṇa",
+      "swaras": [
+        "d",
+        "S",
+        "d",
+        "R",
+        "S",
+        "n",
+        "R",
+        "R",
+        "S",
+        "G",
+        "S"
+      ],
+      "semitones": [
+        9,
+        12,
+        9,
+        14,
+        12,
+        10,
+        14,
+        14,
+        12,
+        16,
+        12
+      ],
+      "tempoBpm": 120,
+      "notation": "d , S d R S n R R S G , , S , ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "d",
+          "variant": "D2",
+          "semitone": 9,
+          "ratio": 1.666667,
+          "durationBeats": 2,
+          "section": "from"
+        },
+        {
+          "index": 1,
+          "swara": "S",
+          "variant": "S",
+          "semitone": 12,
+          "ratio": 2,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 2,
+          "swara": "d",
+          "variant": "D2",
+          "semitone": 9,
+          "ratio": 1.666667,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 3,
+          "swara": "R",
+          "variant": "R2",
+          "semitone": 14,
+          "ratio": 2.25,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 4,
+          "swara": "S",
+          "variant": "S",
+          "semitone": 12,
+          "ratio": 2,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 5,
+          "swara": "n",
+          "variant": "N2",
+          "semitone": 10,
+          "ratio": 1.777778,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 6,
+          "swara": "R",
+          "variant": "R2",
+          "semitone": 14,
+          "ratio": 2.25,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 7,
+          "swara": "R",
+          "variant": "R2",
+          "semitone": 14,
+          "ratio": 2.25,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 8,
+          "swara": "S",
+          "variant": "S",
+          "semitone": 12,
+          "ratio": 2,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 9,
+          "swara": "G",
+          "variant": "G3",
+          "semitone": 16,
+          "ratio": 2.53125,
+          "durationBeats": 3,
+          "gamakaHint": "kampita",
+          "section": "to"
+        },
+        {
+          "index": 10,
+          "swara": "S",
+          "variant": "S",
+          "semitone": 12,
+          "ratio": 2,
+          "durationBeats": 3,
+          "section": "to"
+        }
+      ],
+      "quality": {
+        "total": 0.838,
+        "parts": {
+          "motion": 0.825,
+          "recovery": 1,
+          "arch": 0.669,
+          "climax": 1,
+          "accent": 0,
+          "rhythmVariety": 0.996,
+          "cadence": 0.86,
+          "start": 0.704,
+          "identity": 1,
+          "variety": 0.833,
+          "tension": 0.58,
+          "motif": 0.823,
+          "shape": 0.81,
+          "changedAccent": 1,
+          "boundary": 1,
+          "pivot": 1,
+          "stepInto": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "status": "needs-review",
+        "notes": [
+          "The pivot svara is shared by both rāgas; the second half passes through a svara that changes.",
+          "Scores measure musical shape, not traditional rāga-bhedam practice. Listen and review before use."
+        ]
+      }
+    },
+    {
+      "id": "transition-65-28-2",
+      "type": "two-raga-transition",
+      "from": {
+        "number": 65,
+        "name": "Mechakālyāṇi"
+      },
+      "to": {
+        "number": 28,
+        "name": "Harikāmbhōji"
+      },
+      "relation": [
+        "two-svara-change",
+        "graha-bhedam"
+      ],
+      "changedSvaras": [
+        "M2→M1",
+        "N3→N2"
+      ],
+      "splitIndex": 6,
+      "durationSeconds": 8,
+      "actualSeconds": 8,
+      "level": "nipuṇa",
+      "swaras": [
+        "d",
+        "p",
+        "d",
+        "p",
+        "n",
+        "S",
+        "n",
+        "d",
+        "p"
+      ],
+      "semitones": [
+        9,
+        7,
+        9,
+        7,
+        11,
+        12,
+        10,
+        9,
+        7
+      ],
+      "tempoBpm": 120,
+      "notation": "d , p d , p n , , S n , , d p ,",
+      "events": [
+        {
+          "index": 0,
+          "swara": "d",
+          "variant": "D2",
+          "semitone": 9,
+          "ratio": 1.666667,
+          "durationBeats": 2,
+          "section": "from"
+        },
+        {
+          "index": 1,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 2,
+          "swara": "d",
+          "variant": "D2",
+          "semitone": 9,
+          "ratio": 1.666667,
+          "durationBeats": 2,
+          "gamakaHint": "kampita",
+          "section": "from"
+        },
+        {
+          "index": 3,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 4,
+          "swara": "n",
+          "variant": "N3",
+          "semitone": 11,
+          "ratio": 1.875,
+          "durationBeats": 3,
+          "gamakaHint": "kampita",
+          "section": "from"
+        },
+        {
+          "index": 5,
+          "swara": "S",
+          "variant": "S",
+          "semitone": 12,
+          "ratio": 2,
+          "durationBeats": 1,
+          "section": "from"
+        },
+        {
+          "index": 6,
+          "swara": "n",
+          "variant": "N2",
+          "semitone": 10,
+          "ratio": 1.777778,
+          "durationBeats": 3,
+          "gamakaHint": "kampita",
+          "section": "to"
+        },
+        {
+          "index": 7,
+          "swara": "d",
+          "variant": "D2",
+          "semitone": 9,
+          "ratio": 1.666667,
+          "durationBeats": 1,
+          "section": "to"
+        },
+        {
+          "index": 8,
+          "swara": "p",
+          "variant": "P",
+          "semitone": 7,
+          "ratio": 1.5,
+          "durationBeats": 2,
+          "section": "to"
+        }
+      ],
+      "quality": {
+        "total": 0.838,
+        "parts": {
+          "motion": 0.979,
+          "recovery": 1,
+          "arch": 0.874,
+          "climax": 1,
+          "accent": 0.344,
+          "rhythmVariety": 0.609,
+          "cadence": 0.888,
+          "start": 0.704,
+          "identity": 0.5,
+          "variety": 0.667,
+          "tension": 0.806,
+          "motif": 0.697,
+          "shape": 1,
+          "changedAccent": 1,
+          "boundary": 1,
+          "pivot": 1,
+          "stepInto": 1
+        }
+      },
+      "source": "rule-based-candidate",
+      "validation": {
+        "status": "needs-review",
+        "notes": [
+          "The pivot svara is shared by both rāgas; the second half passes through a svara that changes.",
+          "Scores measure musical shape, not traditional rāga-bhedam practice. Listen and review before use."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,447 @@
+{
+  "schemaVersion": 1,
+  "type": "experimental-raga-transitions",
+  "pair": {
+    "a": {
+      "number": 7,
+      "name": "Senāvati"
+    },
+    "b": {
+      "number": 11,
+      "name": "Kōkilapriya"
+    },
+    "commonPitchClasses": 6,
+    "candidateCount": 3
+  },
+  "candidates": [
+    {
+      "id": "transition-07-11-1",
+      "type": "experimental-two-raga-transition",
+      "sourceRagas": [
+        {
+          "number": 7,
+          "name": "Senāvati"
+        },
+        {
+          "number": 11,
+          "name": "Kōkilapriya"
+        }
+      ],
+      "commonPitchClasses": 6,
+      "tempoBpm": 60,
+      "tonicHz": 261.6256,
+      "events": [
+        {
+          "index": 0,
+          "swara": "S",
+          "semitone": 0,
+          "section": "raga-a",
+          "durationBeats": 1
+        },
+        {
+          "index": 1,
+          "swara": "G",
+          "semitone": 3,
+          "section": "raga-a",
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "M",
+          "semitone": 5,
+          "section": "raga-a",
+          "durationBeats": 1
+        },
+        {
+          "index": 3,
+          "swara": "G",
+          "semitone": 3,
+          "section": "raga-a",
+          "durationBeats": 1
+        },
+        {
+          "index": 4,
+          "swara": "R",
+          "semitone": 1,
+          "section": "raga-a",
+          "durationBeats": 1
+        },
+        {
+          "index": 5,
+          "swara": "S",
+          "semitone": 0,
+          "section": "raga-a",
+          "durationBeats": 1
+        },
+        {
+          "index": 6,
+          "swara": "R",
+          "semitone": 1,
+          "section": "shared-tone-bridge",
+          "durationBeats": 1
+        },
+        {
+          "index": 7,
+          "swara": "S",
+          "semitone": 0,
+          "section": "shared-tone-bridge",
+          "durationBeats": 1
+        },
+        {
+          "index": 8,
+          "swara": "M",
+          "semitone": 5,
+          "section": "raga-b",
+          "durationBeats": 1
+        },
+        {
+          "index": 9,
+          "swara": "G",
+          "semitone": 3,
+          "section": "raga-b",
+          "durationBeats": 1
+        },
+        {
+          "index": 10,
+          "swara": "R",
+          "semitone": 1,
+          "section": "raga-b",
+          "durationBeats": 1
+        },
+        {
+          "index": 11,
+          "swara": "S",
+          "semitone": 0,
+          "section": "raga-b",
+          "durationBeats": 2
+        }
+      ],
+      "swaras": [
+        "S",
+        "G",
+        "M",
+        "G",
+        "R",
+        "S",
+        "R",
+        "S",
+        "M",
+        "G",
+        "R",
+        "S"
+      ],
+      "semitones": [
+        0,
+        3,
+        5,
+        3,
+        1,
+        0,
+        1,
+        0,
+        5,
+        3,
+        1,
+        0
+      ],
+      "validation": {
+        "scaleCompatibility": "shared-tone heuristic only",
+        "status": "needs-musician-review",
+        "notes": [
+          "Experimental transition candidate generated from the project Melakarta pitch data.",
+          "Shared pitch classes do not guarantee traditional rāga compatibility or an attractive transition.",
+          "Equal-tempered playback is a preview only; gamakas, śruti nuance and rāga-specific prayogas are not modelled."
+        ]
+      }
+    },
+    {
+      "id": "transition-07-11-2",
+      "type": "experimental-two-raga-transition",
+      "sourceRagas": [
+        {
+          "number": 7,
+          "name": "Senāvati"
+        },
+        {
+          "number": 11,
+          "name": "Kōkilapriya"
+        }
+      ],
+      "commonPitchClasses": 6,
+      "tempoBpm": 72,
+      "tonicHz": 261.6256,
+      "events": [
+        {
+          "index": 0,
+          "swara": "S",
+          "semitone": 0,
+          "section": "raga-a",
+          "durationBeats": 1
+        },
+        {
+          "index": 1,
+          "swara": "R",
+          "semitone": 1,
+          "section": "raga-a",
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "G",
+          "semitone": 3,
+          "section": "raga-a",
+          "durationBeats": 1
+        },
+        {
+          "index": 3,
+          "swara": "R",
+          "semitone": 1,
+          "section": "raga-a",
+          "durationBeats": 1
+        },
+        {
+          "index": 4,
+          "swara": "S",
+          "semitone": 0,
+          "section": "raga-a",
+          "durationBeats": 1
+        },
+        {
+          "index": 5,
+          "swara": "S.",
+          "semitone": 12,
+          "section": "shared-tone-bridge",
+          "durationBeats": 1
+        },
+        {
+          "index": 6,
+          "swara": "N",
+          "semitone": 9,
+          "section": "shared-tone-bridge",
+          "durationBeats": 1
+        },
+        {
+          "index": 7,
+          "swara": "P",
+          "semitone": 7,
+          "section": "shared-tone-bridge",
+          "durationBeats": 1
+        },
+        {
+          "index": 8,
+          "swara": "D",
+          "semitone": 9,
+          "section": "raga-b",
+          "durationBeats": 1
+        },
+        {
+          "index": 9,
+          "swara": "P",
+          "semitone": 7,
+          "section": "raga-b",
+          "durationBeats": 1
+        },
+        {
+          "index": 10,
+          "swara": "G",
+          "semitone": 3,
+          "section": "raga-b",
+          "durationBeats": 1
+        },
+        {
+          "index": 11,
+          "swara": "R",
+          "semitone": 1,
+          "section": "raga-b",
+          "durationBeats": 1
+        },
+        {
+          "index": 12,
+          "swara": "S",
+          "semitone": 0,
+          "section": "raga-b",
+          "durationBeats": 2
+        }
+      ],
+      "swaras": [
+        "S",
+        "R",
+        "G",
+        "R",
+        "S",
+        "S.",
+        "N",
+        "P",
+        "D",
+        "P",
+        "G",
+        "R",
+        "S"
+      ],
+      "semitones": [
+        0,
+        1,
+        3,
+        1,
+        0,
+        12,
+        9,
+        7,
+        9,
+        7,
+        3,
+        1,
+        0
+      ],
+      "validation": {
+        "scaleCompatibility": "shared-tone heuristic only",
+        "status": "needs-musician-review",
+        "notes": [
+          "Experimental transition candidate generated from the project Melakarta pitch data.",
+          "Shared pitch classes do not guarantee traditional rāga compatibility or an attractive transition.",
+          "Equal-tempered playback is a preview only; gamakas, śruti nuance and rāga-specific prayogas are not modelled."
+        ]
+      }
+    },
+    {
+      "id": "transition-07-11-3",
+      "type": "experimental-two-raga-transition",
+      "sourceRagas": [
+        {
+          "number": 7,
+          "name": "Senāvati"
+        },
+        {
+          "number": 11,
+          "name": "Kōkilapriya"
+        }
+      ],
+      "commonPitchClasses": 6,
+      "tempoBpm": 84,
+      "tonicHz": 261.6256,
+      "events": [
+        {
+          "index": 0,
+          "swara": "G",
+          "semitone": 3,
+          "section": "raga-a",
+          "durationBeats": 1
+        },
+        {
+          "index": 1,
+          "swara": "M",
+          "semitone": 5,
+          "section": "raga-a",
+          "durationBeats": 1
+        },
+        {
+          "index": 2,
+          "swara": "P",
+          "semitone": 7,
+          "section": "raga-a",
+          "durationBeats": 1
+        },
+        {
+          "index": 3,
+          "swara": "M",
+          "semitone": 5,
+          "section": "raga-a",
+          "durationBeats": 1
+        },
+        {
+          "index": 4,
+          "swara": "G",
+          "semitone": 3,
+          "section": "raga-a",
+          "durationBeats": 1
+        },
+        {
+          "index": 5,
+          "swara": "P",
+          "semitone": 7,
+          "section": "shared-tone-bridge",
+          "durationBeats": 1
+        },
+        {
+          "index": 6,
+          "swara": "M",
+          "semitone": 5,
+          "section": "shared-tone-bridge",
+          "durationBeats": 1
+        },
+        {
+          "index": 7,
+          "swara": "P",
+          "semitone": 7,
+          "section": "raga-b",
+          "durationBeats": 1
+        },
+        {
+          "index": 8,
+          "swara": "M",
+          "semitone": 5,
+          "section": "raga-b",
+          "durationBeats": 1
+        },
+        {
+          "index": 9,
+          "swara": "G",
+          "semitone": 3,
+          "section": "raga-b",
+          "durationBeats": 1
+        },
+        {
+          "index": 10,
+          "swara": "R",
+          "semitone": 1,
+          "section": "raga-b",
+          "durationBeats": 1
+        },
+        {
+          "index": 11,
+          "swara": "S",
+          "semitone": 0,
+          "section": "raga-b",
+          "durationBeats": 2
+        }
+      ],
+      "swaras": [
+        "G",
+        "M",
+        "P",
+        "M",
+        "G",
+        "P",
+        "M",
+        "P",
+        "M",
+        "G",
+        "R",
+        "S"
+      ],
+      "semitones": [
+        3,
+        5,
+        7,
+        5,
+        3,
+        7,
+        5,
+        7,
+        5,
+        3,
+        1,
+        0
+      ],
+      "validation": {
+        "scaleCompatibility": "shared-tone heuristic only",
+        "status": "needs-musician-review",
+        "notes": [
+          "Experimental transition candidate generated from the project Melakarta pitch data.",
+          "Shared pitch classes do not guarantee traditional rāga compatibility or an attractive transition.",
+          "Equal-tempered playback is a preview only; gamakas, śruti nuance and rāga-specific prayogas are not modelled."
+        ]
+      }
+    }
+  ]
+}

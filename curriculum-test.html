@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head><meta charset="UTF-8"><title>Curriculum Service Test</title></head>
+<body>
+<h2>Curriculum Service Test</h2>
+<pre id="result">Testing…</pre>
+<script type="module">
+import {
+  getMelakartaCurriculum,
+  getPlayerExercises
+} from '/nadopaasana/src/data/curriculum/service.ts';
+
+const out = document.getElementById('result');
+
+try {
+  const lines = [];
+
+  for (const number of [3, 15]) {
+    const mela = await getMelakartaCurriculum(number);
+    lines.push(`Mela ${number}: ${mela.raga_name}`);
+
+lines.push(`Sarali source count: ${mela.sarali_varisai?.length ?? 0}`);
+lines.push(`Mel Sthayi source count: ${mela.mel_sthayi_varisai?.length ?? 0}`);
+lines.push(`Kil Sthayi source count: ${mela.kil_sthayi_varisai?.length ?? 0}`);
+
+const firstSarali = mela.sarali_varisai?.[0];
+
+lines.push(`Aro swarasthana: ${firstSarali?.arohana?.swarasthana ?? 'MISSING'}`);
+lines.push(`Avro swarasthana: ${firstSarali?.avarohana?.swarasthana ?? 'MISSING'}`);
+
+
+    for (const tab of [
+      'sarali', 'janta', 'dhaatu', 'mel', 'kil', 'alankara'
+    ]) {
+
+if (tab === 'mel' || tab === 'kil') {
+  const key = tab === 'mel'
+    ? 'mel_sthayi_varisai'
+    : 'kil_sthayi_varisai';
+
+  const source = mela[key];
+
+  lines.push(
+    `${tab} raw first exercise: ${JSON.stringify(
+      Array.isArray(source) ? source[0] : source
+    )}`
+  );
+}
+
+      const exercises = getPlayerExercises(mela, tab);
+      lines.push(`${tab}: ${exercises.length}`);
+
+      if (exercises[0]) {
+        lines.push(`  ${exercises[0].label}`);
+        lines.push(`  Aro: ${exercises[0].aro}`);
+        lines.push(`  Avro: ${exercises[0].avro}`);
+      }
+    }
+    lines.push('');
+  }
+
+  out.textContent = lines.join('\n');
+} catch (e) {
+  out.textContent = String(e);
+}
+</script>
+</body>
+</html>

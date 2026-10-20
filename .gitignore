@@ -1,0 +1,31 @@
+node_modules/
+dist/
+.DS_Store
+*.local
+bhava-nadopaasana.html
+.env
+
+# Generated files and dependencies
+node_modules/
+dist/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Local backups; preserve them on this computer
+*.bak
+*.bak-*
+*.backup
+*.recovery-copy
+*.before-*
+*_OLD.*
+*_OLD_*
+
+# Old image assets
+public/images_OLD/
+
+# Local backup files
+*.backup.ts
+*.backup.tsx

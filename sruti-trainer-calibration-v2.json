@@ -1,0 +1,761 @@
+{
+  "metadata": {
+    "title": "Naadopaasana Śruti Trainer & Microtonal Calibration Database",
+    "application": "Medhā Nādopāsanā Learning Platform",
+    "authoritative_sources": [
+      "The Ragas of Karnatic Music by N. S. Ramachandran (University of Madras)",
+      "Carnatic Music Book 1 (History and Key Concepts of Carnatic Music)",
+      "Melakarta - Wikipedia (Dwadasa & Shodasa Swarasthanas)"
+    ],
+    "version": "2.0.0",
+    "purpose": "Provide exact frequency ratios, vocal kattai reference points, and cognitive score tolerance bands for real-time pitch detection without contradicting the existing web tools.",
+    "calibration_reference_statement": "The Śruti Trainer supports two explicit tuning references: (1) Canonical 22-Śruti Just Intonation (default, harmonically pure relative to the Tambura drone overtones), and (2) 12-Tone Equal Temperament (optional, for accompaniment with harmoniums or keyboards). The active mode must be declared to the user. Vocal pitch ranges are suggested starting defaults, not rigid constraints.",
+    "active_default_tuning_mode": "CARNATIC_HARMONIC_JUST_INTONATION"
+  },
+  "kattai_reference_table": [
+    {
+      "kattai": "1",
+      "western_note": "C",
+      "male_f0_hz": 130.81,
+      "female_f0_hz": 261.63,
+      "children_f0_hz": 261.63,
+      "is_fixed_rule": false,
+      "suggested_starting_vocal_range": "Male (Mandra / Low Madhya)",
+      "guideline_note": "Suggested default for Male (Mandra / Low Madhya), but fully interchangeable for any vocalist."
+    },
+    {
+      "kattai": "1.5",
+      "western_note": "C# / D♭",
+      "male_f0_hz": 138.59,
+      "female_f0_hz": 277.18,
+      "children_f0_hz": 277.18,
+      "is_fixed_rule": false,
+      "suggested_starting_vocal_range": "Male (Standard)",
+      "guideline_note": "Suggested default for Male (Standard), but fully interchangeable for any vocalist."
+    },
+    {
+      "kattai": "2",
+      "western_note": "D",
+      "male_f0_hz": 146.83,
+      "female_f0_hz": 293.66,
+      "children_f0_hz": 293.66,
+      "is_fixed_rule": false,
+      "suggested_starting_vocal_range": "Male (Standard)",
+      "guideline_note": "Suggested default for Male (Standard), but fully interchangeable for any vocalist."
+    },
+    {
+      "kattai": "2.5",
+      "western_note": "D# / E♭",
+      "male_f0_hz": 155.56,
+      "female_f0_hz": 311.13,
+      "children_f0_hz": 311.13,
+      "is_fixed_rule": false,
+      "suggested_starting_vocal_range": "Male (High) / Female (Low)",
+      "guideline_note": "Suggested default for Male (High) / Female (Low), but fully interchangeable for any vocalist."
+    },
+    {
+      "kattai": "3",
+      "western_note": "E",
+      "male_f0_hz": 164.81,
+      "female_f0_hz": 329.63,
+      "children_f0_hz": 329.63,
+      "is_fixed_rule": false,
+      "suggested_starting_vocal_range": "Male (High) / Female (Low)",
+      "guideline_note": "Suggested default for Male (High) / Female (Low), but fully interchangeable for any vocalist."
+    },
+    {
+      "kattai": "4",
+      "western_note": "F",
+      "male_f0_hz": 174.61,
+      "female_f0_hz": 349.23,
+      "children_f0_hz": 174.61,
+      "is_fixed_rule": false,
+      "suggested_starting_vocal_range": "Female (Low Madhya)",
+      "guideline_note": "Suggested default for Female (Low Madhya), but fully interchangeable for any vocalist."
+    },
+    {
+      "kattai": "4.5",
+      "western_note": "F# / G♭",
+      "male_f0_hz": 185.0,
+      "female_f0_hz": 369.99,
+      "children_f0_hz": 185.0,
+      "is_fixed_rule": false,
+      "suggested_starting_vocal_range": "Female (Standard)",
+      "guideline_note": "Suggested default for Female (Standard), but fully interchangeable for any vocalist."
+    },
+    {
+      "kattai": "5",
+      "western_note": "G",
+      "male_f0_hz": 196.0,
+      "female_f0_hz": 392.0,
+      "children_f0_hz": 196.0,
+      "is_fixed_rule": false,
+      "suggested_starting_vocal_range": "Female (Standard) / Children (Standard)",
+      "guideline_note": "Suggested default for Female (Standard) / Children (Standard), but fully interchangeable for any vocalist."
+    },
+    {
+      "kattai": "5.5",
+      "western_note": "G# / A♭",
+      "male_f0_hz": 207.65,
+      "female_f0_hz": 415.3,
+      "children_f0_hz": 207.65,
+      "is_fixed_rule": false,
+      "suggested_starting_vocal_range": "Female (High) / Children (Standard)",
+      "guideline_note": "Suggested default for Female (High) / Children (Standard), but fully interchangeable for any vocalist."
+    },
+    {
+      "kattai": "6",
+      "western_note": "A",
+      "male_f0_hz": 220.0,
+      "female_f0_hz": 440.0,
+      "children_f0_hz": 220.0,
+      "is_fixed_rule": false,
+      "suggested_starting_vocal_range": "Children (High Voice)",
+      "guideline_note": "Suggested default for Children (High Voice), but fully interchangeable for any vocalist."
+    },
+    {
+      "kattai": "6.5",
+      "western_note": "A# / B♭",
+      "male_f0_hz": 233.08,
+      "female_f0_hz": 466.16,
+      "children_f0_hz": 233.08,
+      "is_fixed_rule": false,
+      "suggested_starting_vocal_range": "Children (High Voice)",
+      "guideline_note": "Suggested default for Children (High Voice), but fully interchangeable for any vocalist."
+    },
+    {
+      "kattai": "7",
+      "western_note": "B",
+      "male_f0_hz": 246.94,
+      "female_f0_hz": 493.88,
+      "children_f0_hz": 246.94,
+      "is_fixed_rule": false,
+      "suggested_starting_vocal_range": "Instrumental (Flute / Veena High)",
+      "guideline_note": "Suggested default for Instrumental (Flute / Veena High), but fully interchangeable for any vocalist."
+    }
+  ],
+  "shodasa_swarasthana_sruti_matrix": [
+    {
+      "swara_code": "S",
+      "name": "Shadjam",
+      "dwadasa_index": 1,
+      "semitone_12tet": 0,
+      "cents_12tet": 0,
+      "primary_just_ratio": {
+        "num": 1,
+        "den": 1,
+        "multiplier": 1.0
+      },
+      "just_cents": 0.0,
+      "cent_deviation": 0.0,
+      "alternative_srutis": [],
+      "kudimiyamalai_vowel": "sa",
+      "nature": "Achala (Fixed fundamental tonic)",
+      "sonometer_reference_hz_at_256": 256.0
+    },
+    {
+      "swara_code": "R1",
+      "name": "Suddha Rishabham",
+      "dwadasa_index": 2,
+      "semitone_12tet": 1,
+      "cents_12tet": 100,
+      "primary_just_ratio": {
+        "num": 16,
+        "den": 15,
+        "multiplier": 1.0666666666666667
+      },
+      "just_cents": 111.73,
+      "cent_deviation": 11.73,
+      "alternative_srutis": [
+        {
+          "name": "Eka-śruti Ri (Pythagorean Limma)",
+          "ratio": "256/243",
+          "cents": 90.22
+        }
+      ],
+      "kudimiyamalai_vowel": "ra",
+      "nature": "Chala (Variable minor second)",
+      "sonometer_reference_hz_at_256": 273.1
+    },
+    {
+      "swara_code": "R2",
+      "name": "Chatushruti Rishabham",
+      "dwadasa_index": 3,
+      "semitone_12tet": 2,
+      "cents_12tet": 200,
+      "primary_just_ratio": {
+        "num": 9,
+        "den": 8,
+        "multiplier": 1.125
+      },
+      "just_cents": 203.91,
+      "cent_deviation": 3.91,
+      "alternative_srutis": [
+        {
+          "name": "Tri-śruti Ri (Minor tone)",
+          "ratio": "10/9",
+          "cents": 182.4
+        }
+      ],
+      "kudimiyamalai_vowel": "ri",
+      "nature": "Chala (Major second; identical physical pitch to Suddha Gandharam G1)",
+      "sonometer_reference_hz_at_256": 288.0
+    },
+    {
+      "swara_code": "G1",
+      "name": "Suddha Gandharam",
+      "dwadasa_index": 3,
+      "semitone_12tet": 2,
+      "cents_12tet": 200,
+      "primary_just_ratio": {
+        "num": 9,
+        "den": 8,
+        "multiplier": 1.125
+      },
+      "just_cents": 203.91,
+      "cent_deviation": 3.91,
+      "alternative_srutis": [
+        {
+          "name": "Tri-śruti Ga",
+          "ratio": "10/9",
+          "cents": 182.4
+        }
+      ],
+      "kudimiyamalai_vowel": "ga",
+      "nature": "Vivadi Swara (Shares frequency position with Chatushruti Rishabham R2)",
+      "sonometer_reference_hz_at_256": 288.0
+    },
+    {
+      "swara_code": "R3",
+      "name": "Shatshruti Rishabham",
+      "dwadasa_index": 4,
+      "semitone_12tet": 3,
+      "cents_12tet": 300,
+      "primary_just_ratio": {
+        "num": 75,
+        "den": 64,
+        "multiplier": 1.171875
+      },
+      "just_cents": 274.58,
+      "cent_deviation": -25.42,
+      "alternative_srutis": [
+        {
+          "name": "Minor Third equivalent",
+          "ratio": "6/5",
+          "cents": 315.64
+        }
+      ],
+      "kudimiyamalai_vowel": "ru",
+      "nature": "Vivadi Swara (Shares frequency position with Sadharana Gandharam G2)",
+      "sonometer_reference_hz_at_256": 300.0
+    },
+    {
+      "swara_code": "G2",
+      "name": "Sadharana Gandharam",
+      "dwadasa_index": 4,
+      "semitone_12tet": 3,
+      "cents_12tet": 300,
+      "primary_just_ratio": {
+        "num": 6,
+        "den": 5,
+        "multiplier": 1.2
+      },
+      "just_cents": 315.64,
+      "cent_deviation": 15.64,
+      "alternative_srutis": [
+        {
+          "name": "Ati-komala Ga (Pythagorean Minor Third)",
+          "ratio": "32/27",
+          "cents": 294.13
+        }
+      ],
+      "kudimiyamalai_vowel": "gi",
+      "nature": "Chala (Natural minor third)",
+      "sonometer_reference_hz_at_256": 307.2
+    },
+    {
+      "swara_code": "G3",
+      "name": "Antara Gandharam",
+      "dwadasa_index": 5,
+      "semitone_12tet": 4,
+      "cents_12tet": 400,
+      "primary_just_ratio": {
+        "num": 5,
+        "den": 4,
+        "multiplier": 1.25
+      },
+      "just_cents": 386.31,
+      "cent_deviation": -13.69,
+      "alternative_srutis": [
+        {
+          "name": "Teevra Antara Ga (Pythagorean Ditone)",
+          "ratio": "81/64",
+          "cents": 407.82
+        }
+      ],
+      "kudimiyamalai_vowel": "gu",
+      "nature": "Chala (Pure harmonic major third)",
+      "sonometer_reference_hz_at_256": 320.0
+    },
+    {
+      "swara_code": "M1",
+      "name": "Suddha Madhyamam",
+      "dwadasa_index": 6,
+      "semitone_12tet": 5,
+      "cents_12tet": 500,
+      "primary_just_ratio": {
+        "num": 4,
+        "den": 3,
+        "multiplier": 1.3333333333333333
+      },
+      "just_cents": 498.04,
+      "cent_deviation": -1.96,
+      "alternative_srutis": [
+        {
+          "name": "Teevra Suddha Ma",
+          "ratio": "27/20",
+          "cents": 519.55
+        }
+      ],
+      "kudimiyamalai_vowel": "ma",
+      "nature": "Chala (Natural Fourth)",
+      "sonometer_reference_hz_at_256": 341.3
+    },
+    {
+      "swara_code": "M2",
+      "name": "Prati Madhyamam",
+      "dwadasa_index": 7,
+      "semitone_12tet": 6,
+      "cents_12tet": 600,
+      "primary_just_ratio": {
+        "num": 45,
+        "den": 32,
+        "multiplier": 1.40625
+      },
+      "just_cents": 590.22,
+      "cent_deviation": -9.78,
+      "alternative_srutis": [
+        {
+          "name": "Teevratara Ma (Diminished Fifth)",
+          "ratio": "64/45",
+          "cents": 609.78
+        },
+        {
+          "name": "Komala Prati Ma",
+          "ratio": "25/18",
+          "cents": 568.72
+        }
+      ],
+      "kudimiyamalai_vowel": "mi",
+      "nature": "Chala (Sharp Fourth)",
+      "sonometer_reference_hz_at_256": 360.0
+    },
+    {
+      "swara_code": "P",
+      "name": "Panchamam",
+      "dwadasa_index": 8,
+      "semitone_12tet": 7,
+      "cents_12tet": 700,
+      "primary_just_ratio": {
+        "num": 3,
+        "den": 2,
+        "multiplier": 1.5
+      },
+      "just_cents": 701.96,
+      "cent_deviation": 1.96,
+      "alternative_srutis": [],
+      "kudimiyamalai_vowel": "pa",
+      "nature": "Achala (Fixed fundamental fifth)",
+      "sonometer_reference_hz_at_256": 384.0
+    },
+    {
+      "swara_code": "D1",
+      "name": "Suddha Dhaivatam",
+      "dwadasa_index": 9,
+      "semitone_12tet": 8,
+      "cents_12tet": 800,
+      "primary_just_ratio": {
+        "num": 8,
+        "den": 5,
+        "multiplier": 1.6
+      },
+      "just_cents": 813.69,
+      "cent_deviation": 13.69,
+      "alternative_srutis": [
+        {
+          "name": "Eka-śruti Dha (Pythagorean Minor Sixth)",
+          "ratio": "128/81",
+          "cents": 792.18
+        }
+      ],
+      "kudimiyamalai_vowel": "dha",
+      "nature": "Chala (Minor Sixth)",
+      "sonometer_reference_hz_at_256": 409.6
+    },
+    {
+      "swara_code": "D2",
+      "name": "Chatushruti Dhaivatam",
+      "dwadasa_index": 10,
+      "semitone_12tet": 9,
+      "cents_12tet": 900,
+      "primary_just_ratio": {
+        "num": 5,
+        "den": 3,
+        "multiplier": 1.6666666666666667
+      },
+      "just_cents": 884.36,
+      "cent_deviation": -15.64,
+      "alternative_srutis": [
+        {
+          "name": "Chatushruti Dha (Pythagorean Major Sixth)",
+          "ratio": "27/16",
+          "cents": 905.87
+        }
+      ],
+      "kudimiyamalai_vowel": "dhi",
+      "nature": "Chala (Major Sixth; identical physical pitch to Suddha Nishadam N1)",
+      "sonometer_reference_hz_at_256": 426.7
+    },
+    {
+      "swara_code": "N1",
+      "name": "Suddha Nishadam",
+      "dwadasa_index": 10,
+      "semitone_12tet": 9,
+      "cents_12tet": 900,
+      "primary_just_ratio": {
+        "num": 5,
+        "den": 3,
+        "multiplier": 1.6666666666666667
+      },
+      "just_cents": 884.36,
+      "cent_deviation": -15.64,
+      "alternative_srutis": [
+        {
+          "name": "Pythagorean Sixth equivalent",
+          "ratio": "27/16",
+          "cents": 905.87
+        }
+      ],
+      "kudimiyamalai_vowel": "na",
+      "nature": "Vivadi Swara (Shares frequency position with Chatushruti Dhaivatam D2)",
+      "sonometer_reference_hz_at_256": 426.7
+    },
+    {
+      "swara_code": "D3",
+      "name": "Shatshruti Dhaivatam",
+      "dwadasa_index": 11,
+      "semitone_12tet": 10,
+      "cents_12tet": 1000,
+      "primary_just_ratio": {
+        "num": 125,
+        "den": 72,
+        "multiplier": 1.7361111111111112
+      },
+      "just_cents": 955.03,
+      "cent_deviation": -44.97,
+      "alternative_srutis": [
+        {
+          "name": "Minor Seventh equivalent",
+          "ratio": "9/5",
+          "cents": 1017.6
+        }
+      ],
+      "kudimiyamalai_vowel": "dhu",
+      "nature": "Vivadi Swara (Shares frequency position with Kaisiki Nishadam N2)",
+      "sonometer_reference_hz_at_256": 444.4
+    },
+    {
+      "swara_code": "N2",
+      "name": "Kaisiki Nishadam",
+      "dwadasa_index": 11,
+      "semitone_12tet": 10,
+      "cents_12tet": 1000,
+      "primary_just_ratio": {
+        "num": 9,
+        "den": 5,
+        "multiplier": 1.8
+      },
+      "just_cents": 1017.6,
+      "cent_deviation": 17.6,
+      "alternative_srutis": [
+        {
+          "name": "Pythagorean Minor Seventh",
+          "ratio": "16/9",
+          "cents": 996.09
+        }
+      ],
+      "kudimiyamalai_vowel": "ni",
+      "nature": "Chala (Natural minor seventh)",
+      "sonometer_reference_hz_at_256": 460.8
+    },
+    {
+      "swara_code": "N3",
+      "name": "Kakali Nishadam",
+      "dwadasa_index": 12,
+      "semitone_12tet": 11,
+      "cents_12tet": 1100,
+      "primary_just_ratio": {
+        "num": 15,
+        "den": 8,
+        "multiplier": 1.875
+      },
+      "just_cents": 1088.27,
+      "cent_deviation": -11.73,
+      "alternative_srutis": [
+        {
+          "name": "Pythagorean Major Seventh",
+          "ratio": "243/128",
+          "cents": 1109.78
+        }
+      ],
+      "kudimiyamalai_vowel": "nu",
+      "nature": "Chala (Pure Major Seventh)",
+      "sonometer_reference_hz_at_256": 480.0
+    },
+    {
+      "swara_code": "Ṡ",
+      "name": "Tāra Shadjam",
+      "dwadasa_index": 1,
+      "semitone_12tet": 12,
+      "cents_12tet": 1200,
+      "primary_just_ratio": {
+        "num": 2,
+        "den": 1,
+        "multiplier": 2.0
+      },
+      "just_cents": 1200.0,
+      "cent_deviation": 0.0,
+      "alternative_srutis": [],
+      "kudimiyamalai_vowel": "SA",
+      "nature": "Achala (Higher Octave fundamental)",
+      "sonometer_reference_hz_at_256": 512.0
+    }
+  ],
+  "cognitive_tolerance_windows": {
+    "Level_1_Beginner_Kids": {
+      "description": "Designed for children and young beginners. Accommodates developing vocal cords with a forgiving tolerance band.",
+      "tolerance_cents": 40.0,
+      "min_hold_duration_sec": 0.5,
+      "score_calculation": "Math.max(0, Math.round(100 - (Math.abs(cents_deviation) * 2.5)))",
+      "feedback_tiers": {
+        "perfect_in_tune": {
+          "threshold_cents": 15.0,
+          "color": "#10B981",
+          "label": "Śruti Śuddham! (Superb!)"
+        },
+        "acceptable_in_tune": {
+          "threshold_cents": 40.0,
+          "color": "#F59E0B",
+          "label": "Good! Try to hold steady"
+        },
+        "out_of_tune": {
+          "threshold_cents": 999.0,
+          "color": "#EF4444",
+          "label": "Listen to the tambura and try again"
+        }
+      }
+    },
+    "Level_2_Intermediate": {
+      "description": "Designed for students who know the basics and are practicing steady swarasthanas and varisais.",
+      "tolerance_cents": 20.0,
+      "min_hold_duration_sec": 1.0,
+      "score_calculation": "Math.max(0, Math.round(100 - (Math.abs(cents_deviation) * 5.0)))",
+      "feedback_tiers": {
+        "perfect_in_tune": {
+          "threshold_cents": 8.0,
+          "color": "#10B981",
+          "label": "Spot On! True Swarasthanam"
+        },
+        "acceptable_in_tune": {
+          "threshold_cents": 20.0,
+          "color": "#F59E0B",
+          "label": "Near the note, reduce pitch drift"
+        },
+        "out_of_tune": {
+          "threshold_cents": 999.0,
+          "color": "#EF4444",
+          "label": "Off Pitch"
+        }
+      }
+    },
+    "Level_3_Advanced_Musicians": {
+      "description": "Concert-level precision for advanced students and professional musicians.",
+      "tolerance_cents": 10.0,
+      "min_hold_duration_sec": 1.5,
+      "score_calculation": "Math.max(0, Math.round(100 - (Math.abs(cents_deviation) * 10.0)))",
+      "feedback_tiers": {
+        "perfect_in_tune": {
+          "threshold_cents": 4.0,
+          "color": "#10B981",
+          "label": "Pure Śruti Alignment"
+        },
+        "acceptable_in_tune": {
+          "threshold_cents": 10.0,
+          "color": "#F59E0B",
+          "label": "Microtonal adjustment needed"
+        },
+        "out_of_tune": {
+          "threshold_cents": 999.0,
+          "color": "#EF4444",
+          "label": "Out of Śruti"
+        }
+      }
+    }
+  },
+  "tambura_drone_tunings": [
+    {
+      "tuning_type": "Panchama Śruti (Default)",
+      "description": "Universal drone used for all ragas that possess a natural Panchama (Pa).",
+      "string_notes": [
+        {
+          "string": 1,
+          "swara": "P",
+          "ratio": 1.5,
+          "desc": "Mandra Panchamam (Lower Pa)"
+        },
+        {
+          "string": 2,
+          "swara": "Ṡ",
+          "ratio": 2.0,
+          "desc": "Madhya Shadjam (Middle Sa)"
+        },
+        {
+          "string": 3,
+          "swara": "Ṡ",
+          "ratio": 2.0,
+          "desc": "Madhya Shadjam (Middle Sa)"
+        },
+        {
+          "string": 4,
+          "swara": "S",
+          "ratio": 1.0,
+          "desc": "Mandra Shadjam (Lower Sa)"
+        }
+      ]
+    },
+    {
+      "tuning_type": "Madhyama Śruti",
+      "description": "Used for Panchama-varjya ragas like Hindolam and Sriranjani.",
+      "string_notes": [
+        {
+          "string": 1,
+          "swara": "M1",
+          "ratio": 1.3333333333333333,
+          "desc": "Suddha Madhyamam (Ma1)"
+        },
+        {
+          "string": 2,
+          "swara": "Ṡ",
+          "ratio": 2.0,
+          "desc": "Madhya Shadjam (Middle Sa)"
+        },
+        {
+          "string": 3,
+          "swara": "Ṡ",
+          "ratio": 2.0,
+          "desc": "Madhya Shadjam (Middle Sa)"
+        },
+        {
+          "string": 4,
+          "swara": "S",
+          "ratio": 1.0,
+          "desc": "Mandra Shadjam (Lower Sa)"
+        }
+      ]
+    },
+    {
+      "tuning_type": "Nishada Śruti",
+      "description": "Used for special ragas such as Varāḷi.",
+      "string_notes": [
+        {
+          "string": 1,
+          "swara": "N3",
+          "ratio": 1.875,
+          "desc": "Kakali Nishadam (Ni3)"
+        },
+        {
+          "string": 2,
+          "swara": "Ṡ",
+          "ratio": 2.0,
+          "desc": "Madhya Shadjam (Middle Sa)"
+        },
+        {
+          "string": 3,
+          "swara": "Ṡ",
+          "ratio": 2.0,
+          "desc": "Madhya Shadjam (Middle Sa)"
+        },
+        {
+          "string": 4,
+          "swara": "S",
+          "ratio": 1.0,
+          "desc": "Mandra Shadjam (Lower Sa)"
+        }
+      ]
+    }
+  ],
+  "tuning_reference_modes": {
+    "modes": [
+      {
+        "id": "CARNATIC_HARMONIC_JUST_INTONATION",
+        "display_name": "Carnatic 22-Śruti (Pure Harmonic Just Intonation)",
+        "is_default": true,
+        "rationale": "In Carnatic music, swaras derive their emotional color (raga bhava) from pure mathematical ratios relative to the natural harmonic series of the Tambura drone (1/1, 5/4, 4/3, 3/2). For instance, Antara Gandhara (G3, 5/4 = 386.31 cents) is naturally 13.69 cents softer than 12-TET (400 cents). Scoring an advanced student against 12-TET would falsely penalize pure Carnatic intonation.",
+        "scoring_formula_target": "target_frequency = base_kattai_hz * swara.primary_just_ratio.multiplier",
+        "recommended_for": "Authentic vocal practice, violin, veena, and advanced ear training."
+      },
+      {
+        "id": "EQUAL_TEMPERAMENT_12TET",
+        "display_name": "Western 12-TET (Equal Temperament)",
+        "is_default": false,
+        "rationale": "Divides the octave into 12 equal intervals of 100 cents (2^(n/12)). Provided for students practicing alongside fixed-pitch Western keyboards, digital pianos, or standard harmoniums.",
+        "scoring_formula_target": "target_frequency = base_kattai_hz * Math.pow(2, swara.semitone_12tet / 12)",
+        "recommended_for": "Practice with keyboard/harmonium accompaniment or general ear training."
+      }
+    ],
+    "ui_selector_spec": {
+      "component": "TuningReferenceToggle",
+      "default_selection": "CARNATIC_HARMONIC_JUST_INTONATION",
+      "show_badge": true,
+      "badge_text_map": {
+        "CARNATIC_HARMONIC_JUST_INTONATION": "Tuning: Pure Śruti (Harmonic)",
+        "EQUAL_TEMPERAMENT_12TET": "Tuning: 12-TET (Keyboard)"
+      }
+    }
+  },
+  "kattai_selection_policy": {
+    "is_strict_rule": false,
+    "policy_description": "In Carnatic pedagogy, Ādhāra Shaḍja (tonic) is strictly a personal acoustic choice based on vocal comfort, not a rigid gender or age constraint. Men with higher vocal placement frequently sing at 2.5 or 3 Kattai; women with lower registers sing at 3.5 or 4 Kattai; children naturally transition as their vocal cords mature. All 12 Kattais are freely selectable by any user regardless of profile.",
+    "one_tap_find_my_sruti_feature": {
+      "feature_name": "Find My Comfortable Śruti (Auto-Calibrate)",
+      "procedure": "1. User hums a prolonged, relaxed 'Saaa' for 2.5 seconds into the microphone. 2. DSP engine isolates fundamental frequency (f0) using YIN / Autocorrelation. 3. System finds the nearest Kattai frequency and recommends it with a ± cents deviation readout. 4. User confirms or adjusts manually.",
+      "algorithm_snippet": "nearestKattai = kattaiTable.reduce((prev, curr) => Math.abs(curr.female_f0_hz - detectedHz) < Math.abs(prev.female_f0_hz - detectedHz) ? curr : prev)"
+    }
+  },
+  "real_world_microphone_dsp_spec": {
+    "device_acoustics_guidelines": {
+      "ambient_noise_rejection": {
+        "minimum_rms_dbfs": -42.0,
+        "description": "Signals below -42 dBFS are treated as ambient room noise / air conditioning rumble and ignored."
+      },
+      "detection_confidence_threshold": {
+        "algorithm": "YIN or McLeod Pitch Method (MPM)",
+        "minimum_confidence": 0.82,
+        "description": "Frames with periodicity confidence below 0.82 are rejected to eliminate false transient triggers."
+      },
+      "octave_jump_protection": {
+        "description": "Vocal formants can cause pitch detectors to latch onto the 2nd harmonic (octave). The DSP processor validates that the detected frequency is within 0.7x to 1.3x of expected range before accepting octave leaps."
+      },
+      "hardware_latency_compensation_ms": {
+        "typical_mobile_web": 65,
+        "typical_desktop_chrome": 35,
+        "sliding_window_buffer_ms": 120
+      }
+    },
+    "score_threshold_validation_notes": {
+      "Level_1_Beginner_Kids": "Tolerance: ±40 cents. Validated for built-in smartphone/laptop microphones. Accommodates natural young-vocal vibrato, mouth movement, and room resonance while ensuring the child is singing the intended pitch.",
+      "Level_2_Intermediate": "Tolerance: ±20 cents. Validated for steady note holds in quiet rooms. Rewards steady vocal production without microtonal drift.",
+      "Level_3_Advanced_Musicians": "Tolerance: ±10 cents. Strict concert intonation. Recommended in quiet acoustic environments or with a headset/external microphone."
+    }
+  }
+}

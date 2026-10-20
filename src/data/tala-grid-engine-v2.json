@@ -1,0 +1,991 @@
+{
+  "project": "Medhā Nādopāsanā",
+  "module": "Music Builder & Guided Manodharma Creative Suite",
+  "sub_module": "Phase 2: Tāla Grid Alignment & Rhythmic Phrase Validator",
+  "version": "2.0.0",
+  "description": "Complete interactive step-sequencer grid architecture, Gati/Nadai subdivision models, Kāla Krama speed clock, Kārvai/Rest handlers, real-time metric closure validator, Eduppu alignment tracker, and Yati/Makuṭam structural cadence pattern analyzer. Version 2.0 fully populates beat-level kriyas across all 10 Tala templates including Dhruva, Matya, Jhampa, Ata, and Eka Talas.",
+  "gati_nadai_definitions": {
+    "chaturasra_gati": {
+      "id": "chaturasra_gati",
+      "name": "Chaturasra Gati (Standard 4-Subdivision)",
+      "matras_per_akshara": 4,
+      "solkattu": "Ta - ka - dhi - mi",
+      "is_default": true,
+      "description": "The foundational four-pulse subdivision used across all standard Abhyasa Gana and Sabha Gana compositions."
+    },
+    "tisra_gati": {
+      "id": "tisra_gati",
+      "name": "Tisra Gati (Triplet 3-Subdivision)",
+      "matras_per_akshara": 3,
+      "solkattu": "Ta - ki - ta",
+      "is_default": false,
+      "description": "Three pulses per beat, creating lilting triplet grooves and characteristic Tisra Nadai variations."
+    },
+    "khanda_gati": {
+      "id": "khanda_gati",
+      "name": "Khaṇḍa Gati (Quintuplet 5-Subdivision)",
+      "matras_per_akshara": 5,
+      "solkattu": "Ta - ka - ta - ki - ta",
+      "is_default": false,
+      "description": "Five pulses per beat, introducing syncopated asymmetrical rhythmic flow for intermediate/advanced practice."
+    },
+    "misra_gati": {
+      "id": "misra_gati",
+      "name": "Miśra Gati (Septuplet 7-Subdivision)",
+      "matras_per_akshara": 7,
+      "solkattu": "Ta - ki - ta - ta - ka - dhi - mi",
+      "is_default": false,
+      "description": "Seven pulses per beat, combining three and four sub-pulses for complex laya training."
+    },
+    "sankeerna_gati": {
+      "id": "sankeerna_gati",
+      "name": "Saṅkīrṇa Gati (Nonaval 9-Subdivision)",
+      "matras_per_akshara": 9,
+      "solkattu": "Ta - ka - dhi - mi - ta - ka - ta - ki - ta",
+      "is_default": false,
+      "description": "Nine pulses per beat (4 + 5), representing the highest traditional subdivision tier in Carnatic rhythmics."
+    }
+  },
+  "kala_krama_speeds": {
+    "speed_1x": {
+      "speed_multiplier": 1,
+      "name": "Prathama Kāla (1st Speed)",
+      "swaras_per_akshara": 1,
+      "matra_duration_in_chaturasra": 4,
+      "ui_badge": "1× Speed",
+      "pedagogical_purpose": "Single note per beat. Perfect for young children, foundational pitch grounding, and deep vocal stability."
+    },
+    "speed_2x": {
+      "speed_multiplier": 2,
+      "name": "Dvitīya Kāla (2nd Speed)",
+      "swaras_per_akshara": 2,
+      "matra_duration_in_chaturasra": 2,
+      "ui_badge": "2× Speed",
+      "pedagogical_purpose": "Two notes per beat (exact 2x tempo). Trains steady metric division and rhythmic fluency."
+    },
+    "speed_4x": {
+      "speed_multiplier": 4,
+      "name": "Tṛtīya Kāla (3rd Speed)",
+      "swaras_per_akshara": 4,
+      "matra_duration_in_chaturasra": 1,
+      "ui_badge": "4× Speed",
+      "pedagogical_purpose": "Four notes per beat (1 note per matra). Standard concert tempo for fast sangatis, varisais, and kalpanaswarams."
+    },
+    "speed_8x": {
+      "speed_multiplier": 8,
+      "name": "Caturtha Kāla (4th Speed)",
+      "swaras_per_akshara": 8,
+      "matra_duration_in_chaturasra": 0.5,
+      "ui_badge": "8× Speed",
+      "pedagogical_purpose": "Eight notes per beat (double-fast subdivision). Advanced virtuoso agility training for concert vocalists and instrumentalists."
+    }
+  },
+  "karvai_and_rest_specifications": {
+    "karvai": {
+      "name": "Kārvai / Dīrgha Hold (Sustained Pitch Extension)",
+      "symbols": {
+        "web_dash": "—",
+        "double_dash": "——",
+        "traditional_comma": ",",
+        "traditional_semicolon": ";"
+      },
+      "behavior": "Extends the acoustic sustain of the immediately preceding swara across matras without triggering a new attack or consonant re-articulation.",
+      "rules": [
+        "A kārvai cannot be placed at the very start of a sequence without a prior sounding swara.",
+        "Each single comma (',') or single dash ('—') extends the duration by exactly 1 matra.",
+        "A semicolon (';') extends the duration by 2 matras."
+      ]
+    },
+    "rest": {
+      "name": "Viśrānti / Rest (Silent Rhythmic Beat Space)",
+      "symbols": {
+        "underscore": "_",
+        "dot": ".",
+        "pause_symbol": "rest"
+      },
+      "behavior": "Mutes sound generation for that specific matra slot while maintaining the ticking tāla pulse and kriyā visualization.",
+      "rules": [
+        "Rests can be placed at the beginning of an avartana to create Anāgata Eduppu gaps.",
+        "Rests can be placed between phrases to create rhythmic breathing spaces."
+      ]
+    }
+  },
+  "tala_grid_templates": [
+    {
+      "id": "adi_tala",
+      "name": "Ādi Tālam (Chaturasra Jāti Tripuṭa)",
+      "anga_formula": "I₄ O O",
+      "total_aksharas": 8,
+      "default_chaturasra_matras": 32,
+      "ui_color_theme": "#2E7D32",
+      "angas": [
+        {
+          "anga_name": "Laghu (I₄)",
+          "akshara_range": [
+            1,
+            4
+          ],
+          "aksharas_count": 4,
+          "beats": [
+            {
+              "akshara": 1,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Clap)"
+            },
+            {
+              "akshara": 2,
+              "kriya": "finger_pinky",
+              "kriya_label": "Little Finger (Viral Eṇṇikkai)"
+            },
+            {
+              "akshara": 3,
+              "kriya": "finger_ring",
+              "kriya_label": "Ring Finger"
+            },
+            {
+              "akshara": 4,
+              "kriya": "finger_middle",
+              "kriya_label": "Middle Finger"
+            }
+          ]
+        },
+        {
+          "anga_name": "First Drutam (O)",
+          "akshara_range": [
+            5,
+            6
+          ],
+          "aksharas_count": 2,
+          "beats": [
+            {
+              "akshara": 5,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Clap)"
+            },
+            {
+              "akshara": 6,
+              "kriya": "wave",
+              "kriya_label": "Vīccu (Wave of Palm)"
+            }
+          ]
+        },
+        {
+          "anga_name": "Second Drutam (O)",
+          "akshara_range": [
+            7,
+            8
+          ],
+          "aksharas_count": 2,
+          "beats": [
+            {
+              "akshara": 7,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Clap)"
+            },
+            {
+              "akshara": 8,
+              "kriya": "wave",
+              "kriya_label": "Vīccu (Wave of Palm)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rupaka_tala",
+      "name": "Chaturasra Jāti Rūpaka Tālam",
+      "anga_formula": "O I₄",
+      "total_aksharas": 6,
+      "default_chaturasra_matras": 24,
+      "ui_color_theme": "#1565C0",
+      "angas": [
+        {
+          "anga_name": "Drutam (O)",
+          "akshara_range": [
+            1,
+            2
+          ],
+          "aksharas_count": 2,
+          "beats": [
+            {
+              "akshara": 1,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Clap)"
+            },
+            {
+              "akshara": 2,
+              "kriya": "wave",
+              "kriya_label": "Vīccu (Wave)"
+            }
+          ]
+        },
+        {
+          "anga_name": "Laghu (I₄)",
+          "akshara_range": [
+            3,
+            6
+          ],
+          "aksharas_count": 4,
+          "beats": [
+            {
+              "akshara": 3,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Clap)"
+            },
+            {
+              "akshara": 4,
+              "kriya": "finger_pinky",
+              "kriya_label": "Little Finger"
+            },
+            {
+              "akshara": 5,
+              "kriya": "finger_ring",
+              "kriya_label": "Ring Finger"
+            },
+            {
+              "akshara": 6,
+              "kriya": "finger_middle",
+              "kriya_label": "Middle Finger"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "misra_capu",
+      "name": "Miśra Cāpu Tālam",
+      "anga_formula": "3 + 4 (Ta-ki-ta + Ta-ka-dhi-mi)",
+      "total_aksharas": 7,
+      "default_chaturasra_matras": 14,
+      "ui_color_theme": "#D84315",
+      "angas": [
+        {
+          "anga_name": "First Section (3 pulses)",
+          "akshara_range": [
+            1,
+            3
+          ],
+          "aksharas_count": 3,
+          "beats": [
+            {
+              "akshara": 1,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Ta)"
+            },
+            {
+              "akshara": 2,
+              "kriya": "wave",
+              "kriya_label": "Vīccu (ki)"
+            },
+            {
+              "akshara": 3,
+              "kriya": "wave",
+              "kriya_label": "Vīccu (ta)"
+            }
+          ]
+        },
+        {
+          "anga_name": "Second Section (4 pulses)",
+          "akshara_range": [
+            4,
+            7
+          ],
+          "aksharas_count": 4,
+          "beats": [
+            {
+              "akshara": 4,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Ta)"
+            },
+            {
+              "akshara": 5,
+              "kriya": "wave",
+              "kriya_label": "Vīccu (ka)"
+            },
+            {
+              "akshara": 6,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (dhi)"
+            },
+            {
+              "akshara": 7,
+              "kriya": "wave",
+              "kriya_label": "Vīccu (mi)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "khanda_capu",
+      "name": "Khaṇḍa Cāpu Tālam",
+      "anga_formula": "2 + 3 (Ta-ka + Ta-ki-ta)",
+      "total_aksharas": 5,
+      "default_chaturasra_matras": 10,
+      "ui_color_theme": "#6A1B9A",
+      "angas": [
+        {
+          "anga_name": "First Section (2 pulses)",
+          "akshara_range": [
+            1,
+            2
+          ],
+          "aksharas_count": 2,
+          "beats": [
+            {
+              "akshara": 1,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Ta)"
+            },
+            {
+              "akshara": 2,
+              "kriya": "wave",
+              "kriya_label": "Vīccu (ka)"
+            }
+          ]
+        },
+        {
+          "anga_name": "Second Section (3 pulses)",
+          "akshara_range": [
+            3,
+            5
+          ],
+          "aksharas_count": 3,
+          "beats": [
+            {
+              "akshara": 3,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Ta)"
+            },
+            {
+              "akshara": 4,
+              "kriya": "wave",
+              "kriya_label": "Vīccu (ki)"
+            },
+            {
+              "akshara": 5,
+              "kriya": "wave",
+              "kriya_label": "Vīccu (ta)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tisra_triputa",
+      "name": "Tiśra Jāti Tripuṭa Tālam",
+      "anga_formula": "I₃ O O",
+      "total_aksharas": 7,
+      "default_chaturasra_matras": 28,
+      "ui_color_theme": "#00838F",
+      "angas": [
+        {
+          "anga_name": "Laghu (I₃)",
+          "akshara_range": [
+            1,
+            3
+          ],
+          "aksharas_count": 3,
+          "beats": [
+            {
+              "akshara": 1,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu"
+            },
+            {
+              "akshara": 2,
+              "kriya": "finger_pinky",
+              "kriya_label": "Little Finger"
+            },
+            {
+              "akshara": 3,
+              "kriya": "finger_ring",
+              "kriya_label": "Ring Finger"
+            }
+          ]
+        },
+        {
+          "anga_name": "First Drutam (O)",
+          "akshara_range": [
+            4,
+            5
+          ],
+          "aksharas_count": 2,
+          "beats": [
+            {
+              "akshara": 4,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu"
+            },
+            {
+              "akshara": 5,
+              "kriya": "wave",
+              "kriya_label": "Vīccu"
+            }
+          ]
+        },
+        {
+          "anga_name": "Second Drutam (O)",
+          "akshara_range": [
+            6,
+            7
+          ],
+          "aksharas_count": 2,
+          "beats": [
+            {
+              "akshara": 6,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu"
+            },
+            {
+              "akshara": 7,
+              "kriya": "wave",
+              "kriya_label": "Vīccu"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dhruva_tala",
+      "name": "Chaturasra Jāti Dhruva Tālam",
+      "anga_formula": "I₄ O I₄ I₄",
+      "total_aksharas": 14,
+      "default_chaturasra_matras": 56,
+      "ui_color_theme": "#4527A0",
+      "angas": [
+        {
+          "anga_name": "Laghu 1 (I₄)",
+          "akshara_range": [
+            1,
+            4
+          ],
+          "aksharas_count": 4,
+          "beats": [
+            {
+              "akshara": 1,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Clap)"
+            },
+            {
+              "akshara": 2,
+              "kriya": "finger_pinky",
+              "kriya_label": "Little Finger (Viral Eṇṇikkai)"
+            },
+            {
+              "akshara": 3,
+              "kriya": "finger_ring",
+              "kriya_label": "Ring Finger"
+            },
+            {
+              "akshara": 4,
+              "kriya": "finger_middle",
+              "kriya_label": "Middle Finger"
+            }
+          ]
+        },
+        {
+          "anga_name": "Drutam (O)",
+          "akshara_range": [
+            5,
+            6
+          ],
+          "aksharas_count": 2,
+          "beats": [
+            {
+              "akshara": 5,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Clap)"
+            },
+            {
+              "akshara": 6,
+              "kriya": "wave",
+              "kriya_label": "Vīccu (Wave of Palm)"
+            }
+          ]
+        },
+        {
+          "anga_name": "Laghu 2 (I₄)",
+          "akshara_range": [
+            7,
+            10
+          ],
+          "aksharas_count": 4,
+          "beats": [
+            {
+              "akshara": 7,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Clap)"
+            },
+            {
+              "akshara": 8,
+              "kriya": "finger_pinky",
+              "kriya_label": "Little Finger (Viral Eṇṇikkai)"
+            },
+            {
+              "akshara": 9,
+              "kriya": "finger_ring",
+              "kriya_label": "Ring Finger"
+            },
+            {
+              "akshara": 10,
+              "kriya": "finger_middle",
+              "kriya_label": "Middle Finger"
+            }
+          ]
+        },
+        {
+          "anga_name": "Laghu 3 (I₄)",
+          "akshara_range": [
+            11,
+            14
+          ],
+          "aksharas_count": 4,
+          "beats": [
+            {
+              "akshara": 11,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Clap)"
+            },
+            {
+              "akshara": 12,
+              "kriya": "finger_pinky",
+              "kriya_label": "Little Finger (Viral Eṇṇikkai)"
+            },
+            {
+              "akshara": 13,
+              "kriya": "finger_ring",
+              "kriya_label": "Ring Finger"
+            },
+            {
+              "akshara": 14,
+              "kriya": "finger_middle",
+              "kriya_label": "Middle Finger"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "matya_tala",
+      "name": "Chaturasra Jāti Matya Tālam",
+      "anga_formula": "I₄ O I₄",
+      "total_aksharas": 10,
+      "default_chaturasra_matras": 40,
+      "ui_color_theme": "#283593",
+      "angas": [
+        {
+          "anga_name": "Laghu 1 (I₄)",
+          "akshara_range": [
+            1,
+            4
+          ],
+          "aksharas_count": 4,
+          "beats": [
+            {
+              "akshara": 1,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Clap)"
+            },
+            {
+              "akshara": 2,
+              "kriya": "finger_pinky",
+              "kriya_label": "Little Finger (Viral Eṇṇikkai)"
+            },
+            {
+              "akshara": 3,
+              "kriya": "finger_ring",
+              "kriya_label": "Ring Finger"
+            },
+            {
+              "akshara": 4,
+              "kriya": "finger_middle",
+              "kriya_label": "Middle Finger"
+            }
+          ]
+        },
+        {
+          "anga_name": "Drutam (O)",
+          "akshara_range": [
+            5,
+            6
+          ],
+          "aksharas_count": 2,
+          "beats": [
+            {
+              "akshara": 5,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Clap)"
+            },
+            {
+              "akshara": 6,
+              "kriya": "wave",
+              "kriya_label": "Vīccu (Wave of Palm)"
+            }
+          ]
+        },
+        {
+          "anga_name": "Laghu 2 (I₄)",
+          "akshara_range": [
+            7,
+            10
+          ],
+          "aksharas_count": 4,
+          "beats": [
+            {
+              "akshara": 7,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Clap)"
+            },
+            {
+              "akshara": 8,
+              "kriya": "finger_pinky",
+              "kriya_label": "Little Finger (Viral Eṇṇikkai)"
+            },
+            {
+              "akshara": 9,
+              "kriya": "finger_ring",
+              "kriya_label": "Ring Finger"
+            },
+            {
+              "akshara": 10,
+              "kriya": "finger_middle",
+              "kriya_label": "Middle Finger"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jhampa_tala",
+      "name": "Miśra Jāti Jhampa Tālam",
+      "anga_formula": "I₇ U O",
+      "total_aksharas": 10,
+      "default_chaturasra_matras": 40,
+      "ui_color_theme": "#00695C",
+      "angas": [
+        {
+          "anga_name": "Laghu (I₇)",
+          "akshara_range": [
+            1,
+            7
+          ],
+          "aksharas_count": 7,
+          "beats": [
+            {
+              "akshara": 1,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Clap)"
+            },
+            {
+              "akshara": 2,
+              "kriya": "finger_pinky",
+              "kriya_label": "Little Finger (Viral Eṇṇikkai)"
+            },
+            {
+              "akshara": 3,
+              "kriya": "finger_ring",
+              "kriya_label": "Ring Finger"
+            },
+            {
+              "akshara": 4,
+              "kriya": "finger_middle",
+              "kriya_label": "Middle Finger"
+            },
+            {
+              "akshara": 5,
+              "kriya": "finger_index",
+              "kriya_label": "Forefinger (Index Finger)"
+            },
+            {
+              "akshara": 6,
+              "kriya": "finger_thumb",
+              "kriya_label": "Thumb"
+            },
+            {
+              "akshara": 7,
+              "kriya": "finger_pinky",
+              "kriya_label": "Little Finger"
+            }
+          ]
+        },
+        {
+          "anga_name": "Anudrutam (U)",
+          "akshara_range": [
+            8,
+            8
+          ],
+          "aksharas_count": 1,
+          "beats": [
+            {
+              "akshara": 8,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Clap)"
+            }
+          ]
+        },
+        {
+          "anga_name": "Drutam (O)",
+          "akshara_range": [
+            9,
+            10
+          ],
+          "aksharas_count": 2,
+          "beats": [
+            {
+              "akshara": 9,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Clap)"
+            },
+            {
+              "akshara": 10,
+              "kriya": "wave",
+              "kriya_label": "Vīccu (Wave of Palm)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ata_tala",
+      "name": "Khaṇḍa Jāti Aṭa Tālam",
+      "anga_formula": "I₅ I₅ O O",
+      "total_aksharas": 14,
+      "default_chaturasra_matras": 56,
+      "ui_color_theme": "#AD1457",
+      "angas": [
+        {
+          "anga_name": "Laghu 1 (I₅)",
+          "akshara_range": [
+            1,
+            5
+          ],
+          "aksharas_count": 5,
+          "beats": [
+            {
+              "akshara": 1,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Clap)"
+            },
+            {
+              "akshara": 2,
+              "kriya": "finger_pinky",
+              "kriya_label": "Little Finger (Viral Eṇṇikkai)"
+            },
+            {
+              "akshara": 3,
+              "kriya": "finger_ring",
+              "kriya_label": "Ring Finger"
+            },
+            {
+              "akshara": 4,
+              "kriya": "finger_middle",
+              "kriya_label": "Middle Finger"
+            },
+            {
+              "akshara": 5,
+              "kriya": "finger_index",
+              "kriya_label": "Forefinger (Index Finger)"
+            }
+          ]
+        },
+        {
+          "anga_name": "Laghu 2 (I₅)",
+          "akshara_range": [
+            6,
+            10
+          ],
+          "aksharas_count": 5,
+          "beats": [
+            {
+              "akshara": 6,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Clap)"
+            },
+            {
+              "akshara": 7,
+              "kriya": "finger_pinky",
+              "kriya_label": "Little Finger (Viral Eṇṇikkai)"
+            },
+            {
+              "akshara": 8,
+              "kriya": "finger_ring",
+              "kriya_label": "Ring Finger"
+            },
+            {
+              "akshara": 9,
+              "kriya": "finger_middle",
+              "kriya_label": "Middle Finger"
+            },
+            {
+              "akshara": 10,
+              "kriya": "finger_index",
+              "kriya_label": "Forefinger (Index Finger)"
+            }
+          ]
+        },
+        {
+          "anga_name": "Drutam 1 (O)",
+          "akshara_range": [
+            11,
+            12
+          ],
+          "aksharas_count": 2,
+          "beats": [
+            {
+              "akshara": 11,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Clap)"
+            },
+            {
+              "akshara": 12,
+              "kriya": "wave",
+              "kriya_label": "Vīccu (Wave of Palm)"
+            }
+          ]
+        },
+        {
+          "anga_name": "Drutam 2 (O)",
+          "akshara_range": [
+            13,
+            14
+          ],
+          "aksharas_count": 2,
+          "beats": [
+            {
+              "akshara": 13,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Clap)"
+            },
+            {
+              "akshara": 14,
+              "kriya": "wave",
+              "kriya_label": "Vīccu (Wave of Palm)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eka_tala",
+      "name": "Chaturasra Jāti Eka Tālam",
+      "anga_formula": "I₄",
+      "total_aksharas": 4,
+      "default_chaturasra_matras": 16,
+      "ui_color_theme": "#E65100",
+      "angas": [
+        {
+          "anga_name": "Laghu (I₄)",
+          "akshara_range": [
+            1,
+            4
+          ],
+          "aksharas_count": 4,
+          "beats": [
+            {
+              "akshara": 1,
+              "kriya": "clap",
+              "kriya_label": "Taṭṭu (Clap)"
+            },
+            {
+              "akshara": 2,
+              "kriya": "finger_pinky",
+              "kriya_label": "Little Finger (Viral Eṇṇikkai)"
+            },
+            {
+              "akshara": 3,
+              "kriya": "finger_ring",
+              "kriya_label": "Ring Finger"
+            },
+            {
+              "akshara": 4,
+              "kriya": "finger_middle",
+              "kriya_label": "Middle Finger"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "rhythmic_validator_engine": {
+    "evaluation_states": {
+      "EXACT_AVARTANA_CLOSURE": {
+        "code": "EXACT_AVARTANA",
+        "status_badge": "Avartana Complete! (Laya Śuddham)",
+        "color": "#2E7D32",
+        "description": "The entered swara and kārvai sequence fills exactly 1, 2, or N complete avartanas without remaining gaps or overspill."
+      },
+      "UNDERFILLED_SEQUENCE": {
+        "code": "UNDERFILLED",
+        "status_badge": "Avartana Incomplete",
+        "color": "#F57C00",
+        "description": "The sequence does not yet reach the end of the tāla cycle. Prompt the student with the exact number of matras / aksharas required to complete the cycle."
+      },
+      "OVERFLOW_SEQUENCE": {
+        "code": "OVERFLOW",
+        "status_badge": "Avartana Overflow",
+        "color": "#C62828",
+        "description": "The sequence exceeds the target avartana boundary, spilling into an incomplete subsequent cycle."
+      }
+    },
+    "eduppu_landing_tracker": {
+      "sama_eduppu": {
+        "id": "sama",
+        "name": "Sama Eduppu (On the Beat)",
+        "matra_offset": 0,
+        "target_description": "Begins or concludes directly on Beat 1 (Taṭṭu / Clap). Typical for invocations, varisais, and Gitams."
+      },
+      "anagata_eduppu_half_beat": {
+        "id": "anagata_half_beat",
+        "name": "Anāgata Eduppu (After 1/2 Akshara / 2 Matras in Chaturasra)",
+        "matra_offset": 2,
+        "target_description": "Begins after a half-beat rest (2 matras). Typical for major concert masterworks (Muddugārē Yaśōdā, Banturīti, Sāmaja Vara Gamana)."
+      },
+      "anagata_eduppu_one_beat": {
+        "id": "anagata_one_beat",
+        "name": "Anāgata Eduppu (After 1 Full Akshara / 4 Matras)",
+        "matra_offset": 4,
+        "target_description": "Begins after one full beat of rest (e.g. entering on beat 2)."
+      },
+      "anagata_eduppu_one_and_half_beat": {
+        "id": "anagata_one_and_half_beat",
+        "name": "Anāgata Eduppu (After 1.5 Aksharas / 6 Matras)",
+        "matra_offset": 6,
+        "target_description": "Begins after 1.5 aksharas of rest. The signature plaintive landing for Palukē Baṅgāramāyenā."
+      },
+      "atita_eduppu": {
+        "id": "atita",
+        "name": "Atīta Eduppu (Before the Beat)",
+        "matra_offset": -2,
+        "target_description": "Begins slightly prior to Beat 1, carrying over from the preceding avartana."
+      }
+    },
+    "cadence_and_yati_patterns": {
+      "sama_yati": {
+        "id": "sama_yati",
+        "name": "Sama Yati (Uniform Rhythmic Progression)",
+        "description": "Phrases of identical mathematical duration (e.g., 4 + 4 + 4 + 4 matras). Creates balanced, serene rhythmic geometry."
+      },
+      "gopuccha_yati": {
+        "id": "gopuccha_yati",
+        "name": "Gopuccha Yati (Cow's Tail / Tapering Diminuendo)",
+        "description": "Phrases progressively decrease in length (e.g., 6 -> 5 -> 4 -> 3 -> 2 -> 1). Creates acceleration toward the landing point."
+      },
+      "srotovaha_yati": {
+        "id": "srotovaha_yati",
+        "name": "Srotōvaha Yati (River Source / Expanding Crescendo)",
+        "description": "Phrases progressively expand in length from a trickle to a wide river (e.g., 1 -> 2 -> 3 -> 4 -> 5). Creates grand expansion."
+      },
+      "makutam_korvai": {
+        "id": "makutam_korvai",
+        "name": "Makuṭam (Crown / Tripartite Kōrvai Cadence)",
+        "formula": "3 × [Pattern + Kārvai] = Landing on Eduppu",
+        "example": "[P M G R] —- [P M G R] —- [P M G R] -> Lands on S!",
+        "description": "The quintessential Carnatic ending formula. A rhythmic motif is repeated exactly three times, separated by uniform kārvais, resolving precisely onto the landing note."
+      }
+    }
+  },
+  "frontend_reference_code": {
+    "validation_algorithm_js": "\nfunction validateRhythmicPhrase(phraseTokens, talaConfig, gatiConfig, targetEduppu) {\n    // phraseTokens: array of objects { type: 'SWARA'|'KARVAI'|'REST', duration_matras: 1|2|4, pitch: 'S'|'R1'... }\n    const totalMatrasInCycle = talaConfig.total_aksharas * gatiConfig.matras_per_akshara;\n    \n    let totalFilledMatras = 0;\n    for (let token of phraseTokens) {\n        totalFilledMatras += token.duration_matras;\n    }\n    \n    const remainder = totalFilledMatras % totalMatrasInCycle;\n    const completedAvartanas = Math.floor(totalFilledMatras / totalMatrasInCycle);\n    \n    let status = '';\n    let message = '';\n    let matrasNeeded = 0;\n    \n    if (totalFilledMatras === 0) {\n        status = 'EMPTY';\n        message = 'Grid is empty. Place swaras or rests to begin.';\n    } else if (remainder === 0) {\n        status = 'EXACT_AVARTANA';\n        message = `Completed ${completedAvartanas} full avartana(s) with perfect metric closure!`;\n    } else {\n        matrasNeeded = totalMatrasInCycle - remainder;\n        const aksharasNeeded = (matrasNeeded / gatiConfig.matras_per_akshara).toFixed(1);\n        status = 'UNDERFILLED';\n        message = `Need ${matrasNeeded} more matra(s) (${aksharasNeeded} aksharas) to complete the avartana.`;\n    }\n    \n    // Check Eduppu landing\n    let eduppuAligned = false;\n    let eduppuOffset = targetEduppu ? targetEduppu.matra_offset : 0;\n    let landingMatra = totalFilledMatras % totalMatrasInCycle;\n    if (landingMatra === eduppuOffset) {\n        eduppuAligned = true;\n    }\n    \n    return {\n        totalFilledMatras,\n        totalMatrasInCycle,\n        completedAvartanas,\n        remainder,\n        matrasNeeded,\n        status,\n        message,\n        eduppuAligned,\n        landingMatra,\n        targetEduppuOffset: eduppuOffset\n    };\n}\n"
+  }
+}

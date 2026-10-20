@@ -1,0 +1,1649 @@
+{
+  "project": "Medhā Nādopāsanā Learning Platform",
+  "module": "Interactive Gamaka & Svara Game Suite",
+  "sub_module": "Canvas Rendering, Real-Time Pitch Tracking & Gamified Vocal Learning Engine",
+  "version": "2.0.0",
+  "description": "High-engagement, playful interactive learning suite for Carnatic Gamakas and Swara mastery. Blends video-game-style flight mechanics ('Nāda Vāhana') and ear-training arcade games with strict 22-Śruti musicological rigor, microtonal boundary guardrails, and real-time DSP pitch tracking.",
+  "musicological_foundations": {
+    "canonical_definition": {
+      "sanskrit": "स्वरस्य कम्पनं गमको श्रोतृचित्तसुखावहः (Swarasya kampo Gamakaha srotrchitta sukhavahah)",
+      "translation": "The oscillation or graceful embellishment of a swara that produces a pleasing, soothing effect on the listener.",
+      "authoritative_sources": [
+        "Carnatic Music Book 1 (Lesson 2.5: Gamaka)",
+        "Śārṅgadeva's Saṅgīta Ratnākara (Pañcadaśa 15 Gamakas)",
+        "Ahobala's Saṅgīta Pārijāta (17 Gamakas)",
+        "Kohala (13 Gamakas)",
+        "Subbarāma Dīkṣitar's Saṅgīta Sampradāya Pradarśinī (Vīṇā & Vocal Notation System)",
+        "The Ragas of Karnatic Music by N. S. Ramachandran (University of Madras, 1938)"
+      ]
+    },
+    "historical_classifications": {
+      "sangita_ratnakara_15": [
+        {
+          "id": 1,
+          "name": "Tirupam",
+          "description": "Quick deflection in 1/4 druta tempo, turning upon samvadi notes."
+        },
+        {
+          "id": 2,
+          "name": "Sphuritam",
+          "description": "Accented touch of the lower note in stepped pairs (1/3 druta tempo)."
+        },
+        {
+          "id": 3,
+          "name": "Kampitam",
+          "description": "Oscillation shaking the note at half a druta tempo."
+        },
+        {
+          "id": 4,
+          "name": "Līnam",
+          "description": "Soft merging of a note into its neighbor at druta speed."
+        },
+        {
+          "id": 5,
+          "name": "Āndolitam",
+          "description": "Heavy swinging oscillation held for laghu duration."
+        },
+        {
+          "id": 6,
+          "name": "Vali",
+          "description": "Circling motion with irregular velocity like wind-blown waves."
+        },
+        {
+          "id": 7,
+          "name": "Tribhinnam",
+          "description": "Simultaneous touch traversing three sthayis continuously."
+        },
+        {
+          "id": 8,
+          "name": "Kuruḷa",
+          "description": "Soft, knotty guttural turn resembling vali."
+        },
+        {
+          "id": 9,
+          "name": "Āhatam",
+          "description": "Striking the preceding note in ascending progression."
+        },
+        {
+          "id": 10,
+          "name": "Ullāsitam",
+          "description": "Ascending glide (zāru) sliding upwards through consecutive notes."
+        },
+        {
+          "id": 11,
+          "name": "Plāvitam",
+          "description": "Deep, wide oscillation sustained for pluta duration."
+        },
+        {
+          "id": 12,
+          "name": "Humphitam / Gumphita",
+          "description": "Deep chest resonance producing the reverent sound of 'hum'."
+        },
+        {
+          "id": 13,
+          "name": "Mudritam",
+          "description": "Ornament produced with lips gently closed."
+        },
+        {
+          "id": 14,
+          "name": "Nāmitam",
+          "description": "Soft bending down of notes where tone is subtle and tender."
+        },
+        {
+          "id": 15,
+          "name": "Miśritam",
+          "description": "Artful combination or admixture of two or more gamakas."
+        }
+      ],
+      "modern_concert_dasavidha_10": [
+        "Ārohaṇa (Ascending grace)",
+        "Avarohaṇa (Descending grace)",
+        "Dhālu (Leaping grace)",
+        "Sphurita (Staccato accent)",
+        "Kampita (Shake / Oscillation)",
+        "Āhata (Forward strike)",
+        "Pratyāhata (Backward strike)",
+        "Tripuccha (Triple-cluster grace)",
+        "Āndolita (Swinging arc)",
+        "Mūrchanā (Regular scalar cascade)"
+      ]
+    },
+    "subbarama_diksitar_notation_symbols": {
+      "kampita": {
+        "symbol": "~",
+        "unicode": "U+007E",
+        "name": "Wavy Tilde",
+        "placement": "Above swara"
+      },
+      "sphurita": {
+        "symbol": "w",
+        "unicode": "U+0077",
+        "name": "Lower Tooth Mark",
+        "placement": "Above repeated note"
+      },
+      "pratyahata": {
+        "symbol": "v",
+        "unicode": "U+0076",
+        "name": "Downward Arrowhead",
+        "placement": "Above descending pair"
+      },
+      "nokku": {
+        "symbol": "^",
+        "unicode": "U+005E",
+        "name": "Caret Accent",
+        "placement": "Above stressed note"
+      },
+      "orika": {
+        "symbol": "⌒",
+        "unicode": "U+2312",
+        "name": "Flick Arc",
+        "placement": "Above deflected note"
+      },
+      "ullasa_jaru": {
+        "symbol": "/",
+        "unicode": "U+002F",
+        "name": "Ascending Slash",
+        "placement": "Between source and target"
+      },
+      "iranga_jaru": {
+        "symbol": "\\",
+        "unicode": "U+005C",
+        "name": "Descending Backslash",
+        "placement": "Between source and target"
+      },
+      "andolita": {
+        "symbol": "~~",
+        "unicode": "U+2248",
+        "name": "Double Wave",
+        "placement": "Spanning sustained note"
+      }
+    }
+  },
+  "vocal_physiology_and_pronunciation": {
+    "anatomical_resonances_siksa": {
+      "mandra_sthayi": {
+        "anatomical_focus": "Uras (Chest Cavity / Lower Lungs)",
+        "sensory_cue": "Deep, warm, grounded resonance vibrating the sternum. Never push or shout.",
+        "appropriate_gamakas": [
+          "Humphitam",
+          "Vilambita Kampitam",
+          "Mandra Jāru"
+        ]
+      },
+      "madhya_sthayi": {
+        "anatomical_focus": "Kaṇṭha (Throat & Pharyngeal Cavity)",
+        "sensory_cue": "Open throat like a gentle yawn, relaxed tongue blade, loose jaw. Pure baseline intonation.",
+        "appropriate_gamakas": [
+          "Sphuritam",
+          "Nōkku",
+          "Orika",
+          "Standard Kampitam"
+        ]
+      },
+      "tara_sthayi": {
+        "anatomical_focus": "Śiras (Cranial Mask & Nasopharyngeal Ring)",
+        "sensory_cue": "Light, ringing acoustic placement behind forehead and upper palate. Minimal breath pressure.",
+        "appropriate_gamakas": [
+          "Ullāsita Jāru",
+          "Subtle Plāvitam",
+          "Dvitīya Kāla Kampitam"
+        ]
+      }
+    },
+    "vowel_shaping_for_gamaka_clarity": [
+      {
+        "vowel": "Aa (आ / ఆ / ஆ)",
+        "jaw_position": "Two-finger vertical gap, neutral lips",
+        "pedagogical_use": "Primary vowel for learning Kampitam oscillation and wide melodic arcs."
+      },
+      {
+        "vowel": "Ee (ई / ఈ / ஈ)",
+        "jaw_position": "Gentle smile, tongue high against molars",
+        "pedagogical_use": "Ideal for fast Sphuritam glottal accents and high-octave precision."
+      },
+      {
+        "vowel": "Oo (ऊ / ఊ / ஊ)",
+        "jaw_position": "Rounded oval lips, soft palate elevated",
+        "pedagogical_use": "Develops warm, ringing resonance in Mandra sthāyi slides (Jāru)."
+      }
+    ],
+    "common_pronunciation_errors": [
+      {
+        "error": "Throat Constriction (Guttural Clamping)",
+        "symptom": "Voice sounds choked; student shakes neck or jaw up and down to produce vibrato.",
+        "corrective_drill": "Sing on a relaxed sigh; use abdominal diaphragm pulses instead of jaw movements."
+      },
+      {
+        "error": "Flat Western-Style Key Pressing",
+        "symptom": "Student sings rigid static pitches with zero life or microtonal curve.",
+        "corrective_drill": "Practice slow 2-note vocal slides (Jāru) before adding oscillations."
+      },
+      {
+        "error": "Over-Shooting Upper Boundary",
+        "symptom": "When oscillating Gandhara, the pitch spills past Madhyama, distorting the rāga identity.",
+        "corrective_drill": "Use the visual pitch contour stencil to enforce strict upper-ceiling limits."
+      }
+    ]
+  },
+  "curriculum_levels": {
+    "level_1_beginner": {
+      "tier_name": "Level 1: Beginner Foundation – The First Curves",
+      "target_audience": "Children (Ages 6+), vocal beginners, and self-taught musicians starting Carnatic music.",
+      "core_objective": "Transition from rigid, static pitch holding (Sthira Swara) into controlled, gentle microtonal curves and smooth slides without throat strain.",
+      "tolerance_cents": 35.0,
+      "tempo_bpm_range": [
+        56,
+        72
+      ],
+      "exercises": [
+        {
+          "id": "gamaka_L1_01",
+          "title": "Exercise 1: The Gentle Swara Slide (Ullāsa Jāru)",
+          "ornament_type": "Jāru (Ascending Glide)",
+          "notation_symbol": "/",
+          "sample_notation": "S / P",
+          "raga": "Māyāmāḷavagauḷa (#15)",
+          "description": "Glide smoothly from Shadjam (S) up to Panchamam (P) on the open vowel 'Aa' without intermediate stepping.",
+          "pronunciation_cue": "Start with relaxed belly breath on 'Sa', keep jaw still, glide continuous pitch like a violin string slide up to 'Pa'.",
+          "visual_stencil": {
+            "type": "RAMP_UP",
+            "start_cents": 0.0,
+            "end_cents": 702.0,
+            "duration_ms": 1200,
+            "trajectory_points": [
+              {
+                "t_ms": 0,
+                "cents": 0.0
+              },
+              {
+                "t_ms": 300,
+                "cents": 112.0
+              },
+              {
+                "t_ms": 600,
+                "cents": 386.0
+              },
+              {
+                "t_ms": 900,
+                "cents": 498.0
+              },
+              {
+                "t_ms": 1200,
+                "cents": 702.0
+              }
+            ]
+          },
+          "game_meta": {
+            "flight_theme": "Sky Glide over Nilgiris",
+            "voice_avatar": "Golden Hamsa (Swan)",
+            "star_waypoints": [
+              {
+                "t_ms": 150,
+                "cents": 56.0,
+                "tolerance_cents": 35.0,
+                "star_value": 100,
+                "swarasthana_target": "Initial Lift"
+              },
+              {
+                "t_ms": 450,
+                "cents": 249.0,
+                "tolerance_cents": 35.0,
+                "star_value": 150,
+                "swarasthana_target": "Mid Slide"
+              },
+              {
+                "t_ms": 750,
+                "cents": 442.0,
+                "tolerance_cents": 35.0,
+                "star_value": 200,
+                "swarasthana_target": "High Glide"
+              },
+              {
+                "t_ms": 1150,
+                "cents": 702.0,
+                "tolerance_cents": 35.0,
+                "star_value": 250,
+                "swarasthana_target": "Panchama Touchdown"
+              }
+            ],
+            "boundary_guardrails": {
+              "upper_ceiling_cents": 740.0,
+              "lower_floor_cents": -40.0,
+              "forbidden_swaras": [
+                "R2",
+                "G2",
+                "M2"
+              ]
+            },
+            "audio_triggers": {
+              "tanpura_preset": "panchama_sruti",
+              "star_chime_sound": "temple_bell_soft.wav",
+              "streak_fanfare": "carnatic_flute_chime.wav"
+            }
+          }
+        },
+        {
+          "id": "gamaka_L1_02",
+          "title": "Exercise 2: The Descending River Slide (Iṟaṅga Jāru)",
+          "ornament_type": "Jāru (Descending Glide)",
+          "notation_symbol": "\\",
+          "sample_notation": "P \\ S",
+          "raga": "Māyāmāḷavagauḷa (#15)",
+          "description": "Glide downward from Panchamam (P) to Shadjam (S) on 'Aa' maintaining steady breath support.",
+          "pronunciation_cue": "Never let the volume drop as pitch descends; keep chest resonance open as you land on 'Sa'.",
+          "visual_stencil": {
+            "type": "RAMP_DOWN",
+            "start_cents": 702.0,
+            "end_cents": 0.0,
+            "duration_ms": 1200,
+            "trajectory_points": [
+              {
+                "t_ms": 0,
+                "cents": 702.0
+              },
+              {
+                "t_ms": 300,
+                "cents": 498.0
+              },
+              {
+                "t_ms": 600,
+                "cents": 386.0
+              },
+              {
+                "t_ms": 900,
+                "cents": 112.0
+              },
+              {
+                "t_ms": 1200,
+                "cents": 0.0
+              }
+            ]
+          },
+          "game_meta": {
+            "flight_theme": "River Cauvery Cascades",
+            "voice_avatar": "Silver Fish (Matsya)",
+            "star_waypoints": [
+              {
+                "t_ms": 150,
+                "cents": 646.0,
+                "tolerance_cents": 35.0,
+                "star_value": 100,
+                "swarasthana_target": "High Float"
+              },
+              {
+                "t_ms": 450,
+                "cents": 442.0,
+                "tolerance_cents": 35.0,
+                "star_value": 150,
+                "swarasthana_target": "River Slide"
+              },
+              {
+                "t_ms": 750,
+                "cents": 249.0,
+                "tolerance_cents": 35.0,
+                "star_value": 200,
+                "swarasthana_target": "Calm Descent"
+              },
+              {
+                "t_ms": 1150,
+                "cents": 0.0,
+                "tolerance_cents": 35.0,
+                "star_value": 250,
+                "swarasthana_target": "Tonic Harbor"
+              }
+            ],
+            "boundary_guardrails": {
+              "upper_ceiling_cents": 740.0,
+              "lower_floor_cents": -40.0,
+              "forbidden_swaras": [
+                "D2",
+                "N2"
+              ]
+            },
+            "audio_triggers": {
+              "tanpura_preset": "panchama_sruti",
+              "star_chime_sound": "water_splash_chime.wav",
+              "streak_fanfare": "veena_strum_chime.wav"
+            }
+          }
+        },
+        {
+          "id": "gamaka_L1_03",
+          "title": "Exercise 3: Slow Ocean Wave (Vilambita Kampitam)",
+          "ornament_type": "Kampita (Slow Oscillation)",
+          "notation_symbol": "~",
+          "sample_notation": "G3~",
+          "raga": "Māyāmāḷavagauḷa (#15)",
+          "description": "Slow, relaxed oscillation on Antara Gandhara (G3) gently rocking between R1 (112 cents) and M1 (498 cents).",
+          "pronunciation_cue": "Think of a swing or hammock. Do not vocalize 'ga-ga-ga'; produce one uninterrupted tone that rises and falls smoothly.",
+          "visual_stencil": {
+            "type": "SINE_WAVE_SLOW",
+            "center_cents": 386.0,
+            "amplitude_cents": 75.0,
+            "cycles": 3,
+            "rate_hz": 2.2,
+            "duration_ms": 1400,
+            "trajectory_points": [
+              {
+                "t_ms": 0,
+                "cents": 386.0
+              },
+              {
+                "t_ms": 116,
+                "cents": 461.0
+              },
+              {
+                "t_ms": 233,
+                "cents": 386.0
+              },
+              {
+                "t_ms": 350,
+                "cents": 311.0
+              },
+              {
+                "t_ms": 466,
+                "cents": 386.0
+              },
+              {
+                "t_ms": 583,
+                "cents": 461.0
+              },
+              {
+                "t_ms": 700,
+                "cents": 386.0
+              },
+              {
+                "t_ms": 816,
+                "cents": 311.0
+              },
+              {
+                "t_ms": 933,
+                "cents": 386.0
+              },
+              {
+                "t_ms": 1050,
+                "cents": 461.0
+              },
+              {
+                "t_ms": 1166,
+                "cents": 386.0
+              },
+              {
+                "t_ms": 1283,
+                "cents": 311.0
+              },
+              {
+                "t_ms": 1400,
+                "cents": 386.0
+              }
+            ]
+          },
+          "game_meta": {
+            "flight_theme": "Ocean Waves of Kanyakumari",
+            "voice_avatar": "Ocean Dolphin",
+            "star_waypoints": [
+              {
+                "t_ms": 100,
+                "cents": 386.0,
+                "tolerance_cents": 35.0,
+                "star_value": 100,
+                "swarasthana_target": "Wave Crest 1"
+              },
+              {
+                "t_ms": 300,
+                "cents": 498.0,
+                "tolerance_cents": 35.0,
+                "star_value": 150,
+                "swarasthana_target": "High Swell 1"
+              },
+              {
+                "t_ms": 500,
+                "cents": 249.0,
+                "tolerance_cents": 35.0,
+                "star_value": 150,
+                "swarasthana_target": "Wave Trough 1"
+              },
+              {
+                "t_ms": 700,
+                "cents": 498.0,
+                "tolerance_cents": 35.0,
+                "star_value": 150,
+                "swarasthana_target": "High Swell 2"
+              },
+              {
+                "t_ms": 900,
+                "cents": 249.0,
+                "tolerance_cents": 35.0,
+                "star_value": 150,
+                "swarasthana_target": "Wave Trough 2"
+              },
+              {
+                "t_ms": 1100,
+                "cents": 386.0,
+                "tolerance_cents": 35.0,
+                "star_value": 200,
+                "swarasthana_target": "Smooth Resolution"
+              }
+            ],
+            "boundary_guardrails": {
+              "upper_ceiling_cents": 530.0,
+              "lower_floor_cents": 200.0,
+              "forbidden_swaras": [
+                "M2",
+                "G2"
+              ]
+            },
+            "audio_triggers": {
+              "tanpura_preset": "panchama_sruti",
+              "star_chime_sound": "ocean_bell_chime.wav",
+              "streak_fanfare": "ocean_wave_glissando.wav"
+            }
+          }
+        },
+        {
+          "id": "gamaka_L1_04",
+          "title": "Exercise 4: The Janta Stepping Accent (Beginner Sphuritam)",
+          "ornament_type": "Sphurita (Twin Touch)",
+          "notation_symbol": "w",
+          "sample_notation": "S Sw  R Rw  G Gw",
+          "raga": "Māyāmāḷavagauḷa (#15)",
+          "description": "Sing paired notes from Janta Varisais, touching the lower neighbor note lightly on the second stroke.",
+          "pronunciation_cue": "The first note is firm; the second note has a subtle diaphragmatic impulse that bounces from the note below.",
+          "visual_stencil": {
+            "type": "BOUNCE_ACCENT",
+            "base_cents": 386.0,
+            "strike_offset_cents": -182.0,
+            "duration_ms": 800,
+            "trajectory_points": [
+              {
+                "t_ms": 0,
+                "cents": 386.0
+              },
+              {
+                "t_ms": 350,
+                "cents": 386.0
+              },
+              {
+                "t_ms": 375,
+                "cents": 204.0
+              },
+              {
+                "t_ms": 410,
+                "cents": 386.0
+              },
+              {
+                "t_ms": 800,
+                "cents": 386.0
+              }
+            ]
+          },
+          "game_meta": {
+            "flight_theme": "Stepping Stones in the Forest Temple",
+            "voice_avatar": "Spotted Deer (Harina)",
+            "star_waypoints": [
+              {
+                "t_ms": 100,
+                "cents": 0.0,
+                "tolerance_cents": 35.0,
+                "star_value": 100,
+                "swarasthana_target": "Baseline Stone 1"
+              },
+              {
+                "t_ms": 280,
+                "cents": -100.0,
+                "tolerance_cents": 40.0,
+                "star_value": 200,
+                "swarasthana_target": "Secret Spring Touch"
+              },
+              {
+                "t_ms": 360,
+                "cents": 0.0,
+                "tolerance_cents": 35.0,
+                "star_value": 200,
+                "swarasthana_target": "High Leap Stone 2"
+              },
+              {
+                "t_ms": 600,
+                "cents": 0.0,
+                "tolerance_cents": 35.0,
+                "star_value": 100,
+                "swarasthana_target": "Firm Resting Stone"
+              }
+            ],
+            "boundary_guardrails": {
+              "upper_ceiling_cents": 50.0,
+              "lower_floor_cents": -150.0,
+              "forbidden_swaras": [
+                "R1"
+              ]
+            },
+            "audio_triggers": {
+              "tanpura_preset": "panchama_sruti",
+              "star_chime_sound": "bamboo_woodblock.wav",
+              "streak_fanfare": "mridangam_tham_chime.wav"
+            }
+          }
+        }
+      ]
+    },
+    "level_2_intermediate": {
+      "tier_name": "Level 2: Intermediate Classical Ornaments – The Daśavidha Repertoire",
+      "target_audience": "Students practicing Janta Varisais, Alankaras, and Gitams transitioning into Varnams.",
+      "core_objective": "Master the primary ornaments of the Daśavidha tradition: accurate speed doubling (Madhyama Kāla), downward flicks (Nōkku/Orika), and swinging arcs (Āndolitam).",
+      "tolerance_cents": 20.0,
+      "tempo_bpm_range": [
+        72,
+        96
+      ],
+      "exercises": [
+        {
+          "id": "gamaka_L2_01",
+          "title": "Exercise 1: Classical Kampitam in Second Speed (Dvitīya Kāla)",
+          "ornament_type": "Kampita (Concert Oscillation)",
+          "notation_symbol": "~",
+          "sample_notation": "M1~  D1~",
+          "raga": "Māyāmāḷavagauḷa (#15)",
+          "description": "Standard concert-speed oscillation at 4.5 Hz frequency across pure Suddha Madhyamam (498 cents).",
+          "pronunciation_cue": "Oscillate evenly without trembling. Feel the rhythmic pulse of 4 full waves per beat of Ādi Tāla.",
+          "visual_stencil": {
+            "type": "SINE_WAVE_MEDIUM",
+            "center_cents": 498.0,
+            "amplitude_cents": 60.0,
+            "cycles": 4,
+            "rate_hz": 4.5,
+            "duration_ms": 880,
+            "trajectory_points": [
+              {
+                "t_ms": 0,
+                "cents": 498.0
+              },
+              {
+                "t_ms": 55,
+                "cents": 558.0
+              },
+              {
+                "t_ms": 110,
+                "cents": 498.0
+              },
+              {
+                "t_ms": 165,
+                "cents": 438.0
+              },
+              {
+                "t_ms": 220,
+                "cents": 498.0
+              },
+              {
+                "t_ms": 275,
+                "cents": 558.0
+              },
+              {
+                "t_ms": 330,
+                "cents": 498.0
+              },
+              {
+                "t_ms": 385,
+                "cents": 438.0
+              },
+              {
+                "t_ms": 440,
+                "cents": 498.0
+              },
+              {
+                "t_ms": 495,
+                "cents": 558.0
+              },
+              {
+                "t_ms": 550,
+                "cents": 498.0
+              },
+              {
+                "t_ms": 605,
+                "cents": 438.0
+              },
+              {
+                "t_ms": 660,
+                "cents": 498.0
+              },
+              {
+                "t_ms": 715,
+                "cents": 558.0
+              },
+              {
+                "t_ms": 770,
+                "cents": 498.0
+              },
+              {
+                "t_ms": 825,
+                "cents": 438.0
+              },
+              {
+                "t_ms": 880,
+                "cents": 498.0
+              }
+            ]
+          },
+          "game_meta": {
+            "flight_theme": "Temple Chariot Festive Run",
+            "voice_avatar": "Dancing Peacock (Mayura)",
+            "star_waypoints": [
+              {
+                "t_ms": 110,
+                "cents": 498.0,
+                "tolerance_cents": 20.0,
+                "star_value": 150,
+                "swarasthana_target": "Chariot Bell 1"
+              },
+              {
+                "t_ms": 330,
+                "cents": 498.0,
+                "tolerance_cents": 20.0,
+                "star_value": 150,
+                "swarasthana_target": "Chariot Bell 2"
+              },
+              {
+                "t_ms": 550,
+                "cents": 498.0,
+                "tolerance_cents": 20.0,
+                "star_value": 150,
+                "swarasthana_target": "Chariot Bell 3"
+              },
+              {
+                "t_ms": 770,
+                "cents": 498.0,
+                "tolerance_cents": 20.0,
+                "star_value": 150,
+                "swarasthana_target": "Chariot Bell 4"
+              },
+              {
+                "t_ms": 900,
+                "cents": 498.0,
+                "tolerance_cents": 20.0,
+                "star_value": 200,
+                "swarasthana_target": "Firm Madhyama Landing"
+              }
+            ],
+            "boundary_guardrails": {
+              "upper_ceiling_cents": 590.0,
+              "lower_floor_cents": 370.0,
+              "forbidden_swaras": [
+                "M2",
+                "G1"
+              ]
+            },
+            "audio_triggers": {
+              "tanpura_preset": "panchama_sruti",
+              "star_chime_sound": "silver_talam_chime.wav",
+              "streak_fanfare": "nadaswaram_sparkle.wav"
+            }
+          }
+        },
+        {
+          "id": "gamaka_L2_02",
+          "title": "Exercise 2: The Downward Stress Flick (Nōkku)",
+          "ornament_type": "Nōkku (Downward Strike / Head Accent)",
+          "notation_symbol": "^",
+          "sample_notation": "G^  M  P^  D",
+          "raga": "Śaṅkarābharaṇam (#29)",
+          "description": "Striking Gandhara with momentary pressure borrowed from Madhyama above, releasing immediately.",
+          "pronunciation_cue": "Vocalize with sudden gentle stress from the upper note without sliding. Like tapping a drumhead.",
+          "visual_stencil": {
+            "type": "SPIKE_DECAY",
+            "base_cents": 386.0,
+            "peak_cents": 498.0,
+            "attack_ms": 25,
+            "decay_ms": 75,
+            "duration_ms": 500,
+            "trajectory_points": [
+              {
+                "t_ms": 0,
+                "cents": 498.0
+              },
+              {
+                "t_ms": 25,
+                "cents": 475.0
+              },
+              {
+                "t_ms": 75,
+                "cents": 386.0
+              },
+              {
+                "t_ms": 500,
+                "cents": 386.0
+              }
+            ]
+          },
+          "game_meta": {
+            "flight_theme": "Archery Arrow Target Release",
+            "voice_avatar": "Golden Arrow (Bāna)",
+            "star_waypoints": [
+              {
+                "t_ms": 50,
+                "cents": 386.0,
+                "tolerance_cents": 20.0,
+                "star_value": 100,
+                "swarasthana_target": "Bowstring Drawn"
+              },
+              {
+                "t_ms": 230,
+                "cents": 498.0,
+                "tolerance_cents": 25.0,
+                "star_value": 250,
+                "swarasthana_target": "Arrow Peak Release"
+              },
+              {
+                "t_ms": 400,
+                "cents": 386.0,
+                "tolerance_cents": 20.0,
+                "star_value": 200,
+                "swarasthana_target": "Target Bullseye"
+              }
+            ],
+            "boundary_guardrails": {
+              "upper_ceiling_cents": 530.0,
+              "lower_floor_cents": 350.0,
+              "forbidden_swaras": [
+                "M2"
+              ]
+            },
+            "audio_triggers": {
+              "tanpura_preset": "panchama_sruti",
+              "star_chime_sound": "bowstring_snap_chime.wav",
+              "streak_fanfare": "bullseye_brass_gong.wav"
+            }
+          }
+        },
+        {
+          "id": "gamaka_L2_03",
+          "title": "Exercise 3: The Deflection Curve (Orika / Odigimpu)",
+          "ornament_type": "Orika (Deflected Curve)",
+          "notation_symbol": "⌒",
+          "sample_notation": "P⌒  M  G⌒  R",
+          "raga": "Harikāmbhōji (#28)",
+          "description": "As the note descends, the voice executes a momentary upward flick touching the higher note before resolving downwards.",
+          "pronunciation_cue": "A graceful flip of the voice that catches the higher śruti for a split second on descent.",
+          "visual_stencil": {
+            "type": "FLICK_ASCENT_DESCENT",
+            "start_cents": 702.0,
+            "flick_cents": 884.0,
+            "end_cents": 498.0,
+            "duration_ms": 600,
+            "trajectory_points": [
+              {
+                "t_ms": 0,
+                "cents": 702.0
+              },
+              {
+                "t_ms": 150,
+                "cents": 702.0
+              },
+              {
+                "t_ms": 200,
+                "cents": 884.0
+              },
+              {
+                "t_ms": 260,
+                "cents": 702.0
+              },
+              {
+                "t_ms": 600,
+                "cents": 498.0
+              }
+            ]
+          },
+          "game_meta": {
+            "flight_theme": "Hummingbird Nectar Sip",
+            "voice_avatar": "Hummingbird",
+            "star_waypoints": [
+              {
+                "t_ms": 80,
+                "cents": 498.0,
+                "tolerance_cents": 20.0,
+                "star_value": 100,
+                "swarasthana_target": "Flower Approach"
+              },
+              {
+                "t_ms": 170,
+                "cents": 702.0,
+                "tolerance_cents": 25.0,
+                "star_value": 250,
+                "swarasthana_target": "Top Petal Sip"
+              },
+              {
+                "t_ms": 350,
+                "cents": 498.0,
+                "tolerance_cents": 20.0,
+                "star_value": 150,
+                "swarasthana_target": "Smooth Hover"
+              }
+            ],
+            "boundary_guardrails": {
+              "upper_ceiling_cents": 740.0,
+              "lower_floor_cents": 460.0,
+              "forbidden_swaras": [
+                "M2"
+              ]
+            },
+            "audio_triggers": {
+              "tanpura_preset": "panchama_sruti",
+              "star_chime_sound": "crystal_drop_chime.wav",
+              "streak_fanfare": "harp_glissando_sparkle.wav"
+            }
+          }
+        },
+        {
+          "id": "gamaka_L2_04",
+          "title": "Exercise 4: The Pendulum Arc (Āndolitam)",
+          "ornament_type": "Āndolitam (Swinging Swing)",
+          "notation_symbol": "~~",
+          "sample_notation": "s r s~~ D d",
+          "raga": "Kharaharapriyā (#22)",
+          "description": "Holding a note for 4 to 5 aksharas, then gently swinging outward to reveal the neighbor before returning.",
+          "pronunciation_cue": "Sing like the heavy swing of a temple bell. Smooth, rounded pendulum curves with zero angularity.",
+          "visual_stencil": {
+            "type": "PENDULUM_SWING",
+            "base_cents": 884.0,
+            "swing_high_cents": 1018.0,
+            "swing_low_cents": 702.0,
+            "duration_ms": 1600,
+            "trajectory_points": [
+              {
+                "t_ms": 0,
+                "cents": 884.0
+              },
+              {
+                "t_ms": 400,
+                "cents": 1018.0
+              },
+              {
+                "t_ms": 800,
+                "cents": 884.0
+              },
+              {
+                "t_ms": 1200,
+                "cents": 702.0
+              },
+              {
+                "t_ms": 1600,
+                "cents": 884.0
+              }
+            ]
+          },
+          "game_meta": {
+            "flight_theme": "The Royal Garden Swing (Dolā)",
+            "voice_avatar": "Silver Swing",
+            "star_waypoints": [
+              {
+                "t_ms": 100,
+                "cents": 498.0,
+                "tolerance_cents": 20.0,
+                "star_value": 100,
+                "swarasthana_target": "Swing Center"
+              },
+              {
+                "t_ms": 300,
+                "cents": 702.0,
+                "tolerance_cents": 25.0,
+                "star_value": 200,
+                "swarasthana_target": "Swing Apex High"
+              },
+              {
+                "t_ms": 600,
+                "cents": 316.0,
+                "tolerance_cents": 25.0,
+                "star_value": 200,
+                "swarasthana_target": "Swing Apex Low"
+              },
+              {
+                "t_ms": 900,
+                "cents": 498.0,
+                "tolerance_cents": 20.0,
+                "star_value": 250,
+                "swarasthana_target": "Harmonic Equilibrium"
+              }
+            ],
+            "boundary_guardrails": {
+              "upper_ceiling_cents": 740.0,
+              "lower_floor_cents": 280.0,
+              "forbidden_swaras": [
+                "G3",
+                "M2"
+              ]
+            },
+            "audio_triggers": {
+              "tanpura_preset": "panchama_sruti",
+              "star_chime_sound": "swing_bell_chime.wav",
+              "streak_fanfare": "flute_ornament_sparkle.wav"
+            }
+          }
+        }
+      ]
+    },
+    "level_3_expert": {
+      "tier_name": "Level 3: Advanced / Expert – Rāga-Specific Signature Embellishments",
+      "target_audience": "Advanced students, concert practitioners, and teachers mastering rāga bhāva.",
+      "core_objective": "Master rāga-defining microtonal oscillation boundaries, asymmetric vakra curves, and exact vibrational frequencies verified on sonometer acoustics.",
+      "tolerance_cents": 10.0,
+      "tempo_bpm_range": [
+        64,
+        112
+      ],
+      "exercises": [
+        {
+          "id": "gamaka_L3_01",
+          "title": "Masterwork 1: The Plaintive Oscillation of Hanumatodi (Mela #8)",
+          "ornament_type": "Wide Microtonal Kampitam",
+          "notation_symbol": "g~",
+          "raga": "Hanumatodi (#8)",
+          "sonometer_frequency_hz_at_256": {
+            "r1_range": "269.7 to 287.9 Hz",
+            "g2_range": "303.3 to 330.0 Hz (Never touches static G2!)",
+            "d1_range": "409.6 to 444.6 Hz",
+            "n2_range": "455.0 to 469.0 Hz"
+          },
+          "description": "In Hanumatodi, Sadharana Gandhara (G2) is never sung as a flat static note; it continuously oscillates from R1 (288 Hz) up to M1 (345 Hz).",
+          "pronunciation_cue": "Engage deep chest resonance. Begin oscillation from Suddha Rishabha and stretch the microtone upward without letting it touch static Western minor 3rd.",
+          "visual_stencil": {
+            "type": "TODI_DEEP_OSCILLATION",
+            "lower_bound_cents": 112.0,
+            "upper_bound_cents": 498.0,
+            "center_hz": 315.0,
+            "cycles": 3,
+            "duration_ms": 1500,
+            "trajectory_points": [
+              {
+                "t_ms": 0,
+                "cents": 112.0
+              },
+              {
+                "t_ms": 250,
+                "cents": 485.0
+              },
+              {
+                "t_ms": 500,
+                "cents": 130.0
+              },
+              {
+                "t_ms": 750,
+                "cents": 490.0
+              },
+              {
+                "t_ms": 1000,
+                "cents": 120.0
+              },
+              {
+                "t_ms": 1250,
+                "cents": 480.0
+              },
+              {
+                "t_ms": 1500,
+                "cents": 112.0
+              }
+            ]
+          },
+          "game_meta": {
+            "flight_theme": "Hanumatodi Sunset Contemplation",
+            "voice_avatar": "Veena Master String",
+            "star_waypoints": [
+              {
+                "t_ms": 200,
+                "cents": 498.0,
+                "tolerance_cents": 10.0,
+                "star_value": 200,
+                "swarasthana_target": "Madhyama Crest"
+              },
+              {
+                "t_ms": 500,
+                "cents": 204.0,
+                "tolerance_cents": 10.0,
+                "star_value": 250,
+                "swarasthana_target": "Suddha Gandhara Depth"
+              },
+              {
+                "t_ms": 800,
+                "cents": 498.0,
+                "tolerance_cents": 10.0,
+                "star_value": 250,
+                "swarasthana_target": "Madhyama Re-crest"
+              },
+              {
+                "t_ms": 1200,
+                "cents": 316.0,
+                "tolerance_cents": 10.0,
+                "star_value": 300,
+                "swarasthana_target": "Sadharana G2 Rest"
+              }
+            ],
+            "boundary_guardrails": {
+              "upper_ceiling_cents": 510.0,
+              "lower_floor_cents": 180.0,
+              "forbidden_swaras": [
+                "R2",
+                "G3",
+                "M2"
+              ]
+            },
+            "audio_triggers": {
+              "tanpura_preset": "panchama_sruti",
+              "star_chime_sound": "veena_pull_chime.wav",
+              "streak_fanfare": "concert_todi_fanfare.wav"
+            }
+          }
+        },
+        {
+          "id": "gamaka_L3_02",
+          "title": "Masterwork 2: The Piercing Prati Madhyama Shake of Mechakalyāṇi (#65)",
+          "ornament_type": "Tīvra Kampitam with Jāru Ascent",
+          "notation_symbol": "M2~ / P",
+          "raga": "Mēcakalyāṇi (#65)",
+          "description": "Sharp Prati Madhyamam (M2, 590 cents) oscillating intensely and dissolving directly into Panchamam (P, 702 cents).",
+          "pronunciation_cue": "Sing with cranial mask resonance behind forehead. Keep the pitch razor-sharp and pull upward smoothly into Panchama.",
+          "visual_stencil": {
+            "type": "SHARP_MADHYAMA_RESOLVE",
+            "base_cents": 590.0,
+            "amplitude_cents": 45.0,
+            "resolve_cents": 702.0,
+            "duration_ms": 1200,
+            "trajectory_points": [
+              {
+                "t_ms": 0,
+                "cents": 590.0
+              },
+              {
+                "t_ms": 100,
+                "cents": 635.0
+              },
+              {
+                "t_ms": 200,
+                "cents": 560.0
+              },
+              {
+                "t_ms": 300,
+                "cents": 635.0
+              },
+              {
+                "t_ms": 400,
+                "cents": 560.0
+              },
+              {
+                "t_ms": 600,
+                "cents": 620.0
+              },
+              {
+                "t_ms": 800,
+                "cents": 660.0
+              },
+              {
+                "t_ms": 1200,
+                "cents": 702.0
+              }
+            ]
+          },
+          "game_meta": {
+            "flight_theme": "Kalyāṇi Mountain Lightning",
+            "voice_avatar": "Golden Lightning Bolt",
+            "star_waypoints": [
+              {
+                "t_ms": 150,
+                "cents": 702.0,
+                "tolerance_cents": 10.0,
+                "star_value": 200,
+                "swarasthana_target": "Panchama Anchor"
+              },
+              {
+                "t_ms": 400,
+                "cents": 590.0,
+                "tolerance_cents": 10.0,
+                "star_value": 250,
+                "swarasthana_target": "Sharp Prati M2 Peak"
+              },
+              {
+                "t_ms": 650,
+                "cents": 702.0,
+                "tolerance_cents": 10.0,
+                "star_value": 250,
+                "swarasthana_target": "Panchama Return"
+              },
+              {
+                "t_ms": 950,
+                "cents": 590.0,
+                "tolerance_cents": 10.0,
+                "star_value": 300,
+                "swarasthana_target": "Kalyāṇi Signature Prati M2"
+              }
+            ],
+            "boundary_guardrails": {
+              "upper_ceiling_cents": 730.0,
+              "lower_floor_cents": 560.0,
+              "forbidden_swaras": [
+                "M1"
+              ]
+            },
+            "audio_triggers": {
+              "tanpura_preset": "panchama_sruti",
+              "star_chime_sound": "sharp_crystal_bell.wav",
+              "streak_fanfare": "kalyani_majestic_fanfare.wav"
+            }
+          }
+        },
+        {
+          "id": "gamaka_L3_03",
+          "title": "Masterwork 3: The Signature Loop of Ānandabhairavi",
+          "ornament_type": "Vakra Loop with Orika (S G2 R2 G2 M1 P)",
+          "notation_symbol": "s g~ r g~ m p",
+          "raga": "Ānandabhairavi (Janya of #20)",
+          "description": "The quintessential signature phrase of Ānandabhairavi weaving delicate oscillation on G2 around R2.",
+          "pronunciation_cue": "Never articulate linear S-R-G; gracefully pivot the pitch around Rishabha with slight nasal resonance.",
+          "visual_stencil": {
+            "type": "ANANDABHAIRAVI_VAKRA_LOOP",
+            "duration_ms": 2000,
+            "trajectory_points": [
+              {
+                "t_ms": 0,
+                "cents": 0.0
+              },
+              {
+                "t_ms": 350,
+                "cents": 340.0
+              },
+              {
+                "t_ms": 500,
+                "cents": 204.0
+              },
+              {
+                "t_ms": 850,
+                "cents": 350.0
+              },
+              {
+                "t_ms": 1200,
+                "cents": 498.0
+              },
+              {
+                "t_ms": 1600,
+                "cents": 702.0
+              },
+              {
+                "t_ms": 2000,
+                "cents": 702.0
+              }
+            ]
+          },
+          "game_meta": {
+            "flight_theme": "The Sacred Temple Coil of Ānandabhairavi",
+            "voice_avatar": "Sacred Serpent Arc (Nāga Keli)",
+            "star_waypoints": [
+              {
+                "t_ms": 100,
+                "cents": 0.0,
+                "tolerance_cents": 10.0,
+                "star_value": 150,
+                "swarasthana_target": "Shadjam Root"
+              },
+              {
+                "t_ms": 300,
+                "cents": 316.0,
+                "tolerance_cents": 10.0,
+                "star_value": 200,
+                "swarasthana_target": "Gandhara Loop Apex"
+              },
+              {
+                "t_ms": 500,
+                "cents": 204.0,
+                "tolerance_cents": 10.0,
+                "star_value": 250,
+                "swarasthana_target": "Rishabha Pocket"
+              },
+              {
+                "t_ms": 700,
+                "cents": 316.0,
+                "tolerance_cents": 10.0,
+                "star_value": 200,
+                "swarasthana_target": "Gandhara Re-entry"
+              },
+              {
+                "t_ms": 950,
+                "cents": 498.0,
+                "tolerance_cents": 10.0,
+                "star_value": 250,
+                "swarasthana_target": "Madhyama Gateway"
+              },
+              {
+                "t_ms": 1200,
+                "cents": 702.0,
+                "tolerance_cents": 10.0,
+                "star_value": 300,
+                "swarasthana_target": "Panchama Summit"
+              }
+            ],
+            "boundary_guardrails": {
+              "upper_ceiling_cents": 740.0,
+              "lower_floor_cents": -20.0,
+              "forbidden_swaras": [
+                "R1",
+                "G3",
+                "M2"
+              ]
+            },
+            "audio_triggers": {
+              "tanpura_preset": "panchama_sruti",
+              "star_chime_sound": "sacred_conch_chime.wav",
+              "streak_fanfare": "anandabhairavi_bliss_fanfare.wav"
+            }
+          }
+        },
+        {
+          "id": "gamaka_L3_04",
+          "title": "Masterwork 4: The Regal Begada Madhyama Shake",
+          "ornament_type": "Tīvratara Kampitam (Characteristic Prayoga)",
+          "notation_symbol": "M1~~",
+          "raga": "Begaḍa (Janya of #29)",
+          "description": "The famous Begada Madhyama: starts below Suddha Madhyama, shakes with heavy oscillation reaching near Prati Madhyama.",
+          "pronunciation_cue": "A bold, majestic shake. Hold firm breath pressure while letting the pitch cycle through its traditional Begada curve.",
+          "visual_stencil": {
+            "type": "BEGADA_HEAVY_MADHYAMA",
+            "center_cents": 520.0,
+            "amplitude_cents": 70.0,
+            "duration_ms": 1600,
+            "trajectory_points": [
+              {
+                "t_ms": 0,
+                "cents": 450.0
+              },
+              {
+                "t_ms": 200,
+                "cents": 580.0
+              },
+              {
+                "t_ms": 400,
+                "cents": 470.0
+              },
+              {
+                "t_ms": 600,
+                "cents": 585.0
+              },
+              {
+                "t_ms": 800,
+                "cents": 475.0
+              },
+              {
+                "t_ms": 1000,
+                "cents": 590.0
+              },
+              {
+                "t_ms": 1300,
+                "cents": 498.0
+              },
+              {
+                "t_ms": 1600,
+                "cents": 386.0
+              }
+            ]
+          },
+          "game_meta": {
+            "flight_theme": "Begaḍa Royal Court Sceptre",
+            "voice_avatar": "Royal Sceptre",
+            "star_waypoints": [
+              {
+                "t_ms": 120,
+                "cents": 702.0,
+                "tolerance_cents": 10.0,
+                "star_value": 200,
+                "swarasthana_target": "Panchama Sovereign"
+              },
+              {
+                "t_ms": 350,
+                "cents": 540.0,
+                "tolerance_cents": 10.0,
+                "star_value": 300,
+                "swarasthana_target": "Hyper-Prati Microtone"
+              },
+              {
+                "t_ms": 600,
+                "cents": 702.0,
+                "tolerance_cents": 10.0,
+                "star_value": 250,
+                "swarasthana_target": "Panchama Re-touch"
+              },
+              {
+                "t_ms": 850,
+                "cents": 540.0,
+                "tolerance_cents": 10.0,
+                "star_value": 300,
+                "swarasthana_target": "Signature Begaḍa Curve"
+              },
+              {
+                "t_ms": 1100,
+                "cents": 498.0,
+                "tolerance_cents": 10.0,
+                "star_value": 250,
+                "swarasthana_target": "Pure Suddha M1 Resolution"
+              }
+            ],
+            "boundary_guardrails": {
+              "upper_ceiling_cents": 730.0,
+              "lower_floor_cents": 470.0,
+              "forbidden_swaras": [
+                "G1",
+                "R1"
+              ]
+            },
+            "audio_triggers": {
+              "tanpura_preset": "panchama_sruti",
+              "star_chime_sound": "royal_court_chime.wav",
+              "streak_fanfare": "begada_royal_fanfare.wav"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "interactive_game_engine_architecture": {
+    "game_engine_overview": {
+      "engine_name": "Nāda Vāhana 2D Canvas Game Loop Engine",
+      "target_fps": 60,
+      "supported_display_densities": [
+        "1x Standard",
+        "2x Retina",
+        "3x High-DPI Mobile"
+      ],
+      "canvas_coordinate_mapping": {
+        "x_axis": "Time in milliseconds mapped horizontally from left (t = 0) to right (t = exercise_duration_ms). Viewport scrolls smoothly at constant speed matching the Tala tempo.",
+        "y_axis": "Pitch in microtonal cents (0 to 1200 cents relative to user's selected Kattai tonic S). Bottom = Mandra Sthāyi, Middle = Madhya Sthāyi, Top = Tāra Sthāyi.",
+        "y_scale_factor_pixels_per_cent": 0.45,
+        "active_view_window_cents": [
+          -100,
+          1300
+        ]
+      },
+      "kid_friendly_flight_mechanics": {
+        "concept": "The student's voice acts as an aerodynamic flight controller. Steady singing levitates the character; microtonal oscillations pilot the avatar through colorful mountain passes, river waves, and cosmic star corridors.",
+        "smoothing_filter": "Linear interpolation (LERP factor 0.18) on detected microphone frequency prevents jitter and sudden jumps while preserving authentic gamaka speed.",
+        "star_collection_system": "Golden musical stars are suspended along the ideal classical trajectory. Holding pitch within the tolerance ribbon magnetically collects stars, emitting joyful chimes and sparkling particle bursts.",
+        "combo_multiplier": "Staying on-pitch for consecutive beats builds up a 'Nāda Combo' (1.0x -> 1.5x -> 2.0x -> 3.0x), rewarding sustained vocal control."
+      }
+    },
+    "game_visual_themes": [
+      {
+        "theme_id": "theme_sky_nilgiris",
+        "name": "Sky Flight over the Nilgiris",
+        "target_audience": "Beginners & Young Children (Ages 6-10)",
+        "background_gradient": [
+          "#E0F2FE",
+          "#BAE6FD",
+          "#7DD3FC"
+        ],
+        "ribbon_style": {
+          "fill_color": "rgba(56, 189, 248, 0.25)",
+          "stroke_color": "#0284C7",
+          "glow_color": "rgba(14, 165, 233, 0.6)"
+        },
+        "avatar_default": "golden_hamsa",
+        "particle_style": "cloud_puffs_and_golden_feathers"
+      },
+      {
+        "theme_id": "theme_temple_bell",
+        "name": "Sacred Temple Corridors",
+        "target_audience": "Intermediate Students (Ages 10-16)",
+        "background_gradient": [
+          "#FEF3C7",
+          "#FDE68A",
+          "#F59E0B"
+        ],
+        "ribbon_style": {
+          "fill_color": "rgba(245, 158, 11, 0.22)",
+          "stroke_color": "#D97706",
+          "glow_color": "rgba(217, 119, 6, 0.65)"
+        },
+        "avatar_default": "celestial_veena",
+        "particle_style": "incense_smoke_and_brass_bells"
+      },
+      {
+        "theme_id": "theme_cosmic_nada",
+        "name": "Cosmic Nāda Mandalam",
+        "target_audience": "Advanced Students & Concert Artists",
+        "background_gradient": [
+          "#0F172A",
+          "#1E1B4B",
+          "#312E81"
+        ],
+        "ribbon_style": {
+          "fill_color": "rgba(168, 85, 247, 0.28)",
+          "stroke_color": "#C084FC",
+          "glow_color": "rgba(192, 132, 252, 0.8)"
+        },
+        "avatar_default": "radiant_swara_orb",
+        "particle_style": "starlight_sparkles_and_aurora_ribbons"
+      }
+    ],
+    "three_interactive_game_modes": [
+      {
+        "mode_id": "mode_voice_pilot",
+        "name": "Nāda Vāhana (Voice Pilot Stencil Flight)",
+        "badge": "Action & Precision",
+        "description": "Piloting the vocal avatar along the continuous Gamaka ribbon. Fly through Ullāsa Jāru slides, Kampitam waves, and Sphuritam peaks, collecting stars and dodging ceiling overshoots.",
+        "hud_elements": [
+          "Real-time score & combo multiplier (x1.0, x1.5, x2.0, x3.0)",
+          "Star counter (0 to 3 stars per exercise)",
+          "Microtonal deviation gauge (± cents from target)",
+          "Current Swarasthana indicator (S, R1, G3, M1, P, D1, N3, Ṡ)"
+        ],
+        "win_conditions": {
+          "bronze_star": "Score >= 60% with <= 3 boundary overshoots",
+          "silver_star": "Score >= 75% with <= 1 boundary overshoot",
+          "gold_star": "Score >= 90% with 0 boundary overshoots and 80%+ star collection"
+        }
+      },
+      {
+        "mode_id": "mode_svara_arcade",
+        "name": "Śruti Arcade (Svara Match & Catch)",
+        "badge": "Ear Training & Quick Reflexes",
+        "description": "The engine plays an authentic 22-Śruti microtone or an embellished gamaka phrase. The student has 3 seconds to reproduce the exact pitch or identify the swara by singing it, catching floating lotus pearls.",
+        "hud_elements": [
+          "Timer countdown circle (3.0s)",
+          "Target sound replay button (Hear Tambura reference)",
+          "Streak counter (consecutive correct catches)",
+          "Accuracy meter (Exact microtone vs close semitone)"
+        ],
+        "win_conditions": {
+          "bronze_star": "5 consecutive correct swara catches",
+          "silver_star": "10 consecutive correct catches with <= 15 cents deviation",
+          "gold_star": "15 consecutive catches at concert tolerance (<= 10 cents deviation)"
+        }
+      },
+      {
+        "mode_id": "mode_tala_wave_surfer",
+        "name": "Laya Taraṅga (Tāla Wave Surfer)",
+        "badge": "Rhythm & Oscillation Speed",
+        "description": "Surfing the gamaka wave in sync with the Tāla beat. Synchronizes the 4.8 Hz Kampitam oscillations with the clapping hand kriyās of Ādi and Rūpaka tālas.",
+        "hud_elements": [
+          "Animated Tala Kriyā indicator (Taṭṭu, Vīccu, Finger counts)",
+          "Wave sync pulse (glowing ripple on every akshara beat)",
+          "Rhythm tightness gauge (Too fast / Perfect Laya / Dragging)"
+        ],
+        "win_conditions": {
+          "bronze_star": "Complete 1 full avartana with smooth continuous oscillation",
+          "silver_star": "Complete 2 avartanas with 85%+ metric synchrony",
+          "gold_star": "Complete 4 avartanas across 1x and 2x speeds without breaking rhythm"
+        }
+      }
+    ],
+    "realtime_audio_input_and_pitch_tracker": {
+      "algorithm": "Hybrid YIN / McLeod Pitch Method (MPM) with Lookahead Parabolic Interpolation",
+      "sample_rate_hz": 44100,
+      "buffer_size": 2048,
+      "hop_size": 512,
+      "noise_gate_dbfs": -42.0,
+      "periodicity_confidence_threshold": 0.82,
+      "octave_jump_guard": {
+        "enabled": true,
+        "max_frequency_delta_per_hop_ratio": 1.75,
+        "fallback_strategy": "Clamp to previous stable pitch if sudden 2x jump lacks physical glide trajectory"
+      },
+      "cents_conversion_logic": "cents = 1200.0 * Math.log2(detected_hz / kattai_root_hz)"
+    },
+    "client_javascript_game_loop_code": "/**\n * Naadopaasana Interactive Gamaka & Svara Game Loop Engine\n * Full 60 FPS HTML5 Canvas renderer with real-time audio pitch tracking,\n * dynamic spline ribbon rendering, particle burst emitter, and dual scoring.\n */\nclass GamakaCanvasGameEngine {\n  constructor(canvasElement, options = {}) {\n    this.canvas = canvasElement;\n    this.ctx = canvasElement.getContext('2d');\n    this.options = options;\n    \n    // Display scaling for Retina / High-DPI screens\n    this.dpr = window.devicePixelRatio || 1;\n    this.width = canvasElement.clientWidth || 800;\n    this.height = canvasElement.clientHeight || 450;\n    this.canvas.width = this.width * this.dpr;\n    this.canvas.height = this.height * this.dpr;\n    this.ctx.scale(this.dpr, this.dpr);\n    \n    // Game State\n    this.isRunning = false;\n    this.activeExercise = null;\n    this.currentTimeMs = 0;\n    this.totalDurationMs = 2000;\n    this.kattaiRootHz = options.kattaiRootHz || 261.63; // 1 Kattai C\n    \n    // Player Avatar Physics\n    this.avatar = {\n      x: 120, // fixed horizontal flight line\n      y: this.height / 2,\n      targetY: this.height / 2,\n      lerp: 0.18,\n      radius: 14,\n      color: '#10B981',\n      sparkles: []\n    };\n    \n    // Live Audio Input State\n    this.currentDetectedCents = null;\n    this.currentConfidence = 0.0;\n    this.centsTolerance = options.toleranceCents || 35.0;\n    \n    // Score & Combo Telemetry\n    this.score = 0;\n    this.comboMultiplier = 1.0;\n    this.streakFrames = 0;\n    this.starsCollected = 0;\n    this.totalStarsAvailable = 0;\n    this.boundaryViolations = 0;\n    this.pointsCollected = [];\n    \n    // Particle System\n    this.particles = [];\n  }\n\n  centsToY(cents) {\n    const minCents = -100;\n    const maxCents = 1300;\n    const norm = (cents - minCents) / (maxCents - minCents);\n    return this.height * (1.0 - (norm * 0.75 + 0.12));\n  }\n\n  loadExercise(exerciseData) {\n    this.activeExercise = exerciseData;\n    this.totalDurationMs = exerciseData.visual_stencil.duration_ms || 2400;\n    this.currentTimeMs = 0;\n    this.score = 0;\n    this.comboMultiplier = 1.0;\n    this.streakFrames = 0;\n    this.starsCollected = 0;\n    this.boundaryViolations = 0;\n    this.particles = [];\n    \n    this.waypoints = (exerciseData.game_meta && exerciseData.game_meta.star_waypoints) \n      ? JSON.parse(JSON.stringify(exerciseData.game_meta.star_waypoints))\n      : [];\n    this.totalStarsAvailable = this.waypoints.length;\n  }\n\n  feedMicrophonePitch(detectedHz, confidence = 0.9) {\n    this.currentConfidence = confidence;\n    if (!detectedHz || detectedHz <= 0 || confidence < 0.75) {\n      this.currentDetectedCents = null;\n      return;\n    }\n    const cents = 1200.0 * Math.log2(detectedHz / this.kattaiRootHz);\n    this.currentDetectedCents = cents;\n    this.avatar.targetY = this.centsToY(cents);\n  }\n\n  update(deltaTimeMs) {\n    if (!this.isRunning || !this.activeExercise) return;\n    \n    this.currentTimeMs += deltaTimeMs;\n    if (this.currentTimeMs > this.totalDurationMs + 800) {\n      this.completeGame();\n      return;\n    }\n    \n    this.avatar.y += (this.avatar.targetY - this.avatar.y) * this.avatar.lerp;\n    \n    const targetCents = this.interpolateTargetCents(this.currentTimeMs);\n    const upperCeiling = targetCents + this.centsTolerance;\n    const lowerFloor = targetCents - this.centsTolerance;\n    \n    if (this.currentDetectedCents !== null) {\n      const error = Math.abs(this.currentDetectedCents - targetCents);\n      if (error <= this.centsTolerance) {\n        this.streakFrames++;\n        if (this.streakFrames > 90) this.comboMultiplier = 3.0;\n        else if (this.streakFrames > 45) this.comboMultiplier = 2.0;\n        else if (this.streakFrames > 20) this.comboMultiplier = 1.5;\n        \n        this.score += Math.round(10 * this.comboMultiplier);\n        this.avatar.color = '#10B981';\n        \n        if (Math.random() < 0.4) {\n          this.emitParticle(this.avatar.x, this.avatar.y, '#FDE047', 1.2, 0.8);\n        }\n      } else {\n        if (this.currentDetectedCents > upperCeiling + 40 || this.currentDetectedCents < lowerFloor - 40) {\n          this.boundaryViolations++;\n          this.avatar.color = '#EF4444';\n        } else {\n          this.avatar.color = '#F59E0B';\n        }\n        this.comboMultiplier = 1.0;\n        this.streakFrames = 0;\n      }\n    } else {\n      this.avatar.color = '#64748B';\n      this.comboMultiplier = 1.0;\n    }\n    \n    this.checkWaypointCollisions(targetCents);\n    \n    for (let i = this.particles.length - 1; i >= 0; i--) {\n      const p = this.particles[i];\n      p.x += p.vx;\n      p.y += p.vy;\n      p.life -= 0.035;\n      if (p.life <= 0) this.particles.splice(i, 1);\n    }\n  }\n\n  interpolateTargetCents(t) {\n    const pts = this.activeExercise.visual_stencil.trajectory_points;\n    if (!pts || pts.length === 0) return 0;\n    if (t <= pts[0].t_ms) return pts[0].cents;\n    if (t >= pts[pts.length - 1].t_ms) return pts[pts.length - 1].cents;\n    \n    for (let i = 0; i < pts.length - 1; i++) {\n      if (t >= pts[i].t_ms && t <= pts[i + 1].t_ms) {\n        const span = pts[i + 1].t_ms - pts[i].t_ms;\n        const alpha = (t - pts[i].t_ms) / (span || 1);\n        return pts[i].cents + alpha * (pts[i + 1].cents - pts[i].cents);\n      }\n    }\n    return pts[0].cents;\n  }\n\n  checkWaypointCollisions(targetCents) {\n    if (!this.waypoints) return;\n    this.waypoints.forEach(wp => {\n      if (!wp.collected && Math.abs(this.currentTimeMs - wp.t_ms) < 70) {\n        if (this.currentDetectedCents !== null && Math.abs(this.currentDetectedCents - wp.cents) <= (wp.tolerance_cents || this.centsTolerance)) {\n          wp.collected = true;\n          this.starsCollected++;\n          this.score += (wp.star_value || 100) * this.comboMultiplier;\n          this.triggerStarBurst(this.avatar.x, this.avatar.y);\n        }\n      }\n    });\n  }\n\n  emitParticle(x, y, color, speed = 2, size = 3) {\n    this.particles.push({\n      x, y,\n      vx: (Math.random() - 0.5) * speed,\n      vy: (Math.random() - 0.5) * speed,\n      color,\n      size,\n      life: 1.0\n    });\n  }\n\n  triggerStarBurst(x, y) {\n    for (let i = 0; i < 18; i++) {\n      const angle = (Math.PI * 2 / 18) * i;\n      const spd = 2.5 + Math.random() * 3.5;\n      this.particles.push({\n        x, y,\n        vx: Math.cos(angle) * spd,\n        vy: Math.sin(angle) * spd,\n        color: i % 2 === 0 ? '#FBBF24' : '#60A5FA',\n        size: 4 + Math.random() * 3,\n        life: 1.0\n      });\n    }\n  }\n\n  render() {\n    this.ctx.clearRect(0, 0, this.width, this.height);\n    this.drawBackgroundGrid();\n    if (this.activeExercise) {\n      this.drawToleranceRibbon();\n      this.drawWaypoints();\n    }\n    this.drawAvatar();\n    this.drawParticles();\n    this.drawHUD();\n  }\n\n  drawBackgroundGrid() {\n    const swaras = [\n      { name: 'S', cents: 0 },\n      { name: 'R1', cents: 112 },\n      { name: 'G3', cents: 386 },\n      { name: 'M1', cents: 498 },\n      { name: 'P', cents: 702 },\n      { name: 'D1', cents: 814 },\n      { name: 'N3', cents: 1088 },\n      { name: 'Ṡ', cents: 1200 }\n    ];\n    \n    this.ctx.strokeStyle = 'rgba(226, 232, 240, 0.45)';\n    this.ctx.lineWidth = 1;\n    this.ctx.font = '11px sans-serif';\n    this.ctx.fillStyle = '#94A3B8';\n    \n    swaras.forEach(sw => {\n      const y = this.centsToY(sw.cents);\n      this.ctx.beginPath();\n      this.ctx.moveTo(0, y);\n      this.ctx.lineTo(this.width, y);\n      this.ctx.stroke();\n      this.ctx.fillText(`${sw.name} (${sw.cents}c)`, 12, y - 4);\n    });\n  }\n\n  drawToleranceRibbon() {\n    const pts = this.activeExercise.visual_stencil.trajectory_points;\n    if (!pts || pts.length < 2) return;\n    \n    const timeToX = (t) => {\n      return this.avatar.x + ((t - this.currentTimeMs) / 1000) * 220;\n    };\n    \n    this.ctx.beginPath();\n    for (let i = 0; i < pts.length; i++) {\n      const x = timeToX(pts[i].t_ms);\n      const y = this.centsToY(pts[i].cents + this.centsTolerance);\n      if (i === 0) this.ctx.moveTo(x, y);\n      else this.ctx.lineTo(x, y);\n    }\n    for (let i = pts.length - 1; i >= 0; i--) {\n      const x = timeToX(pts[i].t_ms);\n      const y = this.centsToY(pts[i].cents - this.centsTolerance);\n      this.ctx.lineTo(x, y);\n    }\n    this.ctx.closePath();\n    this.ctx.fillStyle = 'rgba(14, 165, 233, 0.22)';\n    this.ctx.fill();\n    \n    this.ctx.beginPath();\n    pts.forEach((pt, idx) => {\n      const x = timeToX(pt.t_ms);\n      const y = this.centsToY(pt.cents);\n      if (idx === 0) this.ctx.moveTo(x, y);\n      else this.ctx.lineTo(x, y);\n    });\n    this.ctx.strokeStyle = '#0284C7';\n    this.ctx.lineWidth = 3;\n    this.ctx.stroke();\n  }\n\n  drawWaypoints() {\n    if (!this.waypoints) return;\n    const timeToX = (t) => this.avatar.x + ((t - this.currentTimeMs) / 1000) * 220;\n    \n    this.waypoints.forEach(wp => {\n      const x = timeToX(wp.t_ms);\n      const y = this.centsToY(wp.cents);\n      if (x < -20 || x > this.width + 20) return;\n      \n      this.ctx.save();\n      this.ctx.translate(x, y);\n      if (wp.collected) {\n        this.ctx.fillStyle = 'rgba(251, 191, 36, 0.4)';\n        this.ctx.beginPath();\n        this.ctx.arc(0, 0, 6, 0, Math.PI * 2);\n        this.ctx.fill();\n      } else {\n        this.ctx.fillStyle = '#F59E0B';\n        this.ctx.shadowColor = '#FBBF24';\n        this.ctx.shadowBlur = 10;\n        this.drawStarPath(0, 0, 5, 11, 5);\n        this.ctx.fill();\n      }\n      this.ctx.restore();\n    });\n  }\n\n  drawStarPath(cx, cy, spikes, outerRadius, innerRadius) {\n    let rot = Math.PI / 2 * 3;\n    let x = cx;\n    let y = cy;\n    let step = Math.PI / spikes;\n    \n    this.ctx.beginPath();\n    this.ctx.moveTo(cx, cy - outerRadius);\n    for (let i = 0; i < spikes; i++) {\n      x = cx + Math.cos(rot) * outerRadius;\n      y = cy + Math.sin(rot) * outerRadius;\n      this.ctx.lineTo(x, y);\n      rot += step;\n      x = cx + Math.cos(rot) * innerRadius;\n      y = cy + Math.sin(rot) * innerRadius;\n      this.ctx.lineTo(x, y);\n      rot += step;\n    }\n    this.ctx.lineTo(cx, cy - outerRadius);\n    this.ctx.closePath();\n  }\n\n  drawAvatar() {\n    this.ctx.save();\n    this.ctx.translate(this.avatar.x, this.avatar.y);\n    this.ctx.fillStyle = this.avatar.color;\n    this.ctx.shadowColor = this.avatar.color;\n    this.ctx.shadowBlur = 14;\n    this.ctx.beginPath();\n    this.ctx.arc(0, 0, this.avatar.radius, 0, Math.PI * 2);\n    this.ctx.fill();\n    \n    this.ctx.fillStyle = '#FFFFFF';\n    this.ctx.beginPath();\n    this.ctx.arc(0, 0, this.avatar.radius * 0.4, 0, Math.PI * 2);\n    this.ctx.fill();\n    this.ctx.restore();\n  }\n\n  drawParticles() {\n    this.particles.forEach(p => {\n      this.ctx.save();\n      this.ctx.globalAlpha = Math.max(0, p.life);\n      this.ctx.fillStyle = p.color;\n      this.ctx.beginPath();\n      this.ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);\n      this.ctx.fill();\n      this.ctx.restore();\n    });\n  }\n\n  drawHUD() {\n    this.ctx.fillStyle = 'rgba(15, 23, 42, 0.75)';\n    this.ctx.fillRect(this.width - 240, 16, 220, 72);\n    \n    this.ctx.fillStyle = '#F8FAFC';\n    this.ctx.font = 'bold 18px sans-serif';\n    this.ctx.fillText(`Score: ${this.score}`, this.width - 225, 42);\n    \n    this.ctx.font = '13px sans-serif';\n    this.ctx.fillStyle = '#FBBF24';\n    this.ctx.fillText(`Stars: ${this.starsCollected} / ${this.totalStarsAvailable}`, this.width - 225, 64);\n    \n    if (this.comboMultiplier > 1.0) {\n      this.ctx.fillStyle = '#34D399';\n      this.ctx.font = 'bold 14px sans-serif';\n      this.ctx.fillText(`${this.comboMultiplier.toFixed(1)}x Combo!`, this.width - 110, 64);\n    }\n  }\n\n  completeGame() {\n    this.isRunning = false;\n    const finalScoreReport = this.calculateFinalScore();\n    if (this.options.onGameComplete) {\n      this.options.onGameComplete(finalScoreReport);\n    }\n  }\n\n  calculateFinalScore() {\n    const starRatio = this.totalStarsAvailable > 0 ? (this.starsCollected / this.totalStarsAvailable) : 1.0;\n    let starRating = 1;\n    if (starRatio >= 0.85 && this.boundaryViolations <= 1) starRating = 3;\n    else if (starRatio >= 0.60 && this.boundaryViolations <= 3) starRating = 2;\n    \n    return {\n      exerciseId: this.activeExercise ? this.activeExercise.id : 'unknown',\n      score: this.score,\n      starsCollected: this.starsCollected,\n      totalStars: this.totalStarsAvailable,\n      starRating,\n      boundaryViolations: this.boundaryViolations,\n      accuracyPercentage: Math.round(starRatio * 100),\n      cognitiveBadge: starRating === 3 ? 'Nāda Vilāsam! (Gold)' : (starRating === 2 ? 'Śubham! (Silver)' : 'Abhyāsa (Bronze)')\n    };\n  }\n}\n"
+  },
+  "realtime_evaluation_and_scoring_engine": {
+    "algorithm_name": "Dynamic Time Warping Contour & Boundary Matcher (DTW-CBM) with Dual-Lens Telemetry",
+    "dual_lens_scoring_philosophy": {
+      "child_view": {
+        "primary_display": "Stars (1 to 3 Stars), Golden Musical Notes, Flying Combos, and Joyful Fanfare",
+        "feedback_tone": "Encouraging, game-like, celebration of steady voice control without anxiety-inducing microtonal technicalities."
+      },
+      "guru_parent_view": {
+        "primary_display": "Cents RMS Deviation (e.g. ±8.4c), DTW Contour Distance, Boundary Ceiling Overshoots (0 to N), and Gamaka Suddham %",
+        "feedback_tone": "Rigorous, musicologically authentic, traceable directly to the 22-Śruti harmonic matrix and classical treatises."
+      }
+    },
+    "evaluation_criteria": {
+      "contour_fidelity_weight": 0.5,
+      "boundary_ceiling_compliance_weight": 0.3,
+      "oscillation_rate_stability_weight": 0.2
+    },
+    "cognitive_scoring_matrix": {
+      "level_1_beginners": {
+        "gold_badge": {
+          "min_score": 85,
+          "label": "Nāda Vilāsam! (Beautiful Curve)"
+        },
+        "silver_badge": {
+          "min_score": 70,
+          "label": "Śubham! (Good Slide Control)"
+        },
+        "bronze_badge": {
+          "min_score": 50,
+          "label": "Abhyāsa (Keep Practicing)"
+        }
+      },
+      "level_2_intermediate": {
+        "gold_badge": {
+          "min_score": 90,
+          "label": "Gamaka Śuddham! (Pure Ornamentation)"
+        },
+        "silver_badge": {
+          "min_score": 75,
+          "label": "Śubham! (Steady Oscillation)"
+        },
+        "bronze_badge": {
+          "min_score": 55,
+          "label": "Abhyāsa (Focus on Boundary Limits)"
+        }
+      },
+      "level_3_expert": {
+        "gold_badge": {
+          "min_score": 92,
+          "label": "Vidwat / Ranga Praveena (Concert Mastery)"
+        },
+        "silver_badge": {
+          "min_score": 80,
+          "label": "Rāga Bhāva Sampoorṇam"
+        },
+        "bronze_badge": {
+          "min_score": 60,
+          "label": "Microtonal Precision Required"
+        }
+      }
+    },
+    "client_javascript_scoring_snippet": "\nfunction evaluateGamakaPerformance(userPitchTrack, stencilTrajectory, level = 'level_1_beginner') {\n  // 1. Resample and align time frames\n  const N = stencilTrajectory.length;\n  let totalCentsError = 0;\n  let boundaryViolations = 0;\n  \n  for (let i = 0; i < N; i++) {\n    const target = stencilTrajectory[i];\n    const userPoint = userPitchTrack[i] || userPitchTrack[userPitchTrack.length - 1];\n    const err = Math.abs(userPoint.cents - target.cents);\n    totalCentsError += err;\n    \n    // Check boundary compliance\n    if (target.max_cents && userPoint.cents > target.max_cents) boundaryViolations++;\n    if (target.min_cents && userPoint.cents < target.min_cents) boundaryViolations++;\n  }\n  \n  const avgCentsError = totalCentsError / N;\n  let contourScore = Math.max(0, 100 - (avgCentsError * 1.5));\n  let penalty = boundaryViolations * 5.0;\n  let finalScore = Math.round(Math.max(0, contourScore - penalty));\n  \n  return {\n    score: finalScore,\n    average_cents_deviation: Math.round(avgCentsError * 10) / 10,\n    boundary_violations: boundaryViolations,\n    tier_achieved: finalScore >= 85 ? 'GOLD' : (finalScore >= 70 ? 'SILVER' : 'BRONZE')\n  };\n}\n"
+  }
+}

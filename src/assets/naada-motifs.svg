@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none">
+  <g stroke="#0f766e" stroke-width="2" stroke-linecap="round" opacity=".55">
+    <path d="M0 155 C180 75 250 240 430 155 S690 75 850 155 S1040 235 1200 130"/>
+    <path d="M0 178 C180 98 250 263 430 178 S690 98 850 178 S1040 258 1200 153"/>
+    <path d="M0 201 C180 121 250 286 430 201 S690 121 850 201 S1040 281 1200 176"/>
+  </g>
+  <g stroke="#c58a2b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity=".7">
+    <path d="M140 320 v-42 q0-13 10-13 q10 0 10 13 v42 M140 320 q-14 4-14 16 q0 12 14 12 q12 0 12-12 v-58"/>
+    <path d="M1040 265 v-50 q0-12 10-12 q10 0 10 12 v50 M1040 265 q-14 4-14 16 q0 12 14 12 q12 0 12-12 v-66"/>
+    <path d="M840 420 q-12-24 0-48 q12 24 0 48 M840 420 v25 M836 445 h8"/>
+    <path d="M280 570 q-12-24 0-48 q12 24 0 48 M280 570 v25 M276 595 h8"/>
+  </g>
+  <g stroke="#c58a2b" stroke-width="2" opacity=".45">
+    <circle cx="950" cy="540" r="36"/><circle cx="950" cy="540" r="25"/><path d="M914 540h72 M950 504v72 M925 515l50 50 M975 515l-50 50"/>
+  </g>
+  <g stroke="#0f766e" stroke-width="2" opacity=".4" stroke-linecap="round">
+    <path d="M70 640 q20-35 40 0 q20 35 40 0 q20-35 40 0"/>
+    <path d="M980 690 q20-35 40 0 q20 35 40 0 q20-35 40 0"/>
+  </g>
+</svg>

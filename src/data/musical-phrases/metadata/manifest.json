@@ -1,0 +1,523 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-20T11:40:11.354Z",
+  "generator": "Bhāva rule-based phrase generator v2 (structured sampling + scoring)",
+  "settings": {
+    "perRaga": 36,
+    "pool": 40,
+    "minScore": 0.6,
+    "maxSimilarity": 0.72,
+    "seed": "bhava-phrase-v2",
+    "only": []
+  },
+  "totalCandidates": 2592,
+  "meanScore": 0.78,
+  "shortfalls": [],
+  "note": "All candidates require rāga/phrase review. Score = melodic shape, rhythm, cadence and rāga-colour heuristics, not rāga grammar.",
+  "files": [
+    {
+      "file": "candidates/melakarta-01.json",
+      "ragaNumber": 1,
+      "ragaName": "Kanakaṅgi",
+      "count": 36,
+      "meanScore": 0.783
+    },
+    {
+      "file": "candidates/melakarta-02.json",
+      "ragaNumber": 2,
+      "ragaName": "Ratnāṅgi",
+      "count": 36,
+      "meanScore": 0.775
+    },
+    {
+      "file": "candidates/melakarta-03.json",
+      "ragaNumber": 3,
+      "ragaName": "Gānamūrti",
+      "count": 36,
+      "meanScore": 0.787
+    },
+    {
+      "file": "candidates/melakarta-04.json",
+      "ragaNumber": 4,
+      "ragaName": "Vanaspati",
+      "count": 36,
+      "meanScore": 0.778
+    },
+    {
+      "file": "candidates/melakarta-05.json",
+      "ragaNumber": 5,
+      "ragaName": "Mānavati",
+      "count": 36,
+      "meanScore": 0.788
+    },
+    {
+      "file": "candidates/melakarta-06.json",
+      "ragaNumber": 6,
+      "ragaName": "Tānarūpi",
+      "count": 36,
+      "meanScore": 0.792
+    },
+    {
+      "file": "candidates/melakarta-07.json",
+      "ragaNumber": 7,
+      "ragaName": "Senāvati",
+      "count": 36,
+      "meanScore": 0.763
+    },
+    {
+      "file": "candidates/melakarta-08.json",
+      "ragaNumber": 8,
+      "ragaName": "Hanumatōḍi",
+      "count": 36,
+      "meanScore": 0.782
+    },
+    {
+      "file": "candidates/melakarta-09.json",
+      "ragaNumber": 9,
+      "ragaName": "Dhēnuka",
+      "count": 36,
+      "meanScore": 0.76
+    },
+    {
+      "file": "candidates/melakarta-10.json",
+      "ragaNumber": 10,
+      "ragaName": "Nāṭakapriya",
+      "count": 36,
+      "meanScore": 0.79
+    },
+    {
+      "file": "candidates/melakarta-11.json",
+      "ragaNumber": 11,
+      "ragaName": "Kōkilapriya",
+      "count": 36,
+      "meanScore": 0.784
+    },
+    {
+      "file": "candidates/melakarta-12.json",
+      "ragaNumber": 12,
+      "ragaName": "Rūpavati",
+      "count": 36,
+      "meanScore": 0.788
+    },
+    {
+      "file": "candidates/melakarta-13.json",
+      "ragaNumber": 13,
+      "ragaName": "Gāyakapriya",
+      "count": 36,
+      "meanScore": 0.772
+    },
+    {
+      "file": "candidates/melakarta-14.json",
+      "ragaNumber": 14,
+      "ragaName": "Vakulābharaṇam",
+      "count": 36,
+      "meanScore": 0.762
+    },
+    {
+      "file": "candidates/melakarta-15.json",
+      "ragaNumber": 15,
+      "ragaName": "Māyāmāḷavagauḷa",
+      "count": 36,
+      "meanScore": 0.775
+    },
+    {
+      "file": "candidates/melakarta-16.json",
+      "ragaNumber": 16,
+      "ragaName": "Chakravākam",
+      "count": 36,
+      "meanScore": 0.756
+    },
+    {
+      "file": "candidates/melakarta-17.json",
+      "ragaNumber": 17,
+      "ragaName": "Sūryakāntam",
+      "count": 36,
+      "meanScore": 0.765
+    },
+    {
+      "file": "candidates/melakarta-18.json",
+      "ragaNumber": 18,
+      "ragaName": "Hāṭakāmbari",
+      "count": 36,
+      "meanScore": 0.785
+    },
+    {
+      "file": "candidates/melakarta-19.json",
+      "ragaNumber": 19,
+      "ragaName": "Jhankāradhvani",
+      "count": 36,
+      "meanScore": 0.76
+    },
+    {
+      "file": "candidates/melakarta-20.json",
+      "ragaNumber": 20,
+      "ragaName": "Naṭabhairavi",
+      "count": 36,
+      "meanScore": 0.79
+    },
+    {
+      "file": "candidates/melakarta-21.json",
+      "ragaNumber": 21,
+      "ragaName": "Kiravāṇi",
+      "count": 36,
+      "meanScore": 0.762
+    },
+    {
+      "file": "candidates/melakarta-22.json",
+      "ragaNumber": 22,
+      "ragaName": "Kharaharapriya",
+      "count": 36,
+      "meanScore": 0.783
+    },
+    {
+      "file": "candidates/melakarta-23.json",
+      "ragaNumber": 23,
+      "ragaName": "Gaurimanohari",
+      "count": 36,
+      "meanScore": 0.805
+    },
+    {
+      "file": "candidates/melakarta-24.json",
+      "ragaNumber": 24,
+      "ragaName": "Varuṇapriya",
+      "count": 36,
+      "meanScore": 0.777
+    },
+    {
+      "file": "candidates/melakarta-25.json",
+      "ragaNumber": 25,
+      "ragaName": "Māraranjani",
+      "count": 36,
+      "meanScore": 0.763
+    },
+    {
+      "file": "candidates/melakarta-26.json",
+      "ragaNumber": 26,
+      "ragaName": "Chārukēśi",
+      "count": 36,
+      "meanScore": 0.778
+    },
+    {
+      "file": "candidates/melakarta-27.json",
+      "ragaNumber": 27,
+      "ragaName": "Sarasāṅgi",
+      "count": 36,
+      "meanScore": 0.765
+    },
+    {
+      "file": "candidates/melakarta-28.json",
+      "ragaNumber": 28,
+      "ragaName": "Harikāmbhōji",
+      "count": 36,
+      "meanScore": 0.785
+    },
+    {
+      "file": "candidates/melakarta-29.json",
+      "ragaNumber": 29,
+      "ragaName": "Dhīraśankarābharaṇam",
+      "count": 36,
+      "meanScore": 0.794
+    },
+    {
+      "file": "candidates/melakarta-30.json",
+      "ragaNumber": 30,
+      "ragaName": "Nāgānandini",
+      "count": 36,
+      "meanScore": 0.777
+    },
+    {
+      "file": "candidates/melakarta-31.json",
+      "ragaNumber": 31,
+      "ragaName": "Yāgapriya",
+      "count": 36,
+      "meanScore": 0.78
+    },
+    {
+      "file": "candidates/melakarta-32.json",
+      "ragaNumber": 32,
+      "ragaName": "Rāgavardhini",
+      "count": 36,
+      "meanScore": 0.775
+    },
+    {
+      "file": "candidates/melakarta-33.json",
+      "ragaNumber": 33,
+      "ragaName": "Gāngēyabhūṣaṇi",
+      "count": 36,
+      "meanScore": 0.778
+    },
+    {
+      "file": "candidates/melakarta-34.json",
+      "ragaNumber": 34,
+      "ragaName": "Vāgadhīśvari",
+      "count": 36,
+      "meanScore": 0.78
+    },
+    {
+      "file": "candidates/melakarta-35.json",
+      "ragaNumber": 35,
+      "ragaName": "Śūlinī",
+      "count": 36,
+      "meanScore": 0.781
+    },
+    {
+      "file": "candidates/melakarta-36.json",
+      "ragaNumber": 36,
+      "ragaName": "Chalanāṭa",
+      "count": 36,
+      "meanScore": 0.783
+    },
+    {
+      "file": "candidates/melakarta-37.json",
+      "ragaNumber": 37,
+      "ragaName": "Sālagam",
+      "count": 36,
+      "meanScore": 0.776
+    },
+    {
+      "file": "candidates/melakarta-38.json",
+      "ragaNumber": 38,
+      "ragaName": "Jalārṇavam",
+      "count": 36,
+      "meanScore": 0.793
+    },
+    {
+      "file": "candidates/melakarta-39.json",
+      "ragaNumber": 39,
+      "ragaName": "Jhālavarāḷi",
+      "count": 36,
+      "meanScore": 0.787
+    },
+    {
+      "file": "candidates/melakarta-40.json",
+      "ragaNumber": 40,
+      "ragaName": "Navanītam",
+      "count": 36,
+      "meanScore": 0.787
+    },
+    {
+      "file": "candidates/melakarta-41.json",
+      "ragaNumber": 41,
+      "ragaName": "Pāvani",
+      "count": 36,
+      "meanScore": 0.789
+    },
+    {
+      "file": "candidates/melakarta-42.json",
+      "ragaNumber": 42,
+      "ragaName": "Raghupriya",
+      "count": 36,
+      "meanScore": 0.787
+    },
+    {
+      "file": "candidates/melakarta-43.json",
+      "ragaNumber": 43,
+      "ragaName": "Gavāmbhodi",
+      "count": 36,
+      "meanScore": 0.77
+    },
+    {
+      "file": "candidates/melakarta-44.json",
+      "ragaNumber": 44,
+      "ragaName": "Bhavapriya",
+      "count": 36,
+      "meanScore": 0.779
+    },
+    {
+      "file": "candidates/melakarta-45.json",
+      "ragaNumber": 45,
+      "ragaName": "Śubhapantuvarāḷi",
+      "count": 36,
+      "meanScore": 0.786
+    },
+    {
+      "file": "candidates/melakarta-46.json",
+      "ragaNumber": 46,
+      "ragaName": "Ṣaḍvidhamārgini",
+      "count": 36,
+      "meanScore": 0.789
+    },
+    {
+      "file": "candidates/melakarta-47.json",
+      "ragaNumber": 47,
+      "ragaName": "Suvarnāṅgi",
+      "count": 36,
+      "meanScore": 0.782
+    },
+    {
+      "file": "candidates/melakarta-48.json",
+      "ragaNumber": 48,
+      "ragaName": "Divyamaṇi",
+      "count": 36,
+      "meanScore": 0.778
+    },
+    {
+      "file": "candidates/melakarta-49.json",
+      "ragaNumber": 49,
+      "ragaName": "Dhavaḷāmbari",
+      "count": 36,
+      "meanScore": 0.767
+    },
+    {
+      "file": "candidates/melakarta-50.json",
+      "ragaNumber": 50,
+      "ragaName": "Nāmanārāyaṇi",
+      "count": 36,
+      "meanScore": 0.764
+    },
+    {
+      "file": "candidates/melakarta-51.json",
+      "ragaNumber": 51,
+      "ragaName": "Kāmavardhini",
+      "count": 36,
+      "meanScore": 0.779
+    },
+    {
+      "file": "candidates/melakarta-52.json",
+      "ragaNumber": 52,
+      "ragaName": "Rāmapriya",
+      "count": 36,
+      "meanScore": 0.754
+    },
+    {
+      "file": "candidates/melakarta-53.json",
+      "ragaNumber": 53,
+      "ragaName": "Gamanāśrama",
+      "count": 36,
+      "meanScore": 0.759
+    },
+    {
+      "file": "candidates/melakarta-54.json",
+      "ragaNumber": 54,
+      "ragaName": "Viśvambhari",
+      "count": 36,
+      "meanScore": 0.782
+    },
+    {
+      "file": "candidates/melakarta-55.json",
+      "ragaNumber": 55,
+      "ragaName": "Śyāmalāṅgi",
+      "count": 36,
+      "meanScore": 0.775
+    },
+    {
+      "file": "candidates/melakarta-56.json",
+      "ragaNumber": 56,
+      "ragaName": "Ṣanmukhapriya",
+      "count": 36,
+      "meanScore": 0.792
+    },
+    {
+      "file": "candidates/melakarta-57.json",
+      "ragaNumber": 57,
+      "ragaName": "Siṃhendramadhyamam",
+      "count": 36,
+      "meanScore": 0.788
+    },
+    {
+      "file": "candidates/melakarta-58.json",
+      "ragaNumber": 58,
+      "ragaName": "Hemavati",
+      "count": 36,
+      "meanScore": 0.782
+    },
+    {
+      "file": "candidates/melakarta-59.json",
+      "ragaNumber": 59,
+      "ragaName": "Dharmavati",
+      "count": 36,
+      "meanScore": 0.793
+    },
+    {
+      "file": "candidates/melakarta-60.json",
+      "ragaNumber": 60,
+      "ragaName": "Nītimatī",
+      "count": 36,
+      "meanScore": 0.793
+    },
+    {
+      "file": "candidates/melakarta-61.json",
+      "ragaNumber": 61,
+      "ragaName": "Kāntāmaṇi",
+      "count": 36,
+      "meanScore": 0.764
+    },
+    {
+      "file": "candidates/melakarta-62.json",
+      "ragaNumber": 62,
+      "ragaName": "Riṣabhapriya",
+      "count": 36,
+      "meanScore": 0.781
+    },
+    {
+      "file": "candidates/melakarta-63.json",
+      "ragaNumber": 63,
+      "ragaName": "Latāṅgi",
+      "count": 36,
+      "meanScore": 0.769
+    },
+    {
+      "file": "candidates/melakarta-64.json",
+      "ragaNumber": 64,
+      "ragaName": "Vācaspati",
+      "count": 36,
+      "meanScore": 0.779
+    },
+    {
+      "file": "candidates/melakarta-65.json",
+      "ragaNumber": 65,
+      "ragaName": "Mechakālyāṇi",
+      "count": 36,
+      "meanScore": 0.799
+    },
+    {
+      "file": "candidates/melakarta-66.json",
+      "ragaNumber": 66,
+      "ragaName": "Chitrāmbari",
+      "count": 36,
+      "meanScore": 0.772
+    },
+    {
+      "file": "candidates/melakarta-67.json",
+      "ragaNumber": 67,
+      "ragaName": "Sucharitra",
+      "count": 36,
+      "meanScore": 0.79
+    },
+    {
+      "file": "candidates/melakarta-68.json",
+      "ragaNumber": 68,
+      "ragaName": "Jyōtiṣmaṭī",
+      "count": 36,
+      "meanScore": 0.795
+    },
+    {
+      "file": "candidates/melakarta-69.json",
+      "ragaNumber": 69,
+      "ragaName": "Dhātu vardhani",
+      "count": 36,
+      "meanScore": 0.799
+    },
+    {
+      "file": "candidates/melakarta-70.json",
+      "ragaNumber": 70,
+      "ragaName": "Nāsikabhūṣaṇi",
+      "count": 36,
+      "meanScore": 0.805
+    },
+    {
+      "file": "candidates/melakarta-71.json",
+      "ragaNumber": 71,
+      "ragaName": "Kosalam",
+      "count": 36,
+      "meanScore": 0.793
+    },
+    {
+      "file": "candidates/melakarta-72.json",
+      "ragaNumber": 72,
+      "ragaName": "Rasikapriya",
+      "count": 36,
+      "meanScore": 0.789
+    }
+  ]
+}

@@ -1,0 +1,3748 @@
+{
+  "project": "Medhā Nādopāsanā Master Keerthana Library",
+  "version": "3.0.0",
+  "total_compositions": 18,
+  "description": "Completely rebuilt, natural, classical Keerthanas across 18 canonical masterworks. Features exact rhythmic eduppu offsets, multi-script sahitya, progressive sangatis, Kudimiyamalai singing vocables, swarasthana subscripts, and synchronized synthesizer semitone triggers.",
+  "curriculum_tiers": [
+    {
+      "tier": 1,
+      "label": "Invocatory & Beginner Pedagogical (Songs 1-4)",
+      "composition_ids": [
+        "keerthana_01",
+        "keerthana_02",
+        "keerthana_03",
+        "keerthana_04"
+      ]
+    },
+    {
+      "tier": 2,
+      "label": "Golden Masterworks of the Musical Trinity (Songs 5-8)",
+      "composition_ids": [
+        "keerthana_05",
+        "keerthana_06",
+        "keerthana_07",
+        "keerthana_08"
+      ]
+    },
+    {
+      "tier": 3,
+      "label": "Expressive Bhakti Jewels & Multi-Lingual Classics (Songs 9-12)",
+      "composition_ids": [
+        "keerthana_09",
+        "keerthana_10",
+        "keerthana_11",
+        "keerthana_12"
+      ]
+    },
+    {
+      "tier": 4,
+      "label": "Expansive Devotional Classics & Tāna Varṇam Bridge (Songs 13-18)",
+      "composition_ids": [
+        "keerthana_13",
+        "keerthana_14",
+        "keerthana_15",
+        "keerthana_16",
+        "keerthana_17",
+        "keerthana_18"
+      ],
+      "description": "Universal prayers (Brahmam Okaṭē, Jagadōddhāraṇā), plain staccato ear-training (Śakti Sahita Gaṇapatim), Saraswati invocation (Śrī Sarasvati Namōstutē), premier pedagogical Tāna Varṇam (Ninnukōri), and baseline Māyāmāḷavagauḷa concert piece (Māyātīta Svarūpiṇi)."
+    }
+  ],
+  "compositions": [
+    {
+      "id": "keerthana_01",
+      "title": "Gaja Vadana Bēḍuvē",
+      "title_multiscript": {
+        "devanagari": "गजवदन बेडुवे",
+        "kannada": "ಗಜವದನ ಬೇಡುವೆ",
+        "telugu": "గజవదన బేడువే",
+        "tamil": "கஜவதன பேடுவே"
+      },
+      "composer": "Saint Purandara Dasa",
+      "mudra": "Purandara Viṭṭhala",
+      "deity": "Lord Ganesha",
+      "language": "Kannada",
+      "raga": {
+        "name": "Haṃsadhvani",
+        "parent_mela_number": 29,
+        "parent_mela_name": "Dhīraśaṅkarābharaṇam",
+        "chakra": "Bāṇa",
+        "scale": {
+          "arohana": "S R2 G3 P N3 Ṡ",
+          "avarohana": "Ṡ N3 P G3 R2 S",
+          "semitones_arohana": [
+            0,
+            2,
+            4,
+            7,
+            11,
+            12
+          ],
+          "semitones_avarohana": [
+            12,
+            11,
+            7,
+            4,
+            2,
+            0
+          ]
+        },
+        "varjya_swaras": [
+          "M",
+          "D"
+        ]
+      },
+      "tala": {
+        "name": "Ādi Tālam",
+        "jati": "Chaturasra",
+        "angas": "I4 O O",
+        "aksharas_per_avartana": 8,
+        "eduppu": "Sama Eduppu (On Beat 1)",
+        "recommended_tempo_bpm": 76
+      },
+      "meaning_summary": "O elephant-faced Lord Ganesha, son of Gauri, I pray to you! Worshipped by sage Shuka, ocean of compassion, bearer of noose and goad, rider of the mouse, protect me always as I remember the lotus feet of Purandara Vittala.",
+      "sections": {
+        "pallavi": {
+          "title": "Pallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Sangati 1 (Basic)",
+              "solfa": "s , r g | p , | p , || g p r g | s , | s , ||",
+              "swarasthana": "S , R2 G3 | P , | P , || G3 P R2 G3 | S , | S , ||",
+              "vowels": "sa , ri gu | pa , | pa , || gu pa ri gu | sa , | sa , ||",
+              "semitones": [
+                0,
+                0,
+                2,
+                4,
+                7,
+                7,
+                7,
+                7,
+                4,
+                7,
+                2,
+                4,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "Ga -- ja va | da -- | na -- || bē -- ḍu -- | vē -- | -- -- ||",
+              "sahitya_text": "Gajavadana bēḍuvē"
+            },
+            {
+              "line_number": 2,
+              "variation": "Sangati 2 (With ornamental leap to Tara S)",
+              "solfa": "g p n S | n p | g r || g p r g | s , | s , ||",
+              "swarasthana": "G3 P N3 Ṡ | N3 P | G3 R2 || G3 P R2 G3 | S , | S , ||",
+              "vowels": "gu pa nu SA | nu pa | gu ri || gu pa ri gu | sa , | sa , ||",
+              "semitones": [
+                4,
+                7,
+                11,
+                12,
+                11,
+                7,
+                4,
+                2,
+                4,
+                7,
+                2,
+                4,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "Gau -- rī -- | ta na | ya -- || bē -- ḍu -- | vē -- | -- -- ||",
+              "sahitya_text": "Gaurī tanaya bēḍuvē"
+            },
+            {
+              "line_number": 3,
+              "variation": "Sangati 3 (Sustained Nyāsa & Tara resolution)",
+              "solfa": "p n S R | S n | p g || p n p g | r s | s , ||",
+              "swarasthana": "P N3 Ṡ Ṙ2 | Ṡ N3 | P G3 || P N3 P G3 | R2 S | S , ||",
+              "vowels": "pa nu SA RI | SA nu | pa gu || pa nu pa gu | ri sa | sa , ||",
+              "semitones": [
+                7,
+                11,
+                12,
+                14,
+                12,
+                11,
+                7,
+                4,
+                7,
+                11,
+                7,
+                4,
+                2,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "Śu ka dha ra | pū -- | ji ta || ka ru ṇā -- | ni dhi | yē -- ||",
+              "sahitya_text": "Śukadhara pūjita karuṇā nidhiyē"
+            }
+          ]
+        },
+        "anupallavi": {
+          "title": "Anupallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": "p , p n | S , | S , || n S R S | n p | n S ||",
+              "swarasthana": "P , P N3 | Ṡ , | Ṡ , || N3 Ṡ Ṙ2 Ṡ | N3 P | N3 Ṡ ||",
+              "vowels": "pa , pa nu | SA , | SA , || nu SA RI SA | nu pa | nu SA ||",
+              "semitones": [
+                7,
+                7,
+                7,
+                11,
+                12,
+                12,
+                12,
+                12,
+                11,
+                12,
+                14,
+                12,
+                11,
+                7,
+                11,
+                12
+              ],
+              "sahitya_syllables": "Dvi -- ja rā | ja -- | va n || dyā -- nē -- | dū -- | rvā -- ||",
+              "sahitya_text": "Dvija rāja vandyānē dūrvāṅkura priyanē"
+            },
+            {
+              "line_number": 2,
+              "solfa": "S R G R | S n | p g || p n p g | r s | s , ||",
+              "swarasthana": "Ṡ Ṙ2 Ġ3 Ṙ2 | Ṡ N3 | P G3 || P N3 P G3 | R2 S | S , ||",
+              "vowels": "SA RI GU RI | SA nu | pa gu || pa nu pa gu | ri sa | sa , ||",
+              "semitones": [
+                12,
+                14,
+                16,
+                14,
+                12,
+                11,
+                7,
+                4,
+                7,
+                11,
+                7,
+                4,
+                2,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "A ja nan -- | da -- | dā ya || kā -- nē -- | pā li | sen na ||",
+              "sahitya_text": "Ajananda dāyakānē pālisenna"
+            }
+          ]
+        },
+        "charanam": {
+          "title": "Charanam",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": "s , r g | p , | p , || g p r g | s , | s , ||",
+              "swarasthana": "S , R2 G3 | P , | P , || G3 P R2 G3 | S , | S , ||",
+              "vowels": "sa , ri gu | pa , | pa , || gu pa ri gu | sa , | sa , ||",
+              "semitones": [
+                0,
+                0,
+                2,
+                4,
+                7,
+                7,
+                7,
+                7,
+                4,
+                7,
+                2,
+                4,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "Pā -- śāṅ ku | śa -- | dha ra || pa ra ma -- | pa vi | tra -- ||",
+              "sahitya_text": "Pāśāṅkuśadhara parama pavitra"
+            },
+            {
+              "line_number": 2,
+              "solfa": "g p n S | n p | g r || g p r g | s , | s , ||",
+              "swarasthana": "G3 P N3 Ṡ | N3 P | G3 R2 || G3 P R2 G3 | S , | S , ||",
+              "vowels": "gu pa nu SA | nu pa | gu ri || gu pa ri gu | sa , | sa , ||",
+              "semitones": [
+                4,
+                7,
+                11,
+                12,
+                11,
+                7,
+                4,
+                2,
+                4,
+                7,
+                2,
+                4,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "Mū -- ṣi ka | vā -- | ha na || mu ni ja na | prē -- | ma -- ||",
+              "sahitya_text": "Mūṣika vāhana munijana prēma"
+            },
+            {
+              "line_number": 3,
+              "solfa": "p , p n | S , | S , || n S R S | n p | n S ||",
+              "swarasthana": "P , P N3 | Ṡ , | Ṡ , || N3 Ṡ Ṙ2 Ṡ | N3 P | N3 Ṡ ||",
+              "vowels": "pa , pa nu | SA , | SA , || nu SA RI SA | nu pa | nu SA ||",
+              "semitones": [
+                7,
+                7,
+                7,
+                11,
+                12,
+                12,
+                12,
+                12,
+                11,
+                12,
+                14,
+                12,
+                11,
+                7,
+                11,
+                12
+              ],
+              "sahitya_syllables": "Dā -- sō -- | ham -- | dā sa || pu ran da ra | viṭ -- | ṭha la ||",
+              "sahitya_text": "Dāsōham dāsa purandara viṭṭhalana"
+            },
+            {
+              "line_number": 4,
+              "solfa": "S R G R | S n | p g || p n p g | r s | s , ||",
+              "swarasthana": "Ṡ Ṙ2 Ġ3 Ṙ2 | Ṡ N3 | P G3 || P N3 P G3 | R2 S | S , ||",
+              "vowels": "SA RI GU RI | SA nu | pa gu || pa nu pa gu | ri sa | sa , ||",
+              "semitones": [
+                12,
+                14,
+                16,
+                14,
+                12,
+                11,
+                7,
+                4,
+                7,
+                11,
+                7,
+                4,
+                2,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "Pā -- dām bu | ja va | ne ne || du -- bē -- | ḍu -- | vē no ||",
+              "sahitya_text": "Pādāmbujava nenedu bēḍuvēno"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "keerthana_02",
+      "title": "Śrī Gaṇanātha (Pillari Gitam)",
+      "title_multiscript": {
+        "devanagari": "श्री गणनाथा",
+        "kannada": "ಶ್ರೀ ಗಣನಾಥ",
+        "telugu": "శ్రీ గణనాథ",
+        "tamil": "ஸ்ரீ கணநாதா"
+      },
+      "composer": "Saint Purandara Dasa",
+      "mudra": "Purandara Viṭṭhala (Implicit in Pillari series)",
+      "deity": "Lord Ganesha",
+      "language": "Sanskrit",
+      "raga": {
+        "name": "Malahari",
+        "parent_mela_number": 15,
+        "parent_mela_name": "Māyāmāḷavagauḷa",
+        "chakra": "Agni",
+        "scale": {
+          "arohana": "S R1 M1 P D1 Ṡ",
+          "avarohana": "Ṡ D1 P M1 G3 R1 S",
+          "semitones_arohana": [
+            0,
+            1,
+            5,
+            7,
+            8,
+            12
+          ],
+          "semitones_avarohana": [
+            12,
+            8,
+            7,
+            5,
+            4,
+            1,
+            0
+          ]
+        },
+        "varjya_swaras": [
+          "G (in ascent)",
+          "N (in both)"
+        ]
+      },
+      "tala": {
+        "name": "Rūpaka Tālam",
+        "jati": "Chaturasra",
+        "angas": "O I4",
+        "aksharas_per_avartana": 6,
+        "eduppu": "Sama Eduppu (Drutam start on beat 1)",
+        "recommended_tempo_bpm": 80
+      },
+      "meaning_summary": "Praise be to Ganesha, of sindhoora hue, ocean of compassion, elephant-faced one, pot-bellied benefactor of Lakshmi, son of Amba, revered by immortals, worshipped by Siddhas and Charanas, salutations to Siddhi Vinayaka!",
+      "sections": {
+        "section_1": {
+          "title": "Charanam 1 – Śrī Gaṇanātha",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": "m p | d S S r ||",
+              "swarasthana": "M1 P | D1 Ṡ Ṡ Ṙ1 ||",
+              "vowels": "ma pa | dha SA SA RA ||",
+              "semitones": [
+                5,
+                7,
+                8,
+                12,
+                12,
+                13
+              ],
+              "sahitya_syllables": "Śrī - | ga ṇa nā tha ||",
+              "sahitya_text": "Śrī gaṇanātha"
+            },
+            {
+              "line_number": 2,
+              "solfa": "R s | d p m p ||",
+              "swarasthana": "Ṙ1 Ṡ | D1 P M1 P ||",
+              "vowels": "RA SA | dha pa ma pa ||",
+              "semitones": [
+                13,
+                12,
+                8,
+                7,
+                5,
+                7
+              ],
+              "sahitya_syllables": "sin dhu | ra - var ṇa ||",
+              "sahitya_text": "sindhura varṇa"
+            },
+            {
+              "line_number": 3,
+              "solfa": "r m | p d m p ||",
+              "swarasthana": "R1 M1 | P D1 M1 P ||",
+              "vowels": "ra ma | pa dha ma pa ||",
+              "semitones": [
+                1,
+                5,
+                7,
+                8,
+                5,
+                7
+              ],
+              "sahitya_syllables": "ka ru | ṇā - sā ga ||",
+              "sahitya_text": "karuṇā sāgara"
+            },
+            {
+              "line_number": 4,
+              "solfa": "d p | m g r s ||",
+              "swarasthana": "D1 P | M1 G3 R1 S ||",
+              "vowels": "dha pa | ma gu ra sa ||",
+              "semitones": [
+                8,
+                7,
+                5,
+                4,
+                1,
+                0
+              ],
+              "sahitya_syllables": "ka ri | va da na - ||",
+              "sahitya_text": "karivadana"
+            }
+          ]
+        },
+        "section_2": {
+          "title": "Charanam 2 – Lambōdara",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": "m p | d S S r ||",
+              "swarasthana": "M1 P | D1 Ṡ Ṡ Ṙ1 ||",
+              "vowels": "ma pa | dha SA SA RA ||",
+              "semitones": [
+                5,
+                7,
+                8,
+                12,
+                12,
+                13
+              ],
+              "sahitya_syllables": "lam bō | da ra la ku ||",
+              "sahitya_text": "lambōdara laku-"
+            },
+            {
+              "line_number": 2,
+              "solfa": "R s | d p m p ||",
+              "swarasthana": "Ṙ1 Ṡ | D1 P M1 P ||",
+              "vowels": "RA SA | dha pa ma pa ||",
+              "semitones": [
+                13,
+                12,
+                8,
+                7,
+                5,
+                7
+              ],
+              "sahitya_syllables": "mī ka | rā - - - ||",
+              "sahitya_text": "mīkarā"
+            },
+            {
+              "line_number": 3,
+              "solfa": "r m | p d m p ||",
+              "swarasthana": "R1 M1 | P D1 M1 P ||",
+              "vowels": "ra ma | pa dha ma pa ||",
+              "semitones": [
+                1,
+                5,
+                7,
+                8,
+                5,
+                7
+              ],
+              "sahitya_syllables": "am bā | su ta a ma ||",
+              "sahitya_text": "ambāsuta ama-"
+            },
+            {
+              "line_number": 4,
+              "solfa": "d p | m g r s ||",
+              "swarasthana": "D1 P | M1 G3 R1 S ||",
+              "vowels": "dha pa | ma gu ra sa ||",
+              "semitones": [
+                8,
+                7,
+                5,
+                4,
+                1,
+                0
+              ],
+              "sahitya_syllables": "ra vi | nu ta - - ||",
+              "sahitya_text": "ravinuta"
+            }
+          ]
+        },
+        "section_3": {
+          "title": "Charanam 3 – Siddha Chāraṇa",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": "m p | d S S r ||",
+              "swarasthana": "M1 P | D1 Ṡ Ṡ Ṙ1 ||",
+              "vowels": "ma pa | dha SA SA RA ||",
+              "semitones": [
+                5,
+                7,
+                8,
+                12,
+                12,
+                13
+              ],
+              "sahitya_syllables": "sid dha | cā ra ṇa ga ||",
+              "sahitya_text": "siddha cāraṇa gaṇa"
+            },
+            {
+              "line_number": 2,
+              "solfa": "R s | d p m p ||",
+              "swarasthana": "Ṙ1 Ṡ | D1 P M1 P ||",
+              "vowels": "RA SA | dha pa ma pa ||",
+              "semitones": [
+                13,
+                12,
+                8,
+                7,
+                5,
+                7
+              ],
+              "sahitya_syllables": "ṇa sē | vi ta - - ||",
+              "sahitya_text": "sēvita"
+            },
+            {
+              "line_number": 3,
+              "solfa": "r m | p d m p ||",
+              "swarasthana": "R1 M1 | P D1 M1 P ||",
+              "vowels": "ra ma | pa dha ma pa ||",
+              "semitones": [
+                1,
+                5,
+                7,
+                8,
+                5,
+                7
+              ],
+              "sahitya_syllables": "sid dhi | vi nā ya ka ||",
+              "sahitya_text": "siddhi vināyaka"
+            },
+            {
+              "line_number": 4,
+              "solfa": "d p | m g r s ||",
+              "swarasthana": "D1 P | M1 G3 R1 S ||",
+              "vowels": "dha pa | ma gu ra sa ||",
+              "semitones": [
+                8,
+                7,
+                5,
+                4,
+                1,
+                0
+              ],
+              "sahitya_syllables": "tē na | mō na mō ||",
+              "sahitya_text": "tē namō namō"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "keerthana_03",
+      "title": "Palukē Baṅgāramāyenā",
+      "title_multiscript": {
+        "devanagari": "पलुके बङ्गारमायेना",
+        "kannada": "ಪಲುಕೇ ಬಂಗಾರಮಾಯೆನಾ",
+        "telugu": "పలుకే బంగారమాయెనా",
+        "tamil": "பலுக்கே பங்காரமாயெனா"
+      },
+      "composer": "Bhadrachala Ramadas (Kancharla Gopanna)",
+      "mudra": "Bhadrāchala Rāmadāsu",
+      "deity": "Lord Rama",
+      "language": "Telugu",
+      "raga": {
+        "name": "Ānandabhairavi",
+        "parent_mela_number": 20,
+        "parent_mela_name": "Naṭabhairavi",
+        "chakra": "Veda",
+        "scale": {
+          "arohana": "S G2 R2 G2 M1 P D2 P Ṡ",
+          "avarohana": "Ṡ N2 D2 P M1 G2 R2 S",
+          "semitones_arohana": [
+            0,
+            3,
+            2,
+            3,
+            5,
+            7,
+            9,
+            7,
+            12
+          ],
+          "semitones_avarohana": [
+            12,
+            10,
+            9,
+            7,
+            5,
+            3,
+            2,
+            0
+          ]
+        },
+        "bhashanga_swaras": [
+          "G3 (Antara Gandhara)",
+          "D2 (Chatushruti Dhaivata)",
+          "N3 (Kakali Nishada in special sancharis)"
+        ]
+      },
+      "tala": {
+        "name": "Ādi Tālam",
+        "jati": "Chaturasra",
+        "angas": "I4 O O",
+        "aksharas_per_avartana": 8,
+        "eduppu": "Anāgata Eduppu (Starts after 1.5 aksharas / 3 matras)",
+        "recommended_tempo_bpm": 64
+      },
+      "meaning_summary": "Has your speech turned into pure gold, O Kodandapani? Even when I call you repeatedly, why do you not answer me? Even in my dreams, I never forget the remembrance of your sacred name, my beautiful Father! No matter how much I plead, you show not the slightest grace. Who am I to contest with you?",
+      "sections": {
+        "pallavi": {
+          "title": "Pallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Sangati 1 (Classic plaintive entry)",
+              "solfa": ", , , p | m g | r , || s , s g | r g | m , ||",
+              "swarasthana": ", , , P | M1 G2 | R2 , || S , S G2 | R2 G2 | M1 , ||",
+              "vowels": ", , , pa | ma gi | ri , || sa , sa gi | ri gi | ma , ||",
+              "semitones": [
+                7,
+                7,
+                7,
+                7,
+                5,
+                3,
+                2,
+                2,
+                0,
+                0,
+                0,
+                3,
+                2,
+                3,
+                5,
+                5
+              ],
+              "sahitya_syllables": "-- -- -- Pa | lu kē | -- || baṅ -- gā -- | ra mā | ye nā ||",
+              "sahitya_text": "Palukē baṅgāramāyenā"
+            },
+            {
+              "line_number": 2,
+              "variation": "Sangati 2 (Leap to Dhaivata and Tara Shadja)",
+              "solfa": ", , , p | m g | r , || s , s g | m p | d p ||",
+              "swarasthana": ", , , P | M1 G2 | R2 , || S , S G2 | M1 P | D2 P ||",
+              "vowels": ", , , pa | ma gi | ri , || sa , sa gi | ma pa | dhi pa ||",
+              "semitones": [
+                7,
+                7,
+                7,
+                7,
+                5,
+                3,
+                2,
+                2,
+                0,
+                0,
+                0,
+                3,
+                5,
+                7,
+                9,
+                7
+              ],
+              "sahitya_syllables": "-- -- -- Pa | lu kē | -- || baṅ -- gā -- | ra mā | ye nā ||",
+              "sahitya_text": "Palukē baṅgāramāyenā kōdaṇḍapāṇi"
+            },
+            {
+              "line_number": 3,
+              "variation": "Sangati 3 (Vakra expansion & resolution)",
+              "solfa": ", , p d | p S | S , || n d p m | g r | s , ||",
+              "swarasthana": ", , P D2 | P Ṡ | Ṡ , || N2 D2 P M1 | G2 R2 | S , ||",
+              "vowels": ", , pa dhi | pa SA | SA , || ni dhi pa ma | gi ri | sa , ||",
+              "semitones": [
+                7,
+                7,
+                7,
+                9,
+                7,
+                12,
+                12,
+                12,
+                10,
+                9,
+                7,
+                5,
+                3,
+                2,
+                0,
+                0
+              ],
+              "sahitya_syllables": "-- -- Kō daṇ | ḍa pā | ṇi -- || pa lu ka vē | mi -- | -- -- ||",
+              "sahitya_text": "kōdaṇḍapāṇi pilachinā palukavēmi"
+            }
+          ]
+        },
+        "anupallavi": {
+          "title": "Anupallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": ", , , p | p p | p , || m p d p | m g | m , ||",
+              "swarasthana": ", , , P | P P | P , || M1 P D2 P | M1 G2 | M1 , ||",
+              "vowels": ", , , pa | pa pa | pa , || ma pa dhi pa | ma gi | ma , ||",
+              "semitones": [
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                5,
+                7,
+                9,
+                7,
+                5,
+                3,
+                5,
+                5
+              ],
+              "sahitya_syllables": "-- -- -- En | ta vē | ḍi || na nī ku sun | tai nā | da ya ||",
+              "sahitya_text": "Enta vēḍina nīku suntainā daya rādu"
+            },
+            {
+              "line_number": 2,
+              "solfa": ", , p d | p S | S , || n d p m | g r | s , ||",
+              "swarasthana": ", , P D2 | P Ṡ | Ṡ , || N2 D2 P M1 | G2 R2 | S , ||",
+              "vowels": ", , pa dhi | pa SA | SA , || ni dhi pa ma | gi ri | sa , ||",
+              "semitones": [
+                7,
+                7,
+                7,
+                9,
+                7,
+                12,
+                12,
+                12,
+                10,
+                9,
+                7,
+                5,
+                3,
+                2,
+                0,
+                0
+              ],
+              "sahitya_syllables": "-- -- Pan ta | mu sē | ya || nē nen ta ṭi | vā ḍa | nu -- ||",
+              "sahitya_text": "pantamu sēya nēnentaṭivāḍanu taṇḍri"
+            }
+          ]
+        },
+        "charanam": {
+          "title": "Charanam",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": ", , , s | g r | g , || m , p , | m g | r , ||",
+              "swarasthana": ", , , S | G2 R2 | G2 , || M1 , P , | M1 G2 | R2 , ||",
+              "vowels": ", , , sa | gi ri | gi , || ma , pa , | ma gi | ri , ||",
+              "semitones": [
+                0,
+                0,
+                0,
+                0,
+                3,
+                2,
+                3,
+                3,
+                5,
+                5,
+                7,
+                7,
+                5,
+                3,
+                2,
+                2
+              ],
+              "sahitya_syllables": "-- -- -- Śa | ra ṇā | ga || ta trā ṇa bi | ru dāṅ | ki tu ||",
+              "sahitya_text": "Śaraṇāgatatrāṇa birudāṅkituḍavu gādā"
+            },
+            {
+              "line_number": 2,
+              "solfa": ", , p d | p S | S , || n d p m | g r | s , ||",
+              "swarasthana": ", , P D2 | P Ṡ | Ṡ , || N2 D2 P M1 | G2 R2 | S , ||",
+              "vowels": ", , pa dhi | pa SA | SA , || ni dhi pa ma | gi ri | sa , ||",
+              "semitones": [
+                7,
+                7,
+                7,
+                9,
+                7,
+                12,
+                12,
+                12,
+                10,
+                9,
+                7,
+                5,
+                3,
+                2,
+                0,
+                0
+              ],
+              "sahitya_syllables": "-- -- Ka ru | ṇin chu | bha || drā cha la rā | ma dā | su nē lu ||",
+              "sahitya_text": "karuṇiñchu bhadrāchala rāmadāsu nēlu"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "keerthana_04",
+      "title": "Muddugārē Yaśōdā",
+      "title_multiscript": {
+        "devanagari": "मुद्दुगारे यशोदा",
+        "kannada": "ಮುದ್ದುಗಾರೇ ಯಶೋದಾ",
+        "telugu": "ముద్దుగారే యశోదా",
+        "tamil": "முத்துகாரே யசோதா"
+      },
+      "composer": "Tallapaka Annamacharya",
+      "mudra": "Veṅkaṭēśuḍu / Tiru Vēṅkaṭācala",
+      "deity": "Lord Krishna / Venkateshwara",
+      "language": "Telugu",
+      "raga": {
+        "name": "Kurañji",
+        "parent_mela_number": 29,
+        "parent_mela_name": "Dhīraśaṅkarābharaṇam",
+        "chakra": "Bāṇa",
+        "scale": {
+          "arohana": "S N3 S R2 G3 M1 P D2",
+          "avarohana": "D2 P M1 G3 R2 S N3 S",
+          "semitones_arohana": [
+            0,
+            -1,
+            0,
+            2,
+            4,
+            5,
+            7,
+            9
+          ],
+          "semitones_avarohana": [
+            9,
+            7,
+            5,
+            4,
+            2,
+            0,
+            -1,
+            0
+          ]
+        },
+        "special_feature": "Niṣādāntya Rāga (Mandra range focal raga, sweet and lilting)"
+      },
+      "tala": {
+        "name": "Ādi Tālam",
+        "jati": "Chaturasra",
+        "angas": "I4 O O",
+        "aksharas_per_avartana": 8,
+        "eduppu": "Anāgata Eduppu (Starts after 1/2 akshara / 1 matra)",
+        "recommended_tempo_bpm": 72
+      },
+      "meaning_summary": "He is the pearl rolling in the front courtyard of fond Yasoda! He is the son of Devaki whose extraordinary wonders cannot be measured. Like a ruby, like a diamond, like an emerald, this divine child protects the cows and cowshed, and is none other than the gracious Lord of Venkata!",
+      "sections": {
+        "pallavi": {
+          "title": "Pallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Sangati 1 (Lilting lullaby phrase in Mandra N and S)",
+              "solfa": ", s s s | n_ s | r g || m , g r | s , | s , ||",
+              "swarasthana": ", S S S | ṇ3 S | R2 G3 || M1 , G3 R2 | S , | S , ||",
+              "vowels": ", sa sa sa | nu_ sa | ri gu || ma , gu ri | sa , | sa , ||",
+              "semitones": [
+                0,
+                0,
+                0,
+                0,
+                -1,
+                0,
+                2,
+                4,
+                5,
+                5,
+                4,
+                2,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "- Mud du gā | rē -- | ya śō || dā -- ku muṅ | gi -- | ṭi -- ||",
+              "sahitya_text": "Muddugārē yaśōdāku muṅgiṭi"
+            },
+            {
+              "line_number": 2,
+              "variation": "Sangati 2 (Pearl imagery reaching Panchama)",
+              "solfa": ", g m p | d p | m g || r g m g | r s | s , ||",
+              "swarasthana": ", G3 M1 P | D2 P | M1 G3 || R2 G3 M1 G3 | R2 S | S , ||",
+              "vowels": ", gu ma pa | dhi pa | ma gu || ri gu ma gu | ri sa | sa , ||",
+              "semitones": [
+                4,
+                4,
+                5,
+                7,
+                9,
+                7,
+                5,
+                4,
+                2,
+                4,
+                5,
+                4,
+                2,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "- mut ya mu | vī -- | ḍu -- || tid da rā -- | ni -- | -- -- ||",
+              "sahitya_text": "mutyamu vīḍu tiddarāni"
+            },
+            {
+              "line_number": 3,
+              "variation": "Sangati 3 (Resolution on Devaki Sutuḍu)",
+              "solfa": ", s r g | m p | m g || r s n_ s | r s | s , ||",
+              "swarasthana": ", S R2 G3 | M1 P | M1 G3 || R2 S ṇ3 S | R2 S | S , ||",
+              "vowels": ", sa ri gu | ma pa | ma gu || ri sa nu_ sa | ri sa | sa , ||",
+              "semitones": [
+                0,
+                0,
+                2,
+                4,
+                5,
+                7,
+                5,
+                4,
+                2,
+                0,
+                -1,
+                0,
+                2,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "- ma hi ma | la dē | va kī || su tu -- ḍu -- | -- -- | -- -- ||",
+              "sahitya_text": "mahiratha mahimala dēvakīsutuḍu"
+            }
+          ]
+        },
+        "charanam_1": {
+          "title": "Charanam 1",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": ", p p p | p m | p d || p m g m | p , | p , ||",
+              "swarasthana": ", P P P | P M1 | P D2 || P M1 G3 M1 | P , | P , ||",
+              "vowels": ", pa pa pa | pa ma | pa dhi || pa ma gu ma | pa , | pa , ||",
+              "semitones": [
+                7,
+                7,
+                7,
+                7,
+                7,
+                5,
+                7,
+                9,
+                7,
+                5,
+                4,
+                5,
+                7,
+                7,
+                7,
+                7
+              ],
+              "sahitya_syllables": "- An ta nin | ta go | ra ta || la nan da su | tū -- | ḍu -- ||",
+              "sahitya_text": "Anta ninta goratala nandasutūḍu vīḍu"
+            },
+            {
+              "line_number": 2,
+              "solfa": ", d p m | g r | s r || g m p m | g r | s , ||",
+              "swarasthana": ", D2 P M1 | G3 R2 | S R2 || G3 M1 P M1 | G3 R2 | S , ||",
+              "vowels": ", dhi pa ma | gu ri | sa ri || gu ma pa ma | gu ri | sa , ||",
+              "semitones": [
+                9,
+                9,
+                7,
+                5,
+                4,
+                2,
+                0,
+                2,
+                4,
+                5,
+                7,
+                5,
+                4,
+                2,
+                0,
+                0
+              ],
+              "sahitya_syllables": "- vin ta la | vin ta | la vin || ta vē -- lu | pu -- | vī ḍu ||",
+              "sahitya_text": "vintala vintala vinta vēlupu vīḍu"
+            }
+          ]
+        },
+        "charanam_2": {
+          "title": "Charanam 2 (Concluding Mudra Charanam)",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": ", p p p | p m | p d || p m g m | p , | p , ||",
+              "swarasthana": ", P P P | P M1 | P D2 || P M1 G3 M1 | P , | P , ||",
+              "vowels": ", pa pa pa | pa ma | pa dhi || pa ma gu ma | pa , | pa , ||",
+              "semitones": [
+                7,
+                7,
+                7,
+                7,
+                7,
+                5,
+                7,
+                9,
+                7,
+                5,
+                4,
+                5,
+                7,
+                7,
+                7,
+                7
+              ],
+              "sahitya_syllables": "- Ga da ma ra | chi kō | va la || la kā chi nat | ti -- | vā ḍu ||",
+              "sahitya_text": "Gadamarachi kōvalala kāchinatti vāḍu"
+            },
+            {
+              "line_number": 2,
+              "solfa": ", d p m | g r | s r || g m p m | g r | s , ||",
+              "swarasthana": ", D2 P M1 | G3 R2 | S R2 || G3 M1 P M1 | G3 R2 | S , ||",
+              "vowels": ", dhi pa ma | gu ri | sa ri || gu ma pa ma | gu ri | sa , ||",
+              "semitones": [
+                9,
+                9,
+                7,
+                5,
+                4,
+                2,
+                0,
+                2,
+                4,
+                5,
+                7,
+                5,
+                4,
+                2,
+                0,
+                0
+              ],
+              "sahitya_syllables": "- mu di ta | ven ka | ṭē śu || ḍu muk ti dā | ya -- | ku ḍu ||",
+              "sahitya_text": "mudita veṅkaṭēśuḍu muktidāyakuḍu"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "keerthana_05",
+      "title": "Banturīti Koluviyyavayya",
+      "title_multiscript": {
+        "devanagari": "बण्टुरीति कोलुविय्यवय्य",
+        "kannada": "ಬಂಟುರೀತಿ ಕೊಲುವಿಯ್ಯವಯ್ಯ",
+        "telugu": "బంటురీతి కొలువయ్యవయ్య",
+        "tamil": "பண்டுரீதி கொலுவிய்யவய்ய"
+      },
+      "composer": "Saint Tyagaraja",
+      "mudra": "Tyāgarāja",
+      "deity": "Lord Rama",
+      "language": "Telugu",
+      "raga": {
+        "name": "Haṃsanādam",
+        "parent_mela_number": 65,
+        "parent_mela_name": "Mēcakalyāṇi",
+        "chakra": "Rudra",
+        "scale": {
+          "arohana": "S R2 M2 P N3 Ṡ",
+          "avarohana": "Ṡ N3 P M2 R2 S",
+          "semitones_arohana": [
+            0,
+            2,
+            6,
+            7,
+            11,
+            12
+          ],
+          "semitones_avarohana": [
+            12,
+            11,
+            7,
+            6,
+            2,
+            0
+          ]
+        },
+        "varjya_swaras": [
+          "G",
+          "D"
+        ]
+      },
+      "tala": {
+        "name": "Ādi Tālam",
+        "jati": "Chaturasra",
+        "angas": "I4 O O",
+        "aksharas_per_avartana": 8,
+        "eduppu": "Anāgata Eduppu (Starts after 1/2 akshara / 1 matra)",
+        "recommended_tempo_bpm": 80
+      },
+      "meaning_summary": "O Lord Rama, grant me the status and post of your humble guard! Give me the sword of your holy name, the shield of devotion, and the armour of supreme courage to vanquish the inner foes of desire and arrogance.",
+      "sections": {
+        "pallavi": {
+          "title": "Pallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": ", s r m | p , | m r || s , s r | m p | n S ||",
+              "swarasthana": ", S R2 M2 | P , | M2 R2 || S , S R2 | M2 P | N3 Ṡ ||",
+              "vowels": ", sa ri mi | pa , | mi ri || sa , sa ri | mi pa | nu SA ||",
+              "semitones": [
+                0,
+                0,
+                2,
+                6,
+                7,
+                7,
+                6,
+                2,
+                0,
+                0,
+                0,
+                2,
+                6,
+                7,
+                11,
+                12
+              ],
+              "sahitya_syllables": "- Ban tu rī | ti -- | ko lu || vi -- yya va | yya -- | rā mā ||",
+              "sahitya_text": "Banturīti koluviyyavayya rāmā"
+            },
+            {
+              "line_number": 2,
+              "solfa": ", R S n | p , | m r || s , s r | m p | n S ||",
+              "swarasthana": ", Ṙ2 Ṡ N3 | P , | M2 R2 || S , S R2 | M2 P | N3 Ṡ ||",
+              "vowels": ", RI SA nu | pa , | mi ri || sa , sa ri | mi pa | nu SA ||",
+              "semitones": [
+                14,
+                14,
+                12,
+                11,
+                7,
+                7,
+                6,
+                2,
+                0,
+                0,
+                0,
+                2,
+                6,
+                7,
+                11,
+                12
+              ],
+              "sahitya_syllables": "- Ban tu rī | ti -- | ko lu || vi -- yya va | yya -- | rā mā ||",
+              "sahitya_text": "Banturīti koluviyyavayya rāmā"
+            }
+          ]
+        },
+        "anupallavi": {
+          "title": "Anupallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": ", p n S | R , | R , || S n p m | p n | S , ||",
+              "swarasthana": ", P N3 Ṡ | Ṙ2 , | Ṙ2 , || Ṡ N3 P M2 | P N3 | Ṡ , ||",
+              "vowels": ", pa nu SA | RI , | RI , || SA nu pa mi | pa nu | SA , ||",
+              "semitones": [
+                7,
+                7,
+                11,
+                12,
+                14,
+                14,
+                14,
+                14,
+                12,
+                11,
+                7,
+                6,
+                7,
+                11,
+                12,
+                12
+              ],
+              "sahitya_syllables": "- Tun ta vi | lu tu | ni -- || to da vu lu | pa -- | da sa ||",
+              "sahitya_text": "Tunṭavilu tuni todavulu padasa-"
+            },
+            {
+              "line_number": 2,
+              "solfa": ", R M R | S n | p m || p n S R | S n | p , ||",
+              "swarasthana": ", Ṙ2 Ṁ2 Ṙ2 | Ṡ N3 | P M2 || P N3 Ṡ Ṙ2 | Ṡ N3 | P , ||",
+              "vowels": ", RI MI RI | SA nu | pa mi || pa nu SA RI | SA nu | pa , ||",
+              "semitones": [
+                14,
+                14,
+                18,
+                14,
+                12,
+                11,
+                7,
+                6,
+                7,
+                11,
+                12,
+                14,
+                12,
+                11,
+                7,
+                7
+              ],
+              "sahitya_syllables": "- ran tu sē | yu na | ppa ḍu || san toṣa mu | nan -- | nu -- ||",
+              "sahitya_text": "rantu sēyunappaḍu santōṣamu nannu"
+            }
+          ]
+        },
+        "charanam": {
+          "title": "Charanam",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": ", s r m | p , | m r || s , s r | m p | n S ||",
+              "swarasthana": ", S R2 M2 | P , | M2 R2 || S , S R2 | M2 P | N3 Ṡ ||",
+              "vowels": ", sa ri mi | pa , | mi ri || sa , sa ri | mi pa | nu SA ||",
+              "semitones": [
+                0,
+                0,
+                2,
+                6,
+                7,
+                7,
+                6,
+                2,
+                0,
+                0,
+                0,
+                2,
+                6,
+                7,
+                11,
+                12
+              ],
+              "sahitya_syllables": "- Rō mān | ca ma | nē -- || gha na kañ cu | ka mu | pa tti ||",
+              "sahitya_text": "Rōmāñcamane ghana kañcukamu patti"
+            },
+            {
+              "line_number": 2,
+              "solfa": ", p n S | R M | R S || n p m r | m p | n S ||",
+              "swarasthana": ", P N3 Ṡ | Ṙ2 Ṁ2 | Ṙ2 Ṡ || N3 P M2 R2 | M2 P | N3 Ṡ ||",
+              "vowels": ", pa nu SA | RI MI | RI SA || nu pa mi ri | mi pa | nu SA ||",
+              "semitones": [
+                7,
+                7,
+                11,
+                12,
+                14,
+                18,
+                14,
+                12,
+                11,
+                7,
+                6,
+                2,
+                6,
+                7,
+                11,
+                12
+              ],
+              "sahitya_syllables": "- Rāmabhak | ti ya | nē -- || khad gamu vaṭ | ṭi tyā | ga rā ||",
+              "sahitya_text": "Rāmabhaktiyanē khaḍgamu vaṭṭi tyāgarāja"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "keerthana_06",
+      "title": "Vātāpi Gaṇapatiṃ Bhajēham",
+      "title_multiscript": {
+        "devanagari": "वातापि गणपतिं भजेहम्",
+        "kannada": "ವಾತಾಪಿ ಗಣಪತಿಂ ಭಜೇಹಮ್",
+        "telugu": "వాతాపి గణపతిం భజేహమ్",
+        "tamil": "வாதாபி கணபதிம் பஜேஹம்"
+      },
+      "composer": "Muthuswami Dikshitar",
+      "mudra": "Guruguha",
+      "deity": "Lord Ganesha (Vatapi Ganapati)",
+      "language": "Sanskrit",
+      "raga": {
+        "name": "Haṃsadhvani",
+        "parent_mela_number": 29,
+        "parent_mela_name": "Dhīraśaṅkarābharaṇam",
+        "chakra": "Bāṇa",
+        "scale": {
+          "arohana": "S R2 G3 P N3 Ṡ",
+          "avarohana": "Ṡ N3 P G3 R2 S",
+          "semitones_arohana": [
+            0,
+            2,
+            4,
+            7,
+            11,
+            12
+          ],
+          "semitones_avarohana": [
+            12,
+            11,
+            7,
+            4,
+            2,
+            0
+          ]
+        },
+        "varjya_swaras": [
+          "M",
+          "D"
+        ]
+      },
+      "tala": {
+        "name": "Ādi Tālam",
+        "jati": "Chaturasra",
+        "angas": "I4 O O",
+        "aksharas_per_avartana": 8,
+        "eduppu": "Sama Eduppu (On Beat 1)",
+        "recommended_tempo_bpm": 68
+      },
+      "meaning_summary": "I worship Vatapi Ganapati, the elephant-faced Lord who removes all obstacles, served by sage Agastya and adored by Guruguha, the primary seed of the universe residing in the Muladhara.",
+      "sections": {
+        "pallavi": {
+          "title": "Pallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": "g , r s | s r | g p || g r s r | s , | s , ||",
+              "swarasthana": "G3 , R2 S | S R2 | G3 P || G3 R2 S R2 | S , | S , ||",
+              "vowels": "gu , ri sa | sa ri | gu pa || gu ri sa ri | sa , | sa , ||",
+              "semitones": [
+                4,
+                4,
+                2,
+                0,
+                0,
+                2,
+                4,
+                7,
+                4,
+                2,
+                0,
+                2,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "Vā -- tā pi | ga ṇa | pa tim || bha jē -- ham | vā -- | ra ṇā ||",
+              "sahitya_text": "Vātāpi gaṇapatiṃ bhajēham vāraṇāsyam"
+            },
+            {
+              "line_number": 2,
+              "solfa": "g p n S | n p | g r || g p r g | s , | s , ||",
+              "swarasthana": "G3 P N3 Ṡ | N3 P | G3 R2 || G3 P R2 G3 | S , | S , ||",
+              "vowels": "gu pa nu SA | nu pa | gu ri || gu pa ri gu | sa , | sa , ||",
+              "semitones": [
+                4,
+                7,
+                11,
+                12,
+                11,
+                7,
+                4,
+                2,
+                4,
+                7,
+                2,
+                4,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "va ra pra | dam śrī | vā tā || pi ga ṇa pa | tim -- | -- -- ||",
+              "sahitya_text": "varapradaṃ śrī vātāpi gaṇapatiṃ"
+            }
+          ]
+        },
+        "anupallavi": {
+          "title": "Anupallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": "p , p n | S , | S , || n S R S | n p | n S ||",
+              "swarasthana": "P , P N3 | Ṡ , | Ṡ , || N3 Ṡ Ṙ2 Ṡ | N3 P | N3 Ṡ ||",
+              "vowels": "pa , pa nu | SA , | SA , || nu SA RI SA | nu pa | nu SA ||",
+              "semitones": [
+                7,
+                7,
+                7,
+                11,
+                12,
+                12,
+                12,
+                12,
+                11,
+                12,
+                14,
+                12,
+                11,
+                7,
+                11,
+                12
+              ],
+              "sahitya_syllables": "Bhū -- tā di | sam -- | sē -- || vi ta ca ra | ṇam -- | bhū -- ||",
+              "sahitya_text": "Bhūtādi saṃsēvita caraṇaṃ bhūtabhautika"
+            },
+            {
+              "line_number": 2,
+              "solfa": "S R G R | S n | p g || p n p g | r s | s , ||",
+              "swarasthana": "Ṡ Ṙ2 Ġ3 Ṙ2 | Ṡ N3 | P G3 || P N3 P G3 | R2 S | S , ||",
+              "vowels": "SA RI GU RI | SA nu | pa gu || pa nu pa gu | ri sa | sa , ||",
+              "semitones": [
+                12,
+                14,
+                16,
+                14,
+                12,
+                11,
+                7,
+                4,
+                7,
+                11,
+                7,
+                4,
+                2,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "pra pañ ca | vi la | ya ka || ram vī -- ta | rā -- | gi ṇam ||",
+              "sahitya_text": "prapañca vilayakaraṃ vītarāgiṇam"
+            }
+          ]
+        },
+        "charanam": {
+          "title": "Charanam",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": "s , r g | p , | p , || g p r g | s , | s , ||",
+              "swarasthana": "S , R2 G3 | P , | P , || G3 P R2 G3 | S , | S , ||",
+              "vowels": "sa , ri gu | pa , | pa , || gu pa ri gu | sa , | sa , ||",
+              "semitones": [
+                0,
+                0,
+                2,
+                4,
+                7,
+                7,
+                7,
+                7,
+                4,
+                7,
+                2,
+                4,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "Mu -- rā ri | pra mu | khā dyu || pā -- si tam | mū -- | lā -- ||",
+              "sahitya_text": "Murāri pramukhādyupāsitaṃ mūlādhāra"
+            },
+            {
+              "line_number": 2,
+              "solfa": "p n S R | S n | p g || p n p g | r s | s , ||",
+              "swarasthana": "P N3 Ṡ Ṙ2 | Ṡ N3 | P G3 || P N3 P G3 | R2 S | S , ||",
+              "vowels": "pa nu SA RI | SA nu | pa gu || pa nu pa gu | ri sa | sa , ||",
+              "semitones": [
+                7,
+                11,
+                12,
+                14,
+                12,
+                11,
+                7,
+                4,
+                7,
+                11,
+                7,
+                4,
+                2,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "gu ru gu ha | vi nu | tam haṃ || sa dhva ni | bhū -- | ṣi tam ||",
+              "sahitya_text": "guruguhavinutaṃ haṃsadhvani bhūṣitam"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "keerthana_07",
+      "title": "Himādri Sutē Pāhimām",
+      "title_multiscript": {
+        "devanagari": "हिमाद्रि सुते पाहिमाम्",
+        "kannada": "ಹಿಮಾದ್ರಿ ಸುತೇ ಪಾಹಿಮಾಮ್",
+        "telugu": "హిమాద్రి సుతే పాహిమామ్",
+        "tamil": "ஹிமாத்ரி சுதே பாஹிமாம்"
+      },
+      "composer": "Syama Sastri",
+      "mudra": "Śyāmakṛṣṇa",
+      "deity": "Goddess Kamakshi",
+      "language": "Sanskrit",
+      "raga": {
+        "name": "Kalyāṇi",
+        "parent_mela_number": 65,
+        "parent_mela_name": "Mēcakalyāṇi",
+        "chakra": "Rudra",
+        "scale": {
+          "arohana": "S R2 G3 M2 P D2 N3 Ṡ",
+          "avarohana": "Ṡ N3 D2 P M2 G3 R2 S",
+          "semitones_arohana": [
+            0,
+            2,
+            4,
+            6,
+            7,
+            9,
+            11,
+            12
+          ],
+          "semitones_avarohana": [
+            12,
+            11,
+            9,
+            7,
+            6,
+            4,
+            2,
+            0
+          ]
+        }
+      },
+      "tala": {
+        "name": "Rūpaka Tālam",
+        "jati": "Chaturasra",
+        "angas": "O I4",
+        "aksharas_per_avartana": 6,
+        "eduppu": "Sama Eduppu (On Beat 1)",
+        "recommended_tempo_bpm": 60
+      },
+      "meaning_summary": "O daughter of the snow mountains (Himadri Sute), protect me! O Kamakshi, beautiful consort of Siva, whose face radiates like the autumn moon, worshipped by Syamakrishna, grant me auspicious grace.",
+      "sections": {
+        "pallavi": {
+          "title": "Pallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": "s r | g , m p || d n | S , S , ||",
+              "swarasthana": "S R2 | G3 , M2 P || D2 N3 | Ṡ , Ṡ , ||",
+              "vowels": "sa ri | gu , mi pa || dhi nu | SA , SA , ||",
+              "semitones": [
+                0,
+                2,
+                4,
+                4,
+                6,
+                7,
+                9,
+                11,
+                12,
+                12,
+                12,
+                12
+              ],
+              "sahitya_syllables": "Hi mā | dri su tē || pā hi | mām -- -- ||",
+              "sahitya_text": "Himādri sutē pāhimām"
+            },
+            {
+              "line_number": 2,
+              "solfa": "n S | n d p m || g r | s , s , ||",
+              "swarasthana": "N3 Ṡ | N3 D2 P M2 || G3 R2 | S , S , ||",
+              "vowels": "nu SA | nu dhi pa mi || gu ri | sa , sa , ||",
+              "semitones": [
+                11,
+                12,
+                11,
+                9,
+                7,
+                6,
+                4,
+                2,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "kā māk | ṣi su da ti || vā lā | hi mām -- ||",
+              "sahitya_text": "kāmākṣi sudatī"
+            }
+          ]
+        },
+        "anupallavi": {
+          "title": "Anupallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": "g m | p , p , || d n | S , S , ||",
+              "swarasthana": "G3 M2 | P , P , || D2 N3 | Ṡ , Ṡ , ||",
+              "vowels": "gu mi | pa , pa , || dhi nu | SA , SA , ||",
+              "semitones": [
+                4,
+                6,
+                7,
+                7,
+                7,
+                7,
+                9,
+                11,
+                12,
+                12,
+                12,
+                12
+              ],
+              "sahitya_syllables": "Su mā | ru na pa || da yug | mē -- -- ||",
+              "sahitya_text": "Sumāruṇapada yugmē"
+            },
+            {
+              "line_number": 2,
+              "solfa": "S R | S n d p || m g | r s s , ||",
+              "swarasthana": "Ṡ Ṙ2 | Ṡ N3 D2 P || M2 G3 | R2 S S , ||",
+              "vowels": "SA RI | SA nu dhi pa || mi gu | ri sa sa , ||",
+              "semitones": [
+                12,
+                14,
+                12,
+                11,
+                9,
+                7,
+                6,
+                4,
+                2,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "pa ra | dē va tē || sa ma | yē pā hi ||",
+              "sahitya_text": "parādēvatē samayē pāhi"
+            }
+          ]
+        },
+        "charanam": {
+          "title": "Charanam",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": "m p | d , p , || m g | r , s , ||",
+              "swarasthana": "M2 P | D2 , P , || M2 G3 | R2 , S , ||",
+              "vowels": "mi pa | dhi , pa , || mi gu | ri , sa , ||",
+              "semitones": [
+                6,
+                7,
+                9,
+                9,
+                7,
+                7,
+                6,
+                4,
+                2,
+                2,
+                0,
+                0
+              ],
+              "sahitya_syllables": "Śyā ma | kṛṣ ṇa sa || hō da | ri śi vē ||",
+              "sahitya_text": "Śyāmakṛṣṇa sahōdari śivē"
+            },
+            {
+              "line_number": 2,
+              "solfa": "d n | S R S n || d p | m g r s ||",
+              "swarasthana": "D2 N3 | Ṡ Ṙ2 Ṡ N3 || D2 P | M2 G3 R2 S ||",
+              "vowels": "dhi nu | SA RI SA nu || dhi pa | mi gu ri sa ||",
+              "semitones": [
+                9,
+                11,
+                12,
+                14,
+                12,
+                11,
+                9,
+                7,
+                6,
+                4,
+                2,
+                0
+              ],
+              "sahitya_syllables": "śan ka | ri kṛ pā || ka ri | ma yi vā dā ||",
+              "sahitya_text": "śaṅkari kṛpākara mudam"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "keerthana_08",
+      "title": "Dēva Dēva Kalayāmi",
+      "title_multiscript": {
+        "devanagari": "देव देव कलयामि",
+        "kannada": "ದೇವ ದೇವ ಕಲಯಾಮಿ",
+        "telugu": "దేవ దేవ కలయామి",
+        "tamil": "தேவ தேவ கலயாமி"
+      },
+      "composer": "Maharaja Swati Tirunal",
+      "mudra": "Padmanābha",
+      "deity": "Lord Padmanabha (Vishnu)",
+      "language": "Sanskrit",
+      "raga": {
+        "name": "Māyāmāḷavagauḷa",
+        "parent_mela_number": 15,
+        "parent_mela_name": "Māyāmāḷavagauḷa",
+        "chakra": "Agni",
+        "scale": {
+          "arohana": "S R1 G3 M1 P D1 N3 Ṡ",
+          "avarohana": "Ṡ N3 D1 P M1 G3 R1 S",
+          "semitones_arohana": [
+            0,
+            1,
+            4,
+            5,
+            7,
+            8,
+            11,
+            12
+          ],
+          "semitones_avarohana": [
+            12,
+            11,
+            8,
+            7,
+            5,
+            4,
+            1,
+            0
+          ]
+        }
+      },
+      "tala": {
+        "name": "Rūpaka Tālam",
+        "jati": "Chaturasra",
+        "angas": "O I4",
+        "aksharas_per_avartana": 6,
+        "eduppu": "Sama Eduppu (On Beat 1)",
+        "recommended_tempo_bpm": 74
+      },
+      "meaning_summary": "O Lord of Lords Padmanabha, I meditate upon you, whose lotus feet are worshipped by Brahma and Indra, who dispels the fear of worldly existence.",
+      "sections": {
+        "pallavi": {
+          "title": "Pallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": "s r | g , m p || d n | S , S , ||",
+              "swarasthana": "S R1 | G3 , M1 P || D1 N3 | Ṡ , Ṡ , ||",
+              "vowels": "sa ra | gu , ma pa || dha nu | SA , SA , ||",
+              "semitones": [
+                0,
+                1,
+                4,
+                4,
+                5,
+                7,
+                8,
+                11,
+                12,
+                12,
+                12,
+                12
+              ],
+              "sahitya_syllables": "Dē va | dē va ka || la yā | mi tē -- ||",
+              "sahitya_text": "Dēva dēva kalayāmitē"
+            },
+            {
+              "line_number": 2,
+              "solfa": "n S | n d p m || g r | s , s , ||",
+              "swarasthana": "N3 Ṡ | N3 D1 P M1 || G3 R1 | S , S , ||",
+              "vowels": "nu SA | nu dha pa ma || gu ra | sa , sa , ||",
+              "semitones": [
+                11,
+                12,
+                11,
+                8,
+                7,
+                5,
+                4,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "ca ra | ṇām bu ja || ci n ta | nam -- -- ||",
+              "sahitya_text": "caraṇāmbuja cintanam"
+            }
+          ]
+        },
+        "anupallavi": {
+          "title": "Anupallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": "p m | p d n S || n d | p , p , ||",
+              "swarasthana": "P M1 | P D1 N3 Ṡ || N3 D1 | P , P , ||",
+              "vowels": "pa ma | pa dha nu SA || nu dha | pa , pa , ||",
+              "semitones": [
+                7,
+                5,
+                7,
+                8,
+                11,
+                12,
+                11,
+                8,
+                7,
+                7,
+                7,
+                7
+              ],
+              "sahitya_syllables": "Bhā va | yam bu ja || bha va | mu kha sa ||",
+              "sahitya_text": "Bhāvayāmburuhabhava mukha su-"
+            },
+            {
+              "line_number": 2,
+              "solfa": "d n | S R S n || d p | m g r s ||",
+              "swarasthana": "D1 N3 | Ṡ Ṙ1 Ṡ N3 || D1 P | M1 G3 R1 S ||",
+              "vowels": "dha nu | SA RA SA nu || dha pa | ma gu ra sa ||",
+              "semitones": [
+                8,
+                11,
+                12,
+                13,
+                12,
+                11,
+                8,
+                7,
+                5,
+                4,
+                1,
+                0
+              ],
+              "sahitya_syllables": "ra va | di ta su || gu ṇa | gha na vi ||",
+              "sahitya_text": "ravadita suguṇagaṇa vinuta"
+            }
+          ]
+        },
+        "charanam": {
+          "title": "Charanam",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": "m p | d , p , || m g | r , s , ||",
+              "swarasthana": "M1 P | D1 , P , || M1 G3 | R1 , S , ||",
+              "vowels": "ma pa | dha , pa , || ma gu | ra , sa , ||",
+              "semitones": [
+                5,
+                7,
+                8,
+                8,
+                7,
+                7,
+                5,
+                4,
+                1,
+                1,
+                0,
+                0
+              ],
+              "sahitya_syllables": "Pā ta | ka san ca || ya vi | dā ra ṇa ||",
+              "sahitya_text": "Pātaka sañcaya vidāraṇa"
+            },
+            {
+              "line_number": 2,
+              "solfa": "d n | S R S n || d p | m g r s ||",
+              "swarasthana": "D1 N3 | Ṡ Ṙ1 Ṡ N3 || D1 P | M1 G3 R1 S ||",
+              "vowels": "dha nu | SA RA SA nu || dha pa | ma gu ra sa ||",
+              "semitones": [
+                8,
+                11,
+                12,
+                13,
+                12,
+                11,
+                8,
+                7,
+                5,
+                4,
+                1,
+                0
+              ],
+              "sahitya_syllables": "paṅ ka | ja nā bha || su vi | ma la hṛ ||",
+              "sahitya_text": "paṅkajanābha suhṛt"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "keerthana_09",
+      "title": "Mahā Gaṇapatiṃ Manasā Smarāmi",
+      "title_multiscript": {
+        "devanagari": "महागणपतिं मनसा स्मरामि",
+        "kannada": "ಮಹಾಗಣಪತಿಂ ಮನಸಾ ಸ್ಮರಾಮಿ",
+        "telugu": "మహాగణపతిం మనసా స్మరామి",
+        "tamil": "மஹாகணபதிம் மனஸா ஸ்மராமி"
+      },
+      "composer": "Muthuswami Dikshitar",
+      "mudra": "Guruguha",
+      "deity": "Lord Ganesha",
+      "language": "Sanskrit",
+      "raga": {
+        "name": "Nāṭakuriñji",
+        "parent_mela_number": 28,
+        "parent_mela_name": "Harikāmbhōji",
+        "chakra": "Bāṇa",
+        "scale": {
+          "arohana": "S R2 G3 M1 N2 D2 N2 P D2 N2 Ṡ",
+          "avarohana": "Ṡ N2 D2 M1 G3 M1 P G3 R2 S",
+          "semitones_arohana": [
+            0,
+            2,
+            4,
+            5,
+            10,
+            9,
+            10,
+            7,
+            9,
+            10,
+            12
+          ],
+          "semitones_avarohana": [
+            12,
+            10,
+            9,
+            5,
+            4,
+            5,
+            7,
+            4,
+            2,
+            0
+          ]
+        },
+        "special_feature": "Rakti Vakra Raga with asymmetrical prayogas"
+      },
+      "tala": {
+        "name": "Ādi Tālam",
+        "jati": "Chaturasra",
+        "angas": "I4 O O",
+        "aksharas_per_avartana": 8,
+        "eduppu": "Anāgata Eduppu (Starts after 1/2 akshara)",
+        "recommended_tempo_bpm": 66
+      },
+      "meaning_summary": "I meditate with pure mind upon Maha Ganapati, revered by sage Vashishta, Vamadeva and others, son of Mahadeva and Guruguha's elder brother, granter of all desires.",
+      "sections": {
+        "pallavi": {
+          "title": "Pallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": ", s r g | m , | n d || n p d n | S , | S , ||",
+              "swarasthana": ", S R2 G3 | M1 , | N2 D2 || N2 P D2 N2 | Ṡ , | Ṡ , ||",
+              "vowels": ", sa ri gu | ma , | ni dhi || ni pa dhi ni | SA , | SA , ||",
+              "semitones": [
+                0,
+                0,
+                2,
+                4,
+                5,
+                5,
+                10,
+                9,
+                10,
+                7,
+                9,
+                10,
+                12,
+                12,
+                12,
+                12
+              ],
+              "sahitya_syllables": "- Ma hā ga | ṇa pa | tim ma || na sā -- -- | sma rā | mi -- ||",
+              "sahitya_text": "Mahāgaṇapatiṃ manasā smarāmi"
+            },
+            {
+              "line_number": 2,
+              "solfa": ", S n d | m g | m p || m g r s | s , | s , ||",
+              "swarasthana": ", Ṡ N2 D2 | M1 G3 | M1 P || M1 G3 R2 S | S , | S , ||",
+              "vowels": ", SA ni dhi | ma gu | ma pa || ma gu ri sa | sa , | sa , ||",
+              "semitones": [
+                12,
+                12,
+                10,
+                9,
+                5,
+                4,
+                5,
+                7,
+                5,
+                4,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "- va siṣ ṭha | vā ma | dē vā || dyu pā si tam | ma hā | ga ṇa ||",
+              "sahitya_text": "vasiṣṭha vāmadēvādyupāsitam"
+            }
+          ]
+        },
+        "anupallavi": {
+          "title": "Anupallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": ", m n d | n S | S , || n S R S | n d | p , ||",
+              "swarasthana": ", M1 N2 D2 | N2 Ṡ | Ṡ , || N2 Ṡ Ṙ2 Ṡ | N2 D2 | P , ||",
+              "vowels": ", ma ni dhi | ni SA | SA , || ni SA RI SA | ni dhi | pa , ||",
+              "semitones": [
+                5,
+                5,
+                10,
+                9,
+                10,
+                12,
+                12,
+                12,
+                10,
+                12,
+                14,
+                12,
+                10,
+                9,
+                7,
+                7
+              ],
+              "sahitya_syllables": "- Ma hā dē | va su | tam -- || gu ru gu hā | nu jam | -- -- ||",
+              "sahitya_text": "Mahādēvasutaṃ guruguhānujam"
+            }
+          ]
+        },
+        "charanam": {
+          "title": "Charanam",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": ", p d n | S n | d m || g m p m | g r | s , ||",
+              "swarasthana": ", P D2 N2 | Ṡ N2 | D2 M1 || G3 M1 P M1 | G3 R2 | S , ||",
+              "vowels": ", pa dhi ni | SA ni | dhi ma || gu ma pa ma | gu ri | sa , ||",
+              "semitones": [
+                7,
+                7,
+                9,
+                10,
+                12,
+                10,
+                9,
+                5,
+                4,
+                5,
+                7,
+                5,
+                4,
+                2,
+                0,
+                0
+              ],
+              "sahitya_syllables": "- Kāmādi | ka n | da na || ka lu ṣa vi dā | ra nam | -- -- ||",
+              "sahitya_text": "Kāmādikandana kaluṣavidāraṇam"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "keerthana_10",
+      "title": "Sāmaja Vara Gamana",
+      "title_multiscript": {
+        "devanagari": "सामज वर गमना",
+        "kannada": "ಸಾಮಜ ವರ ಗಮನ",
+        "telugu": "సామజ వర గమన",
+        "tamil": "ஸாமஜ வர கமன"
+      },
+      "composer": "Saint Tyagaraja",
+      "mudra": "Tyāgarāja",
+      "deity": "Lord Krishna / Rama",
+      "language": "Sanskrit",
+      "raga": {
+        "name": "Hindōḷam",
+        "parent_mela_number": 20,
+        "parent_mela_name": "Naṭabhairavi",
+        "chakra": "Veda",
+        "scale": {
+          "arohana": "S G2 M1 D1 N2 Ṡ",
+          "avarohana": "Ṡ N2 D1 M1 G2 S",
+          "semitones_arohana": [
+            0,
+            3,
+            5,
+            8,
+            10,
+            12
+          ],
+          "semitones_avarohana": [
+            12,
+            10,
+            8,
+            5,
+            3,
+            0
+          ]
+        },
+        "varjya_swaras": [
+          "R",
+          "P"
+        ]
+      },
+      "tala": {
+        "name": "Ādi Tālam",
+        "jati": "Chaturasra",
+        "angas": "I4 O O",
+        "aksharas_per_avartana": 8,
+        "eduppu": "Anāgata Eduppu (Starts after 1/2 akshara)",
+        "recommended_tempo_bpm": 70
+      },
+      "meaning_summary": "O Lord who walks with the majestic gait of an elephant, protector of the universe, expert in the nectar of Sama Veda, save me!",
+      "sections": {
+        "pallavi": {
+          "title": "Pallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": ", m g m | d , | d , || n d m g | s , | s , ||",
+              "swarasthana": ", M1 G2 M1 | D1 , | D1 , || N2 D1 M1 G2 | S , | S , ||",
+              "vowels": ", ma gi ma | dha , | dha , || ni dha ma gi | sa , | sa , ||",
+              "semitones": [
+                5,
+                5,
+                3,
+                5,
+                8,
+                8,
+                8,
+                8,
+                10,
+                8,
+                5,
+                3,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "- Sā ma ja | va ra | ga ma || na sā -- dhu | hṛd -- | -- -- ||",
+              "sahitya_text": "Sāmaja vara gamana sādhu hṛt"
+            },
+            {
+              "line_number": 2,
+              "solfa": ", s g m | d n | S , || n d m g | s , | s , ||",
+              "swarasthana": ", S G2 M1 | D1 N2 | Ṡ , || N2 D1 M1 G2 | S , | S , ||",
+              "vowels": ", sa gi ma | dha ni | SA , || ni dha ma gi | sa , | sa , ||",
+              "semitones": [
+                0,
+                0,
+                3,
+                5,
+                8,
+                10,
+                12,
+                12,
+                10,
+                8,
+                5,
+                3,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "- sa ra si | jā kṣa | pā la || ya mā m pa ra | ma pu | ru ṣa ||",
+              "sahitya_text": "sarasijākṣa pālaya mām"
+            }
+          ]
+        },
+        "anupallavi": {
+          "title": "Anupallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": ", d n S | M G | S , || n d m d | n S | S , ||",
+              "swarasthana": ", D1 N2 Ṡ | Ṁ1 Ġ2 | Ṡ , || N2 D1 M1 D1 | N2 Ṡ | Ṡ , ||",
+              "vowels": ", dha ni SA | MI GI | SA , || ni dha ma dha | ni SA | SA , ||",
+              "semitones": [
+                8,
+                8,
+                10,
+                12,
+                17,
+                15,
+                12,
+                12,
+                10,
+                8,
+                5,
+                8,
+                10,
+                12,
+                12,
+                12
+              ],
+              "sahitya_syllables": "- Sā ma ni | ga ma | ja su || dhā ma ya gā | na vi | cō la ||",
+              "sahitya_text": "Sāmanigamaja sudhāmaya gānavicōla"
+            }
+          ]
+        },
+        "charanam": {
+          "title": "Charanam",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": ", s g m | d , | d , || n d m g | m d | n S ||",
+              "swarasthana": ", S G2 M1 | D1 , | D1 , || N2 D1 M1 G2 | M1 D1 | N2 Ṡ ||",
+              "vowels": ", sa gi ma | dha , | dha , || ni dha ma gi | ma dha | ni SA ||",
+              "semitones": [
+                0,
+                0,
+                3,
+                5,
+                8,
+                8,
+                8,
+                8,
+                10,
+                8,
+                5,
+                3,
+                5,
+                8,
+                10,
+                12
+              ],
+              "sahitya_syllables": "- Vē da śi | rō r | tha su || vi da tyā ga | rā ja | van dya ||",
+              "sahitya_text": "Vēdaśirōrtha suvida tyāgarājavandya"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "keerthana_11",
+      "title": "Enna Thavam Seydanai",
+      "title_multiscript": {
+        "devanagari": "एन्न तवं सेय्दनै",
+        "kannada": "ಎನ್ನ ತವಂ ಸೆಯ್ದನೈ",
+        "telugu": "ఎన్న తవం సెయ్దనై",
+        "tamil": "என்ன தவம் செய்தனை"
+      },
+      "composer": "Papanasam Sivan",
+      "mudra": "Rāmadāsan",
+      "deity": "Lord Krishna / Yashoda",
+      "language": "Tamil",
+      "raga": {
+        "name": "Kāpi",
+        "parent_mela_number": 22,
+        "parent_mela_name": "Kharaharapriyā",
+        "chakra": "Veda",
+        "scale": {
+          "arohana": "S R2 M1 P N3 Ṡ",
+          "avarohana": "Ṡ N2 D2 N2 P M1 G2 R2 S",
+          "semitones_arohana": [
+            0,
+            2,
+            5,
+            7,
+            11,
+            12
+          ],
+          "semitones_avarohana": [
+            12,
+            10,
+            9,
+            10,
+            7,
+            5,
+            3,
+            2,
+            0
+          ]
+        },
+        "bhashanga_swaras": [
+          "G3 (Antara Gandhara)",
+          "N3 (Kakali Nishada in ascent)"
+        ]
+      },
+      "tala": {
+        "name": "Ādi Tālam",
+        "jati": "Chaturasra",
+        "angas": "I4 O O",
+        "aksharas_per_avartana": 8,
+        "eduppu": "Anāgata Eduppu (Starts after 1/2 akshara)",
+        "recommended_tempo_bpm": 64
+      },
+      "meaning_summary": "What penance did you perform, Mother Yasoda, that the Supreme Lord who created the entire universe calls you Mother and allows you to bind him to the mortar?",
+      "sections": {
+        "pallavi": {
+          "title": "Pallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": ", s r m | p , | m g || r , g r | s , | s , ||",
+              "swarasthana": ", S R2 M1 | P , | M1 G2 || R2 , G2 R2 | S , | S , ||",
+              "vowels": ", sa ri ma | pa , | ma gi || ri , gi ri | sa , | sa , ||",
+              "semitones": [
+                0,
+                0,
+                2,
+                5,
+                7,
+                7,
+                5,
+                3,
+                2,
+                2,
+                3,
+                2,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "- En na tha | vam -- | sey da || nai -- ya śō -- | dā -- | -- -- ||",
+              "sahitya_text": "Enna thavam seydanai yaśōdā"
+            },
+            {
+              "line_number": 2,
+              "solfa": ", m p n | S , | n d || n p m g | r s | s , ||",
+              "swarasthana": ", M1 P N3 | Ṡ , | N2 D2 || N2 P M1 G2 | R2 S | S , ||",
+              "vowels": ", ma pa nu | SA , | ni dhi || ni pa ma gi | ri sa | sa , ||",
+              "semitones": [
+                5,
+                5,
+                7,
+                11,
+                12,
+                12,
+                10,
+                9,
+                10,
+                7,
+                5,
+                3,
+                2,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "- eṅ gum ni | rai pa | ram por || u lai a ma | ne n | ra zhai kka ||",
+              "sahitya_text": "eṅgum nirai paramporuḷai ammavēñru azhaikka"
+            }
+          ]
+        },
+        "anupallavi": {
+          "title": "Anupallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": ", p n S | R S | n d || n p m p | n S | S , ||",
+              "swarasthana": ", P N3 Ṡ | Ṙ2 Ṡ | N2 D2 || N2 P M1 P | N3 Ṡ | Ṡ , ||",
+              "vowels": ", pa nu SA | RI SA | ni dhi || ni pa ma pa | nu SA | SA , ||",
+              "semitones": [
+                7,
+                7,
+                11,
+                12,
+                14,
+                12,
+                10,
+                9,
+                10,
+                7,
+                5,
+                7,
+                11,
+                12,
+                12,
+                12
+              ],
+              "sahitya_syllables": "- Ī re zhul | a gaṅ | gal pa || dai thon ai kay | yir kaṭ | ṭi ya ||",
+              "sahitya_text": "Īrezhu ulagaṅgaḷ padaithōnai kayyir kaṭṭi"
+            }
+          ]
+        },
+        "charanam": {
+          "title": "Charanam",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": ", s r m | p , | m g || r , g r | s , | s , ||",
+              "swarasthana": ", S R2 M1 | P , | M1 G2 || R2 , G2 R2 | S , | S , ||",
+              "vowels": ", sa ri ma | pa , | ma gi || ri , gi ri | sa , | sa , ||",
+              "semitones": [
+                0,
+                0,
+                2,
+                5,
+                7,
+                7,
+                5,
+                3,
+                2,
+                2,
+                3,
+                2,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "- Sa na kā | di yar | tha vam || sey du pa dir | a dai | ya a ||",
+              "sahitya_text": "Sanakādiyar thavam seydu"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "keerthana_12",
+      "title": "Bhāgyada Lakṣmī Bārammā",
+      "title_multiscript": {
+        "devanagari": "भाग्यद लक्ष्मी बारम्मा",
+        "kannada": "ಭಾಗ್ಯದ ಲಕ್ಷ್ಮೀ ಬಾರಮ್ಮಾ",
+        "telugu": "భాగ్యద లక్ష్మీ బారమ్మా",
+        "tamil": "பாக்யத லக்ஷ்மீ பாரம்மா"
+      },
+      "composer": "Saint Purandara Dasa",
+      "mudra": "Purandara Viṭṭhala",
+      "deity": "Goddess Lakshmi",
+      "language": "Kannada",
+      "raga": {
+        "name": "Madhyamāvati",
+        "parent_mela_number": 22,
+        "parent_mela_name": "Kharaharapriyā",
+        "chakra": "Veda",
+        "scale": {
+          "arohana": "S R2 M1 P N2 Ṡ",
+          "avarohana": "Ṡ N2 P M1 R2 S",
+          "semitones_arohana": [
+            0,
+            2,
+            5,
+            7,
+            10,
+            12
+          ],
+          "semitones_avarohana": [
+            12,
+            10,
+            7,
+            5,
+            2,
+            0
+          ]
+        },
+        "varjya_swaras": [
+          "G",
+          "D"
+        ],
+        "special_feature": "Auspicious Mangala Raga (Traditional concert concluding scale)"
+      },
+      "tala": {
+        "name": "Ādi Tālam",
+        "jati": "Chaturasra",
+        "angas": "I4 O O",
+        "aksharas_per_avartana": 8,
+        "eduppu": "Sama Eduppu (On Beat 1)",
+        "recommended_tempo_bpm": 88
+      },
+      "meaning_summary": "Come, O Goddess of auspicious fortune, enter our homes with ringing anklets! Shower your golden grace upon us, consort of Purandara Vittala!",
+      "sections": {
+        "pallavi": {
+          "title": "Pallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": "r , m p | m r | s , || r m p m | r s | s , ||",
+              "swarasthana": "R2 , M1 P | M1 R2 | S , || R2 M1 P M1 | R2 S | S , ||",
+              "vowels": "ri , ma pa | ma ri | sa , || ri ma pa ma | ri sa | sa , ||",
+              "semitones": [
+                2,
+                2,
+                5,
+                7,
+                5,
+                2,
+                0,
+                0,
+                2,
+                5,
+                7,
+                5,
+                2,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "Bhā -- gya da | lakṣ -- | mī -- || bā -- ram -- | mā -- | -- -- ||",
+              "sahitya_text": "Bhāgyada lakṣmī bārammā"
+            },
+            {
+              "line_number": 2,
+              "solfa": "p , n S | n p | m r || r m p m | r s | s , ||",
+              "swarasthana": "P , N2 Ṡ | N2 P | M1 R2 || R2 M1 P M1 | R2 S | S , ||",
+              "vowels": "pa , ni SA | ni pa | ma ri || ri ma pa ma | ri sa | sa , ||",
+              "semitones": [
+                7,
+                7,
+                10,
+                12,
+                10,
+                7,
+                5,
+                2,
+                2,
+                5,
+                7,
+                5,
+                2,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "nam -- ma ma | ma ga | li gē || bā -- ram -- | mā -- | -- -- ||",
+              "sahitya_text": "nammamma nī saubhāgyada lakṣmī bārammā"
+            }
+          ]
+        },
+        "charanam": {
+          "title": "Charanam (Mudra Charanam)",
+          "lines": [
+            {
+              "line_number": 1,
+              "solfa": "p , p n | S , | S , || R S n p | m p | S , ||",
+              "swarasthana": "P , P N2 | Ṡ , | Ṡ , || Ṙ2 Ṡ N2 P | M1 P | Ṡ , ||",
+              "vowels": "pa , pa ni | SA , | SA , || RI SA ni pa | ma pa | SA , ||",
+              "semitones": [
+                7,
+                7,
+                7,
+                10,
+                12,
+                12,
+                12,
+                12,
+                14,
+                12,
+                10,
+                7,
+                5,
+                7,
+                12,
+                12
+              ],
+              "sahitya_syllables": "Śan -- kha ca | kra -- | va -- || kai -- yo lu | dhi ri | si -- ||",
+              "sahitya_text": "Śaṅkhacakrava kaiyolu dharisi"
+            },
+            {
+              "line_number": 2,
+              "solfa": "R S n p | m r | s , || r m p m | r s | s , ||",
+              "swarasthana": "Ṙ2 Ṡ N2 P | M1 R2 | S , || R2 M1 P M1 | R2 S | S , ||",
+              "vowels": "RI SA ni pa | ma ri | sa , || ri ma pa ma | ri sa | sa , ||",
+              "semitones": [
+                14,
+                12,
+                10,
+                7,
+                5,
+                2,
+                0,
+                0,
+                2,
+                5,
+                7,
+                5,
+                2,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "paṅ ka jā kṣa | pu ran | da ra || viṭṭhalana rā | ṇi -- | bā -- ||",
+              "sahitya_text": "paṅkajākṣana puṟandara viṭṭhalana rāṇi bārammā"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "keerthana_13",
+      "title": "Brahmam Okaṭē",
+      "title_multiscript": {
+        "english": "Brahmam Okaṭē (Para Brahmam Okaṭē)",
+        "telugu": "బ్రహ్మమొక్కటే (పరబ్రహ్మమొక్కటే)",
+        "devanagari": "ब्रह्ममॊक्कटे (परब्रह्ममॊक्कटे)",
+        "tamil": "ப்ரம்மமொக்கடே (பரப்ரம்மமொக்கடே)"
+      },
+      "composer": "Tallapaka Annamacharya",
+      "mudra": "Veṅkaṭēśvara / Veṅkaṭēśa",
+      "deity": "Lord Venkateswara / Universal Supreme (Parabrahman)",
+      "language": "Telugu",
+      "raga": {
+        "name": "Bouḷi",
+        "parent_mela_number": 15,
+        "parent_mela_name": "Māyāmāḷavagauḷa",
+        "chakra": "Agni",
+        "scale": {
+          "arohana": "S R1 G3 P D1 Ṡ",
+          "avarohana": "Ṡ N3 D1 P G3 R1 S",
+          "semitones_arohana": [
+            0,
+            1,
+            4,
+            7,
+            8,
+            12
+          ],
+          "semitones_avarohana": [
+            12,
+            11,
+            8,
+            7,
+            4,
+            1,
+            0
+          ]
+        },
+        "varjya_swaras": [
+          "M in arohana and avarohana",
+          "N in arohana (Audava-Shadava)"
+        ]
+      },
+      "tala": {
+        "name": "Ādi Tālam",
+        "jati": "Chaturasra",
+        "angas": "I4 O O",
+        "aksharas_per_avartana": 8,
+        "eduppu": "Anāgata Eduppu (Starts after 1/2 akshara / 1 matra)",
+        "recommended_tempo_bpm": 84
+      },
+      "meaning_summary": "Annamacharya's timeless anthem proclaiming universal equality and divine oneness: The Supreme Soul is One and the same for all beings, transcending caste, creed, and physical divisions.",
+      "sections": {
+        "pallavi": {
+          "title": "Pallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Sangati 1 (Foundational Theme)",
+              "solfa": ", s r g | p , | d p || p d s_ r | s , | s , ||",
+              "swarasthana": ", S R1 G3 | P , | D1 P || P D1 S R1 | S , | S , ||",
+              "vowels": ", sa ra gu | pa , | dha pa || pa dha sa ra | sa , | sa , ||",
+              "semitones": [
+                0,
+                0,
+                1,
+                4,
+                7,
+                7,
+                8,
+                7,
+                7,
+                8,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "- Brah mam o | ka -- | ṭē -- || pa ra brah mam | o -- | ka ṭē ||",
+              "sahitya_text": "Brahmamokaṭē para brahmamokaṭē",
+              "rest_marker_note": "Harmonized leading rest: solfa/swara use comma rest (,) with synchronized 16-element semitone array matching keerthanas 04, 05, 09, 10, 11."
+            },
+            {
+              "line_number": 2,
+              "variation": "Sangati 2 (Upper Reach)",
+              "solfa": ", p d S | R , | S , || S n d p | g r | s , ||",
+              "swarasthana": ", P D1 Ṡ | Ṙ1 , | Ṡ , || Ṡ N3 D1 P | G3 R1 | S , ||",
+              "vowels": ", pa dha SA | RA , | SA , || SA nu dha pa | gu ra | sa , ||",
+              "semitones": [
+                7,
+                7,
+                8,
+                12,
+                13,
+                13,
+                12,
+                12,
+                12,
+                11,
+                8,
+                7,
+                4,
+                1,
+                0,
+                0
+              ],
+              "sahitya_syllables": "- Brah mam o | ka -- | ṭē -- || pa ra brah mam | o -- | ka ṭē ||",
+              "sahitya_text": "Brahmamokaṭē para brahmamokaṭē",
+              "rest_marker_note": "Harmonized leading rest: solfa/swara use comma rest (,) with synchronized 16-element semitone array matching keerthanas 04, 05, 09, 10, 11."
+            }
+          ]
+        },
+        "charanam": {
+          "title": "Charanam",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Charanam Phrase 1 (Universal State)",
+              "solfa": ", g p p | d , | d , || p d S n | d , | p , ||",
+              "swarasthana": ", G3 P P | D1 , | D1 , || P D1 Ṡ N3 | D1 , | P , ||",
+              "vowels": ", gu pa pa | dha , | dha , || pa dha SA nu | dha , | pa , ||",
+              "semitones": [
+                4,
+                4,
+                7,
+                7,
+                8,
+                8,
+                8,
+                8,
+                7,
+                8,
+                12,
+                11,
+                8,
+                8,
+                7,
+                7
+              ],
+              "sahitya_syllables": "- Ni dra ba | hu -- | gā -- || nē -- la yu | no -- | ka ṭē ||",
+              "sahitya_text": "Nidra bahugā nēlayunokaṭē",
+              "rest_marker_note": "Harmonized leading rest: solfa/swara use comma rest (,) with synchronized 16-element semitone array matching keerthanas 04, 05, 09, 10, 11."
+            },
+            {
+              "line_number": 2,
+              "variation": "Charanam Phrase 2 (Equality of Soul)",
+              "solfa": ", p d S | R , | S , || S n d p | g r | s , ||",
+              "swarasthana": ", P D1 Ṡ | Ṙ1 , | Ṡ , || Ṡ N3 D1 P | G3 R1 | S , ||",
+              "vowels": ", pa dha SA | RA , | SA , || SA nu dha pa | gu ra | sa , ||",
+              "semitones": [
+                7,
+                7,
+                8,
+                12,
+                13,
+                13,
+                12,
+                12,
+                12,
+                11,
+                8,
+                7,
+                4,
+                1,
+                0,
+                0
+              ],
+              "sahitya_syllables": "- Ta dhi ka hī | nu -- | la -- || ja ni yo -- | ka -- | ṭē -- ||",
+              "sahitya_text": "Tadhika hīnula janiyokaṭē",
+              "rest_marker_note": "Harmonized leading rest: solfa/swara use comma rest (,) with synchronized 16-element semitone array matching keerthanas 04, 05, 09, 10, 11."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "keerthana_14",
+      "title": "Jagadōddhāraṇā",
+      "title_multiscript": {
+        "english": "Jagadōddhāraṇā (Aḍisidaḷe Yaśōdā)",
+        "kannada": "ಜಗದೋದ್ಧಾರಣಾ (ಆಡಿಸಿದಳೆ ಯಶೋದಾ)",
+        "devanagari": "जगदोद्धारणा (आडिसिदळॆ यशोदा)",
+        "tamil": "ஜகதோத்தாரணா (ஆடிசிதளெ யசோதா)",
+        "telugu": "జగదోద్ధారణా (ఆడిసిదళె యశోదా)"
+      },
+      "composer": "Saint Purandara Dasa",
+      "mudra": "Purandara Viṭṭhala",
+      "deity": "Lord Krishna (Bala Krishna)",
+      "language": "Kannada",
+      "raga": {
+        "name": "Kāpi",
+        "parent_mela_number": 22,
+        "parent_mela_name": "Kharaharapriyā",
+        "chakra": "Veda",
+        "scale": {
+          "arohana": "S R2 M1 P N3 Ṡ",
+          "avarohana": "Ṡ N2 D2 N2 P M1 G2 R2 S",
+          "semitones_arohana": [
+            0,
+            2,
+            5,
+            7,
+            11,
+            12
+          ],
+          "semitones_avarohana": [
+            12,
+            10,
+            9,
+            10,
+            7,
+            5,
+            3,
+            2,
+            0
+          ]
+        },
+        "varjya_swaras": [
+          "Bhashanga raga featuring Kakali N3, Antara G3, and Suddha D1 in rare prayogas"
+        ]
+      },
+      "tala": {
+        "name": "Ādi Tālam",
+        "jati": "Chaturasra",
+        "angas": "I4 O O",
+        "aksharas_per_avartana": 8,
+        "eduppu": "Anāgata Eduppu (Starts after 1/2 akshara / 1 matra)",
+        "recommended_tempo_bpm": 68
+      },
+      "meaning_summary": "Purandara Dasa's tender portrayal of maternal devotion: Yashoda cradles, plays with, and kisses the very Lord who holds the entire cosmos within Himself.",
+      "sections": {
+        "pallavi": {
+          "title": "Pallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Sangati 1 (Sweet Lullaby Foundation)",
+              "solfa": ", p m g | r , | s s || r m p , | n d | p , ||",
+              "swarasthana": ", P M1 G2 | R2 , | S S || R2 M1 P , | N2 D2 | P , ||",
+              "vowels": ", pa ma gi | ri , | sa sa || ri ma pa , | ni dhi | pa , ||",
+              "semitones": [
+                7,
+                7,
+                5,
+                3,
+                2,
+                2,
+                0,
+                0,
+                2,
+                5,
+                7,
+                7,
+                10,
+                9,
+                7,
+                7
+              ],
+              "sahitya_syllables": "- Ja ga dōd | dhā -- | ra ṇā || ā -- ḍi si | da ḷe | ya -- ||",
+              "sahitya_text": "Jagadōddhāraṇā āḍisidaḷe yaśōdā",
+              "rest_marker_note": "Harmonized leading rest: solfa/swara use comma rest (,) with synchronized 16-element semitone array matching keerthanas 04, 05, 09, 10, 11."
+            },
+            {
+              "line_number": 2,
+              "variation": "Sangati 2 (Expanded Devotion)",
+              "solfa": ", p m g | r , | s s || r m p n | S n | d p ||",
+              "swarasthana": ", P M1 G2 | R2 , | S S || R2 M1 P N3 | Ṡ N2 | D2 P ||",
+              "vowels": ", pa ma gi | ri , | sa sa || ri ma pa nu | SA ni | dhi pa ||",
+              "semitones": [
+                7,
+                7,
+                5,
+                3,
+                2,
+                2,
+                0,
+                0,
+                2,
+                5,
+                7,
+                11,
+                12,
+                10,
+                9,
+                7
+              ],
+              "sahitya_syllables": "- Ja ga dōd | dhā -- | ra ṇā || ā -- ḍi si | da ḷe | ya -- ||",
+              "sahitya_text": "Jagadōddhāraṇā āḍisidaḷe yaśōdā",
+              "rest_marker_note": "Harmonized leading rest: solfa/swara use comma rest (,) with synchronized 16-element semitone array matching keerthanas 04, 05, 09, 10, 11."
+            }
+          ]
+        },
+        "anupallavi": {
+          "title": "Anupallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Ascent to Upper Register",
+              "solfa": ", p n S | R , | S , || S n d n | p , | m p ||",
+              "swarasthana": ", P N3 Ṡ | Ṙ2 , | Ṡ , || Ṡ N2 D2 N2 | P , | M1 P ||",
+              "vowels": ", pa nu SA | RI , | SA , || SA ni dhi ni | pa , | ma pa ||",
+              "semitones": [
+                7,
+                7,
+                11,
+                12,
+                14,
+                14,
+                12,
+                12,
+                12,
+                10,
+                9,
+                10,
+                7,
+                7,
+                5,
+                7
+              ],
+              "sahitya_syllables": "- Ja ga dōd | dhā -- | ra na || ma ga nan du | ti li | du -- ||",
+              "sahitya_text": "Jagadōddhārana maganendu tilidu",
+              "rest_marker_note": "Harmonized leading rest: solfa/swara use comma rest (,) with synchronized 16-element semitone array matching keerthanas 04, 05, 09, 10, 11."
+            }
+          ]
+        },
+        "charanam": {
+          "title": "Charanam",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "The Cosmic Wonder",
+              "solfa": ", p m g | r , | s , || r m p d | n d | p , ||",
+              "swarasthana": ", P M1 G2 | R2 , | S , || R2 M1 P D2 | N2 D2 | P , ||",
+              "vowels": ", pa ma gi | ri , | sa , || ri ma pa dhi | ni dhi | pa , ||",
+              "semitones": [
+                7,
+                7,
+                5,
+                3,
+                2,
+                2,
+                0,
+                0,
+                2,
+                5,
+                7,
+                9,
+                10,
+                9,
+                7,
+                7
+              ],
+              "sahitya_syllables": "- A ṇō ra | ṇī -- | ya nna || ma ha tō ma | hī -- | ma na ||",
+              "sahitya_text": "Aṇōraṇīyanna mahatō mahīmana",
+              "rest_marker_note": "Harmonized leading rest: solfa/swara use comma rest (,) with synchronized 16-element semitone array matching keerthanas 04, 05, 09, 10, 11."
+            },
+            {
+              "line_number": 2,
+              "variation": "Resolution with Purandara Vithala Mudra",
+              "solfa": ", p n S | R S | n d || p m g r | s , | s , ||",
+              "swarasthana": ", P N3 Ṡ | Ṙ2 Ṡ | N2 D2 || P M1 G2 R2 | S , | S , ||",
+              "vowels": ", pa nu SA | RI SA | ni dhi || pa ma gi ri | sa , | sa , ||",
+              "semitones": [
+                7,
+                7,
+                11,
+                12,
+                14,
+                12,
+                10,
+                9,
+                7,
+                5,
+                3,
+                2,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "- Pu ran da | ra viṭ | ṭha la | na snehadi | sa -- | la hu vā ||",
+              "sahitya_text": "Purandara Viṭṭhalana snehadindāḍisidaḷu",
+              "rest_marker_note": "Harmonized leading rest: solfa/swara use comma rest (,) with synchronized 16-element semitone array matching keerthanas 04, 05, 09, 10, 11."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "keerthana_15",
+      "title": "Śakti Sahita Gaṇapatim",
+      "title_multiscript": {
+        "english": "Śakti Sahita Gaṇapatim (Nōṭṭusvara Sāhityam)",
+        "devanagari": "शक्ति सहित गणपतिम् (नोट्टुस्वर साहित्यम्)",
+        "tamil": "சக்தி ஸஹித கணபதிம் (நோட்டுஸ்வர ஸாஹித்யம்)",
+        "telugu": "శక్తి సహిత గణపతిం (నోట్టుస్వర సాహిత్యం)",
+        "kannada": "ಶಕ್ತಿ ಸಹಿತ ಗಣಪತಿಂ (ನೋಟುಸ್ವರ ಸಾಹಿತ್ಯಂ)"
+      },
+      "composer": "Muthuswami Dikshitar",
+      "mudra": "Guruguha",
+      "deity": "Lord Ganesha (Vighneshwara with Shakti)",
+      "language": "Sanskrit",
+      "raga": {
+        "name": "Śaṅkarābharaṇam",
+        "parent_mela_number": 29,
+        "parent_mela_name": "Dhīraśaṅkarābharaṇam",
+        "chakra": "Bāṇa",
+        "scale": {
+          "arohana": "S R2 G3 M1 P D2 N3 Ṡ",
+          "avarohana": "Ṡ N3 D2 P M1 G3 R2 S",
+          "semitones_arohana": [
+            0,
+            2,
+            4,
+            5,
+            7,
+            9,
+            11,
+            12
+          ],
+          "semitones_avarohana": [
+            12,
+            11,
+            9,
+            7,
+            5,
+            4,
+            2,
+            0
+          ]
+        },
+        "varjya_swaras": [
+          "None (Sampoorna) - Rendered as Western C-Major diatonic plain notes without oscillatory gamakas"
+        ]
+      },
+      "tala": {
+        "name": "Tisra Jāti Eka Tālam / Rūpaka Tālam",
+        "jati": "Tisra",
+        "angas": "I3",
+        "aksharas_per_avartana": 3,
+        "eduppu": "Sama Eduppu (On Beat 1)",
+        "recommended_tempo_bpm": 108
+      },
+      "meaning_summary": "Dikshitar's masterwork from his Nottusvara collection: A crisp, melodious invocation to Lord Ganesha accompanied by His divine consort, composed with plain, delightful staccato notes to train young children in pitch stability.",
+      "sections": {
+        "charanam": {
+          "title": "Samashti Charanam (Continuous Melodic Poem)",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Opening Fanfare (S S S R G G)",
+              "solfa": "s s s | r g g | m m m || p , , | p , , | p , , ||",
+              "swarasthana": "S S S | R2 G3 G3 | M1 M1 M1 || P , , | P , , | P , , ||",
+              "vowels": "sa sa sa | ri gu gu | ma ma ma || pa , , | pa , , | pa , , ||",
+              "semitones": [
+                0,
+                0,
+                0,
+                2,
+                4,
+                4,
+                5,
+                5,
+                5,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7
+              ],
+              "sahitya_syllables": "Śak ti sa | hi ta ga | ṇa pa tim || bhā -- -- | va -- -- | yē -- -- ||",
+              "sahitya_text": "Śakti sahita gaṇapatiṃ bhāvayē"
+            },
+            {
+              "line_number": 2,
+              "variation": "The Divine Sages",
+              "solfa": "p d p | m g r | s r g || m , , | m , , | m , , ||",
+              "swarasthana": "P D2 P | M1 G3 R2 | S R2 G3 || M1 , , | M1 , , | M1 , , ||",
+              "vowels": "pa dhi pa | ma gu ri | sa ri gu || ma , , | ma , , | ma , , ||",
+              "semitones": [
+                7,
+                9,
+                7,
+                5,
+                4,
+                2,
+                0,
+                2,
+                4,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5
+              ],
+              "sahitya_syllables": "Śaṅ ka ra | pu tra ma | kṣa ya vi || bhū -- -- | ti -- -- | dam -- -- ||",
+              "sahitya_text": "Śankara putramakṣaya vibhūtidam"
+            },
+            {
+              "line_number": 3,
+              "variation": "Guru Guha Mudra & Grace",
+              "solfa": "m p m | g r s | n_ s r || g , , | g , , | g , , ||",
+              "swarasthana": "M1 P M1 | G3 R2 S | ṇ3 S R2 || G3 , , | G3 , , | G3 , , ||",
+              "vowels": "ma pa ma | gu ri sa | nu_ sa ri || gu , , | gu , , | gu , , ||",
+              "semitones": [
+                5,
+                7,
+                5,
+                4,
+                2,
+                0,
+                -1,
+                0,
+                2,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "sahitya_syllables": "Bhak ta ja | nō ddhā | ra kam su || gu -- -- | ru -- -- | gu -- -- ||",
+              "sahitya_text": "Bhaktajanōddhārakaṃ su-guruguha"
+            },
+            {
+              "line_number": 4,
+              "variation": "Triumphant Finale",
+              "solfa": "r g r | s n_ d_ | p_ s r || s , , | s , , | s , , ||",
+              "swarasthana": "R2 G3 R2 | S ṇ3 ḍ2 | p_ S R2 || S , , | S , , | S , , ||",
+              "vowels": "ri gu ri | sa nu_ dhi_ | pa_ sa ri || sa , , | sa , , | sa , , ||",
+              "semitones": [
+                2,
+                4,
+                2,
+                0,
+                -1,
+                -3,
+                -5,
+                0,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sahitya_syllables": "hṛt kamala | ma dhyas | tham a nu || vēl -- -- | lam -- -- | -- -- -- ||",
+              "sahitya_text": "hṛtkamalamadhyastham anuvēlam"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "keerthana_16",
+      "title": "Śrī Sarasvati Namōstutē",
+      "title_multiscript": {
+        "english": "Śrī Sarasvati Namōstutē",
+        "devanagari": "श्री सरस्वति नमोस्तुते",
+        "tamil": "ஸ்ரீ ஸரஸ்வதி நமோஸ்துதே",
+        "telugu": "శ్రీ సరస్వతి నమోస్తుతే",
+        "kannada": "ಶ್ರೀ ಸರಸ್ವತಿ ನಮೋಸ್ತುತೇ"
+      },
+      "composer": "Muthuswami Dikshitar",
+      "mudra": "Guruguha",
+      "deity": "Goddess Saraswati (Vidya Devata)",
+      "language": "Sanskrit",
+      "raga": {
+        "name": "Ārabhi",
+        "parent_mela_number": 29,
+        "parent_mela_name": "Dhīraśaṅkarābharaṇam",
+        "chakra": "Bāṇa",
+        "scale": {
+          "arohana": "S R2 M1 P D2 Ṡ",
+          "avarohana": "Ṡ N3 D2 P M1 G3 R2 S",
+          "semitones_arohana": [
+            0,
+            2,
+            5,
+            7,
+            9,
+            12
+          ],
+          "semitones_avarohana": [
+            12,
+            11,
+            9,
+            7,
+            5,
+            4,
+            2,
+            0
+          ]
+        },
+        "varjya_swaras": [
+          "G and N varjya in arohana (Audava - Sampoorna)"
+        ]
+      },
+      "tala": {
+        "name": "Rūpaka Tālam",
+        "jati": "Chaturasra",
+        "angas": "O I4",
+        "aksharas_per_avartana": 6,
+        "eduppu": "Sama Eduppu (On Beat 1)",
+        "recommended_tempo_bpm": 80
+      },
+      "meaning_summary": "Dikshitar's supreme invocation to Goddess Saraswati, seated upon the white lotus, playing the veena, and granting auspicious wisdom to Guruguha and all sincere seekers of music.",
+      "sections": {
+        "pallavi": {
+          "title": "Pallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Sangati 1 (Majestic Invocation in Ārabhi)",
+              "solfa": "d , | d p m g || r , | m p d s ||",
+              "swarasthana": "D2 , | D2 P M1 G3 || R2 , | M1 P D2 Ṡ ||",
+              "vowels": "dhi , | dhi pa ma gu || ri , | ma pa dhi SA ||",
+              "semitones": [
+                9,
+                9,
+                9,
+                7,
+                5,
+                4,
+                2,
+                2,
+                5,
+                7,
+                9,
+                12
+              ],
+              "sahitya_syllables": "Śrī -- | sa ras va ti || na mō | stu -- tē -- ||",
+              "sahitya_text": "Śrī Sarasvati namōstutē"
+            },
+            {
+              "line_number": 2,
+              "variation": "Sangati 2 (Upper Octave Cascade)",
+              "solfa": "d s | R s n d || p m | g r s r ||",
+              "swarasthana": "D2 Ṡ | Ṙ2 Ṡ N3 D2 || P M1 | G3 R2 S R2 ||",
+              "vowels": "dhi SA | RI SA nu dhi || pa ma | gu ri sa ri ||",
+              "semitones": [
+                9,
+                12,
+                14,
+                12,
+                11,
+                9,
+                7,
+                5,
+                4,
+                2,
+                0,
+                2
+              ],
+              "sahitya_syllables": "Śā -- | ra dē vi dhu || van da | nē -- va rē ||",
+              "sahitya_text": "Śāradē vidhuvandanē varē"
+            }
+          ]
+        },
+        "anupallavi": {
+          "title": "Anupallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Lotus Seat & Veena Phrase",
+              "solfa": "m , | p , d , || p d | s , s , ||",
+              "swarasthana": "M1 , | P , D2 , || P D2 | Ṡ , Ṡ , ||",
+              "vowels": "ma , | pa , dhi , || pa dhi | SA , SA , ||",
+              "semitones": [
+                5,
+                5,
+                7,
+                7,
+                9,
+                9,
+                7,
+                9,
+                12,
+                12,
+                12,
+                12
+              ],
+              "sahitya_syllables": "Vā -- | sa nā sa na || ni la | yē -- -- -- ||",
+              "sahitya_text": "Vāsanāsana nilayē"
+            }
+          ]
+        },
+        "charanam": {
+          "title": "Charanam",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Charanam with Guruguha Mudra",
+              "solfa": "p m | d p m g || r s | r m p d ||",
+              "swarasthana": "P M1 | D2 P M1 G3 || R2 S | R2 M1 P D2 ||",
+              "vowels": "pa ma | dhi pa ma gu || ri sa | ri ma pa dhi ||",
+              "semitones": [
+                7,
+                5,
+                9,
+                7,
+                5,
+                4,
+                2,
+                0,
+                2,
+                5,
+                7,
+                9
+              ],
+              "sahitya_syllables": "Gu ru | gu ha hṛd gha || na la | yē -- vi dyā ||",
+              "sahitya_text": "Guruguha hṛdghanālayē vidyā"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "keerthana_17",
+      "title": "Ninnukōri (Tāna Varṇam)",
+      "title_multiscript": {
+        "english": "Ninnukōri (Tāna Varṇam)",
+        "telugu": "నిన్నుకోరి (తాన వర్ణం)",
+        "devanagari": "निन्नुकोरि (तान वर्णम्)",
+        "tamil": "நின்னுகோரி (தான வர்ணம்)",
+        "kannada": "ನಿನ್ನುಕೋರಿ (ತಾನ ವರ್ಣಂ)"
+      },
+      "composer": "Ramnad Srinivasa Iyengar / Sonti Venkatasubbayya",
+      "mudra": "Śrīnivāsa",
+      "deity": "Lord Venkateswara",
+      "language": "Telugu",
+      "raga": {
+        "name": "Mōhanam",
+        "parent_mela_number": 28,
+        "parent_mela_name": "Harikāmbhōji",
+        "chakra": "Bāṇa",
+        "scale": {
+          "arohana": "S R2 G3 P D2 Ṡ",
+          "avarohana": "Ṡ D2 P G3 R2 S",
+          "semitones_arohana": [
+            0,
+            2,
+            4,
+            7,
+            9,
+            12
+          ],
+          "semitones_avarohana": [
+            12,
+            9,
+            7,
+            4,
+            2,
+            0
+          ]
+        },
+        "varjya_swaras": [
+          "M and N varjya (Audava - Audava)"
+        ]
+      },
+      "tala": {
+        "name": "Ādi Tālam",
+        "jati": "Chaturasra",
+        "angas": "I4 O O",
+        "aksharas_per_avartana": 8,
+        "eduppu": "Sama Eduppu (On Beat 1)",
+        "recommended_tempo_bpm": 80
+      },
+      "meaning_summary": "The premier Tāna Varṇam of Carnatic music pedagogy: Composed in the pure pentatonic grandeur of Mohanam, this piece bridges foundational exercise mechanics into dynamic concert musicianship through balanced swara and sahitya matrices.",
+      "sections": {
+        "pallavi": {
+          "title": "Pallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Pallavi Line 1 (G G R R S S R R)",
+              "solfa": "g g r | r s s | r r || g p g | g r r | s r ||",
+              "swarasthana": "G3 G3 R2 | R2 S S | R2 R2 || G3 P G3 | G3 R2 R2 | S R2 ||",
+              "vowels": "gu gu ri | ri sa sa | ri ri || gu pa gu | gu ri ri | sa ri ||",
+              "semitones": [
+                4,
+                4,
+                2,
+                2,
+                0,
+                0,
+                2,
+                2,
+                4,
+                7,
+                4,
+                4,
+                2,
+                2,
+                0,
+                2
+              ],
+              "sahitya_syllables": "Nin nu kō | ri yun na | di rā || ni ru pam | a rā ja | gō pā ||",
+              "sahitya_text": "Ninnukōri yunnadirā nirupama rājagōpāla"
+            },
+            {
+              "line_number": 2,
+              "variation": "Pallavi Line 2 (Upper Pentatonic Flight)",
+              "solfa": "g p d | p d S | R S || d S R | g r s | d p ||",
+              "swarasthana": "G3 P D2 | P D2 Ṡ | Ṙ2 Ṡ || D2 Ṡ Ṙ2 | G3 Ṙ2 Ṡ | D2 P ||",
+              "vowels": "gu pa dhi | pa dhi SA | RI SA || dhi SA RI | gu ri sa | dhi pa ||",
+              "semitones": [
+                4,
+                7,
+                9,
+                7,
+                9,
+                12,
+                14,
+                12,
+                9,
+                12,
+                14,
+                16,
+                14,
+                12,
+                9,
+                7
+              ],
+              "sahitya_syllables": "Nen narun | la cē la | gi rā || man na na | lē la mi | ca cē ||",
+              "sahitya_text": "Nennarunla cēlagirā mannanalēlamicacē"
+            }
+          ]
+        },
+        "anupallavi": {
+          "title": "Anupallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Anupallavi Theme",
+              "solfa": "d d p | g g r | s r || g g p | d d p | d S ||",
+              "swarasthana": "D2 D2 P | G3 G3 R2 | S R2 || G3 G3 P | D2 D2 P | D2 Ṡ ||",
+              "vowels": "dhi dhi pa | gu gu ri | sa ri || gu gu pa | dhi dhi pa | dhi SA ||",
+              "semitones": [
+                9,
+                9,
+                7,
+                4,
+                4,
+                2,
+                0,
+                2,
+                4,
+                4,
+                7,
+                9,
+                9,
+                7,
+                9,
+                12
+              ],
+              "sahitya_syllables": "Pan nu gā | Śrī ven ka | ṭē śā || nan nu ka | la si kō | vi rā ||",
+              "sahitya_text": "Pannugā Śrī Veṅkaṭēśā nannu kalasikōvirā"
+            }
+          ]
+        },
+        "chittaswara": {
+          "title": "Mukthayi Swaram",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Technical Quintessential Mohanam Swara Krama",
+              "solfa": "S R S | d p g | r s || r g p | d S R | g r ||",
+              "swarasthana": "Ṡ Ṙ2 Ṡ | D2 P G3 | R2 S || R2 G3 P | D2 Ṡ Ṙ2 | G3 Ṙ2 ||",
+              "vowels": "SA RI SA | dhi pa gu | ri sa || ri gu pa | dhi SA RI | gu ri ||",
+              "semitones": [
+                12,
+                14,
+                12,
+                9,
+                7,
+                4,
+                2,
+                0,
+                2,
+                4,
+                7,
+                9,
+                12,
+                14,
+                16,
+                14
+              ],
+              "sahitya_syllables": "Ṡ Ṙ Ṡ | D P G | R S || R G P | D Ṡ Ṙ | G Ṙ ||",
+              "sahitya_text": "Swaram pattern"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "keerthana_18",
+      "title": "Māyātīta Svarūpiṇi",
+      "title_multiscript": {
+        "english": "Māyātīta Svarūpiṇi",
+        "tamil": "மாயாதீத ஸ்வரூபிணி",
+        "telugu": "మాయాతీత స్వరూపిణి",
+        "devanagari": "मायातीत स्वरूपिणी",
+        "kannada": "ಮಾಯಾತೀತ ಸ್ವರೂಪಿಣಿ"
+      },
+      "composer": "Ponnaiyah Pillai (Tanjore Quartet)",
+      "mudra": "Brahmapurīśa",
+      "deity": "Goddess Devi / Brihadeeswara",
+      "language": "Sanskrit / Tamil",
+      "raga": {
+        "name": "Māyāmāḷavagauḷa",
+        "parent_mela_number": 15,
+        "parent_mela_name": "Māyāmāḷavagauḷa",
+        "chakra": "Agni",
+        "scale": {
+          "arohana": "S R1 G3 M1 P D1 N3 Ṡ",
+          "avarohana": "Ṡ N3 D1 P M1 G3 R1 S",
+          "semitones_arohana": [
+            0,
+            1,
+            4,
+            5,
+            7,
+            8,
+            11,
+            12
+          ],
+          "semitones_avarohana": [
+            12,
+            11,
+            8,
+            7,
+            5,
+            4,
+            1,
+            0
+          ]
+        },
+        "varjya_swaras": [
+          "None (Sampoorna) - Anchored in the foundational scale of Carnatic pedagogy"
+        ]
+      },
+      "tala": {
+        "name": "Rūpaka Tālam",
+        "jati": "Chaturasra",
+        "angas": "O I4",
+        "aksharas_per_avartana": 6,
+        "eduppu": "Sama Eduppu (On Beat 1)",
+        "recommended_tempo_bpm": 80
+      },
+      "meaning_summary": "Composed in Mela #15 (Māyāmāḷavagauḷa): A sublime classical composition that lets students sing an authentic, complete concert piece in the very scale they practice their first Sarali Varisais in.",
+      "sections": {
+        "pallavi": {
+          "title": "Pallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Sangati 1 (Foundational Māyāmāḷavagauḷa Ascent)",
+              "solfa": "s r | g m p d || p m | g r s , ||",
+              "swarasthana": "S R1 | G3 M1 P D1 || P M1 | G3 R1 S , ||",
+              "vowels": "sa ra | gu ma pa dha || pa ma | gu ra sa , ||",
+              "semitones": [
+                0,
+                1,
+                4,
+                5,
+                7,
+                8,
+                7,
+                5,
+                4,
+                1,
+                0,
+                0
+              ],
+              "sahitya_syllables": "Mā yā | tī ta sva rū || pi ṇi | mā m pa hi ||",
+              "sahitya_text": "Māyātīta svarūpiṇi mām pāhi"
+            },
+            {
+              "line_number": 2,
+              "variation": "Sangati 2 (Upper Octave Resolution)",
+              "solfa": "p d | n S R S || n d | p m g r ||",
+              "swarasthana": "P D1 | N3 Ṡ Ṙ1 Ṡ || N3 D1 | P M1 G3 R1 ||",
+              "vowels": "pa dha | nu SA RA SA || nu dha | pa ma gu ra ||",
+              "semitones": [
+                7,
+                8,
+                11,
+                12,
+                13,
+                12,
+                11,
+                8,
+                7,
+                5,
+                4,
+                1
+              ],
+              "sahitya_syllables": "Mā yā | tī ta sva rū || pi ṇi | mā m pa hi ||",
+              "sahitya_text": "Māyātīta svarūpiṇi mām pāhi"
+            }
+          ]
+        },
+        "charanam": {
+          "title": "Charanam",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Devi's Eternal Light",
+              "solfa": "m p | d n d p || m g | r s r g ||",
+              "swarasthana": "M1 P | D1 N3 D1 P || M1 G3 | R1 S R1 G3 ||",
+              "vowels": "ma pa | dha nu dha pa || ma gu | ra sa ra gu ||",
+              "semitones": [
+                5,
+                7,
+                8,
+                11,
+                8,
+                7,
+                5,
+                4,
+                1,
+                0,
+                1,
+                4
+              ],
+              "sahitya_syllables": "Kā yā | dhi ka gu ṇa || bhū ṣa | ṇi am bā ||",
+              "sahitya_text": "Kāyādhika guṇabhūṣaṇi ambā"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

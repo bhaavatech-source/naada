@@ -1,0 +1,512 @@
+{
+  "project": "Medhā Nādopāsanā – Creative Suite",
+  "module": "Sound Generator & Master Creative Integration",
+  "version": "2.1.0",
+  "description": "Production Web Audio API synthesis engine parameters, acoustic timbre models (Saraswati Veena, Vēṇu Flute, Human Voice Formants, Tambura Drone), gamaka curve generators, and unified orchestrator linking Raga Grammar, Tala Grids, and Guided Manodharma.",
+  "audio_pipeline_architecture": {
+    "sample_rate": 44100,
+    "master_signal_chain": "Source Oscillators / Noise -> Instrument Shaper / Filter -> Voice Gain (ADSR) -> Gamaka LFO / Pitch Modulator -> Instrument Sub-Mixer -> Stereo Panner -> Convolver Reverb (Temple Hall Simulation) -> Master Gain / Limiter -> AudioDestination",
+    "tuning_reference": {
+      "base_frequency_formula": "f = f_kattai * sruti_ratio",
+      "calibration_source": "sruti-trainer-calibration.json",
+      "default_kattai": "1 (C = 130.81 Hz for male, 261.63 Hz for female/child)",
+      "microtone_engine": "22-Śruti Just Intonation exact ratios with cent micro-tuning"
+    }
+  },
+  "instruments": {
+    "tambura": {
+      "name": "Tanpura / Tambura Concert Drone",
+      "description": "Continuous four-string acoustic drone generating rich Jīvāri (buzzing overtones) across a repeating strum cycle.",
+      "tuning_presets": {
+        "panchama_sruti": {
+          "name": "Pa-Śruti (Standard)",
+          "strings": [
+            {
+              "string_number": 1,
+              "note": "P",
+              "octave_offset": 0,
+              "harmonic_ratio": 1.5,
+              "desc": "Mandra Panchama"
+            },
+            {
+              "string_number": 2,
+              "note": "Ṡ",
+              "octave_offset": 0,
+              "harmonic_ratio": 2.0,
+              "desc": "Madhya Shadja"
+            },
+            {
+              "string_number": 3,
+              "note": "Ṡ",
+              "octave_offset": 0,
+              "harmonic_ratio": 2.0,
+              "desc": "Madhya Shadja (Jodi)"
+            },
+            {
+              "string_number": 4,
+              "note": "S",
+              "octave_offset": -1,
+              "harmonic_ratio": 1.0,
+              "desc": "Kharaj / Mandra Shadja"
+            }
+          ]
+        },
+        "madhyama_sruti": {
+          "name": "Ma-Śruti (for Panchama-varjya ragas like Śrīrañjani)",
+          "strings": [
+            {
+              "string_number": 1,
+              "note": "M1",
+              "octave_offset": 0,
+              "harmonic_ratio": 1.3333,
+              "desc": "Suddha Madhyama"
+            },
+            {
+              "string_number": 2,
+              "note": "Ṡ",
+              "octave_offset": 0,
+              "harmonic_ratio": 2.0,
+              "desc": "Madhya Shadja"
+            },
+            {
+              "string_number": 3,
+              "note": "Ṡ",
+              "octave_offset": 0,
+              "harmonic_ratio": 2.0,
+              "desc": "Madhya Shadja (Jodi)"
+            },
+            {
+              "string_number": 4,
+              "note": "S",
+              "octave_offset": -1,
+              "harmonic_ratio": 1.0,
+              "desc": "Kharaj / Mandra Shadja"
+            }
+          ]
+        },
+        "nishada_sruti": {
+          "name": "Ni-Śruti (for ragas with prominent Nishada like Hindōḷam)",
+          "strings": [
+            {
+              "string_number": 1,
+              "note": "N2",
+              "octave_offset": 0,
+              "harmonic_ratio": 1.7778,
+              "desc": "Kaisiki Nishada"
+            },
+            {
+              "string_number": 2,
+              "note": "Ṡ",
+              "octave_offset": 0,
+              "harmonic_ratio": 2.0,
+              "desc": "Madhya Shadja"
+            },
+            {
+              "string_number": 3,
+              "note": "Ṡ",
+              "octave_offset": 0,
+              "harmonic_ratio": 2.0,
+              "desc": "Madhya Shadja"
+            },
+            {
+              "string_number": 4,
+              "note": "S",
+              "octave_offset": -1,
+              "harmonic_ratio": 1.0,
+              "desc": "Kharaj / Mandra Shadja"
+            }
+          ]
+        }
+      },
+      "strumming_cycle": {
+        "total_cycle_duration_seconds": 5.6,
+        "string_events": [
+          {
+            "string_index": 0,
+            "trigger_time_seconds": 0.0,
+            "pluck_gain": 0.85
+          },
+          {
+            "string_index": 1,
+            "trigger_time_seconds": 1.2,
+            "pluck_gain": 0.75
+          },
+          {
+            "string_index": 2,
+            "trigger_time_seconds": 2.4,
+            "pluck_gain": 0.75
+          },
+          {
+            "string_index": 3,
+            "trigger_time_seconds": 3.6,
+            "pluck_gain": 0.95
+          }
+        ],
+        "resonant_tail_duration_seconds": 2.0
+      },
+      "jivari_synthesis_model": {
+        "type": "Non-linear WaveShaper + Multi-harmonic Bank",
+        "harmonics_profile": [
+          {
+            "harmonic": 1,
+            "amplitude": 1.0
+          },
+          {
+            "harmonic": 2,
+            "amplitude": 0.88
+          },
+          {
+            "harmonic": 3,
+            "amplitude": 0.76
+          },
+          {
+            "harmonic": 4,
+            "amplitude": 0.65
+          },
+          {
+            "harmonic": 5,
+            "amplitude": 0.52
+          },
+          {
+            "harmonic": 6,
+            "amplitude": 0.44
+          },
+          {
+            "harmonic": 7,
+            "amplitude": 0.38
+          },
+          {
+            "harmonic": 8,
+            "amplitude": 0.31
+          },
+          {
+            "harmonic": 9,
+            "amplitude": 0.25
+          },
+          {
+            "harmonic": 10,
+            "amplitude": 0.19
+          },
+          {
+            "harmonic": 11,
+            "amplitude": 0.14
+          },
+          {
+            "harmonic": 12,
+            "amplitude": 0.1
+          }
+        ],
+        "shaper_curve_points": 1024,
+        "shaper_distortion_factor": 0.22,
+        "highpass_cutoff_hz": 65,
+        "lowpass_cutoff_hz": 6500
+      },
+      "adsr": {
+        "attack_seconds": 0.04,
+        "decay_seconds": 0.9,
+        "sustain_level": 0.65,
+        "release_seconds": 3.8
+      }
+    },
+    "veena": {
+      "name": "Saraswati Veena (Carnatic Plucked Lute)",
+      "description": "Warm, resonant plucked string instrument with brass/bronze harmonics and wide fret-pull (gamaka) deflection capabilities.",
+      "synthesis_technique": "Karplus-Strong Plucked String Synthesis + Additive Jackwood Resonator Formant Bank",
+      "adsr": {
+        "attack_seconds": 0.008,
+        "decay_seconds": 0.38,
+        "sustain_level": 0.42,
+        "release_seconds": 1.75
+      },
+      "resonator_eq": {
+        "kudam_resonance_hz": 185,
+        "kudam_q": 3.5,
+        "kudam_gain_db": 6.0,
+        "metallic_meetu_presence_hz": 2400,
+        "metallic_meetu_q": 2.2,
+        "metallic_meetu_gain_db": 4.5,
+        "lowpass_damping_cutoff_hz": 5200
+      },
+      "gamaka_parameters": {
+        "fret_pull_max_cents": 350,
+        "glide_curve": "smooth_cubic_bezier",
+        "sphuritam_accent_gain_boost": 1.28,
+        "sphuritam_lower_touch_duration_ms": 25
+      }
+    },
+    "flute": {
+      "name": "Vēṇu (Carnatic Bamboo Flute)",
+      "description": "Sweet, organic blown bamboo pipe with gentle breath turbulence, warm cylindrical resonance, and fluid continuous vibrato (kampitam).",
+      "synthesis_technique": "Multi-Sine Odd-Harmonics Oscillator + Narrowband Noise Exciter + Formant Filter",
+      "adsr": {
+        "attack_seconds": 0.075,
+        "decay_seconds": 0.16,
+        "sustain_level": 0.88,
+        "release_seconds": 0.14
+      },
+      "harmonics_spectrum": [
+        {
+          "harmonic": 1,
+          "amplitude": 1.0,
+          "phase": 0
+        },
+        {
+          "harmonic": 2,
+          "amplitude": 0.22,
+          "phase": 0.2
+        },
+        {
+          "harmonic": 3,
+          "amplitude": 0.58,
+          "phase": 0.1
+        },
+        {
+          "harmonic": 4,
+          "amplitude": 0.08,
+          "phase": 0.3
+        },
+        {
+          "harmonic": 5,
+          "amplitude": 0.29,
+          "phase": 0.0
+        },
+        {
+          "harmonic": 6,
+          "amplitude": 0.04,
+          "phase": 0.4
+        },
+        {
+          "harmonic": 7,
+          "amplitude": 0.14,
+          "phase": 0.2
+        }
+      ],
+      "breath_noise": {
+        "noise_type": "pink_noise",
+        "mix_ratio": 0.065,
+        "filter_center_hz": 3200,
+        "filter_q": 1.8
+      },
+      "vibrato_lfo": {
+        "rate_hz": 5.2,
+        "depth_cents": 28,
+        "delay_seconds": 0.22
+      }
+    },
+    "voice_formants": {
+      "name": "Human Vocal Solfa Singing Engine",
+      "description": "Formant filter model synthesizing authentic human vowel vocalizations for Kudimiyamalai singing syllables (sa, ri, ru, ga, gi, gu, ma, mi, pa, dha, dhi, dhu, na, ni, nu).",
+      "synthesis_technique": "Glottal Pulse Waveform + Triple Bandpass Formant Bank + Pitch Micro-Jitter",
+      "vowel_formant_frequencies": {
+        "a": {
+          "vowels_represented": [
+            "sa",
+            "ra",
+            "ga",
+            "ma",
+            "pa",
+            "dha",
+            "na",
+            "SA"
+          ],
+          "f1_hz": 800,
+          "f1_gain": 1.0,
+          "f1_q": 5.0,
+          "f2_hz": 1250,
+          "f2_gain": 0.7,
+          "f2_q": 6.5,
+          "f3_hz": 2600,
+          "f3_gain": 0.35,
+          "f3_q": 8.0
+        },
+        "i": {
+          "vowels_represented": [
+            "ri",
+            "gi",
+            "mi",
+            "dhi",
+            "ni"
+          ],
+          "f1_hz": 300,
+          "f1_gain": 0.85,
+          "f1_q": 5.5,
+          "f2_hz": 2350,
+          "f2_gain": 0.95,
+          "f2_q": 8.0,
+          "f3_hz": 3100,
+          "f3_gain": 0.45,
+          "f3_q": 9.0
+        },
+        "u": {
+          "vowels_represented": [
+            "ru",
+            "gu",
+            "dhu",
+            "nu"
+          ],
+          "f1_hz": 350,
+          "f1_gain": 0.9,
+          "f1_q": 5.0,
+          "f2_hz": 850,
+          "f2_gain": 0.75,
+          "f2_q": 6.0,
+          "f3_hz": 2450,
+          "f3_gain": 0.25,
+          "f3_q": 8.0
+        }
+      },
+      "glottal_pulse": {
+        "pulse_type": "Liljencrants-Fant (LF) Model Approximation",
+        "open_quotient": 0.65,
+        "asymmetry_coefficient": 0.72,
+        "micro_jitter_cents": 3.2
+      },
+      "adsr": {
+        "attack_seconds": 0.05,
+        "decay_seconds": 0.12,
+        "sustain_level": 0.92,
+        "release_seconds": 0.18
+      }
+    }
+  },
+  "gamaka_curve_library": {
+    "description": "Mathematical envelope models translating traditional Carnatic ornamentation into Web Audio AudioParam automation curves.",
+    "gamakas": {
+      "kampitam": {
+        "name": "Kampitam (Deep Oscillation)",
+        "description": "Continuous sinusoid/pendulum pitch swing around a specific microtonal center (crucial for G2 in Bhairavi, R1 in Todi, M2 in Varali).",
+        "lfo_frequency_hz": 4.8,
+        "oscillation_span_cents": 75,
+        "curve_type": "sine_oscillator",
+        "onset_delay_ms": 120
+      },
+      "nokku": {
+        "name": "Nōkku (Downward Push / Stressed Grip)",
+        "description": "Starting slightly above or flicking rapidly from higher microtonal pitch down to the target note with a momentary accent.",
+        "peak_offset_cents": 90,
+        "attack_duration_ms": 40,
+        "decay_duration_ms": 70,
+        "curve_type": "exponential_decay"
+      },
+      "sphuritam": {
+        "name": "Sphuritam (Accented Lower-Step Touch in Janta Varisai)",
+        "description": "The second swara in a pair (e.g. S S, R R) touches the immediately lower note for 25 ms before striking the principal note with velocity stress.",
+        "touch_offset_semitones": -1,
+        "touch_duration_ms": 25,
+        "velocity_boost_factor": 1.25
+      },
+      "jaru_ullasa": {
+        "name": "Ullāsa Jāru (Upward Portamento Slide)",
+        "description": "Continuous smooth glissando sliding up from a lower pitch to a target landing pitch.",
+        "curve_type": "linear_ramp_or_exponential_glide",
+        "glide_duration_ms": 160
+      },
+      "jaru_iranga": {
+        "name": "Iṟaṅga Jāru (Downward Portamento Cascade)",
+        "description": "Smooth descending glissando sliding downward from higher pitch to lower note.",
+        "curve_type": "exponential_glide",
+        "glide_duration_ms": 180
+      }
+    }
+  },
+  "reverb_and_spatial_acoustics": {
+    "temple_hall_convolver": {
+      "name": "South Indian Granite Temple Hall (Mandapam Simulation)",
+      "predelay_ms": 28,
+      "decay_time_seconds": 2.2,
+      "wet_dry_mix": 0.24,
+      "damping_frequency_hz": 4200
+    },
+    "chamber_room": {
+      "name": "Intimate Chamber / Sangeetha Sabha",
+      "predelay_ms": 12,
+      "decay_time_seconds": 1.1,
+      "wet_dry_mix": 0.16,
+      "damping_frequency_hz": 6000
+    }
+  },
+  "client_web_audio_implementation_code": {
+    "language": "javascript",
+    "class_name": "NaadopaasanaAudioEngine",
+    "source_code": "/**\n * Naadopaasana Web Audio API Synthesis Engine v2.0\n * Comprehensive, production-grade Carnatic audio engine:\n * - 4 Authentic Instruments: Veena, Flute, Vocal Formants, and Tambura Drone.\n * - Dynamic Sruti / Kattai updates with real-time drone retuning.\n * - Full Gamaka Curve Synthesis: Kampitam, Nokku, Sphuritam, Jaru.\n * - Precise Rest ('_') and Karvai (',') handling without spurious pitch playback.\n * - Anti-Clipping Master Dynamics Compressor Node.\n * - Lookahead Clock for sample-accurate track & Tala synchronization.\n */\n\nclass NaadopaasanaAudioEngine {\n  constructor(options = {}) {\n    this.ctx = null;\n    this.masterGain = null;\n    this.compressor = null;\n    this.convolver = null;\n    this.tamburaGain = null;\n    this.activeVoices = new Set();\n    \n    // Sruti / Kattai\n    this.baseKattaiHz = options.kattaiHz || 261.63; // 1 Kattai (C = 261.63 Hz)\n    this.currentKattai = options.kattai || 1;\n    this.activeDronePreset = 'panchama_sruti';\n    this.droneIsRunning = false;\n    this.droneScheduledUntil = 0;\n    this.droneTimer = null;\n\n    // Harmonic 22-Sruti Ratios\n    this.srutiRatios = options.srutiRatios || {\n      'S': 1.0, 'R1': 16/15, 'R2': 9/8, 'R3': 75/64,\n      'G1': 9/8, 'G2': 6/5, 'G3': 5/4, 'M1': 4/3, 'M2': 45/32,\n      'P': 3/2, 'D1': 8/5, 'D2': 5/3, 'D3': 125/72,\n      'N1': 5/3, 'N2': 9/5, 'N3': 15/8, 'Ṡ': 2.0\n    };\n\n    // 12-point Kattai pitch table\n    this.kattaiTable = {\n      1: 261.63, 1.5: 277.18, 2: 293.66, 2.5: 311.13,\n      3: 329.63, 4: 349.23, 4.5: 369.99, 5: 392.00,\n      5.5: 415.30, 6: 440.00, 6.5: 466.16, 7: 493.88\n    };\n\n    this.currentInstrument = options.instrument || 'veena';\n  }\n\n  /**\n   * Initializes the AudioContext and signal graph with Limiter/Compressor.\n   */\n  init() {\n    const AudioContextClass = window.AudioContext || window.webkitAudioContext;\n    this.ctx = new AudioContextClass();\n\n    // 1. Master Limiter / Dynamics Compressor to prevent clipping across simultaneous tracks\n    this.compressor = this.ctx.createDynamicsCompressor();\n    this.compressor.threshold.setValueAtTime(-3, this.ctx.currentTime);\n    this.compressor.knee.setValueAtTime(6, this.ctx.currentTime);\n    this.compressor.ratio.setValueAtTime(12, this.ctx.currentTime);\n    this.compressor.attack.setValueAtTime(0.003, this.ctx.currentTime);\n    this.compressor.release.setValueAtTime(0.25, this.ctx.currentTime);\n    this.compressor.connect(this.ctx.destination);\n\n    // 2. Master Gain\n    this.masterGain = this.ctx.createGain();\n    this.masterGain.gain.setValueAtTime(0.85, this.ctx.currentTime);\n    this.masterGain.connect(this.compressor);\n\n    // 3. Tambura Drone Bus\n    this.tamburaGain = this.ctx.createGain();\n    this.tamburaGain.gain.setValueAtTime(0.35, this.ctx.currentTime);\n    this.tamburaGain.connect(this.masterGain);\n\n    return this.ctx;\n  }\n\n  /**\n   * Resumes AudioContext if suspended by browser autoplay policy.\n   */\n  async ensureAudioContext() {\n    if (!this.ctx) this.init();\n    if (this.ctx.state === 'suspended') {\n      await this.ctx.resume();\n    }\n  }\n\n  /**\n   * Updates Sruti by exact frequency or Kattai number, instantly retuning instruments and drone.\n   */\n  setSruti(kattaiOrHz) {\n    if (typeof kattaiOrHz === 'number') {\n      if (this.kattaiTable[kattaiOrHz]) {\n        this.currentKattai = kattaiOrHz;\n        this.baseKattaiHz = this.kattaiTable[kattaiOrHz];\n      } else {\n        this.baseKattaiHz = kattaiOrHz;\n      }\n    }\n    \n    // Retune active tambura drone seamlessly\n    if (this.droneIsRunning) {\n      this.restartTamburaDrone();\n    }\n  }\n\n  setKattai(kattaiNumber) {\n    this.setSruti(kattaiNumber);\n  }\n\n  /**\n   * Calculates the exact microtonal frequency for any swara code.\n   * Returns null for rests and karvai holds.\n   */\n  getFrequency(swaraToken, octaveOffset = 0) {\n    if (!swaraToken) return null;\n    const clean = swaraToken.trim();\n    if (clean === ',' || clean === '-' || clean === '_' || clean === '.' || clean === '') {\n      return null; // Silent rest or sustain marker\n    }\n\n    // Determine octave multiplier\n    let octMultiplier = 1.0;\n    if (clean.includes('Ṡ') || clean.includes('Ġ') || clean.includes('Ṙ') || clean.includes('Ṁ') || clean.includes('Ṗ')) {\n      octMultiplier *= 2.0;\n    } else if (clean.includes('ṇ') || clean.includes('ḍ') || clean.includes('p_') || clean.includes('m_')) {\n      octMultiplier *= 0.5;\n    }\n\n    if (octaveOffset !== 0) {\n      octMultiplier *= Math.pow(2, octaveOffset);\n    }\n\n    // Clean swara symbol\n    const baseCode = clean.replace(/[·_̇\\s,]/g, '');\n    const ratio = this.srutiRatios[baseCode] || this.srutiRatios[clean] || 1.0;\n\n    return this.baseKattaiHz * ratio * octMultiplier;\n  }\n\n  /**\n   * Plays a single swara or processes rests and karvai holds.\n   */\n  playSwara(swaraObj, startTime = null, durationSeconds = 0.5, velocity = 1.0) {\n    if (!this.ctx) this.init();\n    const now = startTime !== null ? startTime : this.ctx.currentTime;\n    const swaraToken = typeof swaraObj === 'string' ? swaraObj : swaraObj.swara;\n    \n    // Check if token is a rest\n    const clean = (swaraToken || '').trim();\n    if (clean === '_' || clean === '.' || clean === 'rest') {\n      // Silence - do not trigger oscillator\n      return { type: 'rest', startTime: now, duration: durationSeconds };\n    }\n\n    const freq = typeof swaraObj === 'object' && swaraObj.freq ? swaraObj.freq : this.getFrequency(swaraToken, swaraObj.octave || 0);\n    if (!freq) return null;\n\n    const gamaka = typeof swaraObj === 'object' ? swaraObj.gamaka : null;\n    const vowel = typeof swaraObj === 'object' ? (swaraObj.vowel || 'a') : 'a';\n\n    let voice;\n    if (this.currentInstrument === 'veena') {\n      voice = this.playVeenaNote(freq, now, durationSeconds, velocity, gamaka);\n    } else if (this.currentInstrument === 'flute') {\n      voice = this.playFluteNote(freq, now, durationSeconds, velocity, gamaka);\n    } else {\n      voice = this.playVoiceFormantNote(freq, now, durationSeconds, velocity, vowel, gamaka);\n    }\n\n    return voice;\n  }\n\n  /**\n   * Saraswati Veena Sound Synthesis with Pluck & Gamakas\n   */\n  playVeenaNote(freq, now, duration, velocity, gamaka = null) {\n    const osc = this.ctx.createOscillator();\n    const gain = this.ctx.createGain();\n    const filter = this.ctx.createBiquadFilter();\n\n    osc.type = 'sawtooth';\n    osc.frequency.setValueAtTime(freq, now);\n\n    // Apply Gamaka Curves\n    this.applyGamakaToOscillator(osc, freq, now, duration, gamaka);\n\n    filter.type = 'lowpass';\n    filter.frequency.setValueAtTime(3800, now);\n    filter.frequency.exponentialRampToValueAtTime(1200, now + duration);\n\n    const attack = 0.008;\n    const decay = 0.35;\n    const peakGain = 0.65 * velocity;\n    const sustainGain = peakGain * 0.35;\n\n    gain.gain.setValueAtTime(0.0001, now);\n    gain.gain.linearRampToValueAtTime(peakGain, now + attack);\n    gain.gain.exponentialRampToValueAtTime(sustainGain, now + attack + decay);\n    gain.gain.setValueAtTime(sustainGain, Math.max(now + attack + decay, now + duration - 0.05));\n    gain.gain.exponentialRampToValueAtTime(0.0001, now + duration + 0.6);\n\n    osc.connect(filter);\n    filter.connect(gain);\n    gain.connect(this.masterGain);\n\n    osc.start(now);\n    osc.stop(now + duration + 0.65);\n\n    return { osc, gain, filter };\n  }\n\n  /**\n   * Venu Bamboo Flute Sound Synthesis with Breath & Gamakas\n   */\n  playFluteNote(freq, now, duration, velocity, gamaka = null) {\n    const osc = this.ctx.createOscillator();\n    const gain = this.ctx.createGain();\n    const filter = this.ctx.createBiquadFilter();\n\n    osc.type = 'triangle';\n    osc.frequency.setValueAtTime(freq, now);\n\n    // Apply Gamaka Curves\n    this.applyGamakaToOscillator(osc, freq, now, duration, gamaka);\n\n    filter.type = 'lowpass';\n    filter.frequency.setValueAtTime(2600, now);\n\n    const attack = 0.05;\n    const peakGain = 0.55 * velocity;\n\n    gain.gain.setValueAtTime(0.0001, now);\n    gain.gain.linearRampToValueAtTime(peakGain, now + attack);\n    gain.gain.setValueAtTime(peakGain * 0.90, Math.max(now + attack, now + duration - 0.04));\n    gain.gain.linearRampToValueAtTime(0.0001, now + duration + 0.12);\n\n    osc.connect(filter);\n    filter.connect(gain);\n    gain.connect(this.masterGain);\n\n    osc.start(now);\n    osc.stop(now + duration + 0.15);\n\n    return { osc, gain, filter };\n  }\n\n  /**\n   * Kudimiyamalai Vocal Formant Synthesis\n   */\n  playVoiceFormantNote(freq, now, duration, velocity, vowel = 'a', gamaka = null) {\n    const osc = this.ctx.createOscillator();\n    const gain = this.ctx.createGain();\n    const bp1 = this.ctx.createBiquadFilter();\n    const bp2 = this.ctx.createBiquadFilter();\n\n    osc.type = 'sawtooth';\n    osc.frequency.setValueAtTime(freq, now);\n\n    // Apply Gamaka Curves\n    this.applyGamakaToOscillator(osc, freq, now, duration, gamaka);\n\n    bp1.type = 'bandpass';\n    bp1.frequency.setValueAtTime(vowel === 'i' ? 300 : (vowel === 'u' ? 350 : 800), now);\n    bp1.Q.setValueAtTime(5.0, now);\n\n    bp2.type = 'bandpass';\n    bp2.frequency.setValueAtTime(vowel === 'i' ? 2300 : (vowel === 'u' ? 850 : 1250), now);\n    bp2.Q.setValueAtTime(6.0, now);\n\n    const attack = 0.04;\n    gain.gain.setValueAtTime(0.0001, now);\n    gain.gain.linearRampToValueAtTime(0.50 * velocity, now + attack);\n    gain.gain.setValueAtTime(0.45 * velocity, Math.max(now + attack, now + duration - 0.03));\n    gain.gain.linearRampToValueAtTime(0.0001, now + duration + 0.10);\n\n    osc.connect(bp1);\n    osc.connect(bp2);\n    bp1.connect(gain);\n    bp2.connect(gain);\n    gain.connect(this.masterGain);\n\n    osc.start(now);\n    osc.stop(now + duration + 0.12);\n\n    return { osc, gain, bp1, bp2 };\n  }\n\n  /**\n   * Applies Authentic Carnatic Gamaka Curves (Kampitam, Nokku, Sphuritam, Jaru)\n   */\n  applyGamakaToOscillator(osc, freq, now, duration, gamaka) {\n    if (!gamaka) return;\n\n    if (gamaka === 'sphuritam') {\n      // Upward strike from lower neighbor note (25ms)\n      const touchFreq = freq * Math.pow(2, -1/12);\n      osc.frequency.setValueAtTime(touchFreq, now);\n      osc.frequency.setValueAtTime(freq, now + 0.025);\n    } else if (gamaka === 'nokku') {\n      // Downward stress flick from upper neighbor\n      const peakFreq = freq * Math.pow(2, 1/12);\n      osc.frequency.setValueAtTime(peakFreq, now);\n      osc.frequency.exponentialRampToValueAtTime(freq, now + 0.06);\n    } else if (gamaka === 'kampitam') {\n      // Continuous sinusoidal oscillation (rate 4.8 Hz, span ±45 cents)\n      const cycles = Math.floor(duration * 4.8);\n      const halfPeriod = 1 / (4.8 * 2);\n      const centRatio = Math.pow(2, 45 / 1200);\n\n      for (let i = 0; i < cycles; i++) {\n        const tUp = now + (i * 2 * halfPeriod) + (halfPeriod * 0.5);\n        const tDown = now + ((i * 2 + 1) * halfPeriod) + (halfPeriod * 0.5);\n        if (tUp < now + duration) {\n          osc.frequency.linearRampToValueAtTime(freq * centRatio, tUp);\n        }\n        if (tDown < now + duration) {\n          osc.frequency.linearRampToValueAtTime(freq / centRatio, tDown);\n        }\n      }\n      osc.frequency.linearRampToValueAtTime(freq, now + duration);\n    } else if (gamaka === 'jaru' || gamaka === 'ullasa') {\n      // Upward glide starting from minor third below\n      const startFreq = freq * Math.pow(2, -3/12);\n      osc.frequency.setValueAtTime(startFreq, now);\n      osc.frequency.exponentialRampToValueAtTime(freq, now + (duration * 0.5));\n    }\n  }\n\n  /**\n   * Sample-Accurate Lookahead Tambura Drone (replaces drifting setInterval)\n   */\n  startTamburaDrone(preset = 'panchama_sruti') {\n    if (!this.ctx) this.init();\n    this.stopTamburaDrone();\n    this.activeDronePreset = preset;\n    this.droneIsRunning = true;\n\n    const rootFreq = this.baseKattaiHz;\n    const stringRatios = preset === 'madhyama_sruti'\n      ? [4/3, 2.0, 2.0, 1.0]\n      : (preset === 'nishada_sruti' ? [9/5, 2.0, 2.0, 1.0] : [1.5, 2.0, 2.0, 1.0]);\n\n    const cycleSeconds = 5.6;\n    const offsets = [0.0, 1.2, 2.4, 3.6];\n\n    // Lookahead scheduler\n    const scheduleNextDrone = () => {\n      if (!this.droneIsRunning) return;\n      const now = this.ctx.currentTime;\n      if (this.droneScheduledUntil < now + 2.0) {\n        const startCycleTime = Math.max(now, this.droneScheduledUntil);\n        offsets.forEach((offset, idx) => {\n          const strumTime = startCycleTime + offset;\n          const stringFreq = rootFreq * stringRatios[idx];\n          this.strumTamburaString(stringFreq, strumTime);\n        });\n        this.droneScheduledUntil = startCycleTime + cycleSeconds;\n      }\n    };\n\n    scheduleNextDrone();\n    this.droneTimer = setInterval(scheduleNextDrone, 1000);\n  }\n\n  restartTamburaDrone() {\n    this.startTamburaDrone(this.activeDronePreset);\n  }\n\n  strumTamburaString(freq, time) {\n    if (!this.ctx) return;\n    const osc = this.ctx.createOscillator();\n    const gain = this.ctx.createGain();\n\n    osc.type = 'sawtooth';\n    osc.frequency.setValueAtTime(freq, time);\n\n    gain.gain.setValueAtTime(0.0001, time);\n    gain.gain.linearRampToValueAtTime(0.20, time + 0.05);\n    gain.gain.exponentialRampToValueAtTime(0.0001, time + 3.2);\n\n    osc.connect(gain);\n    gain.connect(this.tamburaGain);\n\n    osc.start(time);\n    osc.stop(time + 3.3);\n  }\n\n  stopTamburaDrone() {\n    this.droneIsRunning = false;\n    this.droneScheduledUntil = 0;\n    if (this.droneTimer) {\n      clearInterval(this.droneTimer);\n      this.droneTimer = null;\n    }\n  }\n}\n"
+  },
+  "master_creative_suite_orchestrator": {
+    "description": "Unified orchestration schema connecting all four creative suite components into cohesive runtime game/training modes.",
+    "subsystem_dependencies": {
+      "raga_grammar": "music-builder-raga-grammar-engine.json",
+      "tala_grid": "music-builder-tala-grid-engine.json",
+      "guided_manodharma": "music-builder-guided-manodharma.json",
+      "sound_synthesis": "music-builder-sound-and-master-integration.json",
+      "sruti_tuning": "sruti-trainer-calibration.json",
+      "keerthanas_master": "keerthanas-master-rebuilt-v2.json",
+      "curriculum_master": "naadopaasana-master-curriculum-v2.json"
+    },
+    "runtime_modes": [
+      {
+        "mode_id": "mode_child_sandbox",
+        "title": "Child / Toddler Musical Playground",
+        "target_audience": "Children aged 4–8 & absolute beginners",
+        "default_instrument": "flute",
+        "default_tala": "adi_tala",
+        "default_subdivision": "chaturasra_4",
+        "tempo_bpm": 64,
+        "features": {
+          "visual_color_coded_swaras": true,
+          "varjya_lockout_active": true,
+          "vakra_warning_active": false,
+          "freeform_exploration": true,
+          "kriya_hand_animation": true,
+          "instant_playback_on_tap": true
+        }
+      },
+      {
+        "mode_id": "mode_student_composer",
+        "title": "Student Melody Builder",
+        "target_audience": "Intermediate students composing structured 1–2 Avartana phrases",
+        "default_instrument": "veena",
+        "default_tala": "adi_tala",
+        "default_subdivision": "chaturasra_4",
+        "tempo_bpm": 76,
+        "features": {
+          "active_raga_validation": true,
+          "metric_akshara_closure_counter": true,
+          "karvai_rest_editing": true,
+          "multi_speed_kala_krama": true,
+          "octave_shift_controls": true,
+          "auto_scoring": true
+        }
+      },
+      {
+        "mode_id": "mode_guided_manodharma_challenge",
+        "title": "Guided Manodharma (Kalpanāsvara Challenge)",
+        "target_audience": "Advancing vocalists & instrumentalists preparing for concert improvisation",
+        "default_instrument": "voice_formants",
+        "default_tala": "adi_tala",
+        "default_subdivision": "chaturasra_4",
+        "tempo_bpm": 80,
+        "features": {
+          "composition_eduppu_sync": true,
+          "landing_swara_target_highlighting": true,
+          "makutam_tripartite_validator": true,
+          "cognitive_scoring_engine": true,
+          "leaderboard_and_progress_tracking": true
+        }
+      },
+      {
+        "mode_id": "mode_concert_virtuoso",
+        "title": "Concert Virtuoso Korvai Studio",
+        "target_audience": "Advanced musicians & teachers building complex asymmetrical rhythm structures",
+        "default_instrument": "veena",
+        "default_tala": "misra_capu_tala",
+        "default_subdivision": "chaturasra_4",
+        "tempo_bpm": 88,
+        "features": {
+          "asymmetric_gati_switching": true,
+          "complex_yati_analysis": true,
+          "sphuritam_nokku_gamaka_curves": true,
+          "export_to_midi_and_json": true
+        }
+      }
+    ]
+  }
+}

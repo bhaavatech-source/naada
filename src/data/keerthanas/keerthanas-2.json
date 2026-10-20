@@ -1,0 +1,288 @@
+{
+  "project": "Medhā Nādopāsanā Master Keerthana Library",
+  "version": "4.1.0",
+  "total_compositions": 3,
+  "description": "Production-ready master collection of fully expanded classical compositions featuring complete Pallavi, Anupallavi, Charanams, progressive Sangatis, multi-script sahitya, and synchronized audio semitones.",
+  "compositions": [
+    {
+      "id": "keerthana_19",
+      "title": "Nidhi Chāla Sukhamā",
+      "title_multiscript": {
+        "devanagari": "निधि चाल सुखमा",
+        "kannada": "ನಿಧಿ ಚಾಲ ಸುಖಮಾ",
+        "telugu": "నిధి చాల సుఖమా",
+        "tamil": "நிதி சால சுகமா"
+      },
+      "composer": "Saint Tyagaraja",
+      "mudra": "Tyāgarāja",
+      "deity": "Lord Rama",
+      "language": "Telugu",
+      "raga": {
+        "name": "Kalyāṇi",
+        "parent_mela_number": 65,
+        "parent_mela_name": "Mēcakalyāṇi",
+        "chakra": "Rudra",
+        "scale": {
+          "arohana": "S R2 G3 M2 P D2 N3 Ṡ",
+          "avarohana": "Ṡ N3 D2 P M2 G3 R2 S",
+          "semitones_arohana": [0, 2, 4, 6, 7, 9, 11, 12],
+          "semitones_avarohana": [12, 11, 9, 7, 6, 4, 2, 0]
+        }
+      },
+      "tala": {
+        "name": "Miśra Cāpu Tālam",
+        "jati": "Miśra",
+        "angas": "3 + 4 = 7 Aksharas",
+        "aksharas_per_avartana": 7,
+        "eduppu": "Anāgata Eduppu (Starts after 1.5 aksharas)",
+        "recommended_tempo_bpm": 66
+      },
+      "aesthetic_rasa": "Śānta & Bhakti (Supreme detachment and spiritual wealth)",
+      "meaning_summary": "Is wealth (nidhi) truly productive of happiness, or is the close proximity and devotion to the lotus feet of Lord Rama far superior? Tyagaraja contemplates true inner riches over material gold.",
+      "sections": {
+        "pallavi": {
+          "title": "Pallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Sangati 1 (Basic Philosophical Entry)",
+              "solfa": "p , m g | r s n_ d_ | s , ||",
+              "swarasthana": "P , M1 G3 | R2 S ṇ2 ḍ2 | S , ||",
+              "vowels": "pa , ma gu | ri sa ni_ dhi_ | sa , ||",
+              "semitones": [7, 7, 5, 4, 2, 0, 10, 8, 0, 0, 0, 0, 0, 0, 0, 0],
+              "sahitya_syllables": "Ni dhi cā | la su kha | mā -- ||",
+              "sahitya_text": "Nidhi cāla sukhamā"
+            },
+            {
+              "line_number": 2,
+              "variation": "Sangati 2 (Upper Octave Embellishment)",
+              "solfa": "p n S R | S n | d p || m g r s | s , | s , ||",
+              "swarasthana": "P N3 Ṡ Ṙ2 | Ṡ N3 | D2 P || M1 G3 R2 S | S , | S , ||",
+              "vowels": "pa nu SA RI | SA nu | dhi pa || ma gu ri sa | sa , | sa , ||",
+              "semitones": [7, 11, 12, 14, 12, 11, 9, 7, 5, 4, 2, 0, 0, 0, 0, 0],
+              "sahitya_syllables": "Rā mu ni | san ni | dhi su || kha mā -- -- | -- -- | -- -- ||",
+              "sahitya_text": "rāmuni sannidhi sukhamā"
+            }
+          ]
+        },
+        "anupallavi": {
+          "title": "Anupallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Anupallavi Theme",
+              "solfa": "g m p d | n , | S , || n d p m | g r | s , ||",
+              "swarasthana": "G3 M1 P D2 | N3 , | Ṡ , || N3 D2 P M1 | G3 R2 | S , ||",
+              "vowels": "gu ma pa dhi | nu , | SA , || nu dhi pa ma | gu ri | sa , ||",
+              "semitones": [4, 5, 7, 9, 11, 11, 12, 12, 11, 9, 7, 5, 4, 2, 0, 0],
+              "sahitya_syllables": "Dha ni ka | na ka | mīs | tu la ka - || te li ya | no -- | ka dā ||",
+              "sahitya_text": "Dhanika naka mīstu la kaṭe liyano kadā"
+            }
+          ]
+        },
+        "charanam": {
+          "title": "Charanam",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Charanam Opening",
+              "solfa": "s r g m | p , | d , || n S R S | n d | p , ||",
+              "swarasthana": "S R1 G3 M1 | P , | D2 , || N3 Ṡ Ṙ2 Ṡ | N3 D2 | P , ||",
+              "vowels": "sa ra gu ma | pa , | dhi , || nu SA RI SA | nu dhi | pa , ||",
+              "semitones": [0, 2, 4, 5, 7, 7, 9, 9, 11, 12, 14, 12, 11, 9, 7, 7],
+              "sahitya_syllables": "Gā -- na | la lō | lu -- || kai na saṅ | gi ta | jñā -- ||",
+              "sahitya_text": "Gānalalōlulai kainasaṅgītajñāna"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "keerthana_20",
+      "title": "Nagumōmu Ganalēni",
+      "title_multiscript": {
+        "devanagari": "नगुमोमु गनलेनि",
+        "kannada": "ನಗುಮೊಮು ಗನಲೇನಿ",
+        "telugu": "నగుమోము గనలేని",
+        "tamil": "நகுமோமு கனலேனி"
+      },
+      "composer": "Saint Tyagaraja",
+      "mudra": "Tyāgarāja",
+      "deity": "Lord Rama",
+      "language": "Telugu",
+      "raga": {
+        "name": "Abhōgi",
+        "parent_mela_number": 22,
+        "parent_mela_name": "Kharaharapriyā",
+        "chakra": "Veda",
+        "scale": {
+          "arohana": "S R2 G2 M1 D2 Ṡ",
+          "avarohana": "Ṡ D2 M1 G2 R2 S",
+          "semitones_arohana": [0, 2, 3, 5, 9, 12],
+          "semitones_avarohana": [12, 9, 5, 3, 2, 0]
+        },
+        "varjya_swaras": ["P and N completely omitted (Audava - Audava)"]
+      },
+      "tala": {
+        "name": "Ādi Tālam",
+        "jati": "Chaturasra",
+        "angas": "I4 O O",
+        "aksharas_per_avartana": 8,
+        "eduppu": "Anāgata Eduppu (Starts after 1/2 akshara)",
+        "recommended_tempo_bpm": 70
+      },
+      "aesthetic_rasa": "Karuṇa & Bhakti (Pleading yearning for the divine smile)",
+      "meaning_summary": "If I cannot behold your smiling countenance, O Rama, what is the use of my eyes? Without your grace, my life is rendered completely meaningless.",
+      "sections": {
+        "pallavi": {
+          "title": "Pallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Sangati 1 (Expressive Pentatonic Yearning)",
+              "solfa": "s g m d | s , | s , || d m g r | s , | s , ||",
+              "swarasthana": "S G2 M1 D2 | Ṡ , | Ṡ , || D2 M1 G2 R2 | S , | S , ||",
+              "vowels": "sa gi ma dhi | SA , | SA , || dhi ma gu ri | sa , | sa , ||",
+              "semitones": [0, 3, 5, 9, 12, 12, 12, 12, 9, 5, 3, 2, 0, 0, 0, 0],
+              "sahitya_syllables": "Na gu mō | mu ga | na lē || ni nā -- ju | ba -- | -- -- ||",
+              "sahitya_text": "Nagumōmu ganalēni nā jāli telisēnu"
+            },
+            {
+              "line_number": 2,
+              "variation": "Sangati 2 (Upper Register Octave Soar)",
+              "solfa": "g m d S | R S | n_ d || m g r s | s , | s , ||",
+              "swarasthana": "G2 M1 D2 Ṡ | Ṙ2 Ṡ | Ṇ2 D2 || M1 G2 R2 S | S , | S , ||",
+              "vowels": "gu ma dhi SA | RI SA | ni_ dhi || ma gu ri sa | sa , | sa , ||",
+              "semitones": [3, 5, 9, 12, 14, 12, 10, 9, 5, 3, 2, 0, 0, 0, 0, 0],
+              "sahitya_syllables": "Na gu mō | mu ga | na lē || ni nā -- ju | ba -- | -- -- ||",
+              "sahitya_text": "Nagumōmu ganalēni nā jāli telisēnu"
+            }
+          ]
+        },
+        "anupallavi": {
+          "title": "Anupallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Anupallavi Theme",
+              "solfa": "g m d S | R , | R , || S d m g | r s | s , ||",
+              "swarasthana": "G2 M1 D2 Ṡ | Ṙ2 , | Ṙ2 , || Ṡ D2 M1 G2 | R2 S | S , ||",
+              "vowels": "gu ma dhi SA | RA , | RA , || SA dhi ma gu | ri sa | sa , ||",
+              "semitones": [3, 5, 9, 12, 14, 14, 14, 14, 12, 9, 5, 3, 2, 0, 0, 0],
+              "sahitya_syllables": "Jag ga la | prā -- | ṇa -- || ran ra ñja | ni rā | mā -- ||",
+              "sahitya_text": "Jagalanu prāṇaraju rañjani rāmā"
+            }
+          ]
+        },
+        "charanam": {
+          "title": "Charanam",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Charanam Resolution with Tyagaraja Mudra",
+              "solfa": "s r g m | d , | d , || d m g r | s , | s , ||",
+              "swarasthana": "S R2 G2 M1 | D2 , | D2 , || D2 M1 G2 R2 | S , | S , ||",
+              "vowels": "sa ri gu ma | dhi , | dhi , || dhi ma gu ri | sa , | sa , ||",
+              "semitones": [0, 2, 3, 5, 9, 9, 9, 9, 9, 5, 3, 2, 0, 0, 0, 0],
+              "sahitya_syllables": "Tyā ga rā | ja nu | tu -- || da nujā -- nti | ka -- | -- -- ||",
+              "sahitya_text": "Tyāgarājanuta danujāntaka rāmā"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "keerthana_21",
+      "title": "Mariyāda Kādayyā",
+      "title_multiscript": {
+        "devanagari": "मरियाद कादय्या",
+        "kannada": "ಮರಿಯಾದ ಕಾದಯ್ಯ",
+        "telugu": "మరియాద కాదయ్యా",
+        "tamil": "மரியாத காதய்யா"
+      },
+      "composer": "Saint Tyagaraja",
+      "mudra": "Tyāgarāja",
+      "deity": "Lord Rama",
+      "language": "Telugu",
+      "raga": {
+        "name": "Bhairavi",
+        "parent_mela_number": 20,
+        "parent_mela_name": "Naṭabhairavi",
+        "chakra": "Veda",
+        "scale": {
+          "arohana": "S R2 G2 M1 P D1 N2 Ṡ",
+          "avarohana": "Ṡ N2 D1 P M1 G2 R2 S",
+          "semitones_arohana": [0, 2, 3, 5, 7, 8, 10, 12],
+          "semitones_avarohana": [12, 10, 8, 7, 5, 3, 2, 0]
+        }
+      },
+      "tala": {
+        "name": "Rūpaka Tālam",
+        "jati": "Chaturasra",
+        "angas": "O I4",
+        "aksharas_per_avartana": 6,
+        "eduppu": "Sama Eduppu",
+        "recommended_tempo_bpm": 62
+      },
+      "aesthetic_rasa": "Karuṇa (Deep emotional appeal and questioning grace)",
+      "meaning_summary": "Is it fair or dignified (mariyada) on your part to test my patience thus, O Rama? You are the ocean of mercy, yet you remain silent to my cries.",
+      "sections": {
+        "pallavi": {
+          "title": "Pallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Sangati 1 (Classic Bhairavi Pathos)",
+              "solfa": "p d n S | n d | p m || g r s n_ | s , | s , ||",
+              "swarasthana": "P D1 N2 Ṡ | N2 D1 | P M1 || G2 R2 S ṇ2 | S , | S , ||",
+              "vowels": "pa dhi ni SA | ni dhi | pa ma || gu ri sa ni_ | sa , | sa , ||",
+              "semitones": [7, 8, 10, 12, 10, 8, 7, 5, 3, 2, 0, 10, 0, 0, 0, 0],
+              "sahitya_syllables": "Ma ri yā | da kā | day || yā -- rā | mā -- | -- -- ||",
+              "sahitya_text": "Mariyāda kādayyā rāmā"
+            },
+            {
+              "line_number": 2,
+              "variation": "Sangati 2 (Upper Register Bhairavi Sweep)",
+              "solfa": "S R G M | P D | N S || Ṡ N D P | M G | R S ||",
+              "swarasthana": "Ṡ Ṙ2 Ġ2 Ṁ1 | P D1 | N2 Ṡ || Ṡ N2 D1 P | M1 G2 | R2 S ||",
+              "vowels": "SA RI GI MI | pa dhi | ni SA || SA ni dhi pa | ma gu | ri sa ||",
+              "semitones": [12, 14, 15, 17, 19, 20, 22, 24, 24, 22, 20, 19, 17, 15, 14, 12],
+              "sahitya_syllables": "Ma ri yā | da kā | day || yā -- rā | mā -- | -- -- ||",
+              "sahitya_text": "Mariyāda kādayyā rāmā"
+            }
+          ]
+        },
+        "anupallavi": {
+          "title": "Anupallavi",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Anupallavi Theme",
+              "solfa": "p d n S | R , | S , || n d p m | g r | s , ||",
+              "swarasthana": "P D1 N2 Ṡ | Ṙ2 , | Ṡ , || N2 D1 P M1 | G2 R2 | S , ||",
+              "vowels": "pa dhi ni SA | RA , | SA , || ni dhi pa ma | gu ri | sa , ||",
+              "semitones": [7, 8, 10, 12, 14, 14, 12, 12, 10, 8, 7, 5, 3, 2, 0, 0],
+              "sahitya_syllables": "Da ra ni | lō pa | la -- || ka ru ṇa | lē -- | da -- ||",
+              "sahitya_text": "Daranilō pala lōka karuṇa lēdā rāmā"
+            }
+          ]
+        },
+        "charanam": {
+          "title": "Charanam",
+          "lines": [
+            {
+              "line_number": 1,
+              "variation": "Charanam Resolution",
+              "solfa": "s r g m | p , | d , || n S R S | n d | p , ||",
+              "swarasthana": "S R2 G2 M1 | P , | D1 , || N2 Ṡ Ṙ2 Ṡ | N2 D1 | P , ||",
+              "vowels": "sa ri gu ma | pa , | dhi , || ni SA RI SA | ni dhi | pa , ||",
+              "semitones": [0, 2, 3, 5, 7, 7, 8, 8, 10, 12, 14, 12, 10, 8, 7, 7],
+              "sahitya_syllables": "Tyā ga rā | ja nu | tu -- || da nu jā | nti ka | rā mā ||",
+              "sahitya_text": "Tyāgarājanuta danujāntaka rāmā"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

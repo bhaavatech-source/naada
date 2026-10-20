@@ -1,0 +1,431 @@
+/* ==========================================================================
+   NĀDA VIDYĀ: Traditional, Artistic & Calm Global Theme
+   ================================================================---------- */
+
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=boska@400,700&display=swap');
+
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+:root {
+  --bg:         #FAF6EE;
+  --surface:    #FFFFFF;
+  --surface2:   #F5EFE6;
+  --surface3:   #EFE7DA;
+  --border:     rgba(49,46,129,0.16);
+  --accent:     #0D9488;
+  --accent2:    #0F766E;
+  --accent-dim: rgba(13,148,136,0.12);
+  --gold:       #D97706;
+  --teal:       #0D9488;
+  --green:      #15803D;
+  --red:        #B91C1C;
+  --orange:     #C2410C;
+  --text:       #25233A;
+  --text-muted: #625F73;
+  --text-faint: #777286;
+  --font-body:  'Satoshi', sans-serif;
+  --font-display: 'Boska', Georgia, serif;
+  --space-1: 0.25rem; 
+  --space-2: 0.5rem; 
+  --space-3: 0.75rem;
+  --space-4: 1rem; 
+  --space-6: 1.5rem; 
+  --space-8: 2rem;
+  --space-12: 3rem; 
+  --space-16: 4rem;
+  --radius-sm: 6px; 
+  --radius: 10px; 
+  --radius-lg: 16px; 
+  --radius-xl: 24px;
+  --shadow: 0 4px 24px rgba(49,46,129,0.09);
+  --transition: 160ms cubic-bezier(0.16,1,0.3,1);
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+html, body, #root {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #FBF7ED;
+  background-image:
+    radial-gradient(ellipse at 12% 16%, rgba(13, 148, 136, .10), transparent 38%),
+    radial-gradient(ellipse at 88% 80%, rgba(217, 119, 6, .09), transparent 34%);
+  background-attachment: fixed;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+  font-family: var(--font-display); 
+  line-height: 1.2; 
+  text-wrap: balance; 
+}
+
+p, li { 
+  text-wrap: pretty; 
+  max-width: 72ch; 
+}
+
+button { 
+  cursor: pointer; 
+  background: none; 
+  border: none; 
+  font: inherit; 
+  color: inherit; 
+  min-width: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input, select, textarea { 
+  font: inherit; 
+  color: inherit; 
+  background: none; 
+  border: none; 
+  outline: none; 
+  min-width: 0;
+}
+
+:focus-visible { 
+  outline: 2px solid var(--accent); 
+  outline-offset: 3px; 
+  border-radius: var(--radius-sm); 
+}
+
+::selection { 
+  background: rgba(13, 148, 136, 0.2); 
+}
+
+.sr-only { 
+  position: absolute; 
+  width: 1px; 
+  height: 1px; 
+  padding: 0; 
+  margin: -1px; 
+  overflow: hidden; 
+  clip: rect(0,0,0,0); 
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--surface3); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent2); }
+
+/* Shimmer skeleton */
+@keyframes shimmer { 
+  0% { background-position: -200% 0; } 
+  100% { background-position: 200% 0; } 
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--surface2) 25%, var(--surface3) 50%, var(--surface2) 75%);
+  background-size: 200% 100%; 
+  animation: shimmer 1.5s ease-in-out infinite; 
+  border-radius: var(--radius-sm);
+}
+
+/* Note pulse animation for active playback */
+@keyframes notePulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(13,148,136,0); }
+  50% { transform: scale(1.12); box-shadow: 0 0 12px 4px rgba(13,148,136,0.3); }
+}
+.note-active { 
+  animation: notePulse 0.3s ease; 
+  background: var(--accent) !important; 
+  color: #ffffff !important; 
+}
+
+/* Layout Utilities */
+.flex { display: flex; } 
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; } 
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: var(--space-2); } 
+.gap-3 { gap: var(--space-3); } 
+.gap-4 { gap: var(--space-4); }
+.w-full { width: 100%; } 
+.h-full { height: 100%; }
+.text-muted { color: var(--text-muted); } 
+.text-accent { color: var(--accent); }
+.text-sm { font-size: 0.875rem; } 
+.text-xs { font-size: 0.75rem; }
+.font-bold { font-weight: 700; } 
+.font-medium { font-weight: 500; }
+.rounded { border-radius: var(--radius); } 
+.rounded-lg { border-radius: var(--radius-lg); }
+.p-4 { padding: var(--space-4); } 
+.p-3 { padding: var(--space-3); }
+.mt-4 { margin-top: var(--space-4); } 
+.mb-2 { margin-bottom: var(--space-2); }
+.overflow-hidden { overflow: hidden; } 
+.overflow-auto { overflow: auto; }
+
+/* ── Global Background Animated Motifs (Atmospheric Layer) ── */
+#root { 
+  position: relative; 
+  isolation: isolate; 
+}
+#root > * { 
+  position: relative; 
+  z-index: 1; 
+}
+
+#root::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.10;
+  background-image: url('../assets/naada-motifs.svg');
+  background-repeat: no-repeat;
+  background-size: min(100vw, 1500px) auto;
+  background-position: 50% 0%;
+  animation: naadaMotifFloat 42s ease-in-out infinite alternate;
+  mix-blend-mode: multiply;
+}
+
+@keyframes naadaMotifFloat {
+  0% { background-position: 48% 0%; transform: translate3d(0, 0, 0); }
+  100% { background-position: 52% 12px; transform: translate3d(0, -3px, 0); }
+}
+
+#root::after {
+  content: '𝄞   ♪   ♫   ♬   वीणा   ·   बाँसुरी   ·   मृदङ्गम्';
+  position: fixed;
+  right: clamp(12px, 3vw, 42px);
+  bottom: 12px;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(14px, 1.4vw, 21px);
+  letter-spacing: .12em;
+  color: rgba(13, 148, 136, 0.12);
+  animation: musicDrift 34s ease-in-out infinite alternate;
+}
+
+@keyframes musicDrift {
+  from { transform: translate3d(0, 0, 0); opacity: .45; }
+  to { transform: translate3d(-18px, -5px, 0); opacity: .8; }
+}
+
+@keyframes calmWaves {
+  0% { transform: translate3d(-1%, -0.5%, 0) scale(1); opacity: .7; }
+  100% { transform: translate3d(1%, .5%, 0) scale(1.04); opacity: 1; }
+}
+
+/* ── RESPONSIVE SWARASTHANA & PRACTICE HIGHLIGHT STYLING ── */
+.raga-library-root,
+.raga-library-root > div {
+  min-width: 0;
+}
+
+.raga-exercise-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  align-content: flex-start !important;
+  gap: 14px !important;
+  min-width: 0;
+  min-height: 0;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+.raga-exercise-card {
+  display: block !important;
+  position: relative;
+  flex: 0 0 auto !important;
+  width: 100%;
+  height: auto !important;
+  min-height: 0 !important;
+  min-width: 0;
+  overflow: visible;
+  contain: none !important;
+  box-shadow: 0 4px 16px rgba(49, 46, 129, 0.08);
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-radius: var(--radius);
+  border: 1px solid rgba(13, 148, 136, 0.2);
+  transition: all 0.2s ease;
+}
+
+.raga-exercise-card:hover {
+  border-color: rgba(13, 148, 136, 0.45);
+  box-shadow: 0 6px 22px rgba(13, 148, 136, 0.12);
+}
+
+.raga-exercise-card > div:first-child {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Clear, legible notation layout */
+.raga-exercise-card .raga-note-line,
+.raga-exercise-card .raga-note-line span,
+.raga-exercise-card .raga-note-line > span,
+.raga-exercise-card [class*="note-line"] span {
+  display: inline-block !important;
+  line-height: 2.1 !important;
+  font-size: 1.05rem !important;
+  font-weight: 600;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  color: #25233A !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+  padding: 2px 4px;
+  margin: 1px;
+  border-radius: 4px;
+}
+
+/* Highly visible active practice highlight */
+.raga-exercise-card .note-active,
+.raga-exercise-card span.note-active,
+.note-active {
+  color: #FFFFFF !important;
+  background: #0D9488 !important;
+  opacity: 1 !important;
+  font-weight: 700 !important;
+  border-radius: 6px;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.25), 0 4px 12px rgba(13, 148, 136, 0.35);
+  transform: scale(1.05);
+}
+
+.raga-exercise-card .raga-swarasthana {
+  display: block;
+  width: calc(100% - 22px);
+  max-width: calc(100% - 22px);
+  height: auto;
+  margin: 8px 0 12px 22px;
+  padding: 10px 12px;
+  border: 1px solid rgba(13, 148, 136, 0.3);
+  border-radius: var(--radius-sm);
+  background: rgba(13, 148, 136, 0.03);
+  overflow: visible;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0F766E;
+}
+
+.raga-exercise-card h3,
+.raga-exercise-card h4,
+.raga-exercise-card strong { 
+  color: #25233A !important; 
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.raga-exercise-card button { 
+  color: #0D9488; 
+  font-weight: 600;
+}
+
+.raga-exercise-grid > * {
+  min-width: 0;
+}
+
+/* Device Media Queries */
+@media (max-width: 600px) {
+  #root::after { right: 10px; bottom: 6px; font-size: 12px; letter-spacing: .04em; }
+  #root::before { opacity: 0.12; background-size: 150vw auto; }
+
+  .raga-exercise-grid {
+    padding: 10px !important;
+    gap: 12px !important;
+  }
+
+  .raga-exercise-card {
+    padding: 12px !important;
+    border-radius: 12px;
+  }
+
+  .raga-exercise-card .raga-note-line {
+    line-height: 2.25 !important;
+  }
+
+  .raga-exercise-card .raga-note-line > span {
+    font-size: 0.96rem !important;
+    padding-left: 3px !important;
+    padding-right: 3px !important;
+  }
+
+  .raga-swarasthana {
+    font-size: 0.78rem !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .raga-library-root > div:first-child {
+    width: 190px !important;
+    min-width: 190px !important;
+  }
+
+  .raga-exercise-grid {
+    padding: 12px !important;
+    gap: 12px !important;
+  }
+
+  .raga-exercise-card {
+    padding: 13px !important;
+  }
+
+  .raga-exercise-card .raga-note-line > span {
+    font-size: 0.98rem !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .raga-exercise-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-rows: max-content;
+    align-items: start !important;
+    gap: 16px !important;
+    padding: 16px !important;
+  }
+
+  .raga-exercise-grid.raga-tab-alankara {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .raga-exercise-card {
+    padding: 16px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { 
+    animation-duration: 0.01ms !important; 
+    animation-iteration-count: 1 !important; 
+    scroll-behavior: auto !important; 
+    transition-duration: 0.01ms !important; 
+  }
+  #root::before, #root::after { 
+    animation: none !important; 
+  }
+}
