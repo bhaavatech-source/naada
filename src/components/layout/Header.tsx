@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import type { Ref } from 'react'
 import { useAppStore } from '../../store/useAppStore'
 import { INSTRUMENTS } from '../../data/instruments'
 import type { InstrumentId } from '../../types/index'
@@ -21,16 +22,34 @@ const TONIC_OPTIONS = [
 ]
 
 const MODULE_LABELS: Record<string, string> = {
-  raga:'Rāga Library', janya: 'Janya Rāga Library', tala:'Tāla Trainer', shruti:'Śruti Trainer',
+  raga:'Rāga Library', janya: 'Janya Rāga Library', tala:'Tāla Trainer', shruti:'Śruti Trainer', gamaka:'Gamaka Trainer',
   resources:'Resources', builder:'Music Builder', progress:'My Progress', about:'About Nāda'
 }
 
-export default function Header() {
+export default function Header({ moduleSettingsRef }: { moduleSettingsRef?: Ref<HTMLDivElement> }) {
   const { module, settings, updateSettings, sidebarOpen, setSidebarOpen } = useAppStore()
   const availableInstruments = INSTRUMENTS.filter(i => i.category === 'melodic' || i.category === 'percussion')
   const [settingsOpen, setSettingsOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768)
+  const hasModuleSettings = module === 'raga' || module === 'builder'
+  const showSettingsButton = module !== 'home' && (isMobile || hasModuleSettings)
 
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
+
+  useEffect(() => setSettingsOpen(false), [module])
+
+  useEffect(() => {
+    if (!settingsOpen) return
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setSettingsOpen(false)
+    }
+    window.addEventListener('keydown', closeOnEscape)
+    return () => window.removeEventListener('keydown', closeOnEscape)
+  }, [settingsOpen])
 
   return (
     <>
@@ -66,7 +85,7 @@ export default function Header() {
         </div>
 
         {/* Desktop: inline controls */}
-        {!isMobile && (
+        {!isMobile && module !== 'home' && !hasModuleSettings && (
           <>
             <div style={{ display:'flex', alignItems:'center', gap:'var(--space-2)' }}>
               <label style={{ fontSize:'0.72rem', color:'var(--text-muted)', whiteSpace:'nowrap' }}>Śruti</label>
@@ -97,9 +116,12 @@ export default function Header() {
           </>
         )}
 
-        {/* Mobile: settings button */}
-        {isMobile && (
+        {/* Module settings are available at every viewport width. */}
+        {showSettingsButton && (
           <button
+            aria-label="Settings"
+            aria-expanded={settingsOpen}
+            aria-controls="app-settings"
             onClick={() => setSettingsOpen(!settingsOpen)}
             style={{
               background:'var(--surface2)', border:'1px solid var(--border)',
@@ -111,8 +133,18 @@ export default function Header() {
         )}
       </header>
 
-      {/* Mobile settings panel — drops down below header */}
-      {isMobile && settingsOpen && (
+      {module !== 'home' && (
+        <section id="app-settings" aria-label="Settings" hidden={!showSettingsButton || !settingsOpen}
+          style={hasModuleSettings ? {
+            position: 'absolute', top: 56, right: 0, zIndex: 30,
+            width: module === 'builder' ? 'min(100%, 960px)' : 'min(100%, 480px)', maxHeight: 'calc(100dvh - 64px)',
+            overflowY: 'auto', background: 'var(--surface)',
+            border: '1px solid var(--border)', boxShadow: 'var(--shadow)',
+          } : { flexShrink: 0 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, padding: '8px 16px', background: 'var(--surface)', position: hasModuleSettings ? 'sticky' : undefined, top: 0, zIndex: 2 }}>
+          <h2 style={{ fontSize: '1.1rem' }}>{module === 'raga' ? 'Rāga practice settings' : module === 'builder' ? 'Music Builder settings' : 'Settings'}</h2>
+          <button onClick={() => setSettingsOpen(false)} aria-label="Close settings" style={{ padding: '6px 10px' }}>✕</button>
+        </div>
         <div style={{
           background:'var(--surface)', borderBottom:'1px solid var(--border)',
           padding:'12px 16px', display:'flex', flexWrap:'wrap', gap:12, alignItems:'center',
@@ -144,6 +176,8 @@ export default function Header() {
               style={{ width:100, accentColor:'var(--accent)' }} />
           </div>
         </div>
+        <div ref={moduleSettingsRef} />
+        </section>
       )}
     </>
   )

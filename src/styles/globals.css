@@ -177,6 +177,14 @@ input, select, textarea {
 .overflow-hidden { overflow: hidden; } 
 .overflow-auto { overflow: auto; }
 
+/* Allow the app's nested flex layout to shrink within the viewport. */
+main,
+main > *,
+.flex > * {
+  min-width: 0;
+  min-height: 0;
+}
+
 /* ── Global Background Animated Motifs (Atmospheric Layer) ── */
 #root { 
   position: relative; 
@@ -350,7 +358,7 @@ input, select, textarea {
 
 /* Device Media Queries */
 @media (max-width: 600px) {
-  #root::after { right: 10px; bottom: 6px; font-size: 12px; letter-spacing: .04em; }
+  #root::after { display: none; }
   #root::before { opacity: 0.12; background-size: 150vw auto; }
 
   .raga-exercise-grid {
@@ -549,3 +557,8 @@ input, select, textarea {
     margin-left: auto;
   }
 }
+
+/* Bound replaced elements and controls without constraining notation tracks. */
+#root { overflow-x: clip; }
+img, svg, video, canvas { max-width: 100%; }
+button, input, select, textarea { max-width: 100%; }

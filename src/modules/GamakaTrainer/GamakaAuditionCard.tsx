@@ -70,10 +70,10 @@ export const GamakaAuditionCard: React.FC<Props> = ({ profile }) => {
 
   return (
     <div
+      className="gamaka-audition-card"
       style={{
         background: '#1E293B',
         borderRadius: '16px',
-        padding: '20px',
         border: isThisActive ? '2px solid #F59E0B' : '1px solid #334155',
         boxShadow: isThisActive ? '0 0 20px rgba(245, 158, 11, 0.25)' : 'none',
         display: 'flex',
@@ -83,9 +83,9 @@ export const GamakaAuditionCard: React.FC<Props> = ({ profile }) => {
       }}
     >
       {/* Header */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+      <div style={{ display: 'flex', gap: 8, justifyContent: 'space-between', alignItems: 'flex-start' }}>
+        <div style={{ minWidth: 0 }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '8px' }}>
             <span
               style={{
                 background: '#312E81',
@@ -115,6 +115,7 @@ export const GamakaAuditionCard: React.FC<Props> = ({ profile }) => {
             border: '1px solid #475569',
             borderRadius: '12px',
             width: '44px',
+            flexShrink: 0,
             height: '44px',
             display: 'flex',
             alignItems: 'center',
@@ -168,7 +169,7 @@ export const GamakaAuditionCard: React.FC<Props> = ({ profile }) => {
       )}
 
       {/* Action Buttons */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr auto', gap: '8px', marginTop: '6px' }}>
+      <div className="gamaka-audition-actions">
         <button
           onClick={handlePlayPlain}
           disabled={isPlaying}

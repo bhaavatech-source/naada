@@ -1,6 +1,8 @@
 // src/modules/MusicBuilder/index.tsx
 
 import { useState, useCallback, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
+import './music-builder.css';
 import { MELAKARTAS } from '../../data/ragas';
 import { INSTRUMENTS } from '../../data/instruments';
 import { useAppStore } from '../../store/useAppStore';
@@ -204,7 +206,7 @@ function cloneTracksSnapshot(source: Track[]): Track[] {
   return source.map(track => ({ ...track, blocks: track.blocks.map(block => ({ ...block })) }));
 }
 
-export default function MusicBuilder() {
+export default function MusicBuilder({ settingsContainer }: { settingsContainer?: HTMLDivElement | null }) {
   const { settings } = useAppStore();
   const [tracks, setTracks] = useState<Track[]>([
     makeTrack('Track 1', 0),
@@ -905,7 +907,10 @@ useEffect(() => {
 
   // ── Render ─────────────────────────────────────────────────────────────────
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', overflow: 'hidden' }}>
+    <div className="music-builder" style={{ display: 'flex', flexDirection: 'column', height: '100%', overflow: 'hidden' }}>
+      {settingsContainer && createPortal(
+        <div className="music-builder-settings">
+      <h3 className="builder-settings-heading">Composition & practice</h3>
 
       {/* ── Toolbar ── */}
       <div style={{ padding: 'var(--space-3) var(--space-4)', borderBottom: '1px solid var(--border)', background: 'var(--surface)', display: 'flex', flexWrap: 'wrap', gap: 'var(--space-3)', alignItems: 'center' }}>
@@ -932,6 +937,7 @@ useEffect(() => {
       </div>
 
       {/* ── Arrangement controls ── */}
+      <h3 className="builder-settings-heading">Playback & export</h3>
       <div style={{ padding: '10px 16px', borderBottom: '1px solid var(--border)', background: 'var(--surface2)', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 10 }}>
         <label style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Playback
           <select value={playMode} onChange={e => setPlayMode(e.target.value as 'together' | 'sequential')} style={{ marginLeft: 6, background: 'var(--surface)', color: 'var(--text)', border: '1px solid var(--border)', borderRadius: 4, padding: 4 }}>
@@ -971,6 +977,9 @@ useEffect(() => {
         {localAudioUrl && <button onClick={() => { if (localAudioRef.current?.paused) void localAudioRef.current.play(); else localAudioRef.current?.pause(); }} style={{ padding: '5px 9px', borderRadius: 5, border: '1px solid var(--accent)', color: 'var(--accent)', background: 'transparent', cursor: 'pointer', fontSize: '0.72rem' }}>▶ / ⏸ {localAudioName}</button>}
       </div>
       {exportMessage && <div role="status" style={{ padding: '6px 16px', fontSize: '0.72rem', color: 'var(--text-muted)', background: 'var(--surface)', borderBottom: '1px solid var(--border)' }}>{exportMessage}</div>}
+        </div>,
+        settingsContainer
+      )}
 
       {/* ── Import notification banner ── */}
       {showImportBanner && (
@@ -988,7 +997,7 @@ useEffect(() => {
         </div>
       ) : mode === 'mmg' ? (
         <div style={{ flex: 1, overflow: 'auto', display: 'flex', flexDirection: 'column' }}>
-          <div style={{ padding: 'var(--space-3) var(--space-4)', borderBottom: '1px solid var(--border)', background: 'var(--surface2)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div style={{ padding: 'var(--space-3) var(--space-4)', borderBottom: '1px solid var(--border)', background: 'var(--surface2)', display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'space-between', alignItems: 'center' }}>
             <span style={{ fontSize: '0.82rem', fontWeight: 600 }}>MMG Varisai Practice</span>
             <button onClick={() => setMode('builder')} style={{ padding: '6px 14px', borderRadius: 'var(--radius-sm)', fontSize: '0.82rem', background: 'transparent', border: '1px solid var(--border)', color: 'var(--text-muted)', cursor: 'pointer' }}>← Back to Track Builder</button>
           </div>
@@ -996,6 +1005,8 @@ useEffect(() => {
         </div>
       ) : (
         <>
+          {settingsContainer && createPortal(
+            <div className="music-builder-settings">
           {showSoundStudio && (
             <SoundStudioPanel
               bpm={settings.bpm}
@@ -1007,7 +1018,7 @@ useEffect(() => {
 
           {/* ── Experimental musical phrase import panel ── */}
           {showPhraseImport && (
-            <div style={{ flex: '0 0 auto', maxHeight: '48%', overflow: 'auto', padding: 'var(--space-3) var(--space-4)', borderBottom: '1px solid var(--border)', background: 'var(--surface2)' }}>
+            <div style={{ padding: 'var(--space-3) var(--space-4)', borderBottom: '1px solid var(--border)', background: 'var(--surface2)' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, marginBottom: 10 }}>
                 <div>
                   <div style={{ fontWeight: 700, color: 'var(--text)', fontSize: '0.9rem' }}>Import Musical Phrases</div>
@@ -1027,7 +1038,7 @@ useEffect(() => {
           )}
 
           {showTimeline && (
-            <section aria-label="Musical arrangement timeline" style={{ flex: '0 0 auto', maxHeight: 320, borderBottom: '1px solid var(--border)', background: 'var(--surface)', padding: '10px 12px', display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <section aria-label="Musical arrangement timeline" style={{ borderBottom: '1px solid var(--border)', background: 'var(--surface)', padding: '10px 12px', display: 'flex', flexDirection: 'column', gap: 8 }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' }}>
                 <div>
                   <div style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--text)' }}>Arrangement Timeline</div>
@@ -1111,19 +1122,22 @@ useEffect(() => {
               </div>}
             </section>
           )}
+            </div>,
+            settingsContainer
+          )}
 
-          <div style={{ flex: 1, display: 'flex', overflow: 'hidden' }}>
+          <div className="builder-workspace">
 
             {/* ── Note palette ── */}
-            <div style={{ width: 180, flexShrink: 0, borderRight: '1px solid var(--border)', overflow: 'auto', padding: 'var(--space-3)', display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+            <div className="builder-palette">
               <div>
                 <div style={{ fontSize: '0.7rem', color: 'var(--text-faint)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 'var(--space-2)' }}>Rāga Notes</div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                <div className="builder-palette-notes">
                   {RAGA_NOTES.map(note => (
                     <button key={note.id} draggable onDragStart={() => setDragNote(note)} onDragEnd={() => setDragNote(null)}
                       onClick={() => { addBlock(note); synthNote(semitonesToHz(settings.tonicHz, note.semitone), 0.6, tracks[activeTrack]?.instrument ?? 'veena', settings.volume); }}
                       style={{ textAlign: 'left', padding: '6px 10px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border)', background: 'var(--surface)', color: 'var(--text)', fontSize: '0.82rem', fontFamily: 'monospace', cursor: 'grab', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <span style={{ fontWeight: 700, color: tracks[activeTrack]?.color ?? 'var(--accent)' }}>{note.label}</span>
+                      <span style={{ fontWeight: 700, color: 'var(--accent2)' }}>{note.label}</span>
                       <span style={{ fontSize: '0.65rem', color: 'var(--text-faint)' }}>{note.semitone}st</span>
                     </button>
                   ))}
@@ -1132,7 +1146,11 @@ useEffect(() => {
             </div>
 
             {/* ── Tracks area ── */}
-            <div style={{ flex: 1, overflow: 'auto', padding: 'var(--space-4)', display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+            <div className="builder-tracks" aria-label="Composition tracks">
+              <div className="builder-workspace-heading">
+                <h2>{selectedRaga.name}</h2>
+                <p>Tap a svara to add it to the active track. Open Settings for playback, imports, and the timeline.</p>
+              </div>
 
               {/* ════ VOCAL TRACKS FROM SHRUTI TRAINER ════ */}
               {importedVocals.length > 0 && (
@@ -1220,15 +1238,15 @@ useEffect(() => {
 
               {/* ════ REGULAR TRACKS ════ */}
               {tracks.map((track, ti) => (
-                <div key={track.id}
+                <div key={track.id} className="builder-track"
                   style={{ background: 'var(--surface)', borderRadius: 'var(--radius)', border: ti === activeTrack ? `2px solid ${track.color}` : '1px solid var(--border)', padding: 'var(--space-3)', cursor: 'pointer' }}
                   onClick={() => setActiveTrack(ti)}
                   onDragOver={e => e.preventDefault()}
                   onDrop={e => { e.preventDefault(); if (dragNote) { const note = { ...dragNote, id: makeId() }; updateTracks(prev => prev.map((target, index) => { if (index !== ti) return target; const positioned = positionBlocks(target.blocks); const startBeat = positioned.reduce((end, block) => Math.max(end, block.startBeat + block.duration), 0); return { ...target, blocks: [...positioned, { ...note, startBeat }] }; })); setActiveTrack(ti); } }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--space-2)' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
+                  <div className="builder-track-header" style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--space-2)' }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 'var(--space-2)' }}>
                       <div style={{ width: 10, height: 10, borderRadius: '50%', background: track.color, flexShrink: 0 }} />
-                      <input aria-label={`Rename ${track.name}`} value={track.name} onChange={e => renameTrack(track.id, e.target.value)} onClick={e => e.stopPropagation()} onFocus={() => setActiveTrack(ti)} style={{ width: 106, minWidth: 70, fontSize: '0.8rem', fontWeight: 600, color: ti === activeTrack ? track.color : 'var(--text)', background: 'transparent', border: '1px solid transparent', borderBottomColor: 'var(--border)', outline: 'none', padding: '2px 3px' }} />
+                      <input aria-label={`Rename ${track.name}`} value={track.name} onChange={e => renameTrack(track.id, e.target.value)} onClick={e => e.stopPropagation()} onFocus={() => setActiveTrack(ti)} style={{ width: 106, minWidth: 70, fontSize: '0.8rem', fontWeight: 600, color: 'var(--text)', background: 'transparent', border: '1px solid transparent', borderBottomColor: 'var(--border)', outline: 'none', padding: '2px 3px' }} />
                       <select value={track.instrument}
                         onChange={e => { const ins = e.target.value as InstrumentId; updateTracks(prev => prev.map((t, i) => i === ti ? { ...t, instrument: ins } : t)); }}
                         onClick={e => e.stopPropagation()}
@@ -1236,7 +1254,7 @@ useEffect(() => {
                         {INSTRUMENTS.filter(i => i.category === 'melodic').map(ins => <option key={ins.id} value={ins.id}>{ins.icon} {ins.label}</option>)}
                       </select>
                     </div>
-                    <div style={{ display: 'flex', gap: 'var(--space-2)' }} onClick={e => e.stopPropagation()}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 'var(--space-2)' }} onClick={e => e.stopPropagation()}>
                       <label title="Mute this track" style={{ fontSize: '0.65rem', color: track.muted ? 'var(--red)' : 'var(--text-faint)', display: 'flex', alignItems: 'center', gap: 3 }}>
                         <input type="checkbox" checked={!!track.muted} onChange={e => updateTracks(prev => prev.map((t, i) => i === ti ? { ...t, muted: e.target.checked } : t))} /> Mute
                       </label>
@@ -1262,11 +1280,11 @@ useEffect(() => {
                       </span>
                     )}
                     {track.blocks.map(block => (
-                      <div key={block.id} title="Click to remove"
+                      <button key={block.id} type="button" title="Click to remove" aria-label={`Remove ${block.label} from ${track.name}`}
                         onClick={e => { e.stopPropagation(); removeBlock(ti, block.id); }}
-                        style={{ padding: '3px 8px', borderRadius: 4, background: track.color + '22', border: `1px solid ${track.color}55`, fontSize: '0.75rem', fontFamily: 'monospace', color: track.color, cursor: 'pointer', position: 'relative' }}>
+                        style={{ padding: '3px 8px', borderRadius: 4, background: track.color + '22', border: `1px solid ${track.color}55`, fontSize: '0.75rem', fontFamily: 'monospace', color: 'var(--text)', cursor: 'pointer', position: 'relative' }}>
                         {block.label}
-                      </div>
+                      </button>
                     ))}
                   </div>
                 </div>

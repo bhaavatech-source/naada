@@ -7,6 +7,7 @@ import { GamakaAuditionCard } from './GamakaAuditionCard';
 import { GamakaCanvasGame } from './GamakaCanvasGame';
 import { gamakaAudioEngine } from '../../audio/GamakaAudioEngine';
 import { useAppStore } from '../../store/useAppStore';
+import './gamaka.css';
 
 export const GamakaTrainer: React.FC = () => {
   const {
@@ -59,14 +60,14 @@ export const GamakaTrainer: React.FC = () => {
 
   return (
     <div
+      className="gamaka-trainer"
       style={{
         width: '100%',
         minWidth: 0,
         maxWidth: '1200px',
-        height: 'calc(100vh - 155px)',
-        minHeight: '360px',
+        height: '100%',
+        minHeight: 0,
         margin: '0 auto',
-        padding: '16px',
         boxSizing: 'border-box',
         color: '#F8FAFC',
         overflowY: 'auto',
@@ -76,11 +77,11 @@ export const GamakaTrainer: React.FC = () => {
     >
       {/* Top Header & Settings Bar */}
       <div
+        className="gamaka-studio-header"
         style={{
           background: '#0F172A',
           border: '1px solid #334155',
           borderRadius: '20px',
-          padding: '20px 24px',
           marginBottom: '24px',
           display: 'flex',
           flexWrap: 'wrap',
@@ -90,7 +91,7 @@ export const GamakaTrainer: React.FC = () => {
         }}
       >
         <div>
-          <h1 style={{ fontSize: '24px', fontWeight: 800, margin: '0 0 6px 0', color: '#F59E0B' }}>
+          <h1 style={{ fontSize: 'clamp(1.25rem, 3vw, 1.5rem)', fontWeight: 800, margin: '0 0 6px 0', color: '#F59E0B' }}>
             Gamaka Trainer & Acoustic Studio
           </h1>
           <p style={{ margin: 0, color: '#94A3B8', fontSize: '14px' }}>
@@ -106,7 +107,7 @@ export const GamakaTrainer: React.FC = () => {
           </div>
 
           {/* Instrument Selector */}
-          <div style={{ display: 'flex', background: '#1E293B', borderRadius: '10px', padding: '4px' }}>
+          <div className="gamaka-instruments" style={{ display: 'flex', flexWrap: 'wrap', background: '#1E293B', borderRadius: '10px', padding: '4px' }}>
             {(
               [
                 { id: 'veena', label: 'Vīṇā', icon: Music },
@@ -119,6 +120,7 @@ export const GamakaTrainer: React.FC = () => {
               return (
                 <button
                   key={inst.id}
+                  aria-pressed={isSel}
                   onClick={() => setSelectedInstrument(inst.id)}
                   style={{
                     background: isSel ? '#F59E0B' : 'transparent',
@@ -142,6 +144,7 @@ export const GamakaTrainer: React.FC = () => {
 
           {/* Tambura Drone Toggle */}
           <button
+            aria-pressed={enableTambura}
             onClick={handleTamburaToggle}
             style={{
               background: enableTambura ? '#10B981' : '#334155',
@@ -165,6 +168,7 @@ export const GamakaTrainer: React.FC = () => {
       {/* Main Mode Tabs */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '24px' }}>
         <button
+          aria-pressed={activeTab === 'listen'}
           onClick={() => setActiveTab('listen')}
           style={{
             flex: '1 1 280px',
@@ -187,6 +191,7 @@ export const GamakaTrainer: React.FC = () => {
         </button>
 
         <button
+          aria-pressed={activeTab === 'game'}
           onClick={() => setActiveTab('game')}
           style={{
             flex: '1 1 280px',

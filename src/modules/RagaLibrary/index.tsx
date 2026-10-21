@@ -1,4 +1,5 @@
 ﻿import { useState, useRef, useCallback, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { MELAKARTAS, CHAKRA_NAMES } from '../../data/ragas'
 import { useAppStore } from '../../store/useAppStore'
 import { getAudioContext, stopSequence } from '../../audio/engine'
@@ -186,8 +187,14 @@ export function synthNoteJI(
   tonicHz: number, ratio: number, prevRatio: number | null,
   durationMult: number, beatSec: number, instrument: string,
   volume: number, startTime: number
-): void {
+): () => void {
   const ctx = getAudioContext()
+  const sources = new Set<AudioScheduledSourceNode>()
+  const trackSource = <T extends AudioScheduledSourceNode>(source: T): T => {
+    sources.add(source)
+    source.addEventListener('ended', () => sources.delete(source), { once: true })
+    return source
+  }
   const hz = tonicHz * ratio
   const dur = beatSec * durationMult
   const isHeld = durationMult >= 2
@@ -219,7 +226,7 @@ export function synthNoteJI(
   const harmonics: HarmonicDef[] = getHarmonics(instrument)
 
   harmonics.forEach(([partialRatio, amp, wavetype]) => {
-    const osc = ctx.createOscillator()
+    const osc = trackSource(ctx.createOscillator())
     osc.type = wavetype
     const partialHz = hz * partialRatio
     if (hasGlide && partialRatio === 1) {
@@ -235,7 +242,7 @@ export function synthNoteJI(
     osc.connect(hGain); hGain.connect(masterGain)
     osc.start(startTime); osc.stop(startTime + dur + 0.1)
     if (isHeld && partialRatio <= 2) {
-      const lfo = ctx.createOscillator()
+      const lfo = trackSource(ctx.createOscillator())
       const lfoGain = ctx.createGain()
       lfo.type = 'sine'
       const kampitaRate = instrument === 'voice' ? 5.5 : instrument === 'violin' ? 6.5 : 5.8
@@ -257,7 +264,7 @@ export function synthNoteJI(
     const noiseBuf = ctx.createBuffer(1, noiseLen, ctx.sampleRate)
     const d = noiseBuf.getChannelData(0)
     for (let j = 0; j < noiseLen; j++) d[j] = (Math.random() * 2 - 1)
-    const ns = ctx.createBufferSource(); ns.buffer = noiseBuf
+    const ns = trackSource(ctx.createBufferSource()); ns.buffer = noiseBuf
     const nf = ctx.createBiquadFilter(); nf.type = 'bandpass'; nf.frequency.value = hz * 1.4; nf.Q.value = 4
     const ng = ctx.createGain()
     ng.gain.setValueAtTime(volume * 0.12, startTime)
@@ -267,13 +274,18 @@ export function synthNoteJI(
   }
 
   if (instrument === 'veena') {
-    const buzz = ctx.createOscillator(); buzz.type = 'triangle'
+    const buzz = trackSource(ctx.createOscillator()); buzz.type = 'triangle'
     buzz.frequency.value = hz * 6.97
     const bg = ctx.createGain()
     bg.gain.setValueAtTime(volume * 0.035, startTime)
     bg.gain.exponentialRampToValueAtTime(0.0001, startTime + Math.min(dur * 0.6, 0.35))
     buzz.connect(bg); bg.connect(ctx.destination)
     buzz.start(startTime); buzz.stop(startTime + 0.4)
+  }
+
+  return () => {
+    for (const source of sources) source.stop(ctx.currentTime)
+    sources.clear()
   }
 }
 
@@ -303,11 +315,12 @@ function scheduleSequence(
   let cursor = startAt
   let prevRatio: number | null = null
   const noteStarts: Array<{ idx: number; at: number }> = []
+  const cancelNotes: (() => void)[] = []
 
   events.forEach((ev, i) => {
     if (!ev.isRest && ev.noteInfo) {
       noteStarts.push({ idx: i, at: cursor })
-      synthNoteJI(tonicHz, ev.noteInfo.ratio, prevRatio, ev.durationMult, beatSec, instrument, volume, cursor)
+      cancelNotes.push(synthNoteJI(tonicHz, ev.noteInfo.ratio, prevRatio, ev.durationMult, beatSec, instrument, volume, cursor))
       prevRatio = ev.noteInfo.ratio
     }
     cursor += beatSec * ev.durationMult
@@ -333,7 +346,11 @@ function scheduleSequence(
     raf = requestAnimationFrame(tick)
   }
   raf = requestAnimationFrame(tick)
-  return () => { cancelled = true; if (raf) cancelAnimationFrame(raf) }
+  return () => {
+    cancelled = true
+    if (raf) cancelAnimationFrame(raf)
+    cancelNotes.forEach(cancel => cancel())
+  }
 }
 
 const SPEEDS = [
@@ -387,7 +404,7 @@ function tokenColour(tok: string): string {
 // ─────────────────────────────────────────────────────────────────────────────
 // COMPONENT
 // ─────────────────────────────────────────────────────────────────────────────
-export default function RagaLibrary() {
+export default function RagaLibrary({ settingsContainer }: { settingsContainer?: HTMLDivElement | null }) {
   const { settings } = useAppStore()
   const [search, setSearch] = useState('')
   const [chakraFilter, setChakraFilter] = useState<number | null>(null)
@@ -466,6 +483,8 @@ useEffect(() => {
   type QueueItem = { tab: TabKey; idx: number }
   const queueRef = useRef<QueueItem[]>([])
   const queueTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const playbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const playbackVersionRef = useRef(0)
   const handlePlayRef = useRef<(idx: number, preserveQueue?: boolean) => void>(() => {})
 
   const filtered = MELAKARTAS.filter(r => {
@@ -496,9 +515,11 @@ useEffect(() => {
 
 
   const stopCurrent = useCallback(() => {
+    playbackVersionRef.current++
     loopRef.current = false
     queueRef.current = []
     if (queueTimerRef.current) { clearTimeout(queueTimerRef.current); queueTimerRef.current = null }
+    if (playbackTimerRef.current) { clearTimeout(playbackTimerRef.current); playbackTimerRef.current = null }
     stopRef.current?.()
     stopSequence()
     stopRef.current = null
@@ -506,6 +527,8 @@ useEffect(() => {
     setActiveEvIdx(null)
     setPlayPhase(null)
   }, [])
+
+  useEffect(() => stopCurrent, [stopCurrent])
 
   const handleRagaSelect = useCallback((raga: Melakarta) => {
     stopCurrent()
@@ -528,8 +551,10 @@ useEffect(() => {
       } else {
         stopCurrent()
       }
+      const playbackVersion = ++playbackVersionRef.current
       const ctx = getAudioContext()
       if (ctx.state === 'suspended') await ctx.resume()
+      if (playbackVersion !== playbackVersionRef.current) return
       const ex = exercises[idx] as { label: string; aro: string; avro: string }
       const nim = buildNoteInfoMap(selectedRaga)
       const speed = SPEEDS[speedIdx].mult
@@ -550,7 +575,7 @@ useEffect(() => {
       }
       const runExercise = () => {
         const cleanup = () => {
-          if (loopRef.current) { setTimeout(runExercise, beatSec * 400) }
+          if (loopRef.current) { playbackTimerRef.current = setTimeout(runExercise, beatSec * 400) }
           else {
             setPlayingIdx(-1); setActiveEvIdx(null); setPlayPhase(null)
             const next = queueRef.current.shift()
@@ -566,7 +591,7 @@ useEffect(() => {
         }
         if (playMode === 'aro') { runPhase('aro', cleanup) }
         else if (playMode === 'avro') { runPhase('avro', cleanup) }
-        else { runPhase('aro', () => setTimeout(() => runPhase('avro', cleanup), beatSec * 500)) }
+        else { runPhase('aro', () => { playbackTimerRef.current = setTimeout(() => runPhase('avro', cleanup), beatSec * 500) }) }
       }
       runExercise()
     },
@@ -608,7 +633,7 @@ useEffect(() => {
   const playSingleNote = useCallback((info: NoteInfo) => {
     stopCurrent()
     const ctx = getAudioContext()
-    synthNoteJI(settings.tonicHz, info.ratio, null, 1.5, 0.6, settings.instrument, settings.volume, ctx.currentTime + 0.02)
+    stopRef.current = synthNoteJI(settings.tonicHz, info.ratio, null, 1.5, 0.6, settings.instrument, settings.volume, ctx.currentTime + 0.02)
   }, [settings, stopCurrent])
 
   
@@ -723,16 +748,21 @@ function buildDisplayMap(
               )}
               <div>
                 <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', color: 'var(--accent)', margin: 0 }}>{selectedRaga.name}</h2>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{selectedRaga.nameDevanagari} · {selectedRaga.nameTelugu}</div>
-                <div style={{ fontSize: '0.7rem', color: 'var(--text-faint)', marginTop: 2 }}>
-                  #{selectedRaga.number} · Chakra {selectedRaga.chakra}: {selectedRaga.chakraName} · {selectedRaga.notes.M === 5 ? 'Śuddha Madhyama' : 'Prati Madhyama'}
-                </div>
               </div>
             </div>
 
           </div>
 
-          {/* Live swarasthāna identification: restored above the scale controls */}
+        </div>
+
+        {settingsContainer && createPortal(
+          <div className="raga-practice-settings" style={{ padding: '0 16px 16px', minWidth: 0 }}>
+          <h3 style={{ fontSize: '1rem', marginTop: 12 }}>{selectedRaga.name}</h3>
+          <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{selectedRaga.nameDevanagari} · {selectedRaga.nameTelugu}</div>
+          <div style={{ fontSize: '0.7rem', color: 'var(--text-faint)', marginTop: 2 }}>
+            #{selectedRaga.number} · Chakra {selectedRaga.chakra}: {selectedRaga.chakraName} · {selectedRaga.notes.M === 5 ? 'Śuddha Madhyama' : 'Prati Madhyama'}
+          </div>
+          <h3 style={{ fontSize: '1rem', marginTop: 12 }}>Swarasthānas</h3>
           <div aria-live="polite" style={{ marginTop: 8, minHeight: 54, padding: '7px 11px', borderRadius: 'var(--radius-sm)', display: 'flex', alignItems: 'center', gap: 10, background: activeNoteDisplay ? `${activeNoteDisplay.svaraInfo.colour}18` : '#F3F0E8', border: `1px solid ${activeNoteDisplay ? `${activeNoteDisplay.svaraInfo.colour}70` : '#D9D2C5'}`, color: '#203633' }}>
             {activeNoteDisplay ? (
               <>
@@ -756,28 +786,27 @@ function buildDisplayMap(
                 <button key={'asc-' + k} onClick={() => playSingleNote(info)}
                   title={`${SVARA_INFO[info.svaraKey]?.name} — play swara`}
                   style={{ padding: '3px 10px', borderRadius: 'var(--radius-sm)', border: `1px solid ${SVARA_INFO[info.svaraKey]?.colour ?? 'var(--border)'}44`, background: 'var(--surface2)', color: SVARA_INFO[info.svaraKey]?.colour ?? 'var(--text)', fontSize: '0.75rem', fontFamily: 'monospace', cursor: 'pointer', fontWeight: 600 }}>
-                  <span>{k}</span><span style={{ display: 'block', marginTop: 1, fontSize: '0.62rem', color: '#243B38', fontWeight: 800 }}>{info.svaraKey}</span>
+                  <span>{k}</span><span style={{ display: 'block', marginTop: 1, fontSize: '0.62rem', color: '#243B38', fontWeight: 800 }}>{SVARA_INFO[info.svaraKey]?.name}</span>
                 </button>
               ))}
               {(() => { const info = noteInfoMap['S']; return info ? (
                 <button key="upper-S" onClick={() => playSingleNote(info)}
                   title={`${SVARA_INFO['S']?.name} — play swara`}
                   style={{ padding: '3px 10px', borderRadius: 'var(--radius-sm)', border: `1px solid ${SVARA_INFO['S']?.colour ?? 'var(--border)'}44`, background: 'var(--surface2)', color: '#c4b5fd', fontSize: '0.75rem', fontFamily: 'monospace', cursor: 'pointer', fontWeight: 600 }}>
-                  <span>S</span><span style={{ display: 'block', marginTop: 1, fontSize: '0.62rem', color: '#243B38', fontWeight: 800 }}>S</span>
+                  <span>S</span><span style={{ display: 'block', marginTop: 1, fontSize: '0.62rem', color: '#243B38', fontWeight: 800 }}>{SVARA_INFO.S.name}</span>
                 </button>
               ) : null })()}
             </div>
           </div>
 
-          {/* Notation legend — hidden on mobile to save space */}
-          {!isMobile && (
+          {/* Notation legend */}
             <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap', marginTop: 2 }}>
               {[
-                { sample: 's r g m p d n', desc: 'middle octave', col: '#e2e8f0' },
-                { sample: 'S R G M P D N', desc: 'upper (Tāra)',  col: '#c4b5fd' },
-                { sample: 's, r, g,',      desc: 'lower (Kīḷ)',   col: '#7dd3fc' },
+                { sample: 's r g m p d n', desc: 'middle octave', col: 'var(--text)' },
+                { sample: 'S R G M P D N', desc: 'upper (Tāra)',  col: 'var(--accent)' },
+                { sample: 's, r, g,',      desc: 'lower (Kīḷ)',   col: 'var(--accent2)' },
                 { sample: ',',             desc: 'hold (Dīrgha)', col: '#f59e0b' },
-                { sample: '| ||',          desc: 'tāla markers',  col: 'rgba(255,255,255,0.25)' },
+                { sample: '| ||',          desc: 'tāla markers',  col: 'var(--text-muted)' },
               ].map(({ sample, desc, col }) => (
                 <span key={desc} style={{ fontSize: '0.6rem', fontFamily: 'monospace' }}>
                   <span style={{ color: col }}>{sample}</span>
@@ -785,14 +814,13 @@ function buildDisplayMap(
                 </span>
               ))}
             </div>
-          )}
 
-          {/* Controls row */}
+          <h3 style={{ fontSize: '1rem', marginTop: 16 }}>Playback</h3>
           <div style={{ marginTop: 'var(--space-2)', display: 'flex', gap: 'var(--space-3)', alignItems: 'center', flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
               <span style={{ fontSize: '0.65rem', color: 'var(--text-faint)' }}>Speed</span>
               {SPEEDS.map((sp, i) => (
-                <button key={i} onClick={() => setSpeedIdx(i)} title={sp.desc}
+                <button key={i} onClick={() => { stopCurrent(); setSpeedIdx(i) }} title={sp.desc} aria-pressed={speedIdx === i}
                   style={{ padding: '2px 9px', borderRadius: 99, fontSize: '0.7rem', fontWeight: 600, border: '1px solid', cursor: 'pointer', background: speedIdx === i ? 'var(--accent)' : 'var(--surface2)', borderColor: speedIdx === i ? 'var(--accent)' : 'var(--border)', color: speedIdx === i ? '#000' : 'var(--text-muted)' }}>
                   {sp.label}
                 </button>
@@ -802,14 +830,14 @@ function buildDisplayMap(
             <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
               <span style={{ fontSize: '0.65rem', color: 'var(--text-faint)' }}>Play</span>
               {(['aro', 'both', 'avro'] as PlayMode[]).map(pm => (
-                <button key={pm} onClick={() => setPlayMode(pm)}
+                <button key={pm} onClick={() => { stopCurrent(); setPlayMode(pm) }} aria-pressed={playMode === pm}
                   style={{ padding: '2px 9px', borderRadius: 99, fontSize: '0.7rem', fontWeight: 600, border: '1px solid', cursor: 'pointer', background: playMode === pm ? 'var(--accent)' : 'var(--surface2)', borderColor: playMode === pm ? 'var(--accent)' : 'var(--border)', color: playMode === pm ? '#000' : 'var(--text-muted)' }}>
                   {pm === 'aro' ? '↑ Āro' : pm === 'avro' ? '↓ Avro' : '↑↓ Both'}
                 </button>
               ))}
             </div>
             <div style={{ width: 1, height: 18, background: 'var(--border)' }} />
-            <button onClick={() => { const n = !loopMode; setLoopMode(n); loopRef.current = n }}
+            <button aria-pressed={loopMode} onClick={() => { const n = !loopMode; setLoopMode(n); loopRef.current = n }}
               style={{ padding: '2px 11px', borderRadius: 99, fontSize: '0.7rem', fontWeight: 600, border: '1px solid', cursor: 'pointer', background: loopMode ? 'var(--accent)' : 'var(--surface2)', borderColor: loopMode ? 'var(--accent)' : 'var(--border)', color: loopMode ? '#000' : 'var(--text-muted)' }}>
               🔁 Loop
             </button>
@@ -830,12 +858,12 @@ function buildDisplayMap(
               <button onClick={stopCurrent} style={{ fontSize: '0.7rem', padding: '2px 9px', borderRadius: 99, border: '1px solid var(--red)', color: 'var(--red)', cursor: 'pointer', background: 'rgba(248,113,113,0.1)' }}>⏹ Stop</button>
             </div>
           )}
-        </div>
 
         {/* ── Tab bar ── */}
-        <div style={{ display: 'flex', borderBottom: '1px solid var(--border)', background: 'var(--surface)', flexShrink: 0, overflowX: 'auto' }}>
+        <h3 style={{ fontSize: '1rem', marginTop: 16 }}>Exercises</h3>
+        <div style={{ display: 'flex', flexWrap: 'wrap', borderBottom: '1px solid var(--border)', background: 'var(--surface)', flexShrink: 0 }}>
           {TABS.map(t => (
-            <button key={t.id} onClick={() => handleTabChange(t.id)}
+            <button key={t.id} onClick={() => handleTabChange(t.id)} aria-pressed={tab === t.id}
               style={{ padding: 'var(--space-2) var(--space-3)', fontSize: '0.78rem', fontWeight: tab === t.id ? 600 : 400, color: tab === t.id ? 'var(--accent)' : 'var(--text-muted)', borderBottom: tab === t.id ? '2px solid var(--accent)' : '2px solid transparent', cursor: 'pointer', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: 4 }}>
               {t.label}
               <span style={{ fontSize: '0.58rem', background: 'var(--surface2)', padding: '0px 4px', borderRadius: 99, color: 'var(--text-faint)' }}>{(curriculumExercises[t.id] ?? EXERCISES[t.id]).length}</span>
@@ -860,6 +888,9 @@ function buildDisplayMap(
             <button onClick={stopCurrent} style={{ padding: '5px 11px', borderRadius: 99, border: '1px solid var(--red)', color: 'var(--red)', background: 'transparent', cursor: 'pointer', fontSize: '0.72rem', fontWeight: 600 }}>⏹ Stop queue</button>
           )}
         </div>
+          </div>,
+          settingsContainer
+        )}
 
         {/* ── Exercise grid ── */}
         <div className={`raga-exercise-grid raga-tab-${tab}`} style={{ flex: 1, minWidth: 0, minHeight: 0, overflowY: 'auto', padding: 'var(--space-3)', display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'stretch' }}>
@@ -949,5 +980,3 @@ function buildDisplayMap(
     </div>
   )
 }
-
-

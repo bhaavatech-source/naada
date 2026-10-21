@@ -22,6 +22,7 @@ export const GamakaCanvasGame: React.FC = () => {
   const tonicHzRef = useRef(tonicHz);
   tonicHzRef.current = tonicHz;
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const [canvasWidth, setCanvasWidth] = useState(800);
   const [isListening, setIsListening] = useState(false);
   const [currentScore, setCurrentScore] = useState(0);
   const [collectedStars, setCollectedStars] = useState<number[]>([]);
@@ -339,6 +340,16 @@ export const GamakaCanvasGame: React.FC = () => {
   };
 
   useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const observer = new ResizeObserver(([entry]) => {
+      setCanvasWidth(Math.max(1, Math.round(entry.contentRect.width)));
+    });
+    observer.observe(canvas);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
     return () => {
       if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
       if (micStreamRef.current) micStreamRef.current.getTracks().forEach(t => t.stop());
@@ -347,21 +358,21 @@ export const GamakaCanvasGame: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+    <div className="gamaka-game" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
       {/* Exercise Bar */}
       <div
+        className="gamaka-exercise-header"
         style={{
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
           background: '#1E293B',
-          padding: '16px 20px',
           borderRadius: '16px',
           border: '1px solid #334155'
         }}
       >
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <div className="gamaka-exercise-copy">
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '10px' }}>
             <span
               style={{
                 background: '#4338CA',
@@ -381,11 +392,12 @@ export const GamakaCanvasGame: React.FC = () => {
         </div>
 
         {/* Level Selector */}
-        <div style={{ display: 'flex', gap: '8px' }}>
+        <div className="gamaka-levels" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
           {(['beginner', 'intermediate', 'expert'] as const).map(lvl => (
             <button
               key={lvl}
-              onClick={() => setGameLevel(lvl)}
+              aria-pressed={gameLevel === lvl}
+              onClick={() => { stopMic(); setIsCompleted(false); setGameLevel(lvl); }}
               style={{
                 background: gameLevel === lvl ? '#F59E0B' : '#334155',
                 color: gameLevel === lvl ? '#0F172A' : '#CBD5E1',
@@ -405,22 +417,22 @@ export const GamakaCanvasGame: React.FC = () => {
       </div>
 
       {/* Canvas Viewport */}
-      <div style={{ position: 'relative', width: '100%', height: '360px', borderRadius: '16px', overflow: 'hidden' }}>
+      <div className="gamaka-flight-panel">
         <canvas
           ref={canvasRef}
-          width={800}
+          width={canvasWidth}
           height={360}
-          style={{ width: '100%', height: '100%', display: 'block' }}
+          aria-label="Voice Flight pitch trajectory"
+          style={{ width: '100%', height: 360, display: 'block', borderRadius: 16, background: '#0F172A' }}
         />
 
-        {/* Live HUD Overlay */}
+        {/* Live scores */}
         <div
+          className="gamaka-hud"
           style={{
-            position: 'absolute',
-            top: '16px',
-            left: '20px',
             display: 'flex',
-            gap: '16px',
+            flexWrap: 'wrap',
+            gap: '8px',
             alignItems: 'center'
           }}
         >
@@ -435,8 +447,8 @@ export const GamakaCanvasGame: React.FC = () => {
           </div>
         </div>
 
-        {/* Mic Control Floating Button */}
-        <div style={{ position: 'absolute', bottom: '20px', left: '50%', transform: 'translateX(-50%)' }}>
+        {/* Microphone control */}
+        <div className="gamaka-mic-control">
           {!isListening ? (
             <button
               onClick={startMic}

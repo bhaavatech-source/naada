@@ -15,6 +15,7 @@ import JanyaLibrary from './modules/JanyaLibrary'
 
 export default function App() {
   const { module, sidebarOpen, setSidebarOpen } = useAppStore()
+  const [moduleSettingsContainer, setModuleSettingsContainer] = useState<HTMLDivElement | null>(null)
 
   // Phone breakpoint: tablet and desktop use the in-flow app navigation
   const [isMobile, setIsMobile] = useState(
@@ -35,13 +36,13 @@ export default function App() {
 
   const moduleMap: Record<string, JSX.Element> = {
     home: <Home />,
-    raga: <RagaLibrary />,
+    raga: <RagaLibrary settingsContainer={moduleSettingsContainer} />,
     janya: <JanyaLibrary />,
     tala: <TalaTrainer />,
     shruti: <ShrutiTrainer />,
     gamaka: <GamakaTrainer />,
     resources: <Resources />,
-    builder: <MusicBuilder />,
+    builder: <MusicBuilder settingsContainer={moduleSettingsContainer} />,
     progress: <Progress />,
     about: <About />,
   }
@@ -87,9 +88,9 @@ export default function App() {
           minWidth: 0,
         }}
       >
-        <Header />
+        <Header moduleSettingsRef={setModuleSettingsContainer} />
         <main style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-          {moduleMap[module] ?? <RagaLibrary />}
+          {moduleMap[module] ?? <RagaLibrary settingsContainer={moduleSettingsContainer} />}
         </main>
       </div>
     </div>

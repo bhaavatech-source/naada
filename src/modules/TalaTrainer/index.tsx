@@ -425,7 +425,7 @@ export default function TalaTrainer() {
             <div style={{ display:'flex', gap:'var(--space-3)', alignItems:'center', marginBottom:'var(--space-4)', flexWrap:'wrap' }}>
               <button onClick={() => running ? stopMetronome() : startMetronome()}
                 style={{ padding:'8px 24px', borderRadius:'var(--radius-sm)', fontWeight:700, fontSize:'0.88rem', background: running?'rgba(248,113,113,0.15)':'var(--accent-dim)', border:`1px solid ${running?'var(--red)':'var(--accent)'}`, color: running?'var(--red)':'var(--accent)', cursor:'pointer' }}>
-                {running ? '⏹ Stop' : '▶ Start Metronome'}
+                {running ? '⏹ Stop' : '▶ Start'}
               </button>
               {running && level==='l1' && (
                 <button onClick={handleTap}

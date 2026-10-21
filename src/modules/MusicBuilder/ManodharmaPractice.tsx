@@ -3,7 +3,6 @@ import { MELAKARTAS } from '../../data/ragas'
 import { useAppStore } from '../../store/useAppStore'
 import { semitonesToHz, synthNote } from '../../audio/engine'
 import type { InstrumentId } from '../../types/index'
-import { PhraseLibrary } from './PhraseLibrary'
 
 type Level = 'saadhaka' | 'nipuṇa' | 'praveena'
 type Direction = 'ascending' | 'descending'
@@ -277,7 +276,7 @@ export function ManodharmaPractice({ onBack }: Props) {
   }
 
   return (
-    <section style={{
+    <section className="manodharma-practice" style={{
       minHeight: '100%',
       padding: 'clamp(14px, 3vw, 28px)',
       color: '#f8fafc',
@@ -369,8 +368,6 @@ export function ManodharmaPractice({ onBack }: Props) {
             <p style={{ color: '#cbd5e1', fontSize: 12, lineHeight: 1.5, marginBottom: 0 }}>These are practice prompts, not a substitute for rāga-specific guidance from a qualified Carnatic music teacher. Gamaka and phrase grammar are not fully represented by equal-tempered scale playback.</p>
           </div>
         </div>
-
-        <PhraseLibrary currentRagaNumber={ragaNumber} tempo={tempo} instrument={instrument} />
 
         <div style={{ ...panel, padding: 20 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>

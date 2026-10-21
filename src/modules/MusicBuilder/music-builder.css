@@ -1,0 +1,124 @@
+.music-builder,
+.music-builder-settings,
+.builder-workspace,
+.builder-palette,
+.builder-tracks {
+  min-width: 0;
+  min-height: 0;
+}
+
+.music-builder-settings {
+  overflow-wrap: anywhere;
+}
+
+.music-builder-settings > div,
+.music-builder-settings label {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.music-builder-settings label {
+  flex-wrap: wrap;
+}
+
+.music-builder-settings button,
+.music-builder-settings input:not([type="checkbox"]):not([type="range"]),
+.music-builder-settings select,
+.builder-workspace button,
+.builder-workspace select {
+  min-height: 40px;
+}
+
+.builder-settings-heading {
+  padding: 12px 16px 4px;
+  font-size: 1rem;
+}
+
+.builder-workspace {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.builder-palette {
+  width: 180px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+  overflow: auto;
+  padding: var(--space-3);
+}
+
+.builder-palette-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.builder-tracks {
+  flex: 1;
+  overflow: auto;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.builder-track {
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.builder-workspace-heading h2 {
+  font-size: 1.25rem;
+  color: var(--accent);
+  overflow-wrap: anywhere;
+}
+
+.builder-workspace-heading p {
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: .8rem;
+}
+
+.builder-track-header > div {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.manodharma-practice * {
+  min-width: 0;
+}
+
+@media (max-width: 760px) {
+  .builder-workspace {
+    display: block;
+    overflow-y: auto;
+  }
+
+  .builder-palette {
+    width: 100%;
+    overflow: visible;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .builder-palette-notes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 4.5rem), 1fr));
+    gap: 6px;
+  }
+
+  .builder-palette-notes > button {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .builder-tracks {
+    overflow: visible;
+    padding: 12px;
+  }
+
+  .builder-track-header {
+    align-items: flex-start;
+  }
+}
