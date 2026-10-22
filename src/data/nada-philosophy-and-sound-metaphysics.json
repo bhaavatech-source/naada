@@ -1,0 +1,168 @@
+{
+  "project": "Nāda Vidyā / Medhā Nādopāsanā Platform",
+  "module": "Nāda Tattva & Sound Metaphysics Engine",
+  "version": "1.0.0",
+  "description": "Comprehensive taxonomy and schema of ancient Indian sound philosophy, Nāda Brahma, Āhata/Anāhata classification, vocal/body acoustics (Śarīrotpatti), and metaphysical musicology grounded in classical treatises.",
+  "source_treatises_referenced": [
+    "Sangita Ratnakara (Sarangadeva, 1230 AD) - Pindotpatti & Nada-Svara Prakarana",
+    "Natya Shastra (Bharata Muni, c. 200 BC) - Atodhya & Sharira Vidhi",
+    "Brihaddesi (Matanga Muni, c. 800 AD) - Nada Tattva Lakshana",
+    "Sangita Sampradaya Pradarshini (Subbarama Dikshitar, 1904 AD)",
+    "The Ragas of Karnatic Music (N.S. Ramachandran, 1938 AD)",
+    "Carnatic Music Book 1 (NCERT/CBSE)"
+  ],
+  "nada_tattva_framework": {
+    "etymology_and_definition": {
+      "root_derivation": "Derived from \"nadyate\" (that which vibrates/manifests) or the combination of \"Na\" (Prāṇa / Vital Air) and \"Da\" (Anala / Agni / Cosmic Fire).",
+      "core_doctrine": "Sound is not merely physical vibration but the primal creative energy of the universe (Nāda Brahma) and the ultimate vehicle for spiritual liberation (Nādopāsanā).",
+      "shloka_ref": "Nakaram prananamanamanalam nakaram viduh | Jatah prananala-samyogad tasmad nado'dhibhiyate || (Sangita Ratnakara)"
+    },
+    "two_primary_divisions": {
+      "anahata_nada": {
+        "title": "Anāhatā Nāda (Unstruck Cosmic Vibration)",
+        "type": "Super-human / Transcendental Sound",
+        "description": "The uncreated, eternal sound heard by enlightened yogis in deep meditation without physical friction or impact. It resides in the Anāhata Chakra and is the goal of Nādopāsanā.",
+        "audibility": "Inaudible to normal human ears; experienced in Samādhi.",
+        "metaphysical_significance": "Cosmic resonance of Brahman, free from decay or cause."
+      },
+      "ahata_nada": {
+        "title": "Āhatā Nāda (Struck Audible Vibration)",
+        "type": "Physical / Audible Sound",
+        "description": "Sound generated through physical friction, impact, or vibration of air. It forms the entire basis of music, vocalization, speech, and instrumental performance.",
+        "audibility": "Audible to human ears with a specific, sustained frequency (musical tone).",
+        "five_sources_classification": [
+          {
+            "category": "Śārīraja",
+            "meaning": "Vocal / Body-born sound",
+            "description": "Produced by the human vocal apparatus through prāṇa (breath) passing through the throat and head cavities."
+          },
+          {
+            "category": "Dāruja",
+            "meaning": "Wood-born sound",
+            "description": "Produced by wooden stringed or wind instruments (e.g. Vīṇā, Flute)."
+          },
+          {
+            "category": "Lohaja",
+            "meaning": "Metal-born sound",
+            "description": "Produced by metallic instruments or cymbals (e.g. Tāḷam, Cymbals, Gongs)."
+          },
+          {
+            "category": "Charmaja",
+            "meaning": "Skin / Membrane-born sound",
+            "description": "Produced by stretched animal skin or percussion membranes (e.g. Mṛdaṅgam, Kanjira)."
+          },
+          {
+            "category": "Vāyuja",
+            "meaning": "Air-born sound",
+            "description": "Produced by column of air vibrating inside a pipe or wind instrument (e.g. Nāgasvaram, Flute)."
+          }
+        ]
+      }
+    },
+    "sarirotpatti_five_stages_of_nada": [
+      {
+        "stage": 1,
+        "name": "Ati-Sūkṣma (Ultra-subtle)",
+        "chakra": "Mūlādhāra (Root Chakra)",
+        "element": "Primal Agni-Prāṇa Union",
+        "description": "The initial subtle spark of sound arising at the base of the spine."
+      },
+      {
+        "stage": 2,
+        "name": "Sūkṣma (Subtle)",
+        "chakra": "Svādhiṣṭhāna (Navel/Sacral region)",
+        "element": "Internal Heat & Vibration",
+        "description": "The swelling of subtle sound as breath rises through the abdomen."
+      },
+      {
+        "stage": 3,
+        "name": "Puṣṭa (Developed / Manifesting)",
+        "chakra": "Nābhi / Anāhata (Heart Chakra)",
+        "element": "Resonant Breath",
+        "description": "The acoustic resonance taking shape in the chest register (Mandra Sthāyī)."
+      },
+      {
+        "stage": 4,
+        "name": "Apuṣṭa (Unrefined Manifestation)",
+        "chakra": "Kaṇṭha (Throat Chakra)",
+        "element": "Throat Air Resonance",
+        "description": "Sound emerging in the throat register (Madhya Sthāyī) where swaras get articulated."
+      },
+      {
+        "stage": 5,
+        "name": "Kṛtrimā / Vyakta (Articulate / Musical Sound)",
+        "chakra": "Mūrdhā / Ājñā & Mouth (Head & Vocal Tract)",
+        "element": "Full Vocal Articulation",
+        "description": "Fully realized musical sound and speech passing through the oral cavity and head register (Tāra Sthāyī)."
+      }
+    ],
+    "three_sthayis_and_body_registers": [
+      {
+        "sthayi": "Mandra Sthāyī",
+        "octave": "Lower Octave",
+        "body_register": "Uras (Chest)",
+        "associated_chakra": "Anāhata",
+        "acoustic_quality": "Deep, resonant, grounding, meditative."
+      },
+      {
+        "sthayi": "Madhya Sthāyī",
+        "octave": "Middle Octave",
+        "body_register": "Kaṇṭha (Throat)",
+        "associated_chakra": "Viśuddhi",
+        "acoustic_quality": "Balanced, clear, natural singing pitch range."
+      },
+      {
+        "sthayi": "Tāra Sthāyī",
+        "octave": "Higher Octave",
+        "body_register": "Mūrdhā (Head/Cranium)",
+        "associated_chakra": "Ājñā / Sahasrāra",
+        "acoustic_quality": "Bright, piercing, uplifting, luminous."
+      }
+    ],
+    "sound_and_consciousness_principles": {
+      "nadopasana": {
+        "concept": "Nādopāsanā (Adoration through Sound)",
+        "description": "Treating music not merely as entertainment (Rañjana) but as a spiritual Sādhanā to achieve Mokṣa (liberation), as taught by Saint Purandara Dāsa and Saint Tyāgarāja (e.g. in kṛtis like \"Nāda Tanumanusam\", \"Nādōpāsanā\")."
+      },
+      "svara_ranjakatva": {
+        "concept": "Svarasya Ranjakatva",
+        "definition": "Swato ranjayati srotruchittanam sa swarochyate - A swara is that which inherently pleases and elevates the soul of the listener on its own."
+      },
+      "panca_bhuta_sound_mapping": [
+        {
+          "element": "Ākāśa (Ether/Space)",
+          "principle": "Medium of Nāda; pure unmanifested space."
+        },
+        {
+          "element": "Vāyu (Air)",
+          "principle": "Movement of breath (Prāṇa) creating wave vibration."
+        },
+        {
+          "element": "Agni (Fire)",
+          "principle": "Heat and mental will (Icchā Śakti) driving sound generation."
+        },
+        {
+          "element": "Jala (Water)",
+          "principle": "Fluidity and continuity of Gamaka glides."
+        },
+        {
+          "element": "Pṛthvī (Earth)",
+          "principle": "Grounding pitch anchor (Ādhāra Śaḍja)."
+        }
+      ]
+    },
+    "integration_adapters": {
+      "connects_to_modules": [
+        "naadopaasana-master-curriculum-v2.json",
+        "shruti-22-frequency-ratio-library.json",
+        "raga-bhava-rasa-taxonomy.json",
+        "music-builder-sound-and-master-integration-v2.json"
+      ],
+      "field_mappings": {
+        "sthayi": "maps to octave offsets in ragaTransposer.ts",
+        "nada_type": "maps to acoustic synthesis envelopes in sound integration engine",
+        "chakra_register": "maps to visualization nodes in UI studio"
+      }
+    }
+  }
+}

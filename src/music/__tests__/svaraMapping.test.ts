@@ -2,6 +2,7 @@
 import { MELAKARTAS } from '../../data/ragas';
 import { saraliVarisaiMmg } from '../../data/mmg/sarali';
 import { groupNotationTokens } from '../notationLayout';
+import { TONIC_OPTIONS } from '../../data/tonics';
 
 import {
   ALL_SVARA_IDS,
@@ -239,6 +240,27 @@ export function runAllTests(): { passed: boolean; testCount: number } {
   const bhairaviBhashanga = resolveJanyaScale('s r g m p d n S', 20, ['D2']); // Bhashanga override D2
   if (bhairaviBhashanga[5].svaraId !== 'D2') throw new Error('Bhairavi Bhashanga D2 override failed');
   count += 2;
+
+  const tonicLabels = ['A3', 'A#3', 'B3', 'C4 (Sa)', 'C#4', 'D4', 'D#4', 'E4', 'F4', 'F#4', 'G4', 'G#4', 'A4', 'A#4', 'B4'];
+  if (JSON.stringify(TONIC_OPTIONS.map(option => option.label)) !== JSON.stringify(tonicLabels)) {
+    throw new Error('Tonic choices must cover every chromatic pitch from A3 through B4');
+  }
+  count++;
+  if (new Set(TONIC_OPTIONS.map(option => option.hz)).size !== 15) {
+    throw new Error('Tonic frequencies must be unique');
+  }
+  count++;
+  if (TONIC_OPTIONS.find(option => option.label === 'C4 (Sa)')?.hz !== 261.63) {
+    throw new Error('The default C4 tonic must remain unchanged');
+  }
+  count++;
+  TONIC_OPTIONS.forEach((option, index) => {
+    const expected = 220 * 2 ** (index / 12);
+    if (Math.abs(option.hz - expected) > 0.01) {
+      throw new Error(`Invalid tonic tuning for ${option.label}: ${option.hz}`);
+    }
+    count++;
+  });
 
   return { passed: true, testCount: count };
 }

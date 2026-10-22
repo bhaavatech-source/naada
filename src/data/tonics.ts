@@ -1,0 +1,17 @@
+export const TONIC_OPTIONS = [
+  { label: 'A3', hz: 220 },
+  { label: 'A#3', hz: 233.08 },
+  { label: 'B3', hz: 246.94 },
+  { label: 'C4 (Sa)', hz: 261.63 },
+  { label: 'C#4', hz: 277.18 },
+  { label: 'D4', hz: 293.66 },
+  { label: 'D#4', hz: 311.13 },
+  { label: 'E4', hz: 329.63 },
+  { label: 'F4', hz: 349.23 },
+  { label: 'F#4', hz: 369.99 },
+  { label: 'G4', hz: 392 },
+  { label: 'G#4', hz: 415.3 },
+  { label: 'A4', hz: 440 },
+  { label: 'A#4', hz: 466.16 },
+  { label: 'B4', hz: 493.88 },
+]

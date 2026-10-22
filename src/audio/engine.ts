@@ -54,8 +54,17 @@ export const NOTE_SEMITONES: Record<string, number> = {
   'M1':5,'M2':6,'D1':8,'D2':9,'D3':10,'N1':9,'N2':10,'N3':11,
 }
 
+export function tryParseNoteToken(token: string): number | null {
+  const normalized = token.trim()
+  if (!normalized || normalized === '|' || normalized === '||') return null
+  const value = NOTE_SEMITONES[normalized]
+  return typeof value === 'number' && Number.isFinite(value) ? value : null
+}
+
+/** Backwards-compatible parser. New playback code should use tryParseNoteToken
+ * when it must distinguish an unknown token from the tonic (0 semitones). */
 export function parseNoteToken(token: string): number {
-  return NOTE_SEMITONES[token] ?? 0
+  return tryParseNoteToken(token) ?? 0
 }
 
 // ─── Shared ADSR helper ────────────────────────────────────────────────────────

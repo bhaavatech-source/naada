@@ -1,4 +1,4 @@
-﻿export type AppModule = 'home' | 'raga' | 'janya' | 'tala' | 'shruti' | 'gamaka' | 'resources' | 'builder' | 'progress' | 'about'
+export type AppModule = 'home' | 'raga' | 'wisdom' | 'tala' | 'shruti' | 'gamaka' | 'resources' | 'builder' | 'progress' | 'about'
 
 export type InstrumentId = 'veena' | 'violin' | 'flute' | 'sitar' | 'harmonium' | 'piano' | 'nadaswaram' | 'sarangi' | 'voice'
 
@@ -57,4 +57,3 @@ export interface Kirtana {
   lyrics: string
   meaningBrief?: string
 }
-

@@ -2,27 +2,11 @@ import { useEffect, useState } from 'react'
 import type { Ref } from 'react'
 import { useAppStore } from '../../store/useAppStore'
 import { INSTRUMENTS } from '../../data/instruments'
+import { TONIC_OPTIONS } from '../../data/tonics'
 import type { InstrumentId } from '../../types/index'
 
-const TONIC_OPTIONS = [
-  { label: 'C4 (Sa)', hz: 261.63 },
-  { label: 'C#4', hz: 277.18 },
-  { label: 'D4', hz: 293.66 },
-  { label: 'D#4', hz: 311.13 },
-  { label: 'E4', hz: 329.63 },
-  { label: 'F4', hz: 349.23 },
-  { label: 'F#4', hz: 369.99 },
-  { label: 'G4', hz: 392.00 },
-  { label: 'G#4', hz: 415.30 },
-  { label: 'A4', hz: 440.00 },
-  { label: 'A#4', hz: 466.16 },
-  { label: 'B4', hz: 493.88 },
-  { label: 'B3', hz: 246.94 },
-  { label: 'A3', hz: 220.00 },
-]
-
 const MODULE_LABELS: Record<string, string> = {
-  raga:'Rāga Library', janya: 'Janya Rāga Library', tala:'Tāla Trainer', shruti:'Śruti Trainer', gamaka:'Gamaka Trainer',
+  raga:'Rāga Practice', wisdom:'Nāda Wisdom', tala:'Tāla Trainer', shruti:'Śruti Trainer', gamaka:'Gamaka Trainer',
   resources:'Resources', builder:'Music Builder', progress:'My Progress', about:'About Nāda'
 }
 

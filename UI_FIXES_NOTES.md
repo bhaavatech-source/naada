@@ -1,5 +1,15 @@
 # Nāda Vidyā UI correction pass — 17 October 2026
 
+## Nāda Wisdom update — 22 October 2026
+
+- Replaced the Janya navigation destination with Nāda Wisdom, ordered above Rāga Practice.
+- Added the Wisdom learning activities and mobile layouts, keeping source metadata and pitch calculations internal.
+- Shared the complete chromatic tonic list from A3 through B4 (including sharps) across the header, Rāga Explorer, Śruti Explorer and Gītam Practice. Selectors display note names, not Hz values.
+- Removed reference-related wording and bibliographic fields from every Rāga–Bhāva–Rasa game view; the underlying data remains intact.
+- Restored Nāda Tattva base styles while retaining its responsive layout.
+- Verification: production build and TypeScript checks pass; all 243 svara/tonic tests pass. Browser checks cover all six Wisdom panels at 320, 390, 768 and 1280px with no horizontal page overflow. Rāga scale playback starts and stops with F#4 selected; game Learn, Explore and Quiz views display no reference text.
+- Known baseline failure: `npm run audit:raga` reports 288 lower-octave notation checks in the unchanged curriculum/audit script. This is separate from the Wisdom UI changes.
+
 ## Implemented
 
 - Grouped notation tokens into bar-delimited phrases while retaining each token's original index. The active-note index mapping therefore remains stable.

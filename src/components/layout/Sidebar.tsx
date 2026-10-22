@@ -1,14 +1,14 @@
 ﻿import { useEffect, useState } from 'react'
 import { useAppStore } from '../../store/useAppStore'
 import type { AppModule } from '../../types/index'
-import { House, Music2, Drum, AudioLines, BookOpen, Piano, ChartNoAxesCombined, Info, ListMusic } from 'lucide-react'
+import { House, Music2, Drum, AudioLines, BookOpen, Piano, ChartNoAxesCombined, Info, Sparkles } from 'lucide-react'
 
 
 
 const NAV_ITEMS: { id: AppModule; icon: import('lucide-react').LucideIcon; label: string; sub: string }[] = [
   { id:'home', icon: House, label:'Home', sub:'Main menu' },
-  { id:'raga',     icon: Music2, label:'Rāga Library',   sub:'72 Melakartas' },
-  { id:'janya',    icon: ListMusic, label:'Janya Rāgas',  sub:'Derived ragas' },
+  { id:'wisdom',   icon: Sparkles, label:'Nāda Wisdom', sub:'Listen & discover' },
+  { id:'raga',     icon: Music2, label:'Rāga Practice',   sub:'72 Melakartas' },
   { id:'tala',     icon: Drum, label:'Tāla Trainer',   sub:'L1 → L2 → L3' },
   { id:'shruti',   icon: AudioLines, label:'Śruti Trainer',  sub:'Pitch detection' },
   { id:'gamaka',   icon: AudioLines, label:'Gamaka Trainer', sub:'Gamaka practice' },
@@ -190,6 +190,4 @@ export default function Sidebar() {
     </aside>
   )
 }
-
-
 

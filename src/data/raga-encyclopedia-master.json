@@ -1,0 +1,3985 @@
+{
+  "project": "Nāda Vidyā / Medhā Nādopāsanā Platform",
+  "title": "Master Rāga Encyclopedia & Emotional Taxonomy Database",
+  "version": "3.0.0",
+  "description": "Exhaustive musicological, psychological, and acoustic catalog of Carnatic Ragas (all 72 Melakartas + Janya, Vakra, Ghana, and Bhashanga Ragas), defining Swarasthana Blueprints, Rasas, Bhavas, Gamakas, Time, Deities, Compositions, and Scholarly References.",
+  "treatise_bibliography": {
+    "TR-01": "N. S. Ramachandran (1938), 'The Ragas of Karnatic Music', University of Madras.",
+    "TR-02": "Dr. S. Ramanathan & D. Pattammal (1984), 'Raga Pravagam'.",
+    "TR-03": "Subbarama Dikshitar (1904), 'Sangita Sampradaya Pradarshini'.",
+    "TR-04": "Venkatamakhi (1620), 'Chaturdandi Prakasika'.",
+    "TR-05": "Govindacharya (c. 1800), 'Sangraha Choodamani'.",
+    "TR-06": "Sarangadeva (1230 AD), 'Sangita Ratnakara'.",
+    "TR-07": "Matanga Muni (c. 800 AD), 'Brihaddesi'.",
+    "TR-08": "Bharata Muni (-200 AD), 'Natya Shastra'."
+  },
+  "navarasa_definitions": {
+    "Shringara": "Romantic/Divine Love, Beauty, Grace (Rati Stāyī-bhāva)",
+    "Karuna": "Pathos, Compassion, Poignant Longing (Śōka Stāyī-bhāva)",
+    "Bhakti": "Devotion, Spiritual Surrender, Sacred Worship",
+    "Vira": "Valor, Heroism, Majesty, Regal Vigor (Utsāha Stāyī-bhāva)",
+    "Shanta": "Tranquility, Cosmic Peace, Equilibrium (Śama Stāyī-bhāva)",
+    "Adbhuta": "Wonder, Mystical Awe, Cosmic Marvel (Vismaya Stāyī-bhāva)",
+    "Raudra": "Fury, Righteous Wrath, Dramatic Force (Krōdha Stāyī-bhāva)",
+    "Hasya": "Joy, Mirth, Sparkling Playfulness (Hāsa Stāyī-bhāva)"
+  },
+  "total_ragas_cataloged": 104,
+  "melakartas_count": 72,
+  "janyas_count": 32,
+  "ragas_catalog": [
+    {
+      "raga_id": "mela-01-kanakangi",
+      "raga_name": "Kanakāṅgi",
+      "mela_number": 1,
+      "classification": "Janaka (Melakarta #1 - Indu Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Indu",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G1",
+        "M1",
+        "P",
+        "D1",
+        "N1"
+      ],
+      "arohana_pattern": "S R1 G1 M1 P D1 N1 Ṡ",
+      "avarohana_pattern": "Ṡ N1 D1 P M1 G1 R1 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R1G1, D1N1)",
+      "primary_rasa": "Karuṇā",
+      "secondary_rasas": [
+        "Vairāgya"
+      ],
+      "bhava_description": "Austere, ascetic sorrow and introspective detachment.",
+      "time_of_day": "Deep Night / Dawn",
+      "deity_association": "Shiva / Ascetics",
+      "key_jiva_swaras": [
+        "G1",
+        "M1",
+        "N1"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #1 in Indu Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Kanakāṅgi."
+      ]
+    },
+    {
+      "raga_id": "mela-02-ratnangi",
+      "raga_name": "Ratnāṅgi",
+      "mela_number": 2,
+      "classification": "Janaka (Melakarta #2 - Indu Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Indu",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G1",
+        "M1",
+        "P",
+        "D1",
+        "N2"
+      ],
+      "arohana_pattern": "S R1 G1 M1 P D1 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D1 P M1 G1 R1 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R1G1)",
+      "primary_rasa": "Karuṇā",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "bhava_description": "Supplicative devotion with a touch of melancholy.",
+      "time_of_day": "Pre-Dawn",
+      "deity_association": "Parvati",
+      "key_jiva_swaras": [
+        "G1",
+        "M1",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #2 in Indu Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Ratnāṅgi."
+      ]
+    },
+    {
+      "raga_id": "mela-03-ganamurti",
+      "raga_name": "Gānamūrti",
+      "mela_number": 3,
+      "classification": "Janaka (Melakarta #3 - Indu Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Indu",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G1",
+        "M1",
+        "P",
+        "D1",
+        "N3"
+      ],
+      "arohana_pattern": "S R1 G1 M1 P D1 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D1 P M1 G1 R1 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R1G1)",
+      "primary_rasa": "Bhakti",
+      "secondary_rasas": [
+        "Śānta"
+      ],
+      "bhava_description": "Spiritual yearning and meditative serenity.",
+      "time_of_day": "Dawn",
+      "deity_association": "Krishna / Saraswati",
+      "key_jiva_swaras": [
+        "G1",
+        "M1",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #3 in Indu Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Gānamūrti."
+      ]
+    },
+    {
+      "raga_id": "mela-04-vanaspati",
+      "raga_name": "Vanaspati",
+      "mela_number": 4,
+      "classification": "Janaka (Melakarta #4 - Indu Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Indu",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G1",
+        "M1",
+        "P",
+        "D2",
+        "N2"
+      ],
+      "arohana_pattern": "S R1 G1 M1 P D2 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 P M1 G1 R1 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R1G1)",
+      "primary_rasa": "Śānta",
+      "secondary_rasas": [
+        "Adbhuta"
+      ],
+      "bhava_description": "Forest solitude, quiet contemplation, and mystery.",
+      "time_of_day": "Early Morning",
+      "deity_association": "Vana Durga",
+      "key_jiva_swaras": [
+        "G1",
+        "M1",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #4 in Indu Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Vanaspati."
+      ]
+    },
+    {
+      "raga_id": "mela-05-manavati",
+      "raga_name": "Mānavati",
+      "mela_number": 5,
+      "classification": "Janaka (Melakarta #5 - Indu Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Indu",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G1",
+        "M1",
+        "P",
+        "D2",
+        "N3"
+      ],
+      "arohana_pattern": "S R1 G1 M1 P D2 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D2 P M1 G1 R1 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R1G1)",
+      "primary_rasa": "Bhakti",
+      "secondary_rasas": [
+        "Dainya"
+      ],
+      "bhava_description": "Humble entreaty and gentle devotion.",
+      "time_of_day": "Morning",
+      "deity_association": "Rama",
+      "key_jiva_swaras": [
+        "G1",
+        "M1",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #5 in Indu Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Mānavati."
+      ]
+    },
+    {
+      "raga_id": "mela-06-tanarupi",
+      "raga_name": "Tānarūpi",
+      "mela_number": 6,
+      "classification": "Janaka (Melakarta #6 - Indu Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Indu",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G1",
+        "M1",
+        "P",
+        "D3",
+        "N3"
+      ],
+      "arohana_pattern": "S R1 G1 M1 P D3 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D3 P M1 G1 R1 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R1G1, D3N3)",
+      "primary_rasa": "Vīra",
+      "secondary_rasas": [
+        "Adbhuta"
+      ],
+      "bhava_description": "Tense, dramatic arousal and intellectual marvel.",
+      "time_of_day": "Morning",
+      "deity_association": "Agni",
+      "key_jiva_swaras": [
+        "G1",
+        "M1",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #6 in Indu Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Tānarūpi."
+      ]
+    },
+    {
+      "raga_id": "mela-07-senavati",
+      "raga_name": "Senāvati",
+      "mela_number": 7,
+      "classification": "Janaka (Melakarta #7 - Netra Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Netra",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G2",
+        "M1",
+        "P",
+        "D1",
+        "N1"
+      ],
+      "arohana_pattern": "S R1 G2 M1 P D1 N1 Ṡ",
+      "avarohana_pattern": "Ṡ N1 D1 P M1 G2 R1 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (D1N1)",
+      "primary_rasa": "Vīra",
+      "secondary_rasas": [
+        "Karuṇā"
+      ],
+      "bhava_description": "Martial dignity mixed with solemn urgency.",
+      "time_of_day": "Morning",
+      "deity_association": "Subramanya",
+      "key_jiva_swaras": [
+        "G2",
+        "M1",
+        "N1"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #7 in Netra Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Senāvati."
+      ]
+    },
+    {
+      "raga_id": "mela-08-hanumatodi",
+      "raga_name": "Hanumatōḍi",
+      "mela_number": 8,
+      "classification": "Janaka (Melakarta #8 - Netra Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Netra",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G2",
+        "M1",
+        "P",
+        "D1",
+        "N2"
+      ],
+      "arohana_pattern": "S R1 G2 M1 P D1 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D1 P M1 G2 R1 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Karuṇā, Bhakti",
+      "secondary_rasas": [
+        "Śṛṅgāra"
+      ],
+      "bhava_description": "Profound, majestic pathos, infinite emotional depth, and soul-stirring devotion.",
+      "time_of_day": "Morning",
+      "deity_association": "Hanuman / Shiva",
+      "key_jiva_swaras": [
+        "G2",
+        "M1",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #8 in Netra Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Hanumatōḍi."
+      ]
+    },
+    {
+      "raga_id": "mela-09-dhenuka",
+      "raga_name": "Dhenukā",
+      "mela_number": 9,
+      "classification": "Janaka (Melakarta #9 - Netra Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Netra",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G2",
+        "M1",
+        "P",
+        "D1",
+        "N3"
+      ],
+      "arohana_pattern": "S R1 G2 M1 P D1 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D1 P M1 G2 R1 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Bhakti",
+      "secondary_rasas": [
+        "Karuṇā"
+      ],
+      "bhava_description": "Devotional warmth with a touch of poignant longing.",
+      "time_of_day": "Morning",
+      "deity_association": "Kamadhenu",
+      "key_jiva_swaras": [
+        "G2",
+        "M1",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #9 in Netra Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Dhenukā."
+      ]
+    },
+    {
+      "raga_id": "mela-10-natakapriya",
+      "raga_name": "Nāṭakapriyā",
+      "mela_number": 10,
+      "classification": "Janaka (Melakarta #10 - Netra Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Netra",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G2",
+        "M1",
+        "P",
+        "D2",
+        "N2"
+      ],
+      "arohana_pattern": "S R1 G2 M1 P D2 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 P M1 G2 R1 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Śṛṅgāra",
+      "secondary_rasas": [
+        "Hāsya"
+      ],
+      "bhava_description": "Dramaturgic narrative charm and expressive grace.",
+      "time_of_day": "Morning",
+      "deity_association": "Nataraja",
+      "key_jiva_swaras": [
+        "G2",
+        "M1",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #10 in Netra Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Nāṭakapriyā."
+      ]
+    },
+    {
+      "raga_id": "mela-11-kokilapriya",
+      "raga_name": "Kōkilapriyā",
+      "mela_number": 11,
+      "classification": "Janaka (Melakarta #11 - Netra Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Netra",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G2",
+        "M1",
+        "P",
+        "D2",
+        "N3"
+      ],
+      "arohana_pattern": "S R1 G2 M1 P D2 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D2 P M1 G2 R1 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Śṛṅgāra",
+      "secondary_rasas": [
+        "Mādhurya"
+      ],
+      "bhava_description": "Sweet, cuckoo-like melodic tenderness and affection.",
+      "time_of_day": "Morning",
+      "deity_association": "Radha Krishna",
+      "key_jiva_swaras": [
+        "G2",
+        "M1",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #11 in Netra Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Kōkilapriyā."
+      ]
+    },
+    {
+      "raga_id": "mela-12-rupavati",
+      "raga_name": "Rūpavati",
+      "mela_number": 12,
+      "classification": "Janaka (Melakarta #12 - Netra Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Netra",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G2",
+        "M1",
+        "P",
+        "D3",
+        "N3"
+      ],
+      "arohana_pattern": "S R1 G2 M1 P D3 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D3 P M1 G2 R1 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (D3N3)",
+      "primary_rasa": "Adbhuta",
+      "secondary_rasas": [
+        "Śṛṅgāra"
+      ],
+      "bhava_description": "Striking aesthetic beauty and microtonal surprise.",
+      "time_of_day": "Morning",
+      "deity_association": "Tripurasundari",
+      "key_jiva_swaras": [
+        "G2",
+        "M1",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #12 in Netra Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Rūpavati."
+      ]
+    },
+    {
+      "raga_id": "mela-13-gayakapriya",
+      "raga_name": "Gāyakapriyā",
+      "mela_number": 13,
+      "classification": "Janaka (Melakarta #13 - Agni Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Agni",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G3",
+        "M1",
+        "P",
+        "D1",
+        "N1"
+      ],
+      "arohana_pattern": "S R1 G3 M1 P D1 N1 Ṡ",
+      "avarohana_pattern": "Ṡ N1 D1 P M1 G3 R1 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (D1N1)",
+      "primary_rasa": "Bhakti",
+      "secondary_rasas": [
+        "Karuṇā"
+      ],
+      "bhava_description": "Vocalist appealing warmth and classical reverence.",
+      "time_of_day": "Late Morning",
+      "deity_association": "Gandharvas",
+      "key_jiva_swaras": [
+        "G3",
+        "M1",
+        "N1"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #13 in Agni Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Gāyakapriyā."
+      ]
+    },
+    {
+      "raga_id": "mela-14-vakulaabharaṇam",
+      "raga_name": "Vakulaābharaṇam",
+      "mela_number": 14,
+      "classification": "Janaka (Melakarta #14 - Agni Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Agni",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G3",
+        "M1",
+        "P",
+        "D1",
+        "N2"
+      ],
+      "arohana_pattern": "S R1 G3 M1 P D1 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D1 P M1 G3 R1 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Karuṇā",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "bhava_description": "Deep contemplative pathos with an Eastern mystical atmosphere.",
+      "time_of_day": "Late Morning",
+      "deity_association": "Shiva",
+      "key_jiva_swaras": [
+        "G3",
+        "M1",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #14 in Agni Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Vakulaābharaṇam."
+      ]
+    },
+    {
+      "raga_id": "mela-15-mayamalavagaula",
+      "raga_name": "Māyāmāḷavagauḷa",
+      "mela_number": 15,
+      "classification": "Janaka (Melakarta #15 - Agni Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Agni",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G3",
+        "M1",
+        "P",
+        "D1",
+        "N3"
+      ],
+      "arohana_pattern": "S R1 G3 M1 P D1 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D1 P M1 G3 R1 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Bhakti, Śānta",
+      "secondary_rasas": [
+        "Karuṇā"
+      ],
+      "bhava_description": "Dawn purity, fundamental equilibrium, and universal auspiciousness.",
+      "time_of_day": "Dawn / Morning",
+      "deity_association": "Ganesha / Shiva",
+      "key_jiva_swaras": [
+        "G3",
+        "M1",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #15 in Agni Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Māyāmāḷavagauḷa."
+      ]
+    },
+    {
+      "raga_id": "mela-16-chakravakam",
+      "raga_name": "Chakravākam",
+      "mela_number": 16,
+      "classification": "Janaka (Melakarta #16 - Agni Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Agni",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G3",
+        "M1",
+        "P",
+        "D2",
+        "N2"
+      ],
+      "arohana_pattern": "S R1 G3 M1 P D2 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 P M1 G3 R1 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Bhakti, Śṛṅgāra",
+      "secondary_rasas": [
+        "Vīra"
+      ],
+      "bhava_description": "Compassionate warmth, majesty, and joyful devotion.",
+      "time_of_day": "Morning",
+      "deity_association": "Surya",
+      "key_jiva_swaras": [
+        "G3",
+        "M1",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #16 in Agni Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Chakravākam."
+      ]
+    },
+    {
+      "raga_id": "mela-17-suryakantam",
+      "raga_name": "Sūryakāntam",
+      "mela_number": 17,
+      "classification": "Janaka (Melakarta #17 - Agni Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Agni",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G3",
+        "M1",
+        "P",
+        "D2",
+        "N3"
+      ],
+      "arohana_pattern": "S R1 G3 M1 P D2 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D2 P M1 G3 R1 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Vīra",
+      "secondary_rasas": [
+        "Adbhuta"
+      ],
+      "bhava_description": "Radiant solar brilliance, vigor, and majesty.",
+      "time_of_day": "Sunrise",
+      "deity_association": "Surya Narayana",
+      "key_jiva_swaras": [
+        "G3",
+        "M1",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #17 in Agni Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Sūryakāntam."
+      ]
+    },
+    {
+      "raga_id": "mela-18-hatakambari",
+      "raga_name": "Hāṭakāmbari",
+      "mela_number": 18,
+      "classification": "Janaka (Melakarta #18 - Agni Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Agni",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G3",
+        "M1",
+        "P",
+        "D3",
+        "N3"
+      ],
+      "arohana_pattern": "S R1 G3 M1 P D3 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D3 P M1 G3 R1 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (D3N3)",
+      "primary_rasa": "Adbhuta",
+      "secondary_rasas": [
+        "Vīra"
+      ],
+      "bhava_description": "Golden splendor and dramatic microtonal elevation.",
+      "time_of_day": "Morning",
+      "deity_association": "Kanakadurga",
+      "key_jiva_swaras": [
+        "G3",
+        "M1",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #18 in Agni Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Hāṭakāmbari."
+      ]
+    },
+    {
+      "raga_id": "mela-19-jhampadhvani",
+      "raga_name": "Jhampādhvani",
+      "mela_number": 19,
+      "classification": "Janaka (Melakarta #19 - Veda Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Veda",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G2",
+        "M1",
+        "P",
+        "D1",
+        "N1"
+      ],
+      "arohana_pattern": "S R2 G2 M1 P D1 N1 Ṡ",
+      "avarohana_pattern": "Ṡ N1 D1 P M1 G2 R2 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (D1N1)",
+      "primary_rasa": "Bhakti",
+      "secondary_rasas": [
+        "Karuṇā"
+      ],
+      "bhava_description": "Rhythmic dignity and reflective solemnity.",
+      "time_of_day": "Forenoon",
+      "deity_association": "Varuna",
+      "key_jiva_swaras": [
+        "G2",
+        "M1",
+        "N1"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #19 in Veda Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Jhampādhvani."
+      ]
+    },
+    {
+      "raga_id": "mela-20-natabhairavi",
+      "raga_name": "Naṭabhairavi",
+      "mela_number": 20,
+      "classification": "Janaka (Melakarta #20 - Veda Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Veda",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G2",
+        "M1",
+        "P",
+        "D1",
+        "N2"
+      ],
+      "arohana_pattern": "S R2 G2 M1 P D1 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D1 P M1 G2 R2 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Karuṇā",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "bhava_description": "Plaintive devotion, emotional sweetness, and tragic beauty.",
+      "time_of_day": "Forenoon",
+      "deity_association": "Bhairavi / Durga",
+      "key_jiva_swaras": [
+        "G2",
+        "M1",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #20 in Veda Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Naṭabhairavi."
+      ]
+    },
+    {
+      "raga_id": "mela-21-keeravaṇi",
+      "raga_name": "Keeravāṇi",
+      "mela_number": 21,
+      "classification": "Janaka (Melakarta #21 - Veda Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Veda",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G2",
+        "M1",
+        "P",
+        "D1",
+        "N3"
+      ],
+      "arohana_pattern": "S R2 G2 M1 P D1 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D1 P M1 G2 R2 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Karuṇā",
+      "secondary_rasas": [
+        "Śṛṅgāra"
+      ],
+      "bhava_description": "Poignant longing, heart-wrenching emotional beauty, and devotion.",
+      "time_of_day": "Forenoon",
+      "deity_association": "Saraswati",
+      "key_jiva_swaras": [
+        "G2",
+        "M1",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #21 in Veda Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Keeravāṇi."
+      ]
+    },
+    {
+      "raga_id": "mela-22-kharaharapriya",
+      "raga_name": "Kharaharapriyā",
+      "mela_number": 22,
+      "classification": "Janaka (Melakarta #22 - Veda Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Veda",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G2",
+        "M1",
+        "P",
+        "D2",
+        "N2"
+      ],
+      "arohana_pattern": "S R2 G2 M1 P D2 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 P M1 G2 R2 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Bhakti, Vīra, Karuṇā",
+      "secondary_rasas": [
+        "Śānta"
+      ],
+      "bhava_description": "Grand symmetrical balance, universal emotional resonance, and majesty.",
+      "time_of_day": "Any Time / Noon",
+      "deity_association": "Rama / Krishna",
+      "key_jiva_swaras": [
+        "G2",
+        "M1",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #22 in Veda Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Kharaharapriyā."
+      ]
+    },
+    {
+      "raga_id": "mela-23-gowrimanohari",
+      "raga_name": "Gowrīmanohari",
+      "mela_number": 23,
+      "classification": "Janaka (Melakarta #23 - Veda Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Veda",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G2",
+        "M1",
+        "P",
+        "D2",
+        "N3"
+      ],
+      "arohana_pattern": "S R2 G2 M1 P D2 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D2 P M1 G2 R2 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Bhakti",
+      "secondary_rasas": [
+        "Śṛṅgāra"
+      ],
+      "bhava_description": "Charming, serene devotion and graceful poise.",
+      "time_of_day": "Noon",
+      "deity_association": "Gauri",
+      "key_jiva_swaras": [
+        "G2",
+        "M1",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #23 in Veda Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Gowrīmanohari."
+      ]
+    },
+    {
+      "raga_id": "mela-24-varuṇapriya",
+      "raga_name": "Varuṇapriyā",
+      "mela_number": 24,
+      "classification": "Janaka (Melakarta #24 - Veda Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Veda",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G2",
+        "M1",
+        "P",
+        "D3",
+        "N3"
+      ],
+      "arohana_pattern": "S R2 G2 M1 P D3 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D3 P M1 G2 R2 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (D3N3)",
+      "primary_rasa": "Adbhuta",
+      "secondary_rasas": [
+        "Karuṇā"
+      ],
+      "bhava_description": "Oceanic depth and grand microtonal gravity.",
+      "time_of_day": "Noon",
+      "deity_association": "Varuna",
+      "key_jiva_swaras": [
+        "G2",
+        "M1",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #24 in Veda Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Varuṇapriyā."
+      ]
+    },
+    {
+      "raga_id": "mela-25-mararanjani",
+      "raga_name": "Māraranjani",
+      "mela_number": 25,
+      "classification": "Janaka (Melakarta #25 - Bāṇa Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Bāṇa",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G3",
+        "M1",
+        "P",
+        "D1",
+        "N1"
+      ],
+      "arohana_pattern": "S R2 G3 M1 P D1 N1 Ṡ",
+      "avarohana_pattern": "Ṡ N1 D1 P M1 G3 R2 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (D1N1)",
+      "primary_rasa": "Śṛṅgāra",
+      "secondary_rasas": [
+        "Karuṇā"
+      ],
+      "bhava_description": "Enchanting romantic yearning and quiet grief.",
+      "time_of_day": "Afternoon",
+      "deity_association": "Manmatha",
+      "key_jiva_swaras": [
+        "G3",
+        "M1",
+        "N1"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #25 in Bāṇa Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Māraranjani."
+      ]
+    },
+    {
+      "raga_id": "mela-26-charukēsi",
+      "raga_name": "Chārukēśi",
+      "mela_number": 26,
+      "classification": "Janaka (Melakarta #26 - Bāṇa Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Bāṇa",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G3",
+        "M1",
+        "P",
+        "D1",
+        "N2"
+      ],
+      "arohana_pattern": "S R2 G3 M1 P D1 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D1 P M1 G3 R2 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Bhakti, Karuṇā",
+      "secondary_rasas": [
+        "Śṛṅgāra"
+      ],
+      "bhava_description": "Irresistible emotional sweetness, melting pathos, and surrender.",
+      "time_of_day": "Afternoon",
+      "deity_association": "Krishna / Vishnu",
+      "key_jiva_swaras": [
+        "G3",
+        "M1",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #26 in Bāṇa Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Chārukēśi."
+      ]
+    },
+    {
+      "raga_id": "mela-27-sarasangi",
+      "raga_name": "Sarasāṅgi",
+      "mela_number": 27,
+      "classification": "Janaka (Melakarta #27 - Bāṇa Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Bāṇa",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G3",
+        "M1",
+        "P",
+        "D2",
+        "N3"
+      ],
+      "arohana_pattern": "S R2 G3 M1 P D2 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D2 P M1 G3 R2 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Bhakti",
+      "secondary_rasas": [
+        "Śṛṅgāra"
+      ],
+      "bhava_description": "Pure, luminous devotion and artistic elegance.",
+      "time_of_day": "Afternoon",
+      "deity_association": "Saraswati",
+      "key_jiva_swaras": [
+        "G3",
+        "M1",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #27 in Bāṇa Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Sarasāṅgi."
+      ]
+    },
+    {
+      "raga_id": "mela-28-harikambhoji",
+      "raga_name": "Harikāmbhōji",
+      "mela_number": 28,
+      "classification": "Janaka (Melakarta #28 - Bāṇa Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Bāṇa",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G3",
+        "M1",
+        "P",
+        "D2",
+        "N2"
+      ],
+      "arohana_pattern": "S R2 G3 M1 P D2 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 P M1 G3 R2 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Bhakti, Śṛṅgāra",
+      "secondary_rasas": [
+        "Vīra"
+      ],
+      "bhava_description": "Majestic, regal grandeur, warmth, and popular appeal.",
+      "time_of_day": "Afternoon",
+      "deity_association": "Hari / Rama",
+      "key_jiva_swaras": [
+        "G3",
+        "M1",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #28 in Bāṇa Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Harikāmbhōji."
+      ]
+    },
+    {
+      "raga_id": "mela-29-dhirasankarabharaṇam",
+      "raga_name": "Dhīraśaṅkarābharaṇam",
+      "mela_number": 29,
+      "classification": "Janaka (Melakarta #29 - Bāṇa Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Bāṇa",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G3",
+        "M1",
+        "P",
+        "D2",
+        "N3"
+      ],
+      "arohana_pattern": "S R2 G3 M1 P D2 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D2 P M1 G3 R2 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Vīra, Bhakti, Śānta",
+      "secondary_rasas": [
+        "Adbhuta"
+      ],
+      "bhava_description": "Imperial majesty, structural perfection, and triumphant joy.",
+      "time_of_day": "Any Time / Evening",
+      "deity_association": "Shiva / Vishnu",
+      "key_jiva_swaras": [
+        "G3",
+        "M1",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #29 in Bāṇa Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Dhīraśaṅkarābharaṇam."
+      ]
+    },
+    {
+      "raga_id": "mela-30-naganandini",
+      "raga_name": "Nāganāndini",
+      "mela_number": 30,
+      "classification": "Janaka (Melakarta #30 - Bāṇa Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Bāṇa",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G3",
+        "M1",
+        "P",
+        "D3",
+        "N3"
+      ],
+      "arohana_pattern": "S R2 G3 M1 P D3 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D3 P M1 G3 R2 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (D3N3)",
+      "primary_rasa": "Adbhuta",
+      "secondary_rasas": [
+        "Vīra"
+      ],
+      "bhava_description": "Serpentine grace and striking scale tension.",
+      "time_of_day": "Late Afternoon",
+      "deity_association": "Nagaraja",
+      "key_jiva_swaras": [
+        "G3",
+        "M1",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #30 in Bāṇa Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Nāganāndini."
+      ]
+    },
+    {
+      "raga_id": "mela-31-yagapriya",
+      "raga_name": "Yāgapriyā",
+      "mela_number": 31,
+      "classification": "Janaka (Melakarta #31 - Rutu Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Rutu",
+      "swarasthana_codes": [
+        "S",
+        "R3",
+        "G3",
+        "M1",
+        "P",
+        "D1",
+        "N1"
+      ],
+      "arohana_pattern": "S R3 G3 M1 P D1 N1 Ṡ",
+      "avarohana_pattern": "Ṡ N1 D1 P M1 G3 R3 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R3G3, D1N1)",
+      "primary_rasa": "Adbhuta",
+      "secondary_rasas": [
+        "Vīra"
+      ],
+      "bhava_description": "Sacrificial solemnity and intense microtonal focus.",
+      "time_of_day": "Late Afternoon",
+      "deity_association": "Yagna Purusha",
+      "key_jiva_swaras": [
+        "G3",
+        "M1",
+        "N1"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #31 in Rutu Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Yāgapriyā."
+      ]
+    },
+    {
+      "raga_id": "mela-32-ragavardhani",
+      "raga_name": "Rāgavardhani",
+      "mela_number": 32,
+      "classification": "Janaka (Melakarta #32 - Rutu Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Rutu",
+      "swarasthana_codes": [
+        "S",
+        "R3",
+        "G3",
+        "M1",
+        "P",
+        "D1",
+        "N2"
+      ],
+      "arohana_pattern": "S R3 G3 M1 P D1 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D1 P M1 G3 R3 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R3G3)",
+      "primary_rasa": "Vīra",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "bhava_description": "Expanding melodic vigor and dramatic gravity.",
+      "time_of_day": "Sunset",
+      "deity_association": "Vishnu",
+      "key_jiva_swaras": [
+        "G3",
+        "M1",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #32 in Rutu Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Rāgavardhani."
+      ]
+    },
+    {
+      "raga_id": "mela-33-gangeyabhusaṇi",
+      "raga_name": "Gāṅgeyabhūṣaṇi",
+      "mela_number": 33,
+      "classification": "Janaka (Melakarta #33 - Rutu Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Rutu",
+      "swarasthana_codes": [
+        "S",
+        "R3",
+        "G3",
+        "M1",
+        "P",
+        "D1",
+        "N3"
+      ],
+      "arohana_pattern": "S R3 G3 M1 P D1 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D1 P M1 G3 R3 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R3G3)",
+      "primary_rasa": "Adbhuta",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "bhava_description": "Celestial ornament and majestic awe.",
+      "time_of_day": "Sunset",
+      "deity_association": "Ganga / Shiva",
+      "key_jiva_swaras": [
+        "G3",
+        "M1",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #33 in Rutu Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Gāṅgeyabhūṣaṇi."
+      ]
+    },
+    {
+      "raga_id": "mela-34-vagadheeshwari",
+      "raga_name": "Vāgadheeshwari",
+      "mela_number": 34,
+      "classification": "Janaka (Melakarta #34 - Rutu Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Rutu",
+      "swarasthana_codes": [
+        "S",
+        "R3",
+        "G3",
+        "M1",
+        "P",
+        "D2",
+        "N2"
+      ],
+      "arohana_pattern": "S R3 G3 M1 P D2 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 P M1 G3 R3 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R3G3)",
+      "primary_rasa": "Vīra",
+      "secondary_rasas": [
+        "Adbhuta"
+      ],
+      "bhava_description": "Eloquent scholarly mastery and dramatic poise.",
+      "time_of_day": "Sunset",
+      "deity_association": "Saraswati",
+      "key_jiva_swaras": [
+        "G3",
+        "M1",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #34 in Rutu Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Vāgadheeshwari."
+      ]
+    },
+    {
+      "raga_id": "mela-35-sulini",
+      "raga_name": "Śūlini",
+      "mela_number": 35,
+      "classification": "Janaka (Melakarta #35 - Rutu Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Rutu",
+      "swarasthana_codes": [
+        "S",
+        "R3",
+        "G3",
+        "M1",
+        "P",
+        "D2",
+        "N3"
+      ],
+      "arohana_pattern": "S R3 G3 M1 P D2 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D2 P M1 G3 R3 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R3G3)",
+      "primary_rasa": "Vīra",
+      "secondary_rasas": [
+        "Raudra"
+      ],
+      "bhava_description": "Heroic power, martial sharpness, and divine armor.",
+      "time_of_day": "Sunset",
+      "deity_association": "Durga / Kali",
+      "key_jiva_swaras": [
+        "G3",
+        "M1",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #35 in Rutu Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Śūlini."
+      ]
+    },
+    {
+      "raga_id": "mela-36-chalanata",
+      "raga_name": "Chalanāṭa",
+      "mela_number": 36,
+      "classification": "Janaka (Melakarta #36 - Rutu Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Rutu",
+      "swarasthana_codes": [
+        "S",
+        "R3",
+        "G3",
+        "M1",
+        "P",
+        "D3",
+        "N3"
+      ],
+      "arohana_pattern": "S R3 G3 M1 P D3 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D3 P M1 G3 R3 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R3G3, D3N3)",
+      "primary_rasa": "Vīra, Hāsya",
+      "secondary_rasas": [
+        "Adbhuta"
+      ],
+      "bhava_description": "Rhythmic brilliance, auspicious joy, and dynamic energy.",
+      "time_of_day": "Evening",
+      "deity_association": "Ganesha",
+      "key_jiva_swaras": [
+        "G3",
+        "M1",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #36 in Rutu Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Chalanāṭa."
+      ]
+    },
+    {
+      "raga_id": "mela-37-salagam",
+      "raga_name": "Sālagam",
+      "mela_number": 37,
+      "classification": "Janaka (Melakarta #37 - Rishi Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Rishi",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G1",
+        "M2",
+        "P",
+        "D1",
+        "N1"
+      ],
+      "arohana_pattern": "S R1 G1 M2 P D1 N1 Ṡ",
+      "avarohana_pattern": "Ṡ N1 D1 P M2 G1 R1 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R1G1, D1N1)",
+      "primary_rasa": "Karuṇā",
+      "secondary_rasas": [
+        "Vairāgya"
+      ],
+      "bhava_description": "Prati Madhyama ascetic gravity and mystic sorrow.",
+      "time_of_day": "Evening",
+      "deity_association": "Rishis",
+      "key_jiva_swaras": [
+        "G1",
+        "M2",
+        "N1"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #37 in Rishi Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Sālagam."
+      ]
+    },
+    {
+      "raga_id": "mela-38-jalarṇavam",
+      "raga_name": "Jalārṇavam",
+      "mela_number": 38,
+      "classification": "Janaka (Melakarta #38 - Rishi Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Rishi",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G1",
+        "M2",
+        "P",
+        "D1",
+        "N2"
+      ],
+      "arohana_pattern": "S R1 G1 M2 P D1 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D1 P M2 G1 R1 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R1G1)",
+      "primary_rasa": "Karuṇā",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "bhava_description": "Oceanic mystery and deep spiritual surge.",
+      "time_of_day": "Evening",
+      "deity_association": "Varuna",
+      "key_jiva_swaras": [
+        "G1",
+        "M2",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #38 in Rishi Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Jalārṇavam."
+      ]
+    },
+    {
+      "raga_id": "mela-39-jhalavarali",
+      "raga_name": "Jhālavarāḷi",
+      "mela_number": 39,
+      "classification": "Janaka (Melakarta #39 - Rishi Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Rishi",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G1",
+        "M2",
+        "P",
+        "D1",
+        "N3"
+      ],
+      "arohana_pattern": "S R1 G1 M2 P D1 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D1 P M2 G1 R1 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R1G1)",
+      "primary_rasa": "Bhakti",
+      "secondary_rasas": [
+        "Karuṇā"
+      ],
+      "bhava_description": "Severe devotional penance and haunting sanctity.",
+      "time_of_day": "Night",
+      "deity_association": "Shiva / Ascetics",
+      "key_jiva_swaras": [
+        "G1",
+        "M2",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #39 in Rishi Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Jhālavarāḷi."
+      ]
+    },
+    {
+      "raga_id": "mela-40-navaneetam",
+      "raga_name": "Navaneetam",
+      "mela_number": 40,
+      "classification": "Janaka (Melakarta #40 - Rishi Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Rishi",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G1",
+        "M2",
+        "P",
+        "D2",
+        "N2"
+      ],
+      "arohana_pattern": "S R1 G1 M2 P D2 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 P M2 G1 R1 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R1G1)",
+      "primary_rasa": "Śṛṅgāra",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "bhava_description": "Smooth butter-like sweetness combined with M2 tension.",
+      "time_of_day": "Night",
+      "deity_association": "Krishna",
+      "key_jiva_swaras": [
+        "G1",
+        "M2",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #40 in Rishi Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Navaneetam."
+      ]
+    },
+    {
+      "raga_id": "mela-41-pavani",
+      "raga_name": "Pāvani",
+      "mela_number": 41,
+      "classification": "Janaka (Melakarta #41 - Rishi Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Rishi",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G1",
+        "M2",
+        "P",
+        "D2",
+        "N3"
+      ],
+      "arohana_pattern": "S R1 G1 M2 P D2 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D2 P M2 G1 R1 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R1G1)",
+      "primary_rasa": "Bhakti",
+      "secondary_rasas": [
+        "Śānta"
+      ],
+      "bhava_description": "Purifying spiritual clarity and calm devotion.",
+      "time_of_day": "Night",
+      "deity_association": "Pavana / Vayu",
+      "key_jiva_swaras": [
+        "G1",
+        "M2",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #41 in Rishi Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Pāvani."
+      ]
+    },
+    {
+      "raga_id": "mela-42-raghupriya",
+      "raga_name": "Raghupriyā",
+      "mela_number": 42,
+      "classification": "Janaka (Melakarta #42 - Rishi Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Rishi",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G1",
+        "M2",
+        "P",
+        "D3",
+        "N3"
+      ],
+      "arohana_pattern": "S R1 G1 M2 P D3 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D3 P M2 G1 R1 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R1G1, D3N3)",
+      "primary_rasa": "Vīra",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "bhava_description": "Regal heroism and divine reverence.",
+      "time_of_day": "Night",
+      "deity_association": "Rama",
+      "key_jiva_swaras": [
+        "G1",
+        "M2",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #42 in Rishi Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Raghupriyā."
+      ]
+    },
+    {
+      "raga_id": "mela-43-gavambhodhi",
+      "raga_name": "Gavāmbhodhi",
+      "mela_number": 43,
+      "classification": "Janaka (Melakarta #43 - Vasu Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Vasu",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G2",
+        "M2",
+        "P",
+        "D1",
+        "N1"
+      ],
+      "arohana_pattern": "S R1 G2 M2 P D1 N1 Ṡ",
+      "avarohana_pattern": "Ṡ N1 D1 P M2 G2 R1 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (D1N1)",
+      "primary_rasa": "Karuṇā",
+      "secondary_rasas": [
+        "Adbhuta"
+      ],
+      "bhava_description": "Mystic expanse and spiritual tension.",
+      "time_of_day": "Night",
+      "deity_association": "Vishnu",
+      "key_jiva_swaras": [
+        "G2",
+        "M2",
+        "N1"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #43 in Vasu Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Gavāmbhodhi."
+      ]
+    },
+    {
+      "raga_id": "mela-44-bhavapriya",
+      "raga_name": "Bhavāpriyā",
+      "mela_number": 44,
+      "classification": "Janaka (Melakarta #44 - Vasu Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Vasu",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G2",
+        "M2",
+        "P",
+        "D1",
+        "N2"
+      ],
+      "arohana_pattern": "S R1 G2 M2 P D1 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D1 P M2 G2 R1 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Karuṇā",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "bhava_description": "Heartfelt supplication and emotional intensity.",
+      "time_of_day": "Night",
+      "deity_association": "Shiva",
+      "key_jiva_swaras": [
+        "G2",
+        "M2",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #44 in Vasu Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Bhavāpriyā."
+      ]
+    },
+    {
+      "raga_id": "mela-45-subhapanthuvarali",
+      "raga_name": "Śubhapanthuvarāḷi",
+      "mela_number": 45,
+      "classification": "Janaka (Melakarta #45 - Vasu Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Vasu",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G2",
+        "M2",
+        "P",
+        "D1",
+        "N3"
+      ],
+      "arohana_pattern": "S R1 G2 M2 P D1 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D1 P M2 G2 R1 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Karuṇā, Bhakti",
+      "secondary_rasas": [
+        "Vairāgya"
+      ],
+      "bhava_description": "Transcendent grief, intense penance, and supreme devotion.",
+      "time_of_day": "Evening / Night",
+      "deity_association": "Shiva / Ascetics",
+      "key_jiva_swaras": [
+        "G2",
+        "M2",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #45 in Vasu Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Śubhapanthuvarāḷi."
+      ]
+    },
+    {
+      "raga_id": "mela-46-sadvidhamariṇi",
+      "raga_name": "Ṣaḍvidhamāriṇi",
+      "mela_number": 46,
+      "classification": "Janaka (Melakarta #46 - Vasu Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Vasu",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G2",
+        "M2",
+        "P",
+        "D2",
+        "N2"
+      ],
+      "arohana_pattern": "S R1 G2 M2 P D2 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 P M2 G2 R1 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Vīra",
+      "secondary_rasas": [
+        "Karuṇā"
+      ],
+      "bhava_description": "Mysterious dramatic urgency.",
+      "time_of_day": "Late Night",
+      "deity_association": "Durga",
+      "key_jiva_swaras": [
+        "G2",
+        "M2",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #46 in Vasu Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Ṣaḍvidhamāriṇi."
+      ]
+    },
+    {
+      "raga_id": "mela-47-suvarṇangi",
+      "raga_name": "Suvarṇāṅgi",
+      "mela_number": 47,
+      "classification": "Janaka (Melakarta #47 - Vasu Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Vasu",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G2",
+        "M2",
+        "P",
+        "D2",
+        "N3"
+      ],
+      "arohana_pattern": "S R1 G2 M2 P D2 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D2 P M2 G2 R1 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Adbhuta",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "bhava_description": "Golden brilliance and majestic aura.",
+      "time_of_day": "Late Night",
+      "deity_association": "Lakshmi",
+      "key_jiva_swaras": [
+        "G2",
+        "M2",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #47 in Vasu Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Suvarṇāṅgi."
+      ]
+    },
+    {
+      "raga_id": "mela-48-divyamaṇi",
+      "raga_name": "Divyāmaṇi",
+      "mela_number": 48,
+      "classification": "Janaka (Melakarta #48 - Vasu Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Vasu",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G2",
+        "M2",
+        "P",
+        "D3",
+        "N3"
+      ],
+      "arohana_pattern": "S R1 G2 M2 P D3 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D3 P M2 G2 R1 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (D3N3)",
+      "primary_rasa": "Adbhuta",
+      "secondary_rasas": [
+        "Vīra"
+      ],
+      "bhava_description": "Luminous gem-like microtonal grandeur.",
+      "time_of_day": "Late Night",
+      "deity_association": "Devi",
+      "key_jiva_swaras": [
+        "G2",
+        "M2",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #48 in Vasu Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Divyāmaṇi."
+      ]
+    },
+    {
+      "raga_id": "mela-49-dhavalambari",
+      "raga_name": "Dhavalāmbari",
+      "mela_number": 49,
+      "classification": "Janaka (Melakarta #49 - Brahma Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Brahma",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G3",
+        "M2",
+        "P",
+        "D1",
+        "N1"
+      ],
+      "arohana_pattern": "S R1 G3 M2 P D1 N1 Ṡ",
+      "avarohana_pattern": "Ṡ N1 D1 P M2 G3 R1 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (D1N1)",
+      "primary_rasa": "Bhakti",
+      "secondary_rasas": [
+        "Śānta"
+      ],
+      "bhava_description": "Pure white meditative serene majesty.",
+      "time_of_day": "Midnight",
+      "deity_association": "Saraswati",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N1"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #49 in Brahma Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Dhavalāmbari."
+      ]
+    },
+    {
+      "raga_id": "mela-50-namanarayaṇi",
+      "raga_name": "Nāmanārāyaṇi",
+      "mela_number": 50,
+      "classification": "Janaka (Melakarta #50 - Brahma Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Brahma",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G3",
+        "M2",
+        "P",
+        "D1",
+        "N2"
+      ],
+      "arohana_pattern": "S R1 G3 M2 P D1 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D1 P M2 G3 R1 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Bhakti",
+      "secondary_rasas": [
+        "Karuṇā"
+      ],
+      "bhava_description": "Divine invocation of Narayana and deep faith.",
+      "time_of_day": "Midnight",
+      "deity_association": "Narayana",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #50 in Brahma Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Nāmanārāyaṇi."
+      ]
+    },
+    {
+      "raga_id": "mela-51-kamavardhani",
+      "raga_name": "Kāmavardhani",
+      "mela_number": 51,
+      "classification": "Janaka (Melakarta #51 - Brahma Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Brahma",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G3",
+        "M2",
+        "P",
+        "D1",
+        "N3"
+      ],
+      "arohana_pattern": "S R1 G3 M2 P D1 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D1 P M2 G3 R1 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Bhakti, Karuṇā",
+      "secondary_rasas": [
+        "Śṛṅgāra"
+      ],
+      "bhava_description": "Deep spiritual fire, poignant devotion, and dawn purity.",
+      "time_of_day": "Evening / Dawn",
+      "deity_association": "Shiva",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #51 in Brahma Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Kāmavardhani."
+      ]
+    },
+    {
+      "raga_id": "mela-52-ramapriya",
+      "raga_name": "Rāmapriyā",
+      "mela_number": 52,
+      "classification": "Janaka (Melakarta #52 - Brahma Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Brahma",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G3",
+        "M2",
+        "P",
+        "D2",
+        "N2"
+      ],
+      "arohana_pattern": "S R1 G3 M2 P D2 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 P M2 G3 R1 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Bhakti",
+      "secondary_rasas": [
+        "Vīra"
+      ],
+      "bhava_description": "Devotional heroism and auspicious dignity.",
+      "time_of_day": "Night",
+      "deity_association": "Rama",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #52 in Brahma Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Rāmapriyā."
+      ]
+    },
+    {
+      "raga_id": "mela-53-gamanasrama",
+      "raga_name": "Gamanāśrama",
+      "mela_number": 53,
+      "classification": "Janaka (Melakarta #53 - Brahma Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Brahma",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G3",
+        "M2",
+        "P",
+        "D2",
+        "N3"
+      ],
+      "arohana_pattern": "S R1 G3 M2 P D2 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D2 P M2 G3 R1 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Śānta",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "bhava_description": "Tranquil spiritual journey and steady devotion.",
+      "time_of_day": "Night",
+      "deity_association": "Rishis",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #53 in Brahma Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Gamanāśrama."
+      ]
+    },
+    {
+      "raga_id": "mela-54-visvambhari",
+      "raga_name": "Viśvambhari",
+      "mela_number": 54,
+      "classification": "Janaka (Melakarta #54 - Brahma Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Brahma",
+      "swarasthana_codes": [
+        "S",
+        "R1",
+        "G3",
+        "M2",
+        "P",
+        "D3",
+        "N3"
+      ],
+      "arohana_pattern": "S R1 G3 M2 P D3 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D3 P M2 G3 R1 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (D3N3)",
+      "primary_rasa": "Adbhuta",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "bhava_description": "Universal cosmic presence and awe.",
+      "time_of_day": "Night",
+      "deity_association": "Cosmic Mother",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #54 in Brahma Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Viśvambhari."
+      ]
+    },
+    {
+      "raga_id": "mela-55-samalangi",
+      "raga_name": "Śāmalāṅgi",
+      "mela_number": 55,
+      "classification": "Janaka (Melakarta #55 - Disi Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Disi",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G2",
+        "M2",
+        "P",
+        "D1",
+        "N1"
+      ],
+      "arohana_pattern": "S R2 G2 M2 P D1 N1 Ṡ",
+      "avarohana_pattern": "Ṡ N1 D1 P M2 G2 R2 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (D1N1)",
+      "primary_rasa": "Karuṇā",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "bhava_description": "Dark-hued divine beauty and quiet melancholy.",
+      "time_of_day": "Night",
+      "deity_association": "Matangi",
+      "key_jiva_swaras": [
+        "G2",
+        "M2",
+        "N1"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #55 in Disi Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Śāmalāṅgi."
+      ]
+    },
+    {
+      "raga_id": "mela-56-shanmukhapriya",
+      "raga_name": "Shanmukhapriyā",
+      "mela_number": 56,
+      "classification": "Janaka (Melakarta #56 - Disi Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Disi",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G2",
+        "M2",
+        "P",
+        "D1",
+        "N2"
+      ],
+      "arohana_pattern": "S R2 G2 M2 P D1 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D1 P M2 G2 R2 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Bhakti, Karuṇā",
+      "secondary_rasas": [
+        "Vīra"
+      ],
+      "bhava_description": "Intense divine adoration, majestic power, and emotional grip.",
+      "time_of_day": "Evening / Night",
+      "deity_association": "Murugan / Shanmukha",
+      "key_jiva_swaras": [
+        "G2",
+        "M2",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #56 in Disi Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Shanmukhapriyā."
+      ]
+    },
+    {
+      "raga_id": "mela-57-simhendramadhyamam",
+      "raga_name": "Simhendramadhyamam",
+      "mela_number": 57,
+      "classification": "Janaka (Melakarta #57 - Disi Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Disi",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G2",
+        "M2",
+        "P",
+        "D1",
+        "N3"
+      ],
+      "arohana_pattern": "S R2 G2 M2 P D1 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D1 P M2 G2 R2 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Bhakti, Karuṇā",
+      "secondary_rasas": [
+        "Adbhuta"
+      ],
+      "bhava_description": "Lion-like majestic power, dramatic tension, and deep pathos.",
+      "time_of_day": "Evening",
+      "deity_association": "Narasimha / Durga",
+      "key_jiva_swaras": [
+        "G2",
+        "M2",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #57 in Disi Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Simhendramadhyamam."
+      ]
+    },
+    {
+      "raga_id": "mela-58-hemavati",
+      "raga_name": "Hemavati",
+      "mela_number": 58,
+      "classification": "Janaka (Melakarta #58 - Disi Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Disi",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G2",
+        "M2",
+        "P",
+        "D2",
+        "N2"
+      ],
+      "arohana_pattern": "S R2 G2 M2 P D2 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 P M2 G2 R2 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Bhakti, Śṛṅgāra",
+      "secondary_rasas": [
+        "Vīra"
+      ],
+      "bhava_description": "Golden warmth, noble dignity, and expressive charm.",
+      "time_of_day": "Night",
+      "deity_association": "Parvati",
+      "key_jiva_swaras": [
+        "G2",
+        "M2",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #58 in Disi Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Hemavati."
+      ]
+    },
+    {
+      "raga_id": "mela-59-dharmavati",
+      "raga_name": "Dharmavati",
+      "mela_number": 59,
+      "classification": "Janaka (Melakarta #59 - Disi Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Disi",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G2",
+        "M2",
+        "P",
+        "D2",
+        "N3"
+      ],
+      "arohana_pattern": "S R2 G2 M2 P D2 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D2 P M2 G2 R2 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Bhakti",
+      "secondary_rasas": [
+        "Śānta"
+      ],
+      "bhava_description": "Righteous cosmic order, intellectual clarity, and peace.",
+      "time_of_day": "Night",
+      "deity_association": "Dharma Shasta",
+      "key_jiva_swaras": [
+        "G2",
+        "M2",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #59 in Disi Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Dharmavati."
+      ]
+    },
+    {
+      "raga_id": "mela-60-nitimati",
+      "raga_name": "Nītimati",
+      "mela_number": 60,
+      "classification": "Janaka (Melakarta #60 - Disi Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Disi",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G2",
+        "M2",
+        "P",
+        "D3",
+        "N3"
+      ],
+      "arohana_pattern": "S R2 G2 M2 P D3 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D3 P M2 G2 R2 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (D3N3)",
+      "primary_rasa": "Śānta",
+      "secondary_rasas": [
+        "Vīra"
+      ],
+      "bhava_description": "Ethical uprightness and firm structural poise.",
+      "time_of_day": "Night",
+      "deity_association": "Saraswati",
+      "key_jiva_swaras": [
+        "G2",
+        "M2",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #60 in Disi Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Nītimati."
+      ]
+    },
+    {
+      "raga_id": "mela-61-kantamaṇi",
+      "raga_name": "Kāntāmaṇi",
+      "mela_number": 61,
+      "classification": "Janaka (Melakarta #61 - Rudra Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Rudra",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G3",
+        "M2",
+        "P",
+        "D1",
+        "N1"
+      ],
+      "arohana_pattern": "S R2 G3 M2 P D1 N1 Ṡ",
+      "avarohana_pattern": "Ṡ N1 D1 P M2 G3 R2 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (D1N1)",
+      "primary_rasa": "Śṛṅgāra",
+      "secondary_rasas": [
+        "Karuṇā"
+      ],
+      "bhava_description": "Beloved gem charm mixed with M2 mystery.",
+      "time_of_day": "Late Night",
+      "deity_association": "Lakshmi",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N1"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #61 in Rudra Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Kāntāmaṇi."
+      ]
+    },
+    {
+      "raga_id": "mela-62-rsabhapriya",
+      "raga_name": "Rṣabhapriyā",
+      "mela_number": 62,
+      "classification": "Janaka (Melakarta #62 - Rudra Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Rudra",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G3",
+        "M2",
+        "P",
+        "D1",
+        "N2"
+      ],
+      "arohana_pattern": "S R2 G3 M2 P D1 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D1 P M2 G3 R2 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Bhakti",
+      "secondary_rasas": [
+        "Karuṇā"
+      ],
+      "bhava_description": "Devotional love centered on Rishabha.",
+      "time_of_day": "Late Night",
+      "deity_association": "Nandi / Shiva",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #62 in Rudra Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Rṣabhapriyā."
+      ]
+    },
+    {
+      "raga_id": "mela-63-latangi",
+      "raga_name": "Latāṅgi",
+      "mela_number": 63,
+      "classification": "Janaka (Melakarta #63 - Rudra Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Rudra",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G3",
+        "M2",
+        "P",
+        "D1",
+        "N3"
+      ],
+      "arohana_pattern": "S R2 G3 M2 P D1 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D1 P M2 G3 R2 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Bhakti, Śṛṅgāra",
+      "secondary_rasas": [
+        "Karuṇā"
+      ],
+      "bhava_description": "Creeper-like delicate elegance, devotion, and brilliance.",
+      "time_of_day": "Evening",
+      "deity_association": "Parvati",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #63 in Rudra Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Latāṅgi."
+      ]
+    },
+    {
+      "raga_id": "mela-64-vachaspati",
+      "raga_name": "Vāchaspati",
+      "mela_number": 64,
+      "classification": "Janaka (Melakarta #64 - Rudra Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Rudra",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G3",
+        "M2",
+        "P",
+        "D2",
+        "N2"
+      ],
+      "arohana_pattern": "S R2 G3 M2 P D2 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 P M2 G3 R2 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Vīra, Bhakti",
+      "secondary_rasas": [
+        "Adbhuta"
+      ],
+      "bhava_description": "Mastery of speech, intellectual majesty, and vigor.",
+      "time_of_day": "Evening / Night",
+      "deity_association": "Brihaspati / Brahma",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #64 in Rudra Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Vāchaspati."
+      ]
+    },
+    {
+      "raga_id": "mela-65-mēcakalyaṇi",
+      "raga_name": "Mēcakalyāṇi",
+      "mela_number": 65,
+      "classification": "Janaka (Melakarta #65 - Rudra Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Rudra",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G3",
+        "M2",
+        "P",
+        "D2",
+        "N3"
+      ],
+      "arohana_pattern": "S R2 G3 M2 P D2 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D2 P M2 G3 R2 S",
+      "is_vivadi": false,
+      "vivadi_nature": "Sampūṟṇa",
+      "primary_rasa": "Śṛṅgāra, Bhakti, Vīra",
+      "secondary_rasas": [
+        "Śānta"
+      ],
+      "bhava_description": "Supreme auspiciousness, celestial splendor, and universal joy.",
+      "time_of_day": "Evening",
+      "deity_association": "Kamakshi / Lakshmi",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #65 in Rudra Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Mēcakalyāṇi."
+      ]
+    },
+    {
+      "raga_id": "mela-66-chitrambari",
+      "raga_name": "Chitrāmbari",
+      "mela_number": 66,
+      "classification": "Janaka (Melakarta #66 - Rudra Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Rudra",
+      "swarasthana_codes": [
+        "S",
+        "R2",
+        "G3",
+        "M2",
+        "P",
+        "D3",
+        "N3"
+      ],
+      "arohana_pattern": "S R2 G3 M2 P D3 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D3 P M2 G3 R2 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (D3N3)",
+      "primary_rasa": "Adbhuta",
+      "secondary_rasas": [
+        "Śṛṅgāra"
+      ],
+      "bhava_description": "Picturesque celestial beauty and wonder.",
+      "time_of_day": "Late Night",
+      "deity_association": "Devi",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #66 in Rudra Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Chitrāmbari."
+      ]
+    },
+    {
+      "raga_id": "mela-67-sucaritra",
+      "raga_name": "Sucaritra",
+      "mela_number": 67,
+      "classification": "Janaka (Melakarta #67 - Āditya Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Āditya",
+      "swarasthana_codes": [
+        "S",
+        "R3",
+        "G3",
+        "M2",
+        "P",
+        "D1",
+        "N1"
+      ],
+      "arohana_pattern": "S R3 G3 M2 P D1 N1 Ṡ",
+      "avarohana_pattern": "Ṡ N1 D1 P M2 G3 R3 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R3G3, D1N1)",
+      "primary_rasa": "Śānta",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "bhava_description": "Pure character and intense microtonal focus.",
+      "time_of_day": "Pre-Dawn",
+      "deity_association": "Rishis",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N1"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #67 in Āditya Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Sucaritra."
+      ]
+    },
+    {
+      "raga_id": "mela-68-jyotismati",
+      "raga_name": "Jyotiṣmati",
+      "mela_number": 68,
+      "classification": "Janaka (Melakarta #68 - Āditya Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Āditya",
+      "swarasthana_codes": [
+        "S",
+        "R3",
+        "G3",
+        "M2",
+        "P",
+        "D1",
+        "N2"
+      ],
+      "arohana_pattern": "S R3 G3 M2 P D1 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D1 P M2 G3 R3 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R3G3)",
+      "primary_rasa": "Adbhuta",
+      "secondary_rasas": [
+        "Vīra"
+      ],
+      "bhava_description": "Luminous starlight and dramatic power.",
+      "time_of_day": "Pre-Dawn",
+      "deity_association": "Surya",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #68 in Āditya Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Jyotiṣmati."
+      ]
+    },
+    {
+      "raga_id": "mela-69-dhatuvardhani",
+      "raga_name": "Dhātuvardhani",
+      "mela_number": 69,
+      "classification": "Janaka (Melakarta #69 - Āditya Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Āditya",
+      "swarasthana_codes": [
+        "S",
+        "R3",
+        "G3",
+        "M2",
+        "P",
+        "D1",
+        "N3"
+      ],
+      "arohana_pattern": "S R3 G3 M2 P D1 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D1 P M2 G3 R3 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R3G3)",
+      "primary_rasa": "Vīra",
+      "secondary_rasas": [
+        "Adbhuta"
+      ],
+      "bhava_description": "Elemental expansion and structural vigor.",
+      "time_of_day": "Dawn",
+      "deity_association": "Brahma",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #69 in Āditya Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Dhātuvardhani."
+      ]
+    },
+    {
+      "raga_id": "mela-70-nasikabhusaṇi",
+      "raga_name": "Nāsikābhūṣaṇi",
+      "mela_number": 70,
+      "classification": "Janaka (Melakarta #70 - Āditya Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Āditya",
+      "swarasthana_codes": [
+        "S",
+        "R3",
+        "G3",
+        "M2",
+        "P",
+        "D2",
+        "N2"
+      ],
+      "arohana_pattern": "S R3 G3 M2 P D2 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 P M2 G3 R3 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R3G3)",
+      "primary_rasa": "Adbhuta",
+      "secondary_rasas": [
+        "Śṛṅgāra"
+      ],
+      "bhava_description": "Delicate facial ornament and striking scale charm.",
+      "time_of_day": "Dawn",
+      "deity_association": "Devi",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N2"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #70 in Āditya Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Nāsikābhūṣaṇi."
+      ]
+    },
+    {
+      "raga_id": "mela-71-kosalam",
+      "raga_name": "Kosalam",
+      "mela_number": 71,
+      "classification": "Janaka (Melakarta #71 - Āditya Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Āditya",
+      "swarasthana_codes": [
+        "S",
+        "R3",
+        "G3",
+        "M2",
+        "P",
+        "D2",
+        "N3"
+      ],
+      "arohana_pattern": "S R3 G3 M2 P D2 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D2 P M2 G3 R3 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R3G3)",
+      "primary_rasa": "Vīra",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "bhava_description": "Imperial Kosala dignity and heroic devotion.",
+      "time_of_day": "Dawn",
+      "deity_association": "Rama",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #71 in Āditya Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Kosalam."
+      ]
+    },
+    {
+      "raga_id": "mela-72-rasikapriya",
+      "raga_name": "Rasikapriyā",
+      "mela_number": 72,
+      "classification": "Janaka (Melakarta #72 - Āditya Chakra)",
+      "raga_type": "melakarta",
+      "chakra": "Āditya",
+      "swarasthana_codes": [
+        "S",
+        "R3",
+        "G3",
+        "M2",
+        "P",
+        "D3",
+        "N3"
+      ],
+      "arohana_pattern": "S R3 G3 M2 P D3 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D3 P M2 G3 R3 S",
+      "is_vivadi": true,
+      "vivadi_nature": "Vivadi (R3G3, D3N3)",
+      "primary_rasa": "Adbhuta, Śṛṅgāra",
+      "secondary_rasas": [
+        "Hāsya"
+      ],
+      "bhava_description": "Ultimate connoisseurs delight and sparkling microtonal pinnacle.",
+      "time_of_day": "Dawn",
+      "deity_association": "Krishna",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N3"
+      ],
+      "scholarly_treatise_citations": [
+        "Venkatamakhi (1620), Chaturdandi Prakasika: Assigned as Mela #72 in Āditya Chakra.",
+        "Govindacharya, Sangraha Choodamani: Defines Lakshana Sloka and scale formula for Rasikapriyā."
+      ]
+    },
+    {
+      "raga_id": "nata",
+      "raga_name": "Nāṭa",
+      "parent_mela_number": 36,
+      "parent_mela_name": "Chalanāṭa",
+      "classification": "Janya (Audava-Sampoorna / Bhashanga / Ghana)",
+      "raga_type": "janya",
+      "is_vakra": false,
+      "is_bhashanga": true,
+      "swarasthana_codes": [
+        "R3",
+        "G3",
+        "M1",
+        "P",
+        "N3"
+      ],
+      "arohana_pattern": "S R3 G3 M1 P N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 P M1 R3 S",
+      "primary_rasa": "Vīra",
+      "secondary_rasas": [
+        "Adbhuta"
+      ],
+      "sthayi_bhava": "Utsāha",
+      "vyabhichari_bhavas": [
+        "Garva"
+      ],
+      "bhava_description": "Majestic invocation, rhythmic vigor, auspicious grandeur.",
+      "time_of_day": "Any Time / Opening",
+      "deity_association": "Ganesha",
+      "key_jiva_swaras": [
+        "S",
+        "R3",
+        "G3",
+        "P",
+        "N3"
+      ],
+      "musicological_notes": "Auspicious invocation opening raga.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Nāṭa under Mela #36.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Nāṭa."
+      ]
+    },
+    {
+      "raga_id": "gaula",
+      "raga_name": "Gauḷa",
+      "parent_mela_number": 15,
+      "parent_mela_name": "Māyāmāḷavagauḷa",
+      "classification": "Janya (Shadava-Shadava / Ghana)",
+      "raga_type": "janya",
+      "is_vakra": false,
+      "is_bhashanga": false,
+      "swarasthana_codes": [
+        "R1",
+        "M1",
+        "P",
+        "N3"
+      ],
+      "arohana_pattern": "S R1 M1 P N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 P M1 R1 S",
+      "primary_rasa": "Bhakti",
+      "secondary_rasas": [
+        "Karuṇā"
+      ],
+      "sthayi_bhava": "Namratā",
+      "vyabhichari_bhavas": [
+        "Stuti"
+      ],
+      "bhava_description": "Sacred devotional weight, deep humility, and meditative grace.",
+      "time_of_day": "Morning",
+      "deity_association": "Shiva",
+      "key_jiva_swaras": [
+        "R1",
+        "M1",
+        "N3"
+      ],
+      "musicological_notes": "Ghana raga panchakam member.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Gauḷa under Mela #15.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Gauḷa."
+      ]
+    },
+    {
+      "raga_id": "varali",
+      "raga_name": "Varāḷi",
+      "parent_mela_number": 39,
+      "parent_mela_name": "Jhālavarāḷi",
+      "classification": "Janya (Suddha Varali / Ghana)",
+      "raga_type": "janya",
+      "is_vakra": false,
+      "is_bhashanga": false,
+      "swarasthana_codes": [
+        "S1",
+        "G1",
+        "M2",
+        "P",
+        "D1",
+        "N3"
+      ],
+      "arohana_pattern": "S S1 G1 M2 P D1 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D1 P M2 G1 R1 S",
+      "primary_rasa": "Karuṇā",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "sthayi_bhava": "Śōka",
+      "vyabhichari_bhavas": [
+        "Nirveda"
+      ],
+      "bhava_description": "Haunting spiritual longing, deep ascetic penance, and sacred pathos.",
+      "time_of_day": "Morning",
+      "deity_association": "Devi",
+      "key_jiva_swaras": [
+        "G1",
+        "M2",
+        "N3"
+      ],
+      "musicological_notes": "Auspicious yet deeply poignant Ghana raga.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Varāḷi under Mela #39.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Varāḷi."
+      ]
+    },
+    {
+      "raga_id": "arabhi",
+      "raga_name": "Ārabhi",
+      "parent_mela_number": 29,
+      "parent_mela_name": "Dhīraśaṅkarābharaṇam",
+      "classification": "Janya (Audava-Sampoorna / Ghana)",
+      "raga_type": "janya",
+      "is_vakra": false,
+      "is_bhashanga": false,
+      "swarasthana_codes": [
+        "R2",
+        "M1",
+        "P",
+        "D2"
+      ],
+      "arohana_pattern": "S R2 M1 P D2 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D2 P M1 G3 R2 S",
+      "primary_rasa": "Vīra, Hāsya",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "sthayi_bhava": "Utsāha",
+      "vyabhichari_bhavas": [
+        "Harṣa"
+      ],
+      "bhava_description": "Triumphant joy, sparkling clarity, and heroic fervor.",
+      "time_of_day": "Morning",
+      "deity_association": "Anjaneya / Rama",
+      "key_jiva_swaras": [
+        "R2",
+        "M1",
+        "D2"
+      ],
+      "musicological_notes": "Ghana raga panchakam member.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Ārabhi under Mela #29.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Ārabhi."
+      ]
+    },
+    {
+      "raga_id": "sri",
+      "raga_name": "Śrī",
+      "parent_mela_number": 22,
+      "parent_mela_name": "Kharaharapriyā",
+      "classification": "Janya (Audava-Sampoorna / Ghana)",
+      "raga_type": "janya",
+      "is_vakra": false,
+      "is_bhashanga": false,
+      "swarasthana_codes": [
+        "R2",
+        "M1",
+        "P",
+        "N2"
+      ],
+      "arohana_pattern": "S R2 M1 P N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 P M1 R2 G2 R2 S",
+      "primary_rasa": "Bhakti, Śṛṅgāra",
+      "secondary_rasas": [
+        "Vīra"
+      ],
+      "sthayi_bhava": "Mādhurya",
+      "vyabhichari_bhavas": [
+        "Mangala"
+      ],
+      "bhava_description": "Ultimate auspiciousness, regal poise, and serene devotional closure.",
+      "time_of_day": "Evening / Closure",
+      "deity_association": "Lakshmi Narayana",
+      "key_jiva_swaras": [
+        "R2",
+        "N2",
+        "P"
+      ],
+      "musicological_notes": "Final auspicious raga of classical concerts.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Śrī under Mela #22.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Śrī."
+      ]
+    },
+    {
+      "raga_id": "mohanam",
+      "raga_name": "Mōhanam",
+      "parent_mela_number": 28,
+      "parent_mela_name": "Harikāmbhōji",
+      "classification": "Janya (Audava-Audava / Upanga)",
+      "raga_type": "janya",
+      "is_vakra": false,
+      "is_bhashanga": false,
+      "swarasthana_codes": [
+        "R2",
+        "G3",
+        "P",
+        "D2"
+      ],
+      "arohana_pattern": "S R2 G3 P D2 Ṡ",
+      "avarohana_pattern": "Ṡ D2 P G3 R2 S",
+      "primary_rasa": "Śṛṅgāra, Bhakti",
+      "secondary_rasas": [
+        "Vīra"
+      ],
+      "sthayi_bhava": "Rati",
+      "vyabhichari_bhavas": [
+        "Utsāha"
+      ],
+      "bhava_description": "Universal melodic charm, bright sunshine warmth, and noble joy.",
+      "time_of_day": "Evening",
+      "deity_association": "Krishna",
+      "key_jiva_swaras": [
+        "G3",
+        "P",
+        "D2"
+      ],
+      "musicological_notes": "Universal pentatonic major scale.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Mōhanam under Mela #28.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Mōhanam."
+      ]
+    },
+    {
+      "raga_id": "hindolam",
+      "raga_name": "Hindōḷam",
+      "parent_mela_number": 20,
+      "parent_mela_name": "Naṭabhairavi",
+      "classification": "Janya (Audava-Audava / Upanga)",
+      "raga_type": "janya",
+      "is_vakra": false,
+      "is_bhashanga": false,
+      "swarasthana_codes": [
+        "G2",
+        "M1",
+        "D1",
+        "N2"
+      ],
+      "arohana_pattern": "S G2 M1 D1 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D1 M1 G2 S",
+      "primary_rasa": "Bhakti, Śṛṅgāra",
+      "secondary_rasas": [
+        "Śānta"
+      ],
+      "sthayi_bhava": "Anurāga",
+      "vyabhichari_bhavas": [
+        "Śama"
+      ],
+      "bhava_description": "Swaying romantic sweetness, tranquil devotion, and night enchantment.",
+      "time_of_day": "Night",
+      "deity_association": "Krishna / Shiva",
+      "key_jiva_swaras": [
+        "G2",
+        "M1",
+        "D1",
+        "N2"
+      ],
+      "musicological_notes": "Swaying pentatonic classic.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Hindōḷam under Mela #20.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Hindōḷam."
+      ]
+    },
+    {
+      "raga_id": "hamsadhvani",
+      "raga_name": "Haṃsadhvani",
+      "parent_mela_number": 29,
+      "parent_mela_name": "Dhīraśaṅkarābharaṇam",
+      "classification": "Janya (Audava-Audava / Upanga)",
+      "raga_type": "janya",
+      "is_vakra": false,
+      "is_bhashanga": false,
+      "swarasthana_codes": [
+        "R2",
+        "G3",
+        "P",
+        "N3"
+      ],
+      "arohana_pattern": "S R2 G3 P N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 P G3 R2 S",
+      "primary_rasa": "Adbhuta, Vīra",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "sthayi_bhava": "Harṣa",
+      "vyabhichari_bhavas": [
+        "Invocation"
+      ],
+      "bhava_description": "Sparkling brilliance, swan-like purity, and joyful invocation.",
+      "time_of_day": "Any Time / Start",
+      "deity_association": "Ganesha",
+      "key_jiva_swaras": [
+        "G3",
+        "N3",
+        "R2"
+      ],
+      "musicological_notes": "Composed by Ramaswamy Dikshitar.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Haṃsadhvani under Mela #29.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Haṃsadhvani."
+      ]
+    },
+    {
+      "raga_id": "shuddha-saveri",
+      "raga_name": "Śuddha Sāvēri",
+      "parent_mela_number": 29,
+      "parent_mela_name": "Dhīraśaṅkarābharaṇam",
+      "classification": "Janya (Audava-Audava / Upanga)",
+      "raga_type": "janya",
+      "is_vakra": false,
+      "is_bhashanga": false,
+      "swarasthana_codes": [
+        "R2",
+        "M1",
+        "P",
+        "D2"
+      ],
+      "arohana_pattern": "S R2 M1 P D2 Ṡ",
+      "avarohana_pattern": "Ṡ D2 P M1 R2 S",
+      "primary_rasa": "Vīra",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "sthayi_bhava": "Utsāha",
+      "vyabhichari_bhavas": [
+        "Prasāda"
+      ],
+      "bhava_description": "Clear, luminous dignity, open sky warmth, and heroic faith.",
+      "time_of_day": "Morning",
+      "deity_association": "Durga / Rama",
+      "key_jiva_swaras": [
+        "R2",
+        "M1",
+        "D2"
+      ],
+      "musicological_notes": "Pentatonic Durga scale.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Śuddha Sāvēri under Mela #29.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Śuddha Sāvēri."
+      ]
+    },
+    {
+      "raga_id": "madhyamavati",
+      "raga_name": "Madhyamāvati",
+      "parent_mela_number": 22,
+      "parent_mela_name": "Kharaharapriyā",
+      "classification": "Janya (Audava-Audava / Upanga)",
+      "raga_type": "janya",
+      "is_vakra": false,
+      "is_bhashanga": false,
+      "swarasthana_codes": [
+        "R2",
+        "M1",
+        "P",
+        "N2"
+      ],
+      "arohana_pattern": "S R2 M1 P N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 P M1 R2 S",
+      "primary_rasa": "Bhakti, Śānta",
+      "secondary_rasas": [
+        "Mangala"
+      ],
+      "sthayi_bhava": "Śama",
+      "vyabhichari_bhavas": [
+        "Pūratvam"
+      ],
+      "bhava_description": "Peaceful resolution, afternoon calm, and complete spiritual fulfillment.",
+      "time_of_day": "Noon / Closing",
+      "deity_association": "Shiva / Vishnu",
+      "key_jiva_swaras": [
+        "R2",
+        "M1",
+        "N2"
+      ],
+      "musicological_notes": "Universal closing auspicious raga.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Madhyamāvati under Mela #22.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Madhyamāvati."
+      ]
+    },
+    {
+      "raga_id": "malahari",
+      "raga_name": "Malahari",
+      "parent_mela_number": 15,
+      "parent_mela_name": "Māyāmāḷavagauḷa",
+      "classification": "Janya (Audava-Shadava / Upanga)",
+      "raga_type": "janya",
+      "is_vakra": false,
+      "is_bhashanga": false,
+      "swarasthana_codes": [
+        "R1",
+        "M1",
+        "P",
+        "D1"
+      ],
+      "arohana_pattern": "S R1 M1 P D1 Ṡ",
+      "avarohana_pattern": "Ṡ D1 P M1 G3 R1 S",
+      "primary_rasa": "Bhakti",
+      "secondary_rasas": [
+        "Śānta"
+      ],
+      "sthayi_bhava": "Śuddhi",
+      "vyabhichari_bhavas": [
+        "Stuti"
+      ],
+      "bhava_description": "Remover of impurities, dawn purity, and innocent childlike devotion.",
+      "time_of_day": "Dawn",
+      "deity_association": "Ganesha",
+      "key_jiva_swaras": [
+        "R1",
+        "M1",
+        "D1"
+      ],
+      "musicological_notes": "Purandara Dasa Pillari Gitam raga.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Malahari under Mela #15.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Malahari."
+      ]
+    },
+    {
+      "raga_id": "amritavarshini",
+      "raga_name": "Amritavarṣiṇi",
+      "parent_mela_number": 65,
+      "parent_mela_name": "Mēcakalyāṇi",
+      "classification": "Janya (Audava-Audava / Upanga)",
+      "raga_type": "janya",
+      "is_vakra": false,
+      "is_bhashanga": false,
+      "swarasthana_codes": [
+        "G3",
+        "M2",
+        "P",
+        "N3"
+      ],
+      "arohana_pattern": "S G3 M2 P N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 P M2 G3 S",
+      "primary_rasa": "Adbhuta",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "sthayi_bhava": "Vismaya",
+      "vyabhichari_bhavas": [
+        "Rain Invocation"
+      ],
+      "bhava_description": "Celestial rain shower of nectar, mystical tension, and wonder.",
+      "time_of_day": "Evening",
+      "deity_association": "Varuna / Devi",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N3"
+      ],
+      "musicological_notes": "Muthuswami Dikshitar rain-compelling raga.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Amritavarṣiṇi under Mela #65.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Amritavarṣiṇi."
+      ]
+    },
+    {
+      "raga_id": "revati",
+      "raga_name": "Revati",
+      "parent_mela_number": 2,
+      "parent_mela_name": "Ratnāṅgi",
+      "classification": "Janya (Audava-Audava / Upanga)",
+      "raga_type": "janya",
+      "is_vakra": false,
+      "is_bhashanga": false,
+      "swarasthana_codes": [
+        "R1",
+        "M1",
+        "P",
+        "N2"
+      ],
+      "arohana_pattern": "S R1 M1 P N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 P M1 R1 S",
+      "primary_rasa": "Karuṇā",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "sthayi_bhava": "Vairāgya",
+      "vyabhichari_bhavas": [
+        "Surrender"
+      ],
+      "bhava_description": "Profound cosmic solitude, deep ascetic yearning, and surrender.",
+      "time_of_day": "Night",
+      "deity_association": "Shiva",
+      "key_jiva_swaras": [
+        "R1",
+        "M1",
+        "N2"
+      ],
+      "musicological_notes": "Modern meditative favorite.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Revati under Mela #2.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Revati."
+      ]
+    },
+    {
+      "raga_id": "valachi",
+      "raga_name": "Valachi",
+      "parent_mela_number": 28,
+      "parent_mela_name": "Harikāmbhōji",
+      "classification": "Janya (Audava-Audava / Upanga)",
+      "raga_type": "janya",
+      "is_vakra": false,
+      "is_bhashanga": false,
+      "swarasthana_codes": [
+        "G3",
+        "P",
+        "D2",
+        "N2"
+      ],
+      "arohana_pattern": "S G3 P D2 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 P G3 S",
+      "primary_rasa": "Śṛṅgāra",
+      "secondary_rasas": [
+        "Hāsya"
+      ],
+      "sthayi_bhava": "Harṣa",
+      "vyabhichari_bhavas": [
+        "Mādhurya"
+      ],
+      "bhava_description": "Lighthearted sweetness, sparkling joy, and melodious romance.",
+      "time_of_day": "Evening",
+      "deity_association": "Krishna",
+      "key_jiva_swaras": [
+        "G3",
+        "D2"
+      ],
+      "musicological_notes": "Popular light classical raga.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Valachi under Mela #28.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Valachi."
+      ]
+    },
+    {
+      "raga_id": "hamsanandi",
+      "raga_name": "Haṃsanandi",
+      "parent_mela_number": 53,
+      "parent_mela_name": "Gamanāśrama",
+      "classification": "Janya (Shadava-Shadava / Upanga)",
+      "raga_type": "janya",
+      "is_vakra": false,
+      "is_bhashanga": false,
+      "swarasthana_codes": [
+        "R1",
+        "G3",
+        "M2",
+        "D2",
+        "N3"
+      ],
+      "arohana_pattern": "S R1 G3 M2 D2 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D2 M2 G3 R1 S",
+      "primary_rasa": "Śṛṅgāra, Adbhuta",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "sthayi_bhava": "Ananda",
+      "vyabhichari_bhavas": [
+        "Elevation"
+      ],
+      "bhava_description": "Ecstatic evening joy, flying swan grace, and divine intoxication.",
+      "time_of_day": "Sunset / Evening",
+      "deity_association": "Shiva / Parvati",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N3"
+      ],
+      "musicological_notes": "Prati Madhyama evening classic.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Haṃsanandi under Mela #53.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Haṃsanandi."
+      ]
+    },
+    {
+      "raga_id": "sriranjani",
+      "raga_name": "Śrīrañjani",
+      "parent_mela_number": 22,
+      "parent_mela_name": "Kharaharapriyā",
+      "classification": "Janya (Shadava-Shadava / Upanga)",
+      "raga_type": "janya",
+      "is_vakra": false,
+      "is_bhashanga": false,
+      "swarasthana_codes": [
+        "R2",
+        "G2",
+        "M1",
+        "D2",
+        "N2"
+      ],
+      "arohana_pattern": "S R2 G2 M1 D2 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 M1 G2 R2 S",
+      "primary_rasa": "Bhakti",
+      "secondary_rasas": [
+        "Śṛṅgāra"
+      ],
+      "sthayi_bhava": "Ranjati",
+      "vyabhichari_bhavas": [
+        "Mādhurya"
+      ],
+      "bhava_description": "Charming melodic delight, smooth grace, and flowing devotion.",
+      "time_of_day": "Evening",
+      "deity_association": "Rama",
+      "key_jiva_swaras": [
+        "R2",
+        "G2",
+        "D2"
+      ],
+      "musicological_notes": "Omkara Karini Tyagaraja raga.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Śrīrañjani under Mela #22.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Śrīrañjani."
+      ]
+    },
+    {
+      "raga_id": "kadanakuthuhalam",
+      "raga_name": "Kadanakuthūhalam",
+      "parent_mela_number": 29,
+      "parent_mela_name": "Dhīraśaṅkarābharaṇam",
+      "classification": "Janya (Arohana Vakra / Upanga)",
+      "raga_type": "janya",
+      "is_vakra": true,
+      "is_bhashanga": false,
+      "swarasthana_codes": [
+        "R2",
+        "M1",
+        "D2",
+        "N3",
+        "G3",
+        "P"
+      ],
+      "arohana_pattern": "S R2 M1 D2 N3 G3 P Ṡ",
+      "avarohana_pattern": "Ṡ N3 D2 P M1 G3 R2 S",
+      "primary_rasa": "Hāsya, Adbhuta",
+      "secondary_rasas": [
+        "Vīra"
+      ],
+      "sthayi_bhava": "Harṣa",
+      "vyabhichari_bhavas": [
+        "Kuthūhala"
+      ],
+      "bhava_description": "Ebullient joy, playful leap-frogging excitement, and march rhythm.",
+      "time_of_day": "Any Time",
+      "deity_association": "Krishna",
+      "key_jiva_swaras": [
+        "R2",
+        "D2",
+        "G3"
+      ],
+      "musicological_notes": "Composed by Manambuchavadi Venkatasubbayyar.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Kadanakuthūhalam under Mela #29.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Kadanakuthūhalam."
+      ]
+    },
+    {
+      "raga_id": "atana",
+      "raga_name": "Aṭāṇā",
+      "parent_mela_number": 29,
+      "parent_mela_name": "Dhīraśaṅkarābharaṇam",
+      "classification": "Janya (Vakra / Bhashanga)",
+      "raga_type": "janya",
+      "is_vakra": true,
+      "is_bhashanga": true,
+      "swarasthana_codes": [
+        "R2",
+        "M1",
+        "P",
+        "R2",
+        "M1",
+        "P",
+        "N3"
+      ],
+      "arohana_pattern": "S R2 M1 P S / S R2 M1 P N3 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 P M1 P G3 R2 S",
+      "primary_rasa": "Raudra, Vīra",
+      "secondary_rasas": [
+        "Adbhuta"
+      ],
+      "sthayi_bhava": "Krōdha",
+      "vyabhichari_bhavas": [
+        "Utsāha"
+      ],
+      "bhava_description": "Righteous anger, dramatic challenge, fierce power, and majesty.",
+      "time_of_day": "Any Time",
+      "deity_association": "Narasimha",
+      "key_jiva_swaras": [
+        "Ṡ",
+        "Ṙ2",
+        "P",
+        "N2"
+      ],
+      "musicological_notes": "Dramatic challenges in Tyagaraja kritis.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Aṭāṇā under Mela #29.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Aṭāṇā."
+      ]
+    },
+    {
+      "raga_id": "ahiri",
+      "raga_name": "Āhiri",
+      "parent_mela_number": 14,
+      "parent_mela_name": "Vakulaābharaṇam",
+      "classification": "Janya (Ubhaya Vakra / Bhashanga)",
+      "raga_type": "janya",
+      "is_vakra": true,
+      "is_bhashanga": true,
+      "swarasthana_codes": [
+        "R1",
+        "M1",
+        "P",
+        "D1",
+        "N2"
+      ],
+      "arohana_pattern": "S R1 S M1 P D1 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D1 P M1 G3 R1 S",
+      "primary_rasa": "Karuṇā",
+      "secondary_rasas": [
+        "Dainya"
+      ],
+      "sthayi_bhava": "Śōka",
+      "vyabhichari_bhavas": [
+        "Deprivation"
+      ],
+      "bhava_description": "Melting pathos, poignant sorrow, and heart-breaking supplication.",
+      "time_of_day": "Early Morning",
+      "deity_association": "Krishna",
+      "key_jiva_swaras": [
+        "G3",
+        "M1",
+        "D1"
+      ],
+      "musicological_notes": "Classic raga for poignant sorrow.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Āhiri under Mela #14.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Āhiri."
+      ]
+    },
+    {
+      "raga_id": "sahana",
+      "raga_name": "Sahānā",
+      "parent_mela_number": 28,
+      "parent_mela_name": "Harikāmbhōji",
+      "classification": "Janya (Ubhaya Vakra / Bhashanga)",
+      "raga_type": "janya",
+      "is_vakra": true,
+      "is_bhashanga": true,
+      "swarasthana_codes": [
+        "R2",
+        "G3",
+        "M1",
+        "P",
+        "M1",
+        "D2",
+        "N2"
+      ],
+      "arohana_pattern": "S R2 G3 M1 P M1 D2 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 P M1 G3 R2 G3 R2 S",
+      "primary_rasa": "Karuṇā, Śṛṅgāra",
+      "secondary_rasas": [
+        "Śānta"
+      ],
+      "sthayi_bhava": "Dhairya",
+      "vyabhichari_bhavas": [
+        "Forbearance"
+      ],
+      "bhava_description": "Gentle patience, compassionate forbearance, and dignified grace.",
+      "time_of_day": "Evening",
+      "deity_association": "Rama",
+      "key_jiva_swaras": [
+        "R2",
+        "M1",
+        "N2"
+      ],
+      "musicological_notes": "Tyagaraja Giripai Nelakonna raga.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Sahānā under Mela #28.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Sahānā."
+      ]
+    },
+    {
+      "raga_id": "mukhari",
+      "raga_name": "Mukhāri",
+      "parent_mela_number": 22,
+      "parent_mela_name": "Kharaharapriyā",
+      "classification": "Janya (Arohana-Avarohana Vakra / Bhashanga)",
+      "raga_type": "janya",
+      "is_vakra": true,
+      "is_bhashanga": true,
+      "swarasthana_codes": [
+        "R2",
+        "M1",
+        "P",
+        "N2"
+      ],
+      "arohana_pattern": "S R2 M1 P N2 S",
+      "avarohana_pattern": "Ṡ N2 D2 P M1 G2 R2 S",
+      "primary_rasa": "Karuṇā",
+      "secondary_rasas": [
+        "Vairāgya"
+      ],
+      "sthayi_bhava": "Lament",
+      "vyabhichari_bhavas": [
+        "Penance"
+      ],
+      "bhava_description": "Expressive grief, poignant weeping, and noble surrender.",
+      "time_of_day": "Morning / Evening",
+      "deity_association": "Shiva",
+      "key_jiva_swaras": [
+        "R2",
+        "M1",
+        "D2_bhashanga"
+      ],
+      "musicological_notes": "Classic pathos raga.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Mukhāri under Mela #22.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Mukhāri."
+      ]
+    },
+    {
+      "raga_id": "anandabhairavi",
+      "raga_name": "Ānandabhairavi",
+      "parent_mela_number": 20,
+      "parent_mela_name": "Naṭabhairavi",
+      "classification": "Janya (Vakra / Bhashanga)",
+      "raga_type": "janya",
+      "is_vakra": true,
+      "is_bhashanga": true,
+      "swarasthana_codes": [
+        "G2",
+        "R2",
+        "G2",
+        "M1",
+        "P",
+        "D2",
+        "P"
+      ],
+      "arohana_pattern": "S G2 R2 G2 M1 P D2 P Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 P M1 G2 R2 S",
+      "primary_rasa": "Śṛṅgāra, Bhakti",
+      "secondary_rasas": [
+        "Hāsya"
+      ],
+      "sthayi_bhava": "Ananda",
+      "vyabhichari_bhavas": [
+        "Motherly Love"
+      ],
+      "bhava_description": "Maternal tenderness, soothing joy, and traditional folk warmth.",
+      "time_of_day": "Evening",
+      "deity_association": "Amba / Krishna",
+      "key_jiva_swaras": [
+        "G2",
+        "M1",
+        "P",
+        "D2"
+      ],
+      "musicological_notes": "Syama Sastri signature raga.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Ānandabhairavi under Mela #20.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Ānandabhairavi."
+      ]
+    },
+    {
+      "raga_id": "ritigaula",
+      "raga_name": "Rītigauḷa",
+      "parent_mela_number": 20,
+      "parent_mela_name": "Naṭabhairavi",
+      "classification": "Janya (Ubhaya Vakra)",
+      "raga_type": "janya",
+      "is_vakra": true,
+      "is_bhashanga": false,
+      "swarasthana_codes": [
+        "G2",
+        "R2",
+        "G2",
+        "M1",
+        "N2",
+        "N2"
+      ],
+      "arohana_pattern": "S G2 R2 G2 M1 N2 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D1 M1 G2 M1 P M1 G2 R2 S",
+      "primary_rasa": "Bhakti, Śṛṅgāra",
+      "secondary_rasas": [
+        "Karuṇā"
+      ],
+      "sthayi_bhava": "Prema",
+      "vyabhichari_bhavas": [
+        "Deep Longing"
+      ],
+      "bhava_description": "Intense devotional yearning, soulful loops, and divine love.",
+      "time_of_day": "Evening",
+      "deity_association": "Krishna",
+      "key_jiva_swaras": [
+        "G2",
+        "M1",
+        "N2"
+      ],
+      "musicological_notes": "Subbaraya Sastri & Tyagaraja masterpiece.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Rītigauḷa under Mela #20.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Rītigauḷa."
+      ]
+    },
+    {
+      "raga_id": "begada",
+      "raga_name": "Bēgaḍā",
+      "parent_mela_number": 29,
+      "parent_mela_name": "Dhīraśaṅkarābharaṇam",
+      "classification": "Janya (Vakra / Bhashanga)",
+      "raga_type": "janya",
+      "is_vakra": true,
+      "is_bhashanga": true,
+      "swarasthana_codes": [
+        "G3",
+        "R2",
+        "G3",
+        "M1",
+        "P",
+        "D2",
+        "N2",
+        "D2"
+      ],
+      "arohana_pattern": "S G3 R2 G3 M1 P D2 N2 D2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 P M1 G3 R2 S",
+      "primary_rasa": "Vīra, Hāsya",
+      "secondary_rasas": [
+        "Śṛṅgāra"
+      ],
+      "sthayi_bhava": "Dignified Pride",
+      "vyabhichari_bhavas": [
+        "Wit"
+      ],
+      "bhava_description": "Dignified assertion, scholarly wit, and regal charm.",
+      "time_of_day": "Evening",
+      "deity_association": "Vishnu",
+      "key_jiva_swaras": [
+        "M1",
+        "N2",
+        "R2"
+      ],
+      "musicological_notes": "Known as Raga Rajah.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Bēgaḍā under Mela #29.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Bēgaḍā."
+      ]
+    },
+    {
+      "raga_id": "kambhoji",
+      "raga_name": "Kāmbhōji",
+      "parent_mela_number": 28,
+      "parent_mela_name": "Harikāmbhōji",
+      "classification": "Janya (Shadava-Sampoorna / Bhashanga)",
+      "raga_type": "janya",
+      "is_vakra": false,
+      "is_bhashanga": true,
+      "swarasthana_codes": [
+        "R2",
+        "G3",
+        "M1",
+        "P",
+        "D2"
+      ],
+      "arohana_pattern": "S R2 G3 M1 P D2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 P M1 G3 R2 S",
+      "primary_rasa": "Śṛṅgāra, Vīra",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "sthayi_bhava": "Regal Majesty",
+      "vyabhichari_bhavas": [
+        "Love"
+      ],
+      "bhava_description": "Grand majestic splendor, royal procession, and emotional richness.",
+      "time_of_day": "Evening",
+      "deity_association": "King / Deity",
+      "key_jiva_swaras": [
+        "G3",
+        "P",
+        "D2",
+        "N3_bhashanga"
+      ],
+      "musicological_notes": "Imperial Carnatic classical raga.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Kāmbhōji under Mela #28.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Kāmbhōji."
+      ]
+    },
+    {
+      "raga_id": "bilahari",
+      "raga_name": "Bilahari",
+      "parent_mela_number": 29,
+      "parent_mela_name": "Dhīraśaṅkarābharaṇam",
+      "classification": "Janya (Audava-Sampoorna / Bhashanga)",
+      "raga_type": "janya",
+      "is_vakra": false,
+      "is_bhashanga": true,
+      "swarasthana_codes": [
+        "R2",
+        "G3",
+        "P",
+        "D2"
+      ],
+      "arohana_pattern": "S R2 G3 P D2 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D2 P M1 G3 R2 S",
+      "primary_rasa": "Vīra, Hāsya",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "sthayi_bhava": "Utsāha",
+      "vyabhichari_bhavas": [
+        "Joy"
+      ],
+      "bhava_description": "Morning sunshine brilliance, festive ecstasy, and soaring leaps.",
+      "time_of_day": "Morning",
+      "deity_association": "Surya / Murugan",
+      "key_jiva_swaras": [
+        "G3",
+        "P",
+        "D2"
+      ],
+      "musicological_notes": "Festive morning classic.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Bilahari under Mela #29.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Bilahari."
+      ]
+    },
+    {
+      "raga_id": "devagandhari",
+      "raga_name": "Dēvagāndhāri",
+      "parent_mela_number": 29,
+      "parent_mela_name": "Dhīraśaṅkarābharaṇam",
+      "classification": "Janya (Sampoorna-Sampoorna Vakra)",
+      "raga_type": "janya",
+      "is_vakra": true,
+      "is_bhashanga": false,
+      "swarasthana_codes": [
+        "R2",
+        "M1",
+        "P",
+        "D2"
+      ],
+      "arohana_pattern": "S R2 M1 P D2 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D2 P M1 G3 R2 S",
+      "primary_rasa": "Bhakti, Karuṇā",
+      "secondary_rasas": [
+        "Vīra"
+      ],
+      "sthayi_bhava": "Majestic Surrender",
+      "vyabhichari_bhavas": [
+        "Nirveda"
+      ],
+      "bhava_description": "Heroic devotion, dignified appeal, and expansive grace.",
+      "time_of_day": "Morning",
+      "deity_association": "Rama",
+      "key_jiva_swaras": [
+        "R2",
+        "M1",
+        "P"
+      ],
+      "musicological_notes": "Kshetrayya & Tyagaraja favorite.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Dēvagāndhāri under Mela #29.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Dēvagāndhāri."
+      ]
+    },
+    {
+      "raga_id": "kapi",
+      "raga_name": "Kāpi",
+      "parent_mela_number": 22,
+      "parent_mela_name": "Kharaharapriyā",
+      "classification": "Janya (Vakra / Bhashanga)",
+      "raga_type": "janya",
+      "is_vakra": true,
+      "is_bhashanga": true,
+      "swarasthana_codes": [
+        "R2",
+        "M1",
+        "P",
+        "N3"
+      ],
+      "arohana_pattern": "S R2 M1 P N3 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 P M1 G2 R2 S",
+      "primary_rasa": "Karuṇā, Śṛṅgāra",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "sthayi_bhava": "Sweet Longing",
+      "vyabhichari_bhavas": [
+        "Grief"
+      ],
+      "bhava_description": "Heart-melting emotional sweetness, devotional yearning, and Javalis.",
+      "time_of_day": "Any Time / Evening",
+      "deity_association": "Krishna",
+      "key_jiva_swaras": [
+        "R2",
+        "G2",
+        "M1",
+        "N3"
+      ],
+      "musicological_notes": "Popular devotional and dance raga.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Kāpi under Mela #22.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Kāpi."
+      ]
+    },
+    {
+      "raga_id": "sindhubhairavi",
+      "raga_name": "Sindhubhairavi",
+      "parent_mela_number": 10,
+      "parent_mela_name": "Nāṭakapriyā",
+      "classification": "Janya (Bhashanga / Anyasvara)",
+      "raga_type": "janya",
+      "is_vakra": false,
+      "is_bhashanga": true,
+      "swarasthana_codes": [
+        "R1",
+        "G2",
+        "M1",
+        "P",
+        "D1",
+        "N2"
+      ],
+      "arohana_pattern": "S R1 G2 M1 P D1 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D1 P M1 G2 R1 S",
+      "primary_rasa": "Bhakti, Karuṇā",
+      "secondary_rasas": [
+        "Universal Love"
+      ],
+      "sthayi_bhava": "Universal Compassion",
+      "vyabhichari_bhavas": [
+        "Nirveda"
+      ],
+      "bhava_description": "All-embracing emotional warmth, poignant sweetness, and devotional harmony.",
+      "time_of_day": "Any Time / Concert End",
+      "deity_association": "Universal",
+      "key_jiva_swaras": [
+        "R1",
+        "R2",
+        "G2",
+        "G3",
+        "M1",
+        "M2",
+        "D1",
+        "D2",
+        "N2",
+        "N3"
+      ],
+      "musicological_notes": "Famous semi-classical closing raga.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Sindhubhairavi under Mela #10.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Sindhubhairavi."
+      ]
+    },
+    {
+      "raga_id": "khamas",
+      "raga_name": "Khamās",
+      "parent_mela_number": 28,
+      "parent_mela_name": "Harikāmbhōji",
+      "classification": "Janya (Shadava-Sampoorna / Bhashanga)",
+      "raga_type": "janya",
+      "is_vakra": false,
+      "is_bhashanga": true,
+      "swarasthana_codes": [
+        "M1",
+        "P",
+        "D2",
+        "N2"
+      ],
+      "arohana_pattern": "S M1 P D2 N2 Ṡ",
+      "avarohana_pattern": "Ṡ N2 D2 P M1 G3 R2 S",
+      "primary_rasa": "Śṛṅgāra, Hāsya",
+      "secondary_rasas": [
+        "Bhakti"
+      ],
+      "sthayi_bhava": "Sensual",
+      "vyabhichari_bhavas": [
+        "Divine Love"
+      ],
+      "bhava_description": "Playful romantic charm, expressive dance grace, and warmth.",
+      "time_of_day": "Evening",
+      "deity_association": "Krishna",
+      "key_jiva_swaras": [
+        "M1",
+        "D2",
+        "N2",
+        "N3_bhashanga"
+      ],
+      "musicological_notes": "Javali and Padam favorite.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Khamās under Mela #28.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Khamās."
+      ]
+    },
+    {
+      "raga_id": "behag",
+      "raga_name": "Bēhāg",
+      "parent_mela_number": 29,
+      "parent_mela_name": "Dhīraśaṅkarābharaṇam",
+      "classification": "Janya (Bhashanga / Vakra)",
+      "raga_type": "janya",
+      "is_vakra": true,
+      "is_bhashanga": true,
+      "swarasthana_codes": [
+        "G3",
+        "M1",
+        "P",
+        "N3"
+      ],
+      "arohana_pattern": "S G3 M1 P N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 D2 P M2 M1 G3 R2 S",
+      "primary_rasa": "Śṛṅgāra, Bhakti",
+      "secondary_rasas": [
+        "Śānta"
+      ],
+      "sthayi_bhava": "Night Tranquility",
+      "vyabhichari_bhavas": [
+        "Nirveda"
+      ],
+      "bhava_description": "Soothing night sweetness, relaxed romantic grace, and peace.",
+      "time_of_day": "Late Night",
+      "deity_association": "Krishna",
+      "key_jiva_swaras": [
+        "G3",
+        "M2",
+        "N3"
+      ],
+      "musicological_notes": "Late night concert classic.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Bēhāg under Mela #29.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Bēhāg."
+      ]
+    },
+    {
+      "raga_id": "nilambari",
+      "raga_name": "Nīlāmbari",
+      "parent_mela_number": 29,
+      "parent_mela_name": "Dhīraśaṅkarābharaṇam",
+      "classification": "Janya (Vakra / Upanga)",
+      "raga_type": "janya",
+      "is_vakra": true,
+      "is_bhashanga": false,
+      "swarasthana_codes": [
+        "R2",
+        "G3",
+        "M1",
+        "P",
+        "D2",
+        "N3"
+      ],
+      "arohana_pattern": "S R2 G3 M1 P D2 N3 Ṡ",
+      "avarohana_pattern": "Ṡ N3 P M1 G3 R2 G3 S",
+      "primary_rasa": "Śānta",
+      "secondary_rasas": [
+        "Mādhurya"
+      ],
+      "sthayi_bhava": "Lullaby",
+      "vyabhichari_bhavas": [
+        "Tender Sleep"
+      ],
+      "bhava_description": "Lullaby tranquility, soothing maternal comfort, and quiet sleep.",
+      "time_of_day": "Night",
+      "deity_association": "Maternal / Child Krishna",
+      "key_jiva_swaras": [
+        "G3",
+        "M1",
+        "P"
+      ],
+      "musicological_notes": "Traditional Carnatic lullaby raga.",
+      "scholarly_treatise_citations": [
+        "Dr. S. Ramanathan & D. Pattammal (1984), Raga Pravagam: Catalogs Nīlāmbari under Mela #29.",
+        "Subbarama Dikshitar (1904), Sangita Sampradaya Pradarshini: Detailed Lakshana & Visesha Prayogas for Nīlāmbari."
+      ]
+    }
+  ]
+}

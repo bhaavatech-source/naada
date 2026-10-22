@@ -11,7 +11,6 @@ import Progress from './modules/Progress'
 import About from './modules/About'
 import Home from './modules/Home'
 import GamakaTrainer from './modules/GamakaTrainer'
-import JanyaLibrary from './modules/JanyaLibrary'
 
 export default function App() {
   const { module, sidebarOpen, setSidebarOpen } = useAppStore()
@@ -37,7 +36,7 @@ export default function App() {
   const moduleMap: Record<string, JSX.Element> = {
     home: <Home />,
     raga: <RagaLibrary settingsContainer={moduleSettingsContainer} />,
-    janya: <JanyaLibrary />,
+    wisdom: <Home wisdomOnly />,
     tala: <TalaTrainer />,
     shruti: <ShrutiTrainer />,
     gamaka: <GamakaTrainer />,

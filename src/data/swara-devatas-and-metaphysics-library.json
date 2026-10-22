@@ -1,0 +1,416 @@
+{
+  "project": "Nāda Vidyā / Medhā Nādopāsanā Platform",
+  "title": "Sapta Swara Metaphysics, Devatas, Rishis & Iconographic Attributes Database",
+  "version": "1.0.0",
+  "description": "Authoritative musicological dataset detailing the metaphysical, spiritual, aesthetic, iconographic, and physical attributes of the Sapta Swaras (S, R, G, M, P, D, N) and Shodasa Swarasthanas, tagged with scholarly treatise citations.",
+  "scholarly_treatise_bibliography": [
+    {
+      "citation_id": "TR-01",
+      "work_title": "The Ragas of Karnatic Music",
+      "author": "N. S. Ramachandran",
+      "publication": "University of Madras (1938)",
+      "relevance": "Details historical evolution of Swaras, Srutis, Vedic chants, and ancient treatise references (pp. 12-25)."
+    },
+    {
+      "citation_id": "TR-02",
+      "work_title": "Sangita Ratnakara",
+      "author": "Sārangadeva (c. 1230 AD)",
+      "relevance": "Svarādhyāya (Chapter 1, Section 3, Verses 46-59): Primary authority for Swara Devatas, Rishis, Varnas, Chhandas, Rasas, and Animal sound analogies."
+    },
+    {
+      "citation_id": "TR-03",
+      "work_title": "Natya Shastra",
+      "author": "Bharata Muni (c. 200 BC - 200 AD)",
+      "relevance": "Chapters 28 & 29: Earliest extant classification of Swara-Rasa associations, Grama systems, and Sruti allocations."
+    },
+    {
+      "citation_id": "TR-04",
+      "work_title": "Narada Siksa",
+      "author": "Sage Narada (c. 1st Century AD)",
+      "relevance": "First text to establish explicit correspondence between Samavedic chant accents, lay notes, animal sounds, and Devatas (1.5.1-7)."
+    },
+    {
+      "citation_id": "TR-05",
+      "work_title": "Brihaddesi",
+      "author": "Matanga Muni (c. 800 AD)",
+      "relevance": "Defines the acoustic origin of Swara from Sruti and connects Swaras with physical body registers and spiritual deities (verses 61-78)."
+    },
+    {
+      "citation_id": "TR-06",
+      "work_title": "Sangita Makaranda",
+      "author": "Narada (c. 11th Century AD)",
+      "relevance": "Elaborates on the iconographic colors, castes (Varnas), and planetary ruler ships of the Sapta Swaras."
+    },
+    {
+      "citation_id": "TR-07",
+      "work_title": "Carnatic Music Book 1",
+      "author": "National Institute of Open Schooling / Traditional Curriculum",
+      "relevance": "Foundational textbook outlining Dwadasa/Shodasa Swarasthana definitions, origin of Indian music, and introductory theory."
+    }
+  ],
+  "sapta_swara_metaphysics": [
+    {
+      "swara_index": 1,
+      "swara_code": "S",
+      "swara_short_name": "Sa",
+      "full_sanskrit_name": "Ṣaḍja (షడ్జమ్ / षड्ज)",
+      "meaning_and_etymology": "Born of six organs: throat, chest, palate, nose, tongue, and teeth (Sat + Ja). The fundamental tonic anchor of all music.",
+      "animal_bird_analogy": {
+        "primary_animal": "Mayūra (Peacock / నెమలి)",
+        "sound_description": "The joyous crying of the peacock at the onset of rain-bearing monsoon clouds.",
+        "sanskrit_text_ref": "Narada Siksa 1.5.1: Sadjam vadati mayuro..."
+      },
+      "presiding_deity": {
+        "primary_devata": "Agni (Fire God) / Brahma (Creator) / Vināyaka (Ganesha)",
+        "secondary_devata": "Lord Shiva (Mahadeva)",
+        "iconographic_significance": "Agni represents the primordial spark of breath (Prana) ignited at the Muladhara chakra."
+      },
+      "seer_rishi": "Agastya Maharshi / Sage Narada",
+      "varna_caste": "Brāhmaṇa (Priestly / Intellectual Class)",
+      "color_varna": "Padmapatra (Lotus Leaf Pink / Radiant White / Rose)",
+      "chhandas_metre": "Anuṣṭubh (8 syllables per quarter)",
+      "element_pancha_bhuta": "Pṛthvī (Earth) & Agni (Fire)",
+      "body_resonance_register": "Nose, throat, chest, palate, tongue, teeth (6-organ resonance starting at Muladhara)",
+      "aesthetic_rasa": [
+        "Vīra (Heroism)",
+        "Raudra (Fury / Righteous Force)",
+        "Adbhuta (Wonder)"
+      ],
+      "gotra_dynasty": "Deva Gotra / Agni Kula",
+      "governing_planet_graha": "Budha (Mercury) / Candra (Moon)",
+      "body_tissue_dhatu": "Rakta (Blood) & Asthi (Bone)",
+      "scholarly_citations": [
+        "TR-02: Sangita Ratnakara 1.3.46-47",
+        "TR-04: Narada Siksa 1.5.1",
+        "TR-01: N. S. Ramachandran (1938), pp. 12-15"
+      ]
+    },
+    {
+      "swara_index": 2,
+      "swara_code": "R",
+      "swara_short_name": "Ri / Re",
+      "full_sanskrit_name": "Ṛṣabha (ऋषभ / ॠषभम्)",
+      "meaning_and_etymology": "Derived from Rishabha (the powerful Bull), symbolizing strength, vigor, and upward ascent.",
+      "animal_bird_analogy": {
+        "primary_animal": "Vṛṣabha (Bull / ఎద్దు) / Chātaka Bird",
+        "sound_description": "The deep, resonant bellowing of a bull calling its herd or a mother cow calling her calf.",
+        "sanskrit_text_ref": "Narada Siksa 1.5.2: Gavo vadanti rsabham..."
+      },
+      "presiding_deity": {
+        "primary_devata": "Brahma (The Creator) / Sarasvatī",
+        "secondary_devata": "Lord Veṅkaṭeśvara / Sūrya (Sun God)",
+        "iconographic_significance": "Represents the creative impulse expanding through speech and vocal resonance."
+      },
+      "seer_rishi": "Bhṛgu Maharshi / Vasiṣṭha",
+      "varna_caste": "Kṣatriya (Warrior / Ruling Class)",
+      "color_varna": "Pīta / Gauravarṇa (Pale Yellow / Tawny / Golden Amber)",
+      "chhandas_metre": "Gāyatrī (24 syllables)",
+      "element_pancha_bhuta": "Āpas / Jala (Water)",
+      "body_resonance_register": "Navel region (Svadhisthana) & Throat (Kantha)",
+      "aesthetic_rasa": [
+        "Vīra (Heroic Valour)",
+        "Raudra (Majestic Power)",
+        "Adbhuta (Astonishment)"
+      ],
+      "gotra_dynasty": "Rishi Gotra / Sūrya Kula",
+      "governing_planet_graha": "Aṅgāraka / Mangala (Mars)",
+      "body_tissue_dhatu": "Māṁsa (Muscular Tissue / Flesh)",
+      "scholarly_citations": [
+        "TR-02: Sangita Ratnakara 1.3.48-50",
+        "TR-03: Natya Shastra 29.1-8",
+        "TR-01: N. S. Ramachandran (1938), pp. 14-18"
+      ]
+    },
+    {
+      "swara_index": 3,
+      "swara_code": "G",
+      "swara_short_name": "Ga",
+      "full_sanskrit_name": "Gāndhāra (गान्धार / गान्धारम्)",
+      "meaning_and_etymology": "Associated with the fragrance (Gandha) of music and the ancient Gandhara region.",
+      "animal_bird_analogy": {
+        "primary_animal": "Aja / Chāga (Goat / మేక) / Ram",
+        "sound_description": "The bleating of a goat or ram in the mountain pastures.",
+        "sanskrit_text_ref": "Narada Siksa 1.5.3: Aja vicaste gandharam..."
+      },
+      "presiding_deity": {
+        "primary_devata": "Goddess Sarasvatī (Goddess of Knowledge & Music)",
+        "secondary_devata": "Soma (Moon God) / Agni",
+        "iconographic_significance": "Embodies subtle intellectual sweetness, artistic refinement, and meditative absorption."
+      },
+      "seer_rishi": "Gautama Maharshi / Tumburu",
+      "varna_caste": "Vaiśya (Merchant / Creative Producer Class)",
+      "color_varna": "Kañcana / Svarṇa (Golden / Bright Yellow / Saffron)",
+      "chhandas_metre": "Triṣṭubh (44 syllables)",
+      "element_pancha_bhuta": "Agni (Fire)",
+      "body_resonance_register": "Head / Mind (Murdha)",
+      "aesthetic_rasa": [
+        "Karuṇā (Compassion / Pathos)",
+        "Śānta (Spiritual Peace)"
+      ],
+      "gotra_dynasty": "Pitṛ Gotra / Soma Kula",
+      "governing_planet_graha": "Śukra (Venus)",
+      "body_tissue_dhatu": "Medas (Adipose Tissue / Fat)",
+      "scholarly_citations": [
+        "TR-02: Sangita Ratnakara 1.3.51-52",
+        "TR-04: Narada Siksa 1.5.3",
+        "TR-05: Brihaddesi, v. 65-70"
+      ]
+    },
+    {
+      "swara_index": 4,
+      "swara_code": "M",
+      "swara_short_name": "Ma",
+      "full_sanskrit_name": "Madhyama (मध्यम / मध्यमम्)",
+      "meaning_and_etymology": "The central or middle note of the Sapta Swara octave, dividing Purvanga and Uttaranga.",
+      "animal_bird_analogy": {
+        "primary_animal": "KraUñca (Heron / Crane / కొంగ) / Egret",
+        "sound_description": "The cry of the Krauncha crane echoing across peaceful waters.",
+        "sanskrit_text_ref": "Narada Siksa 1.5.4: Kraunco vadati madhyamam..."
+      },
+      "presiding_deity": {
+        "primary_devata": "Lord Viṣṇu (The Preserver) / Mahādeva Śiva",
+        "secondary_devata": "Goddess Mahālakṣmī",
+        "iconographic_significance": "Sustaining pivot of musical harmony; indestructible intermediate pillar."
+      },
+      "seer_rishi": "Aṅgiras Maharshi / Viśvāmitra",
+      "varna_caste": "Brāhmaṇa / Kingly Equilibrium Class",
+      "color_varna": "Kundapuṣpa / Śukla (Pure Jasmine White / Pearl White)",
+      "chhandas_metre": "Bṛhatī (36 syllables)",
+      "element_pancha_bhuta": "Vāyu (Air)",
+      "body_resonance_register": "Heart & Navel (Anahata / Nabhi)",
+      "aesthetic_rasa": [
+        "Hāsya (Joy / Lightness)",
+        "Śṛṅgāra (Devotional Romance)",
+        "Śānta (Peace)"
+      ],
+      "gotra_dynasty": "Viṣṇu Gotra",
+      "governing_planet_graha": "Guru / Bṛhaspati (Jupiter)",
+      "body_tissue_dhatu": "Majjā (Bone Marrow)",
+      "scholarly_citations": [
+        "TR-02: Sangita Ratnakara 1.3.52-54",
+        "TR-03: Natya Shastra 29.10-14",
+        "TR-07: Carnatic Music Book 1, Chapter 2"
+      ]
+    },
+    {
+      "swara_index": 5,
+      "swara_code": "P",
+      "swara_short_name": "Pa",
+      "full_sanskrit_name": "Pañcama (पञ्चम / पञ्चमम्)",
+      "meaning_and_etymology": "The fifth note of the scale; fixed invariant consonant (Samvadi) to Sadja.",
+      "animal_bird_analogy": {
+        "primary_animal": "Kokila (Indian Cuckoo / Nightinglae / కోకిల)",
+        "sound_description": "The sweet fifth-tone call of the Kokila bird in spring gardens.",
+        "sanskrit_text_ref": "Narada Siksa 1.5.5: Pika kuhati pancamam..."
+      },
+      "presiding_deity": {
+        "primary_devata": "Nāradī / Lord Viṣṇu / Sun God / Goddess Caṇḍī",
+        "secondary_devata": "Śrī Mahālakṣmī",
+        "iconographic_significance": "Panchama is the immutable pillar of stability and cosmic sweet resonance."
+      },
+      "seer_rishi": "Sanatkumāra Maharshi / Jamadagni",
+      "varna_caste": "Brāhmaṇa (Priestly / Universal Class)",
+      "color_varna": "Kṛṣṇa / Nīla / Syama (Dark Blue / Deep Indigo / Crimson Black)",
+      "chhandas_metre": "Paṅkti (40 syllables)",
+      "element_pancha_bhuta": "Ākāśa (Ether / Space)",
+      "body_resonance_register": "5 Body Resonant Places (Navel, Chest, Heart, Throat, Head)",
+      "aesthetic_rasa": [
+        "Śṛṅgāra (Love)",
+        "Hāsya (Joy)",
+        "Bhakti (Devotion)"
+      ],
+      "gotra_dynasty": "Prajāpati Gotra",
+      "governing_planet_graha": "Śani (Saturn)",
+      "body_tissue_dhatu": "Śukra (Reproductive Energy / Vital Fluid)",
+      "scholarly_citations": [
+        "TR-02: Sangita Ratnakara 1.3.54-56",
+        "TR-04: Narada Siksa 1.5.5",
+        "TR-01: N. S. Ramachandran (1938), pp. 15-22"
+      ]
+    },
+    {
+      "swara_index": 6,
+      "swara_code": "D",
+      "swara_short_name": "Dha",
+      "full_sanskrit_name": "Dhaivata (धैवत / धैवतम्)",
+      "meaning_and_etymology": "Imbued with Dhi (intellectual stability and reposed wisdom).",
+      "animal_bird_analogy": {
+        "primary_animal": "Aśva (Horse / గుర్రం) / Gaja (Elephant)",
+        "sound_description": "The triumphant neighing of a noble horse or the deep call of an elephant.",
+        "sanskrit_text_ref": "Narada Siksa 1.5.6: Dhaivatam hreshate hayah..."
+      },
+      "presiding_deity": {
+        "primary_devata": "Lord Gaṇeśa (Remover of Obstacles) / Brahmā",
+        "secondary_devata": "Dhātā",
+        "iconographic_significance": "Represents intellect, strength, and steady foundation before the octave culmination."
+      },
+      "seer_rishi": "Atri Maharshi / Kaśyapa",
+      "varna_caste": "Kṣatriya (Protective Class)",
+      "color_varna": "Pīta / Gaura (Golden Yellow / Amber / Bright Ochre)",
+      "chhandas_metre": "Jagatī (48 syllables)",
+      "element_pancha_bhuta": "Vāyu (Air) & Pṛthvī",
+      "body_resonance_register": "Forehead & Palate (Talu)",
+      "aesthetic_rasa": [
+        "Bībhatsa (Aversion / Introspection)",
+        "Bhayānaka (Awe / Fear)"
+      ],
+      "gotra_dynasty": "Gandharva Gotra",
+      "governing_planet_graha": "Rāhu / Ketu",
+      "body_tissue_dhatu": "Tvaci (Dermal Tissue / Skin)",
+      "scholarly_citations": [
+        "TR-02: Sangita Ratnakara 1.3.56-58",
+        "TR-05: Brihaddesi, v. 73-77",
+        "TR-01: N. S. Ramachandran (1938), pp. 16-24"
+      ]
+    },
+    {
+      "swara_index": 7,
+      "swara_code": "N",
+      "swara_short_name": "Ni",
+      "full_sanskrit_name": "Niṣāda (निषाद / निषादम्)",
+      "meaning_and_etymology": "The note in which all previous swaras settle or rest (Nisidanti asmin svarah).",
+      "animal_bird_analogy": {
+        "primary_animal": "Gaja (Elephant / ఏనుగు)",
+        "sound_description": "The majestic trumpeting of a regal elephant at dawn.",
+        "sanskrit_text_ref": "Narada Siksa 1.5.7: Nisadam nardate gajah..."
+      },
+      "presiding_deity": {
+        "primary_devata": "Sūrya (Sun God) / Yama / Āditya",
+        "secondary_devata": "Lord Śukra / Ishvara",
+        "iconographic_significance": "Culmination of the scale leading seamlessly into Tara Sadja."
+      },
+      "seer_rishi": "Vasiṣṭha Maharshi / Parāśara",
+      "varna_caste": "Śūdra (Service / Earthly Foundation Class)",
+      "color_varna": "Citra / Śyāma (Multi-colored / Variegated / Dark Spectrum)",
+      "chhandas_metre": "Atijagatī (52 syllables)",
+      "element_pancha_bhuta": "Jala (Water)",
+      "body_resonance_register": "Crown / Head joints (Murdha)",
+      "aesthetic_rasa": [
+        "Karuṇā (Compassion)",
+        "Śānta (Spiritual Peace / Repose)"
+      ],
+      "gotra_dynasty": "Daitya Gotra",
+      "governing_planet_graha": "Sūrya (Sun)",
+      "body_tissue_dhatu": "Prāṇa (Nervous System / Vital Spirit)",
+      "scholarly_citations": [
+        "TR-02: Sangita Ratnakara 1.3.58-59",
+        "TR-03: Natya Shastra 29.12-16",
+        "TR-04: Narada Siksa 1.5.7"
+      ]
+    }
+  ],
+  "shodasa_swarasthana_metaphysical_mapping": [
+    {
+      "code": "S",
+      "name": "Shadjam",
+      "deity": "Agni / Vinayaka",
+      "rishi": "Agastya",
+      "rasa": "Vira / Adbhuta"
+    },
+    {
+      "code": "R1",
+      "name": "Suddha Rishabham",
+      "deity": "Brahma / Shiva",
+      "rishi": "Bhrigu",
+      "rasa": "Karuna / Bhakti"
+    },
+    {
+      "code": "R2",
+      "name": "Chatushruti Rishabham",
+      "deity": "Sun / Sarasvati",
+      "rishi": "Vasishtha",
+      "rasa": "Vira / Raudra"
+    },
+    {
+      "code": "R3",
+      "name": "Shatshruti Rishabham",
+      "deity": "Agni / Skanda",
+      "rishi": "Visvamitra",
+      "rasa": "Raudra / Vivadi"
+    },
+    {
+      "code": "G1",
+      "name": "Suddha Gandharam",
+      "deity": "Sarasvati",
+      "rishi": "Gautama",
+      "rasa": "Karuna"
+    },
+    {
+      "code": "G2",
+      "name": "Sadharana Gandharam",
+      "deity": "Soma",
+      "rishi": "Tumburu",
+      "rasa": "Karuna / Shanta"
+    },
+    {
+      "code": "G3",
+      "name": "Antara Gandharam",
+      "deity": "Goddess Parvati / Lakshmi",
+      "rishi": "Kasyapa",
+      "rasa": "Shringara / Shanta"
+    },
+    {
+      "code": "M1",
+      "name": "Suddha Madhyamam",
+      "deity": "Vishnu",
+      "rishi": "Angiras",
+      "rasa": "Hasya / Shringara"
+    },
+    {
+      "code": "M2",
+      "name": "Prati Madhyamam",
+      "deity": "Chandi / Mahadeva",
+      "rishi": "Parasara",
+      "rasa": "Adbhuta / Raudra"
+    },
+    {
+      "code": "P",
+      "name": "Panchamam",
+      "deity": "Naradi / Vishnu",
+      "rishi": "Sanatkumara",
+      "rasa": "Shringara / Bhakti"
+    },
+    {
+      "code": "D1",
+      "name": "Suddha Dhaivatam",
+      "deity": "Ganesha / Yama",
+      "rishi": "Atri",
+      "rasa": "Bibhatsa / Karuna"
+    },
+    {
+      "code": "D2",
+      "name": "Chatushruti Dhaivatam",
+      "deity": "Dhata / Surya",
+      "rishi": "Kasyapa",
+      "rasa": "Vira"
+    },
+    {
+      "code": "D3",
+      "name": "Shatshruti Dhaivatam",
+      "deity": "Rudra",
+      "rishi": "Jamadagni",
+      "rasa": "Raudra / Vivadi"
+    },
+    {
+      "code": "N1",
+      "name": "Suddha Nishadam",
+      "deity": "Surya",
+      "rishi": "Vasishtha",
+      "rasa": "Karuna"
+    },
+    {
+      "code": "N2",
+      "name": "Kaisiki Nishadam",
+      "deity": "Subrahmanya / Skanda",
+      "rishi": "Narada",
+      "rasa": "Karuna / Shringara"
+    },
+    {
+      "code": "N3",
+      "name": "Kakali Nishadam",
+      "deity": "Isvara / Vishnu",
+      "rishi": "Parasara",
+      "rasa": "Shanta / Bhakti"
+    }
+  ]
+}
