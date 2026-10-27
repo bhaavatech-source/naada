@@ -29,3 +29,6 @@ public/images_OLD/
 # Local backup files
 *.backup.ts
 *.backup.tsx
+
+# Reference documents stay local; catalogue metadata and citations are tracked.
+*.pdf

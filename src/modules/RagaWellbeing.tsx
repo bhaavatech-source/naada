@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react'
 import catalogue from '../data/raga-wellbeing-catalogue.json'
-import healingStudyUrl from '../data/Raaga_and_Healing.pdf?url'
 import { readRagaPracticeTarget } from '../music/ragaPracticeTarget'
 import { useAppStore } from '../store/useAppStore'
 import './raga-wellbeing.css'
@@ -55,7 +54,7 @@ export default function RagaWellbeing() {
           {raga.note && <p>{raga.note}</p>}
           {!!raga.tags?.length && <p className="wellbeing-tags">{raga.tags.map(tag => <span key={tag}>{tag[0].toUpperCase() + tag.slice(1)}</span>)}</p>}
           {healingStudyRagas.has(raga.id) && <p className="wellbeing-muted">
-            Source: <a href={healingStudyUrl} target="_blank" rel="noreferrer">Archana & Prashantha, “Therapeutic Applications of Carnatic Ragas” (IJCRT, 2025)</a>
+            Source: Archana & Prashantha, “Therapeutic Applications of Carnatic Ragas” (IJCRT, 2025).
           </p>}
           {raga.practiceTarget &&
             <button onClick={() => {

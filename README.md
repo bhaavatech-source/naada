@@ -47,6 +47,9 @@ papers. Counts and subject filters use the actual entries rather than the
 file's summary category list. The supplied bibliography is not independently
 verified; source availability, full-text access, and reuse rights must be
 checked with the original provider. No full books or papers are mirrored.
+Reference PDFs are local-only and ignored by Git. App code must not import
+them; use bibliographic citations or verified source-site links instead so
+clean-checkout deployments do not depend on local documents.
 
 Search supports titles, authors, subjects, publishers, years, and DOIs, ignoring
 case and IAST diacritics. Type/subject/notebook filters and year/title sorting
