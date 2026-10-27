@@ -3,6 +3,8 @@ import { GAMAKA_PROFILES, GAMAKA_EXERCISES } from '../data/gamakaCatalogData';
 import type { InstrumentType } from '../types/gamaka';
 
 interface GamakaState {
+  practiceMultiplier: number;
+  setPracticeMultiplier: (multiplier: number) => void;
   // Navigation
   activeTab: 'listen' | 'game';
   setActiveTab: (tab: 'listen' | 'game') => void;
@@ -33,10 +35,12 @@ interface GamakaState {
 }
 
 export const useGamakaStore = create<GamakaState>((set) => ({
+  practiceMultiplier: 1,
+  setPracticeMultiplier: (practiceMultiplier) => set({ practiceMultiplier }),
   activeTab: 'listen',
   setActiveTab: (tab) => set({ activeTab: tab }),
 
-  selectedInstrument: 'veena',
+  selectedInstrument: 'reference',
   setSelectedInstrument: (selectedInstrument) => set({ selectedInstrument }),
 
   enableTambura: false,

@@ -13,8 +13,14 @@ import {
   RotateCcw,
   Compass,
   ShieldCheck,
+  LibraryBig,
+  Heart,
 } from 'lucide-react'
 import { useAppStore } from '../../store/useAppStore'
+import RagaWellbeing from '../RagaWellbeing'
+import { BooksLibrary } from './BooksLibrary'
+import { CATALOGUE } from './resourceCatalogue'
+import './resources.css'
 
 export type LearningResource = {
   id: string
@@ -44,7 +50,7 @@ export const LEARNING_RESOURCES: LearningResource[] = [
     task:
       'Open a Pillari Gītam or Varṇam, follow the line-by-line swara notation while listening to the audio demonstration.',
     practiceModule: 'builder',
-    practiceLabel: 'Open Music Builder',
+    practiceLabel: 'Open Gāna Builder',
     accessNote: 'Free non-commercial educational archive with audio & notations',
   },
   {
@@ -86,7 +92,7 @@ export const LEARNING_RESOURCES: LearningResource[] = [
     task:
       'Sing along with a foundational Sarali Varisai lesson at 1st and 2nd speeds.',
     practiceModule: 'builder',
-    practiceLabel: 'Open Music Builder',
+    practiceLabel: 'Open Gāna Builder',
     accessNote: 'Free instructional video repository',
   },
   {
@@ -100,7 +106,7 @@ export const LEARNING_RESOURCES: LearningResource[] = [
     task:
       'Study a Janta Varisai exercise and observe the doubled-note Sphuritam lower-touch accents.',
     practiceModule: 'builder',
-    practiceLabel: 'Open Music Builder',
+    practiceLabel: 'Open Gāna Builder',
     accessNote: 'Free interactive lesson modules',
   },
   {
@@ -170,7 +176,7 @@ export const LEARNING_RESOURCES: LearningResource[] = [
     task:
       'Listen to a guru-shishya teaching session of Śrī Gaṇanātha in Malahari rāga.',
     practiceModule: 'builder',
-    practiceLabel: 'Open Music Builder',
+    practiceLabel: 'Open Gāna Builder',
     accessNote: 'Public domain educational audio',
   },
 
@@ -644,7 +650,7 @@ export const LEARNING_RESOURCES: LearningResource[] = [
     task:
       'Listen to a composition in a rare rāga like Lavangi or Mahati and note how 4 notes create a complete rāga mood.',
     practiceModule: 'builder',
-    practiceLabel: 'Open Music Builder',
+    practiceLabel: 'Open Gāna Builder',
     accessNote: 'Free archival listening',
   },
   {
@@ -740,9 +746,9 @@ export const LEARNING_RESOURCES: LearningResource[] = [
       'Official archive of Sangita Kalanidhi Sanjay Subrahmanyan featuring detailed rāga essays, rare Vivādi kritis, and concert performances.',
     url: 'https://www.youtube.com/@SanjaySubrahmanyan',
     task:
-      'Listen to an episode of "On That Note" explaining a rare rāga and test the phrase in the Music Builder.',
+      'Listen to an episode of "On That Note" explaining a rare rāga and test the phrase in the Gāna Builder.',
     practiceModule: 'builder',
-    practiceLabel: 'Open Music Builder',
+    practiceLabel: 'Open Gāna Builder',
     accessNote: 'Official artist archive channel',
   },
   {
@@ -862,6 +868,7 @@ const MODULE_ICONS = {
 
 export function Resources() {
   const setModule = useAppStore((state) => state.setModule)
+  const [resourceSection, setResourceSection] = useState<'learning' | 'library' | 'wellbeing'>('learning')
   const [category, setCategory] =
     useState<(typeof CATEGORIES)[number]>('All')
   const [search, setSearch] = useState('')
@@ -884,49 +891,58 @@ export function Resources() {
     window.open(url, '_blank', 'noopener,noreferrer')
   }
 
-  return (
-    <div
-      style={{
-        flex: 1,
-        overflowY: 'auto',
-        padding: 24,
-        color: 'var(--text)',
-      }}
-    >
-      <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-        {/* Header */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <div
-            style={{
-              width: 46,
-              height: 46,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              borderRadius: 12,
-              background: 'var(--accent-dim)',
-              color: 'var(--accent)',
-            }}
-          >
-            <BookOpen size={24} />
-          </div>
+  const header = <header className="resources-hero">
+    <p className="resources-eyebrow">NĀDA · THE LEARNING COLLECTION</p>
+    <h1>A little reading.<br />A lifetime of discovery.</h1>
+    <p>Your companion to Carnatic learning: explore lessons and listening archives, find books and research, and connect discoveries to your practice.</p>
+    <div className="resources-stats" aria-label="Collection size">
+      <div><strong>{LEARNING_RESOURCES.length}</strong><span>learning links</span></div>
+      <div><strong>{CATALOGUE.filter(item => item.kind === 'book').length}</strong><span>books & references</span></div>
+      <div><strong>{CATALOGUE.filter(item => item.kind === 'paper').length}</strong><span>research papers</span></div>
+    </div>
+  </header>
 
-          <div>
-            <h1 style={{ margin: 0, fontSize: '1.5rem', fontWeight: 800 }}>
-              Learning Resources & Archives
-            </h1>
-            <p
-              style={{
-                margin: '5px 0 0',
-                color: 'var(--text-muted)',
-                fontSize: '0.9rem',
-              }}
-            >
-              Explore curated Carnatic music archives, lesson portals, and concert recordings. Access and availability depend on each external website.
-            </p>
-          </div>
+  const sectionTabs = (
+    <nav aria-label="Resource sections" className="resources-tabs">
+      {([
+        ['learning', 'Learn & listen', Headphones],
+        ['library', 'Books & research', LibraryBig],
+        ['wellbeing', 'Rāga & Wellbeing', Heart],
+      ] as const).map(([section, label, Icon]) => (
+        <button
+          key={section}
+          type="button"
+          aria-pressed={resourceSection === section}
+          onClick={() => setResourceSection(section)}
+        >
+          <Icon size={20} aria-hidden="true" /><span>{label}</span>
+        </button>
+      ))}
+    </nav>
+  )
+
+  if (resourceSection !== 'learning') {
+    return (
+      <div className="resources-page">
+        <div className="resources-inner">
+          {header}
+          {sectionTabs}
+          {resourceSection === 'library' ? <BooksLibrary /> : <RagaWellbeing />}
         </div>
+      </div>
+    )
+  }
 
+  return (
+    <div className="resources-page">
+      <div className="resources-inner">
+        {header}
+
+        {sectionTabs}
+
+        <div className="resources-section-heading">
+          <div><p className="resources-eyebrow">LEARN · LISTEN · PRACTISE</p><h2>Find your next practice inspiration</h2><p>Lessons, notation, performances, and listening activities with a direct route back to practice.</p></div>
+        </div>
         {/* Info Banner */}
         <div
           style={{
@@ -974,11 +990,14 @@ export function Resources() {
             <Search size={18} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
             <input
               type="text"
+              aria-label="Search learning resources"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search resources by title, composer, rāga, keyword (e.g. Shivkumar, Sangeethapriya, Purandara, Dikshitar)..."
               style={{
                 flex: 1,
+                minWidth: 0,
+                minHeight: 44,
                 background: 'transparent',
                 border: 'none',
                 outline: 'none',
@@ -1019,6 +1038,7 @@ export function Resources() {
                 return (
                   <button
                     key={cat}
+                    aria-pressed={isActive}
                     onClick={() => setCategory(cat)}
                     style={{
                       background: isActive ? 'var(--accent)' : 'var(--surface)',
@@ -1052,19 +1072,16 @@ export function Resources() {
 
         {/* Resources Cards Grid */}
         {filteredResources.length > 0 ? (
-          <div
+          <div className="resources-learning-grid"
             style={{
               marginTop: 24,
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-              gap: 20,
             }}
           >
             {filteredResources.map((resource) => {
               const ModuleIcon = MODULE_ICONS[resource.practiceModule] || ArrowRight
 
               return (
-                <div
+                <article
                   key={resource.id}
                   style={{
                     background: 'var(--surface)',
@@ -1084,6 +1101,8 @@ export function Resources() {
                     <div
                       style={{
                         display: 'flex',
+                        flexWrap: 'wrap',
+                        gap: 8,
                         justifyContent: 'space-between',
                         alignItems: 'center',
                         marginBottom: 10,
@@ -1175,7 +1194,7 @@ export function Resources() {
 
                   {/* Actions & Access Note */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+                    <div className="resources-learning-actions">
                       <button
                         onClick={() => openResource(resource.url)}
                         style={{
@@ -1231,7 +1250,7 @@ export function Resources() {
                       <span>{resource.accessNote}</span>
                     </div>
                   </div>
-                </div>
+                </article>
               )
             })}
           </div>

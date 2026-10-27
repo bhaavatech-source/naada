@@ -3,6 +3,9 @@ import { MELAKARTAS } from '../../data/ragas';
 import { saraliVarisaiMmg } from '../../data/mmg/sarali';
 import { groupNotationTokens } from '../notationLayout';
 import { TONIC_OPTIONS } from '../../data/tonics';
+import { runJanyaTests } from './janyaCurriculum.test';
+import { runTrainerTests } from './trainerPractice.test';
+import { runWellbeingTests } from './wellbeingCatalogue.test';
 
 import {
   ALL_SVARA_IDS,
@@ -262,6 +265,9 @@ export function runAllTests(): { passed: boolean; testCount: number } {
     count++;
   });
 
+  count += runJanyaTests();
+  count += runTrainerTests();
+  count += runWellbeingTests();
   return { passed: true, testCount: count };
 }
 

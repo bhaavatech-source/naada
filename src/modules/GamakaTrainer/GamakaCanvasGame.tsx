@@ -1,13 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Mic, MicOff, RotateCcw, Star, Sparkles, Award } from 'lucide-react';
 import { useGamakaStore } from '../../store/useGamakaStore';
 import { GAMAKA_EXERCISES } from '../../data/gamakaCatalogData';
 import type { GamakaExercise } from '../../types/gamaka';
 import { useAppStore } from '../../store/useAppStore';
-
-// One global timing multiplier for all Voice Flight practice exercises.
-// 3x gives singers more time to follow each contour and collect the waypoints.
-const GAMAKA_PRACTICE_TIME_MULTIPLIER = 3;
+import curriculum from '../../data/gamaka-vocal-trainer-and-notation-v2.json';
+import { buildGamakaPracticePlan, detectGamakaPitch, interpolateGamaka } from '../../music/gamakaPractice';
+import { gamakaAudioEngine } from '../../audio/GamakaAudioEngine';
 
 export const GamakaCanvasGame: React.FC = () => {
   const {
@@ -15,7 +14,9 @@ export const GamakaCanvasGame: React.FC = () => {
     setGameLevel,
     activeExerciseId,
     setActiveExerciseId,
-    setGameResult
+    setGameResult,
+    practiceMultiplier,
+    setIsPlaying
   } = useGamakaStore();
 
   const tonicHz = useAppStore(state => state.settings.tonicHz);
@@ -24,6 +25,8 @@ export const GamakaCanvasGame: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [canvasWidth, setCanvasWidth] = useState(800);
   const [isListening, setIsListening] = useState(false);
+  const [micError, setMicError] = useState('');
+  const micVersion = useRef(0);
   const [currentScore, setCurrentScore] = useState(0);
   const [collectedStars, setCollectedStars] = useState<number[]>([]);
   const [combo, setCombo] = useState(1);
@@ -44,6 +47,13 @@ export const GamakaCanvasGame: React.FC = () => {
   // Exercise selection
   const levelExercises = GAMAKA_EXERCISES.filter(e => e.level === gameLevel);
   const currentExercise = GAMAKA_EXERCISES.find(e => e.id === activeExerciseId) || levelExercises[0] || GAMAKA_EXERCISES[0];
+  const plan = useMemo(() => buildGamakaPracticePlan({
+    duration_ms: currentExercise.trajectory[currentExercise.trajectory.length - 1].t_ms,
+    trajectory_points: currentExercise.trajectory,
+  }, practiceMultiplier, curriculum.extended_playback_and_clarity), [currentExercise, practiceMultiplier]);
+  const trajectory = plan.points;
+  const durationMs = plan.durationMs;
+  const waypoints = currentExercise.waypoints.map(point => ({ ...point, t_ms: plan.sourceTimeToPracticeMs(point.t_ms) }));
 
   // Game execution state
   const gameStateRef = useRef({
@@ -53,63 +63,45 @@ export const GamakaCanvasGame: React.FC = () => {
     collectedWaypoints: new Set<number>(),
     violations: 0,
     totalCentsDiff: 0,
-    sampleCount: 0
+    sampleCount: 0,
+    voicedBins: new Set<number>()
   });
 
-  // Autocorrelation pitch detection algorithm
-  const detectPitch = (buffer: Float32Array, sampleRate: number): number | null => {
-    let sumSquares = 0;
-    for (let i = 0; i < buffer.length; i++) {
-      sumSquares += buffer[i] * buffer[i];
-    }
-    const rms = Math.sqrt(sumSquares / buffer.length);
-    if (rms < 0.02) return null; // Silence / background noise gate
-
-    let r1 = 0, r2 = buffer.length - 1;
-    const thres = 0.2;
-    for (let i = 0; i < buffer.length / 2; i++) {
-      if (Math.abs(buffer[i]) < thres) { r1 = i; break; }
-    }
-    for (let i = 1; i < buffer.length / 2; i++) {
-      if (Math.abs(buffer[buffer.length - i]) < thres) { r2 = buffer.length - i; break; }
-    }
-
-    const trimmed = buffer.slice(r1, r2);
-    const c = new Array(trimmed.length).fill(0);
-    for (let i = 0; i < trimmed.length; i++) {
-      for (let j = 0; j < trimmed.length - i; j++) {
-        c[i] += trimmed[j] * trimmed[j + i];
-      }
-    }
-
-    let d = 0;
-    while (c[d] > c[d + 1]) d++;
-    let maxVal = -1, maxPos = -1;
-    for (let i = d; i < trimmed.length; i++) {
-      if (c[i] > maxVal) {
-        maxVal = c[i];
-        maxPos = i;
-      }
-    }
-
-    if (maxPos > 0) {
-      return sampleRate / maxPos;
-    }
-    return null;
-  };
+  const stopMic = useCallback(() => {
+    micVersion.current++;
+    if (animFrameRef.current !== null) cancelAnimationFrame(animFrameRef.current);
+    animFrameRef.current = null;
+    micStreamRef.current?.getTracks().forEach(track => track.stop());
+    micStreamRef.current = null;
+    if (audioCtxRef.current) void audioCtxRef.current.close();
+    audioCtxRef.current = null;
+    analyserRef.current = null;
+    setIsListening(false);
+  }, []);
 
   const startMic = async () => {
+    stopMic();
+    gamakaAudioEngine.stopAll();
+    gamakaAudioEngine.stopTambura();
+    setIsPlaying(false, null);
+    const version = micVersion.current;
+    setMicError('');
+    setIsListening(true);
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } });
+      if (version !== micVersion.current) { stream.getTracks().forEach(track => track.stop()); return; }
       micStreamRef.current = stream;
 
       const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
       const ctx = new AudioCtx();
       audioCtxRef.current = ctx;
+      await ctx.resume();
+      if (version !== micVersion.current) return;
+      if (ctx.state !== 'running') throw new Error('Microphone audio could not start.');
 
       const source = ctx.createMediaStreamSource(stream);
       const analyser = ctx.createAnalyser();
-      analyser.fftSize = 2048;
+      analyser.fftSize = 4096;
       source.connect(analyser);
       analyserRef.current = analyser;
 
@@ -126,56 +118,37 @@ export const GamakaCanvasGame: React.FC = () => {
         collectedWaypoints: new Set<number>(),
         violations: 0,
         totalCentsDiff: 0,
-        sampleCount: 0
+        sampleCount: 0,
+        voicedBins: new Set<number>()
       };
 
       runGameLoop();
     } catch (err) {
-      alert('Microphone access is required to play the Voice Flight game. Please allow mic permissions.');
+      if (version !== micVersion.current) return;
+      setMicError(`Could not start microphone practice: ${err instanceof Error ? err.message : String(err)}. Check microphone permissions and use localhost or HTTPS.`);
+      stopMic();
     }
-  };
-
-  const stopMic = () => {
-    if (animFrameRef.current) {
-      cancelAnimationFrame(animFrameRef.current);
-      animFrameRef.current = null;
-    }
-    if (micStreamRef.current) {
-      micStreamRef.current.getTracks().forEach(t => t.stop());
-      micStreamRef.current = null;
-    }
-    if (audioCtxRef.current) {
-      audioCtxRef.current.close();
-      audioCtxRef.current = null;
-    }
-    setIsListening(false);
   };
 
   const runGameLoop = () => {
     const canvas = canvasRef.current;
-    if (!canvas || !analyserRef.current) return;
+    if (!canvas || !analyserRef.current || !audioCtxRef.current || audioCtxRef.current.state !== 'running') {
+      setMicError('Microphone practice was interrupted. Start singing again when audio is available.');
+      stopMic();
+      return;
+    }
     const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+    if (!ctx) { setMicError('Pitch chart could not be created.'); stopMic(); return; }
 
     const analyser = analyserRef.current;
     const buffer = new Float32Array(analyser.fftSize);
     analyser.getFloatTimeDomainData(buffer);
 
-    const detectedHz = detectPitch(buffer, audioCtxRef.current?.sampleRate || 44100);
+    const detectedHz = detectGamakaPitch(buffer, audioCtxRef.current.sampleRate);
     const hasValidPitch = detectedHz !== null && detectedHz > 50 && detectedHz < 1500;
 
     const now = performance.now();
     const elapsedMs = now - gameStateRef.current.startTime;
-    const baseTrajectory = currentExercise.trajectory;
-    const trajectory = baseTrajectory.map(point => ({
-      ...point,
-      t_ms: point.t_ms * GAMAKA_PRACTICE_TIME_MULTIPLIER
-    }));
-    const waypoints = currentExercise.waypoints.map(point => ({
-      ...point,
-      t_ms: point.t_ms * GAMAKA_PRACTICE_TIME_MULTIPLIER
-    }));
-    const durationMs = trajectory[trajectory.length - 1]?.t_ms || 2500 * GAMAKA_PRACTICE_TIME_MULTIPLIER;
 
     // Convert Hz to cents relative to Kattai
     if (hasValidPitch && detectedHz !== null) {
@@ -188,33 +161,25 @@ export const GamakaCanvasGame: React.FC = () => {
     }
 
     // Find target cents at current time
-    let targetCents = trajectory[0].cents;
-    for (let i = 0; i < trajectory.length - 1; i++) {
-      if (elapsedMs >= trajectory[i].t_ms && elapsedMs <= trajectory[i + 1].t_ms) {
-        const factor = (elapsedMs - trajectory[i].t_ms) / (trajectory[i + 1].t_ms - trajectory[i].t_ms);
-        targetCents = trajectory[i].cents + factor * (trajectory[i + 1].cents - trajectory[i].cents);
-        break;
-      }
-    }
+    const targetCents = interpolateGamaka(trajectory, elapsedMs);
 
     const currentPitch = gameStateRef.current.currentPitchCents;
     const centsError = Math.abs(currentPitch - targetCents);
     const inTolerance = centsError <= currentExercise.toleranceCents;
 
     if (hasValidPitch) {
+      gameStateRef.current.voicedBins.add(Math.min(19, Math.floor(elapsedMs / durationMs * 20)));
       gameStateRef.current.totalCentsDiff += centsError;
       gameStateRef.current.sampleCount++;
       if (!inTolerance && currentPitch > targetCents + 100) gameStateRef.current.violations++;
 
       waypoints.forEach(wp => {
-        if (Math.abs(elapsedMs - wp.t_ms) < 250 && !gameStateRef.current.collectedWaypoints.has(wp.star_index) && inTolerance) {
+        if (Math.abs(elapsedMs - wp.t_ms) < 250 * practiceMultiplier && !gameStateRef.current.collectedWaypoints.has(wp.star_index) && inTolerance && Math.abs(currentPitch - wp.cents) <= currentExercise.toleranceCents) {
           gameStateRef.current.collectedWaypoints.add(wp.star_index);
           setCollectedStars(Array.from(gameStateRef.current.collectedWaypoints));
-          setCombo(c => {
-            const nextCombo = c + 1;
-            setCurrentScore(s => s + 250 * nextCombo);
-            return nextCombo;
-          });
+          const nextCombo = gameStateRef.current.collectedWaypoints.size + 1;
+          setCombo(nextCombo);
+          setCurrentScore(s => s + 250 * nextCombo);
         }
       });
       gameStateRef.current.history.push({ t: elapsedMs, cents: currentPitch, inTolerance });
@@ -316,11 +281,13 @@ export const GamakaCanvasGame: React.FC = () => {
         : 1200;
 
       const starsEarned = gameStateRef.current.collectedWaypoints.size;
-      const calculatedScore = gameStateRef.current.sampleCount === 0
+      const enoughCoverage = gameStateRef.current.voicedBins.size >= 10;
+      const calculatedScore = !enoughCoverage
         ? 0
         : Math.max(0, Math.round(100 - avgError * 1.2 - gameStateRef.current.violations * 4));
 
       let badge = 'Abhyāsa (Keep Practicing)';
+      if (!enoughCoverage) badge = 'Not enough voiced coverage to assess this contour';
       if (calculatedScore >= 85) badge = 'Nāda Vilāsam! (Superb Curve)';
       else if (calculatedScore >= 70) badge = 'Śubham! (Good Control)';
 
@@ -350,15 +317,19 @@ export const GamakaCanvasGame: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    return () => {
-      if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
-      if (micStreamRef.current) micStreamRef.current.getTracks().forEach(t => t.stop());
-      if (audioCtxRef.current) audioCtxRef.current.close();
-    };
-  }, []);
+    stopMic();
+    setIsCompleted(false);
+    setMicError('');
+    return stopMic;
+  }, [currentExercise.id, practiceMultiplier, tonicHz, stopMic]);
 
   return (
     <div className="gamaka-game" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+      <label style={{color:'#CBD5E1'}}>Exercise <select aria-label="Gamaka exercise" value={currentExercise.id} onChange={e=>setActiveExerciseId(e.target.value)} style={{maxWidth:'100%',padding:8}}>
+        {levelExercises.map(exercise=><option key={exercise.id} value={exercise.id}>{exercise.title}</option>)}
+      </select></label>
+      <p style={{color:'#CBD5E1',fontSize:13,margin:0}}>Contour duration: {(durationMs/1000).toFixed(1)} s, including anchor holds. Singing uses the app tonic. Pitch-contour scores are practice aids, not musical certification; stop if your voice feels strained.</p>
+      {micError && <div role="alert" style={{color:'#fca5a5'}}>{micError}</div>}
       {/* Exercise Bar */}
       <div
         className="gamaka-exercise-header"

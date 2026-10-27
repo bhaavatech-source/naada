@@ -6,8 +6,8 @@ import { TONIC_OPTIONS } from '../../data/tonics'
 import type { InstrumentId } from '../../types/index'
 
 const MODULE_LABELS: Record<string, string> = {
-  raga:'Rāga Practice', wisdom:'Nāda Wisdom', tala:'Tāla Trainer', shruti:'Śruti Trainer', gamaka:'Gamaka Trainer',
-  resources:'Resources', builder:'Music Builder', progress:'My Progress', about:'About Nāda'
+  raga:'Rāga Practice', wisdom:'Nāda Wisdom', tala:'Tāla Trainer', shruti:'Śruti Trainer',
+  resources:'Resources', builder:'Gāna Builder', progress:'My Progress', about:'About Nāda'
 }
 
 export default function Header({ moduleSettingsRef }: { moduleSettingsRef?: Ref<HTMLDivElement> }) {
@@ -126,7 +126,7 @@ export default function Header({ moduleSettingsRef }: { moduleSettingsRef?: Ref<
             border: '1px solid var(--border)', boxShadow: 'var(--shadow)',
           } : { flexShrink: 0 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, padding: '8px 16px', background: 'var(--surface)', position: hasModuleSettings ? 'sticky' : undefined, top: 0, zIndex: 2 }}>
-          <h2 style={{ fontSize: '1.1rem' }}>{module === 'raga' ? 'Rāga practice settings' : module === 'builder' ? 'Music Builder settings' : 'Settings'}</h2>
+          <h2 style={{ fontSize: '1.1rem' }}>{module === 'raga' ? 'Rāga practice settings' : module === 'builder' ? 'Gāna Builder settings' : 'Settings'}</h2>
           <button onClick={() => setSettingsOpen(false)} aria-label="Close settings" style={{ padding: '6px 10px' }}>✕</button>
         </div>
         <div style={{
@@ -134,28 +134,28 @@ export default function Header({ moduleSettingsRef }: { moduleSettingsRef?: Ref<
           padding:'12px 16px', display:'flex', flexWrap:'wrap', gap:12, alignItems:'center',
         }}>
           <div style={{ display:'flex', alignItems:'center', gap:6 }}>
-            <label style={{ fontSize:'0.72rem', color:'var(--text-muted)' }}>Śruti</label>
-            <select value={settings.tonicHz} onChange={e => updateSettings({ tonicHz: parseFloat(e.target.value) })}
+            <label htmlFor="practice-tonic" style={{ fontSize:'0.72rem', color:'var(--text-muted)' }}>Śruti / scale</label>
+            <select id="practice-tonic" value={settings.tonicHz} onChange={e => updateSettings({ tonicHz: parseFloat(e.target.value) })}
               style={{ background:'var(--surface2)', border:'1px solid var(--border)', borderRadius:'var(--radius-sm)', padding:'4px 6px', fontSize:'0.78rem', color:'var(--text)' }}>
               {TONIC_OPTIONS.map(o => <option key={o.hz} value={o.hz}>{o.label}</option>)}
             </select>
           </div>
           <div style={{ display:'flex', alignItems:'center', gap:6 }}>
-            <label style={{ fontSize:'0.72rem', color:'var(--text-muted)' }}>BPM</label>
-            <input type="number" min={30} max={300} step={5} value={settings.bpm}
+            <label htmlFor="practice-bpm" style={{ fontSize:'0.72rem', color:'var(--text-muted)' }}>BPM</label>
+            <input id="practice-bpm" type="number" min={30} max={300} step={5} value={settings.bpm}
               onChange={e => updateSettings({ bpm: parseInt(e.target.value) })}
               style={{ width:56, background:'var(--surface2)', border:'1px solid var(--border)', borderRadius:'var(--radius-sm)', padding:'4px 6px', fontSize:'0.78rem', color:'var(--text)', textAlign:'center' }} />
           </div>
           <div style={{ display:'flex', alignItems:'center', gap:6 }}>
-            <label style={{ fontSize:'0.72rem', color:'var(--text-muted)' }}>Instrument</label>
-            <select value={settings.instrument} onChange={e => updateSettings({ instrument: e.target.value as InstrumentId })}
+            <label htmlFor="practice-instrument" style={{ fontSize:'0.72rem', color:'var(--text-muted)' }}>Instrument</label>
+            <select id="practice-instrument" value={settings.instrument} onChange={e => updateSettings({ instrument: e.target.value as InstrumentId })}
               style={{ background:'var(--surface2)', border:'1px solid var(--border)', borderRadius:'var(--radius-sm)', padding:'4px 6px', fontSize:'0.78rem', color:'var(--text)' }}>
               {availableInstruments.map(i => <option key={i.id} value={i.id}>{i.icon} {i.label}</option>)}
             </select>
           </div>
           <div style={{ display:'flex', alignItems:'center', gap:6 }}>
             <span style={{ fontSize:'0.9rem' }}>🔊</span>
-            <input type="range" min={0} max={1} step={0.05} value={settings.volume}
+            <input aria-label="Volume" type="range" min={0} max={1} step={0.05} value={settings.volume}
               onChange={e => updateSettings({ volume: parseFloat(e.target.value) })}
               style={{ width:100, accentColor:'var(--accent)' }} />
           </div>

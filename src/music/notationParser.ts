@@ -31,11 +31,15 @@ export function parseSvaraToken(
     throw new SvaraValidationError('Cannot parse empty svara token.');
   }
 
-  let cleanToken = raw;
+  let cleanToken = raw.normalize('NFC');
   let octave: Octave = 0;
   let hasExplicitOctave = false;
 
-  if (/^[ṠṘĠṀṖḊṄ]/.test(cleanToken)) {
+  if (cleanToken === 'P_high') {
+    cleanToken = 'P';
+    octave = 1;
+    hasExplicitOctave = true;
+  } else if (/^[ṠṘĠṀṖḊṄ]/.test(cleanToken)) {
     octave = 1;
     hasExplicitOctave = true;
     const baseChar = cleanToken.charAt(0);
@@ -49,7 +53,7 @@ export function parseSvaraToken(
       'Ṅ': 'N',
     };
     cleanToken = charMap[baseChar] + cleanToken.slice(1);
-  } else if (/^[ṣṛġṃḍṇ]/.test(cleanToken)) {
+  } else if (/^(?:[ṣṛġṃḍṇṢṚṂḌṆ]|[pP]\u0323)/.test(cleanToken)) {
     octave = -1;
     hasExplicitOctave = true;
     const baseChar = cleanToken.charAt(0);
@@ -60,8 +64,15 @@ export function parseSvaraToken(
       'ṃ': 'm',
       'ḍ': 'd',
       'ṇ': 'n',
+      'Ṣ': 's',
+      'Ṛ': 'r',
+      'Ṃ': 'm',
+      'Ḍ': 'd',
+      'Ṇ': 'n',
     };
-    cleanToken = charMap[baseChar] + cleanToken.slice(1);
+    cleanToken = /^[pP]\u0323/.test(cleanToken)
+      ? 'p' + cleanToken.slice(2)
+      : charMap[baseChar] + cleanToken.slice(1);
   }
 
   if (cleanToken.endsWith("''") || cleanToken.endsWith('^^') || cleanToken.endsWith('..')) {

@@ -1,0 +1,77 @@
+.shruti-trainer {
+  min-height: 0;
+  scrollbar-gutter: stable;
+  overflow-anchor: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.shruti-pitch-panel {
+  display: grid;
+  flex-shrink: 0;
+}
+
+.shruti-pitch-reading,
+.shruti-pitch-placeholder {
+  grid-area: 1 / 1;
+  align-self: center;
+  min-width: 0;
+}
+
+.shruti-pitch-reading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shruti-pitch-status {
+  min-height: 2.5em;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.shruti-session-controls {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  padding: 8px 0;
+  background: var(--bg);
+}
+
+.shruti-session-controls > button {
+  min-width: 0;
+  min-height: 52px;
+  padding: 12px 8px;
+  touch-action: manipulation;
+}
+
+.shruti-session-controls > button:last-child {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.shruti-recording-time {
+  display: inline-block;
+  width: 7ch;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.shruti-target-feedback {
+  min-height: 3em;
+}
+
+@media (min-width: 900px) {
+  .shruti-session-controls {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .shruti-session-controls > button:last-child {
+    grid-column: auto;
+  }
+}

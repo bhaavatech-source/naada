@@ -2,6 +2,7 @@ import { useState, useRef, useCallback, useEffect } from 'react'
 import { useAppStore } from '../../store/useAppStore'
 import { tanpura, getAudioContext } from '../../audio/engine'
 import { setPendingVocalImport } from '../../store/pendingVocalImport'
+import './shruti.css'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 const PRINCIPAL_SWARAS = [
@@ -160,9 +161,17 @@ export default function ShrutiTrainer() {
 
       const buf = new Float32Array(analyser.fftSize)
       pitchRunningRef.current = true
+      let lastAnalysedAt = -Infinity
 
       const tick = () => {
         if (!pitchRunningRef.current) return
+        const now = performance.now()
+        // Ten updates per second keep the tuner responsive without blocking taps.
+        if (now - lastAnalysedAt < 100) {
+          animRef.current = requestAnimationFrame(tick)
+          return
+        }
+        lastAnalysedAt = now
 
         analyser.getFloatTimeDomainData(buf)
         const hz = autocorrelate(buf, ctx.sampleRate, gainThreshold)
@@ -367,53 +376,52 @@ const shareToMusicBuilder = useCallback((rec: SavedRecording) => {
 
   // ── Render ─────────────────────────────────────────────────────────────────
   return (
-    <div style={{ height: '100%', overflowY: 'auto', padding: 'var(--space-6)' }}>
+    <div className="shruti-trainer" style={{ height: '100%', overflowY: 'auto', padding: 'var(--space-6)' }}>
       <div style={{ width: '100%', maxWidth: '840px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 'var(--space-4)', paddingBottom: 'var(--space-12)' }}>
 
       {/* ── Pitch Display (Stable Background, No Blinking) ── */}
-      <div style={{ borderRadius: 'var(--radius)', background: 'var(--surface)', border: '1px solid var(--border)', padding: 'var(--space-6)', textAlign: 'center', minHeight: 140, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow)' }}>
-        {pitch ? (
-          <>
-            <div style={{ fontSize: '3.2rem', fontWeight: 800, fontFamily: 'var(--font-display)', color: pitch.direction === 'correct' ? 'var(--green)' : pitch.direction === 'sharp' ? 'var(--red)' : 'var(--orange)' }}>{pitch.note}</div>
+      <div className="shruti-pitch-panel" style={{ borderRadius: 'var(--radius)', background: 'var(--surface)', border: '1px solid var(--border)', padding: 'var(--space-6)', textAlign: 'center', minHeight: 140, boxShadow: 'var(--shadow)' }}>
+          <div className="shruti-pitch-reading" style={{visibility:pitch ? 'visible' : 'hidden'}} aria-hidden={!pitch}>
+            <div style={{ fontSize: '3.2rem', fontWeight: 800, fontFamily: 'var(--font-display)', color: pitch?.direction === 'correct' ? 'var(--green)' : pitch?.direction === 'sharp' ? 'var(--red)' : 'var(--orange)' }}>{pitch?.note ?? 'Sa'}</div>
             
             {/* Stable Status Badge instead of flashing screen background */}
-            <div style={{ display: 'inline-block', padding: '2px 12px', borderRadius: 99, fontSize: '0.8rem', fontWeight: 600, background: pitch.direction === 'correct' ? 'rgba(74,222,128,0.15)' : 'rgba(248,113,113,0.15)', color: pitch.direction === 'correct' ? 'var(--green)' : 'var(--red)', margin: '4px 0 8px' }}>
-              {pitch.direction === 'correct' ? '✓ In Tune' : pitch.direction === 'sharp' ? `↑ Sharp by ${pitch.cents}¢` : `↓ Flat by ${Math.abs(pitch.cents)}¢`}
+            <div className="shruti-pitch-status" style={{ display: 'inline-block', padding: '2px 12px', borderRadius: 99, fontSize: '0.8rem', fontWeight: 600, background: pitch?.direction === 'correct' ? 'rgba(74,222,128,0.15)' : 'rgba(248,113,113,0.15)', color: pitch?.direction === 'correct' ? 'var(--green)' : 'var(--red)', margin: '4px 0 8px' }}>
+              {pitch?.direction === 'correct' ? '✓ In Tune' : pitch?.direction === 'sharp' ? `↑ Sharp by ${pitch.cents}¢` : `↓ Flat by ${Math.abs(pitch?.cents ?? 0)}¢`}
             </div>
 
             
             {/* Cents meter */}
             <div style={{ width: '100%', maxWidth: '400px', height: 8, background: 'var(--surface2)', borderRadius: 4, marginTop: 12, position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', top: 0, height: '100%', width: `${Math.min(Math.abs(pitch.cents) / 50, 1) * 50}%`, left: pitch.cents >= 0 ? '50%' : 'auto', right: pitch.cents < 0 ? '50%' : 'auto', background: pitch.direction === 'correct' ? 'var(--green)' : pitch.direction === 'sharp' ? 'var(--red)' : 'var(--orange)', transition: 'width 0.1s' }} />
+              <div style={{ position: 'absolute', top: 0, height: '100%', width: `${Math.min(Math.abs(pitch?.cents ?? 0) / 50, 1) * 50}%`, left: (pitch?.cents ?? 0) >= 0 ? '50%' : 'auto', right: (pitch?.cents ?? 0) < 0 ? '50%' : 'auto', background: pitch?.direction === 'correct' ? 'var(--green)' : pitch?.direction === 'sharp' ? 'var(--red)' : 'var(--orange)', transition: 'width 0.1s' }} />
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', maxWidth: '400px', fontSize: '0.65rem', color: 'var(--text-faint)', marginTop: 4 }}>
               <span>-50¢ (flat)</span><span>0¢</span><span>+50¢ (sharp)</span>
             </div>
-          </>
-        ) : (
-          <div style={{ color: 'var(--text-muted)', fontSize: '1.05rem', fontWeight: 500 }}>
+          </div>
+          <div className="shruti-pitch-placeholder" style={{ visibility:pitch ? 'hidden' : 'visible', color: 'var(--text-muted)', fontSize: '1.05rem', fontWeight: 500 }} aria-hidden={!!pitch}>
             {active ? 'Sing into your microphone…' : 'Press Start Session to begin analyzing pitch'}
           </div>
-        )}
       </div>
 
       {/* ── Session Controls ── */}
-      <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
+      <div className="shruti-session-controls" role="group" aria-label="Session and recording controls">
         <button aria-label={active ? 'Stop pitch detection session' : 'Start pitch detection session'} onClick={() => active ? stopSession() : startSession()}
-          style={{ padding: '12px 32px', borderRadius: 'var(--radius-sm)', fontWeight: 700, fontSize: '0.95rem', background: active ? 'rgba(248,113,113,0.15)' : 'var(--accent-dim)', border: `2px solid ${active ? 'var(--red)' : 'var(--accent)'}`, color: active ? 'var(--red)' : 'var(--accent)', cursor: 'pointer', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>
+          style={{ borderRadius: 'var(--radius-sm)', fontWeight: 700, fontSize: '0.95rem', background: active ? 'rgba(248,113,113,0.15)' : 'var(--accent-dim)', border: `2px solid ${active ? 'var(--red)' : 'var(--accent)'}`, color: active ? 'var(--red)' : 'var(--accent)', cursor: 'pointer', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>
           {active ? '⏹ Stop Session' : '▶ Start Session'}
         </button>
 
         <button onClick={toggleDrone}
-          style={{ padding: '12px 22px', borderRadius: 'var(--radius-sm)', fontWeight: 600, fontSize: '0.9rem', background: droneOn ? 'rgba(99,102,241,0.15)' : 'var(--surface)', border: `1px solid ${droneOn ? 'var(--accent)' : 'var(--border)'}`, color: droneOn ? 'var(--accent)' : 'var(--text-muted)', cursor: 'pointer' }}>
+          style={{ borderRadius: 'var(--radius-sm)', fontWeight: 600, fontSize: '0.9rem', background: droneOn ? 'rgba(99,102,241,0.15)' : 'var(--surface)', border: `1px solid ${droneOn ? 'var(--accent)' : 'var(--border)'}`, color: droneOn ? 'var(--accent)' : 'var(--text-muted)', cursor: 'pointer' }}>
           {droneOn ? '🔔 Tanpura On' : '🔕 Tanpura Off'}
         </button>
 
         {/* 🔴 Record button */}
         <button
+          aria-label={isRecording ? 'Stop recording' : 'Start recording'}
           onClick={() => isRecording ? stopRecording() : startRecording()}
-          style={{ padding: '12px 22px', borderRadius: 'var(--radius-sm)', fontWeight: 700, fontSize: '0.9rem', background: isRecording ? 'rgba(248,113,113,0.2)' : 'var(--surface)', border: `1px solid ${isRecording ? 'var(--red)' : 'var(--border)'}`, color: isRecording ? 'var(--red)' : 'var(--text-muted)', cursor: 'pointer' }}>
-          {isRecording ? `⏺ Stop Rec (${recDuration}s)` : '⏺ Record'}
+          style={{ borderRadius: 'var(--radius-sm)', fontWeight: 700, fontSize: '0.9rem', background: isRecording ? 'rgba(248,113,113,0.2)' : 'var(--surface)', border: `1px solid ${isRecording ? 'var(--red)' : 'var(--border)'}`, color: isRecording ? 'var(--red)' : 'var(--text-muted)', cursor: 'pointer' }}>
+          <span>{isRecording ? '⏹ Stop Rec' : '⏺ Record'}</span>
+          <span className="shruti-recording-time" style={{visibility:isRecording ? 'visible' : 'hidden'}} aria-hidden={!isRecording}>{recDuration}s</span>
         </button>
       </div>
 
@@ -467,9 +475,9 @@ const shareToMusicBuilder = useCallback((rec: SavedRecording) => {
             </button>
           ))}
         </div>
-        {targetSwara && pitch && (
-          <div style={{ marginTop: 10, fontSize: '0.85rem', color: pitch.note === targetSwara && pitch.direction === 'correct' ? 'var(--green)' : 'var(--orange)', fontWeight: 600 }}>
-            {pitch.note === targetSwara && pitch.direction === 'correct' ? '✅ Singing target Svara correctly!' : `Singing: ${pitch.note} (Target: ${targetSwara})`}
+        {targetSwara && (
+          <div className="shruti-target-feedback" style={{ marginTop: 10, fontSize: '0.85rem', color: pitch?.note === targetSwara && pitch?.direction === 'correct' ? 'var(--green)' : 'var(--orange)', fontWeight: 600 }}>
+            {!pitch ? `Sing ${targetSwara} into your microphone…` : pitch.note === targetSwara && pitch.direction === 'correct' ? '✅ Singing target Svara correctly!' : `Singing: ${pitch.note} (Target: ${targetSwara})`}
           </div>
         )}
       </div>
@@ -539,7 +547,7 @@ const shareToMusicBuilder = useCallback((rec: SavedRecording) => {
               {/* Share to Music Builder */}
               <button
                 onClick={() => shareToMusicBuilder(rec)}
-                title="Send to Music Builder to add instruments"
+                title="Send to Gāna Builder to add instruments"
                 style={{ padding: '6px 14px', borderRadius: 99, fontSize: '0.78rem', cursor: 'pointer', border: '1px solid var(--teal, #2dd4bf)', background: 'rgba(45,212,191,0.08)', color: 'var(--teal, #2dd4bf)', fontWeight: 600 }}>
                 🎵 Add Instruments
               </button>

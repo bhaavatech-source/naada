@@ -1,0 +1,1364 @@
+{
+  "version": 1,
+  "ragas": [
+    {
+      "id": "raga_hamsadhwani",
+      "name": "Haṁsadhvani",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "janya",
+        "id": "hamsadhwani"
+      },
+      "scale": {
+        "arohana": "S R2 G3 P N3 Ṡ",
+        "avarohana": "Ṡ N3 P G3 R2 S"
+      },
+      "note": "Bright and uplifting, suited to morning meditation and focused listening.",
+      "tags": [
+        "uplifting"
+      ]
+    },
+    {
+      "id": "raga_shankarabharanam",
+      "name": "Dhīraśaṅkarābharaṇam",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 29
+      },
+      "scale": {
+        "arohana": "S R2 G3 M1 P D2 N3 Ṡ",
+        "avarohana": "Ṡ N3 D2 P M1 G3 R2 S"
+      },
+      "note": "Joyful and serene, with the full seven-note scale of a major r?ga.",
+      "tags": [
+        "calm",
+        "uplifting"
+      ]
+    },
+    {
+      "id": "raga_kalyani",
+      "name": "Mēcakalyāṇi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 65
+      },
+      "scale": {
+        "arohana": "S R2 G3 M2 P D2 N3 Ṡ",
+        "avarohana": "Ṡ N3 D2 P M2 G3 R2 S"
+      },
+      "note": "Auspicious and devotional, with an expansive melodic character.",
+      "tags": [
+        "uplifting",
+        "devotional"
+      ]
+    },
+    {
+      "id": "raga_charukesi",
+      "name": "Chārukēśi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 26
+      },
+      "scale": {
+        "arohana": "S R2 G3 M1 P D1 N2 Ṡ",
+        "avarohana": "Ṡ N2 D1 P M1 G3 R2 S"
+      },
+      "note": "Expresses pathos, compassion and longing.",
+      "tags": [
+        "reflective",
+        "devotional"
+      ]
+    },
+    {
+      "id": "raga_bhoopalam",
+      "name": "Bhūpālam",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "janya",
+        "id": "bhoopalam"
+      },
+      "scale": {
+        "arohana": "S R1 G2 P D1 Ṡ",
+        "avarohana": "Ṡ D1 P G2 R1 S"
+      },
+      "note": "A calm, devotional r?ga for the morning.",
+      "tags": [
+        "calm",
+        "reflective"
+      ]
+    },
+    {
+      "id": "raga_neelambari",
+      "name": "Nīlāmbari",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "janya",
+        "id": "neelambari"
+      },
+      "scale": {
+        "arohana": "S R2 G3 M1 P D2 P N3 Ṡ",
+        "avarohana": "Ṡ N3 P M1 G3 R2 G3 S"
+      },
+      "note": "A gentle, lullaby-like r?ga associated with bedtime listening.",
+      "tags": [
+        "calm"
+      ]
+    },
+    {
+      "id": "raga_bilahari",
+      "name": "Bilahari",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "janya",
+        "id": "bilahari"
+      },
+      "scale": {
+        "arohana": "S R2 G3 P D2 Ṡ",
+        "avarohana": "Ṡ N3 D2 P M1 G3 R2 S"
+      },
+      "note": "A lively r?ga associated with joy and energy.",
+      "tags": [
+        "uplifting"
+      ]
+    },
+    {
+      "id": "raga_ananda_bhairavi",
+      "name": "Ānandabhairavi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "janya",
+        "id": "anandhabhairavi"
+      },
+      "scale": {
+        "arohana": "S G2 R2 G2 M1 P D2 P N2 Ṡ",
+        "avarohana": "Ṡ N2 D2 P M1 G2 R2 S"
+      },
+      "note": "Tender and consoling, with a devotional character.",
+      "tags": [
+        "reflective",
+        "devotional"
+      ]
+    },
+    {
+      "id": "raga_todi",
+      "name": "Hanumatōḍi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 8
+      },
+      "scale": {
+        "arohana": "S R1 G2 M1 P D1 N2 Ṡ",
+        "avarohana": "Ṡ N2 D1 P M1 G2 R1 S"
+      },
+      "note": "Solemn and introspective in character.",
+      "tags": [
+        "reflective",
+        "devotional"
+      ]
+    },
+    {
+      "id": "raga_kapi",
+      "name": "Kāpi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "janya",
+        "id": "kapi"
+      },
+      "scale": {
+        "arohana": "S R2 M1 P N3 Ṡ",
+        "avarohana": "Ṡ N2 D2 N2 P M1 G2 R2 S"
+      },
+      "note": "A flexible light-classical rāga with an expressive, yearning quality.",
+      "tags": [
+        "reflective",
+        "devotional"
+      ]
+    },
+    {
+      "id": "raga_bageshri",
+      "name": "Bāgeśrī",
+      "tradition": "Hindustani; proposed Carnatic adaptation unverified",
+      "practiceTarget": null,
+      "scale": null,
+      "note": "An inward, lyrical Hindustani r?ga for late-evening listening.",
+      "tags": [
+        "reflective"
+      ]
+    },
+    {
+      "id": "raga_darbari_kanada",
+      "name": "Darbārī Kānaḍā",
+      "tradition": "Hindustani; proposed Carnatic adaptation unverified",
+      "practiceTarget": null,
+      "scale": null,
+      "note": "A grave, dignified Hindustani r?ga for late-night listening.",
+      "tags": [
+        "reflective"
+      ]
+    },
+    {
+      "id": "raga_kanakangi",
+      "name": "Kanakāṅgi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 1
+      },
+      "scale": {
+        "arohana": "S R1 G1 M1 P D1 N1 Ṡ",
+        "avarohana": "Ṡ N1 D1 P M1 G1 R1 S"
+      }
+    },
+    {
+      "id": "raga_ratnangi",
+      "name": "Ratnāṅgi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 2
+      },
+      "scale": {
+        "arohana": "S R1 G1 M1 P D1 N2 Ṡ",
+        "avarohana": "Ṡ N2 D1 P M1 G1 R1 S"
+      }
+    },
+    {
+      "id": "raga_ganamurti",
+      "name": "Gānamūrti",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 3
+      },
+      "scale": {
+        "arohana": "S R1 G1 M1 P D1 N3 Ṡ",
+        "avarohana": "Ṡ N3 D1 P M1 G1 R1 S"
+      }
+    },
+    {
+      "id": "raga_vanaspati",
+      "name": "Vanaspati",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 4
+      },
+      "scale": {
+        "arohana": "S R1 G1 M1 P D2 N2 Ṡ",
+        "avarohana": "Ṡ N2 D2 P M1 G1 R1 S"
+      }
+    },
+    {
+      "id": "raga_manavati",
+      "name": "Mānavati",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 5
+      },
+      "scale": {
+        "arohana": "S R1 G1 M1 P D2 N3 Ṡ",
+        "avarohana": "Ṡ N3 D2 P M1 G1 R1 S"
+      }
+    },
+    {
+      "id": "raga_tanarupi",
+      "name": "Tānarūpi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 6
+      },
+      "scale": {
+        "arohana": "S R1 G1 M1 P D3 N3 Ṡ",
+        "avarohana": "Ṡ N3 D3 P M1 G1 R1 S"
+      }
+    },
+    {
+      "id": "raga_senavati",
+      "name": "Senāvati",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 7
+      },
+      "scale": {
+        "arohana": "S R1 G2 M1 P D1 N1 Ṡ",
+        "avarohana": "Ṡ N1 D1 P M1 G2 R1 S"
+      }
+    },
+    {
+      "id": "raga_dhenuka",
+      "name": "Dhenukā",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 9
+      },
+      "scale": {
+        "arohana": "S R1 G2 M1 P D1 N3 Ṡ",
+        "avarohana": "Ṡ N3 D1 P M1 G2 R1 S"
+      }
+    },
+    {
+      "id": "raga_natakapriya",
+      "name": "Nāṭakapriyā",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 10
+      },
+      "scale": {
+        "arohana": "S R1 G2 M1 P D2 N2 Ṡ",
+        "avarohana": "Ṡ N2 D2 P M1 G2 R1 S"
+      }
+    },
+    {
+      "id": "raga_kokilapriya",
+      "name": "Kōkilapriyā",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 11
+      },
+      "scale": {
+        "arohana": "S R1 G2 M1 P D2 N3 Ṡ",
+        "avarohana": "Ṡ N3 D2 P M1 G2 R1 S"
+      }
+    },
+    {
+      "id": "raga_rupavati",
+      "name": "Rūpavati",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 12
+      },
+      "scale": {
+        "arohana": "S R1 G2 M1 P D3 N3 Ṡ",
+        "avarohana": "Ṡ N3 D3 P M1 G2 R1 S"
+      }
+    },
+    {
+      "id": "raga_gayakapriya",
+      "name": "Gāyakapriyā",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 13
+      },
+      "scale": {
+        "arohana": "S R1 G3 M1 P D1 N1 Ṡ",
+        "avarohana": "Ṡ N1 D1 P M1 G3 R1 S"
+      }
+    },
+    {
+      "id": "raga_vakulaabharanam",
+      "name": "Vakulaābharaṇam",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 14
+      },
+      "scale": {
+        "arohana": "S R1 G3 M1 P D1 N2 Ṡ",
+        "avarohana": "Ṡ N2 D1 P M1 G3 R1 S"
+      }
+    },
+    {
+      "id": "raga_mayamalavagaula",
+      "name": "Māyāmāḷavagauḷa",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 15
+      },
+      "scale": {
+        "arohana": "S R1 G3 M1 P D1 N3 Ṡ",
+        "avarohana": "Ṡ N3 D1 P M1 G3 R1 S"
+      }
+    },
+    {
+      "id": "raga_chakravakam",
+      "name": "Chakravākam",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 16
+      },
+      "scale": {
+        "arohana": "S R1 G3 M1 P D2 N2 Ṡ",
+        "avarohana": "Ṡ N2 D2 P M1 G3 R1 S"
+      }
+    },
+    {
+      "id": "raga_suryakantam",
+      "name": "Sūryakāntam",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 17
+      },
+      "scale": {
+        "arohana": "S R1 G3 M1 P D2 N3 Ṡ",
+        "avarohana": "Ṡ N3 D2 P M1 G3 R1 S"
+      }
+    },
+    {
+      "id": "raga_hatakambari",
+      "name": "Hāṭakāmbari",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 18
+      },
+      "scale": {
+        "arohana": "S R1 G3 M1 P D3 N3 Ṡ",
+        "avarohana": "Ṡ N3 D3 P M1 G3 R1 S"
+      }
+    },
+    {
+      "id": "raga_jhampadhvani",
+      "name": "Jhankāradhvani",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 19
+      },
+      "scale": {
+        "arohana": "S R2 G2 M1 P D1 N1 Ṡ",
+        "avarohana": "Ṡ N1 D1 P M1 G2 R2 S"
+      }
+    },
+    {
+      "id": "raga_natabhairavi",
+      "name": "Naṭabhairavi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 20
+      },
+      "scale": {
+        "arohana": "S R2 G2 M1 P D1 N2 Ṡ",
+        "avarohana": "Ṡ N2 D1 P M1 G2 R2 S"
+      }
+    },
+    {
+      "id": "raga_keeravani",
+      "name": "Keeravāṇi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 21
+      },
+      "scale": {
+        "arohana": "S R2 G2 M1 P D1 N3 Ṡ",
+        "avarohana": "Ṡ N3 D1 P M1 G2 R2 S"
+      }
+    },
+    {
+      "id": "raga_kharaharapriya",
+      "name": "Kharaharapriyā",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 22
+      },
+      "scale": {
+        "arohana": "S R2 G2 M1 P D2 N2 Ṡ",
+        "avarohana": "Ṡ N2 D2 P M1 G2 R2 S"
+      }
+    },
+    {
+      "id": "raga_gowrimanohari",
+      "name": "Gowrīmanohari",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 23
+      },
+      "scale": {
+        "arohana": "S R2 G2 M1 P D2 N3 Ṡ",
+        "avarohana": "Ṡ N3 D2 P M1 G2 R2 S"
+      }
+    },
+    {
+      "id": "raga_varunapriya",
+      "name": "Varuṇapriyā",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 24
+      },
+      "scale": {
+        "arohana": "S R2 G2 M1 P D3 N3 Ṡ",
+        "avarohana": "Ṡ N3 D3 P M1 G2 R2 S"
+      }
+    },
+    {
+      "id": "raga_mararanjani",
+      "name": "Māraranjani",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 25
+      },
+      "scale": {
+        "arohana": "S R2 G3 M1 P D1 N1 Ṡ",
+        "avarohana": "Ṡ N1 D1 P M1 G3 R2 S"
+      }
+    },
+    {
+      "id": "raga_sarasangi",
+      "name": "Sarasāṅgi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 27
+      },
+      "scale": {
+        "arohana": "S R2 G3 M1 P D1 N3 Ṡ",
+        "avarohana": "Ṡ N3 D1 P M1 G3 R2 S"
+      }
+    },
+    {
+      "id": "raga_harikambhoji",
+      "name": "Harikāmbhōji",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 28
+      },
+      "scale": {
+        "arohana": "S R2 G3 M1 P D2 N2 Ṡ",
+        "avarohana": "Ṡ N2 D2 P M1 G3 R2 S"
+      }
+    },
+    {
+      "id": "raga_naganandini",
+      "name": "Nāganāndini",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 30
+      },
+      "scale": {
+        "arohana": "S R2 G3 M1 P D3 N3 Ṡ",
+        "avarohana": "Ṡ N3 D3 P M1 G3 R2 S"
+      }
+    },
+    {
+      "id": "raga_yagapriya",
+      "name": "Yāgapriyā",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 31
+      },
+      "scale": {
+        "arohana": "S R3 G3 M1 P D1 N1 Ṡ",
+        "avarohana": "Ṡ N1 D1 P M1 G3 R3 S"
+      }
+    },
+    {
+      "id": "raga_ragavardhani",
+      "name": "Rāgavardhani",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 32
+      },
+      "scale": {
+        "arohana": "S R3 G3 M1 P D1 N2 Ṡ",
+        "avarohana": "Ṡ N2 D1 P M1 G3 R3 S"
+      }
+    },
+    {
+      "id": "raga_gangeyabhusani",
+      "name": "Gāṅgeyabhūṣaṇi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 33
+      },
+      "scale": {
+        "arohana": "S R3 G3 M1 P D1 N3 Ṡ",
+        "avarohana": "Ṡ N3 D1 P M1 G3 R3 S"
+      }
+    },
+    {
+      "id": "raga_vagadheeshwari",
+      "name": "Vāgadheeshwari",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 34
+      },
+      "scale": {
+        "arohana": "S R3 G3 M1 P D2 N2 Ṡ",
+        "avarohana": "Ṡ N2 D2 P M1 G3 R3 S"
+      }
+    },
+    {
+      "id": "raga_sulini",
+      "name": "Śūlini",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 35
+      },
+      "scale": {
+        "arohana": "S R3 G3 M1 P D2 N3 Ṡ",
+        "avarohana": "Ṡ N3 D2 P M1 G3 R3 S"
+      }
+    },
+    {
+      "id": "raga_chalanata",
+      "name": "Chalanāṭa",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 36
+      },
+      "scale": {
+        "arohana": "S R3 G3 M1 P D3 N3 Ṡ",
+        "avarohana": "Ṡ N3 D3 P M1 G3 R3 S"
+      }
+    },
+    {
+      "id": "raga_salagam",
+      "name": "Sālagam",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 37
+      },
+      "scale": {
+        "arohana": "S R1 G1 M2 P D1 N1 Ṡ",
+        "avarohana": "Ṡ N1 D1 P M2 G1 R1 S"
+      }
+    },
+    {
+      "id": "raga_jalarnavam",
+      "name": "Jalārṇavam",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 38
+      },
+      "scale": {
+        "arohana": "S R1 G1 M2 P D1 N2 Ṡ",
+        "avarohana": "Ṡ N2 D1 P M2 G1 R1 S"
+      }
+    },
+    {
+      "id": "raga_jhalavarali",
+      "name": "Jhālavarāḷi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 39
+      },
+      "scale": {
+        "arohana": "S R1 G1 M2 P D1 N3 Ṡ",
+        "avarohana": "Ṡ N3 D1 P M2 G1 R1 S"
+      }
+    },
+    {
+      "id": "raga_navaneetam",
+      "name": "Navaneetam",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 40
+      },
+      "scale": {
+        "arohana": "S R1 G1 M2 P D2 N2 Ṡ",
+        "avarohana": "Ṡ N2 D2 P M2 G1 R1 S"
+      }
+    },
+    {
+      "id": "raga_pavani",
+      "name": "Pāvani",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 41
+      },
+      "scale": {
+        "arohana": "S R1 G1 M2 P D2 N3 Ṡ",
+        "avarohana": "Ṡ N3 D2 P M2 G1 R1 S"
+      }
+    },
+    {
+      "id": "raga_raghupriya",
+      "name": "Raghupriyā",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 42
+      },
+      "scale": {
+        "arohana": "S R1 G1 M2 P D3 N3 Ṡ",
+        "avarohana": "Ṡ N3 D3 P M2 G1 R1 S"
+      }
+    },
+    {
+      "id": "raga_gavambhodhi",
+      "name": "Gavāmbhodhi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 43
+      },
+      "scale": {
+        "arohana": "S R1 G2 M2 P D1 N1 Ṡ",
+        "avarohana": "Ṡ N1 D1 P M2 G2 R1 S"
+      }
+    },
+    {
+      "id": "raga_bhavapriya",
+      "name": "Bhavapriyā",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 44
+      },
+      "scale": {
+        "arohana": "S R1 G2 M2 P D1 N2 Ṡ",
+        "avarohana": "Ṡ N2 D1 P M2 G2 R1 S"
+      }
+    },
+    {
+      "id": "raga_subhapanthuvarali",
+      "name": "Śubhapanthuvarāḷi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 45
+      },
+      "scale": {
+        "arohana": "S R1 G2 M2 P D1 N3 Ṡ",
+        "avarohana": "Ṡ N3 D1 P M2 G2 R1 S"
+      }
+    },
+    {
+      "id": "raga_sadvidhamarini",
+      "name": "Ṣaḍvidamārgiṇi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 46
+      },
+      "scale": {
+        "arohana": "S R1 G2 M2 P D2 N2 Ṡ",
+        "avarohana": "Ṡ N2 D2 P M2 G2 R1 S"
+      }
+    },
+    {
+      "id": "raga_suvarnangi",
+      "name": "Suvarṇāṅgi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 47
+      },
+      "scale": {
+        "arohana": "S R1 G2 M2 P D2 N3 Ṡ",
+        "avarohana": "Ṡ N3 D2 P M2 G2 R1 S"
+      }
+    },
+    {
+      "id": "raga_divyamani",
+      "name": "Divyāmaṇi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 48
+      },
+      "scale": {
+        "arohana": "S R1 G2 M2 P D3 N3 Ṡ",
+        "avarohana": "Ṡ N3 D3 P M2 G2 R1 S"
+      }
+    },
+    {
+      "id": "raga_dhavalambari",
+      "name": "Dhavalāmbari",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 49
+      },
+      "scale": {
+        "arohana": "S R1 G3 M2 P D1 N1 Ṡ",
+        "avarohana": "Ṡ N1 D1 P M2 G3 R1 S"
+      }
+    },
+    {
+      "id": "raga_namanarayani",
+      "name": "Nāmanārāyaṇi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 50
+      },
+      "scale": {
+        "arohana": "S R1 G3 M2 P D1 N2 Ṡ",
+        "avarohana": "Ṡ N2 D1 P M2 G3 R1 S"
+      }
+    },
+    {
+      "id": "raga_kamavardhani",
+      "name": "Kāmavardhani",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 51
+      },
+      "scale": {
+        "arohana": "S R1 G3 M2 P D1 N3 Ṡ",
+        "avarohana": "Ṡ N3 D1 P M2 G3 R1 S"
+      }
+    },
+    {
+      "id": "raga_ramapriya",
+      "name": "Rāmapriyā",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 52
+      },
+      "scale": {
+        "arohana": "S R1 G3 M2 P D2 N2 Ṡ",
+        "avarohana": "Ṡ N2 D2 P M2 G3 R1 S"
+      }
+    },
+    {
+      "id": "raga_gamanasrama",
+      "name": "Gamanāśrama",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 53
+      },
+      "scale": {
+        "arohana": "S R1 G3 M2 P D2 N3 Ṡ",
+        "avarohana": "Ṡ N3 D2 P M2 G3 R1 S"
+      }
+    },
+    {
+      "id": "raga_visvambhari",
+      "name": "Viśvambhari",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 54
+      },
+      "scale": {
+        "arohana": "S R1 G3 M2 P D3 N3 Ṡ",
+        "avarohana": "Ṡ N3 D3 P M2 G3 R1 S"
+      }
+    },
+    {
+      "id": "raga_samalangi",
+      "name": "Śāmalāṅgi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 55
+      },
+      "scale": {
+        "arohana": "S R2 G2 M2 P D1 N1 Ṡ",
+        "avarohana": "Ṡ N1 D1 P M2 G2 R2 S"
+      }
+    },
+    {
+      "id": "raga_shanmukhapriya",
+      "name": "Shanmukhapriyā",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 56
+      },
+      "scale": {
+        "arohana": "S R2 G2 M2 P D1 N2 Ṡ",
+        "avarohana": "Ṡ N2 D1 P M2 G2 R2 S"
+      }
+    },
+    {
+      "id": "raga_simhendramadhyamam",
+      "name": "Simhendramadhyamam",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 57
+      },
+      "scale": {
+        "arohana": "S R2 G2 M2 P D1 N3 Ṡ",
+        "avarohana": "Ṡ N3 D1 P M2 G2 R2 S"
+      }
+    },
+    {
+      "id": "raga_hemavati",
+      "name": "Hemavati",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 58
+      },
+      "scale": {
+        "arohana": "S R2 G2 M2 P D2 N2 Ṡ",
+        "avarohana": "Ṡ N2 D2 P M2 G2 R2 S"
+      }
+    },
+    {
+      "id": "raga_dharmavati",
+      "name": "Dharmavati",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 59
+      },
+      "scale": {
+        "arohana": "S R2 G2 M2 P D2 N3 Ṡ",
+        "avarohana": "Ṡ N3 D2 P M2 G2 R2 S"
+      }
+    },
+    {
+      "id": "raga_nitimati",
+      "name": "Nītimati",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 60
+      },
+      "scale": {
+        "arohana": "S R2 G2 M2 P D3 N3 Ṡ",
+        "avarohana": "Ṡ N3 D3 P M2 G2 R2 S"
+      }
+    },
+    {
+      "id": "raga_kantamani",
+      "name": "Kāntāmaṇi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 61
+      },
+      "scale": {
+        "arohana": "S R2 G3 M2 P D1 N1 Ṡ",
+        "avarohana": "Ṡ N1 D1 P M2 G3 R2 S"
+      }
+    },
+    {
+      "id": "raga_rsabhapriya",
+      "name": "Rṣabhapriyā",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 62
+      },
+      "scale": {
+        "arohana": "S R2 G3 M2 P D1 N2 Ṡ",
+        "avarohana": "Ṡ N2 D1 P M2 G3 R2 S"
+      }
+    },
+    {
+      "id": "raga_latangi",
+      "name": "Latāṅgi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 63
+      },
+      "scale": {
+        "arohana": "S R2 G3 M2 P D1 N3 Ṡ",
+        "avarohana": "Ṡ N3 D1 P M2 G3 R2 S"
+      }
+    },
+    {
+      "id": "raga_vachaspati",
+      "name": "Vāchaspati",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 64
+      },
+      "scale": {
+        "arohana": "S R2 G3 M2 P D2 N2 Ṡ",
+        "avarohana": "Ṡ N2 D2 P M2 G3 R2 S"
+      }
+    },
+    {
+      "id": "raga_chitrambari",
+      "name": "Chitrāmbari",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 66
+      },
+      "scale": {
+        "arohana": "S R2 G3 M2 P D3 N3 Ṡ",
+        "avarohana": "Ṡ N3 D3 P M2 G3 R2 S"
+      }
+    },
+    {
+      "id": "raga_sucaritra",
+      "name": "Sucaritra",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 67
+      },
+      "scale": {
+        "arohana": "S R3 G3 M2 P D1 N1 Ṡ",
+        "avarohana": "Ṡ N1 D1 P M2 G3 R3 S"
+      }
+    },
+    {
+      "id": "raga_jyotismati",
+      "name": "Jyotisvarūpiṇī",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 68
+      },
+      "scale": {
+        "arohana": "S R3 G3 M2 P D1 N2 Ṡ",
+        "avarohana": "Ṡ N2 D1 P M2 G3 R3 S"
+      }
+    },
+    {
+      "id": "raga_dhatuvardhani",
+      "name": "Dhātuvardhani",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 69
+      },
+      "scale": {
+        "arohana": "S R3 G3 M2 P D1 N3 Ṡ",
+        "avarohana": "Ṡ N3 D1 P M2 G3 R3 S"
+      }
+    },
+    {
+      "id": "raga_nasikabhusani",
+      "name": "Nāsikābhūṣaṇi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 70
+      },
+      "scale": {
+        "arohana": "S R3 G3 M2 P D2 N2 Ṡ",
+        "avarohana": "Ṡ N2 D2 P M2 G3 R3 S"
+      }
+    },
+    {
+      "id": "raga_kosalam",
+      "name": "Kosalam",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 71
+      },
+      "scale": {
+        "arohana": "S R3 G3 M2 P D2 N3 Ṡ",
+        "avarohana": "Ṡ N3 D2 P M2 G3 R3 S"
+      }
+    },
+    {
+      "id": "raga_rasikapriya",
+      "name": "Rasikapriyā",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "melakarta",
+        "number": 72
+      },
+      "scale": {
+        "arohana": "S R3 G3 M2 P D3 N3 Ṡ",
+        "avarohana": "Ṡ N3 D3 P M2 G3 R3 S"
+      }
+    },
+    {
+      "id": "raga_ahiri",
+      "name": "Āhiri",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "janya",
+        "id": "ahiri"
+      },
+      "scale": {
+        "arohana": "S R1 S G3 M1 P D1 N2 Ṡ",
+        "avarohana": "Ṡ N2 D1 P M1 G3 R1 S"
+      }
+    },
+    {
+      "id": "raga_asaveri",
+      "name": "Asāveri",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "janya",
+        "id": "asaveri"
+      },
+      "scale": {
+        "arohana": "S R1 M1 P D1 Ṡ",
+        "avarohana": "Ṡ N2 Ṡ P D1 M1 P R1 G2 R1 S"
+      }
+    },
+    {
+      "id": "raga_dhanyasi",
+      "name": "Dhanyāsi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "janya",
+        "id": "dhanyasi"
+      },
+      "scale": {
+        "arohana": "S G2 M1 P N2 Ṡ",
+        "avarohana": "Ṡ N2 D1 P M1 G2 R1 S"
+      }
+    },
+    {
+      "id": "raga_punnagavarali",
+      "name": "Punnāgavarāḷi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "janya",
+        "id": "punnagavarali"
+      },
+      "scale": {
+        "arohana": "N2, S R1 G2 M1 P D1 N2",
+        "avarohana": "N2 D1 P M1 G2 R1 S N2,"
+      }
+    },
+    {
+      "id": "raga_sindhu_bhairavi",
+      "name": "Sindhu Bhairavi",
+      "tradition": "Carnatic",
+      "practiceTarget": null,
+      "scale": null
+    },
+    {
+      "id": "raga_kalagada",
+      "name": "Kalāgaḍa",
+      "tradition": "Carnatic",
+      "practiceTarget": null,
+      "scale": null
+    },
+    {
+      "id": "raga_vasanthabhairavi",
+      "name": "Vasanthabhairavi",
+      "tradition": "Carnatic",
+      "practiceTarget": null,
+      "scale": null
+    },
+    {
+      "id": "raga_ardradesi",
+      "name": "Ārdradēśi",
+      "tradition": "Carnatic",
+      "practiceTarget": null,
+      "scale": null
+    },
+    {
+      "id": "raga_bouli",
+      "name": "Bouḷi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "janya",
+        "id": "bauli"
+      },
+      "scale": {
+        "arohana": "S R1 G3 P D1 Ṡ",
+        "avarohana": "Ṡ N3 D1 P G3 R1 S"
+      }
+    },
+    {
+      "id": "raga_gaula",
+      "name": "Gauḷa",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "janya",
+        "id": "gowla"
+      },
+      "scale": {
+        "arohana": "S R1 M1 P N3 Ṡ",
+        "avarohana": "Ṡ N3 P M1 R1 G3 M1 R1 S"
+      }
+    },
+    {
+      "id": "raga_malahari",
+      "name": "Malahari",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "janya",
+        "id": "malahari"
+      },
+      "scale": {
+        "arohana": "S R1 M1 P D1 Ṡ",
+        "avarohana": "Ṡ D1 P M1 G3 R1 S"
+      }
+    },
+    {
+      "id": "raga_mechabauli",
+      "name": "Mēchabauli",
+      "tradition": "Carnatic",
+      "practiceTarget": null,
+      "scale": null
+    },
+    {
+      "id": "raga_saveri",
+      "name": "Sāveri",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "janya",
+        "id": "saveri"
+      },
+      "scale": {
+        "arohana": "S R1 M1 P D1 Ṡ",
+        "avarohana": "Ṡ N3 D1 P M1 G3 R1 S"
+      }
+    },
+    {
+      "id": "raga_gaurimanohari_janya_vasanta",
+      "name": "Vasanta",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "janya",
+        "id": "vasanta"
+      },
+      "scale": {
+        "arohana": "S M1 G3 M1 D2 N3 Ṡ",
+        "avarohana": "Ṡ N3 D2 M1 G3 R1 S"
+      }
+    },
+    {
+      "id": "raga_purnalalita",
+      "name": "Pūṟṇalalitā",
+      "tradition": "Carnatic",
+      "practiceTarget": null,
+      "scale": null
+    },
+    {
+      "id": "raga_amrtavahini",
+      "name": "Amṛtavāhiṇi",
+      "tradition": "Carnatic",
+      "practiceTarget": null,
+      "scale": null
+    },
+    {
+      "id": "raga_bhairavi",
+      "name": "Bhairavi",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "janya",
+        "id": "bhairavi"
+      },
+      "scale": {
+        "arohana": "S R2 G2 M1 P D2 N2 Ṡ",
+        "avarohana": "Ṡ N2 D1 P M1 G2 R2 S"
+      }
+    },
+    {
+      "id": "raga_ghanta",
+      "name": "Ghaṇṭā",
+      "tradition": "Carnatic",
+      "practiceTarget": null,
+      "scale": null
+    },
+    {
+      "id": "raga_gopikavasantam",
+      "name": "Gopīkāvasantam",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "janya",
+        "id": "gopikavasantham"
+      },
+      "scale": {
+        "arohana": "S R2 G2 M1 P D1 P N2",
+        "avarohana": "Ṡ N2 D1 P M1 G2 R2 S"
+      }
+    },
+    {
+      "id": "raga_hindolam",
+      "name": "Hindōḷam",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "janya",
+        "id": "hindolam"
+      },
+      "scale": {
+        "arohana": "S G2 M1 D1 N2 Ṡ",
+        "avarohana": "Ṡ N2 D1 M1 G2 S"
+      }
+    },
+    {
+      "id": "raga_jayantasri",
+      "name": "Jayantaśrī",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "janya",
+        "id": "jayanthasri"
+      },
+      "scale": {
+        "arohana": "S G2 M1 D1 N2 Ṡ",
+        "avarohana": "Ṡ N2 D1 M1 P M1 G2 S"
+      }
+    },
+    {
+      "id": "raga_manji",
+      "name": "Māñji",
+      "tradition": "Carnatic",
+      "practiceTarget": {
+        "family": "janya",
+        "id": "manji"
+      },
+      "scale": {
+        "arohana": "S R2 G2 M1 P D2 N2 Ṡ",
+        "avarohana": "Ṡ N2 D2 P M1 P M1 P G2 R2 S"
+      }
+    }
+  ],
+  "compositions": [
+    {
+      "id": "keerthana_samajavaragamana",
+      "title": "Sāmajavaragamana",
+      "composer": "Tyāgarāja",
+      "kind": "traditional",
+      "ragaId": "raga_hindolam",
+      "tala": "Ādi Tālam (8 Akṣaras)",
+      "playbackEnabled": false
+    },
+    {
+      "id": "keerthana_shaktisahita",
+      "title": "Shaktisahita Gaṇapatim",
+      "composer": "Muthuswāmī Dīkṣitar",
+      "kind": "traditional",
+      "ragaId": "raga_shankarabharanam",
+      "tala": "Tiśra Eka Tālam (3 beats, 3/4)",
+      "playbackEnabled": false
+    },
+    {
+      "id": "keerthana_neelambari_lullaby",
+      "title": "Nīlāmbari - project study",
+      "composer": "Medhā Nādopāsanā project",
+      "kind": "project-original",
+      "ragaId": "raga_neelambari",
+      "tala": "Ādi Tālam (8 Akṣaras)",
+      "playbackEnabled": false
+    },
+    {
+      "id": "keerthana_anandabhairavi_shanti",
+      "title": "Ānandabhairavi - project study",
+      "composer": "Medhā Nādopāsanā project",
+      "kind": "project-original",
+      "ragaId": "raga_ananda_bhairavi",
+      "tala": "Rūpaka Tālam (6 Akṣaras)",
+      "playbackEnabled": false
+    }
+  ]
+}

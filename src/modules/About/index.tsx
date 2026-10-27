@@ -2,7 +2,7 @@ export default function About() {
   const sections = [
     {
       title: 'What is Nāda?',
-      body: `Nāda is Bhāva Tech's Carnatic music learning platform. It brings together foundational practice and tools for exploring svara accuracy, śruti awareness, tāla, rāga, gamaka, musical notation, and composition.`,
+      body: `Nāda is Bhāva Tech's Carnatic music learning platform. It brings together foundational practice and tools for exploring svara accuracy, śruti awareness, tāla, rāga, musical notation, and composition.`,
     },
     {
       title: 'Learning Pathway',

@@ -1,10 +1,13 @@
 import type { GamakaProfile, InstrumentType, TrajectoryPoint } from '../types/gamaka';
-import { getAudioContext } from './engine';
+import { getAudioContext, getAudioOutputTime } from './engine';
+import curriculum from '../data/gamaka-vocal-trainer-and-notation-v2.json';
+import { buildGamakaPracticePlan } from '../music/gamakaPractice';
+import { scheduleGamakaTone } from './gamakaTone';
 
 /**
  * GamakaAudioEngine: Pure client-side Web Audio API synthesizer.
- * Provides microtonal gamaka playback, physical instrument synthesis
- * (Veena, Flute, Voice Formants), continuous Tambura drone, and A/B comparison.
+ * Provides pitch-contour playback with bounded synthetic timbres,
+ * a continuous synthetic drone, and A/B comparison. Not physical instrument modeling.
  */
 export class GamakaAudioEngine {
   private ctx: AudioContext | null = null;
@@ -13,12 +16,13 @@ export class GamakaAudioEngine {
   private tamburaGain: GainNode | null = null;
   private tamburaNodes: OscillatorNode[] = [];
   private tamburaTimer: number | null = null;
-  private activeNodes: { stop: (time: number) => void }[] = [];
+  private activeNodes: AudioScheduledSourceNode[] = [];
   public baseKattaiHz: number = 261.63; // 1 Kattai / C default
   public isTamburaRunning: boolean = false;
   private playbackGeneration = 0;
   private activeDelayCancel: (() => void) | null = null;
   private volume = 0.7;
+  private tamburaGeneration = 0;
 
   constructor(kattaiHz: number = 261.63) {
     this.baseKattaiHz = kattaiHz;
@@ -48,12 +52,14 @@ export class GamakaAudioEngine {
       this.tamburaGain.connect(this.masterGain);
     }
     if (this.ctx.state === 'suspended') await this.ctx.resume();
+    if (this.ctx.state !== 'running') throw new Error('Audio could not start. Check browser audio permissions.');
     return this.ctx;
   }
 
   /** Follow the shared app volume without replacing the shared audio context. */
   public setVolume(value: number): void {
-    this.volume = Math.max(0, Math.min(1, Number.isFinite(value) ? value : 0.7));
+    if (!Number.isFinite(value)) throw new Error('Audio volume must be a finite number.');
+    this.volume = Math.max(0, Math.min(1, value));
     if (this.masterGain && this.ctx) {
       const now = this.ctx.currentTime;
       this.masterGain.gain.cancelScheduledValues(now);
@@ -65,12 +71,11 @@ export class GamakaAudioEngine {
    * Sets the base Adhara Shadjam frequency (Kattai).
    */
   public setKattai(hz: number): void {
-    if (!Number.isFinite(hz) || hz <= 0) return;
+    if (!Number.isFinite(hz) || hz <= 0) throw new Error('The tonic must be a positive frequency.');
     if (Math.abs(this.baseKattaiHz - hz) < 0.01) return;
     this.baseKattaiHz = hz;
     if (this.isTamburaRunning) {
       this.stopTambura();
-      this.startTambura();
     }
   }
 
@@ -84,9 +89,11 @@ export class GamakaAudioEngine {
   /**
    * Continuous 4-string Tambura drone (Pa - Sa - Sa - Sa).
    */
-  public async startTambura(): Promise<void> {
+  public async startTambura(): Promise<boolean> {
+    const generation = this.tamburaGeneration;
     const ctx = await this.init();
-    if (this.isTamburaRunning) return;
+    if (generation !== this.tamburaGeneration) return false;
+    if (this.isTamburaRunning) return true;
     this.isTamburaRunning = true;
 
     const stringIntervals = [701.96, 1200.0, 1200.0, 0.0]; // P, Tara S, Tara S, Mandra S
@@ -98,39 +105,24 @@ export class GamakaAudioEngine {
       const cents = stringIntervals[stringIdx];
       const freq = this.centsToHz(cents);
 
-      const osc = this.ctx.createOscillator();
-      const gain = this.ctx.createGain();
-      const filter = this.ctx.createBiquadFilter();
-
-      osc.type = 'sawtooth';
-      osc.frequency.setValueAtTime(freq, now);
-
-      // Jivari buzzing bridge filter
-      filter.type = 'bandpass';
-      filter.frequency.setValueAtTime(freq * 2.8, now);
-      filter.Q.setValueAtTime(3.5, now);
-
-      gain.gain.setValueAtTime(0.001, now);
-      gain.gain.linearRampToValueAtTime(0.18, now + 0.05);
-      gain.gain.exponentialRampToValueAtTime(0.0001, now + 2.4);
-
-      osc.connect(filter);
-      filter.connect(gain);
-      gain.connect(this.tamburaGain);
-
-      osc.start(now);
-      osc.stop(now + 2.5);
+      const { source: osc, nodes } = scheduleGamakaTone(this.ctx, this.tamburaGain, 'tambura', freq, 0, now, 2.5);
       this.tamburaNodes.push(osc);
-      osc.onended = () => { this.tamburaNodes = this.tamburaNodes.filter(node => node !== osc); };
+      osc.onended = () => {
+        this.tamburaNodes = this.tamburaNodes.filter(node => node !== osc);
+        osc.disconnect();
+        nodes.forEach(node => node.disconnect());
+      };
 
       stringIdx = (stringIdx + 1) % stringIntervals.length;
       this.tamburaTimer = window.setTimeout(strumNext, 680);
     };
 
     strumNext();
+    return true;
   }
 
   public stopTambura(): void {
+    this.tamburaGeneration++;
     this.isTamburaRunning = false;
     const now = this.ctx?.currentTime ?? 0;
     this.tamburaNodes.forEach(node => { try { node.stop(now); } catch { /* already ended */ } });
@@ -141,224 +133,102 @@ export class GamakaAudioEngine {
     }
   }
 
-  /**
-   * Synthesizes Saraswati Veena with pluck attack and jackwood body resonance.
-   */
-  private playVeena(freq: number, startTime: number, duration: number, trajectory?: TrajectoryPoint[]): void {
-    if (!this.ctx || !this.masterGain) return;
-
-    const osc = this.ctx.createOscillator();
-    const gain = this.ctx.createGain();
-    const bodyFilter = this.ctx.createBiquadFilter();
-
-    osc.type = 'sawtooth';
-    bodyFilter.type = 'peaking';
-    bodyFilter.frequency.setValueAtTime(185, startTime); // Kudam body Helmholtz peak
-    bodyFilter.gain.setValueAtTime(4.0, startTime);
-    bodyFilter.Q.setValueAtTime(2.0, startTime);
-
-    if (trajectory && trajectory.length > 0) {
-      osc.frequency.setValueAtTime(this.centsToHz(trajectory[0].cents), startTime);
-      for (let i = 1; i < trajectory.length; i++) {
-        const pt = trajectory[i];
-        const t = startTime + Math.max(0.01, pt.t_ms / 1000);
-        osc.frequency.linearRampToValueAtTime(this.centsToHz(pt.cents), t);
-      }
-    } else {
-      osc.frequency.setValueAtTime(freq, startTime);
-    }
-
-    // Pluck attack & decay envelope
-    gain.gain.setValueAtTime(0.001, startTime);
-    gain.gain.linearRampToValueAtTime(0.75, startTime + 0.012);
-    gain.gain.exponentialRampToValueAtTime(0.28, startTime + 0.35);
-    gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
-
-    osc.connect(bodyFilter);
-    bodyFilter.connect(gain);
-    gain.connect(this.masterGain);
-
-    osc.start(startTime);
-    osc.stop(startTime + duration);
-    this.activeNodes.push(osc);
+  private trackSource(source: AudioScheduledSourceNode, nodes: AudioNode[]): void {
+    this.activeNodes.push(source);
+    source.addEventListener('ended', () => {
+      this.activeNodes = this.activeNodes.filter(node => node !== source);
+      source.disconnect();
+      nodes.forEach(node => node.disconnect());
+    }, { once: true });
   }
 
-  /**
-   * Synthesizes Venu (Carnatic Bamboo Flute) with breath turbulence and odd harmonics.
-   */
-  private playFlute(freq: number, startTime: number, duration: number, trajectory?: TrajectoryPoint[]): void {
-    if (!this.ctx || !this.masterGain) return;
-
-    const osc = this.ctx.createOscillator();
-    const gain = this.ctx.createGain();
-    const breathGain = this.ctx.createGain();
-    const breath = this.ctx.createBufferSource();
-    const noiseBuffer = this.ctx.createBuffer(1, Math.max(1, Math.ceil(this.ctx.sampleRate * 0.25)), this.ctx.sampleRate);
-    const noiseData = noiseBuffer.getChannelData(0);
-    for (let i = 0; i < noiseData.length; i++) noiseData[i] = (Math.random() * 2 - 1) * 0.22;
-    breath.buffer = noiseBuffer;
-    breath.loop = true;
-    const breathFilter = this.ctx.createBiquadFilter();
-    breathFilter.type = 'bandpass';
-    breathFilter.frequency.setValueAtTime(2600, startTime);
-    breathFilter.Q.setValueAtTime(0.8, startTime);
-
-    osc.type = 'triangle';
-
-    if (trajectory && trajectory.length > 0) {
-      osc.frequency.setValueAtTime(this.centsToHz(trajectory[0].cents), startTime);
-      for (let i = 1; i < trajectory.length; i++) {
-        const pt = trajectory[i];
-        const t = startTime + Math.max(0.01, pt.t_ms / 1000);
-        osc.frequency.linearRampToValueAtTime(this.centsToHz(pt.cents), t);
-      }
-    } else {
-      osc.frequency.setValueAtTime(freq, startTime);
-    }
-
-    // Soft breath turbulence
-    gain.gain.setValueAtTime(0.001, startTime);
-    gain.gain.linearRampToValueAtTime(0.65, startTime + 0.08);
-    gain.gain.setValueAtTime(0.55, startTime + duration - 0.1);
-    gain.gain.linearRampToValueAtTime(0.0001, startTime + duration);
-
-    osc.connect(gain);
-    gain.connect(this.masterGain);
-    // Low-level filtered breath noise makes the flute less like a pure electronic beep.
-    breathGain.gain.setValueAtTime(0.0001, startTime);
-    breathGain.gain.linearRampToValueAtTime(0.035, startTime + 0.09);
-    breathGain.gain.setValueAtTime(0.022, Math.max(startTime + 0.1, startTime + duration - 0.08));
-    breathGain.gain.linearRampToValueAtTime(0.0001, startTime + duration);
-    breath.connect(breathFilter);
-    breathFilter.connect(breathGain);
-    breathGain.connect(this.masterGain);
-
-    osc.start(startTime);
-    osc.stop(startTime + duration);
-    breath.start(startTime);
-    breath.stop(startTime + duration);
-    this.activeNodes.push(osc, breath);
+  private scheduleProfile(profile: GamakaProfile, instrument: InstrumentType, startTime: number, duration: number, trajectory?: TrajectoryPoint[]): void {
+    if (!this.ctx || !this.masterGain) throw new Error('Gamaka audio is not initialized.');
+    const { source, nodes } = scheduleGamakaTone(
+      this.ctx, this.masterGain, instrument, this.baseKattaiHz, profile.plainCents, startTime, duration, trajectory,
+    );
+    this.trackSource(source, nodes);
   }
 
-  /**
-   * Synthesizes Human Vocal Solfa formants (vowel cavities).
-   */
-  private playVoice(freq: number, startTime: number, duration: number, trajectory?: TrajectoryPoint[]): void {
-    if (!this.ctx || !this.masterGain) return;
-
-    const osc = this.ctx.createOscillator();
-    const gain = this.ctx.createGain();
-    const f1 = this.ctx.createBiquadFilter();
-    const f2 = this.ctx.createBiquadFilter();
-
-    osc.type = 'sawtooth';
-
-    // Vowel 'Aa' formants (800 Hz and 1250 Hz)
-    f1.type = 'bandpass';
-    f1.frequency.setValueAtTime(800, startTime);
-    f1.Q.setValueAtTime(4.5, startTime);
-
-    f2.type = 'bandpass';
-    f2.frequency.setValueAtTime(1250, startTime);
-    f2.Q.setValueAtTime(5.0, startTime);
-
-    if (trajectory && trajectory.length > 0) {
-      osc.frequency.setValueAtTime(this.centsToHz(trajectory[0].cents), startTime);
-      for (let i = 1; i < trajectory.length; i++) {
-        const pt = trajectory[i];
-        const t = startTime + Math.max(0.01, pt.t_ms / 1000);
-        osc.frequency.linearRampToValueAtTime(this.centsToHz(pt.cents), t);
-      }
-    } else {
-      osc.frequency.setValueAtTime(freq, startTime);
-    }
-
-    gain.gain.setValueAtTime(0.001, startTime);
-    gain.gain.linearRampToValueAtTime(0.55, startTime + 0.06);
-    gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
-
-    osc.connect(f1);
-    osc.connect(f2);
-    f1.connect(gain);
-    f2.connect(gain);
-    gain.connect(this.masterGain);
-
-    osc.start(startTime);
-    osc.stop(startTime + duration);
-    this.activeNodes.push(osc);
-  }
-
-  private profileDurationSec(profile: GamakaProfile): number {
-    const last = profile.trajectory[profile.trajectory.length - 1]?.t_ms ?? 1200;
-    return Math.max(0.25, last / 1000);
-  }
-
-  private scheduleProfile(profile: GamakaProfile, instrument: InstrumentType, durationSec: number, gamaka: boolean): void {
-    if (!this.ctx) return;
-    const startTime = this.ctx.currentTime + 0.035;
-    const cents = gamaka ? profile.baseCents : profile.plainCents;
-    const duration = Math.max(0.1, durationSec);
-    // Scale the whole contour to the requested duration instead of ending the pitch movement early.
-    const trajectory = gamaka && profile.trajectory.length
-      ? profile.trajectory.map(point => ({ ...point, t_ms: (point.t_ms / Math.max(1, profile.trajectory[profile.trajectory.length - 1].t_ms)) * duration * 1000 }))
-      : undefined;
-    const freq = this.centsToHz(cents);
-    if (instrument === 'flute') this.playFlute(freq, startTime, duration, trajectory);
-    else if (instrument === 'voice_formants') this.playVoice(freq, startTime, duration, trajectory);
-    else this.playVeena(freq, startTime, duration, trajectory);
-  }
-
-  private waitForPlayback(ms: number, generation: number): Promise<boolean> {
-    return new Promise(resolve => {
+  private waitForPlayback(endAt: number, generation: number): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+      let timer: number;
       const finish = (completed: boolean) => {
         if (this.activeDelayCancel === cancel) this.activeDelayCancel = null;
         window.clearTimeout(timer);
         resolve(completed && generation === this.playbackGeneration);
       };
-      const timer = window.setTimeout(() => finish(true), ms);
+      const check = () => {
+        if (!this.ctx || generation !== this.playbackGeneration) { finish(false); return; }
+        if (this.ctx.state !== 'running') {
+          this.activeDelayCancel = null;
+          window.clearTimeout(timer);
+          this.stopAll();
+          reject(new Error('Gamaka audio was interrupted. Start playback again.'));
+          return;
+        }
+        const remaining = endAt - getAudioOutputTime(this.ctx);
+        if (remaining <= 0) finish(true);
+        else timer = window.setTimeout(check, Math.min(50, remaining * 1000));
+      };
       const cancel = () => finish(false);
       this.activeDelayCancel = cancel;
+      check();
     });
   }
 
   /** Plain equal-tempered note (Track A). */
-  public async playPlainNote(profile: GamakaProfile, instrument: InstrumentType, durationSec?: number): Promise<void> {
-    await this.init();
+  public async playPlainNote(profile: GamakaProfile, instrument: InstrumentType, multiplier = 1): Promise<void> {
     this.stopAll();
     const generation = this.playbackGeneration;
-    const duration = durationSec ?? this.profileDurationSec(profile);
-    this.scheduleProfile(profile, instrument, duration, false);
-    await this.waitForPlayback(duration * 1000 + 40, generation);
+    const ctx = await this.init();
+    if (generation !== this.playbackGeneration) return;
+    const plan = this.practicePlan(profile, multiplier);
+    const start = ctx.currentTime + 0.05;
+    this.scheduleProfile(profile, instrument, start, plan.plainDurationMs / 1000);
+    await this.waitForPlayback(start + plan.plainDurationMs / 1000, generation);
   }
 
   /** Microtonal target contour (Track B). */
-  public async playGamaka(profile: GamakaProfile, instrument: InstrumentType, durationSec?: number): Promise<void> {
-    await this.init();
+  public async playGamaka(profile: GamakaProfile, instrument: InstrumentType, multiplier = 1): Promise<void> {
     this.stopAll();
     const generation = this.playbackGeneration;
-    const duration = durationSec ?? this.profileDurationSec(profile);
-    this.scheduleProfile(profile, instrument, duration, true);
-    await this.waitForPlayback(duration * 1000 + 40, generation);
+    const ctx = await this.init();
+    if (generation !== this.playbackGeneration) return;
+    const plan = this.practicePlan(profile, multiplier);
+    const start = ctx.currentTime + 0.05;
+    this.scheduleProfile(profile, instrument, start, plan.durationMs / 1000, plan.points);
+    await this.waitForPlayback(start + plan.durationMs / 1000, generation);
   }
 
-  /** A then B comparison. Each track uses the same duration and tonic. */
+  private practicePlan(profile: GamakaProfile, multiplier: number) {
+    return buildGamakaPracticePlan({
+      duration_ms: profile.trajectory[profile.trajectory.length - 1]?.t_ms,
+      trajectory_points: profile.trajectory,
+    }, multiplier, curriculum.extended_playback_and_clarity);
+  }
+
+  /** Both tracks are scheduled up front on the audio clock. */
   public async playABComparison(
     profile: GamakaProfile,
     instrument: InstrumentType,
-    callbacks?: { onTrackChange?: (track: 'A' | 'B') => void; onEnd?: () => void }
+    callbacks?: { onTrackChange?: (track: 'A' | 'B') => void; onEnd?: () => void },
+    multiplier = 1
   ): Promise<void> {
-    await this.init();
     this.stopAll();
     const generation = this.playbackGeneration;
-    const duration = this.profileDurationSec(profile);
+    const ctx = await this.init();
+    if (generation !== this.playbackGeneration) return;
+    const plan = this.practicePlan(profile, multiplier);
+    const start = ctx.currentTime + 0.05;
+    const secondStart = start + (plan.plainDurationMs + plan.gapMs) / 1000;
     try {
       callbacks?.onTrackChange?.('A');
-      this.scheduleProfile(profile, instrument, duration, false);
-      if (!await this.waitForPlayback(duration * 1000 + 40, generation)) return;
-      if (!await this.waitForPlayback(350, generation)) return;
+      this.scheduleProfile(profile, instrument, start, plan.plainDurationMs / 1000);
+      this.scheduleProfile(profile, instrument, secondStart, plan.durationMs / 1000, plan.points);
+      if (!await this.waitForPlayback(secondStart, generation)) return;
       callbacks?.onTrackChange?.('B');
-      this.scheduleProfile(profile, instrument, duration, true);
-      if (!await this.waitForPlayback(duration * 1000 + 40, generation)) return;
+      await this.waitForPlayback(secondStart + plan.durationMs / 1000, generation);
     } finally {
       // Always release UI state, including when the user stops playback mid-track.
       callbacks?.onEnd?.();

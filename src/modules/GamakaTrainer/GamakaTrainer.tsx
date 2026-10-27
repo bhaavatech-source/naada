@@ -18,32 +18,48 @@ export const GamakaTrainer: React.FC = () => {
     enableTambura,
     setEnableTambura,
     selectedRagaFilter,
-    setSelectedRagaFilter
+    setSelectedRagaFilter,
+    practiceMultiplier,
+    setPracticeMultiplier,
+    setIsPlaying
   } = useGamakaStore();
   const settings = useAppStore(state => state.settings);
   const [showGamakaLibrary, setShowGamakaLibrary] = useState(false);
+  const [audioError, setAudioError] = useState('');
 
   useEffect(() => {
+    gamakaAudioEngine.stopAll();
+    gamakaAudioEngine.stopTambura();
+    setEnableTambura(false);
+    setIsPlaying(false, null);
     gamakaAudioEngine.setVolume(settings.volume);
     gamakaAudioEngine.setKattai(settings.tonicHz);
-  }, [settings.volume, settings.tonicHz]);
+  }, [settings.volume, settings.tonicHz, selectedInstrument, practiceMultiplier, activeTab, selectedRagaFilter, showGamakaLibrary, setIsPlaying]);
 
   useEffect(() => {
     return () => {
       gamakaAudioEngine.stopAll();
       gamakaAudioEngine.stopTambura();
+      setIsPlaying(false, null);
+      setEnableTambura(false);
     };
   }, []);
 
-  const handleTamburaToggle = () => {
+  const handleTamburaToggle = async () => {
     const next = !enableTambura;
-    setEnableTambura(next);
-    if (next) {
-      gamakaAudioEngine.setKattai(settings.tonicHz);
-      gamakaAudioEngine.setVolume(settings.volume);
-      void gamakaAudioEngine.startTambura();
-    } else {
-      gamakaAudioEngine.stopTambura();
+    setAudioError('');
+    try {
+      if (next) {
+        gamakaAudioEngine.setKattai(settings.tonicHz);
+        gamakaAudioEngine.setVolume(settings.volume);
+        if (!await gamakaAudioEngine.startTambura()) return;
+      } else {
+        gamakaAudioEngine.stopTambura();
+      }
+      setEnableTambura(next);
+    } catch (error) {
+      setEnableTambura(false);
+      setAudioError(error instanceof Error ? error.message : String(error));
     }
   };
 
@@ -95,9 +111,18 @@ export const GamakaTrainer: React.FC = () => {
             Gamaka Trainer & Acoustic Studio
           </h1>
           <p style={{ margin: 0, color: '#94A3B8', fontSize: '14px' }}>
-            Audition classical 22-Śruti ornaments across 18 rāgas or practice live with the Voice Flight game.
+            Explore supplied pitch movements across 18 rāgas or practise with Voice Flight. These are synthetic contour guides, not recordings or authenticated demonstrations of traditional gamakas.
           </p>
         </div>
+        <label style={{display:'flex',flexWrap:'wrap',gap:10,alignItems:'center',marginBottom:16,color:'#CBD5E1'}}>
+          Practice timing
+          <select aria-label="Gamaka practice speed" value={practiceMultiplier} onChange={e=>setPracticeMultiplier(Number(e.target.value))} style={{maxWidth:'100%',padding:8,background:'#1E293B',color:'#F8FAFC',borderRadius:8}}>
+            <option value={1}>Normal extended · 3.8 s</option>
+            <option value={1.5}>Slow · 5.7 s</option>
+            <option value={2}>Ultra-slow · 7.6 s</option>
+          </select>
+          <span style={{fontSize:12}}>Includes anchor holds; shared by listening and singing. Start with Clear tone to hear the pitch movement without instrumental buzz. Slower timing stretches the movement; it is not a traditional performance tempo.</span>
+        </label>
 
         {/* Global Controls: Kattai, Instrument, Drone */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'center' }}>
@@ -110,9 +135,10 @@ export const GamakaTrainer: React.FC = () => {
           <div className="gamaka-instruments" style={{ display: 'flex', flexWrap: 'wrap', background: '#1E293B', borderRadius: '10px', padding: '4px' }}>
             {(
               [
-                { id: 'veena', label: 'Vīṇā', icon: Music },
-                { id: 'flute', label: 'Flute', icon: Radio },
-                { id: 'voice_formants', label: 'Voice', icon: Mic }
+                { id: 'reference', label: 'Clear tone', icon: Volume2 },
+                { id: 'veena', label: 'Soft pluck', icon: Music },
+                { id: 'flute', label: 'Flute-like', icon: Radio },
+                { id: 'voice_formants', label: 'Vowel-like synth', icon: Mic }
               ] as const
             ).map(inst => {
               const Icon = inst.icon;
@@ -141,11 +167,15 @@ export const GamakaTrainer: React.FC = () => {
               );
             })}
           </div>
+          <p style={{fontSize:12,color:'#CBD5E1',margin:0}}>
+            Use the same tone for Plain and Gamaka to compare pitch movement. Instrument colours are approximations, not real vīṇā, flute or human voice. Learn rāga-specific execution from a qualified Carnatic teacher.
+          </p>
 
           {/* Tambura Drone Toggle */}
           <button
             aria-pressed={enableTambura}
-            onClick={handleTamburaToggle}
+            onClick={() => void handleTamburaToggle()}
+            disabled={activeTab === 'game'}
             style={{
               background: enableTambura ? '#10B981' : '#334155',
               color: '#FFFFFF',
@@ -163,6 +193,7 @@ export const GamakaTrainer: React.FC = () => {
             <Volume2 size={16} /> Tambura {enableTambura ? 'ON' : 'OFF'}
           </button>
         </div>
+        {audioError && <div role="alert" style={{color:'#fca5a5',marginBottom:12}}>{audioError}</div>}
       </div>
 
       {/* Main Mode Tabs */}

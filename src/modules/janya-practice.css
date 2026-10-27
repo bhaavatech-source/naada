@@ -1,0 +1,112 @@
+.janya-practice {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text);
+}
+.janya-practice h2, .janya-practice h3, .janya-practice h4 { margin: 8px 0; }
+.janya-practice p { margin: 7px 0; line-height: 1.55; }
+.janya-practice button, .janya-practice input, .janya-practice select,
+.janya-settings button, .janya-settings input, .janya-settings select {
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  max-width: 100%;
+}
+.janya-practice button, .janya-settings button { cursor: pointer; }
+.janya-practice button:disabled, .janya-settings button:disabled { cursor: not-allowed; opacity: .55; }
+.janya-practice button[aria-pressed="true"], .janya-settings button[aria-pressed="true"] { background: var(--accent-dim); border-color: var(--accent); }
+.janya-filters { display: flex; gap: 10px; flex-wrap: wrap; padding: 8px 12px 2px; }
+.janya-filters label { display: flex; flex: 1 1 150px; flex-direction: column; gap: 4px; min-width: 0; font-size: .72rem; color: var(--text-muted); }
+.janya-filters select, .janya-filters input { width: 100%; box-sizing: border-box; }
+.janya-match-count { margin: 3px 12px 6px !important; font-size: .75rem; color: var(--text-muted); }
+.janya-layout { display: grid; grid-template-columns: minmax(190px, 260px) minmax(0, 1fr); gap: 12px; flex: 1; min-height: 0; padding: 0 12px 12px; }
+.janya-layout aside, .janya-layout article { min-width: 0; min-height: 0; }
+.janya-list-pane { display: flex; flex-direction: column; overflow: hidden; }
+.janya-results { flex: 1; min-height: 0; overflow: auto; display: flex; flex-direction: column; gap: 5px; padding-right: 2px; }
+.janya-results button { text-align: left; flex-shrink: 0; }
+.janya-results button[aria-pressed="true"] { background: var(--accent-dim); border-color: var(--accent); }
+.janya-results strong, .janya-results small { display: block; overflow-wrap: anywhere; }
+.janya-results small { margin-top: 3px; color: var(--text-muted); font-size: .68rem; }
+.janya-pages { display: flex; align-items: center; justify-content: space-between; gap: 4px; margin-top: 8px; flex-wrap: wrap; font-size: .75rem; }
+.janya-detail-pane { display: flex; flex-direction: column; min-height: 0; overflow: hidden; border-left: 1px solid var(--border); }
+.janya-detail-header { display: flex; align-items: center; gap: 10px; flex: 0 0 auto; padding: 4px 12px 10px; border-bottom: 1px solid var(--border); }
+.janya-detail-header h2 { margin: 0; font-family: var(--font-display); color: var(--accent); }
+.janya-detail-header p { margin: 3px 0 0; color: var(--text-muted); font-size: .82rem; }
+.janya-tabs, .janya-setting-tabs { display: flex; flex: 0 0 auto; overflow-x: auto; border-bottom: 1px solid var(--border); background: var(--surface); }
+.janya-tabs button, .janya-setting-tabs button { flex: 0 0 auto; display: flex; align-items: center; gap: 5px; border: 0; border-bottom: 2px solid transparent; border-radius: 0; padding: 8px 10px; color: var(--text-muted); font-size: .75rem; white-space: nowrap; }
+.janya-tabs button[aria-pressed="true"], .janya-setting-tabs button[aria-pressed="true"] { color: var(--accent); border-bottom-color: var(--accent); background: var(--surface); }
+.janya-tabs span, .janya-setting-tabs small { padding: 1px 5px; border-radius: 99px; background: var(--surface2); color: var(--text-faint); font-size: .62rem; }
+.janya-practice-content { flex: 1; min-height: 0; overflow: auto; padding: 12px; }
+.janya-exercise-card, .janya-about { border: 1px solid var(--border); border-radius: 10px; padding: 12px; margin-bottom: 12px; background: var(--surface); min-width: 0; }
+.janya-exercise-card.is-playing { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent-dim); }
+.janya-exercise-heading { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.janya-exercise-heading > div { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.janya-exercise-heading > div > span { flex: 0 0 auto; padding: 1px 5px; border-radius: 4px; background: var(--surface2); color: var(--text-faint); font-size: .65rem; }
+.janya-exercise-heading h3 { overflow-wrap: anywhere; font-family: var(--font-display); font-size: .95rem; }
+.janya-exercise-heading button { flex: 0 0 auto; min-width: 68px; color: var(--accent); border-color: var(--accent); }
+.janya-tala { color: var(--text-muted); font-size: .75rem; }
+.janya-unplayable { color: var(--text-muted); font-size: .72rem; }
+.janya-exercise-section { margin-top: 8px; padding-top: 7px; border-top: 1px solid var(--border); }
+.janya-exercise-section h4 { font-size: .78rem; }
+.janya-notation { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px; font-family: monospace; font-size: .82rem; }
+.janya-note-active, button.janya-note-active { display: inline-block; padding: 0 4px; border-radius: 4px; background: #facc15; color: #172421; font-weight: 800; box-shadow: 0 0 0 2px #facc15; }
+.janya-scale-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 10px; margin: 10px 0; }
+.janya-scale-card { min-width: 0; border: 1px solid var(--border); border-radius: 8px; padding: 10px; background: var(--surface); }
+.janya-scale-card small { color: var(--text-muted); font-size: .7rem; }
+.janya-setting-notation { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 8px 0; }
+.janya-setting-notation button { min-width: 36px; min-height: 36px; font: inherit; padding: 4px 7px; }
+.janya-setting-controls [role="group"] { display: flex; flex-wrap: wrap; gap: 4px; }
+.janya-hold { color: #bc8c20; }
+.janya-invalid-notation { color: var(--red); text-decoration: underline wavy; text-decoration-thickness: 1px; }
+.janya-review-lock summary { cursor: pointer; }
+.janya-review-lock ul { margin: 6px 0 0; padding-left: 20px; }
+.janya-about dl { display: grid; grid-template-columns: minmax(130px, .7fr) minmax(0, 1.5fr); gap: 8px 12px; margin: 12px 0; }
+.janya-about dt { color: var(--text-muted); font-size: .78rem; }
+.janya-about dd { min-width: 0; margin: 0; overflow-wrap: anywhere; font-size: .82rem; }
+.janya-notice { padding: 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface2); font-size: .78rem; }
+.janya-notice summary { cursor: pointer; overflow-wrap: anywhere; }
+.janya-settings { padding: 0 16px 16px; min-width: 0; }
+.janya-settings > h3 { margin: 12px 0 6px; font-size: 1rem; }
+.janya-settings > p { font-size: .75rem; color: var(--text-muted); }
+.janya-live-note { display: flex; flex-direction: column; gap: 3px; min-height: 48px; justify-content: center; padding: 7px 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface2); color: var(--text-muted); font-size: .76rem; }
+.janya-live-note strong { color: var(--accent); font-size: .88rem; }
+.janya-live-note span { line-height: 1.4; }
+.janya-setting-scales { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap: 8px; margin-top: 8px; }
+.janya-setting-scales section { min-width: 0; border: 1px solid var(--border); border-radius: 8px; padding: 8px; }
+.janya-setting-scales h4 { font-size: .72rem; }
+.janya-setting-notation { font-family: monospace; font-size: .78rem; line-height: 2; overflow-wrap: anywhere; }
+.janya-swara-buttons { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+.janya-swara-buttons button { display: flex; min-width: 54px; flex-direction: column; align-items: center; padding: 4px 7px; font-family: monospace; }
+.janya-swara-buttons strong { font-size: .75rem; }
+.janya-swara-buttons small { margin-top: 2px; font-size: .58rem; color: var(--text-muted); }
+.janya-notation-legend { margin-top: 7px; color: var(--text-faint); font-size: .62rem; line-height: 1.5; }
+.janya-notation-legend code { color: var(--accent); }
+.janya-setting-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.janya-main-playback-controls { gap: 6px; }
+.janya-speed-options, .janya-direction-options { display: flex; align-items: center; flex-wrap: wrap; gap: 4px; }
+.janya-speed-options button, .janya-direction-options button, .janya-setting-controls > button { padding: 4px 9px; font-size: .7rem; }
+.janya-primary-play { min-width: 96px; background: var(--accent) !important; border-color: var(--accent) !important; color: var(--surface) !important; font-weight: 700 !important; }
+.janya-loop-toggle { display: flex; align-items: center; gap: 6px; width: 100%; margin: 4px 0 8px; padding: 6px 10px !important; border-color: var(--border) !important; background: var(--surface2) !important; text-align: left; font-size: .72rem !important; }
+.janya-loop-toggle[aria-pressed="true"] { border-color: var(--accent) !important; color: var(--accent) !important; background: var(--accent-dim) !important; }
+.janya-playback-summary { font-weight: 600; }
+.janya-playback-note { font-size: .7rem !important; }
+.janya-play-status, .janya-play-error { padding: 6px 8px; border-radius: 6px; background: var(--surface2); overflow-wrap: anywhere; }
+.janya-play-error { color: var(--red) !important; }
+.janya-setting-tabs { flex-wrap: wrap; }
+.janya-mobile-hidden { display: none !important; }
+@media (max-width: 700px) {
+  .janya-layout { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(90px, 140px) minmax(0, 1fr); gap: 6px; }
+  .janya-detail-pane { border-left: 0; }
+}
+@media (max-width: 420px) {
+  .janya-filters label { flex-basis: 100%; }
+  .janya-about dl { grid-template-columns: minmax(0, 1fr); gap: 3px; }
+  .janya-about dd { margin-bottom: 7px; }
+}

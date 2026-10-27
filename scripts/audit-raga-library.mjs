@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import assert from 'node:assert/strict';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -47,10 +48,12 @@ function baseInfo(token, mode) {
     return { family, variant: family, octave };
   }
   const upperOctave = { 'Ṡ':'S','Ṙ':'R','Ġ':'G','Ṁ':'M','Ṗ':'P','Ḋ':'D','Ṅ':'N' };
-  const lowerOctave = { 'ṣ':'S','ṛ':'R','ġ':'G','ṃ':'M','p̣':'P','ḍ':'D','ṇ':'N','Ṣ':'S','Ṛ':'R','Ṃ':'M','Ḍ':'D','Ṇ':'N' };
+  const lowerOctave = { 'ṣ':'S','ṛ':'R','ġ':'G','ṃ':'M','p̣':'P','P̣':'P','ḍ':'D','ṇ':'N','Ṣ':'S','Ṛ':'R','Ṃ':'M','Ḍ':'D','Ṇ':'N' };
   const first = t[0];
+  // Pa has no precomposed dotted character, so its marker spans two code points.
+  const lowerPrefix = Object.keys(lowerOctave).find(prefix => t.startsWith(prefix));
   if (upperOctave[first]) { octave = 1; t = upperOctave[first] + t.slice(1); }
-  else if (lowerOctave[first]) { octave = -1; t = lowerOctave[first] + t.slice(1); }
+  else if (lowerPrefix) { octave = -1; t = lowerOctave[lowerPrefix] + t.slice(lowerPrefix.length); }
   else if (t.endsWith('_') || t.endsWith(',')) { octave = -1; t = t.slice(0,-1); }
   const match = t.match(/^([SRGMPDN])([123])?$/i);
   if (!match) return null;
@@ -59,6 +62,13 @@ function baseInfo(token, mode) {
   return { family, variant, octave };
 }
 function addFailure(where, message) { failures.push(`${where}: ${message}`); }
+
+for (const token of ['p\u0323', 'P\u0323', 'p_', 'p,']) {
+  assert.deepEqual(baseInfo(token, 'swarasthana'), { family: 'P', variant: 'P', octave: -1 });
+}
+assert.deepEqual(baseInfo('P', 'swarasthana'), { family: 'P', variant: 'P', octave: 0 });
+assert.deepEqual(baseInfo('Ṗ', 'swarasthana'), { family: 'P', variant: 'P', octave: 1 });
+assert.equal(baseInfo('p\u0323junk', 'swarasthana'), null);
 
 if (!Array.isArray(data.melakartas) || data.melakartas.length !== 72) {
   addFailure('curriculum', `expected 72 Melakarta entries; got ${data.melakartas?.length ?? 'none'}`);

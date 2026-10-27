@@ -2,7 +2,7 @@
   "project": "Medhā Nādopāsanā Learning Platform",
   "module": "Interactive Gamaka & Svara Game Suite",
   "sub_module": "Canvas Rendering, Real-Time Pitch Tracking & Gamified Vocal Learning Engine",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "High-engagement, playful interactive learning suite for Carnatic Gamakas and Swara mastery. Blends video-game-style flight mechanics ('Nāda Vāhana') and ear-training arcade games with strict 22-Śruti musicological rigor, microtonal boundary guardrails, and real-time DSP pitch tracking.",
   "musicological_foundations": {
     "canonical_definition": {
@@ -1645,5 +1645,14 @@
       }
     },
     "client_javascript_scoring_snippet": "\nfunction evaluateGamakaPerformance(userPitchTrack, stencilTrajectory, level = 'level_1_beginner') {\n  // 1. Resample and align time frames\n  const N = stencilTrajectory.length;\n  let totalCentsError = 0;\n  let boundaryViolations = 0;\n  \n  for (let i = 0; i < N; i++) {\n    const target = stencilTrajectory[i];\n    const userPoint = userPitchTrack[i] || userPitchTrack[userPitchTrack.length - 1];\n    const err = Math.abs(userPoint.cents - target.cents);\n    totalCentsError += err;\n    \n    // Check boundary compliance\n    if (target.max_cents && userPoint.cents > target.max_cents) boundaryViolations++;\n    if (target.min_cents && userPoint.cents < target.min_cents) boundaryViolations++;\n  }\n  \n  const avgCentsError = totalCentsError / N;\n  let contourScore = Math.max(0, 100 - (avgCentsError * 1.5));\n  let penalty = boundaryViolations * 5.0;\n  let finalScore = Math.round(Math.max(0, contourScore - penalty));\n  \n  return {\n    score: finalScore,\n    average_cents_deviation: Math.round(avgCentsError * 10) / 10,\n    boundary_violations: boundaryViolations,\n    tier_achieved: finalScore >= 85 ? 'GOLD' : (finalScore >= 70 ? 'SILVER' : 'BRONZE')\n  };\n}\n"
+  },
+  "extended_playback_and_clarity": {
+    "default_gamaka_duration_sec": 3.8,
+    "default_plain_duration_sec": 3.0,
+    "comparison_gap_sec": 0.3,
+    "lead_in_anchor_pad_sec": 0.4,
+    "lead_out_anchor_pad_sec": 0.6,
+    "duration_multipliers": [1, 1.5, 2],
+    "review_notice": "Synthetic contour guides, not musician-verified performances or vocal-health assessments."
   }
 }

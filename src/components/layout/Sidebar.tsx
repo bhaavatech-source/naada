@@ -8,12 +8,11 @@ import { House, Music2, Drum, AudioLines, BookOpen, Piano, ChartNoAxesCombined, 
 const NAV_ITEMS: { id: AppModule; icon: import('lucide-react').LucideIcon; label: string; sub: string }[] = [
   { id:'home', icon: House, label:'Home', sub:'Main menu' },
   { id:'wisdom',   icon: Sparkles, label:'Nāda Wisdom', sub:'Listen & discover' },
-  { id:'raga',     icon: Music2, label:'Rāga Practice',   sub:'72 Melakartas' },
+  { id:'raga',     icon: Music2, label:'Rāga Practice',   sub:'Melakarta · Janya · Vakra' },
   { id:'tala',     icon: Drum, label:'Tāla Trainer',   sub:'L1 → L2 → L3' },
   { id:'shruti',   icon: AudioLines, label:'Śruti Trainer',  sub:'Pitch detection' },
-  { id:'gamaka',   icon: AudioLines, label:'Gamaka Trainer', sub:'Gamaka practice' },
   { id:'resources',  icon: BookOpen, label:'Resources', sub:'Learning materials' },
-  { id:'builder',  icon: Piano, label:'Music Builder',  sub:'Compose & create' },
+  { id:'builder',  icon: Piano, label:'Gāna Builder',  sub:'Compose & create' },
   { id:'progress', icon: ChartNoAxesCombined, label:'My Progress',    sub:'Sessions & stats' },
   { id:'about',    icon: Info, label:'About Nāda',      sub:'Vision & roadmap' },
 ]
@@ -190,4 +189,3 @@ export default function Sidebar() {
     </aside>
   )
 }
-

@@ -11,9 +11,14 @@
     "android:build": "npm run android:sync && cd android && gradlew.bat assembleDebug",
     "preview": "vite preview",
     "test:svara": "node scripts/run-svara-tests.mjs",
+    "test:trainers": "node scripts/run-svara-tests.mjs --trainers",
+    "test:builder": "node scripts/run-svara-tests.mjs --builder",
+    "test:resources": "node scripts/run-svara-tests.mjs --resources",
     "audit:raga": "node scripts/audit-raga-library.mjs"
   },
   "dependencies": {
+    "@ffmpeg/core": "^0.12.10",
+    "@ffmpeg/ffmpeg": "^0.12.15",
     "@capacitor/android": "^8.5.3",
     "@capacitor/core": "^8.5.3",
     "lucide-react": "^1.56.0",

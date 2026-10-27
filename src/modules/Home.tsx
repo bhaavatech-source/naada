@@ -4,18 +4,17 @@ import NadaTattva from './NadaTattva'
 import SaptaSwaraExplorer from './SaptaSwaraExplorer'
 import ShrutiExplorer from './ShrutiExplorer'
 import RagaExplorer from './RagaExplorer'
-import GitamPractice from './GitamPractice'
+import { MmgPractice } from './MmgPractice'
 import RagaBhavaGame from './RagaBhavaGame'
 
-type ModuleId = 'raga' | 'shruti' | 'tala' | 'gamaka' | 'builder' | 'progress'
+type ModuleId = 'raga' | 'shruti' | 'tala' | 'builder' | 'progress'
 type Feature = { id: ModuleId; title: string; Sanskrit: string; eyebrow: string; description: string; image: string; accent: string }
 
 const FEATURES: Feature[] = [
   { id: 'raga', title: 'Rāga Practice', Sanskrit: 'Rāga Ratnākara', eyebrow: 'EXPLORE MELODIC WORLDS', description: '', image: '/images/nada-raga.webp', accent: '#087f73' },
   { id: 'shruti', title: 'Śruti Trainer', Sanskrit: 'Nāda Bindu', eyebrow: 'LISTEN · ALIGN · REFINE', description: '', image: '/images/nada-shruti.webp', accent: '#0b927e' },
   { id: 'tala', title: 'Tāla Trainer', Sanskrit: 'Laya Taranga', eyebrow: 'FEEL THE RHYTHM', description: '', image: '/images/nada-tala.webp', accent: '#b75d2a' },
-  { id: 'gamaka', title: 'Gamaka Trainer', Sanskrit: 'Gamaka Sādhana', eyebrow: 'SHAPE EVERY NOTE', description: '', image: '/images/nada-gamaka.webp', accent: '#a36a18' },
-  { id: 'builder', title: 'Music Builder', Sanskrit: 'Svara Rachanā', eyebrow: 'CREATE WITH SVARAS', description: '', image: '/images/nada-builder.webp', accent: '#a76c18' },
+  { id: 'builder', title: 'Gāna Builder', Sanskrit: 'Svara Rachanā', eyebrow: 'CREATE WITH SVARAS', description: '', image: '/images/nada-builder.webp', accent: '#a76c18' },
   { id: 'progress', title: 'My Progress', Sanskrit: 'Sādhana Darpaṇa', eyebrow: 'YOUR MUSICAL JOURNEY', description: '', image: '/images/nada-progress.webp', accent: '#178d84' },
 ]
 
@@ -34,7 +33,7 @@ type HomeProps = { wisdomOnly?: boolean }
 export default function Home({ wisdomOnly = false }: HomeProps) {
   const setModule = useAppStore((s) => s.setModule)
   const [activeCard, setActiveCard] = useState<ModuleId | null>(null)
-  const [wisdomView, setWisdomView] = useState<'tattva' | 'swaras' | 'shruti' | 'ragas' | 'gitam' | 'rasa' | null>(null)
+  const [wisdomView, setWisdomView] = useState<'tattva' | 'swaras' | 'shruti' | 'ragas' | 'mmg' | 'rasa' | null>(null)
   return <div className="nada-proposal-page">
     <style>{`
       .nada-proposal-page{--ink:#25213a;width:100%;min-width:0;min-height:0;height:100%;overflow-y:auto;overflow-x:hidden;color:var(--ink);background:linear-gradient(180deg,#f8f1e6,#f1e5d3);font-family:inherit;isolation:isolate}
@@ -47,12 +46,38 @@ export default function Home({ wisdomOnly = false }: HomeProps) {
       .nada-proposal-brand{font-family:var(--font-display,Georgia,serif);font-size:clamp(3.4rem,7vw,6.8rem);line-height:.98;letter-spacing:-.055em;font-weight:700;margin:0;color:#087d72;text-shadow:0 2px #ffffffcc,0 10px 28px #fff4c2bf}.nada-proposal-divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:18px auto 8px;color:#b77c31}.nada-proposal-divider span{width:clamp(28px,4vw,62px);height:1px;background:currentColor}.nada-proposal-byline{margin:0;color:#175f59;font-size:.78rem;font-weight:800;letter-spacing:.25em;text-transform:uppercase}
       .nada-proposal-note{position:absolute;color:#fff4ce;font:clamp(1rem,1.8vw,1.6rem) Georgia,serif;text-shadow:0 2px 8px #4e2c09a6;animation:nadaNoteFloat 5s ease-in-out infinite}.nada-proposal-note.one{left:4%;top:42%}.nada-proposal-note.two{right:5%;top:32%;animation-delay:1.3s}.nada-proposal-note.three{right:15%;top:57%;animation-delay:2s}@keyframes nadaNoteFloat{0%,100%{transform:translateY(0);opacity:.8}50%{transform:translateY(-9px);opacity:1}}
       .nada-proposal-section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:28px 2px 14px}.nada-proposal-section-head h2{margin:0;font:700 clamp(1.35rem,2vw,1.8rem)/1.2 var(--font-display,Georgia,serif)}.nada-proposal-section-head p{margin:5px 0 0;color:#71675d;font-size:.9rem}
-      .nada-proposal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.nada-proposal-card{min-width:0;display:grid;grid-template-columns:42% 1fr;align-items:stretch;overflow:hidden;padding:0;text-align:left;border:1px solid #644b2d26;border-radius:20px;background:#fffdf8f2;box-shadow:0 8px 24px #4a311616;cursor:pointer;color:inherit;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;animation:nadaCardIn .6s both}.nada-proposal-card:hover,.nada-proposal-card:focus-visible{transform:translateY(-4px);box-shadow:0 15px 30px #4a311626;border-color:var(--card-accent);outline:none}@keyframes nadaCardIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-      .nada-proposal-card img{width:100%;height:100%;min-height:150px;object-fit:cover;transition:transform .6s ease}.nada-proposal-card:hover img{transform:scale(1.06)}.nada-proposal-card-copy{padding:17px 16px;display:flex;flex-direction:column;justify-content:center;min-width:0}.nada-proposal-eyebrow{color:var(--card-accent);font-size:.61rem;font-weight:850;letter-spacing:.08em;line-height:1.4;margin-bottom:8px}.nada-proposal-card h3{margin:0;font:700 clamp(1rem,1.45vw,1.3rem)/1.2 var(--font-display,Georgia,serif)}.nada-proposal-sanskrit{color:var(--card-accent);font-size:.75rem;font-weight:750;margin:6px 0 0}.nada-proposal-card p{color:#70685f;font-size:.78rem;line-height:1.5;margin:9px 0 0}.nada-proposal-arrow{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--card-accent);color:white;font-size:1.15rem;margin-top:12px;align-self:flex-start}
+      .nada-proposal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.nada-proposal-card{position:relative;min-width:0;display:flex;flex-direction:column;align-items:stretch;overflow:hidden;padding:0;text-align:left;border:1px solid #644b2d26;border-radius:20px;background:#fffdf8f2;box-shadow:0 8px 24px #4a311616;cursor:pointer;color:inherit;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;animation:nadaCardIn .6s both}.nada-proposal-card:hover,.nada-proposal-card:focus-visible{transform:translateY(-4px);box-shadow:0 15px 30px #4a311626;border-color:var(--card-accent);outline:none}@keyframes nadaCardIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+      .nada-proposal-card-media{display:block;position:relative;overflow:hidden;flex:none;background:#eadcc4}.nada-proposal-card-media:after{content:"";position:absolute;inset:auto 0 0 0;height:38%;background:linear-gradient(transparent,#1a120a2e);pointer-events:none}.nada-proposal-card img{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;object-position:center 55%;transition:transform .6s ease}.nada-proposal-card:hover img{transform:scale(1.05)}.nada-proposal-card-copy{position:relative;flex:1;padding:16px 68px 18px 18px;display:flex;flex-direction:column;justify-content:center;min-width:0;border-top:3px solid var(--card-accent)}.nada-proposal-eyebrow{color:var(--card-accent);font-size:.68rem;font-weight:850;letter-spacing:.08em;line-height:1.4;margin-bottom:7px}.nada-proposal-card h3{margin:0;font:700 clamp(1.1rem,1.6vw,1.35rem)/1.2 var(--font-display,Georgia,serif)}.nada-proposal-sanskrit{color:var(--card-accent);font-size:.84rem;font-weight:750;margin:6px 0 0}.nada-proposal-card p{color:#70685f;font-size:.82rem;line-height:1.5;margin:9px 0 0}.nada-proposal-card p:empty{display:none}.nada-proposal-arrow{position:absolute;right:16px;top:50%;margin-top:-19px;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--card-accent);color:white;font-size:1.2rem;box-shadow:0 4px 10px #00000026;transition:transform .22s ease}.nada-proposal-card:hover .nada-proposal-arrow{transform:translateX(3px)}
       .nada-proposal-bottom{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:18px;margin-top:22px}.nada-proposal-mantra{min-height:160px;display:flex;flex-direction:column;justify-content:center;padding:26px;border-radius:22px;color:#fdf4dc;background:linear-gradient(120deg,#14463de0,#0e675bbd),url('/images/nada-hero.webp') center/cover;box-shadow:0 12px 28px #28463721}.nada-proposal-mantra .small{text-transform:uppercase;font-size:.66rem;letter-spacing:.17em;opacity:.86;font-weight:800}.nada-proposal-mantra h2{font:700 clamp(1.4rem,2.2vw,2rem)/1.2 var(--font-display,Georgia,serif);margin:9px 0}.nada-proposal-mantra p{margin:0;font-size:.88rem;line-height:1.6;max-width:500px;color:#fff9e7e6}.nada-proposal-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.nada-proposal-gallery figure{margin:0;min-width:0;overflow:hidden;border-radius:16px;background:#eadcc4;position:relative}.nada-proposal-gallery img{width:100%;height:100%;min-height:160px;object-fit:cover;display:block;transition:transform .5s ease}.nada-proposal-gallery figure:hover img{transform:scale(1.07)}.nada-proposal-gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 10px 10px;color:white;font-size:.72rem;font-weight:750;background:linear-gradient(transparent,#141414b8)}
-      @media(max-width:1050px){.nada-proposal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nada-proposal-card h3{font-size:1.15rem}}
-      @media(max-width:680px){.nada-proposal-inner{padding:10px 12px 26px}.nada-proposal-hero{min-height:clamp(280px,78vw,360px);border-radius:20px}.nada-proposal-center{padding:22px 12px}.nada-proposal-mandala{width:min(90%,350px)}.nada-proposal-brand{font-size:clamp(3.4rem,16vw,5.2rem)}.nada-proposal-note.one{left:6%;top:62%}.nada-proposal-note.two{right:8%;top:62%}.nada-proposal-note.three{right:20%;top:76%}.nada-proposal-grid{grid-template-columns:minmax(0,1fr);gap:12px}.nada-proposal-card{grid-template-columns:minmax(0,38%) minmax(0,1fr)}.nada-proposal-card img{min-height:145px}.nada-proposal-card-copy{padding:14px 13px;overflow-wrap:anywhere}.nada-proposal-card p{font-size:.8rem}.nada-proposal-arrow{width:36px;height:36px}.nada-proposal-bottom{grid-template-columns:minmax(0,1fr);gap:12px;margin-top:16px}.nada-proposal-mantra{padding:20px}.nada-proposal-gallery{gap:8px}.nada-proposal-gallery img{min-height:125px}}
-      @media(max-width:360px){.nada-proposal-inner{padding-inline:10px}.nada-proposal-card{grid-template-columns:minmax(0,34%) minmax(0,1fr)}.nada-proposal-card-copy{padding:12px 10px}.nada-proposal-card h3{font-size:1.05rem}.nada-proposal-gallery{gap:6px}.nada-proposal-gallery figcaption{padding-inline:7px}}
+      .nada-proposal-byline:empty{display:none}
+      @media(max-width:1050px){.nada-proposal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nada-proposal-hero{min-height:clamp(300px,46vw,420px)}}
+      @media(max-width:680px){
+        .nada-proposal-inner{padding:10px 12px 26px}
+        .nada-proposal-hero{display:flex;flex-direction:column;align-items:stretch;min-height:0;border-radius:20px;background:linear-gradient(180deg,#f6ead3,#fffaf0);box-shadow:0 12px 30px #452e2024}
+        .nada-proposal-hero:before{position:relative;inset:auto;z-index:auto;display:block;flex:none;width:100%;aspect-ratio:1536/820;background-image:url('/images/nada-hero.webp');background-size:cover;background-position:center;animation:none}
+        .nada-proposal-hero:after{display:none}
+        .nada-proposal-center{min-height:0;padding:14px 12px 20px}
+        .nada-proposal-mandala,.nada-proposal-note{display:none}
+        .nada-proposal-brand{font-size:clamp(2.7rem,14vw,3.8rem);text-shadow:none}
+        .nada-proposal-divider{margin:10px auto 0}
+        .nada-proposal-section-head{margin:22px 2px 12px}
+        .nada-proposal-grid{grid-template-columns:minmax(0,1fr);gap:16px}
+        .nada-proposal-card{flex-direction:row;align-items:center;gap:14px;padding:10px;border-left:4px solid var(--card-accent);border-radius:18px}
+        .nada-proposal-card-media{flex:0 0 38%;max-width:150px;min-width:104px;border-radius:14px;box-shadow:0 4px 12px #2a1a0a2e}
+        .nada-proposal-card-media:after{display:none}
+        .nada-proposal-card img{aspect-ratio:4/3;border-radius:14px}
+        .nada-proposal-card:hover img{transform:none}
+        .nada-proposal-card-copy{flex:1 1 0;align-self:center;padding:2px 46px 2px 0;border-top:0;overflow-wrap:anywhere}
+        .nada-proposal-eyebrow{font-size:.6rem;letter-spacing:.06em;margin-bottom:5px}
+        .nada-proposal-card h3{font-size:1.1rem}
+        .nada-proposal-sanskrit{font-size:.8rem;margin-top:4px}
+        .nada-proposal-arrow{right:2px;width:34px;height:34px;margin-top:-17px;font-size:1.05rem;box-shadow:none}
+        .nada-proposal-bottom{grid-template-columns:minmax(0,1fr);gap:12px;margin-top:16px}
+        .nada-proposal-mantra{padding:20px}
+        .nada-proposal-gallery{gap:8px}
+        .nada-proposal-gallery img{min-height:0;aspect-ratio:4/5}
+      }
+      @media(max-width:360px){.nada-proposal-inner{padding-inline:10px}.nada-proposal-card{gap:10px;padding:8px}.nada-proposal-card-media{flex-basis:36%;min-width:96px}.nada-proposal-card-copy{padding:2px 40px 2px 0}.nada-proposal-arrow{width:30px;height:30px;margin-top:-15px}.nada-proposal-card h3{font-size:1.02rem}.nada-proposal-gallery{gap:6px}.nada-proposal-gallery figcaption{padding-inline:7px}}
       @media(prefers-reduced-motion:reduce){.nada-proposal-page *, .nada-proposal-page *:before,.nada-proposal-page *:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
       .nada-wisdom{margin-top:30px;padding:clamp(16px,3vw,28px);border-radius:24px;background:linear-gradient(130deg,#e5d5b7,#f7eedf 52%,#e6d4b3);border:1px solid #cdb993;box-shadow:0 12px 30px #4a311614}
@@ -87,7 +112,7 @@ export default function Home({ wisdomOnly = false }: HomeProps) {
         <div className="nada-proposal-section-head"><div><h2>Explore Nāda</h2><p>Choose a space to listen, practise, and create.</p></div></div>
         <section className="nada-proposal-grid" aria-label="Nāda learning modules">
           {FEATURES.map((feature,index)=><button key={feature.id} type="button" className="nada-proposal-card" style={{'--card-accent':feature.accent,animationDelay:`${index*70}ms`} as React.CSSProperties} onClick={()=>setModule(feature.id)} onMouseEnter={()=>setActiveCard(feature.id)} onMouseLeave={()=>setActiveCard(null)} aria-label={`Open ${feature.title}`}>
-            <img src={feature.image} alt="" loading={index<3?'eager':'lazy'}/><div className="nada-proposal-card-copy"><span className="nada-proposal-eyebrow">{feature.eyebrow}</span><h3>{feature.title}</h3><p className="nada-proposal-sanskrit">{feature.Sanskrit}</p><p>{feature.description}</p><span className="nada-proposal-arrow" aria-hidden="true">{activeCard===feature.id?'↗':'→'}</span></div>
+            <span className="nada-proposal-card-media"><img src={feature.image} alt="" loading={index<3?'eager':'lazy'}/></span><div className="nada-proposal-card-copy"><span className="nada-proposal-eyebrow">{feature.eyebrow}</span><h3>{feature.title}</h3><p className="nada-proposal-sanskrit">{feature.Sanskrit}</p><p>{feature.description}</p><span className="nada-proposal-arrow" aria-hidden="true">{activeCard===feature.id?'↗':'→'}</span></div>
           </button>)}
         </section>
       </>}
@@ -97,7 +122,7 @@ export default function Home({ wisdomOnly = false }: HomeProps) {
           <div>
             <span className="nada-wisdom-kicker">Listen · Explore · Discover</span>
             <h2>Nāda Wisdom</h2>
-            <p>Explore the philosophy of sound, the seven swaras, śruti, rāga, gītam and the traditional relationships between music and rasa.</p>
+            <p>Explore the philosophy of sound, the seven swaras, śruti, rāga, varisai and the traditional relationships between music and rasa.</p>
           </div>
         </div>
         <div className="nada-wisdom-cards">
@@ -105,7 +130,7 @@ export default function Home({ wisdomOnly = false }: HomeProps) {
           <button type="button" className="nada-wisdom-card" onClick={() => setWisdomView('swaras')}><span className="nada-wisdom-icon" aria-hidden="true">♫</span><strong>Sapta Swara Explorer</strong><span>Explore Sa, Ri, Ga, Ma, Pa, Dha and Ni with traditional associations.</span></button>
           <button type="button" className="nada-wisdom-card" onClick={() => setWisdomView('shruti')}><span className="nada-wisdom-icon" aria-hidden="true">〰</span><strong>22 Śruti Explorer</strong><span>Explore pitch relationships and compare the 22 śrutis.</span></button>
           <button type="button" className="nada-wisdom-card" onClick={() => setWisdomView('ragas')}><span className="nada-wisdom-icon" aria-hidden="true">♬</span><strong>Rāga Explorer</strong><span>Explore rāga scales, classifications and characteristics.</span></button>
-          <button type="button" className="nada-wisdom-card" onClick={() => setWisdomView('gitam')}><span className="nada-wisdom-icon" aria-hidden="true">𝄞</span><strong>Gītam Practice</strong><span>Explore compositions and practise through guided phrases.</span></button>
+          <button type="button" className="nada-wisdom-card" onClick={() => setWisdomView('mmg')}><span className="nada-wisdom-icon" aria-hidden="true">𝄞</span><strong>MMG Varisai Practice</strong><span>Practise Māyāmālavagowla varisai and alankāram exercises.</span></button>
           <button type="button" className="nada-wisdom-card" onClick={() => setWisdomView('rasa')}><span className="nada-wisdom-icon" aria-hidden="true">✧</span><strong>Rāga · Bhāva · Rasa</strong><span>Take a matching challenge exploring musical expression.</span></button>
         </div>
 
@@ -124,7 +149,7 @@ export default function Home({ wisdomOnly = false }: HomeProps) {
         {wisdomView === 'swaras' && <SaptaSwaraExplorer onClose={() => setWisdomView(null)} />}
         {wisdomView === 'shruti' && <ShrutiExplorer onClose={() => setWisdomView(null)} />}
         {wisdomView === 'ragas' && <RagaExplorer onClose={() => setWisdomView(null)} />}
-        {wisdomView === 'gitam' && <GitamPractice onClose={() => setWisdomView(null)} />}
+        {wisdomView === 'mmg' && <MmgPractice />}
         {wisdomView === 'rasa' && <RagaBhavaGame onClose={() => setWisdomView(null)} />}
       </div>
     </div>}

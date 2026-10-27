@@ -1,0 +1,5143 @@
+{
+  "version": 2,
+  "reviewedAt": "2026-10-26",
+  "scope": "Local Excel and PDF written scales; not musician certification of synthesized performance.",
+  "documents": [
+    {
+      "file": "Janya Ragams -.pdf",
+      "sha256": "42e0e94080fa6524a68cd836e1806eeaf27e39a944413c06524484fcf072e5eb"
+    },
+    {
+      "file": "Janya_Raagas.pdf",
+      "sha256": "0d56a74b6c660824e82194a79075290e2f2bc9b59ee7cb34f399a274586d92ce"
+    },
+    {
+      "file": "raga_pravagam-english-full.pdf",
+      "sha256": "95944051a24c2b0bef0b5bc15cd07ad501a62d1a9b70ba0a13a8b4104dfc2cc4"
+    },
+    {
+      "file": "Janya_list.xlsx",
+      "sha256": "c4fee7e9e5efd30bca20686a273ce610a006b10826831490548d343bdadc591b"
+    }
+  ],
+  "decisions": [
+    {
+      "key": "mohanam",
+      "snapshot": {
+        "name": "Mohanam",
+        "parent": 28,
+        "ascent": "S R2 G3 P D2 Ṡ",
+        "descent": "Ṡ D2 P G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Mohanam",
+      "parent": 28,
+      "ascent": "S R2 G3 P D2 Ṡ",
+      "descent": "Ṡ D2 P G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C607",
+        "referenceName": "mOhanam",
+        "raw": "mOhanam S R2 G3 P D2 S - S D2 P G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C607"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C607. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "hindolam",
+      "snapshot": {
+        "name": "Hindolam",
+        "parent": 20,
+        "ascent": "S G2 M1 D1 N2 Ṡ",
+        "descent": "Ṡ N2 D1 M1 G2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Hindolam",
+      "parent": 20,
+      "ascent": "S G2 M1 D1 N2 Ṡ",
+      "descent": "Ṡ N2 D1 M1 G2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C322",
+        "referenceName": "hindOLam",
+        "raw": "hindOLam S G2 M1 D1 N2 S - S N2 D1 M1 G2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C322"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C322. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "sriranjani",
+      "snapshot": {
+        "name": "Sriranjani",
+        "parent": 22,
+        "ascent": "S R2 G2 M1 D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 M1 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Sriranjani",
+      "parent": 22,
+      "ascent": "S R2 G2 M1 D2 N2 Ṡ",
+      "descent": "Ṡ N2 D2 M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C473",
+        "referenceName": "shree ranjani",
+        "raw": "shree ranjani S R2 G2 M1 D2 N2 S - S N2 D2 M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C473"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C473. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "suddhasaveri",
+      "snapshot": {
+        "name": "Suddha Saveri",
+        "parent": 29,
+        "ascent": "S R2 M1 P D2 Ṡ",
+        "descent": "Ṡ D2 P M1 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Suddha Saveri",
+      "parent": 29,
+      "ascent": "S R2 M1 P D2 Ṡ",
+      "descent": "Ṡ D2 P M1 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C728",
+        "referenceName": "sudda saavEri",
+        "raw": "sudda saavEri S R2 M1 P D2 S - S D2 P M1 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C728"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C728. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "abhogi",
+      "snapshot": {
+        "name": "Abhogi",
+        "parent": 22,
+        "ascent": "S R2 G2 M1 D2 Ṡ",
+        "descent": "Ṡ D2 M1 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Abhogi",
+      "parent": 22,
+      "ascent": "S R2 G2 M1 D2 Ṡ",
+      "descent": "Ṡ D2 M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C378",
+        "referenceName": "aabhOgi",
+        "raw": "aabhOgi S R2 G2 M1 D2 S - S D2 M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C378"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C378. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "hamsadhwani",
+      "snapshot": {
+        "name": "Hamsadhwani",
+        "parent": 29,
+        "ascent": "S R2 G3 P N3 Ṡ",
+        "descent": "Ṡ N3 P G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Hamsadhwani",
+      "parent": 29,
+      "ascent": "S R2 G3 P N3 Ṡ",
+      "descent": "Ṡ N3 P G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C688",
+        "referenceName": "hamsadwani",
+        "raw": "hamsadwani S R2 G3 P N3 S - S N3 P G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C688"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C688. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "madhyamavati",
+      "snapshot": {
+        "name": "Madhyamavati",
+        "parent": 22,
+        "ascent": "S R2 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 P M1 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Madhyamavati",
+      "parent": 22,
+      "ascent": "S R2 M1 P N2 Ṡ",
+      "descent": "Ṡ N2 P M1 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C428",
+        "referenceName": "madyamaavati",
+        "raw": "madyamaavati S R2 M1 P N2 S - S N2 P M1 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C428"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C428. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "suddhadhanyasi",
+      "snapshot": {
+        "name": "Suddha Dhanyasi",
+        "parent": 20,
+        "ascent": "S G2 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 P M1 G2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Suddha Dhanyasi",
+      "parent": 22,
+      "ascent": "S G2 M1 P N2 P Ṡ",
+      "descent": "Ṡ N2 P M1 G2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C477",
+        "referenceName": "sudda dhanyaasi",
+        "raw": "sudda dhanyaasi S G2 M1 P N2 P S - S N2 P M1 G2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C477"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C477. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "amrithavarshini",
+      "snapshot": {
+        "name": "Amrithavarshini",
+        "parent": 65,
+        "ascent": "S G3 M2 P N3 Ṡ",
+        "descent": "Ṡ N3 P M2 G3 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Amrithavarshini",
+      "parent": 66,
+      "ascent": "S G3 M2 P N3 Ṡ",
+      "descent": "Ṡ N3 P M2 G3 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C1123",
+        "referenceName": "amritavarshini",
+        "raw": "amritavarshini S G3 M2 P N3 S - S N3 P M2 G3 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C1123"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C1123. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "valaji",
+      "snapshot": {
+        "name": "Valaji",
+        "parent": 28,
+        "ascent": "S G3 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P G3 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Valaji",
+      "parent": 16,
+      "ascent": "S G3 P D2 N2 Ṡ",
+      "descent": "Ṡ N2 D2 P G3 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C261",
+        "referenceName": "valaci",
+        "raw": "valaci S G3 P D2 N2 S - S N2 D2 P G3 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C261"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C261. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "malayamarutham",
+      "snapshot": {
+        "name": "Malayamarutham",
+        "parent": 16,
+        "ascent": "S R1 G3 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Malayamarutham",
+      "parent": 16,
+      "ascent": "S R1 G3 P D2 N2 Ṡ",
+      "descent": "Ṡ N2 D2 P G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C251",
+        "referenceName": "malayamaarutam",
+        "raw": "malayamaarutam S R1 G3 P D2 N2 S - S N2 D2 P G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C251"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C251. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "nagaswaravali",
+      "snapshot": {
+        "name": "Nagaswaravali",
+        "parent": 28,
+        "ascent": "S G3 M1 P D2 Ṡ",
+        "descent": "Ṡ D2 P M1 G3 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Nagaswaravali",
+      "parent": 28,
+      "ascent": "S G3 M1 P D2 Ṡ",
+      "descent": "Ṡ D2 P M1 G3 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C609",
+        "referenceName": "naagaswaraavaLi",
+        "raw": "naagaswaraavaLi S G3 M1 P D2 S - S D2 P M1 G3 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C609"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C609. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "sunadhavinodini",
+      "snapshot": {
+        "name": "Sunadhavinodini",
+        "parent": 65,
+        "ascent": "S G3 M2 D2 N3 Ṡ",
+        "descent": "Ṡ N3 D2 M2 G3 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Sunadhavinodini",
+      "parent": 65,
+      "ascent": "S G3 M2 D2 N3 Ṡ",
+      "descent": "Ṡ N3 D2 M2 G3 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C1113",
+        "referenceName": "sunaada vinOdini",
+        "raw": "sunaada vinOdini S G3 M2 D2 N3 S - S N3 D2 M2 G3 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C1113"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C1113. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "gambhiranata",
+      "snapshot": {
+        "name": "Gambhiranata",
+        "parent": 36,
+        "ascent": "S G3 M1 P N3 Ṡ",
+        "descent": "Ṡ N3 P M1 G3 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Gambhiranata",
+      "parent": 36,
+      "ascent": "S G3 M1 P N3 Ṡ",
+      "descent": "Ṡ N3 P M1 G3 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C791",
+        "referenceName": "gambheeranaaTTai",
+        "raw": "gambheeranaaTTai S G3 M1 P N3 S - S N3 P M1 G3 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C791"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C791. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "kedaragowla",
+      "snapshot": {
+        "name": "Kedaragowla",
+        "parent": 28,
+        "ascent": "S R2 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Kedaragowla",
+      "parent": 28,
+      "ascent": "S R2 M1 P N2 Ṡ",
+      "descent": "Ṡ N2 D2 P M1 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C595",
+        "referenceName": "kEdaara gowLa",
+        "raw": "kEdaara gowLa S R2 M1 P N2 S - S N2 D2 P M1 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C595"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C595. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "bilahari",
+      "snapshot": {
+        "name": "Bilahari",
+        "parent": 29,
+        "ascent": "S R2 G3 P D2 Ṡ",
+        "descent": "Ṡ N3 D2 P M1 G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Bilahari",
+      "parent": 29,
+      "ascent": "S R2 G3 P D2 Ṡ",
+      "descent": "Ṡ N3 D2 P M1 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C677",
+        "referenceName": "bilahari",
+        "raw": "bilahari S R2 G3 P D2 S - S N3 D2 P M1 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C677"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C677. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "kambhoji",
+      "snapshot": {
+        "name": "Kambhoji",
+        "parent": 28,
+        "ascent": "S R2 G3 M1 P D2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Kambhoji",
+      "parent": 28,
+      "ascent": "S R2 G3 M1 P D2 Ṡ",
+      "descent": "Ṡ N2 D2 P M1 G3 R2 S N3, P, D2, S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C589",
+        "referenceName": "kaambhOji",
+        "raw": "S R2 G3 M1 P D2 S - S N2 D2 P M1 G3 R2 S N3 P D2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C589"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C589. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "arabhi",
+      "snapshot": {
+        "name": "Arabhi",
+        "parent": 29,
+        "ascent": "S R2 M1 P D2 Ṡ",
+        "descent": "Ṡ N3 D2 P M1 G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Arabhi",
+      "parent": 29,
+      "ascent": "S R2 M1 P D2 Ṡ",
+      "descent": "Ṡ N3 D2 P M1 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C670",
+        "referenceName": "aarabi",
+        "raw": "aarabi S R2 M1 P D2 S - S N3 D2 P M1 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C670",
+          "Sheet1!C671"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C670. This selects one documented version; other workbook versions are not merged. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "atana",
+      "snapshot": {
+        "name": "Atana",
+        "parent": 29,
+        "ascent": "S R2 M1 P N3 Ṡ",
+        "descent": "Ṡ N3 D2 P M1 P G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Atana",
+      "parent": 29,
+      "ascent": "S R2 M1 P N3 Ṡ",
+      "descent": "Ṡ N3 D2 P M1 P G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C672",
+        "referenceName": "aThaaNaa",
+        "raw": "aThaaNaa S R2 M1 P N3 S - S N3 D2 P M1 P G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C672"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C672. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "begada",
+      "snapshot": {
+        "name": "Begada",
+        "parent": 29,
+        "ascent": "S G3 R2 G3 M1 P D2 N2 D2 P Ṡ",
+        "descent": "Ṡ N3 D2 P M1 G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Begada",
+      "parent": 29,
+      "ascent": "S G3 R2 G3 M1 P D2 N2 D2 P Ṡ",
+      "descent": "Ṡ N3 D2 P M1 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C674",
+        "referenceName": "bEgaDa",
+        "raw": "bEgaDa S G3 R2 G3 M1 P D2 N2 D2 P S - S N3 D2 P M1 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C674"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C674. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "anandhabhairavi",
+      "snapshot": {
+        "name": "Anandhabhairavi",
+        "parent": 20,
+        "ascent": "S G2 R2 G2 M1 P D1 P Ṡ",
+        "descent": "Ṡ N2 D1 P M1 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Anandhabhairavi",
+      "parent": 20,
+      "ascent": "S G2 R2 G2 M1 P D2 P N2 Ṡ",
+      "descent": "Ṡ N2 D2 P M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C309",
+        "referenceName": "aananda bhairavi",
+        "raw": "aananda bhairavi S G2 R2 G2 M1 P D2 P N2 S - S N2 D2 P M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C309"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C309. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "sahana",
+      "snapshot": {
+        "name": "Sahana",
+        "parent": 28,
+        "ascent": "S R2 G3 M1 P M1 D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G3 M1 R2 G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Sahana",
+      "parent": 28,
+      "ascent": "S R2 G3 M1 P M1 D2 N2 Ṡ",
+      "descent": "Ṡ N2 Ṡ D2 N2 D2 P M1 G3 M1 R2 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C635",
+        "referenceName": "sahaanaa",
+        "raw": "sahaanaa S R2 G3 M1 P M1 D2 N2 S - S N2 S D2 N2 D2 P M1 G3 M1 R2 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C635"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C635. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "reethigowla",
+      "snapshot": {
+        "name": "Reethigowla",
+        "parent": 22,
+        "ascent": "S G2 R2 G2 M1 N2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 M1 G2 M1 P M1 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Reethigowla",
+      "parent": 22,
+      "ascent": "S G2 R2 G2 M1 N2 D2 M1 N2 N2 Ṡ",
+      "descent": "Ṡ N2 D2 M1 G2 M1 P M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C460",
+        "referenceName": "reeti gowLa",
+        "raw": "reeti gowLa S G2 R2 G2 M1 N2 D2 M1 N2 N2 S - S N2 D2 M1 G2 M1 P M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C460"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C460. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "surati",
+      "snapshot": {
+        "name": "Surati",
+        "parent": 28,
+        "ascent": "S R2 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G3 P M1 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Surati",
+      "parent": 28,
+      "ascent": "S R2 M1 P N2 Ṡ",
+      "descent": "Ṡ N2 D2 P M1 G3 P M1 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C643",
+        "referenceName": "shuruTTi",
+        "raw": "shuruTTi S R2 M1 P N2 S - S N2 D2 P M1 G3 P M1 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C643"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C643. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "nattakurinji",
+      "snapshot": {
+        "name": "Nattakurinji",
+        "parent": 28,
+        "ascent": "S R2 G3 M1 N2 D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 M1 G3 M1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Nattakurinji",
+      "parent": 28,
+      "ascent": "S R2 G3 M1 N2 D2 N2 P D2 N2 Ṡ",
+      "descent": "Ṡ N2 D2 M1 G3 M1 P G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C612",
+        "referenceName": "naaTTai kurinji",
+        "raw": "naaTTai kurinji S R2 G3 M1 N2 D2 N2 P D2 N2 S - S N2 D2 M1 G3 M1 P G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C612",
+          "Sheet1!C613",
+          "Sheet1!C614"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C612. This selects one documented version; other workbook versions are not merged. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "janaranjani",
+      "snapshot": {
+        "name": "Janaranjani",
+        "parent": 29,
+        "ascent": "S R2 G3 M1 P D2 N3 Ṡ",
+        "descent": "Ṡ D2 P M1 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Janaranjani",
+      "parent": 29,
+      "ascent": "S R2 G3 M1 P D2 N3 Ṡ",
+      "descent": "Ṡ D2 P M1 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C692",
+        "referenceName": "janaranjani",
+        "raw": "janaranjani S R2 G3 M1 P D2 N3 S - S D2 P M1 R2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C692"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C692. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "bahudhari",
+      "snapshot": {
+        "name": "Bahudhari",
+        "parent": 28,
+        "ascent": "S G3 M1 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 P M1 G3 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Bahudhari",
+      "parent": 28,
+      "ascent": "S G3 M1 P D2 N2 Ṡ",
+      "descent": "Ṡ N2 P M1 G3 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C556",
+        "referenceName": "bahudaari",
+        "raw": "bahudaari S G3 M1 P D2 N2 S - S N2 P M1 G3 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C556"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C556. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "khamas",
+      "snapshot": {
+        "name": "Khamas",
+        "parent": 28,
+        "ascent": "S M1 G3 M1 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Khamas",
+      "parent": 28,
+      "ascent": "S M1 G3 M1 P D2 N2 Ṡ",
+      "descent": "Ṡ N2 D2 P M1 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C591",
+        "referenceName": "kamaas",
+        "raw": "kamaas S M1 G3 M1 P D2 N2 S - S N2 D2 P M1 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C591"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C591. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "andholika",
+      "snapshot": {
+        "name": "Andholika",
+        "parent": 22,
+        "ascent": "S R2 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 D2 M1 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Andholika",
+      "parent": 28,
+      "ascent": "S R2 M1 P N2 Ṡ",
+      "descent": "Ṡ N2 D2 M1 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C551",
+        "referenceName": "aandOLikaa",
+        "raw": "aandOLikaa S R2 M1 P N2 S - S N2 D2 M1 R2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C551"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C551. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "devamanohari",
+      "snapshot": {
+        "name": "Devamanohari",
+        "parent": 22,
+        "ascent": "S R2 M1 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 N2 P M1 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Devamanohari",
+      "parent": 22,
+      "ascent": "S R2 M1 P D2 N2 Ṡ",
+      "descent": "Ṡ N2 D2 N2 P M1 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C396",
+        "referenceName": "dEva manOhari",
+        "raw": "dEva manOhari S R2 M1 P D2 N2 S - S N2 D2 N2 P M1 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C396"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C396. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "huseni",
+      "snapshot": {
+        "name": "Huseni",
+        "parent": 22,
+        "ascent": "S R2 G2 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Huseni",
+      "parent": 22,
+      "ascent": "S R2 G2 M1 P N2 D2 N2 Ṡ",
+      "descent": "Ṡ N2 D1 P M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C406",
+        "referenceName": "husEni",
+        "raw": "husEni S R2 G2 M1 P N2 D2 N2 S - S N2 D1 P M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C406",
+          "Sheet1!C407"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C406. This selects one documented version; other workbook versions are not merged. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "kanada",
+      "snapshot": {
+        "name": "Kanada",
+        "parent": 22,
+        "ascent": "S R2 G2 M1 P M1 D2 N2 Ṡ",
+        "descent": "Ṡ N2 Ṡ D2 P M1 P G2 M1 R2 S"
+      },
+      "status": "PENDING_REFERENCE_VERIFICATION",
+      "reason": "The matching workbook entry has ambiguous notation or no matching documented variant.",
+      "workbookCheck": {
+        "status": "UNRESOLVED",
+        "cells": [
+          "Sheet1!C411"
+        ]
+      }
+    },
+    {
+      "key": "kapi",
+      "snapshot": {
+        "name": "Kapi",
+        "parent": 22,
+        "ascent": "S R2 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Kapi",
+      "parent": 22,
+      "ascent": "S R2 M1 P N3 Ṡ",
+      "descent": "Ṡ N2 D2 N2 P M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C412",
+        "referenceName": "kaapi",
+        "raw": "kaapi S R2 M1 P N3 S - S N2 D2 N2 P M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C412"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C412. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "nayaki",
+      "snapshot": {
+        "name": "Nayaki",
+        "parent": 22,
+        "ascent": "S R2 M1 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 R2 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Nayaki",
+      "parent": 22,
+      "ascent": "S R2 M1 P D2 N2 D2 P Ṡ",
+      "descent": "Ṡ N2 D2 P M1 R2 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C448",
+        "referenceName": "naayaki",
+        "raw": "naayaki S R2 M1 P D2 N2 D2 P S - S N2 D2 P M1 R2 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C448"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C448. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "phalamanjari",
+      "snapshot": {
+        "name": "Phalamanjari",
+        "parent": 22,
+        "ascent": "S G2 M1 P D2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G2 M1 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Phalamanjari",
+      "parent": 22,
+      "ascent": "S G2 M1 D2 Ṡ",
+      "descent": "Ṡ N2 D2 P M1 G2 M1 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C454",
+        "referenceName": "phalamanjari",
+        "raw": "phalamanjari S G2 M1 D2 S - S N2 D2 P M1 G2 M1 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C454"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C454. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "saramathi",
+      "snapshot": {
+        "name": "Saramathi",
+        "parent": 20,
+        "ascent": "S R2 G2 M1 P D1 N2 Ṡ",
+        "descent": "Ṡ N2 D1 M1 G2 S"
+      },
+      "status": "PENDING_REFERENCE_VERIFICATION",
+      "reason": "The matching workbook entry has ambiguous notation or no matching documented variant.",
+      "workbookCheck": {
+        "status": "UNRESOLVED",
+        "cells": [
+          "Sheet1!C340"
+        ]
+      }
+    },
+    {
+      "key": "jayanthasri",
+      "snapshot": {
+        "name": "Jayanthasri",
+        "parent": 20,
+        "ascent": "S G2 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 D1 M1 G2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Jayanthasri",
+      "parent": 20,
+      "ascent": "S G2 M1 D1 N2 Ṡ",
+      "descent": "Ṡ N2 D1 M1 P M1 G2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C325",
+        "referenceName": "jayantashree",
+        "raw": "jayantashree S G2 M1 D1 N2 S - S N2 D1 M1 P M1 G2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C325"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C325. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "mukhari",
+      "snapshot": {
+        "name": "Mukhari",
+        "parent": 22,
+        "ascent": "S R2 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M1 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Mukhari",
+      "parent": 22,
+      "ascent": "S R2 M1 P N2 D2 Ṡ",
+      "descent": "Ṡ N2 D1 P M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C442",
+        "referenceName": "mukhaari",
+        "raw": "mukhaari S R2 M1 P N2 D2 S - S N2 D1 P M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C442"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C442. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "darbarikanada",
+      "snapshot": {
+        "name": "Darbari Kanada",
+        "parent": 20,
+        "ascent": "S R2 G2 M1 P D1 N2 Ṡ",
+        "descent": "Ṡ D1 N2 P M1 P G2 M1 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Darbari Kanada",
+      "parent": 20,
+      "ascent": "N2, S R2 G2 R2 S M1 P D1 N2 Ṡ",
+      "descent": "Ṡ D1 N2 P M1 P G2 M1 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C314",
+        "referenceName": "darbaari kaanaDa",
+        "raw": "darbaari kaanaDa N2 S R2 G2 R2 S M1 P D1 N2 S - S D1 N2 P M1 P G2 M1 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C314"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C314. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "jonpuri",
+      "snapshot": {
+        "name": "Jonpuri",
+        "parent": 20,
+        "ascent": "S R2 M1 P D1 N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M1 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Jonpuri",
+      "parent": 20,
+      "ascent": "S R2 M1 P D1 N2 Ṡ",
+      "descent": "Ṡ N2 D1 P M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C327",
+        "referenceName": "jOnpuri",
+        "raw": "jOnpuri S R2 M1 P D1 N2 S - S N2 D1 P M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C327"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C327. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "manji",
+      "snapshot": {
+        "name": "Manji",
+        "parent": 20,
+        "ascent": "S R2 G2 M1 P D1 V1 Ṡ",
+        "descent": "Ṡ N2 D1 P M1 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Manji",
+      "parent": 20,
+      "ascent": "S R2 G2 M1 P D2 N2 Ṡ",
+      "descent": "Ṡ N2 D2 P M1 P M1 P G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C331",
+        "referenceName": "maanji",
+        "raw": "maanji S R2 G2 M1 P D2 N2 S - S N2 D2 P M1 P M1 P G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C331"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C331. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "navarasakannada",
+      "snapshot": {
+        "name": "Navarasa Kannada",
+        "parent": 28,
+        "ascent": "S G3 M1 P Ṡ",
+        "descent": "Ṡ N2 D2 M1 G3 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Navarasa Kannada",
+      "parent": 28,
+      "ascent": "S G3 M1 P Ṡ",
+      "descent": "Ṡ N2 D2 M1 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C619",
+        "referenceName": "navarasa kannaDa",
+        "raw": "navarasa kannaDa S G3 M1 P S - S N2 D2 M1 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C619"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C619. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "yadukulakambhoji",
+      "snapshot": {
+        "name": "Yadukulakambhoji",
+        "parent": 28,
+        "ascent": "S R2 M1 P D2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Yadukulakambhoji",
+      "parent": 28,
+      "ascent": "S R2 M1 P D2 Ṡ",
+      "descent": "Ṡ N2 D2 P M1 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C664",
+        "referenceName": "yadukula kaambhOji",
+        "raw": "yadukula kaambhOji S R2 M1 P D2 S - S N2 D2 P M1 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C664"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C664. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "chenchurutti",
+      "snapshot": {
+        "name": "Chenchurutti",
+        "parent": 28,
+        "ascent": "D2 S R2 G3 M1 P D2 N2",
+        "descent": "N2 D2 P M1 G3 R2 S D2"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Chenchurutti",
+      "parent": 28,
+      "ascent": "D2 S R2 G3 M1 P D2 N2",
+      "descent": "N2 D2 P M1 G3 R2 S N2 D2 P D2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C641",
+        "referenceName": "shenjuruTTi",
+        "raw": "shenjuruTTi D2 S R2 G3 M1 P D2 N2 - N2 D2 P M1 G3 R2 S N2 D2 P D2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C641"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C641. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "dwijavanthi",
+      "snapshot": {
+        "name": "Dwijavanthi",
+        "parent": 28,
+        "ascent": "S R2 G3 M1 P D2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Dwijavanthi",
+      "parent": 28,
+      "ascent": "S R2 M1 G3 M1 P D2 Ṡ",
+      "descent": "Ṡ N2 D2 P M1 G3 M1 R2 G2 R2 S N2 D2 N2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C568",
+        "referenceName": "dvijaavanti",
+        "raw": "dvijaavanti S R2 M1 G3 M1 P D2 S - S N2 D2 P M1 G3 M1 R2 G2 R2 S N2 D2 N2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C568"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C568. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "khamasdesya",
+      "snapshot": {
+        "name": "Khamas (Desya)",
+        "parent": 28,
+        "ascent": "S G3 M1 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G3 R2 S"
+      },
+      "status": "PENDING_PDF_VERIFICATION",
+      "reason": "No unambiguous name-and-swarasthana transcription approved from the local PDFs yet.",
+      "workbookCheck": {
+        "status": "NO_UNAMBIGUOUS_NAME_MATCH",
+        "note": "Existing PDF evidence retained where available; no spreadsheet identity was guessed."
+      }
+    },
+    {
+      "key": "garudadhwani",
+      "snapshot": {
+        "name": "Garuda Dhwani",
+        "parent": 29,
+        "ascent": "S R2 G3 M1 P D2 N3 Ṡ",
+        "descent": "Ṡ D2 P G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Garuda Dhwani",
+      "parent": 29,
+      "ascent": "S R2 G3 M1 P D2 N3 Ṡ",
+      "descent": "Ṡ D2 P G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C686",
+        "referenceName": "garuDadhvani",
+        "raw": "garuDadhvani S R2 G3 M1 P D2 N3 S - S D2 P G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C686"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C686. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "nalinakanti",
+      "snapshot": {
+        "name": "Nalinakanti",
+        "parent": 27,
+        "ascent": "S G3 M1 P N3 Ṡ",
+        "descent": "Ṡ N3 P M1 G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Nalinakanti",
+      "parent": 27,
+      "ascent": "S G3 R2 M1 P N3 Ṡ",
+      "descent": "Ṡ N3 P M1 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C537",
+        "referenceName": "naLinakaanti",
+        "raw": "naLinakaanti S G3 R2 M1 P N3 S - S N3 P M1 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C537"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C537. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "purnachandrika",
+      "snapshot": {
+        "name": "Purna Chandrika",
+        "parent": 29,
+        "ascent": "S R2 G3 M1 P D2 P Ṡ",
+        "descent": "Ṡ N3 P M1 R2 G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Purna Chandrika",
+      "parent": 29,
+      "ascent": "S R2 G3 M1 P D2 P Ṡ",
+      "descent": "Ṡ N3 P M1 R2 G3 M1 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C714",
+        "referenceName": "poornacandrikaa",
+        "raw": "poornacandrikaa S R2 G3 M1 P D2 P S - S N3 P M1 R2 G3 M1 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C714"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C714. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "kurinji",
+      "snapshot": {
+        "name": "Kurinji",
+        "parent": 29,
+        "ascent": "S N3 S R2 G3 M1 P D2",
+        "descent": "D2 P M1 G3 R2 S N3 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Kurinji",
+      "parent": 29,
+      "ascent": "S N3, S R2 G3 M1 P D2",
+      "descent": "D2 P M1 G3 R2 S N3, S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C700",
+        "referenceName": "kurinji",
+        "raw": "kurinji S N3 S R2 G3 M1 P D2 - D2 P M1 G3 R2 S N3 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C700"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C700. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "sankara",
+      "snapshot": {
+        "name": "Sankara",
+        "parent": 29,
+        "ascent": "S G3 P N3 Ṡ",
+        "descent": "Ṡ N3 D2 P G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Sankara",
+      "parent": 29,
+      "ascent": "S G3 P Ṡ",
+      "descent": "Ṡ N3 D2 P G3 P R2 G3 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C720",
+        "referenceName": "shankara",
+        "raw": "shankara S G3 P S - S N3 D2 P G3 P R2 G3 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C720"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C720. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "hamsanandi",
+      "snapshot": {
+        "name": "Hamsanandi",
+        "parent": 53,
+        "ascent": "S R1 G3 M2 D2 N3 Ṡ",
+        "descent": "Ṡ N3 D2 M2 G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Hamsanandi",
+      "parent": 53,
+      "ascent": "S R1 G3 M2 D2 N3 Ṡ",
+      "descent": "Ṡ N3 D2 M2 G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C943",
+        "referenceName": "hamsaanandi",
+        "raw": "hamsaanandi S R1 G3 M2 D2 N3 S - S N3 D2 M2 G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C943"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C943. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "madhuvanthi",
+      "snapshot": {
+        "name": "Madhuvanthi",
+        "parent": 59,
+        "ascent": "S G2 M2 P N3 Ṡ",
+        "descent": "Ṡ N3 D2 P M2 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Madhuvanthi",
+      "parent": 59,
+      "ascent": "S G2 M2 P N3 Ṡ",
+      "descent": "Ṡ N3 D2 P M2 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C1019",
+        "referenceName": "madhuvanti",
+        "raw": "madhuvanti S G2 M2 P N3 S - S N3 D2 P M2 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C1019"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C1019. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "ranjani",
+      "snapshot": {
+        "name": "Ranjani",
+        "parent": 59,
+        "ascent": "S R2 G2 M2 D2 Ṡ",
+        "descent": "Ṡ N3 D2 M2 G2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Ranjani",
+      "parent": 59,
+      "ascent": "S R2 G2 M2 D2 Ṡ",
+      "descent": "Ṡ N3 D2 M2 G2 S R2 G2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C1021",
+        "referenceName": "ranjani",
+        "raw": "ranjani S R2 G2 M2 D2 S - S N3 D2 M2 G2 S R2 G2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C1021"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C1021. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "hamsanadam",
+      "snapshot": {
+        "name": "Hamsanadam",
+        "parent": 60,
+        "ascent": "S R2 M2 P N3 Ṡ",
+        "descent": "Ṡ N3 P M2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Hamsanadam",
+      "parent": 60,
+      "ascent": "S R2 M2 P N3 Ṡ",
+      "descent": "Ṡ N3 P M2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C1032",
+        "referenceName": "hamsanaadam",
+        "raw": "S R2 M2 P N3 S - S N3 P M2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C1031",
+          "Sheet1!C1032"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C1032. This selects one documented version; other workbook versions are not merged. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "hamirkalyani",
+      "snapshot": {
+        "name": "Hamir Kalyani",
+        "parent": 65,
+        "ascent": "S S R2 G3 M2 P D2 N3 Ṡ",
+        "descent": "Ṡ N3 D2 P M2 M1 P G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Hamir Kalyani",
+      "parent": 65,
+      "ascent": "S P M2 P D2 N3 Ṡ",
+      "descent": "Ṡ N3 D2 P M2 M1 G3 P M1 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C1093",
+        "referenceName": "hameer kalyaaNi",
+        "raw": "hameer kalyaaNi S P M2 P D2 N3 S - S N3 D2 P M2 M1 G3 P M1 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C1093",
+          "Sheet1!C1094",
+          "Sheet1!C1096",
+          "Sheet1!C1097"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C1093. This selects one documented version; other workbook versions are not merged. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "mohanakalyani",
+      "snapshot": {
+        "name": "Mohanakalyani",
+        "parent": 65,
+        "ascent": "S R2 G3 P D2 Ṡ",
+        "descent": "Ṡ N3 D2 P M2 G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Mohanakalyani",
+      "parent": 65,
+      "ascent": "S R2 G3 P D2 Ṡ",
+      "descent": "Ṡ N3 D2 P M2 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C1103",
+        "referenceName": "mOhana kalyaaNi",
+        "raw": "mOhana kalyaaNi S R2 G3 P D2 S - S N3 D2 P M2 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C1103"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C1103. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "yamunakalyani",
+      "snapshot": {
+        "name": "Yamunakalyani",
+        "parent": 65,
+        "ascent": "S R2 G3 M2 P D2 Ṡ",
+        "descent": "Ṡ D2 P M2 G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Yamunakalyani",
+      "parent": 65,
+      "ascent": "S R2 G3 P M2 P D2 Ṡ",
+      "descent": "Ṡ D2 P M2 P G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C1118",
+        "referenceName": "yamunaa kalyaaNi",
+        "raw": "yamunaa kalyaaNi S R2 G3 P M2 P D2 S - S D2 P M2 P G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C1118"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C1118. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "saranga",
+      "snapshot": {
+        "name": "Saranga",
+        "parent": 65,
+        "ascent": "S R2 G3 M2 P D2 N3 Ṡ",
+        "descent": "Ṡ N3 D2 P M2 P R2 G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Saranga",
+      "parent": 65,
+      "ascent": "S R2 G3 M2 P D2 N3 Ṡ",
+      "descent": "Ṡ N3 D2 P M2 R2 G3 M1 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C1107",
+        "referenceName": "saaranga",
+        "raw": "saaranga S R2 G3 M2 P D2 N3 S - S N3 D2 P M2 R2 G3 M1 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C1107",
+          "Sheet1!C1108",
+          "Sheet1!C1109"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C1107. This selects one documented version; other workbook versions are not merged. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "kasiramakriya",
+      "snapshot": {
+        "name": "Kasiramakriya",
+        "parent": 51,
+        "ascent": "S R1 G3 M2 P D1 N3 Ṡ",
+        "descent": "Ṡ N3 D1 P M2 G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Kasiramakriya",
+      "parent": 51,
+      "ascent": "S G3 R1 G3 M2 P D1 N3 Ṡ",
+      "descent": "Ṡ N3 D1 P M1 G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C904",
+        "referenceName": "kaashiraamakriyaa",
+        "raw": "kaashiraamakriyaa S G3 R1 G3 M2 P D1 N3 S - S N3 D1 P M1 G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C904"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C904. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "mandari",
+      "snapshot": {
+        "name": "Mandari",
+        "parent": 51,
+        "ascent": "S R1 G3 M2 P N3 Ṡ",
+        "descent": "Ṡ N3 P M2 G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Mandari",
+      "parent": 50,
+      "ascent": "S R1 G3 M2 P N2 Ṡ",
+      "descent": "Ṡ N2 P M2 G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C899",
+        "referenceName": "mandaari",
+        "raw": "mandaari S R1 G3 M2 P N2 S - S N2 P M2 G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C899"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C899. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "puriyadhanashree",
+      "snapshot": {
+        "name": "Puriya Dhanashree",
+        "parent": 51,
+        "ascent": "S R1 G3 M2 P D1 N3 Ṡ",
+        "descent": "Ṡ N3 D1 P M2 G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Puriya Dhanashree",
+      "parent": 51,
+      "ascent": "N3 R1 G3 M2 P D1 P N3 Ṡ",
+      "descent": "R1 N3 D1 P M2 G3 M2 R1 G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C919",
+        "referenceName": "puriyadhanashree",
+        "raw": "puriyadhanashree N3 R1 G3 M2 P D1 P N3 S - R1 N3 D1 P M2 G3 M2 R1 G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C919"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C919. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "dipakam",
+      "snapshot": {
+        "name": "Dipakam",
+        "parent": 51,
+        "ascent": "S R1 G3 M2 P D1 N3 Ṡ",
+        "descent": "Ṡ N3 D1 P M2 G3 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Dipakam",
+      "parent": 51,
+      "ascent": "S R2 M2 P D1 P Ṡ",
+      "descent": "Ṡ N3 D1 N3 P M2 G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C909",
+        "referenceName": "deepakam",
+        "raw": "deepakam S R2 M2 P D1 P S - S N3 D1 N3 P M2 G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C909"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C909. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "chamaram",
+      "snapshot": {
+        "name": "Chamaram",
+        "parent": 56,
+        "ascent": "S R2 G2 M2 P D1 N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M2 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Chamaram",
+      "parent": 56,
+      "ascent": "S R2 G2 M2 P D1 N2 Ṡ",
+      "descent": "Ṡ N2 D1 P M2 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C968",
+        "referenceName": "caamaram",
+        "raw": "caamaram S R2 G2 M2 P D1 N2 S - S N2 D1 P M2 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C968"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C968. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "gopikavasantham",
+      "snapshot": {
+        "name": "Gopikavasantham",
+        "parent": 20,
+        "ascent": "S G2 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M1 G2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Gopikavasantham",
+      "parent": 20,
+      "ascent": "S R2 G2 M1 P D1 P N2",
+      "descent": "Ṡ N2 D1 P M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C321",
+        "referenceName": "gOpikavasantam",
+        "raw": "gOpikavasantam S R2 G2 M1 P D1 P N2 - S N2 D1 P M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C321"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C321. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "vasukari",
+      "snapshot": {
+        "name": "Vasukari",
+        "parent": 56,
+        "ascent": "S R2 G2 M2 P D1 Ṡ",
+        "descent": "Ṡ D1 P M2 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Vasukari",
+      "parent": 56,
+      "ascent": "S G2 M2 P D1 N2 Ṡ",
+      "descent": "Ṡ N2 D1 M2 G2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C980",
+        "referenceName": "vasukari",
+        "raw": "vasukari S G2 M2 P D1 N2 S - S N2 D1 M2 G2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C980"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C980. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "vijayasaraswathi",
+      "snapshot": {
+        "name": "Vijayasaraswathi",
+        "parent": 57,
+        "ascent": "S R2 G2 M2 P N3 Ṡ",
+        "descent": "Ṡ N3 D1 P M2 G2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Vijayasaraswathi",
+      "parent": 57,
+      "ascent": "S G2 M2 P D1 N3 Ṡ",
+      "descent": "Ṡ N3 P M2 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C994",
+        "referenceName": "vijayasaraswati",
+        "raw": "vijayasaraswati S G2 M2 P D1 N3 S - S N3 P M2 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C994"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C994. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "vijayanasini",
+      "snapshot": {
+        "name": "Vijayanasini",
+        "parent": 58,
+        "ascent": "S R2 G2 M2 P D2 Ṡ",
+        "descent": "Ṡ D2 P M2 G2 R2 S"
+      },
+      "status": "PENDING_PDF_VERIFICATION",
+      "reason": "No unambiguous name-and-swarasthana transcription approved from the local PDFs yet.",
+      "workbookCheck": {
+        "status": "NO_UNAMBIGUOUS_NAME_MATCH",
+        "note": "Existing PDF evidence retained where available; no spreadsheet identity was guessed."
+      }
+    },
+    {
+      "key": "hamsabhramari",
+      "snapshot": {
+        "name": "Hamsabhramari",
+        "parent": 58,
+        "ascent": "S R2 G2 M2 P D2 Ṡ",
+        "descent": "Ṡ N2 D2 P M2 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Hamsabhramari",
+      "parent": 58,
+      "ascent": "S R2 G2 M2 P D2 Ṡ",
+      "descent": "Ṡ N2 D2 P M2 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C1000",
+        "referenceName": "hamsabhramari",
+        "raw": "hamsabhramari S R2 G2 M2 P D2 S - S N2 D2 P M2 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C1000"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C1000. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "ahiri",
+      "snapshot": {
+        "name": "Ahiri",
+        "parent": 14,
+        "ascent": "S R1 S G3 M1 P D1 N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M1 G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Ahiri",
+      "parent": 14,
+      "ascent": "S R1 S G3 M1 P D1 N2 Ṡ",
+      "descent": "Ṡ N2 D1 P M1 G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C165",
+        "referenceName": "aahiri",
+        "raw": "aahiri S R1 S G3 M1 P D1 N2 S - S N2 D1 P M1 G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C165"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C165. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "asaveri",
+      "snapshot": {
+        "name": "Asaveri",
+        "parent": 8,
+        "ascent": "S R1 M1 P D1 Ṡ",
+        "descent": "Ṡ N2 Ṡ P D1 M1 P G1 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Asaveri",
+      "parent": 8,
+      "ascent": "S R1 M1 P D1 Ṡ",
+      "descent": "Ṡ N2 Ṡ P D1 M1 P R1 G2 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C90",
+        "referenceName": "asaavEri",
+        "raw": "asaavEri S R1 M1 P D1 S - S N2 S P D1 M1 P R1 G2 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C90"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C90. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "bhoopalam",
+      "snapshot": {
+        "name": "Bhoopalam",
+        "parent": 8,
+        "ascent": "S R1 G1 P D1 Ṡ",
+        "descent": "Ṡ D1 P G1 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Bhoopalam",
+      "parent": 8,
+      "ascent": "S R1 G2 P D1 Ṡ",
+      "descent": "Ṡ D1 P G2 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C93",
+        "referenceName": "bhoopaaLam",
+        "raw": "bhoopaaLam S R1 G2 P D1 S - S D1 P G2 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C93"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C93. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "dhanyasi",
+      "snapshot": {
+        "name": "Dhanyasi",
+        "parent": 8,
+        "ascent": "S G1 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M1 G1 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Dhanyasi",
+      "parent": 8,
+      "ascent": "S G2 M1 P N2 Ṡ",
+      "descent": "Ṡ N2 D1 P M1 G2 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C98",
+        "referenceName": "dhanyaasi",
+        "raw": "dhanyaasi S G2 M1 P N2 S - S N2 D1 P M1 G2 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C98"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C98. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "punnagavarali",
+      "snapshot": {
+        "name": "Punnagavarali",
+        "parent": 8,
+        "ascent": "N2 S R1 G1 M1 P D1 N2",
+        "descent": "N2 D1 P M1 G1 R1 S N2"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Punnagavarali",
+      "parent": 8,
+      "ascent": "N2, S R1 G2 M1 P D1 N2",
+      "descent": "N2 D1 P M1 G2 R1 S N2,",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C107",
+        "referenceName": "punnaagavaraaLi",
+        "raw": "N2 S R1 G2 M1 P D1 N2 - N2 D1 P M1 G2 R1 S N2"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C107"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C107. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "nagavarali",
+      "snapshot": {
+        "name": "Nagavarali",
+        "parent": 8,
+        "ascent": "S R1 G1 M1 P D1 N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M1 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Nagavarali",
+      "parent": 8,
+      "ascent": "S R1 G2 M1 P M1 D1 N2 Ṡ",
+      "descent": "Ṡ N2 D1 P M1 G2 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C103",
+        "referenceName": "naagavaraaLi",
+        "raw": "naagavaraaLi S R1 G2 M1 P M1 D1 N2 S - S N2 D1 P M1 G2 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C103"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C103. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "suddhaseemanthini",
+      "snapshot": {
+        "name": "Suddha Seemanthini",
+        "parent": 8,
+        "ascent": "S R1 G1 M1 P D1 Ṡ",
+        "descent": "Ṡ D1 P M1 G1 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Suddha Seemanthini",
+      "parent": 8,
+      "ascent": "S R1 G2 M1 P D1 Ṡ",
+      "descent": "Ṡ D1 P M1 G2 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C110",
+        "referenceName": "sudda seemantini",
+        "raw": "sudda seemantini S R1 G2 M1 P D1 S - S D1 P M1 G2 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C110"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C110. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "bauli",
+      "snapshot": {
+        "name": "Bauli",
+        "parent": 15,
+        "ascent": "S R1 G3 P D1 Ṡ",
+        "descent": "Ṡ N3 D1 P G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Bauli",
+      "parent": 15,
+      "ascent": "S R1 G3 P D1 Ṡ",
+      "descent": "Ṡ N3 D1 P G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C181",
+        "referenceName": "bowLi",
+        "raw": "bowLi S R1 G3 P D1 S - S N3 D1 P G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C181"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C181. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "saveri",
+      "snapshot": {
+        "name": "Saveri",
+        "parent": 15,
+        "ascent": "S R1 M1 P D1 Ṡ",
+        "descent": "Ṡ N3 D1 P M1 G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Saveri",
+      "parent": 15,
+      "ascent": "S R1 M1 P D1 Ṡ",
+      "descent": "Ṡ N3 D1 P M1 G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C230",
+        "referenceName": "saavEri",
+        "raw": "saavEri S R1 M1 P D1 S - S N3 D1 P M1 G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C230"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C230. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "revagupti",
+      "snapshot": {
+        "name": "Revagupti",
+        "parent": 15,
+        "ascent": "S R1 G3 P D1 Ṡ",
+        "descent": "Ṡ D1 P G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Revagupti",
+      "parent": 15,
+      "ascent": "S R1 G3 P D1 Ṡ",
+      "descent": "Ṡ D1 P G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C226",
+        "referenceName": "rEvagupti",
+        "raw": "rEvagupti S R1 G3 P D1 S - S D1 P G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C226"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C226. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "gurjari",
+      "snapshot": {
+        "name": "Gurjari",
+        "parent": 15,
+        "ascent": "S R1 G3 M1 P D1 N3 Ṡ",
+        "descent": "Ṡ D1 P M1 G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Gurjari",
+      "parent": 15,
+      "ascent": "S R1 G3 M1 P D1 N3 Ṡ",
+      "descent": "Ṡ D1 N3 P M1 G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C195",
+        "referenceName": "gurjari",
+        "raw": "gurjari S R1 G3 M1 P D1 N3 S - S D1 N3 P M1 G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C195"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C195. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "malahari",
+      "snapshot": {
+        "name": "Malahari",
+        "parent": 15,
+        "ascent": "S R1 M1 P D1 Ṡ",
+        "descent": "Ṡ D1 P M1 G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Malahari",
+      "parent": 15,
+      "ascent": "S R1 M1 P D1 Ṡ",
+      "descent": "Ṡ D1 P M1 G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C206",
+        "referenceName": "malahari",
+        "raw": "malahari S R1 M1 P D1 S - S D1 P M1 G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C206"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C206. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "megharanjani",
+      "snapshot": {
+        "name": "Megharanjani",
+        "parent": 15,
+        "ascent": "S R1 G3 M1 N3 Ṡ",
+        "descent": "Ṡ N3 M1 G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Megharanjani",
+      "parent": 15,
+      "ascent": "S R1 G3 M1 N3 Ṡ",
+      "descent": "Ṡ N3 M1 G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C212",
+        "referenceName": "mEgharanjani",
+        "raw": "mEgharanjani S R1 G3 M1 N3 S - S N3 M1 G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C212"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C212. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "gowla",
+      "snapshot": {
+        "name": "Gowla",
+        "parent": 15,
+        "ascent": "S R1 M1 P N3 Ṡ",
+        "descent": "Ṡ N3 P M1 R1 G3 M1 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Gowla",
+      "parent": 15,
+      "ascent": "S R1 M1 P N3 Ṡ",
+      "descent": "Ṡ N3 P M1 R1 G3 M1 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C190",
+        "referenceName": "gowLa",
+        "raw": "gowLa S R1 M1 P N3 S - S N3 P M1 R1 G3 M1 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C190"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C190. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "padi",
+      "snapshot": {
+        "name": "Padi",
+        "parent": 15,
+        "ascent": "S R1 M1 P N3 Ṡ",
+        "descent": "Ṡ N3 P D1 P M1 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Padi",
+      "parent": 15,
+      "ascent": "S R1 M1 P N3 Ṡ",
+      "descent": "Ṡ N3 P D1 P M1 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C214",
+        "referenceName": "paaDi",
+        "raw": "paaDi S R1 M1 P N3 S - S N3 P D1 P M1 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C214"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C214. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "karnatakabangala",
+      "snapshot": {
+        "name": "Karnataka Bangala",
+        "parent": 15,
+        "ascent": "S R1 G3 M1 P D1 Ṡ",
+        "descent": "Ṡ D1 P M1 G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Karnataka Bangala",
+      "parent": 15,
+      "ascent": "S R1 M1 G3 M1 D1 P D1 Ṡ",
+      "descent": "Ṡ D1 P M1 G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C199",
+        "referenceName": "kannaDabangaaLa",
+        "raw": "kannaDabangaaLa S R1 M1 G3 M1 D1 P D1 S - S D1 P M1 G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C199"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C199. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "lalitha",
+      "snapshot": {
+        "name": "Lalitha",
+        "parent": 15,
+        "ascent": "S R1 G3 M1 D1 N3 Ṡ",
+        "descent": "Ṡ N3 D1 P M1 G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Lalitha",
+      "parent": 15,
+      "ascent": "S R1 G3 M1 D1 N3 Ṡ",
+      "descent": "Ṡ N3 D1 M1 G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C201",
+        "referenceName": "lalitaa",
+        "raw": "lalitaa S R1 G3 M1 D1 N3 S - S N3 D1 M1 G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C201"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C201. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "gowri",
+      "snapshot": {
+        "name": "Gowri",
+        "parent": 15,
+        "ascent": "S R1 M1 P N3 Ṡ",
+        "descent": "Ṡ N3 D1 P M1 G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Gowri",
+      "parent": 15,
+      "ascent": "S R1 M1 P N3 Ṡ",
+      "descent": "Ṡ N3 D1 P M1 G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C192",
+        "referenceName": "gowri",
+        "raw": "gowri S R1 M1 P N3 S - S N3 D1 P M1 G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C192"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C192. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "vasanta",
+      "snapshot": {
+        "name": "Vasanta",
+        "parent": 17,
+        "ascent": "S M1 G3 M1 D2 N3 Ṡ",
+        "descent": "Ṡ N3 D2 M1 G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Vasanta",
+      "parent": 17,
+      "ascent": "S M1 G3 M1 D2 N3 Ṡ",
+      "descent": "Ṡ N3 D2 M1 G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C280",
+        "referenceName": "vasantaa",
+        "raw": "vasantaa S M1 G3 M1 D2 N3 S - S N3 D2 M1 G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C280"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C280. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "bindumalini",
+      "snapshot": {
+        "name": "Bindumalini",
+        "parent": 16,
+        "ascent": "S G3 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 P M1 G3 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Bindumalini",
+      "parent": 16,
+      "ascent": "S G3 R1 G3 M1 P N2 Ṡ",
+      "descent": "Ṡ N2 Ṡ D2 P G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C245",
+        "referenceName": "bindumaalini",
+        "raw": "bindumaalini S G3 R1 G3 M1 P N2 S - S N2 S D2 P G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C245"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C245. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "kalavathi",
+      "snapshot": {
+        "name": "Kalavathi",
+        "parent": 16,
+        "ascent": "S R1 M1 P D2 Ṡ",
+        "descent": "Ṡ D2 P M1 G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Kalavathi",
+      "parent": 16,
+      "ascent": "S R1 M1 P D2 Ṡ",
+      "descent": "Ṡ D2 P M1 G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C249",
+        "referenceName": "kalaavati",
+        "raw": "kalaavati S R1 M1 P D2 S - S D2 P M1 G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C249"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C249. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "syama",
+      "snapshot": {
+        "name": "Syama",
+        "parent": 16,
+        "ascent": "S R1 G3 P D2 Ṡ",
+        "descent": "Ṡ D2 P G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Syama",
+      "parent": 28,
+      "ascent": "S R2 M1 P D2 Ṡ",
+      "descent": "Ṡ D2 P M1 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C644",
+        "referenceName": "shyaamaa",
+        "raw": "shyaamaa S R2 M1 P D2 S - S D2 P M1 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C644",
+          "Sheet1!C645"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C644. This selects one documented version; other workbook versions are not merged. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "vegavahini",
+      "snapshot": {
+        "name": "Vegavahini",
+        "parent": 16,
+        "ascent": "S R1 G3 M1 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Vegavahini",
+      "parent": 16,
+      "ascent": "S R1 G3 M1 D2 N2 D2 Ṡ",
+      "descent": "Ṡ N2 D2 P M1 G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C263",
+        "referenceName": "vEgavaahini",
+        "raw": "vEgavaahini S R1 G3 M1 D2 N2 D2 S - S N2 D2 P M1 G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C263"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C263. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "husenidesya",
+      "snapshot": {
+        "name": "Huseni (Desya)",
+        "parent": 22,
+        "ascent": "S R2 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G2 R2 S"
+      },
+      "status": "PENDING_PDF_VERIFICATION",
+      "reason": "No unambiguous name-and-swarasthana transcription approved from the local PDFs yet.",
+      "workbookCheck": {
+        "status": "NO_UNAMBIGUOUS_NAME_MATCH",
+        "note": "Existing PDF evidence retained where available; no spreadsheet identity was guessed."
+      }
+    },
+    {
+      "key": "husenipurva",
+      "snapshot": {
+        "name": "Huseni (Purva)",
+        "parent": 22,
+        "ascent": "S R2 G2 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G2 R2 S"
+      },
+      "status": "PENDING_PDF_VERIFICATION",
+      "reason": "No unambiguous name-and-swarasthana transcription approved from the local PDFs yet.",
+      "workbookCheck": {
+        "status": "NO_UNAMBIGUOUS_NAME_MATCH",
+        "note": "Existing PDF evidence retained where available; no spreadsheet identity was guessed."
+      }
+    },
+    {
+      "key": "brindavanasaranga",
+      "snapshot": {
+        "name": "Brindavana Saranga",
+        "parent": 22,
+        "ascent": "S R2 M1 P N3 Ṡ",
+        "descent": "Ṡ N2 P M1 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Brindavana Saranga",
+      "parent": 22,
+      "ascent": "S R2 M1 P N3 Ṡ",
+      "descent": "Ṡ N2 P M1 R2 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C389",
+        "referenceName": "brindaavana saaranga",
+        "raw": "brindaavana saaranga S R2 M1 P N3 S - S N2 P M1 R2 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C389"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C389. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "shuddhasarang",
+      "snapshot": {
+        "name": "Shuddha Sarang",
+        "parent": 29,
+        "ascent": "S R2 M2 P N3 Ṡ",
+        "descent": "Ṡ N3 P M2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Shuddha Sarang",
+      "parent": 29,
+      "ascent": "S R2 G3 M1 P D2 N3 D2 Ṡ",
+      "descent": "Ṡ D2 P M1 R2 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C727",
+        "referenceName": "sudda saarang",
+        "raw": "sudda saarang S R2 G3 M1 P D2 N3 D2 S - S D2 P M1 R2 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C727"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C727. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "desh",
+      "snapshot": {
+        "name": "Desh",
+        "parent": 28,
+        "ascent": "S R2 M1 P N3 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Desh",
+      "parent": 28,
+      "ascent": "S R2 M1 P N2 Ṡ",
+      "descent": "Ṡ N2 D2 P M1 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C563",
+        "referenceName": "dEsh",
+        "raw": "dEsh S R2 M1 P N2 S - S N2 D2 P M1 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C563"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C563. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "tilang",
+      "snapshot": {
+        "name": "Tilang",
+        "parent": 28,
+        "ascent": "S G3 M1 P N3 Ṡ",
+        "descent": "Ṡ N2 P M1 G3 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Tilang",
+      "parent": 28,
+      "ascent": "S G3 M1 P N3 Ṡ",
+      "descent": "Ṡ N2 P M1 G3 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C659",
+        "referenceName": "tilang (also 30)",
+        "raw": "tilang (also 30) S G3 M1 P N3 S - S N2 P M1 G3 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C659"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C659. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "gorakhkalyan",
+      "snapshot": {
+        "name": "Gorakh Kalyan",
+        "parent": 28,
+        "ascent": "S R2 M1 D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 M1 R2 S"
+      },
+      "status": "PENDING_PDF_VERIFICATION",
+      "reason": "No unambiguous name-and-swarasthana transcription approved from the local PDFs yet.",
+      "workbookCheck": {
+        "status": "NO_UNAMBIGUOUS_NAME_MATCH",
+        "note": "Existing PDF evidence retained where available; no spreadsheet identity was guessed."
+      }
+    },
+    {
+      "key": "chayanata",
+      "snapshot": {
+        "name": "Chayanata",
+        "parent": 34,
+        "ascent": "S R3 G3 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G3 R3 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Chayanata",
+      "parent": 34,
+      "ascent": "S R3 G3 M1 P M1 P Ṡ",
+      "descent": "Ṡ N2 D2 N2 P M1 R3 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C775",
+        "referenceName": "caayanaaTTai",
+        "raw": "caayanaaTTai S R3 G3 M1 P M1 P S - S N2 D2 N2 P M1 R3 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C775"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C775. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "kanakambari",
+      "snapshot": {
+        "name": "Kanakambari",
+        "parent": 1,
+        "ascent": "S R1 M1 P D1 Ṡ",
+        "descent": "Ṡ N1 D1 P M1 G1 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Kanakambari",
+      "parent": 1,
+      "ascent": "S R1 M1 P D1 Ṡ",
+      "descent": "Ṡ N1 D1 P M1 G1 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C32",
+        "referenceName": "kanakaambari",
+        "raw": "kanakaambari S R1 M1 P D1 S - S N1 D1 P M1 G1 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C32"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C32. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "ratnavali",
+      "snapshot": {
+        "name": "Ratnavali",
+        "parent": 2,
+        "ascent": "S R1 G1 P D1 Ṡ",
+        "descent": "Ṡ D1 P G1 R1 S"
+      },
+      "status": "PENDING_PDF_VERIFICATION",
+      "reason": "No unambiguous name-and-swarasthana transcription approved from the local PDFs yet.",
+      "workbookCheck": {
+        "status": "NO_UNAMBIGUOUS_NAME_MATCH",
+        "note": "Existing PDF evidence retained where available; no spreadsheet identity was guessed."
+      }
+    },
+    {
+      "key": "ganalalitha",
+      "snapshot": {
+        "name": "Ganalalitha",
+        "parent": 3,
+        "ascent": "S R1 G1 M1 P Ṡ",
+        "descent": "Ṡ N3 D1 P M1 G1 R1 S"
+      },
+      "status": "PENDING_PDF_VERIFICATION",
+      "reason": "No unambiguous name-and-swarasthana transcription approved from the local PDFs yet.",
+      "workbookCheck": {
+        "status": "NO_UNAMBIGUOUS_NAME_MATCH",
+        "note": "Existing PDF evidence retained where available; no spreadsheet identity was guessed."
+      }
+    },
+    {
+      "key": "bhuvaneswari",
+      "snapshot": {
+        "name": "Bhuvaneswari",
+        "parent": 4,
+        "ascent": "S R1 G1 M1 P Ṡ",
+        "descent": "Ṡ D2 P M1 G1 R1 S"
+      },
+      "status": "PENDING_PDF_VERIFICATION",
+      "reason": "No unambiguous name-and-swarasthana transcription approved from the local PDFs yet.",
+      "workbookCheck": {
+        "status": "NO_UNAMBIGUOUS_NAME_MATCH",
+        "note": "Existing PDF evidence retained where available; no spreadsheet identity was guessed."
+      }
+    },
+    {
+      "key": "manoranjani",
+      "snapshot": {
+        "name": "Manoranjani",
+        "parent": 5,
+        "ascent": "S R1 G1 M1 P D2 Ṡ",
+        "descent": "Ṡ N3 D2 P M1 G1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Manoranjani",
+      "parent": 5,
+      "ascent": "S R1 M1 P D2 N3 Ṡ",
+      "descent": "Ṡ N3 D2 P M1 G1 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C70",
+        "referenceName": "manOranjani",
+        "raw": "manOranjani S R1 M1 P D2 N3 S - S N3 D2 P M1 G1 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C70"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C70. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "easwari",
+      "snapshot": {
+        "name": "Easwari",
+        "parent": 6,
+        "ascent": "S R1 G1 M1 P Ṡ",
+        "descent": "Ṡ D3 P M1 G1 R1 S"
+      },
+      "status": "PENDING_PDF_VERIFICATION",
+      "reason": "No unambiguous name-and-swarasthana transcription approved from the local PDFs yet.",
+      "workbookCheck": {
+        "status": "NO_UNAMBIGUOUS_NAME_MATCH",
+        "note": "Existing PDF evidence retained where available; no spreadsheet identity was guessed."
+      }
+    },
+    {
+      "key": "bhanumathi",
+      "snapshot": {
+        "name": "Bhanumathi",
+        "parent": 7,
+        "ascent": "S R1 G1 M1 P D1 Ṡ",
+        "descent": "Ṡ N1 D1 P M1 G1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Bhanumathi",
+      "parent": 4,
+      "ascent": "N2 S M1 P N2 Ṡ",
+      "descent": "Ṡ N2 D2 P M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C63",
+        "referenceName": "bhaanumati",
+        "raw": "bhaanumati N2 S M1 P N2 S - S N2 D2 P M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C63"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C63. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "dhenuka",
+      "snapshot": {
+        "name": "Dhenuka",
+        "parent": 9,
+        "ascent": "S R1 G1 M1 P D1 N3 Ṡ",
+        "descent": "Ṡ N3 D1 P M1 G1 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 9; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "bhinnashadjam",
+      "snapshot": {
+        "name": "Bhinnashadjam",
+        "parent": 9,
+        "ascent": "S R1 G1 M1 P Ṡ",
+        "descent": "Ṡ N3 D1 P M1 G1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Bhinnashadjam",
+      "parent": 9,
+      "ascent": "S R1 G2 R1 P M1 P N3 Ṡ",
+      "descent": "Ṡ D1 P M1 G2 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C117",
+        "referenceName": "bhinnashaDjam",
+        "raw": "bhinnashaDjam S R1 G2 R1 P M1 P N3 S - S D1 P M1 G2 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C117"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C117. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "natakapriya",
+      "snapshot": {
+        "name": "Natakapriya",
+        "parent": 10,
+        "ascent": "S R1 G1 M1 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G1 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 10; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "alankarapriya",
+      "snapshot": {
+        "name": "Alankarapriya",
+        "parent": 10,
+        "ascent": "S R1 G1 M1 P Ṡ",
+        "descent": "Ṡ N2 D2 P M1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Alankarapriya",
+      "parent": 10,
+      "ascent": "S R1 G2 M1 D2 N2 Ṡ",
+      "descent": "Ṡ N2 D2 M1 G2 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C124",
+        "referenceName": "alankaarapriyaa",
+        "raw": "alankaarapriyaa S R1 G2 M1 D2 N2 S - S N2 D2 M1 G2 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C124"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C124. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "kokilapriya",
+      "snapshot": {
+        "name": "Kokilapriya",
+        "parent": 11,
+        "ascent": "S R1 G1 M1 P D2 N3 Ṡ",
+        "descent": "Ṡ N3 D2 P M1 G1 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 11; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "kokilaravam",
+      "snapshot": {
+        "name": "Kokilaravam",
+        "parent": 11,
+        "ascent": "S R1 G1 M1 P D2 Ṡ",
+        "descent": "Ṡ N3 D2 P M1 G1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Kokilaravam",
+      "parent": 11,
+      "ascent": "S R1 M1 P D2 N3 Ṡ",
+      "descent": "Ṡ N3 D2 P M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C139",
+        "referenceName": "kOkilaaravam",
+        "raw": "kOkilaaravam S R1 M1 P D2 N3 S - S N3 D2 P M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C139"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C139. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "rupavati",
+      "snapshot": {
+        "name": "Rupavati",
+        "parent": 12,
+        "ascent": "S R1 G1 M1 P D3 N3 Ṡ",
+        "descent": "Ṡ N3 D3 P M1 G1 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 12; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "gayakapriya",
+      "snapshot": {
+        "name": "Gayakapriya",
+        "parent": 13,
+        "ascent": "S R1 G3 M1 P D1 N1 Ṡ",
+        "descent": "Ṡ N1 D1 P M1 G3 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 13; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "geethapriya",
+      "snapshot": {
+        "name": "Geethapriya",
+        "parent": 13,
+        "ascent": "S R1 G3 M1 P Ṡ",
+        "descent": "Ṡ N1 D1 P M1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Geethapriya",
+      "parent": 63,
+      "ascent": "S R2 G3 M2 P D1 N3 Ṡ",
+      "descent": "Ṡ N3 D1 P M2 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C1052",
+        "referenceName": "geetapriyaa",
+        "raw": "geetapriyaa S R2 G3 M2 P D1 N3 S - S N3 D1 P M2 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C1052"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C1052. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "vakulabharanam",
+      "snapshot": {
+        "name": "Vakulabharanam",
+        "parent": 14,
+        "ascent": "S R1 G3 M1 P D1 N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M1 G3 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 14; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "suryakantam",
+      "snapshot": {
+        "name": "Suryakantam",
+        "parent": 17,
+        "ascent": "S R1 G3 M1 P D2 N3 Ṡ",
+        "descent": "Ṡ N3 D2 P M1 G3 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 17; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "bhairavam",
+      "snapshot": {
+        "name": "Bhairavam",
+        "parent": 17,
+        "ascent": "S R1 G3 M1 P D2 Ṡ",
+        "descent": "Ṡ N3 D2 P M1 G3 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Bhairavam",
+      "parent": 17,
+      "ascent": "S R1 G3 M1 P D2 N3 Ṡ",
+      "descent": "Ṡ D2 P M1 G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C269",
+        "referenceName": "bhairavam",
+        "raw": "bhairavam S R1 G3 M1 P D2 N3 S - S D2 P M1 G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C269"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C269. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "hatakambari",
+      "snapshot": {
+        "name": "Hatakambari",
+        "parent": 18,
+        "ascent": "S R1 G3 M1 P D3 N3 Ṡ",
+        "descent": "Ṡ N3 D3 P M1 G3 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 18; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "jhankaradhwani",
+      "snapshot": {
+        "name": "Jhankaradhwani",
+        "parent": 19,
+        "ascent": "S R2 G2 M1 P D1 N1 Ṡ",
+        "descent": "Ṡ N1 D1 P M1 G2 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 19; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "jhankarabhramari",
+      "snapshot": {
+        "name": "Jhankarabhramari",
+        "parent": 19,
+        "ascent": "S R2 G2 M1 P Ṡ",
+        "descent": "Ṡ N1 D1 P M1 G2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Jhankarabhramari",
+      "parent": 19,
+      "ascent": "S R2 G2 M1 P D1 N1 D1 P D1 Ṡ",
+      "descent": "Ṡ N1 D1 P M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C290",
+        "referenceName": "jhankaarabhramari",
+        "raw": "jhankaarabhramari S R2 G2 M1 P D1 N1 D1 P D1 S - S N1 D1 P M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C290",
+          "Sheet1!C291",
+          "Sheet1!C292",
+          "Sheet1!C293",
+          "Sheet1!C295"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C290. This selects one documented version; other workbook versions are not merged. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "keeravani",
+      "snapshot": {
+        "name": "Keeravani",
+        "parent": 21,
+        "ascent": "S R2 G2 M1 P D1 N3 Ṡ",
+        "descent": "Ṡ N3 D1 P M1 G2 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 21; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "kiranavali",
+      "snapshot": {
+        "name": "Kiranavali",
+        "parent": 21,
+        "ascent": "S R2 G2 M1 P Ṡ",
+        "descent": "Ṡ N3 D1 P M1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Kiranavali",
+      "parent": 21,
+      "ascent": "S R2 G2 M1 P D1 N3 Ṡ",
+      "descent": "Ṡ D1 P M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C355",
+        "referenceName": "keeraNaavaLi",
+        "raw": "keeraNaavaLi S R2 G2 M1 P D1 N3 S - S D1 P M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C355"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C355. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "kalyanavasantham",
+      "snapshot": {
+        "name": "Kalyanavasantham",
+        "parent": 21,
+        "ascent": "S G2 M1 D1 N3 Ṡ",
+        "descent": "Ṡ N3 D1 M1 G2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Kalyanavasantham",
+      "parent": 21,
+      "ascent": "S G2 M1 D1 N3 Ṡ",
+      "descent": "Ṡ N3 D1 P M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C365",
+        "referenceName": "kalyaaNa vasantam",
+        "raw": "kalyaaNa vasantam S G2 M1 D1 N3 S - S N3 D1 P M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C365"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C365. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "gaurimanohari",
+      "snapshot": {
+        "name": "Gaurimanohari",
+        "parent": 23,
+        "ascent": "S R2 G2 M1 P D2 N3 Ṡ",
+        "descent": "Ṡ N3 D2 P M1 G2 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 23; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "gaurilalitha",
+      "snapshot": {
+        "name": "Gaurilalitha",
+        "parent": 23,
+        "ascent": "S R2 G2 M1 P Ṡ",
+        "descent": "Ṡ N3 D2 P M1 S"
+      },
+      "status": "PENDING_PDF_VERIFICATION",
+      "reason": "No unambiguous name-and-swarasthana transcription approved from the local PDFs yet.",
+      "workbookCheck": {
+        "status": "NO_UNAMBIGUOUS_NAME_MATCH",
+        "note": "Existing PDF evidence retained where available; no spreadsheet identity was guessed."
+      }
+    },
+    {
+      "key": "varunapriya",
+      "snapshot": {
+        "name": "Varunapriya",
+        "parent": 24,
+        "ascent": "S R2 G2 M1 P D3 N3 Ṡ",
+        "descent": "Ṡ N3 D3 P M1 G2 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 24; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "mararanjani",
+      "snapshot": {
+        "name": "Mararanjani",
+        "parent": 25,
+        "ascent": "S R2 G3 M1 P D1 N1 Ṡ",
+        "descent": "Ṡ N1 D1 P M1 G3 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 25; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "sharavati",
+      "snapshot": {
+        "name": "Sharavati",
+        "parent": 25,
+        "ascent": "S R2 G3 M1 P Ṡ",
+        "descent": "Ṡ N1 D1 P M1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Sharavati",
+      "parent": 25,
+      "ascent": "S R2 G3 M1 P D1 N1 D1 Ṡ",
+      "descent": "Ṡ N1 D1 P M1 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C512",
+        "referenceName": "sharaavati",
+        "raw": "sharaavati S R2 G3 M1 P D1 N1 D1 S - S N1 D1 P M1 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C512"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C512. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "charukesi",
+      "snapshot": {
+        "name": "Charukesi",
+        "parent": 26,
+        "ascent": "S R2 G3 M1 P D1 N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M1 G3 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 26; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "tarangini",
+      "snapshot": {
+        "name": "Tarangini",
+        "parent": 26,
+        "ascent": "S R2 G3 M1 P Ṡ",
+        "descent": "Ṡ N2 D1 P M1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Tarangini",
+      "parent": 26,
+      "ascent": "S R2 G3 P D1 N2 D1 Ṡ",
+      "descent": "Ṡ D1 P M1 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C521",
+        "referenceName": "tarangini",
+        "raw": "tarangini S R2 G3 P D1 N2 D1 S - S D1 P M1 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C521",
+          "Sheet1!C522"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C521. This selects one documented version; other workbook versions are not merged. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "sarasangi",
+      "snapshot": {
+        "name": "Sarasangi",
+        "parent": 27,
+        "ascent": "S R2 G3 M1 P D2 N3 Ṡ",
+        "descent": "Ṡ N3 D2 P M1 G3 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 27; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "haripriya",
+      "snapshot": {
+        "name": "Haripriya",
+        "parent": 27,
+        "ascent": "S R2 G3 M1 P Ṡ",
+        "descent": "Ṡ N3 D2 P M1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Haripriya",
+      "parent": 27,
+      "ascent": "S R1 G3 M1 P Ṡ",
+      "descent": "Ṡ N3 D1 P M1 G3 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C534",
+        "referenceName": "haripriya",
+        "raw": "haripriya S R1 G3 M1 P S - S N3 D1 P M1 G3 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C534"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C534. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "naganandini",
+      "snapshot": {
+        "name": "Naganandini",
+        "parent": 30,
+        "ascent": "S R2 G3 M1 P D3 N3 Ṡ",
+        "descent": "Ṡ N3 D3 P M1 G3 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 30; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "yagapriya",
+      "snapshot": {
+        "name": "Yagapriya",
+        "parent": 31,
+        "ascent": "S R3 G3 M1 P D1 N1 Ṡ",
+        "descent": "Ṡ N1 D1 P M1 G3 R3 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 31; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "kalavathiyaga",
+      "snapshot": {
+        "name": "Kalavathi (Yaga)",
+        "parent": 31,
+        "ascent": "S R3 G3 M1 P Ṡ",
+        "descent": "Ṡ N1 D1 P M1 S"
+      },
+      "status": "PENDING_PDF_VERIFICATION",
+      "reason": "No unambiguous name-and-swarasthana transcription approved from the local PDFs yet.",
+      "workbookCheck": {
+        "status": "NO_UNAMBIGUOUS_NAME_MATCH",
+        "note": "Existing PDF evidence retained where available; no spreadsheet identity was guessed."
+      }
+    },
+    {
+      "key": "ragavardhini",
+      "snapshot": {
+        "name": "Ragavardhini",
+        "parent": 32,
+        "ascent": "S R3 G3 M1 P D1 N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M1 G3 R3 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 32; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "gangeyabhushani",
+      "snapshot": {
+        "name": "Gangeyabhushani",
+        "parent": 33,
+        "ascent": "S R3 G3 M1 P D1 N3 Ṡ",
+        "descent": "Ṡ N3 D1 P M1 G3 R3 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 33; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "gangatarangini",
+      "snapshot": {
+        "name": "Gangatarangini",
+        "parent": 33,
+        "ascent": "S R3 G3 M1 P Ṡ",
+        "descent": "Ṡ N3 D1 P M1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Gangatarangini",
+      "parent": 33,
+      "ascent": "S R3 G3 M1 P D1 N3 Ṡ",
+      "descent": "Ṡ N3 D1 P M1 M1 G3 M1 R3 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C769",
+        "referenceName": "gangaatarangini",
+        "raw": "gangaatarangini S R3 G3 M1 P D1 N3 S - S N3 D1 P M1 M1 G3 M1 R3 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C769"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C769. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "vagadheeswari",
+      "snapshot": {
+        "name": "Vagadheeswari",
+        "parent": 34,
+        "ascent": "S R3 G3 M1 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G3 R3 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 34; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "sulini",
+      "snapshot": {
+        "name": "Sulini",
+        "parent": 35,
+        "ascent": "S R3 G3 M1 P D2 N3 Ṡ",
+        "descent": "Ṡ N3 D2 P M1 G3 R3 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 35; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "chalanata",
+      "snapshot": {
+        "name": "Chalanata",
+        "parent": 36,
+        "ascent": "S R3 G3 M1 P D3 N3 Ṡ",
+        "descent": "Ṡ N3 D3 P M1 G3 R3 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 36; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "salakam",
+      "snapshot": {
+        "name": "Salakam",
+        "parent": 37,
+        "ascent": "S R1 G1 M2 P D1 N1 Ṡ",
+        "descent": "Ṡ N1 D1 P M2 G1 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 37; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "jalarnavam",
+      "snapshot": {
+        "name": "Jalarnavam",
+        "parent": 38,
+        "ascent": "S R1 G1 M2 P D1 N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M2 G1 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 38; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "jhalavarali",
+      "snapshot": {
+        "name": "Jhalavarali",
+        "parent": 39,
+        "ascent": "S R1 G1 M2 P D1 N3 Ṡ",
+        "descent": "Ṡ N3 D1 P M2 G1 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 39; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "navaneetham",
+      "snapshot": {
+        "name": "Navaneetham",
+        "parent": 40,
+        "ascent": "S R1 G1 M2 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M2 G1 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 40; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "pavani",
+      "snapshot": {
+        "name": "Pavani",
+        "parent": 41,
+        "ascent": "S R1 G1 M2 P D2 N3 Ṡ",
+        "descent": "Ṡ N3 D2 P M2 G1 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 41; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "raghupriya",
+      "snapshot": {
+        "name": "Raghupriya",
+        "parent": 42,
+        "ascent": "S R1 G1 M2 P D3 N3 Ṡ",
+        "descent": "Ṡ N3 D3 P M2 G1 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 42; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "gavambodhi",
+      "snapshot": {
+        "name": "Gavambodhi",
+        "parent": 43,
+        "ascent": "S R1 G2 M2 P D1 N1 Ṡ",
+        "descent": "Ṡ N1 D1 P M2 G2 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 43; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "bhavapriya",
+      "snapshot": {
+        "name": "Bhavapriya",
+        "parent": 44,
+        "ascent": "S R1 G2 M2 P D1 N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M2 G2 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 44; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "subhapantuvarali",
+      "snapshot": {
+        "name": "Subhapantuvarali",
+        "parent": 45,
+        "ascent": "S R1 G2 M2 P D1 N3 Ṡ",
+        "descent": "Ṡ N3 D1 P M2 G2 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 45; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "shadvidhamargini",
+      "snapshot": {
+        "name": "Shadvidhamargini",
+        "parent": 46,
+        "ascent": "S R1 G2 M2 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M2 G2 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 46; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "swarnangi",
+      "snapshot": {
+        "name": "Swarnangi",
+        "parent": 47,
+        "ascent": "S R1 G2 M2 P D2 N3 Ṡ",
+        "descent": "Ṡ N3 D2 P M2 G2 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 47; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "divyamani",
+      "snapshot": {
+        "name": "Divyamani",
+        "parent": 48,
+        "ascent": "S R1 G2 M2 P D3 N3 Ṡ",
+        "descent": "Ṡ N3 D3 P M2 G2 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 48; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "dhavalambari",
+      "snapshot": {
+        "name": "Dhavalambari",
+        "parent": 49,
+        "ascent": "S R1 G3 M2 P D1 N1 Ṡ",
+        "descent": "Ṡ N1 D1 P M2 G3 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 49; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "namanarayani",
+      "snapshot": {
+        "name": "Namanarayani",
+        "parent": 50,
+        "ascent": "S R1 G3 M2 P D1 N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M2 G3 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 50; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "kamavardhini",
+      "snapshot": {
+        "name": "Kamavardhini",
+        "parent": 51,
+        "ascent": "S R1 G3 M2 P D1 N3 Ṡ",
+        "descent": "Ṡ N3 D1 P M2 G3 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 51; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "ramapriya",
+      "snapshot": {
+        "name": "Ramapriya",
+        "parent": 52,
+        "ascent": "S R1 G3 M2 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M2 G3 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 52; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "gamanasrama",
+      "snapshot": {
+        "name": "Gamanasrama",
+        "parent": 53,
+        "ascent": "S R1 G3 M2 P D2 N3 Ṡ",
+        "descent": "Ṡ N3 D2 P M2 G3 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 53; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "vishvambhari",
+      "snapshot": {
+        "name": "Vishvambhari",
+        "parent": 54,
+        "ascent": "S R1 G3 M2 P D3 N3 Ṡ",
+        "descent": "Ṡ N3 D3 P M2 G3 R1 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 54; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "syamalangi",
+      "snapshot": {
+        "name": "Syamalangi",
+        "parent": 55,
+        "ascent": "S R2 G2 M2 P D1 N1 Ṡ",
+        "descent": "Ṡ N1 D1 P M2 G2 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 55; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "shanmukhapriya",
+      "snapshot": {
+        "name": "Shanmukhapriya",
+        "parent": 56,
+        "ascent": "S R2 G2 M2 P D1 N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M2 G2 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 56; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "simhendramadhyamam",
+      "snapshot": {
+        "name": "Simhendramadhyamam",
+        "parent": 57,
+        "ascent": "S R2 G2 M2 P D1 N3 Ṡ",
+        "descent": "Ṡ N3 D1 P M2 G2 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 57; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "hemavati",
+      "snapshot": {
+        "name": "Hemavati",
+        "parent": 58,
+        "ascent": "S R2 G2 M2 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M2 G2 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 58; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "dharmavati",
+      "snapshot": {
+        "name": "Dharmavati",
+        "parent": 59,
+        "ascent": "S R2 G2 M2 P D2 N3 Ṡ",
+        "descent": "Ṡ N3 D2 P M2 G2 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 59; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "nitimati",
+      "snapshot": {
+        "name": "Nitimati",
+        "parent": 60,
+        "ascent": "S R2 G2 M2 P D3 N3 Ṡ",
+        "descent": "Ṡ N3 D3 P M2 G2 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 60; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "kantamani",
+      "snapshot": {
+        "name": "Kantamani",
+        "parent": 61,
+        "ascent": "S R2 G3 M2 P D1 N1 Ṡ",
+        "descent": "Ṡ N1 D1 P M2 G3 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 61; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "rishabhapriya",
+      "snapshot": {
+        "name": "Rishabhapriya",
+        "parent": 62,
+        "ascent": "S R2 G3 M2 P D1 N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M2 G3 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 62; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "latangi",
+      "snapshot": {
+        "name": "Latangi",
+        "parent": 63,
+        "ascent": "S R2 G3 M2 P D1 N3 Ṡ",
+        "descent": "Ṡ N3 D1 P M2 G3 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 63; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "vachaspati",
+      "snapshot": {
+        "name": "Vachaspati",
+        "parent": 64,
+        "ascent": "S R2 G3 M2 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M2 G3 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 64; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "chitrambari",
+      "snapshot": {
+        "name": "Chitrambari",
+        "parent": 66,
+        "ascent": "S R2 G3 M2 P D3 N3 Ṡ",
+        "descent": "Ṡ N3 D3 P M2 G3 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 66; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "sucharitra",
+      "snapshot": {
+        "name": "Sucharitra",
+        "parent": 67,
+        "ascent": "S R3 G3 M2 P D1 N1 Ṡ",
+        "descent": "Ṡ N1 D1 P M2 G3 R3 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 67; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "jyotiswarupini",
+      "snapshot": {
+        "name": "Jyotiswarupini",
+        "parent": 68,
+        "ascent": "S R3 G3 M2 P D1 N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M2 G3 R3 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 68; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "dhatuvardhani",
+      "snapshot": {
+        "name": "Dhatuvardhani",
+        "parent": 69,
+        "ascent": "S R3 G3 M2 P D1 N3 Ṡ",
+        "descent": "Ṡ N3 D1 P M2 G3 R3 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 69; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "nasikabhushani",
+      "snapshot": {
+        "name": "Nasikabhushani",
+        "parent": 70,
+        "ascent": "S R3 G3 M2 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M2 G3 R3 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 70; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "kosalam",
+      "snapshot": {
+        "name": "Kosalam",
+        "parent": 71,
+        "ascent": "S R3 G3 M2 P D2 N3 Ṡ",
+        "descent": "Ṡ N3 D2 P M2 G3 R3 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 71; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "rasikapriya",
+      "snapshot": {
+        "name": "Rasikapriya",
+        "parent": 72,
+        "ascent": "S R3 G3 M2 P D3 N3 Ṡ",
+        "descent": "Ṡ N3 D3 P M2 G3 R3 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 72; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "amudhasurabhi",
+      "snapshot": {
+        "name": "Amudhasurabhi",
+        "parent": 14,
+        "ascent": "S M1 G3 M1 P D1 Ṡ",
+        "descent": "Ṡ N2 D1 P M1 G3 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Amudhasurabhi",
+      "parent": 14,
+      "ascent": "S M1 G3 M1 P D1 Ṡ",
+      "descent": "Ṡ N2 D1 P M1 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C166",
+        "referenceName": "amudasurabhi",
+        "raw": "amudasurabhi S M1 G3 M1 P D1 S - S N2 D1 P M1 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C166"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C166. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "deeparam",
+      "snapshot": {
+        "name": "Deeparam",
+        "parent": 10,
+        "ascent": "S R1 G1 M1 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 N2 D2 P M1 G1 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Deeparam",
+      "parent": 10,
+      "ascent": "S R1 G2 M1 P D2 N2 Ṡ",
+      "descent": "Ṡ N2 D2 N2 P M1 G2 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C126",
+        "referenceName": "deeparamu",
+        "raw": "deeparamu S R1 G2 M1 P D2 N2 S - S N2 D2 N2 P M1 G2 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C126"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C126. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "hindoladesika",
+      "snapshot": {
+        "name": "Hindola Desika",
+        "parent": 10,
+        "ascent": "S M1 R1 G1 M1 P D2 N2 Ṡ",
+        "descent": "Ṡ P N2 D2 M1 G1 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Hindola Desika",
+      "parent": 10,
+      "ascent": "S M1 R1 G2 M1 P D2 N2 Ṡ",
+      "descent": "Ṡ P N2 D2 M1 G2 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C128",
+        "referenceName": "hindOLadEshikam",
+        "raw": "hindOLadEshikam S M1 R1 G2 M1 P D2 N2 S - S P N2 D2 M1 G2 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C128"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C128. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "kanakadri",
+      "snapshot": {
+        "name": "Kanakadri",
+        "parent": 10,
+        "ascent": "S R1 G1 P D2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G1 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Kanakadri",
+      "parent": 10,
+      "ascent": "S R1 G2 P D2 Ṡ",
+      "descent": "Ṡ N2 D2 P M1 G2 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C129",
+        "referenceName": "kanakadri",
+        "raw": "kanakadri S R1 G2 P D2 S - S N2 D2 P M1 G2 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C129"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C129. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "nagasugandhi",
+      "snapshot": {
+        "name": "Nagasugandhi",
+        "parent": 10,
+        "ascent": "S R1 M1 P N2 D2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G1 R1 S"
+      },
+      "status": "PENDING_PDF_VERIFICATION",
+      "reason": "No unambiguous name-and-swarasthana transcription approved from the local PDFs yet.",
+      "workbookCheck": {
+        "status": "NO_UNAMBIGUOUS_NAME_MATCH",
+        "note": "Existing PDF evidence retained where available; no spreadsheet identity was guessed."
+      }
+    },
+    {
+      "key": "santvabhashini",
+      "snapshot": {
+        "name": "Santvabhashini",
+        "parent": 10,
+        "ascent": "S G1 M1 P D2 Ṡ",
+        "descent": "Ṡ D2 P M1 G1 S"
+      },
+      "status": "PENDING_PDF_VERIFICATION",
+      "reason": "No unambiguous name-and-swarasthana transcription approved from the local PDFs yet.",
+      "workbookCheck": {
+        "status": "NO_UNAMBIGUOUS_NAME_MATCH",
+        "note": "Existing PDF evidence retained where available; no spreadsheet identity was guessed."
+      }
+    },
+    {
+      "key": "sarangabauli",
+      "snapshot": {
+        "name": "Saranga Bauli",
+        "parent": 10,
+        "ascent": "S M1 G1 M1 P D2 N2 D2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G1 M1 R1 S"
+      },
+      "status": "PENDING_PDF_VERIFICATION",
+      "reason": "No unambiguous name-and-swarasthana transcription approved from the local PDFs yet.",
+      "workbookCheck": {
+        "status": "NO_UNAMBIGUOUS_NAME_MATCH",
+        "note": "Existing PDF evidence retained where available; no spreadsheet identity was guessed."
+      }
+    },
+    {
+      "key": "yogabodhini",
+      "snapshot": {
+        "name": "Yoga Bodhini",
+        "parent": 10,
+        "ascent": "S R1 G1 M1 D2 N2 Ṡ",
+        "descent": "Ṡ P M1 G1 R1 S"
+      },
+      "status": "PENDING_PDF_VERIFICATION",
+      "reason": "No unambiguous name-and-swarasthana transcription approved from the local PDFs yet.",
+      "workbookCheck": {
+        "status": "NO_UNAMBIGUOUS_NAME_MATCH",
+        "note": "Existing PDF evidence retained where available; no spreadsheet identity was guessed."
+      }
+    },
+    {
+      "key": "kokilakamavardhani",
+      "snapshot": {
+        "name": "Kokilakamavardhani",
+        "parent": 11,
+        "ascent": "S G1 M1 P M1 N3 D2 N3 Ṡ",
+        "descent": "Ṡ N3 P D2 M1 G1 S"
+      },
+      "status": "PENDING_PDF_VERIFICATION",
+      "reason": "No unambiguous name-and-swarasthana transcription approved from the local PDFs yet.",
+      "workbookCheck": {
+        "status": "NO_UNAMBIGUOUS_NAME_MATCH",
+        "note": "Existing PDF evidence retained where available; no spreadsheet identity was guessed."
+      }
+    },
+    {
+      "key": "kaumari",
+      "snapshot": {
+        "name": "Kaumari",
+        "parent": 11,
+        "ascent": "S R1 G1 M1 P D2 Ṡ",
+        "descent": "Ṡ N3 D2 P M1 G1 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Kaumari",
+      "parent": 11,
+      "ascent": "S R1 G2 M1 P D2 Ṡ",
+      "descent": "Ṡ N3 D2 P M1 G2 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C143",
+        "referenceName": "kowmari",
+        "raw": "kowmari S R1 G2 M1 P D2 S - S N3 D2 P M1 G2 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C143"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C143. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "bhagyasabari",
+      "snapshot": {
+        "name": "Bhagya Sabari",
+        "parent": 10,
+        "ascent": "S R1 G1 M1 D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 M1 G1 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Bhagya Sabari",
+      "parent": 10,
+      "ascent": "S R1 G2 M1 D2 N2 Ṡ",
+      "descent": "Ṡ N2 D2 M1 G2 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C125",
+        "referenceName": "bhaagyashabari",
+        "raw": "bhaagyashabari S R1 G2 M1 D2 N2 S - S N2 D2 M1 G2 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C125"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C125. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "chandrachuda",
+      "snapshot": {
+        "name": "Chandrachuda",
+        "parent": 15,
+        "ascent": "S G3 M1 P D1 Ṡ",
+        "descent": "Ṡ N3 D1 P M1 G3 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Chandrachuda",
+      "parent": 15,
+      "ascent": "S M1 G3 M1 P D1 Ṡ",
+      "descent": "Ṡ N3 D1 P M1 G3 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C185",
+        "referenceName": "candracooDa",
+        "raw": "candracooDa S M1 G3 M1 P D1 S - S N3 D1 P M1 G3 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C185"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C185. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "bhavani",
+      "snapshot": {
+        "name": "Bhavani",
+        "parent": 44,
+        "ascent": "S R1 G2 M2 D1 N2 Ṡ",
+        "descent": "Ṡ N2 D1 M2 G2 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Bhavani",
+      "parent": 15,
+      "ascent": "S G3 M1 P D1 N3 Ṡ",
+      "descent": "Ṡ N3 D1 P M1 G3 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C179",
+        "referenceName": "bhaavini",
+        "raw": "bhaavini S G3 M1 P D1 N3 S - S N3 D1 P M1 G3 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C179"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C179. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "chakrapradiptam",
+      "snapshot": {
+        "name": "Chakrapradiptam",
+        "parent": 22,
+        "ascent": "S R2 G2 M1 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 M1 G2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Chakrapradiptam",
+      "parent": 22,
+      "ascent": "S R2 G2 M1 P M1 D2 N2 Ṡ",
+      "descent": "Ṡ N2 D2 M1 G2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C391",
+        "referenceName": "cakrapradipta",
+        "raw": "cakrapradipta S R2 G2 M1 P M1 D2 N2 S - S N2 D2 M1 G2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C391"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C391. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "dharmaprakasini",
+      "snapshot": {
+        "name": "Dharmaprakasini",
+        "parent": 22,
+        "ascent": "S R2 M1 P N2 Ṡ",
+        "descent": "Ṡ D2 M1 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Dharmaprakasini",
+      "parent": 20,
+      "ascent": "S R2 M1 P N2 Ṡ",
+      "descent": "Ṡ N2 D1 M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C318",
+        "referenceName": "dharmaprakaashini",
+        "raw": "dharmaprakaashini S R2 M1 P N2 S - S N2 D1 M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C318"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C318. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "devakriya",
+      "snapshot": {
+        "name": "Devakriya",
+        "parent": 22,
+        "ascent": "S R2 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G2 R2 S"
+      },
+      "status": "PENDING_REFERENCE_VERIFICATION",
+      "reason": "The matching workbook entry has ambiguous notation or no matching documented variant.",
+      "workbookCheck": {
+        "status": "UNRESOLVED",
+        "cells": [
+          "Sheet1!C316"
+        ]
+      }
+    },
+    {
+      "key": "ghanakesi",
+      "snapshot": {
+        "name": "Ghanakesi",
+        "parent": 22,
+        "ascent": "S R2 G2 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 R2 S"
+      },
+      "status": "PENDING_PDF_VERIFICATION",
+      "reason": "No unambiguous name-and-swarasthana transcription approved from the local PDFs yet.",
+      "workbookCheck": {
+        "status": "NO_UNAMBIGUOUS_NAME_MATCH",
+        "note": "Existing PDF evidence retained where available; no spreadsheet identity was guessed."
+      }
+    },
+    {
+      "key": "jayamanjari",
+      "snapshot": {
+        "name": "Jayamanjari",
+        "parent": 22,
+        "ascent": "S G2 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 P D2 P M1 R2 G2 R2 S"
+      },
+      "status": "PENDING_PDF_VERIFICATION",
+      "reason": "No unambiguous name-and-swarasthana transcription approved from the local PDFs yet.",
+      "workbookCheck": {
+        "status": "NO_UNAMBIGUOUS_NAME_MATCH",
+        "note": "Existing PDF evidence retained where available; no spreadsheet identity was guessed."
+      }
+    },
+    {
+      "key": "kalanidhi",
+      "snapshot": {
+        "name": "Kalanidhi",
+        "parent": 22,
+        "ascent": "S R2 G2 M1 S P M1 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Kalanidhi",
+      "parent": 22,
+      "ascent": "S R2 G2 M1 S P M1 D2 N2 Ṡ",
+      "descent": "Ṡ N2 D2 P M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C414",
+        "referenceName": "kalaanidhi",
+        "raw": "kalaanidhi S R2 G2 M1 S P M1 D2 N2 S - S N2 D2 P M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C414"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C414. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "kannadagowla",
+      "snapshot": {
+        "name": "Kannadagowla",
+        "parent": 22,
+        "ascent": "S R2 G2 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Kannadagowla",
+      "parent": 22,
+      "ascent": "S R2 G2 M1 P N2 Ṡ",
+      "descent": "Ṡ N2 D2 P M1 G2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C416",
+        "referenceName": "kannaDagowLa",
+        "raw": "kannaDagowLa S R2 G2 M1 P N2 S - S N2 D2 P M1 G2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C416"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C416. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "karnaranjani",
+      "snapshot": {
+        "name": "Karnaranjani",
+        "parent": 22,
+        "ascent": "S R2 G2 M1 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Karnaranjani",
+      "parent": 22,
+      "ascent": "S R2 G2 M1 G2 P D2 Ṡ",
+      "descent": "Ṡ N2 D2 P M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C419",
+        "referenceName": "karnaranjani",
+        "raw": "karnaranjani S R2 G2 M1 G2 P D2 S - S N2 D2 P M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C419"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C419. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "manirangu",
+      "snapshot": {
+        "name": "Manirangu",
+        "parent": 22,
+        "ascent": "S R2 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 P M1 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Manirangu",
+      "parent": 22,
+      "ascent": "S R2 M1 P N2 Ṡ",
+      "descent": "Ṡ N2 P M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C432",
+        "referenceName": "maNirangu",
+        "raw": "maNirangu S R2 M1 P N2 S - S N2 P M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C432"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C432. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "pushpalathika",
+      "snapshot": {
+        "name": "Pushpalathika",
+        "parent": 22,
+        "ascent": "S R2 G2 M1 N2 Ṡ",
+        "descent": "Ṡ N2 M1 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Pushpalathika",
+      "parent": 22,
+      "ascent": "S R2 G2 M1 P N2 Ṡ",
+      "descent": "Ṡ N2 P M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C458",
+        "referenceName": "pushpalatika",
+        "raw": "pushpalatika S R2 G2 M1 P N2 S - S N2 P M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C458"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C458. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "suddhadesi",
+      "snapshot": {
+        "name": "Suddha Desi",
+        "parent": 22,
+        "ascent": "S R2 M1 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Suddha Desi",
+      "parent": 20,
+      "ascent": "S R2 G2 R2 M1 P D1 N2 Ṡ",
+      "descent": "Ṡ N2 D1 P M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C345",
+        "referenceName": "sudda dEsi",
+        "raw": "sudda dEsi S R2 G2 R2 M1 P D1 N2 S - S N2 D1 P M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C345"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C345. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "suddhamanohari",
+      "snapshot": {
+        "name": "Suddha Manohari",
+        "parent": 22,
+        "ascent": "S R2 G2 M1 P D2 Ṡ",
+        "descent": "Ṡ N2 P M1 R2 G2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Suddha Manohari",
+      "parent": 22,
+      "ascent": "S R2 G2 M1 P D2 Ṡ",
+      "descent": "Ṡ N2 P M1 R2 G2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C480",
+        "referenceName": "sudda manOhari",
+        "raw": "sudda manOhari S R2 G2 M1 P D2 S - S N2 P M1 R2 G2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C480"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C480. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "svarabhushani",
+      "snapshot": {
+        "name": "Svarabhushani",
+        "parent": 22,
+        "ascent": "S G2 M1 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Svarabhushani",
+      "parent": 22,
+      "ascent": "S G2 M1 P D2 N2 Ṡ",
+      "descent": "Ṡ N2 D2 P M1 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C483",
+        "referenceName": "swarabhooshani",
+        "raw": "swarabhooshani S G2 M1 P D2 N2 S - S N2 D2 P M1 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C483"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C483. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "swaranjani",
+      "snapshot": {
+        "name": "Swaranjani",
+        "parent": 22,
+        "ascent": "S R2 G2 M1 D2 N2 Ṡ",
+        "descent": "Ṡ N2 P M1 G2 M1 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Swaranjani",
+      "parent": 22,
+      "ascent": "S R2 G2 M1 D2 N2 Ṡ",
+      "descent": "Ṡ N2 P M1 G2 M1 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C485",
+        "referenceName": "swararanjani",
+        "raw": "swararanjani S R2 G2 M1 D2 N2 S - S N2 P M1 G2 M1 R2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C485"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C485. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "varam",
+      "snapshot": {
+        "name": "Varam",
+        "parent": 22,
+        "ascent": "S G2 M1 D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 M1 G2 S"
+      },
+      "status": "PDF_SCALE_VERIFIED",
+      "name": "Varam",
+      "parent": 22,
+      "ascent": "S G2 M1 D2 N2 Ṡ",
+      "descent": "Ṡ N2 D2 M1 G2 S",
+      "evidence": {
+        "document": "Janya_Raagas.pdf",
+        "page": 12,
+        "referenceName": "Varam"
+      },
+      "note": "The PDF calls this Suddha Hindolam (Varamu). PDF verification covers swarasthana identity and order. Playback registers use an explicit scale-practice octave convention where the table omits register marks; they are not independently PDF-certified. This is not a gamaka demonstration.",
+      "workbookCheck": {
+        "status": "NO_UNAMBIGUOUS_NAME_MATCH",
+        "note": "Existing PDF evidence retained where available; no spreadsheet identity was guessed."
+      }
+    },
+    {
+      "key": "devagandhari",
+      "snapshot": {
+        "name": "Devagandhari",
+        "parent": 29,
+        "ascent": "S R2 M1 P D2 Ṡ",
+        "descent": "Ṡ N3 D2 P M1 G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Devagandhari",
+      "parent": 29,
+      "ascent": "S R2 M1 P D2 Ṡ",
+      "descent": "Ṡ N3 D2 P M1 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C682",
+        "referenceName": "dEvagaandhaari",
+        "raw": "dEvagaandhaari S R2 M1 P D2 S - S N3 D2 P M1 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C682"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C682. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "durbar",
+      "snapshot": {
+        "name": "Durbar",
+        "parent": 22,
+        "ascent": "S R2 M1 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 R2 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Durbar",
+      "parent": 22,
+      "ascent": "S R2 M1 P D2 N2 Ṡ",
+      "descent": "R2' Ṡ N2 Ṡ D2 P M1 R2 G2 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C393",
+        "referenceName": "darbaar",
+        "raw": "darbaar S R2 M1 P D2 N2 S - R2 S N2 S D2 P M1 R2 G2 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C393"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C393. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "hamsavinodini",
+      "snapshot": {
+        "name": "Hamsavinodini",
+        "parent": 29,
+        "ascent": "S R2 G3 M1 D2 N3 Ṡ",
+        "descent": "Ṡ N3 D2 N3 D2 M1 G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Hamsavinodini",
+      "parent": 29,
+      "ascent": "S R2 G3 M1 D2 N3 Ṡ",
+      "descent": "Ṡ N3 D2 P M1 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C689",
+        "referenceName": "hamsavinOdhini",
+        "raw": "hamsavinOdhini S R2 G3 M1 D2 N3 S - S N3 D2 P M1 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C689"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C689. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "kutuhalam",
+      "snapshot": {
+        "name": "Kutuhalam",
+        "parent": 28,
+        "ascent": "S M1 N2 P D2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Kutuhalam",
+      "parent": 29,
+      "ascent": "S R2 M1 N3 D2 P N3 Ṡ",
+      "descent": "Ṡ N3 D2 P M1 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C702",
+        "referenceName": "kutuhala",
+        "raw": "kutuhala S R2 M1 N3 D2 P N3 S - S N3 D2 P M1 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C702"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C702. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "nalinakantivariant",
+      "snapshot": {
+        "name": "Nalinakanti (Variant)",
+        "parent": 27,
+        "ascent": "S G3 M1 P N3 Ṡ",
+        "descent": "Ṡ N3 P M1 G3 R2 S"
+      },
+      "status": "PENDING_REFERENCE_VERIFICATION",
+      "reason": "The matching workbook entry has ambiguous notation or no matching documented variant.",
+      "workbookCheck": {
+        "status": "UNRESOLVED",
+        "cells": [
+          "Sheet1!C537"
+        ]
+      }
+    },
+    {
+      "key": "neelambari",
+      "snapshot": {
+        "name": "Neelambari",
+        "parent": 29,
+        "ascent": "S R2 G3 M1 P D2 P N3 Ṡ",
+        "descent": "Ṡ N3 P M1 G3 R2 G3 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Neelambari",
+      "parent": 29,
+      "ascent": "S R2 G3 M1 P D2 P N3 Ṡ",
+      "descent": "Ṡ N3 P M1 G3 R2 G3 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C711",
+        "referenceName": "neelaambari",
+        "raw": "neelaambari S R2 G3 M1 P D2 P N3 S - S N3 P M1 G3 R2 G3 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C711"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C711. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "suratipurva",
+      "snapshot": {
+        "name": "Surati (Purva)",
+        "parent": 28,
+        "ascent": "S R2 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M1 G3 P M1 R2 S"
+      },
+      "status": "PENDING_PDF_VERIFICATION",
+      "reason": "No unambiguous name-and-swarasthana transcription approved from the local PDFs yet.",
+      "workbookCheck": {
+        "status": "NO_UNAMBIGUOUS_NAME_MATCH",
+        "note": "Existing PDF evidence retained where available; no spreadsheet identity was guessed."
+      }
+    },
+    {
+      "key": "umabharanam",
+      "snapshot": {
+        "name": "Umabharanam",
+        "parent": 28,
+        "ascent": "S R2 G3 M1 P Ṡ",
+        "descent": "Ṡ N2 D2 P M1 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Umabharanam",
+      "parent": 28,
+      "ascent": "S R2 G3 M1 P D2 N2 Ṡ",
+      "descent": "Ṡ N2 P M1 R2 G3 M1 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C660",
+        "referenceName": "umaabharaNam",
+        "raw": "umaabharaNam S R2 G3 M1 P D2 N2 S - S N2 P M1 R2 G3 M1 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C660"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C660. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "vasantamela17",
+      "snapshot": {
+        "name": "Vasanta (Mela 17)",
+        "parent": 17,
+        "ascent": "S M1 G3 M1 D2 N3 Ṡ",
+        "descent": "Ṡ N3 D2 M1 G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Vasanta (Mela 17)",
+      "parent": 17,
+      "ascent": "S M1 G3 M1 D2 N3 Ṡ",
+      "descent": "Ṡ N3 D2 M1 G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C280",
+        "referenceName": "vasantaa",
+        "raw": "vasantaa S M1 G3 M1 D2 N3 S - S N3 D2 M1 G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C280"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C280. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "pahadi",
+      "snapshot": {
+        "name": "Pahadi",
+        "parent": 29,
+        "ascent": "S R2 G3 P D2 P D2 Ṡ",
+        "descent": "Ṡ N3 D2 P M1 G3 R2 S N3 D2 P"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Pahadi",
+      "parent": 29,
+      "ascent": "S R2 G3 P D2 P D2 Ṡ",
+      "descent": "N3 D2 P G3 M1 G3 R2 S N3 D2 P D2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C713",
+        "referenceName": "pahaaDi",
+        "raw": "pahaaDi S R2 G3 P D2 P D2 S - N3 D2 P G3 M1 G3 R2 S N3 D2 P D2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C713"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C713. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "mand",
+      "snapshot": {
+        "name": "Mand",
+        "parent": 29,
+        "ascent": "S G3 M1 P D2 Ṡ",
+        "descent": "Ṡ N3 D2 P M1 G3 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Mand",
+      "parent": 29,
+      "ascent": "S G3 M1 P D2 Ṡ",
+      "descent": "Ṡ N3 D2 P M1 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C704",
+        "referenceName": "maanD",
+        "raw": "maanD S G3 M1 P D2 S - S N3 D2 P M1 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C704"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C704. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "tilanghindustani",
+      "snapshot": {
+        "name": "Tilang (Hindustani)",
+        "parent": 28,
+        "ascent": "S G3 M1 P N3 Ṡ",
+        "descent": "Ṡ N2 P M1 G3 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Tilang (Hindustani)",
+      "parent": 28,
+      "ascent": "S G3 M1 P N3 Ṡ",
+      "descent": "Ṡ N2 P M1 G3 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C659",
+        "referenceName": "tilang (also 30)",
+        "raw": "tilang (also 30) S G3 M1 P N3 S - S N2 P M1 G3 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C659"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C659. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "bhairavi",
+      "snapshot": {
+        "name": "Bhairavi",
+        "parent": 20,
+        "ascent": "S R2 G2 M1 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M1 G2 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Bhairavi",
+      "parent": 20,
+      "ascent": "S R2 G2 M1 P D2 N2 Ṡ",
+      "descent": "Ṡ N2 D1 P M1 G2 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C311",
+        "referenceName": "bhairavi",
+        "raw": "bhairavi S R2 G2 M1 P D2 N2 S - S N2 D1 P M1 G2 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C311"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C311. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "suddhamalavi",
+      "snapshot": {
+        "name": "Suddha Malavi",
+        "parent": 18,
+        "ascent": "S G3 R1 G3 M1 P D3 N3 Ṡ",
+        "descent": "Ṡ N3 D3 P M1 G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Suddha Malavi",
+      "parent": 29,
+      "ascent": "S R2 G3 M1 P N3 Ṡ",
+      "descent": "Ṡ D2 N3 P M1 G3 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C726",
+        "referenceName": "sudda maalavi",
+        "raw": "sudda maalavi S R2 G3 M1 P N3 S - S D2 N3 P M1 G3 R2 S"
+      },
+      "workbookCheck": {
+        "status": "CORRECTED_FROM_WORKBOOK",
+        "alternatives": [
+          "Sheet1!C726"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C726. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "gowrimanohari",
+      "snapshot": {
+        "name": "Gowrimanohari",
+        "parent": 23,
+        "ascent": "S R2 G2 M1 P D2 N3 Ṡ",
+        "descent": "Ṡ N3 D2 P M1 G2 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 23; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "charukesivariant",
+      "snapshot": {
+        "name": "Charukesi (Variant)",
+        "parent": 26,
+        "ascent": "S R2 G3 M1 P D1 N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M1 G3 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 26; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "vachaspativariant",
+      "snapshot": {
+        "name": "Vachaspati (Variant)",
+        "parent": 64,
+        "ascent": "S R2 G3 M2 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M2 G3 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 64; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "shanmukhapriyavariant",
+      "snapshot": {
+        "name": "Shanmukhapriya (Variant)",
+        "parent": 56,
+        "ascent": "S R2 G2 M2 P D1 N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M2 G2 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 56; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "latangivariant",
+      "snapshot": {
+        "name": "Latangi (Variant)",
+        "parent": 63,
+        "ascent": "S R2 G3 M2 P D1 N3 Ṡ",
+        "descent": "Ṡ N3 D1 P M2 G3 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 63; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "hemavativariant",
+      "snapshot": {
+        "name": "Hemavati (Variant)",
+        "parent": 58,
+        "ascent": "S R2 G2 M2 P D2 N2 Ṡ",
+        "descent": "Ṡ N2 D2 P M2 G2 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 58; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "dharmavativariant",
+      "snapshot": {
+        "name": "Dharmavati (Variant)",
+        "parent": 59,
+        "ascent": "S R2 G2 M2 P D2 N3 Ṡ",
+        "descent": "Ṡ N3 D2 P M2 G2 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 59; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "simhendramadhyamamvariant",
+      "snapshot": {
+        "name": "Simhendramadhyamam (Variant)",
+        "parent": 57,
+        "ascent": "S R2 G2 M2 P D1 N3 Ṡ",
+        "descent": "Ṡ N3 D1 P M2 G2 R2 S"
+      },
+      "status": "MELAKARTA_ALREADY_AVAILABLE",
+      "reason": "Melakarta 57; already available in Melakarta practice, not duplicated as a Janya."
+    },
+    {
+      "key": "suddhadesivariant",
+      "snapshot": {
+        "name": "Suddha Desi (Variant)",
+        "parent": 20,
+        "ascent": "S R2 M1 P D1 N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M1 G2 R2 S"
+      },
+      "status": "PENDING_REFERENCE_VERIFICATION",
+      "reason": "The matching workbook entry has ambiguous notation or no matching documented variant.",
+      "workbookCheck": {
+        "status": "UNRESOLVED",
+        "cells": [
+          "Sheet1!C345"
+        ]
+      }
+    },
+    {
+      "key": "gopikavasanthamvariant",
+      "snapshot": {
+        "name": "Gopikavasantham (Variant)",
+        "parent": 20,
+        "ascent": "S G2 M1 P N2 Ṡ",
+        "descent": "Ṡ N2 D1 P M1 G2 S"
+      },
+      "status": "PENDING_REFERENCE_VERIFICATION",
+      "reason": "The matching workbook entry has ambiguous notation or no matching documented variant.",
+      "workbookCheck": {
+        "status": "UNRESOLVED",
+        "cells": [
+          "Sheet1!C321"
+        ]
+      }
+    },
+    {
+      "key": "hamsanandivariant",
+      "snapshot": {
+        "name": "Hamsanandi (Variant)",
+        "parent": 53,
+        "ascent": "S R1 G3 M2 D2 N3 Ṡ",
+        "descent": "Ṡ N3 D2 M2 G3 R1 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Hamsanandi (Variant)",
+      "parent": 53,
+      "ascent": "S R1 G3 M2 D2 N3 Ṡ",
+      "descent": "Ṡ N3 D2 M2 G3 R1 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C943",
+        "referenceName": "hamsaanandi",
+        "raw": "hamsaanandi S R1 G3 M2 D2 N3 S - S N3 D2 M2 G3 R1 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C943"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C943. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "suddhasaverivariant",
+      "snapshot": {
+        "name": "Suddha Saveri (Variant)",
+        "parent": 29,
+        "ascent": "S R2 M1 P D2 Ṡ",
+        "descent": "Ṡ D2 P M1 R2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Suddha Saveri (Variant)",
+      "parent": 29,
+      "ascent": "S R2 M1 P D2 Ṡ",
+      "descent": "Ṡ D2 P M1 R2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C728",
+        "referenceName": "sudda saavEri",
+        "raw": "sudda saavEri S R2 M1 P D2 S - S D2 P M1 R2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C728"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C728. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    },
+    {
+      "key": "hindolamvariant",
+      "snapshot": {
+        "name": "Hindolam (Variant)",
+        "parent": 20,
+        "ascent": "S G2 M1 D1 N2 Ṡ",
+        "descent": "Ṡ N2 D1 M1 G2 S"
+      },
+      "status": "EXCEL_SCALE_VERIFIED",
+      "name": "Hindolam (Variant)",
+      "parent": 20,
+      "ascent": "S G2 M1 D1 N2 Ṡ",
+      "descent": "Ṡ N2 D1 M1 G2 S",
+      "evidence": {
+        "document": "Janya_list.xlsx",
+        "sheet": "Sheet1",
+        "cell": "C322",
+        "referenceName": "hindOLam",
+        "raw": "hindOLam S G2 M1 D1 N2 S - S N2 D1 M1 G2 S"
+      },
+      "workbookCheck": {
+        "status": "MATCHED",
+        "alternatives": [
+          "Sheet1!C322"
+        ]
+      },
+      "note": "Swarasthana identity and order checked against Janya_list.xlsx, Sheet1!C322. The workbook does not explicitly mark all registers; playback uses a scale-practice octave convention, not independently reference-certified registers or gamakas."
+    }
+  ]
+}

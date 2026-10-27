@@ -1,16 +1,18 @@
 // src/modules/MusicBuilder/index.tsx
 
-import { useState, useCallback, useRef, useEffect } from 'react';
+import { useState, useCallback, useRef, useEffect, type CSSProperties } from 'react';
 import { createPortal } from 'react-dom';
 import './music-builder.css';
 import { MELAKARTAS } from '../../data/ragas';
 import { INSTRUMENTS } from '../../data/instruments';
 import { useAppStore } from '../../store/useAppStore';
 import { getAudioContext, semitonesToHz, synthNote, stopAllSynthNotes, unlockAudio } from '../../audio/engine';
+import { integrateJanyaBooklet } from '../../music/janyaBooklet';
+import { parseJanyaNotation, type JanyaPracticeRaga } from '../../music/janyaCurriculum';
+import { SVARA_REGISTRY } from '../../music/tuning';
 
 import type { InstrumentId } from '../../types/index';
-import { MmgPractice } from './MmgPractice';
-import { ManodharmaPractice } from './ManodharmaPractice';
+import { ManodharmaIntegrated } from '../manodharma/ManodharmaIntegrated';
 import { PhraseLibrary } from './PhraseLibrary';
 import { consumePendingVocalImport } from '../../store/pendingVocalImport'
 import { audioBufferToWav, downloadBlob } from '../../audio/wavExport'
@@ -18,6 +20,9 @@ import { createSoundBuffer, SOUND_PRESETS } from '../../audio/soundDesign'
 import type { SoundGenerationOptions } from '../../audio/soundDesign'
 import { SoundStudioPanel } from './SoundStudioPanel'
 import type { GeneratedSoundRecipe } from './SoundStudioPanel'
+import { GanaConstructionLab } from './GanaConstructionLab'
+import { extractVideoAudio } from './videoAudio'
+import { analyseAudioSwaras, audioClipWindow, MAX_ANALYSIS_SECONDS, type DetectedSvara } from './builderAudio'
 
 interface NoteBlock {
   id: string;
@@ -27,6 +32,8 @@ interface NoteBlock {
   source: string;
   /** Musical position, measured in beats from the track's start. Older projects may omit it. */
   startBeat?: number;
+  /** Silent timeline event used to represent a musical rest. */
+  kind?: 'note' | 'rest';
 }
 interface Track {
   id: string;
@@ -39,6 +46,14 @@ interface Track {
   delayBeats?: number;
   volume?: number;
 }
+type RagaSelection = {
+  id: string;
+  name: string;
+  number: number;
+  family: 'melakarta' | 'janya';
+  janya?: JanyaPracticeRaga;
+};
+type RagaFilter = 'melakarta' | 'janya' | 'vakra';
 
 // ── Shruti import types ──────────────────────────────────────────────────────
 interface ImportedVocalTrack {
@@ -55,6 +70,8 @@ interface ImportedAudioClip {
   name: string;
   buffer: AudioBuffer;
   durationSeconds: number;
+  /** Playback begins this many seconds into the decoded source. */
+  sourceStartSeconds?: number;
   startBeat: number;
   volume: number;
   muted: boolean;
@@ -73,6 +90,7 @@ interface ScheduledAudioClip {
   buffer: AudioBuffer;
   at: number;
   duration: number;
+  sourceStartSeconds?: number;
   volume: number;
   name: string;
 }
@@ -98,8 +116,9 @@ function positionBlocks(blocks: NoteBlock[]): Array<NoteBlock & { startBeat: num
 function blocksEndBeat(blocks: NoteBlock[]): number {
   return positionBlocks(blocks).reduce((end, block) => Math.max(end, block.startBeat + block.duration), 0);
 }
-function waveformPeaks(buffer: AudioBuffer, bars = 48): number[] {
-  const channel = buffer.getChannelData(0);
+function waveformPeaks(clip: ImportedAudioClip, bars = 48): number[] {
+  const window = audioClipWindow(clip.buffer.duration, clip.sourceStartSeconds, clip.durationSeconds);
+  const channel = clip.buffer.getChannelData(0).subarray(Math.floor(window.start * clip.buffer.sampleRate), Math.floor((window.start + window.duration) * clip.buffer.sampleRate));
   const result: number[] = [];
   for (let bar = 0; bar < bars; bar++) {
     const start = Math.floor((bar / bars) * channel.length);
@@ -111,6 +130,7 @@ function waveformPeaks(buffer: AudioBuffer, bars = 48): number[] {
   }
   return result;
 }
+
 function projectEndBeat(tracks: Track[], clips: ImportedAudioClip[], bpm: number): number {
   const audioBeatSeconds = 60 / Math.max(30, bpm);
   const trackEnd = tracks.reduce((end, track) => Math.max(end, (track.delayBeats ?? 0) + blocksEndBeat(track.blocks)), 0);
@@ -141,7 +161,7 @@ function buildTimelineSchedule(
       blocks.forEach(block => {
         const at = trackStart + block.startBeat * beatSeconds;
         const dur = Math.max(0.08, block.duration * beatSeconds);
-        baseNotes.push({ trackId: track.id, hz: semitonesToHz(tonicHz, block.semitone), dur, instr: track.instrument, at, trackVolume: track.volume ?? 1 });
+        if (block.kind !== 'rest') baseNotes.push({ trackId: track.id, hz: semitonesToHz(tonicHz, block.semitone), dur, instr: track.instrument, at, trackVolume: track.volume ?? 1 });
         trackEnd = Math.max(trackEnd, block.startBeat * beatSeconds + dur);
       });
       cursor = trackStart + trackEnd + 0.15;
@@ -153,7 +173,7 @@ function buildTimelineSchedule(
       positionBlocks(track.blocks).forEach(block => {
         const at = trackOffset + block.startBeat * beatSeconds;
         const dur = Math.max(0.08, block.duration * beatSeconds);
-        baseNotes.push({ trackId: track.id, hz: semitonesToHz(tonicHz, block.semitone), dur, instr: track.instrument, at, trackVolume: track.volume ?? 1 });
+        if (block.kind !== 'rest') baseNotes.push({ trackId: track.id, hz: semitonesToHz(tonicHz, block.semitone), dur, instr: track.instrument, at, trackVolume: track.volume ?? 1 });
         arrangementDuration = Math.max(arrangementDuration, at + dur);
       });
     });
@@ -164,8 +184,9 @@ function buildTimelineSchedule(
   if (!selectedTrackId && !anySolo) {
     clips.filter(clip => !clip.muted).forEach(clip => {
       const at = Math.max(0, clip.startBeat) * beatSeconds;
-      baseAudio.push({ clipId: clip.id, buffer: clip.buffer, at, duration: clip.durationSeconds, volume: clip.volume, name: clip.name });
-      arrangementDuration = Math.max(arrangementDuration, at + clip.durationSeconds);
+      const window = audioClipWindow(clip.buffer.duration, clip.sourceStartSeconds, clip.durationSeconds);
+      baseAudio.push({ clipId: clip.id, buffer: clip.buffer, at, duration: window.duration, sourceStartSeconds: window.start, volume: clip.volume, name: clip.name });
+      arrangementDuration = Math.max(arrangementDuration, at + window.duration);
     });
   }
 
@@ -205,6 +226,10 @@ function makeTrack(name: string, idx: number): Track {
 function cloneTracksSnapshot(source: Track[]): Track[] {
   return source.map(track => ({ ...track, blocks: track.blocks.map(block => ({ ...block })) }));
 }
+
+const eventButtonStyle: CSSProperties = { padding: '5px 9px', borderRadius: 5, border: '1px solid var(--border)', background: 'transparent', color: 'var(--text)', fontSize: '0.75rem', cursor: 'pointer' };
+const eventLabelStyle: CSSProperties = { display: 'flex', alignItems: 'center', gap: 5, color: 'var(--text-muted)', fontSize: '0.72rem' };
+const eventInputStyle: CSSProperties = { maxWidth: 180, padding: '5px 7px', borderRadius: 5, border: '1px solid var(--border)', background: 'var(--surface)', color: 'var(--text)', fontSize: '0.76rem' };
 
 export default function MusicBuilder({ settingsContainer }: { settingsContainer?: HTMLDivElement | null }) {
   const { settings } = useAppStore();
@@ -253,7 +278,11 @@ export default function MusicBuilder({ settingsContainer }: { settingsContainer?
     syncHistoryCounts();
   }, [syncHistoryCounts]);
   const [activeTrack, setActiveTrack] = useState(0);
-  const [selectedRaga, setSelectedRaga] = useState(MELAKARTAS[28]);
+  const [ragaFilter, setRagaFilter] = useState<RagaFilter>('melakarta');
+  const [selectedRagaId, setSelectedRagaId] = useState('melakarta:29');
+  const [janyaRagas, setJanyaRagas] = useState<JanyaPracticeRaga[]>([]);
+  const [janyaLoading, setJanyaLoading] = useState(true);
+  const [janyaLoadError, setJanyaLoadError] = useState('');
   const [playing, setPlaying] = useState(false);
   const [paused, setPaused] = useState(false);
   const [playMode, setPlayMode] = useState<'together' | 'sequential'>('together');
@@ -264,6 +293,11 @@ export default function MusicBuilder({ settingsContainer }: { settingsContainer?
   const localAudioRef = useRef<HTMLAudioElement | null>(null);
   const [localAudioUrl, setLocalAudioUrl] = useState<string | null>(null);
   const [audioClips, setAudioClips] = useState<ImportedAudioClip[]>([]);
+  const [analysisClipId, setAnalysisClipId] = useState<string | null>(null);
+  const [detectedSwaras, setDetectedSwaras] = useState<DetectedSvara[]>([]);
+  const [analysisMessage, setAnalysisMessage] = useState('');
+  const [convertingVideo, setConvertingVideo] = useState(false);
+  const videoConversionRef = useRef<AbortController | null>(null);
   const audioClipSourcesRef = useRef<Set<AudioBufferSourceNode>>(new Set());
   const audioObjectUrlsRef = useRef<Set<string>>(new Set());
   const [showTimeline, setShowTimeline] = useState(true);
@@ -274,6 +308,13 @@ export default function MusicBuilder({ settingsContainer }: { settingsContainer?
   const [dragNote, setDragNote] = useState<NoteBlock | null>(null);
   const [showPhraseImport, setShowPhraseImport] = useState(false);
   const [showSoundStudio, setShowSoundStudio] = useState(false);
+  const [showEventEditor, setShowEventEditor] = useState(false);
+  const [showNotationView, setShowNotationView] = useState(false);
+  const [notationTala, setNotationTala] = useState('8');
+  const [notationEduppu, setNotationEduppu] = useState(0);
+  const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
+  const [eventClipboard, setEventClipboard] = useState<NoteBlock | null>(null);
+  const [snapSubdivision, setSnapSubdivision] = useState(0.25);
   const stopRef = useRef<(() => void) | null>(null);
   const transportEventsRef = useRef<ScheduledNote[]>([]);
   const transportAudioEventsRef = useRef<ScheduledAudioClip[]>([]);
@@ -284,7 +325,51 @@ export default function MusicBuilder({ settingsContainer }: { settingsContainer?
   const finishTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const progressTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const schedulerTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const [mode, setMode] = useState<'builder' | 'mmg' | 'manodharma'>('builder');
+  const [mode, setMode] = useState<'builder' | 'manodharma' | 'construction'>('builder');
+
+  useEffect(() => {
+    const controller = new AbortController();
+    fetch(`${import.meta.env.BASE_URL}data/janya_vakra_ragas_exercises_200.json`, { signal: controller.signal })
+      .then(response => {
+        if (!response.ok) throw new Error(`Janya rāga catalogue could not be loaded (HTTP ${response.status}).`);
+        return response.json() as Promise<unknown>;
+      })
+      .then(catalogue => {
+        if (controller.signal.aborted) return;
+        const reviewed = integrateJanyaBooklet(catalogue);
+        setJanyaRagas(reviewed.ragas);
+        setJanyaLoadError('');
+      })
+      .catch((error: unknown) => {
+        if (controller.signal.aborted) return;
+        setJanyaLoadError(error instanceof Error ? error.message : String(error));
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) setJanyaLoading(false);
+      });
+    return () => controller.abort();
+  }, []);
+
+  const availableRagas: RagaSelection[] = ragaFilter === 'melakarta'
+    ? MELAKARTAS.map(raga => ({
+      id: `melakarta:${raga.number}`, name: raga.name, number: raga.number, family: 'melakarta' as const,
+    }))
+    : janyaRagas
+      .filter(raga => ragaFilter === 'janya' || raga.isVakra)
+      .map(raga => ({
+        id: `janya:${raga.id}`, name: raga.name, number: raga.parent, family: 'janya' as const, janya: raga,
+      }))
+      .sort((a, b) => a.name.localeCompare(b.name));
+  const selectedRaga = availableRagas.find(raga => raga.id === selectedRagaId)
+    ?? availableRagas[0]
+    ?? { id: 'melakarta:29', name: MELAKARTAS[28].name, number: 29, family: 'melakarta' as const };
+  const canImportMelakartaPhrases = ragaFilter === 'melakarta' && selectedRaga.family === 'melakarta';
+
+  useEffect(() => {
+    if (availableRagas.length && !availableRagas.some(raga => raga.id === selectedRagaId)) {
+      setSelectedRagaId(availableRagas[0].id);
+    }
+  }, [availableRagas, selectedRagaId]);
 
   // ── Shruti recording import state ─────────────────────────────────────────
   const [importedVocals, setImportedVocals] = useState<ImportedVocalTrack[]>([]);
@@ -384,13 +469,64 @@ useEffect(() => {
     const semi = (s: number, label: string): NoteBlock => ({
       id: makeId(), label, semitone: s, duration: 0.5, source: 'raga',
     });
-    const r = selectedRaga.notes;
+    if (selectedRaga?.janya) {
+      return parseJanyaNotation(selectedRaga.janya.arohana, selectedRaga.janya.parent, 'swarasthana')
+        .flatMap(item => {
+          if (item.kind !== 'note') return [];
+          const definition = SVARA_REGISTRY[item.token.svaraId];
+          const variant = definition.variantIndex > 1 ? ['₁', '₂', '₃'][definition.variantIndex - 1] : '';
+          const octave = item.token.octave > 0 ? '.' : item.token.octave < 0 ? ',' : '';
+          return [semi(definition.canonicalSemitone + item.token.octave * 12, `${definition.shortName}${variant}${octave}`)];
+        });
+    }
+    if (!selectedRaga || selectedRaga.family !== 'melakarta') return [];
+    const melakarta = MELAKARTAS.find(raga => raga.number === selectedRaga.number) ?? MELAKARTAS[28];
+    const r = melakarta.notes;
     return [
       semi(0, 'Sa'), semi(r.R, 'Re'), semi(r.G, 'Ga'), semi(r.M, 'Ma'),
       semi(7, 'Pa'), semi(r.D, 'Da'), semi(r.N, 'Ni'), semi(12, 'Sa.'),
       semi(r.R + 12, 'Re.'), semi(r.G + 12, 'Ga.'),
     ];
   })();
+
+  const analyseImportedClip = useCallback((clip: ImportedAudioClip) => {
+    setAnalysisClipId(clip.id);
+    const detected = analyseAudioSwaras(clip.buffer, settings.tonicHz, RAGA_NOTES, clip.sourceStartSeconds, clip.durationSeconds);
+    setDetectedSwaras(detected);
+    setAnalysisMessage(detected.length ? `Detected ${detected.length} pitch segments in the first ${Math.min(MAX_ANALYSIS_SECONDS, clip.durationSeconds).toFixed(1)} seconds of the trimmed clip. These are estimates; gamakas, percussion and polyphonic audio can affect accuracy.` : 'No stable pitched segments detected. Try a clearer solo vocal or instrument recording.');
+  }, [settings.tonicHz, RAGA_NOTES]);
+  const addDetectedSwarasToTrack = useCallback(() => {
+    if (!detectedSwaras.length) return;
+    const secondsPerBeat = 60 / Math.max(30, settings.bpm);
+    const clip = audioClips.find(item => item.id === analysisClipId);
+    if (!clip) {
+      setAnalysisMessage('The analysed clip was removed. Analyse another clip first.');
+      return;
+    }
+    const blocks = detectedSwaras.map(note => ({
+      id: makeId(), label: note.label, semitone: note.semitone,
+      duration: Math.max(0.125, note.durationSeconds / secondsPerBeat),
+      startBeat: clip.startBeat + note.timeSeconds / secondsPerBeat, source: 'audio-analysis', kind: 'note' as const,
+    }));
+    updateTracks(prev => prev.map((track, index) => index === activeTrack ? { ...track, blocks: [...track.blocks, ...blocks] } : track));
+    setAnalysisMessage(`Added ${blocks.length} estimated svaras to ${tracks[activeTrack]?.name ?? 'the active track'}. Please review and correct them.`);
+  }, [detectedSwaras, settings.bpm, updateTracks, activeTrack, tracks, audioClips, analysisClipId]);
+
+  useEffect(() => {
+    setAnalysisClipId(null);
+    setDetectedSwaras([]);
+    setAnalysisMessage('');
+  }, [selectedRaga.id, settings.tonicHz, settings.bpm]);
+
+  const trimAudioClip = useCallback((clipId: string, patch: { start?: number; duration?: number }) => {
+    setAudioClips(previous => previous.map(clip => {
+      if (clip.id !== clipId) return clip;
+      const window = audioClipWindow(clip.buffer.duration, patch.start ?? clip.sourceStartSeconds, patch.duration ?? clip.durationSeconds);
+      return { ...clip, sourceStartSeconds: window.start, durationSeconds: window.duration };
+    }));
+    setAnalysisClipId(null);
+    setDetectedSwaras([]);
+  }, []);
 
   const addBlock = useCallback((block: NoteBlock) => {
     updateTracks(prev => prev.map((track, index) => {
@@ -400,6 +536,34 @@ useEffect(() => {
       return { ...track, blocks: [...positioned, { ...block, id: makeId(), startBeat }] };
     }));
   }, [activeTrack, updateTracks]);
+
+  const patchActiveEvent = useCallback((blockId: string, patch: Partial<NoteBlock>) => {
+    updateTracks(current => current.map((track, index) => index !== activeTrack ? track : {
+      ...track,
+      blocks: positionBlocks(track.blocks).map(block => block.id === blockId ? { ...block, ...patch } : block),
+    }));
+  }, [activeTrack, updateTracks]);
+
+  const addRestEvent = useCallback(() => {
+    const track = tracksRef.current[activeTrack];
+    if (!track) return;
+    const positioned = positionBlocks(track.blocks);
+    const startBeat = positioned.reduce((end, block) => Math.max(end, block.startBeat + block.duration), 0);
+    const rest: NoteBlock = { id: makeId(), label: 'Rest', semitone: 0, duration: 1, source: 'event-editor', startBeat, kind: 'rest' };
+    updateTracks(current => current.map((item, index) => index === activeTrack ? { ...item, blocks: [...positionBlocks(item.blocks), rest] } : item));
+    setSelectedEventId(rest.id);
+  }, [activeTrack, updateTracks]);
+
+  const pasteEvent = useCallback(() => {
+    if (!eventClipboard) return;
+    const track = tracksRef.current[activeTrack];
+    if (!track) return;
+    const positioned = positionBlocks(track.blocks);
+    const startBeat = positioned.reduce((end, block) => Math.max(end, block.startBeat + block.duration), 0);
+    const copy = { ...eventClipboard, id: makeId(), startBeat };
+    updateTracks(current => current.map((item, index) => index === activeTrack ? { ...item, blocks: [...positionBlocks(item.blocks), copy] } : item));
+    setSelectedEventId(copy.id);
+  }, [activeTrack, eventClipboard, updateTracks]);
 
   const removeBlock = useCallback((trackIdx: number, blockId: string) => {
     updateTracks(prev =>
@@ -529,8 +693,9 @@ useEffect(() => {
     // part-way through a clip advances into its AudioBuffer by the elapsed offset.
     audioEvents.forEach(event => {
       if (event.at + event.duration <= offsetSeconds) return;
-      const sourceOffset = Math.max(0, offsetSeconds - event.at);
-      const remaining = event.duration - sourceOffset;
+      const elapsedInClip = Math.max(0, offsetSeconds - event.at);
+      const sourceOffset = Math.max(0, event.sourceStartSeconds ?? 0) + elapsedInClip;
+      const remaining = event.duration - elapsedInClip;
       if (remaining <= 0.01) return;
       const source = ctx.createBufferSource();
       const gain = ctx.createGain();
@@ -634,54 +799,10 @@ useEffect(() => {
     stopRef.current = null;
   }, [playing, clearTransportTimers, stopAudioClipSources]);
 
-  const downloadText = useCallback((filename: string, text: string, type = 'text/plain;charset=utf-8') => {
-    const blob = new Blob([text], { type });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    a.click();
-    URL.revokeObjectURL(url);
-  }, []);
-
-  const exportProject = useCallback(() => {
-    downloadText('naada-vidya-project.json', JSON.stringify({
-      format: 'naada-vidya-project',
-      version: 2,
-      exportedAt: new Date().toISOString(),
-      raga: { number: selectedRaga.number, name: selectedRaga.name },
-      settings: { bpm: settings.bpm, tonicHz: settings.tonicHz, volume: settings.volume },
-      playback: { mode: playMode, repetitions: repeatCount, loop: loopPlayback },
-      tracks,
-      // Audio media itself is intentionally not embedded in this lightweight JSON.
-      // Re-import the source files to restore their decoded audio after reopening.
-      audioClips: audioClips.map(({ id, name, durationSeconds, startBeat, volume, muted, generatedRecipe }) => ({ id, name, durationSeconds, startBeat, volume, muted, generatedRecipe })),
-      audioMediaIncluded: false,
-    }, null, 2), 'application/json;charset=utf-8');
-  }, [downloadText, selectedRaga, settings, playMode, repeatCount, loopPlayback, tracks, audioClips]);
-
-  const exportNotation = useCallback((format: 'txt' | 'csv') => {
-    if (format === 'txt') {
-      const content = tracks.map(track =>
-        `${track.name} (${track.instrument})\n${track.blocks.map(b => b.label).join(' ')}`
-      ).join('\n\n');
-      downloadText('naada-vidya-swara-notation.txt', content);
-      return;
-    }
-    const rows = [['track', 'instrument', 'position_index', 'position_beats', 'svara', 'semitone', 'duration_beats', 'source']];
-    tracks.forEach(track => positionBlocks(track.blocks).forEach((b, index) => {
-      rows.push([track.name, track.instrument, String(index + 1), String(b.startBeat), b.label, String(b.semitone), String(b.duration), b.source]);
-    }));
-    downloadText('naada-vidya-swara-notation.csv',
-      rows.map(row => row.map(cell => `"${cell.replace(/"/g, '""')}"`).join(',')).join('\n'),
-      'text/csv;charset=utf-8');
-  }, [downloadText, tracks]);
-
-  const importLocalAudio = useCallback(async (file?: File) => {
-    if (!file) return;
+  const importLocalAudio = useCallback(async (file: File, requestedStartBeat: number): Promise<number | null> => {
     if (file.size > 100 * 1024 * 1024) {
       setExportMessage('This browser build limits each imported audio file to 100 MB to reduce memory pressure.');
-      return;
+      return null;
     }
     const url = URL.createObjectURL(file);
     audioObjectUrlsRef.current.add(url);
@@ -689,7 +810,7 @@ useEffect(() => {
       const ctx = getAudioContext();
       const bytes = await file.arrayBuffer();
       const buffer = await ctx.decodeAudioData(bytes.slice(0));
-      const startBeat = Math.ceil(projectEndBeat(tracksRef.current, audioClips, settings.bpm) * 4) / 4;
+      const startBeat = requestedStartBeat;
       const clip: ImportedAudioClip = {
         id: makeId(), name: file.name, buffer, durationSeconds: buffer.duration,
         startBeat, volume: 1, muted: false,
@@ -705,13 +826,68 @@ useEffect(() => {
         localAudioRef.current = new Audio(url);
       }
       setExportMessage(`Imported “${file.name}” as a synchronized audio clip. Move it in the timeline to change its start position.`);
+      return buffer.duration;
     } catch (error) {
       URL.revokeObjectURL(url);
       audioObjectUrlsRef.current.delete(url);
       setExportMessage(`Could not decode “${file.name}”. Try a WAV, MP3, or OGG file supported by this browser.`);
       console.error('Audio import/decode failed', error);
+      return null;
     }
-  }, [audioClips, settings.bpm]);
+  }, []);
+
+  const importMultipleAudio = useCallback(async (files: FileList | File[]) => {
+    const selected = Array.from(files);
+    if (!selected.length) return;
+    let nextBeat = Math.ceil(projectEndBeat(tracksRef.current, audioClips, settings.bpm) * 4) / 4;
+    let imported = 0;
+    const failed: string[] = [];
+    for (const file of selected) {
+      const duration = await importLocalAudio(file, nextBeat);
+      if (duration === null) {
+        failed.push(file.name);
+      } else {
+        nextBeat += duration / (60 / Math.max(30, settings.bpm));
+        imported += 1;
+      }
+    }
+    setShowTimeline(true);
+    setExportMessage(`Imported ${imported} of ${selected.length} audio files in sequence.${failed.length ? ` Failed: ${failed.join(', ')}. Each file must be browser-decodable and at most 100 MB.` : ''}`);
+  }, [audioClips, importLocalAudio, settings.bpm]);
+
+  const convertVideoToAudio = useCallback(async (file?: File) => {
+    if (!file || videoConversionRef.current) return;
+    if (file.size > 500 * 1024 * 1024) {
+      setExportMessage('This browser build limits each video to 500 MB. Choose a smaller file.');
+      return;
+    }
+    const controller = new AbortController();
+    videoConversionRef.current = controller;
+    setConvertingVideo(true);
+    setExportMessage(`Extracting audio from “${file.name}”…`);
+    try {
+      const context = getAudioContext();
+      await unlockAudio();
+      const blob = await extractVideoAudio(file, context, controller.signal, setExportMessage);
+      controller.signal.throwIfAborted();
+      const buffer = await context.decodeAudioData(await blob.arrayBuffer());
+      controller.signal.throwIfAborted();
+      const clip: ImportedAudioClip = {
+        id: makeId(), name: `${file.name.replace(/\.[^.]+$/, '')} (audio)`, buffer, durationSeconds: buffer.duration,
+        startBeat: 0, volume: 1, muted: false,
+      };
+      setAudioClips(previous => [...previous, { ...clip, startBeat: Math.ceil(projectEndBeat(tracksRef.current, previous, settings.bpm) * 4) / 4 }]);
+      setShowTimeline(true);
+      setExportMessage(`Extracted ${buffer.duration.toFixed(1)} seconds from “${file.name}” and added it to the timeline.`);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'Unknown video conversion error.';
+      setExportMessage(controller.signal.aborted ? 'Video conversion cancelled.' : `Could not extract audio: ${message}`);
+      if (!controller.signal.aborted) console.error('Video-to-audio extraction failed', error);
+    } finally {
+      videoConversionRef.current = null;
+      setConvertingVideo(false);
+    }
+  }, [settings.bpm]);
 
   const addGeneratedAudioClip = useCallback((buffer: AudioBuffer, name: string, startBeat: number, recipe: GeneratedSoundRecipe) => {
     const clip: ImportedAudioClip = {
@@ -737,13 +913,16 @@ useEffect(() => {
         };
         const buffer = createSoundBuffer(ctx, recipe.preset, options);
         changed = true;
-        return { ...clip, buffer, durationSeconds: buffer.duration, generatedRecipe: { ...recipe, generatedAtBpm: settings.bpm } };
+        const ratio = buffer.duration / clip.buffer.duration;
+        const window = audioClipWindow(buffer.duration, (clip.sourceStartSeconds ?? 0) * ratio, clip.durationSeconds * ratio);
+        return { ...clip, buffer, sourceStartSeconds: window.start, durationSeconds: window.duration, generatedRecipe: { ...recipe, generatedAtBpm: settings.bpm } };
       });
       return changed ? next : current;
     });
   }, [settings.bpm]);
 
   useEffect(() => () => {
+    videoConversionRef.current?.abort();
     stopRef.current?.();
     clearTransportTimers();
     stopAllSynthNotes();
@@ -885,7 +1064,7 @@ useEffect(() => {
         gain.gain.setValueAtTime(Math.max(0, Math.min(1, settings.volume * event.volume)), event.at);
         source.connect(gain);
         gain.connect(master);
-        source.start(event.at);
+        source.start(event.at, event.sourceStartSeconds ?? 0, event.duration);
       }
       const rendered = await offline.startRendering();
       const blob = audioBufferToWav(rendered);
@@ -914,11 +1093,21 @@ useEffect(() => {
 
       {/* ── Toolbar ── */}
       <div style={{ padding: 'var(--space-3) var(--space-4)', borderBottom: '1px solid var(--border)', background: 'var(--surface)', display: 'flex', flexWrap: 'wrap', gap: 'var(--space-3)', alignItems: 'center' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-          <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Rāga:</span>
-          <select value={selectedRaga.number} onChange={e => setSelectedRaga(MELAKARTAS[parseInt(e.target.value, 10) - 1])}
-            style={{ background: 'var(--surface2)', border: '1px solid var(--border)', borderRadius: 'var(--radius-sm)', padding: '4px 8px', fontSize: '0.78rem', color: 'var(--text)' }}>
-            {MELAKARTAS.map(r => <option key={r.number} value={r.number}>{r.number}. {r.name}</option>)}
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 'var(--space-2)', maxWidth: '100%' }}>
+          <label style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }} htmlFor="builder-raga-filter">Rāga type:</label>
+          <select id="builder-raga-filter" value={ragaFilter} onChange={e => { setRagaFilter(e.target.value as RagaFilter); setShowPhraseImport(false); }}
+            style={{ maxWidth: '100%', background: 'var(--surface2)', border: '1px solid var(--border)', borderRadius: 'var(--radius-sm)', padding: '4px 8px', fontSize: '0.78rem', color: 'var(--text)' }}>
+            <option value="melakarta">Melakarta</option>
+            <option value="janya">Janya (reference-reviewed)</option>
+            <option value="vakra">Vakra (reference-reviewed)</option>
+          </select>
+          <label style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }} htmlFor="builder-raga-select">Rāga:</label>
+          <select id="builder-raga-select" value={selectedRaga.id} onChange={e => setSelectedRagaId(e.target.value)}
+            style={{ maxWidth: '100%', background: 'var(--surface2)', border: '1px solid var(--border)', borderRadius: 'var(--radius-sm)', padding: '4px 8px', fontSize: '0.78rem', color: 'var(--text)' }}>
+            {availableRagas.map(raga => <option key={raga.id} value={raga.id}>
+              {raga.family === 'melakarta' ? `${raga.number}. ` : `${raga.janya?.isVakra ? 'Vakra · ' : ''}Mēḷa ${raga.number} · `}
+              {raga.name}
+            </option>)}
           </select>
         </div>
         <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
@@ -926,15 +1115,28 @@ useEffect(() => {
             {playing ? '⏹ Stop' : paused ? '▶ Resume' : '▶ Play All'}
           </button>
           <button onClick={generatePhrase} style={{ padding: '6px 14px', borderRadius: 'var(--radius-sm)', fontSize: '0.82rem', background: 'transparent', border: '1px solid var(--border)', color: 'var(--text-muted)', cursor: 'pointer' }}>🎲 Random Phrase</button>
-          <button onClick={() => setShowPhraseImport(!showPhraseImport)} style={{ padding: '6px 14px', borderRadius: 'var(--radius-sm)', fontSize: '0.82rem', background: showPhraseImport ? 'rgba(45,212,191,0.12)' : 'transparent', border: '1px solid var(--accent)', color: 'var(--accent)', cursor: 'pointer' }}>🎼 Import Musical Phrases</button>
+          <button disabled={!canImportMelakartaPhrases} title={!canImportMelakartaPhrases ? 'Phrase candidates are currently indexed for Melakarta rāgas, not Janya scales.' : undefined} onClick={() => setShowPhraseImport(!showPhraseImport)} style={{ padding: '6px 14px', borderRadius: 'var(--radius-sm)', fontSize: '0.82rem', background: showPhraseImport ? 'rgba(45,212,191,0.12)' : 'transparent', border: '1px solid var(--accent)', color: 'var(--accent)', cursor: canImportMelakartaPhrases ? 'pointer' : 'not-allowed', opacity: canImportMelakartaPhrases ? 1 : 0.55 }}>🎼 {canImportMelakartaPhrases ? 'Import Musical Phrases' : 'Phrase Import (Melakarta only)'}</button>
+          <button onClick={() => setShowEventEditor(value => !value)} style={{ padding: '6px 14px', borderRadius: 'var(--radius-sm)', fontSize: '0.82rem', background: showEventEditor ? 'rgba(192,132,252,0.12)' : 'transparent', border: '1px solid #c084fc', color: '#c084fc', cursor: 'pointer' }}>✎ Advanced Event Editor</button>
+          <button onClick={() => setShowNotationView(value => !value)} style={{ ...eventButtonStyle, color: 'var(--accent)' }}>♫ Svara Notation + Tāḷa</button>
           <button onClick={() => setShowSoundStudio(value => !value)} style={{ padding: '6px 14px', borderRadius: 'var(--radius-sm)', fontSize: '0.82rem', background: showSoundStudio ? 'rgba(45,212,191,0.12)' : 'transparent', border: '1px solid #2dd4bf', color: '#2dd4bf', cursor: 'pointer' }}>🎛 Sound & Rhythm Studio</button>
           <button onClick={addTrack} disabled={tracks.length >= 16} style={{ padding: '6px 14px', borderRadius: 'var(--radius-sm)', fontSize: '0.82rem', background: 'transparent', border: '1px solid var(--border)', color: tracks.length >= 16 ? 'var(--text-faint)' : 'var(--text-muted)', cursor: tracks.length >= 16 ? 'not-allowed' : 'pointer' }}>+ Add Track</button>
           <button onClick={undoTrackEdit} disabled={historyCounts.undo === 0} title="Undo last track or note edit" style={{ padding: '6px 10px', borderRadius: 'var(--radius-sm)', fontSize: '0.82rem', background: 'transparent', border: '1px solid var(--border)', color: historyCounts.undo ? 'var(--text)' : 'var(--text-faint)', cursor: historyCounts.undo ? 'pointer' : 'not-allowed' }}>↶ Undo</button>
           <button onClick={redoTrackEdit} disabled={historyCounts.redo === 0} title="Redo last undone edit" style={{ padding: '6px 10px', borderRadius: 'var(--radius-sm)', fontSize: '0.82rem', background: 'transparent', border: '1px solid var(--border)', color: historyCounts.redo ? 'var(--text)' : 'var(--text-faint)', cursor: historyCounts.redo ? 'pointer' : 'not-allowed' }}>↷ Redo</button>
-          <button onClick={() => setMode('mmg')} style={{ padding: '6px 14px', borderRadius: 'var(--radius-sm)', fontSize: '0.82rem', background: 'transparent', border: '1px solid var(--border)', color: 'var(--text-muted)', cursor: 'pointer' }}>MMG Varisai Practice</button>
-          <button onClick={() => setMode('manodharma')} style={{ padding: '6px 14px', borderRadius: 'var(--radius-sm)', fontSize: '0.82rem', background: mode === 'manodharma' ? 'rgba(192,132,252,0.12)' : 'transparent', border: '1px solid var(--accent)', color: 'var(--accent)', cursor: 'pointer' }}>🎼 Manodharma Practice</button>
+          <button onClick={() => setMode('construction')} style={{ ...eventButtonStyle, color: 'var(--accent)' }}>Gāna Construction Lab</button>
+          <button onClick={() => setMode('manodharma')} style={{ padding: '6px 14px', borderRadius: 'var(--radius-sm)', fontSize: '0.82rem', background: mode === 'manodharma' ? 'rgba(192,132,252,0.12)' : 'transparent', border: '1px solid var(--accent)', color: 'var(--accent)', cursor: 'pointer' }}>🎼 Manodharma Practice & Learning</button>
         </div>
       </div>
+      {ragaFilter !== 'melakarta' && (
+        <div role={janyaLoadError ? 'alert' : 'status'} style={{ padding: '8px 16px', borderBottom: '1px solid var(--border)', color: janyaLoadError ? 'var(--red)' : 'var(--text-muted)', fontSize: '0.75rem', lineHeight: 1.5 }}>
+          {janyaLoading
+            ? 'Loading reference-reviewed Janya and Vakra rāgas…'
+            : janyaLoadError
+              ? `Could not load Janya rāgas: ${janyaLoadError}`
+              : availableRagas.length === 0
+                ? 'No reference-reviewed rāgas are available in this category.'
+                : `${availableRagas.length} locally reference-reviewed ${ragaFilter === 'vakra' ? 'Vakra' : 'Janya'} rāgas. Scale playback follows the listed svaras; gamakas and characteristic prayōgas require separate musical guidance.`}
+        </div>
+      )}
 
       {/* ── Arrangement controls ── */}
       <h3 className="builder-settings-heading">Playback & export</h3>
@@ -967,13 +1169,15 @@ useEffect(() => {
         <div style={{ minWidth: 100, flex: 1, height: 5, background: 'var(--border)', borderRadius: 9, overflow: 'hidden' }} title={`Playback progress ${Math.round(playbackProgress)}%`}>
           <div style={{ width: `${playbackProgress}%`, height: '100%', background: 'var(--accent)', transition: 'width 100ms linear' }} />
         </div>
-        <button onClick={exportProject} style={{ padding: '5px 9px', borderRadius: 5, border: '1px solid var(--border)', color: 'var(--text-muted)', background: 'transparent', cursor: 'pointer', fontSize: '0.72rem' }}>Export Project JSON</button>
-        <button onClick={() => exportNotation('txt')} style={{ padding: '5px 9px', borderRadius: 5, border: '1px solid var(--border)', color: 'var(--text-muted)', background: 'transparent', cursor: 'pointer', fontSize: '0.72rem' }}>Export Svaras TXT</button>
-        <button onClick={() => exportNotation('csv')} style={{ padding: '5px 9px', borderRadius: 5, border: '1px solid var(--border)', color: 'var(--text-muted)', background: 'transparent', cursor: 'pointer', fontSize: '0.72rem' }}>Export Svaras CSV</button>
         <label style={{ padding: '5px 9px', borderRadius: 5, border: '1px solid var(--border)', color: 'var(--text-muted)', cursor: 'pointer', fontSize: '0.72rem' }}>
-          Import Audio
-          <input type="file" accept="audio/*" style={{ display: 'none' }} onChange={e => importLocalAudio(e.target.files?.[0])} />
+          Import Audio Files (multiple)
+          <input type="file" multiple accept="audio/*,.wav,.mp3,.m4a,.ogg,.flac,.aac" style={{ display: 'none' }} onChange={e => { if (e.target.files?.length) void importMultipleAudio(e.target.files); e.currentTarget.value = ''; }} />
         </label>
+        <label style={{ padding: '5px 9px', border: '1px solid var(--accent)', borderRadius: 5, color: 'var(--accent)', cursor: 'pointer', fontSize: '0.72rem' }}>
+          Convert Video to Audio
+          <input type="file" disabled={convertingVideo} accept="video/*,.mp4,.webm,.mov,.m4v,.mkv" style={{ display: 'none' }} onChange={e => { const file = e.currentTarget.files?.[0]; if (file) void convertVideoToAudio(file); e.currentTarget.value = ''; }} />
+        </label>
+        {convertingVideo && <button onClick={() => videoConversionRef.current?.abort()} style={eventButtonStyle}>Cancel Video Conversion</button>}
         {localAudioUrl && <button onClick={() => { if (localAudioRef.current?.paused) void localAudioRef.current.play(); else localAudioRef.current?.pause(); }} style={{ padding: '5px 9px', borderRadius: 5, border: '1px solid var(--accent)', color: 'var(--accent)', background: 'transparent', cursor: 'pointer', fontSize: '0.72rem' }}>▶ / ⏸ {localAudioName}</button>}
       </div>
       {exportMessage && <div role="status" style={{ padding: '6px 16px', fontSize: '0.72rem', color: 'var(--text-muted)', background: 'var(--surface)', borderBottom: '1px solid var(--border)' }}>{exportMessage}</div>}
@@ -990,18 +1194,21 @@ useEffect(() => {
         </div>
       )}
 
-      {/* ── Mode: MMG ── */}
-      {mode === 'manodharma' ? (
+      {mode === 'construction' ? (
+        <GanaConstructionLab
+          ragaName={selectedRaga.name}
+          bpm={settings.bpm}
+          onBack={() => setMode('builder')}
+          onApplySequence={events => updateTracks(current => current.map((track, index) => {
+            if (index !== activeTrack) return track;
+            const existing = positionBlocks(track.blocks);
+            const offset = blocksEndBeat(existing);
+            return { ...track, blocks: [...existing, ...events.map(event => ({ ...event, id: makeId(), source: 'construction-lab', startBeat: offset + event.startBeat }))] };
+          }))}
+        />
+      ) : mode === 'manodharma' ? (
         <div style={{ flex: 1, minHeight: 0, overflow: 'auto' }}>
-          <ManodharmaPractice onBack={() => setMode('builder')} />
-        </div>
-      ) : mode === 'mmg' ? (
-        <div style={{ flex: 1, overflow: 'auto', display: 'flex', flexDirection: 'column' }}>
-          <div style={{ padding: 'var(--space-3) var(--space-4)', borderBottom: '1px solid var(--border)', background: 'var(--surface2)', display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '0.82rem', fontWeight: 600 }}>MMG Varisai Practice</span>
-            <button onClick={() => setMode('builder')} style={{ padding: '6px 14px', borderRadius: 'var(--radius-sm)', fontSize: '0.82rem', background: 'transparent', border: '1px solid var(--border)', color: 'var(--text-muted)', cursor: 'pointer' }}>← Back to Track Builder</button>
-          </div>
-          <MmgPractice />
+          <ManodharmaIntegrated onBack={() => setMode('builder')} />
         </div>
       ) : (
         <>
@@ -1016,8 +1223,82 @@ useEffect(() => {
             />
           )}
 
+          {showEventEditor && (() => {
+            const active = tracks[activeTrack];
+            const events = active ? positionBlocks(active.blocks) : [];
+            const selected = events.find(event => event.id === selectedEventId) ?? events[0];
+            return <section aria-label="Advanced event editor" style={{ padding: '12px 16px', borderBottom: '1px solid var(--border)', background: 'var(--surface2)', display: 'flex', flexDirection: 'column', gap: 10 }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
+                <div><strong style={{ color: 'var(--text)' }}>Advanced Event Editor</strong><div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Edit the active track. Every change uses the existing Undo/Redo history.</div></div>
+                <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+                  <button onClick={addRestEvent} style={eventButtonStyle}>＋ Add rest</button>
+                  <button disabled={!selected} onClick={() => selected && setEventClipboard({ ...selected })} style={eventButtonStyle}>Copy event</button>
+                  <button disabled={!eventClipboard} onClick={pasteEvent} style={eventButtonStyle}>Paste at end</button>
+                  <button disabled={!selected} onClick={() => { if (selected) { removeBlock(activeTrack, selected.id); setSelectedEventId(null); } }} style={eventButtonStyle}>Delete</button>
+                </div>
+              </div>
+              {!active || events.length === 0 ? <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>Add a svara from the palette or create a rest to begin editing.</div> : <>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, alignItems: 'center' }}>
+                  <label style={eventLabelStyle}>Event <select value={selected?.id ?? ''} onChange={e => setSelectedEventId(e.target.value)} style={eventInputStyle}>{events.map(event => <option key={event.id} value={event.id}>{event.kind === 'rest' ? 'Rest' : event.label} · beat {event.startBeat.toFixed(2)}</option>)}</select></label>
+                  {selected?.kind !== 'rest' && <label style={eventLabelStyle}>Svara label <input value={selected?.label ?? ''} onChange={e => selected && patchActiveEvent(selected.id, { label: e.target.value })} style={eventInputStyle} /></label>}
+                  {selected?.kind !== 'rest' && <label style={eventLabelStyle}>Semitone <input type="number" min={-36} max={48} step={1} value={selected?.semitone ?? 0} onChange={e => selected && patchActiveEvent(selected.id, { semitone: Number(e.target.value) || 0 })} style={{ ...eventInputStyle, width: 84 }} /></label>}
+                  <label style={eventLabelStyle}>Duration (beats) <input type="number" min={0.125} max={64} step={0.125} value={selected?.duration ?? 1} onChange={e => selected && patchActiveEvent(selected.id, { duration: Math.max(0.125, Number(e.target.value) || 0.125) })} style={{ ...eventInputStyle, width: 96 }} /></label>
+                  <label style={eventLabelStyle}>Start beat <input type="number" min={0} max={10000} step={snapSubdivision} value={selected?.startBeat ?? 0} onChange={e => selected && patchActiveEvent(selected.id, { startBeat: Math.max(0, Math.round((Number(e.target.value) || 0) / snapSubdivision) * snapSubdivision) })} style={{ ...eventInputStyle, width: 96 }} /></label>
+                  <label style={eventLabelStyle}>Snap <select value={snapSubdivision} onChange={e => setSnapSubdivision(Number(e.target.value))} style={eventInputStyle}><option value={1}>1 beat</option><option value={0.5}>½ beat</option><option value={0.25}>¼ beat</option><option value={0.125}>⅛ beat</option></select></label>
+                  <button disabled={!selected} onClick={() => selected && patchActiveEvent(selected.id, { startBeat: Math.max(0, Math.round(selected.startBeat / snapSubdivision) * snapSubdivision) })} style={eventButtonStyle}>Snap selected</button>
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5 }}>{events.map(event => <button key={event.id} onClick={() => setSelectedEventId(event.id)} title={`Beat ${event.startBeat}; duration ${event.duration}`} style={{ ...eventButtonStyle, borderColor: event.id === selected?.id ? '#c084fc' : 'var(--border)', background: event.id === selected?.id ? 'rgba(192,132,252,.14)' : 'transparent', color: event.kind === 'rest' ? 'var(--text-muted)' : 'var(--text)' }}>{event.kind === 'rest' ? '𝄽' : event.label} <small>{event.startBeat.toFixed(2)}</small></button>)}</div>
+              </>}
+            </section>;
+          })()}
+
           {/* ── Experimental musical phrase import panel ── */}
-          {showPhraseImport && (
+          {showNotationView && (() => {
+            const active = tracks[activeTrack];
+            const events = active ? positionBlocks(active.blocks) : [];
+            const cycleLength = Number(notationTala);
+            const endBeat = Math.max(cycleLength, blocksEndBeat(events));
+            const cycles = Math.min(32, Math.ceil(endBeat / cycleLength));
+            const beatCells = Array.from({ length: cycles * cycleLength }, (_, i) => i);
+            const phase = (beat: number) => ((beat + notationEduppu) % cycleLength + cycleLength) % cycleLength;
+            return <section aria-label="Svara notation and tala alignment" style={{ padding: '12px 16px', borderBottom: '1px solid var(--border)', background: 'var(--surface2)', display: 'flex', flexDirection: 'column', gap: 10 }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 10 }}>
+                <strong>Svara Notation + Tāḷa Alignment</strong>
+                <label style={eventLabelStyle}>Tāḷa
+                  <select value={notationTala} onChange={e => setNotationTala(e.target.value)} style={eventInputStyle}>
+                    <option value="8">Ādi tāḷa (8 beats)</option>
+                    <option value="6">Rūpaka tāḷa (6 beats)</option>
+                    <option value="7">Miśra Cāpu (7 beats)</option>
+                    <option value="5">Khaṇḍa Cāpu (5 beats)</option>
+                    <option value="4">Simple cycle (4 beats)</option>
+                  </select>
+                </label>
+                <label style={eventLabelStyle}>Eduppu (beats)
+                  <input type="number" min={-4} max={4} step={0.25} value={notationEduppu} onChange={e => setNotationEduppu(Math.max(-4, Math.min(4, Number(e.target.value) || 0)))} style={{ ...eventInputStyle, width: 64 }} />
+                </label>
+                <button onClick={() => { setShowEventEditor(true); if (events[0]) setSelectedEventId(events[0].id); }} style={eventButtonStyle}>Open Event Editor</button>
+              </div>
+              {!active || !events.length ? <div>Add svaras to the active track to see notation aligned to tāḷa beats.</div> :
+                <div style={{ overflowX: 'auto', paddingBottom: 4 }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: `repeat(${beatCells.length}, 76px)`, gap: 2, width: 'max-content' }}>
+                    {beatCells.map(beat => {
+                      const beatPhase = phase(beat);
+                      const here = events.filter(event => event.startBeat < beat + 1 && event.startBeat + event.duration > beat);
+                      return <div key={beat} style={{ minHeight: 65, padding: 3, border: `1px solid ${beatPhase === 0 ? 'var(--accent)' : 'var(--border)'}`, background: 'var(--surface)', borderRadius: 4 }}>
+                        <div style={{ fontSize: '0.7rem', color: beatPhase === 0 ? 'var(--accent)' : 'var(--text-muted)', marginBottom: 6 }}>{beatPhase === 0 ? 'Samam' : `Beat ${beatPhase + 1}`}</div>
+                        {here.map(event => <button key={event.id} title={`${event.label}; starts at beat ${event.startBeat}; duration ${event.duration} beats`} onClick={() => { setSelectedEventId(event.id); setShowEventEditor(true); }} style={{ ...eventButtonStyle, display: 'block', width: '100%', marginBottom: 3, borderStyle: event.kind === 'rest' ? 'dashed' : 'solid' }}>
+                          {event.kind === 'rest' ? 'Rest' : event.label}
+                          {event.startBeat >= beat && <small style={{ display: 'block' }}>{event.duration} beats</small>}
+                        </button>)}
+                      </div>;
+                    })}
+                  </div>
+                </div>}
+              <div style={{ color: 'var(--text-muted)', fontSize: '0.72rem' }}>Eduppu is the entry offset relative to samam (positive: after, negative: before); only displayed cycle phase changes, not playback. Showing up to 32 cycles. This is a beat-cycle alignment aid, not full anga/kriya notation.</div>
+            </section>;
+          })()}
+
+          {showPhraseImport && canImportMelakartaPhrases && (
             <div style={{ padding: 'var(--space-3) var(--space-4)', borderBottom: '1px solid var(--border)', background: 'var(--surface2)' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, marginBottom: 10 }}>
                 <div>
@@ -1089,7 +1370,7 @@ useEffect(() => {
                           } catch { /* ignore invalid drag payload */ }
                         }}
                       >
-                        {positioned.map(block => <div key={block.id} draggable title={`${block.label} · beat ${(block.startBeat + Math.max(0, track.delayBeats ?? 0)).toFixed(2)} · ${block.duration} beats — drag to move; double-click to remove`} onDragStart={event => { event.dataTransfer.setData('application/x-naada-timeline', JSON.stringify({ kind: 'note', trackId: track.id, blockId: block.id })); event.dataTransfer.effectAllowed = 'move'; }} onClick={() => setActiveTrack(trackIndex)} onDoubleClick={() => removeBlock(trackIndex, block.id)} style={{ position: 'absolute', left: (block.startBeat + Math.max(0, track.delayBeats ?? 0)) * pixelsPerBeat + 1, top: 7, height: 33, width: Math.max(22, block.duration * pixelsPerBeat - 3), boxSizing: 'border-box', borderRadius: 4, border: `1px solid ${track.color}90`, background: `${track.color}40`, color: track.color, fontSize: '0.63rem', fontFamily: 'monospace', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'clip', padding: '8px 3px 2px', cursor: 'grab', zIndex: 1 }} onMouseDown={() => setActiveTrack(trackIndex)}>{block.label}</div>)}
+                        {positioned.map(block => <div key={block.id} draggable title={`${block.label} · beat ${(block.startBeat + Math.max(0, track.delayBeats ?? 0)).toFixed(2)} · ${block.duration} beats — drag to move; double-click to remove`} onDragStart={event => { event.dataTransfer.setData('application/x-naada-timeline', JSON.stringify({ kind: 'note', trackId: track.id, blockId: block.id })); event.dataTransfer.effectAllowed = 'move'; }} onClick={() => setActiveTrack(trackIndex)} onDoubleClick={() => removeBlock(trackIndex, block.id)} style={{ position: 'absolute', left: (block.startBeat + Math.max(0, track.delayBeats ?? 0)) * pixelsPerBeat + 1, top: 7, height: 33, width: Math.max(22, block.duration * pixelsPerBeat - 3), boxSizing: 'border-box', borderRadius: 4, border: `1px ${block.kind === 'rest' ? 'dashed' : 'solid'} ${block.kind === 'rest' ? 'var(--text-muted)' : `${track.color}90`}`, background: block.kind === 'rest' ? 'rgba(148,163,184,.10)' : `${track.color}40`, color: block.kind === 'rest' ? 'var(--text-muted)' : track.color, fontSize: '0.63rem', fontFamily: 'monospace', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'clip', padding: '8px 3px 2px', cursor: 'grab', zIndex: 1 }} onMouseDown={() => setActiveTrack(trackIndex)}>{block.kind === 'rest' ? '𝄽 Rest' : block.label}</div>)}
                         {timelinePlayheadBeat !== null && <div aria-label="Playback playhead" style={{ position: 'absolute', left: timelinePlayheadBeat * pixelsPerBeat, top: 0, bottom: 0, width: 2, background: '#fbbf24', boxShadow: '0 0 4px rgba(251,191,36,.7)', pointerEvents: 'none', zIndex: 3 }} />}
                       </div>
                     </div>;
@@ -1102,7 +1383,7 @@ useEffect(() => {
                     <div onDragOver={event => event.preventDefault()} onDrop={event => { event.preventDefault(); const raw = event.dataTransfer.getData('application/x-naada-timeline'); if (!raw) return; try { const payload = JSON.parse(raw) as { kind: string; clipId?: string }; if (payload.kind !== 'audio' || !payload.clipId) return; const rect = event.currentTarget.getBoundingClientRect(); moveAudioClip(payload.clipId, Math.max(0, (event.clientX - rect.left) / pixelsPerBeat)); } catch { /* ignore invalid drag payload */ } }} style={{ width: timelineEndBeat * pixelsPerBeat, flex: '0 0 auto', height: 50, position: 'relative', backgroundImage: `repeating-linear-gradient(to right, transparent 0, transparent ${pixelsPerBeat - 1}px, rgba(148,163,184,.20) ${pixelsPerBeat - 1}px, rgba(148,163,184,.20) ${pixelsPerBeat}px), repeating-linear-gradient(to right, transparent 0, transparent ${pixelsPerBeat * 4 - 1}px, rgba(148,163,184,.35) ${pixelsPerBeat * 4 - 1}px, rgba(148,163,184,.35) ${pixelsPerBeat * 4}px)` }}>
                       <div draggable onDragStart={event => { event.dataTransfer.setData('application/x-naada-timeline', JSON.stringify({ kind: 'audio', clipId: clip.id })); event.dataTransfer.effectAllowed = 'move'; }} title={`${clip.name} · start beat ${clip.startBeat.toFixed(2)} · drag to move`} style={{ position: 'absolute', left: clip.startBeat * pixelsPerBeat + 1, top: 7, height: 36, width: Math.max(28, clip.durationSeconds / (60 / Math.max(30, settings.bpm)) * pixelsPerBeat - 3), maxWidth: timelineEndBeat * pixelsPerBeat, boxSizing: 'border-box', borderRadius: 4, border: '1px solid rgba(45,212,191,.85)', background: 'rgba(45,212,191,.16)', color: '#2dd4bf', fontSize: '0.65rem', padding: '10px 5px 2px', overflow: 'hidden', whiteSpace: 'nowrap', cursor: 'grab', zIndex: 1 }}>
                         <span aria-hidden="true" style={{ position: 'absolute', inset: 3, display: 'flex', alignItems: 'center', justifyContent: 'space-around', opacity: 0.45, pointerEvents: 'none' }}>
-                          {waveformPeaks(clip.buffer).map((peak, index) => <span key={index} style={{ width: 2, minWidth: 1, height: `${Math.max(8, Math.min(100, peak * 100))}%`, borderRadius: 2, background: '#2dd4bf' }} />)}
+                          {waveformPeaks(clip).map((peak, index) => <span key={index} style={{ width: 2, minWidth: 1, height: `${Math.max(8, Math.min(100, peak * 100))}%`, borderRadius: 2, background: '#2dd4bf' }} />)}
                         </span>
                         <span style={{ position: 'relative', zIndex: 1, padding: '0 2px', background: 'rgba(12,20,30,.45)' }}>♫ {clip.name}</span>
                       </div>
@@ -1115,10 +1396,23 @@ useEffect(() => {
                 {audioClips.map(clip => <div key={`clip-control-${clip.id}`} style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 7, padding: '5px 8px', border: '1px solid rgba(45,212,191,.25)', borderRadius: 6, fontSize: '0.68rem' }}>
                   <strong title={clip.name} style={{ color: '#2dd4bf', maxWidth: 150, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{clip.name}</strong>
                   <label style={{ color: 'var(--text-muted)' }}>Start beat <input type="number" min={0} max={1024} step={0.25} value={clip.startBeat} onChange={event => moveAudioClip(clip.id, Number(event.target.value) || 0)} style={{ width: 58, marginLeft: 3, background: 'var(--surface2)', color: 'var(--text)', border: '1px solid var(--border)', borderRadius: 3, padding: 3 }} /></label>
+                  <label style={{ color: 'var(--text-muted)' }}>Trim start (s) <input type="number" min={0} max={Math.max(0, clip.buffer.duration - 0.05)} step={0.1} value={clip.sourceStartSeconds ?? 0} onChange={event => trimAudioClip(clip.id, { start: Number(event.target.value) || 0 })} style={{ width: 62, marginLeft: 3, background: 'var(--surface2)', color: 'var(--text)', border: '1px solid var(--border)', borderRadius: 3, padding: 3 }} /></label>
+                  <label style={{ color: 'var(--text-muted)' }}>Length (s) <input type="number" min={Math.min(0.05, clip.buffer.duration)} max={clip.buffer.duration - (clip.sourceStartSeconds ?? 0)} step={0.01} value={clip.durationSeconds} onChange={event => trimAudioClip(clip.id, { duration: Number(event.target.value) || 0.05 })} style={{ width: 62, marginLeft: 3, background: 'var(--surface2)', color: 'var(--text)', border: '1px solid var(--border)', borderRadius: 3, padding: 3 }} /></label>
                   <label style={{ color: 'var(--text-muted)' }}>Vol <input type="range" min={0} max={1} step={0.05} value={clip.volume} onChange={event => setAudioClips(previous => previous.map(item => item.id === clip.id ? { ...item, volume: Number(event.target.value) } : item))} /></label>
                   <label style={{ color: clip.muted ? 'var(--red)' : 'var(--text-muted)' }}><input type="checkbox" checked={clip.muted} onChange={event => setAudioClips(previous => previous.map(item => item.id === clip.id ? { ...item, muted: event.target.checked } : item))} /> Mute</label>
+                  <button onClick={() => analyseImportedClip(clip)} style={{ border: '1px solid var(--accent)', color: 'var(--accent)', borderRadius: 4, background: 'transparent', padding: '3px 6px', cursor: 'pointer' }}>Analyse Svaras</button>
                   <button onClick={() => setAudioClips(previous => previous.filter(item => item.id !== clip.id))} style={{ border: '1px solid var(--red)', color: 'var(--red)', borderRadius: 4, background: 'transparent', padding: '3px 6px', cursor: 'pointer' }}>Remove</button>
                 </div>)}
+              </div>}
+              {analysisClipId && <div style={{ marginTop: 12, padding: 12, border: '1px solid var(--border)', borderRadius: 8, background: 'var(--surface2)' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 8, justifyContent: 'space-between' }}>
+                  <strong style={{ color: 'var(--accent)' }}>Svara Analysis · {audioClips.find(c => c.id === analysisClipId)?.name ?? 'Imported audio'}</strong>
+                  <button onClick={addDetectedSwarasToTrack} disabled={!detectedSwaras.length} style={{ border: '1px solid var(--accent)', color: 'var(--accent)', borderRadius: 4, background: 'transparent', padding: '5px 8px', cursor: detectedSwaras.length ? 'pointer' : 'not-allowed' }}>Add estimated svaras to active track</button>
+                </div>
+                <p style={{ color: 'var(--text-muted)', fontSize: '0.72rem' }}>{analysisMessage || 'Pitch estimates are approximate. Best results come from a single clear melody.'}</p>
+                {detectedSwaras.length > 0 && <div style={{ maxHeight: 180, overflow: 'auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(115px,1fr))', gap: 5 }}>
+                  {detectedSwaras.slice(0,160).map((note, i) => <div key={`${note.timeSeconds}-${i}`} style={{ fontSize: '0.7rem', padding: '5px 7px', borderRadius: 4, border: '1px solid var(--border)', background: 'var(--surface)' }}><strong>{note.label}</strong> · {note.timeSeconds.toFixed(2)}s<br/><span style={{ color: 'var(--text-muted)' }}>{note.frequencyHz.toFixed(1)} Hz · {(note.durationSeconds*1000).toFixed(0)} ms</span></div>)}
+                </div>}
               </div>}
             </section>
           )}

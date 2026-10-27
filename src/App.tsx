@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useAppStore } from './store/useAppStore'
 import Sidebar from './components/layout/Sidebar'
 import Header from './components/layout/Header'
-import RagaLibrary from './modules/RagaLibrary'
+import RagaPractice from './modules/RagaPractice'
 import TalaTrainer from './modules/TalaTrainer'
 import ShrutiTrainer from './modules/ShrutiTrainer'
 import Resources from './modules/Resources'
@@ -10,7 +10,6 @@ import MusicBuilder from './modules/MusicBuilder'
 import Progress from './modules/Progress'
 import About from './modules/About'
 import Home from './modules/Home'
-import GamakaTrainer from './modules/GamakaTrainer'
 
 export default function App() {
   const { module, sidebarOpen, setSidebarOpen } = useAppStore()
@@ -35,11 +34,10 @@ export default function App() {
 
   const moduleMap: Record<string, JSX.Element> = {
     home: <Home />,
-    raga: <RagaLibrary settingsContainer={moduleSettingsContainer} />,
+    raga: <RagaPractice settingsContainer={moduleSettingsContainer} />,
     wisdom: <Home wisdomOnly />,
     tala: <TalaTrainer />,
     shruti: <ShrutiTrainer />,
-    gamaka: <GamakaTrainer />,
     resources: <Resources />,
     builder: <MusicBuilder settingsContainer={moduleSettingsContainer} />,
     progress: <Progress />,
@@ -89,7 +87,7 @@ export default function App() {
       >
         <Header moduleSettingsRef={setModuleSettingsContainer} />
         <main style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-          {moduleMap[module] ?? <RagaLibrary settingsContainer={moduleSettingsContainer} />}
+          {moduleMap[module] ?? <Home />}
         </main>
       </div>
     </div>

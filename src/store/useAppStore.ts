@@ -1,6 +1,7 @@
 ﻿
 import { create } from 'zustand'
 import type { AppModule, AppSettings, InstrumentId } from '../types/index'
+import type { RagaPracticeTarget } from '../music/ragaPracticeTarget'
 
 export type DisplayPreset = 'practice' | 'balanced' | 'learning'
 
@@ -97,10 +98,12 @@ const isMobile = () =>
 
 interface AppState {
   module: AppModule
+  ragaPracticeTarget: RagaPracticeTarget | null
   settings: AppSettings
   sidebarOpen: boolean
   displayPreferences: DisplayPreferences
   setModule: (m: AppModule) => void
+  openRagaPractice: (target: RagaPracticeTarget) => void
   updateSettings: (s: Partial<AppSettings>) => void
   setSidebarOpen: (v: boolean) => void
   setDisplayPreset: (preset: DisplayPreset) => void
@@ -111,6 +114,7 @@ interface AppState {
 
 export const useAppStore = create<AppState>((set) => ({
   module: 'home',
+  ragaPracticeTarget: null,
   sidebarOpen: !isMobile(),
   settings: {
     tonicHz: 261.63,
@@ -122,7 +126,8 @@ export const useAppStore = create<AppState>((set) => ({
   },
   displayPreferences: loadDisplayPreferences(),
 
-  setModule: (module) => set({ module }),
+  setModule: (module) => set(module === 'raga' ? { module, ragaPracticeTarget: null } : { module }),
+  openRagaPractice: (ragaPracticeTarget) => set({ module: 'raga', ragaPracticeTarget }),
   setSidebarOpen: (sidebarOpen) => set({ sidebarOpen }),
   updateSettings: (partial) =>
     set((s) => ({ settings: { ...s.settings, ...partial } })),

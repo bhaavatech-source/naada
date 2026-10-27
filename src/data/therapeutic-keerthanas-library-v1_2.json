@@ -1,0 +1,1008 @@
+{
+  "project": "Medhā Nādopāsanā / Nāda Vidyā Ecosystem",
+  "module": "Therapeutic Kīrtana & Sacred Healing Music Library",
+  "version": "1.2.0",
+  "description": "Experimental kīrtana library for Web Audio playback. The swara lines are simplified, illustrative melodic outlines and have NOT been verified against published notation; lyrics (sāhitya) alignment is approximate. Not medical advice; no kīrtana here is a clinically validated therapy. v1.2: raga ids aligned to database v2.2.0.",
+  "supported_instruments": [
+    "veena",
+    "flute",
+    "voice_formants",
+    "tambura"
+  ],
+  "keerthanas": [
+    {
+      "id": "keerthana_samajavaragamana",
+      "title": "Sāmajavaragamana",
+      "composer": "Tyāgarāja",
+      "tradition": "Carnatic Classical Gem (Public Domain)",
+      "raga_id": "raga_hindolam",
+      "raga_name": "Hindōḷam",
+      "mela_number": 20,
+      "tala_id": "adi_tala",
+      "tala_name": "Ādi Tālam (8 Akṣaras)",
+      "eduppu": "0.5 Akṣara Anāgatam (After Beat 1)",
+      "therapeutic_intent": "Calm, reflective listening (traditional association only; not clinically validated)",
+      "dosha_effect": "Traditional interpretation only: described as calming for Vāta- and Pitta-type restlessness; no clinical claim",
+      "recommended_prahara": "Late Evening / Night Meditation",
+      "base_tempo_bpm": 58,
+      "sections": {
+        "pallavi": {
+          "line_title": "Pallavi Line 1",
+          "swaras": [
+            "S",
+            "G2",
+            "M1",
+            "D1",
+            "N2",
+            "Ṡ",
+            "N2",
+            "D1",
+            "M1",
+            "G2",
+            "S"
+          ],
+          "sahitya": [
+            "Sā",
+            "ma",
+            "ja",
+            "va",
+            "ra",
+            "ga",
+            "ma",
+            "na",
+            "sa",
+            "dhu",
+            "hrit"
+          ],
+          "durations": [
+            2,
+            1,
+            1,
+            2,
+            2,
+            2,
+            1,
+            1,
+            2,
+            1,
+            1
+          ],
+          "gamaka_annotations": [
+            "plain",
+            "kampitam",
+            "plain",
+            "andolitam",
+            "plain",
+            "jaru",
+            "plain",
+            "andolitam",
+            "plain",
+            "kampitam",
+            "plain"
+          ]
+        },
+        "anupallavi": {
+          "line_title": "Anupallavi Line 1",
+          "swaras": [
+            "M1",
+            "D1",
+            "N2",
+            "Ṡ",
+            "Ṡ",
+            "N2",
+            "Ġ2",
+            "Ṡ",
+            "Ṡ",
+            "N2",
+            "D1",
+            "M1"
+          ],
+          "sahitya": [
+            "M1",
+            "D1",
+            "N2",
+            "Ṡ",
+            "Ṡ",
+            "N2",
+            "Ġ2",
+            "Ṡ",
+            "Ṡ",
+            "N2",
+            "D1",
+            "M1"
+          ],
+          "durations": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            2,
+            2
+          ],
+          "gamaka_annotations": [
+            "plain",
+            "andolitam",
+            "plain",
+            "jaru",
+            "plain",
+            "kampitam",
+            "jaru",
+            "plain",
+            "plain",
+            "andolitam",
+            "plain",
+            "plain"
+          ],
+          "sahitya_original_garbled": [
+            "Sā",
+            "ma",
+            "ni",
+            "me",
+            "ga",
+            "za",
+            "ra",
+            "na",
+            "ka",
+            "la",
+            "cha",
+            "ru"
+          ],
+          "sahitya_status": "placeholder: swara names only. The v1.1 syllables were garbled and not the real text. Replace with the published sāhitya from a verified edition."
+        },
+        "charanam": {
+          "line_title": "Charaṇam Line 1",
+          "swaras": [
+            "S",
+            "S",
+            "G2",
+            "M1",
+            "M1",
+            "D1",
+            "M1",
+            "G2",
+            "S",
+            "M1",
+            "G2",
+            "S"
+          ],
+          "sahitya": [
+            "Cha",
+            "ra",
+            "na",
+            "ra",
+            "vi",
+            "n",
+            "da",
+            "yu",
+            "ga",
+            "di",
+            "ya",
+            "na"
+          ],
+          "durations": [
+            1,
+            1,
+            2,
+            2,
+            1,
+            1,
+            2,
+            2,
+            2,
+            1,
+            1,
+            2
+          ],
+          "gamaka_annotations": [
+            "plain",
+            "plain",
+            "kampitam",
+            "plain",
+            "plain",
+            "andolitam",
+            "plain",
+            "kampitam",
+            "plain",
+            "plain",
+            "kampitam",
+            "plain"
+          ]
+        }
+      },
+      "swara_source": "simplified illustrative outline — not verified against published notation",
+      "sahitya_status": "pallavi and charanam: approximate alignment, verify against published text. anupallavi: placeholder swara names.",
+      "raga_id_legacy": "raga_hindolam",
+      "verification_notes": [
+        "Hindolam is S G2 M1 D1 N2 (no Ri, no Pa). v1.0 lines used D2 and a tāra Ṙ2, which are outside the rāga; corrected: pallavi[3] D2→D1, pallavi[7] D2→D1, anupallavi[1] D2→D1, anupallavi[5] Ṙ2→N2, anupallavi[10] D2→D1, charanam[5] D2→D1.",
+        "Lines are still a simplified outline, not the composition. Anupallavi sāhitya is garbled.",
+        "v1.2: garbled anupallavi syllables replaced with swara-name placeholders (originals kept in sahitya_original_garbled). Real lyrics were not inserted because no verified source text was used."
+      ],
+      "timing_check": {
+        "tala_cycle_beats": 8,
+        "section_duration_totals": {
+          "pallavi": 16,
+          "anupallavi": 22,
+          "charanam": 18
+        },
+        "sections_aligned_to_cycle": {
+          "pallavi": true,
+          "anupallavi": false,
+          "charanam": false
+        },
+        "note": "Assumes 1 duration unit = 1 akṣara. Sections that do not divide evenly into the tala cycle may use a different unit or need re-timing; confirm before tala-synchronised playback."
+      },
+      "catalogue_review": {
+        "kind": "traditional",
+        "playback_enabled": false,
+        "notation_status": "unverified-illustrative-outline",
+        "lyrics_status": "unverified-or-placeholder",
+        "timing_status": "duration-units-and-eduppu-require-verification"
+      }
+    },
+    {
+      "id": "keerthana_shaktisahita",
+      "title": "Shaktisahita Gaṇapatim",
+      "composer": "Muthuswāmī Dīkṣitar",
+      "tradition": "Nottuswaram (Dīkṣitar, based on a European tune); public domain",
+      "raga_id": "raga_shankarabharanam",
+      "raga_name": "Dhīraśaṅkarābharaṇam",
+      "mela_number": 29,
+      "tala_id": "tisra_ekam",
+      "tala_name": "Tiśra Eka Tālam (3 beats, 3/4)",
+      "eduppu": "Samam (On Beat 1)",
+      "therapeutic_intent": "Bright, energetic listening (traditional association only; not clinically validated)",
+      "dosha_effect": "Traditional interpretation only; no clinical claim",
+      "recommended_prahara": "Morning / Session Opening",
+      "base_tempo_bpm": 72,
+      "sections": {
+        "pallavi": {
+          "line_title": "Pallavi Line 1",
+          "swaras": [
+            "S",
+            "R2",
+            "G3",
+            "M1",
+            "P",
+            "P",
+            "D2",
+            "P",
+            "M1",
+            "G3",
+            "R2",
+            "S"
+          ],
+          "sahitya": [
+            "Sha",
+            "kti",
+            "sa",
+            "hi",
+            "ta",
+            "ga",
+            "na",
+            "pa",
+            "ti",
+            "ma",
+            "shi",
+            "vam"
+          ],
+          "durations": [
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2
+          ],
+          "gamaka_annotations": [
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain"
+          ]
+        },
+        "anupallavi": {
+          "line_title": "Anupallavi Line 1",
+          "swaras": [
+            "G3",
+            "M1",
+            "P",
+            "D2",
+            "N3",
+            "Ṡ",
+            "Ṡ",
+            "N3",
+            "D2",
+            "P",
+            "M1",
+            "G3"
+          ],
+          "sahitya": [
+            "Bhak",
+            "ta",
+            "ja",
+            "na",
+            "pa",
+            "ri",
+            "pā",
+            "la",
+            "me",
+            "kam",
+            "va",
+            "de"
+          ],
+          "durations": [
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2
+          ],
+          "gamaka_annotations": [
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain"
+          ]
+        },
+        "charanam": {
+          "line_title": "Charaṇam Line 1",
+          "swaras": [
+            "P",
+            "P",
+            "D2",
+            "P",
+            "M1",
+            "G3",
+            "R2",
+            "G3",
+            "M1",
+            "P",
+            "G3",
+            "R2",
+            "S"
+          ],
+          "sahitya": [
+            "Vī",
+            "ṇā",
+            "va",
+            "ra",
+            "da",
+            "ra",
+            "ka",
+            "rā",
+            "mbu",
+            "ja",
+            "ka",
+            "ra",
+            "m"
+          ],
+          "durations": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2
+          ],
+          "gamaka_annotations": [
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "plain"
+          ]
+        }
+      },
+      "swara_source": "simplified illustrative outline — not verified against published notation",
+      "sahitya_status": "approximate alignment — verify against published text",
+      "verification_notes": [
+        "v1.0 labelled Tiśra Eka as \"4/4 Western Meter\"; tisra eka is a 3-beat cycle (3/4). Chatusra eka would be 4/4.",
+        "Rāga Śaṅkarābharaṇam (Mela 29) confirmed.",
+        "v1.2: \"Cognitive Focus, Vitality Boost & Stress Relief\" and \"Harmonizes Vāta and Pitta; clears mental lethargy\" were unsupported claims and were replaced with traditional-association wording."
+      ],
+      "timing_check": {
+        "tala_cycle_beats": 3,
+        "section_duration_totals": {
+          "pallavi": 14,
+          "anupallavi": 15,
+          "charanam": 14
+        },
+        "sections_aligned_to_cycle": {
+          "pallavi": false,
+          "anupallavi": true,
+          "charanam": false
+        },
+        "note": "Assumes 1 duration unit = 1 akṣara. Sections that do not divide evenly into the tala cycle may use a different unit or need re-timing; confirm before tala-synchronised playback."
+      },
+      "catalogue_review": {
+        "kind": "traditional",
+        "playback_enabled": false,
+        "notation_status": "unverified-illustrative-outline",
+        "lyrics_status": "unverified-or-placeholder",
+        "timing_status": "duration-units-and-eduppu-require-verification"
+      }
+    },
+    {
+      "id": "keerthana_neelambari_lullaby",
+      "title": "Nīlāmbari Nidrā Dēvi Kīrtana",
+      "composer": "Original Therapeutic Composition (Medhā Nādopāsanā)",
+      "tradition": "Project-created study; not a traditional composition",
+      "raga_id": "raga_neelambari",
+      "raga_name": "Nīlāmbari",
+      "mela_number": 29,
+      "tala_id": "adi_tala",
+      "tala_name": "Ādi Tālam (8 Akṣaras)",
+      "eduppu": "Samam (On Beat 1)",
+      "therapeutic_intent": "Gentle, slow bedtime listening (traditional \"lullaby\" association only)",
+      "dosha_effect": "Traditional interpretation only: described as soothing for Vāta and Pitta; no clinical claim",
+      "recommended_prahara": "Bedtime / Evening Relaxation",
+      "base_tempo_bpm": 48,
+      "sections": {
+        "pallavi": {
+          "line_title": "Pallavi Line 1",
+          "swaras": [
+            "S",
+            "R2",
+            "G3",
+            "M1",
+            "P",
+            "D2",
+            "P",
+            "N3",
+            "Ṡ",
+            "N3",
+            "P",
+            "M1",
+            "G3",
+            "R2",
+            "S"
+          ],
+          "sahitya": [
+            "Ni",
+            "drā",
+            "dē",
+            "vi",
+            "vā",
+            "ra",
+            "m",
+            "shā",
+            "n",
+            "ti",
+            "m",
+            "ta",
+            "no",
+            "tu",
+            "me"
+          ],
+          "durations": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            2,
+            2,
+            1,
+            1,
+            2,
+            2,
+            2,
+            4
+          ],
+          "gamaka_annotations": [
+            "plain",
+            "kampitam",
+            "plain",
+            "plain",
+            "andolitam",
+            "plain",
+            "plain",
+            "kampitam",
+            "jaru",
+            "plain",
+            "plain",
+            "plain",
+            "kampitam",
+            "plain",
+            "plain"
+          ]
+        },
+        "anupallavi": {
+          "line_title": "Anupallavi Line 1",
+          "swaras": [
+            "P",
+            "N3",
+            "Ṡ",
+            "Ṙ2",
+            "Ġ3",
+            "Ṁ1",
+            "Ġ3",
+            "Ṙ2",
+            "Ṡ",
+            "N3",
+            "P",
+            "M1"
+          ],
+          "sahitya": [
+            "Mā",
+            "na",
+            "sa",
+            "san",
+            "tā",
+            "pa",
+            "m",
+            "ha",
+            "ra",
+            "su",
+            "kha",
+            "da"
+          ],
+          "durations": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            4
+          ],
+          "gamaka_annotations": [
+            "andolitam",
+            "kampitam",
+            "jaru",
+            "kampitam",
+            "plain",
+            "plain",
+            "plain",
+            "kampitam",
+            "plain",
+            "kampitam",
+            "plain",
+            "plain"
+          ]
+        },
+        "charanam": {
+          "line_title": "Charaṇam Line 1",
+          "swaras": [
+            "S",
+            "G3",
+            "M1",
+            "P",
+            "P",
+            "D2",
+            "P",
+            "M1",
+            "G3",
+            "R2",
+            "S",
+            "S"
+          ],
+          "sahitya": [
+            "A",
+            "nan",
+            "ta",
+            "shān",
+            "ti",
+            "pū",
+            "r",
+            "ṇā",
+            "hri",
+            "da",
+            "ya",
+            "m"
+          ],
+          "durations": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            4
+          ],
+          "gamaka_annotations": [
+            "plain",
+            "kampitam",
+            "plain",
+            "andolitam",
+            "plain",
+            "plain",
+            "plain",
+            "plain",
+            "kampitam",
+            "plain",
+            "plain",
+            "plain"
+          ]
+        }
+      },
+      "swara_source": "simplified illustrative outline — not verified against published notation",
+      "sahitya_status": "approximate alignment — verify against published text",
+      "verification_notes": [
+        "v1.0 claimed \"Deep Sleep Induction, Insomnia Cure & Pediatric Soothing\". No evidence supports Neelambari as an insomnia treatment; a 1997 sleep-lab experiment reported in the press found no sleep effect versus Kalyani. Claims removed.",
+        "Original composition by the project (not a traditional kīrtana); the vakra phrases that define Neelambari are not reflected in this straight scalar line."
+      ],
+      "timing_check": {
+        "tala_cycle_beats": 8,
+        "section_duration_totals": {
+          "pallavi": 28,
+          "anupallavi": 26,
+          "charanam": 24
+        },
+        "sections_aligned_to_cycle": {
+          "pallavi": false,
+          "anupallavi": false,
+          "charanam": true
+        },
+        "note": "Assumes 1 duration unit = 1 akṣara. Sections that do not divide evenly into the tala cycle may use a different unit or need re-timing; confirm before tala-synchronised playback."
+      },
+      "catalogue_review": {
+        "kind": "project-original",
+        "playback_enabled": false,
+        "notation_status": "unverified-illustrative-outline",
+        "lyrics_status": "unverified-or-placeholder",
+        "timing_status": "duration-units-and-eduppu-require-verification"
+      }
+    },
+    {
+      "id": "keerthana_anandabhairavi_shanti",
+      "title": "Ānandabhairavi Rōgahara Kīrtana",
+      "composer": "Original Therapeutic Composition (Medhā Nādopāsanā)",
+      "tradition": "Project-created study; not a traditional composition",
+      "raga_id": "raga_ananda_bhairavi",
+      "raga_name": "Ānandabhairavi",
+      "mela_number": 20,
+      "tala_id": "rupaka_tala",
+      "tala_name": "Rūpaka Tālam (6 Akṣaras)",
+      "eduppu": "0.5 Akṣara Offset",
+      "therapeutic_intent": "Soft, tender listening (traditional association only). Not a treatment for pain; not a substitute for analgesia or medical care.",
+      "dosha_effect": "Traditional interpretation only; no clinical claim",
+      "recommended_prahara": "Anytime / Post-Clinical Therapy",
+      "base_tempo_bpm": 52,
+      "sections": {
+        "pallavi": {
+          "line_title": "Pallavi Line 1",
+          "swaras": [
+            "S",
+            "G2",
+            "M1",
+            "P",
+            "D2",
+            "P",
+            "N2",
+            "Ṡ",
+            "N2",
+            "D2",
+            "P",
+            "M1",
+            "G2",
+            "R2",
+            "S"
+          ],
+          "sahitya": [
+            "Ā",
+            "nan",
+            "da",
+            "bhai",
+            "ra",
+            "vi",
+            "pā",
+            "hi",
+            "mā",
+            "m",
+            "ro",
+            "ga",
+            "ha",
+            "ra",
+            "ne"
+          ],
+          "durations": [
+            2,
+            1,
+            1,
+            2,
+            1,
+            1,
+            2,
+            2,
+            1,
+            1,
+            2,
+            1,
+            1,
+            2,
+            2
+          ],
+          "gamaka_annotations": [
+            "plain",
+            "kampitam",
+            "plain",
+            "andolitam",
+            "plain",
+            "plain",
+            "kampitam",
+            "jaru",
+            "plain",
+            "plain",
+            "andolitam",
+            "plain",
+            "kampitam",
+            "plain",
+            "plain"
+          ]
+        },
+        "anupallavi": {
+          "line_title": "Anupallavi Line 1",
+          "swaras": [
+            "P",
+            "D2",
+            "P",
+            "Ṡ",
+            "Ṡ",
+            "N2",
+            "D2",
+            "P",
+            "M1",
+            "G2",
+            "R2",
+            "S"
+          ],
+          "sahitya": [
+            "Kā",
+            "ru",
+            "ṇya",
+            "si",
+            "ndho",
+            "pā",
+            "la",
+            "ya",
+            "mā",
+            "m",
+            "sa",
+            "da"
+          ],
+          "durations": [
+            2,
+            1,
+            1,
+            2,
+            2,
+            1,
+            1,
+            2,
+            1,
+            1,
+            2,
+            2
+          ],
+          "gamaka_annotations": [
+            "andolitam",
+            "plain",
+            "plain",
+            "jaru",
+            "plain",
+            "kampitam",
+            "plain",
+            "andolitam",
+            "plain",
+            "kampitam",
+            "plain",
+            "plain"
+          ]
+        },
+        "charanam": {
+          "line_title": "Charaṇam Line 1",
+          "swaras": [
+            "S",
+            "R2",
+            "G2",
+            "M1",
+            "P",
+            "M1",
+            "G2",
+            "R2",
+            "S",
+            "N2",
+            "S"
+          ],
+          "sahitya": [
+            "Shā",
+            "n",
+            "ti",
+            "m",
+            "de",
+            "hi",
+            "me",
+            "dē",
+            "vi",
+            "sa",
+            "da"
+          ],
+          "durations": [
+            2,
+            1,
+            1,
+            2,
+            2,
+            1,
+            1,
+            2,
+            1,
+            1,
+            2
+          ],
+          "gamaka_annotations": [
+            "plain",
+            "plain",
+            "kampitam",
+            "plain",
+            "andolitam",
+            "plain",
+            "kampitam",
+            "plain",
+            "plain",
+            "kampitam",
+            "plain"
+          ]
+        }
+      },
+      "swara_source": "simplified illustrative outline — not verified against published notation",
+      "sahitya_status": "approximate alignment — verify against published text",
+      "mela_number_note": "Wikipedia lists Ānandabhairavi as janya of Mela 22 Kharaharapriyā; some sources give Mela 20 Naṭabhairavi (v1.0 used 20).",
+      "verification_notes": [
+        "v1.0 claimed \"Clinical Post-Operative Pain Relief & Reduced Analgesia\"; no evidence specific to this rāga or composition was verified. Claim removed.",
+        "The ascent uses N2 (P N2 Ṡ); published ascent is S G2 R2 G2 M1 P D2 P Ṡ (no Ni). Check with a teacher."
+      ],
+      "timing_check": {
+        "tala_cycle_beats": 6,
+        "section_duration_totals": {
+          "pallavi": 22,
+          "anupallavi": 18,
+          "charanam": 16
+        },
+        "sections_aligned_to_cycle": {
+          "pallavi": false,
+          "anupallavi": true,
+          "charanam": false
+        },
+        "note": "Assumes 1 duration unit = 1 akṣara. Sections that do not divide evenly into the tala cycle may use a different unit or need re-timing; confirm before tala-synchronised playback."
+      },
+      "catalogue_review": {
+        "kind": "project-original",
+        "playback_enabled": false,
+        "notation_status": "unverified-illustrative-outline",
+        "lyrics_status": "unverified-or-placeholder",
+        "timing_status": "duration-units-and-eduppu-require-verification"
+      },
+      "previous_raga_metadata": {
+        "mela_number": 22,
+        "raga_name": "Ānandabhairavi"
+      }
+    }
+  ],
+  "disclaimer": "Cultural and educational content only. Not medical advice, diagnosis or treatment.",
+  "verification": {
+    "date": "2026-10-26",
+    "checked": [
+      "Sāmajavaragamana: Tyagarāja, Hindolam, Ādi tāla — confirmed by Music Academy Madras concert records (idim-jp.org MAM database).",
+      "Śaktisahita Gaṇapatiṁ: Muthuswāmi Dīkṣitar nottusvara-sāhitya, Śaṅkarābharaṇam, Tisra Eka tāla (3-beat, i.e. 3/4) — confirmed by Wikipedia list of Dikshitar compositions and nottuswara sources; the melody derives from a European tune.",
+      "Mela numbers re-checked: Hindolam 20 (Naṭabhairavi, also associated with Hanumatōḍi), Śaṅkarābharaṇam 29, Nīlāmbari 29 (janya of 29), Ānandabhairavi 22 per Wikipedia (some sources 20)."
+    ],
+    "not_verified": [
+      "Every swara line (pallavi/anupallavi/charanam) — they appear to be simplified outlines, not the published melodies.",
+      "Sāhitya syllables, especially Sāmajavaragamana anupallavi, which is garbled and is not the actual lyric.",
+      "Tempo, eduppu and gamaka annotations."
+    ],
+    "sources": [
+      "https://idim-jp.org/mam/record/view_express_entity/12432",
+      "https://en.wikipedia.org/wiki/List_of_compositions_by_Muthuswami_Dikshitar",
+      "https://sreenivasaraos.com/tag/nottu-swara/",
+      "https://musicmaster.in/blog/nottuswaram-shakthi-sahita-ganapathim/",
+      "https://en.wikipedia.org/wiki/Natabhairavi",
+      "https://en.wikipedia.org/wiki/Anandabhairavi",
+      "https://www.outlookindia.com/art-entertainment/neelambari-does-the-tune-really-own-sleep-inducing-properties-news-309605"
+    ],
+    "v1_2": {
+      "date": "2026-10-26",
+      "changes": [
+        "raga_id values updated to the ASCII ids used in database v2.2.0 (old id kept in raga_id_legacy).",
+        "Śaktisahita: unsupported therapeutic_intent and dosha_effect replaced with traditional-association wording.",
+        "Sāmajavaragamana anupallavi: garbled syllables replaced with swara-name placeholders.",
+        "Added timing_check per kīrtana (duration totals vs tala cycle)."
+      ],
+      "still_open": [
+        "Swara lines remain simplified outlines, not published notation.",
+        "Section durations do not all divide into the tala cycle; units unconfirmed.",
+        "Ānandabhairavi mela (22 vs 20) depends on source.",
+        "Two kīrtanas are original project compositions, not traditional pieces."
+      ]
+    }
+  },
+  "integration_policy": {
+    "version": 1,
+    "reviewed_at": "2026-10-26",
+    "purpose": "Cultural education and personal listening, not medical treatment.",
+    "public_projection": "raga-wellbeing-catalogue.json",
+    "excluded_fields": [
+      "clinical_condition_index",
+      "_deprecated_generated_condition_index",
+      "dosha_effect",
+      "therapeutic_benefits",
+      "ayurvedic_clinical_indication",
+      "original_claims_unverified",
+      "legacy_template_text",
+      "listening_guidelines",
+      "recommended_time",
+      "ayurvedic_srd_framework"
+    ],
+    "source_limits": [
+      "an_introduction_to_indian_music_therapy.13.pdf is a two-page book review, not the reviewed book.",
+      "Raaga_and_Healing.pdf is exploratory; waveform/FFT analysis does not establish clinical efficacy and its scale table contains inconsistencies.",
+      "The scanned historical book has no extractable text; sampled OCR was unreliable. No per-entry verification is claimed from it."
+    ],
+    "composition_playback_enabled": false,
+    "reason": "Published melodies, lyrics alignment, duration units and eduppu are not verified. Scale membership alone does not verify a composition."
+  }
+}

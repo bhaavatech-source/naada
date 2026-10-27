@@ -1,0 +1,1060 @@
+{
+  "project": "Medhā Nādopāsanā / Nāda Vidyā Ecosystem",
+  "module": "Manodharma Saṅgītam & Kōrvai Cadence Construction Suite",
+  "version": "4.0.0",
+  "description": "Comprehensive creative and analytical suite covering the 5 classical branches of Manodharma Saṅgītam (Rāga Ālāpana, Tānam, Niraval, Kalpanāswara, Ragam Tanam Pallavi) and an algorithmic Kōrvai / Makuṭam mathematical cadence generator. Includes a beginner-friendly, staged Manodharma learning guide with explanations, practice steps, examples, common mistakes, and self-assessment. Revised to align the beginner guide with the uploaded Telugu book Manodharma Sangeetham; source-derived exercise structure is separated from explanatory additions. Combined with the expanded rhythmic/percussion suite. Original source files are preserved in original_versions/.",
+  "source_citations": [
+    "Primary source: “Manodharma Sangeetham” (Telugu scanned edition supplied by the user; title/copyright pages and contents are at PDF pages 3–10; early grouped-count exercises and notation examples appear around printed pages 3–30, corresponding approximately to PDF pages 13–40).",
+    "Carnatic Music Book 1 (NIOS), Lesson 5: Introduction to Sabha Ganam (Kalpita & Manodharma Sangita).",
+    "Mridangam & Konnakol Rhythmic Thesis (Mridangam_2.pdf), Chapter 5: The Thani Avarthanam & Cadences (Mohara, Korvai, Yati).",
+    "Subbarama Dikshitar, 'Sangita Sampradaya Pradarsini' (1904) - Raga Lakshana & Visesha Sancharas.",
+    "Padma Bhūṣaṇ Dr. Śrīpāda Pinākapāṇi, 'Manodharma Saṅgeetam' (మనోధర్మ సంగీతం), Andhra Pradesh Saraswatha Parishad / Telugu University (1992/1994) [manodharmasamgee021262mbp_compressed.pdf]",
+    "Carnatic Music Secondary Course (NIOS), Lesson 5: Introduction to Sabha Ganam (Kalpita & Manodharma Sangita) [Carnatic Music Book1 (Complete) (1).pdf]",
+    "Mridangam & Konnakol Rhythmic Thesis (Mridangam_2.pdf), Chapter 5: The Thani Avarthanam & Cadences (Mohara, Korvai, Yati, Arudi, Gathi Modulations)",
+    "Subbarama Dikshitar, 'Sangita Sampradaya Pradarsini' (1904) - Raga Lakshana, Visesha Sancharas & Tana Prayogas",
+    "Venkatamakhin, 'Caturdandiprakasika' (1620) - Alapa Lakshana (Aksepaka, Ragavardhani, Vidari, Sthayi, Makarani)"
+  ],
+  "five_branches_of_manodharma": {
+    "raga_alapana": {
+      "name": "Rāga Ālāpana",
+      "type": "Unmetered Melodic Exploration",
+      "description": "Improvised, unmetered exposition of a rāga revealing its aesthetic identity, jīva swaras, and emotional bhāva using vocables like Tadanam, Anantam, Ayyam, Tanam.",
+      "three_phase_structure": {
+        "phase_1_aksepaka": "Introduction / Mandra-Madhya Sthāyī exploration establishing the rāga's foundation, resting on Nyāsa swaras.",
+        "phase_2_ragavardhani": "Elaboration / Development expanding into Tāra Sthāyī, featuring Kampita oscillations, Jāru glides, and signature catch-phrases.",
+        "phase_3_sthayi_muktayia": "Peak & Landing / Rapid briṅgas in Tāra Sthāyī resolving gracefully down to Madhya Shadja."
+      }
+    },
+    "tanam": {
+      "name": "Tānam",
+      "type": "Rhythmic Melodic Improvisation (Madhyama Kāla)",
+      "description": "Rhythmic improvisation using Tānam syllables (Tha-nam-ta-nam, A-na-ntam, Ta-ra-nam) set to a loose pulse without a fixed Tāla cycle, recreating Vīṇā string plucking techniques.",
+      "characteristic_syllables": [
+        "tha",
+        "nam",
+        "ta",
+        "a",
+        "nan",
+        "tam"
+      ]
+    },
+    "niraval": {
+      "name": "Niraval (Sāhitya Prastāra)",
+      "type": "Line-Based Melodic Variation",
+      "description": "Improvising melodic variations on a single meaningful line of a composition (Sāhitya) while holding the text, rhythmic structure, and Eduppu (landing point) strictly constant across Prathama Kāla and Dvitīya Kāla.",
+      "rules": [
+        "The text (Sāhitya) must not be mutilated or mispronounced.",
+        "The Eduppu (landing beat offset) must remain 100% synchronized across all variations.",
+        "First speed (Prathama Kāla) explores expressive Gamakas; second speed (Dvitīya Kāla) explores rapid swara combinations."
+      ]
+    },
+    "kalpanaswara": {
+      "name": "Kalpanāswara",
+      "type": "Spontaneous Swara Singing to Tāla",
+      "description": "Singing improvised solfa swara patterns set to the Tāla cycle that resolve seamlessly into the Eduppu note of the song or Pallavi line.",
+      "tiers": [
+        "1-Avartana Short Phrases (Single cycle ending on Muktāyi)",
+        "2-Avartana Expanded Phrases (Register expansion to Tāra Sthāyī)",
+        "Multi-Avartana Long Passages ending in a 3-repeat Kōrvai / Makuṭam"
+      ]
+    },
+    "ragam_tanam_pallavi": {
+      "name": "Rāgam Tānam Pallavi (RTP)",
+      "type": "Pinnacle Concert Form",
+      "description": "The most elaborate and challenging form of Carnatic music, combining deep Rāga Ālāpana, Tānam, and a complex Pallavi line with Trikāla (3 speeds), Anuloma/Pratiloma, Niraval, Kalpanāswara, Rāgamālika swaras, and a Tani Āvartanam percussion solo."
+    }
+  },
+  "korvai_math_engine_spec": {
+    "definition": "A Kōrvai is a structured rhythmic cadence composed of a Pūrvāṅga (body) and an Uttarāṅga / Makuṭam (crown repeated 3 times with equal pauses).",
+    "equation": "Total Mātrās = Pūrvāṅga_Mātrās + 3 × Phrase_Mātrās + 2 × Gap_Mātrās",
+    "parameters": {
+      "P": "Purvaṅga repetitions",
+      "L_P": "Purvaṅga length in akṣaras",
+      "M": "Makuṭam repetitions (default 3)",
+      "K": "Kārvai pause count between Makuṭam phrases",
+      "L_K": "Kārvai unit length in akṣaras",
+      "I": "Interval between Makuṭams"
+    },
+    "landing_rule": "(Total Mātrās) MOD (Mātrās_per_Āvartana) === Eduppu_Mātrā",
+    "yati_patterns": {
+      "sama_yati": "Equal phrase lengths (e.g., 5 + 5 + 5 or 7 + 7 + 7)",
+      "gopuccha_yati": "Tapering phrase lengths like a cow's tail (e.g., 8 - 6 - 4 - 2)",
+      "srotovaha_yati": "Expanding phrase lengths like a river (e.g., 2 - 4 - 6 - 8)",
+      "mridanga_yati": "Swelling in the middle (e.g., 2 - 4 - 6 - 4 - 2)",
+      "damaru_yati": "Narrowing then widening (e.g., 6 - 4 - 2 - 4 - 6)"
+    }
+  },
+  "korvai_library": [
+    {
+      "id": "korvai_01_adi_chaturasra_sama",
+      "title": "Standard Ādi Tālam Sama Kōrvai (32 Mātrās / 1 Āvartana)",
+      "tala": "Ādi Tālam (Chaturasra Gati)",
+      "total_matras": 32,
+      "eduppu": "Samam (Beat 1 / Mātrā 0)",
+      "purvanga": {
+        "solkattu": "Ta-ka-dhi-mi Ta-ka-ja-nu (8 mātrās)",
+        "matras": 8
+      },
+      "uttaranga_makutam": {
+        "phrase_solkattu": "Tha-di-gi-na-thom (5 mātrās)",
+        "gap_solkattu": "kārvai (2 mātrās)",
+        "phrase_matras": 5,
+        "gap_matras": 2,
+        "math": "8 + (3 × 5) + (2 × 2) = 8 + 15 + 4 = 27 ... Wait, 32 - 27 = 5 balance pad"
+      },
+      "yati_type": "Sama Yati",
+      "notation": "|| Ta ka dhi mi | Ta ka ja nu | Tha , , , || Tha di gi na | thom , , Tha | di gi na thom || , , Tha di | gi na thom | (Samam) ||",
+      "review_status": "Needs teacher verification",
+      "review_notes": "Stored arithmetic gives 27 mātrās (8 + 3×5 + 2×2), not the declared 32. The stated 5-mātrā balance is not fully represented in the equation/notation; verify the actual phrase and rest with a qualified percussion teacher.",
+      "source_variant": "book_aligned",
+      "source_record": {
+        "id": "korvai_01_adi_chaturasra_sama",
+        "title": "Standard Ādi Tālam Sama Kōrvai (32 Mātrās / 1 Āvartana)",
+        "tala": "Ādi Tālam (Chaturasra Gati)",
+        "total_matras": 32,
+        "eduppu": "Samam (Beat 1 / Mātrā 0)",
+        "purvanga": {
+          "solkattu": "Ta-ka-dhi-mi Ta-ka-ja-nu (8 mātrās)",
+          "matras": 8
+        },
+        "uttaranga_makutam": {
+          "phrase_solkattu": "Tha-di-gi-na-thom (5 mātrās)",
+          "gap_solkattu": "kārvai (2 mātrās)",
+          "phrase_matras": 5,
+          "gap_matras": 2,
+          "math": "8 + (3 × 5) + (2 × 2) = 8 + 15 + 4 = 27 ... Wait, 32 - 27 = 5 balance pad"
+        },
+        "yati_type": "Sama Yati",
+        "notation": "|| Ta ka dhi mi | Ta ka ja nu | Tha , , , || Tha di gi na | thom , , Tha | di gi na thom || , , Tha di | gi na thom | (Samam) ||",
+        "review_status": "Needs teacher verification",
+        "review_notes": "Stored arithmetic gives 27 mātrās (8 + 3×5 + 2×2), not the declared 32. The stated 5-mātrā balance is not fully represented in the equation/notation; verify the actual phrase and rest with a qualified percussion teacher."
+      },
+      "name": "Standard Ādi Tālam Sama Kōrvai (32 Mātrās / 1 Āvartana)",
+      "solkattu_notation": "|| Ta ka dhi mi | Ta ka ja nu | Tha , , , || Tha di gi na | thom , , Tha | di gi na thom || , , Tha di | gi na thom | (Samam) ||"
+    },
+    {
+      "id": "korvai_02_adi_gopuccha_yati",
+      "title": "Ādi Tālam Gopucchā Yati Tapering Kōrvai (32 Mātrās)",
+      "tala": "Ādi Tālam (Chaturasra Gati)",
+      "total_matras": 32,
+      "eduppu": "Samam (Beat 1 / Mātrā 0)",
+      "purvanga": {
+        "solkattu": "Ta-ki-ta Ta-ka-dhi-mi (7 mātrās)",
+        "matras": 7
+      },
+      "uttaranga_makutam": {
+        "phrase_1": "Tha-ka-dhi-mi Tha-di-gi-na-thom (9 mātrās)",
+        "gap_1": ", , (2 mātrās)",
+        "phrase_2": "Tha-ka-ja-nu-thom (5 mātrās)",
+        "gap_2": ", , (2 mātrās)",
+        "phrase_3": "Tha-di-gi-na-thom (5 mātrās)",
+        "math": "7 + 9 + 2 + 5 + 2 + 5 = 30 + 2 rest = 32 mātrās"
+      },
+      "yati_type": "Gopucchā Yati (Tapering)",
+      "notation": "|| Ta ki ta Ta | ka dhi mi Tha | ka dhi mi Tha || di gi na thom | , , Tha ka | ja nu thom , || , Tha di gi | na thom , | (Samam) ||",
+      "review_status": "Needs teacher verification",
+      "review_notes": "The listed phrase/gap values total 30 mātrās before the additional 2-mātrā rest. The entry is labelled gopucchā, but the phrase lengths and notation should be reviewed to confirm the intended tapering structure and landing.",
+      "source_variant": "book_aligned",
+      "source_record": {
+        "id": "korvai_02_adi_gopuccha_yati",
+        "title": "Ādi Tālam Gopucchā Yati Tapering Kōrvai (32 Mātrās)",
+        "tala": "Ādi Tālam (Chaturasra Gati)",
+        "total_matras": 32,
+        "eduppu": "Samam (Beat 1 / Mātrā 0)",
+        "purvanga": {
+          "solkattu": "Ta-ki-ta Ta-ka-dhi-mi (7 mātrās)",
+          "matras": 7
+        },
+        "uttaranga_makutam": {
+          "phrase_1": "Tha-ka-dhi-mi Tha-di-gi-na-thom (9 mātrās)",
+          "gap_1": ", , (2 mātrās)",
+          "phrase_2": "Tha-ka-ja-nu-thom (5 mātrās)",
+          "gap_2": ", , (2 mātrās)",
+          "phrase_3": "Tha-di-gi-na-thom (5 mātrās)",
+          "math": "7 + 9 + 2 + 5 + 2 + 5 = 30 + 2 rest = 32 mātrās"
+        },
+        "yati_type": "Gopucchā Yati (Tapering)",
+        "notation": "|| Ta ki ta Ta | ka dhi mi Tha | ka dhi mi Tha || di gi na thom | , , Tha ka | ja nu thom , || , Tha di gi | na thom , | (Samam) ||",
+        "review_status": "Needs teacher verification",
+        "review_notes": "The listed phrase/gap values total 30 mātrās before the additional 2-mātrā rest. The entry is labelled gopucchā, but the phrase lengths and notation should be reviewed to confirm the intended tapering structure and landing."
+      },
+      "name": "Ādi Tālam Gopucchā Yati Tapering Kōrvai (32 Mātrās)",
+      "solkattu_notation": "|| Ta ki ta Ta | ka dhi mi Tha | ka dhi mi Tha || di gi na thom | , , Tha ka | ja nu thom , || , Tha di gi | na thom , | (Samam) ||"
+    },
+    {
+      "id": "korvai_03_rupaka_tisra_yati",
+      "title": "Rūpaka Tālam Tiśra Gati Kōrvai (18 Mātrās / 1 Āvartana)",
+      "tala": "Rūpaka Tālam (Tiśra Gati)",
+      "total_matras": 18,
+      "eduppu": "Samam (Beat 1 / Mātrā 0)",
+      "purvanga": {
+        "solkattu": "Ta-ki-ta Ta-ki-ta (6 mātrās)",
+        "matras": 6
+      },
+      "uttaranga_makutam": {
+        "phrase_solkattu": "Tha-ki-ta-thom (3 mātrās)",
+        "gap_solkattu": ", (1 mātrā)",
+        "phrase_matras": 3,
+        "gap_matras": 1,
+        "math": "6 + (3 × 3) + (2 × 1) = 6 + 9 + 2 = 17 + 1 rest = 18 mātrās"
+      },
+      "yati_type": "Sama Yati",
+      "notation": "|| Ta ki ta | Ta ki ta || Tha ki ta | thom , || Tha ki ta | thom , || Tha ki ta | thom (Samam) ||",
+      "review_status": "Needs teacher verification",
+      "review_notes": "The stated formula totals 17 mātrās before the additional 1-mātrā rest. Confirm that the rest is represented clearly in the notation and that the phrase syllables match the declared duration.",
+      "source_variant": "book_aligned",
+      "source_record": {
+        "id": "korvai_03_rupaka_tisra_yati",
+        "title": "Rūpaka Tālam Tiśra Gati Kōrvai (18 Mātrās / 1 Āvartana)",
+        "tala": "Rūpaka Tālam (Tiśra Gati)",
+        "total_matras": 18,
+        "eduppu": "Samam (Beat 1 / Mātrā 0)",
+        "purvanga": {
+          "solkattu": "Ta-ki-ta Ta-ki-ta (6 mātrās)",
+          "matras": 6
+        },
+        "uttaranga_makutam": {
+          "phrase_solkattu": "Tha-ki-ta-thom (3 mātrās)",
+          "gap_solkattu": ", (1 mātrā)",
+          "phrase_matras": 3,
+          "gap_matras": 1,
+          "math": "6 + (3 × 3) + (2 × 1) = 6 + 9 + 2 = 17 + 1 rest = 18 mātrās"
+        },
+        "yati_type": "Sama Yati",
+        "notation": "|| Ta ki ta | Ta ki ta || Tha ki ta | thom , || Tha ki ta | thom , || Tha ki ta | thom (Samam) ||",
+        "review_status": "Needs teacher verification",
+        "review_notes": "The stated formula totals 17 mātrās before the additional 1-mātrā rest. Confirm that the rest is represented clearly in the notation and that the phrase syllables match the declared duration."
+      },
+      "name": "Rūpaka Tālam Tiśra Gati Kōrvai (18 Mātrās / 1 Āvartana)",
+      "solkattu_notation": "|| Ta ki ta | Ta ki ta || Tha ki ta | thom , || Tha ki ta | thom , || Tha ki ta | thom (Samam) ||"
+    },
+    {
+      "id": "korvai_04_misra_chapu_5_5_5",
+      "title": "Miśra Cāpu Tālam Asymmetric Kōrvai (14 Mātrās / 2 Āvartanas)",
+      "tala": "Miśra Cāpu Tālam (7 Akṣaras / 14 Mātrās)",
+      "total_matras": 14,
+      "eduppu": "Samam (Beat 1)",
+      "purvanga": {
+        "solkattu": "Ta-ki-ta-ta-ka (5 mātrās)",
+        "matras": 5
+      },
+      "uttaranga_makutam": {
+        "phrase_solkattu": "Tha-di-gi-na-thom (3 mātrās)",
+        "gap_solkattu": "none",
+        "phrase_matras": 3,
+        "gap_matras": 0,
+        "math": "5 + 3 + 3 + 3 = 14 mātrās"
+      },
+      "yati_type": "Sama Yati",
+      "notation": "| Ta ki ta ta ka | Tha di gi | na thom Tha | di gi na | thom Tha di | gi na thom | (Samam) |",
+      "review_status": "Needs teacher verification",
+      "review_notes": "The stated total adds to 14 mātrās, but the phrase is labelled 3 mātrās while its solkaṭṭu text may be read as more units. Confirm the counting convention and notation before using as a teaching example.",
+      "source_variant": "book_aligned",
+      "source_record": {
+        "id": "korvai_04_misra_chapu_5_5_5",
+        "title": "Miśra Cāpu Tālam Asymmetric Kōrvai (14 Mātrās / 2 Āvartanas)",
+        "tala": "Miśra Cāpu Tālam (7 Akṣaras / 14 Mātrās)",
+        "total_matras": 14,
+        "eduppu": "Samam (Beat 1)",
+        "purvanga": {
+          "solkattu": "Ta-ki-ta-ta-ka (5 mātrās)",
+          "matras": 5
+        },
+        "uttaranga_makutam": {
+          "phrase_solkattu": "Tha-di-gi-na-thom (3 mātrās)",
+          "gap_solkattu": "none",
+          "phrase_matras": 3,
+          "gap_matras": 0,
+          "math": "5 + 3 + 3 + 3 = 14 mātrās"
+        },
+        "yati_type": "Sama Yati",
+        "notation": "| Ta ki ta ta ka | Tha di gi | na thom Tha | di gi na | thom Tha di | gi na thom | (Samam) |",
+        "review_status": "Needs teacher verification",
+        "review_notes": "The stated total adds to 14 mātrās, but the phrase is labelled 3 mātrās while its solkaṭṭu text may be read as more units. Confirm the counting convention and notation before using as a teaching example."
+      },
+      "name": "Miśra Cāpu Tālam Asymmetric Kōrvai (14 Mātrās / 2 Āvartanas)",
+      "solkattu_notation": "| Ta ki ta ta ka | Tha di gi | na thom Tha | di gi na | thom Tha di | gi na thom | (Samam) |"
+    },
+    {
+      "id": "korvai-adi-samam-32",
+      "name": "Ādi Tāḷam Samam Kōrvai (32 Akṣaras / 4 Āvarthanams)",
+      "tala": "Ādi Tāḷam (8 Beats = 32 Subdivisions in 2nd speed)",
+      "landing_target": "Samam (Beat 1, Akṣara 0)",
+      "yati_type": "Samā Yati",
+      "solkattu_notation": "Purvaṅga: Tha Di Tha Ka Thin Na (6) | Makuṭam (3x): Thom Ka Thom , (4) | Landing on Samam",
+      "purvanga_length": 18,
+      "makutam_phrase_length": 4,
+      "karvai_gap": 1,
+      "total_aksaras": 32,
+      "source_variant": "expanded_rhythmic_suite",
+      "source_record": {
+        "id": "korvai-adi-samam-32",
+        "name": "Ādi Tāḷam Samam Kōrvai (32 Akṣaras / 4 Āvarthanams)",
+        "tala": "Ādi Tāḷam (8 Beats = 32 Subdivisions in 2nd speed)",
+        "landing_target": "Samam (Beat 1, Akṣara 0)",
+        "yati_type": "Samā Yati",
+        "solkattu_notation": "Purvaṅga: Tha Di Tha Ka Thin Na (6) | Makuṭam (3x): Thom Ka Thom , (4) | Landing on Samam",
+        "purvanga_length": 18,
+        "makutam_phrase_length": 4,
+        "karvai_gap": 1,
+        "total_aksaras": 32
+      },
+      "title": "Ādi Tāḷam Samam Kōrvai (32 Akṣaras / 4 Āvarthanams)",
+      "notation": "Purvaṅga: Tha Di Tha Ka Thin Na (6) | Makuṭam (3x): Thom Ka Thom , (4) | Landing on Samam",
+      "total_matras": 32,
+      "eduppu": "Samam (Beat 1, Akṣara 0)",
+      "purvanga": {
+        "solkattu": "",
+        "matras": 18
+      },
+      "uttaranga_makutam": {
+        "phrase_matras": 4,
+        "gap_matras": 1
+      }
+    },
+    {
+      "id": "korvai-adi-gopuccha-32",
+      "name": "Ādi Tāḷam Gopucchā Yati Kōrvai (Tapering Cadence)",
+      "tala": "Ādi Tāḷam (32 Akṣaras)",
+      "landing_target": "Samam (Beat 1, Akṣara 0)",
+      "yati_type": "Gopucchā Yati",
+      "solkattu_notation": "Ta Ka Thi Mi Thom (5) , Ta Ka Thi Nom (4) , Tha Ki Ta (3) , Tha Ka (2) , Thom (1) | Makuṭam: Tha Di Ke Ta Thom (5) x 3",
+      "purvanga_length": 17,
+      "makutam_phrase_length": 5,
+      "karvai_gap": 0,
+      "total_aksaras": 32,
+      "source_variant": "expanded_rhythmic_suite",
+      "source_record": {
+        "id": "korvai-adi-gopuccha-32",
+        "name": "Ādi Tāḷam Gopucchā Yati Kōrvai (Tapering Cadence)",
+        "tala": "Ādi Tāḷam (32 Akṣaras)",
+        "landing_target": "Samam (Beat 1, Akṣara 0)",
+        "yati_type": "Gopucchā Yati",
+        "solkattu_notation": "Ta Ka Thi Mi Thom (5) , Ta Ka Thi Nom (4) , Tha Ki Ta (3) , Tha Ka (2) , Thom (1) | Makuṭam: Tha Di Ke Ta Thom (5) x 3",
+        "purvanga_length": 17,
+        "makutam_phrase_length": 5,
+        "karvai_gap": 0,
+        "total_aksaras": 32
+      },
+      "title": "Ādi Tāḷam Gopucchā Yati Kōrvai (Tapering Cadence)",
+      "notation": "Ta Ka Thi Mi Thom (5) , Ta Ka Thi Nom (4) , Tha Ki Ta (3) , Tha Ka (2) , Thom (1) | Makuṭam: Tha Di Ke Ta Thom (5) x 3",
+      "total_matras": 32,
+      "eduppu": "Samam (Beat 1, Akṣara 0)",
+      "purvanga": {
+        "solkattu": "",
+        "matras": 17
+      },
+      "uttaranga_makutam": {
+        "phrase_matras": 5,
+        "gap_matras": 0
+      }
+    },
+    {
+      "id": "korvai-rupaka-samam-24",
+      "name": "Rūpaka Tāḷam Samam Kōrvai (24 Akṣaras / 4 Cycles)",
+      "tala": "Rūpaka Tāḷam (6 Beats = 24 Subdivisions)",
+      "landing_target": "Samam (Beat 1, Akṣara 0)",
+      "yati_type": "Srotogathā Yati",
+      "solkattu_notation": "Purvaṅga: Tha Ka (2) -> Tha Ki Ta (3) -> Ta Ka Thi Mi (4) -> Ta Ka Thi Mi Thom (5) [14 Akṣaras] | Makuṭam: Tha Di Ke Ta Thom (3x3 = 9) + 1 gap",
+      "purvanga_length": 14,
+      "makutam_phrase_length": 3,
+      "karvai_gap": 1,
+      "total_aksaras": 24,
+      "source_variant": "expanded_rhythmic_suite",
+      "source_record": {
+        "id": "korvai-rupaka-samam-24",
+        "name": "Rūpaka Tāḷam Samam Kōrvai (24 Akṣaras / 4 Cycles)",
+        "tala": "Rūpaka Tāḷam (6 Beats = 24 Subdivisions)",
+        "landing_target": "Samam (Beat 1, Akṣara 0)",
+        "yati_type": "Srotogathā Yati",
+        "solkattu_notation": "Purvaṅga: Tha Ka (2) -> Tha Ki Ta (3) -> Ta Ka Thi Mi (4) -> Ta Ka Thi Mi Thom (5) [14 Akṣaras] | Makuṭam: Tha Di Ke Ta Thom (3x3 = 9) + 1 gap",
+        "purvanga_length": 14,
+        "makutam_phrase_length": 3,
+        "karvai_gap": 1,
+        "total_aksaras": 24
+      },
+      "title": "Rūpaka Tāḷam Samam Kōrvai (24 Akṣaras / 4 Cycles)",
+      "notation": "Purvaṅga: Tha Ka (2) -> Tha Ki Ta (3) -> Ta Ka Thi Mi (4) -> Ta Ka Thi Mi Thom (5) [14 Akṣaras] | Makuṭam: Tha Di Ke Ta Thom (3x3 = 9) + 1 gap",
+      "total_matras": 24,
+      "eduppu": "Samam (Beat 1, Akṣara 0)",
+      "purvanga": {
+        "solkattu": "",
+        "matras": 14
+      },
+      "uttaranga_makutam": {
+        "phrase_matras": 3,
+        "gap_matras": 1
+      }
+    },
+    {
+      "id": "korvai-khanda-capu-20",
+      "name": "Khaṇḍa Cāpu Samam Kōrvai (20 Akṣaras / 4 Cycles)",
+      "tala": "Khaṇḍa Cāpu Tāḷam (5 Beats = 20 Subdivisions)",
+      "landing_target": "Samam (Beat 1, Akṣara 0)",
+      "yati_type": "Samā Yati",
+      "solkattu_notation": "Purvaṅga: Tha Thin , Tha Ka (5) x 2 = 10 | Makuṭam: Tha Di Ke Ta Thom (3x3 = 9) + 1 gap",
+      "purvanga_length": 10,
+      "makutam_phrase_length": 3,
+      "karvai_gap": 1,
+      "total_aksaras": 20,
+      "source_variant": "expanded_rhythmic_suite",
+      "source_record": {
+        "id": "korvai-khanda-capu-20",
+        "name": "Khaṇḍa Cāpu Samam Kōrvai (20 Akṣaras / 4 Cycles)",
+        "tala": "Khaṇḍa Cāpu Tāḷam (5 Beats = 20 Subdivisions)",
+        "landing_target": "Samam (Beat 1, Akṣara 0)",
+        "yati_type": "Samā Yati",
+        "solkattu_notation": "Purvaṅga: Tha Thin , Tha Ka (5) x 2 = 10 | Makuṭam: Tha Di Ke Ta Thom (3x3 = 9) + 1 gap",
+        "purvanga_length": 10,
+        "makutam_phrase_length": 3,
+        "karvai_gap": 1,
+        "total_aksaras": 20
+      },
+      "title": "Khaṇḍa Cāpu Samam Kōrvai (20 Akṣaras / 4 Cycles)",
+      "notation": "Purvaṅga: Tha Thin , Tha Ka (5) x 2 = 10 | Makuṭam: Tha Di Ke Ta Thom (3x3 = 9) + 1 gap",
+      "total_matras": 20,
+      "eduppu": "Samam (Beat 1, Akṣara 0)",
+      "purvanga": {
+        "solkattu": "",
+        "matras": 10
+      },
+      "uttaranga_makutam": {
+        "phrase_matras": 3,
+        "gap_matras": 1
+      }
+    },
+    {
+      "id": "korvai-misra-capu-28",
+      "name": "Miśra Cāpu Samam Kōrvai (28 Akṣaras / 4 Cycles)",
+      "tala": "Miśra Cāpu Tāḷam (7 Beats = 28 Subdivisions)",
+      "landing_target": "Samam (Beat 1, Akṣara 0)",
+      "yati_type": "Mṛdaṅga Yati",
+      "solkattu_notation": "Purvaṅga: Tha Ki Ta (3) -> Ta Ka Thi Mi (4) -> Ta Ka Thi Mi Thom (5) -> Ta Ka Thi Mi (4) = 16 Akṣaras | Makuṭam: Tha Di Ke Ta Thom (4x3 = 12)",
+      "purvanga_length": 16,
+      "makutam_phrase_length": 4,
+      "karvai_gap": 0,
+      "total_aksaras": 28,
+      "source_variant": "expanded_rhythmic_suite",
+      "source_record": {
+        "id": "korvai-misra-capu-28",
+        "name": "Miśra Cāpu Samam Kōrvai (28 Akṣaras / 4 Cycles)",
+        "tala": "Miśra Cāpu Tāḷam (7 Beats = 28 Subdivisions)",
+        "landing_target": "Samam (Beat 1, Akṣara 0)",
+        "yati_type": "Mṛdaṅga Yati",
+        "solkattu_notation": "Purvaṅga: Tha Ki Ta (3) -> Ta Ka Thi Mi (4) -> Ta Ka Thi Mi Thom (5) -> Ta Ka Thi Mi (4) = 16 Akṣaras | Makuṭam: Tha Di Ke Ta Thom (4x3 = 12)",
+        "purvanga_length": 16,
+        "makutam_phrase_length": 4,
+        "karvai_gap": 0,
+        "total_aksaras": 28
+      },
+      "title": "Miśra Cāpu Samam Kōrvai (28 Akṣaras / 4 Cycles)",
+      "notation": "Purvaṅga: Tha Ki Ta (3) -> Ta Ka Thi Mi (4) -> Ta Ka Thi Mi Thom (5) -> Ta Ka Thi Mi (4) = 16 Akṣaras | Makuṭam: Tha Di Ke Ta Thom (4x3 = 12)",
+      "total_matras": 28,
+      "eduppu": "Samam (Beat 1, Akṣara 0)",
+      "purvanga": {
+        "solkattu": "",
+        "matras": 16
+      },
+      "uttaranga_makutam": {
+        "phrase_matras": 4,
+        "gap_matras": 0
+      }
+    },
+    {
+      "id": "korvai-adi-eduppu-offbeat-32",
+      "name": "Ādi Tāḷam Off-Beat (1/2 Beat Eḍuppu) Kōrvai",
+      "tala": "Ādi Tāḷam (32 Akṣaras)",
+      "landing_target": "1/2 Beat Offset (Akṣara 2)",
+      "yati_type": "Damaru Yati",
+      "solkattu_notation": "Purvaṅga: Ta Ka Thi Mi (4) -> Tha Ki Ta (3) -> Tha Ka (2) -> Tha Ki Ta (3) -> Ta Ka Thi Mi (4) = 16 Akṣaras | Makuṭam: Tha Di Ke Ta Thom (5x3 = 15) + 3 gaps + Offset 2",
+      "purvanga_length": 16,
+      "makutam_phrase_length": 5,
+      "karvai_gap": 1,
+      "total_aksaras": 34,
+      "source_variant": "expanded_rhythmic_suite",
+      "source_record": {
+        "id": "korvai-adi-eduppu-offbeat-32",
+        "name": "Ādi Tāḷam Off-Beat (1/2 Beat Eḍuppu) Kōrvai",
+        "tala": "Ādi Tāḷam (32 Akṣaras)",
+        "landing_target": "1/2 Beat Offset (Akṣara 2)",
+        "yati_type": "Damaru Yati",
+        "solkattu_notation": "Purvaṅga: Ta Ka Thi Mi (4) -> Tha Ki Ta (3) -> Tha Ka (2) -> Tha Ki Ta (3) -> Ta Ka Thi Mi (4) = 16 Akṣaras | Makuṭam: Tha Di Ke Ta Thom (5x3 = 15) + 3 gaps + Offset 2",
+        "purvanga_length": 16,
+        "makutam_phrase_length": 5,
+        "karvai_gap": 1,
+        "total_aksaras": 34
+      },
+      "title": "Ādi Tāḷam Off-Beat (1/2 Beat Eḍuppu) Kōrvai",
+      "notation": "Purvaṅga: Ta Ka Thi Mi (4) -> Tha Ki Ta (3) -> Tha Ka (2) -> Tha Ki Ta (3) -> Ta Ka Thi Mi (4) = 16 Akṣaras | Makuṭam: Tha Di Ke Ta Thom (5x3 = 15) + 3 gaps + Offset 2",
+      "total_matras": 34,
+      "eduppu": "1/2 Beat Offset (Akṣara 2)",
+      "purvanga": {
+        "solkattu": "",
+        "matras": 16
+      },
+      "uttaranga_makutam": {
+        "phrase_matras": 5,
+        "gap_matras": 1
+      }
+    }
+  ],
+  "learning_guide": {
+    "title": "Manodharma Saṅgītam: A Guided Learning Path",
+    "intro": {
+      "plain_language": "Manodharma is the disciplined creation of new music in the moment. A musician does not sing random notes: they use a deep understanding of rāga, musical phrases, gamaka, tāla where applicable, listening, memory and aesthetic judgment to create a coherent musical idea.",
+      "important_distinction": "The branches below are useful learning categories, not a compulsory order for every performance. Practices and terminology can vary by tradition, teacher, composition and performance context.",
+      "why_it_feels_difficult": [
+        "A learner may know the scale but not the characteristic phrases that make a rāga recognisable.",
+        "The learner must listen, imagine, sing and evaluate at the same time.",
+        "In tāla-based improvisation, melodic ideas must also fit the rhythmic cycle and intended eduppu.",
+        "Fluency develops gradually through listening, repetition, guided variation and feedback."
+      ]
+    },
+    "mental_process": [
+      {
+        "step": 1,
+        "name": "Listen and recall",
+        "explanation": "Hear the tambura/drone and recall familiar phrases, compositions and the rāga mood."
+      },
+      {
+        "step": 2,
+        "name": "Choose a musical idea",
+        "explanation": "Begin with a small phrase that is appropriate to the rāga or the chosen composition line."
+      },
+      {
+        "step": 3,
+        "name": "Sing and shape it",
+        "explanation": "Use the appropriate svaras, gamakas, duration and register; do not treat the rāga as only an ascending and descending scale."
+      },
+      {
+        "step": 4,
+        "name": "Develop it",
+        "explanation": "Repeat, extend, shorten or vary the phrase while preserving its musical identity."
+      },
+      {
+        "step": 5,
+        "name": "Connect phrases",
+        "explanation": "Make each new phrase feel like a continuation of the previous one rather than a disconnected exercise."
+      },
+      {
+        "step": 6,
+        "name": "Check context",
+        "explanation": "For ālāpana, check melodic coherence. For niraval and kalpanā-svara, also check text, tāla, timing and eduppu."
+      },
+      {
+        "step": 7,
+        "name": "Resolve and reflect",
+        "explanation": "End coherently, listen back if possible, identify what worked and practise one improvement."
+      }
+    ],
+    "branches": [
+      {
+        "id": "raga_alapana",
+        "name": "Rāga Ālāpana",
+        "simple_definition": "Exploring and revealing a rāga through melody, without a fixed tāla cycle.",
+        "how_it_works": [
+          "Start with a short, familiar phrase that clearly suggests the rāga.",
+          "Develop the lower and middle registers gradually; expand range when the musical idea calls for it.",
+          "Use characteristic prayōgas and gamakas rather than merely running through the scale.",
+          "Build continuity and a musical high point; return or conclude with a convincing phrase."
+        ],
+        "beginner_exercise": "Choose one rāga already studied in a composition. Sing one short characteristic phrase, pause, repeat it with a small variation, then connect it to a second known phrase.",
+        "common_mistakes": [
+          "Treating ālāpana as an ascending and descending scale exercise.",
+          "Using speed or high notes as a substitute for rāga development.",
+          "Copying phrases without understanding their musical role."
+        ]
+      },
+      {
+        "id": "niraval",
+        "name": "Niraval",
+        "simple_definition": "Developing new melodic treatments of a meaningful line from a composition while preserving the words and their rhythmic placement.",
+        "how_it_works": [
+          "Choose a line suitable for niraval with guidance from a teacher.",
+          "Learn its sahitya, pronunciation, original melody and tāla placement.",
+          "Repeat the same words in new melodic shapes without scrambling or distorting the text.",
+          "Develop phrases at manageable speeds and maintain the intended rhythmic alignment."
+        ],
+        "beginner_exercise": "Speak and clap the selected line in time, sing its original tune, then practise two teacher-approved melodic variations while keeping the text intact.",
+        "common_mistakes": [
+          "Changing or mispronouncing the words.",
+          "Losing the line’s rhythmic placement.",
+          "Making variations that obscure the meaning or original musical identity."
+        ]
+      },
+      {
+        "id": "kalpanaswara",
+        "name": "Kalpanā-svara",
+        "simple_definition": "Creating new svara sequences in a rāga within a tāla framework and resolving them at the intended point.",
+        "how_it_works": [
+          "Practise short, accurate phrases using the rāga’s characteristic movements.",
+          "Sing one-āvartana patterns with a steady tāla.",
+          "Learn where the composition’s eduppu occurs and plan the phrase ending accordingly.",
+          "Extend phrases and vary speed only after pitch, rāga identity and timing are reliable."
+        ],
+        "illustrative_example": {
+          "raga": "Māyāmāḷavagauḷa",
+          "svara_phrase": "S R₁ G₃ M₁ | G₃ R₁ S —",
+          "note": "A simple note-pattern illustration for practice, not a claim that this phrase alone establishes the rāga or is suitable in every musical context."
+        },
+        "beginner_exercise": "Sing a short phrase, clap the tāla, and finish at a teacher-specified landing point. Record yourself and check pitch and timing separately.",
+        "common_mistakes": [
+          "Singing random permitted notes without characteristic phrase movement.",
+          "Losing the tāla while thinking about svaras.",
+          "Assuming a mathematically correct landing guarantees musical quality."
+        ]
+      },
+      {
+        "id": "tanam",
+        "name": "Tānam",
+        "simple_definition": "Developing rāga-based melodic phrases with a flowing, articulated pulse, typically without the fixed tāla-cycle structure used for kalpanā-svara.",
+        "how_it_works": [
+          "Begin from known rāga phrases.",
+          "Practise clear articulation and a steady internal pulse.",
+          "Develop rhythmic syllabic patterns and phrase variations without losing rāga identity.",
+          "Build momentum through connected phrases rather than mechanically repeating syllables."
+        ],
+        "beginner_exercise": "With a teacher’s demonstration, take one known phrase and articulate it in a gentle, even pulse; vary the phrase ending while keeping the rāga recognisable.",
+        "common_mistakes": [
+          "Treating tānam as only fast syllables.",
+          "Allowing rhythmic articulation to erase the rāga."
+        ]
+      },
+      {
+        "id": "ragam_tanam_pallavi",
+        "name": "Rāgam Tānam Pallavi (RTP)",
+        "simple_definition": "An advanced concert format combining extensive rāga exploration, tānam and improvisation around a composed pallavi line.",
+        "how_it_works": [
+          "Develop the rāga through ālāpana.",
+          "Present tānam with its characteristic pulse and articulation.",
+          "Establish the pallavi line, its tāla and eduppu clearly.",
+          "Develop the line and kalpanā-svaras; advanced performances may include trikāla, rāgamālika and complex rhythmic designs."
+        ],
+        "beginner_exercise": "First learn a simple pallavi line with a teacher and clap its tāla and eduppu accurately. Explore advanced variations only after the line is secure.",
+        "common_mistakes": [
+          "Attempting complex rhythmic devices before mastering the pallavi line.",
+          "Confusing a technically difficult pattern with a coherent musical development."
+        ]
+      }
+    ],
+    "foundation_terms": [
+      {
+        "term": "Svara",
+        "meaning": "A musical note or solfa syllable, such as Sa, Ri, Ga, Ma, Pa, Dha or Ni."
+      },
+      {
+        "term": "Rāga",
+        "meaning": "A melodic framework and musical grammar expressed through characteristic phrases, note relationships and ornamentation—not merely a scale."
+      },
+      {
+        "term": "Gamakam",
+        "meaning": "A traditional melodic ornament or movement that contributes to a rāga’s expression and identity."
+      },
+      {
+        "term": "Tāla",
+        "meaning": "A recurring rhythmic cycle used to organise musical time."
+      },
+      {
+        "term": "Āvartana",
+        "meaning": "One complete cycle of the selected tāla."
+      },
+      {
+        "term": "Mātrā",
+        "meaning": "A counted rhythmic unit used in a particular calculation or teaching convention. Its exact use must be stated clearly in the exercise."
+      },
+      {
+        "term": "Eduppu",
+        "meaning": "The point in the rhythmic cycle where the composition or phrase begins or is intended to land; it may be samam or an offset, depending on the composition."
+      },
+      {
+        "term": "Prayōga",
+        "meaning": "A characteristic melodic phrase or usage associated with a rāga."
+      },
+      {
+        "term": "Sāhitya",
+        "meaning": "The words or text of a composition."
+      }
+    ],
+    "korvai_learning": {
+      "simple_definition": "A Kōrvai is a designed rhythmic cadence. A common construction uses an opening/body section and a concluding phrase repeated three times, sometimes separated by rests. Traditions and construction types vary.",
+      "workflow": [
+        "Choose the tāla, gati/counting convention and intended landing point.",
+        "Write the body phrase and count its duration.",
+        "Write the concluding phrase and determine whether it is repeated three times.",
+        "Count all gaps, rests and any additional material explicitly.",
+        "Add the durations and compare the endpoint with the intended landing point.",
+        "Recite the solkaṭṭu while keeping tāla, then practise slowly with a teacher or percussion accompaniment."
+      ],
+      "formula": "For the specific three-repeat model used by this calculator: total mātrās = body mātrās + 3 × phrase mātrās + 2 × gap mātrās. This formula is not a universal formula for every Kōrvai.",
+      "caution": "Arithmetic checks duration only. It does not verify solkaṭṭu pronunciation, musical suitability, yati classification, tradition-specific rules or performance quality. The cycle length and eduppu offset must use the same counting convention."
+    },
+    "learning_levels": [
+      {
+        "level": 1,
+        "name": "Foundation",
+        "goal": "Build pitch, rhythm and rāga familiarity.",
+        "practice": [
+          "Practise sarali, janta, dhātu and alankāra exercises appropriate to the learner’s syllabus.",
+          "Learn simple compositions and identify their recurring phrases.",
+          "Clap simple tāla cycles while singing familiar material."
+        ],
+        "ready_when": "The learner can sing familiar exercises steadily and recognise some characteristic phrases in studied compositions."
+      },
+      {
+        "level": 2,
+        "name": "Guided creativity",
+        "goal": "Make small, controlled variations.",
+        "practice": [
+          "Repeat and alter short rāga phrases.",
+          "Try brief guided ālāpana phrases.",
+          "Practise short svara patterns with a teacher-defined landing point."
+        ],
+        "ready_when": "The learner can vary a phrase without losing its basic rāga identity or pulse."
+      },
+      {
+        "level": 3,
+        "name": "Structured improvisation",
+        "goal": "Connect phrases and maintain longer rhythmic structures.",
+        "practice": [
+          "Build a longer ālāpana from connected ideas.",
+          "Practise simple niraval and multi-cycle kalpanā-svara with guidance.",
+          "Count and recite simple Kōrvai structures."
+        ],
+        "ready_when": "The learner can sustain coherent phrase development and reliably maintain the relevant rhythmic framework."
+      },
+      {
+        "level": 4,
+        "name": "Advanced Manodharma",
+        "goal": "Integrate melody, rhythm, structure and personal musical judgment.",
+        "practice": [
+          "Study tānam and pallavi work with an experienced teacher.",
+          "Explore complex eduppu, yati and cadence structures.",
+          "Review recordings and refine phrase continuity, rāga identity and resolution."
+        ],
+        "ready_when": "The learner demonstrates consistent musical coherence, rhythmic command and stylistic understanding under appropriate guidance."
+      }
+    ],
+    "practice_loop": [
+      "Listen to a reliable example.",
+      "Identify one musical feature.",
+      "Sing or recite it slowly.",
+      "Repeat from memory.",
+      "Change one feature intentionally.",
+      "Record or perform it for feedback.",
+      "Write down one strength and one specific improvement."
+    ],
+    "self_assessment": [
+      "Can I identify the rāga from characteristic phrases, not just the scale?",
+      "Can I keep the tāla while singing a short svara pattern?",
+      "Can I preserve the sahitya during niraval practice?",
+      "Can I explain where my phrase should land and why?",
+      "Can I listen back and identify one concrete improvement?"
+    ],
+    "editorial_note": "This guide is educational scaffolding, not a substitute for instruction from a qualified Carnatic music teacher. Examples should be checked against the learner’s bani, composition, and counting convention before being presented as authoritative demonstrations. Book-alignment note: the uploaded Manodharma Sangeetham scan is the primary reference for source-derived notation. New plain-language explanations are instructional additions, not quotations or a replacement for the book.",
+    "book_based_practice": {
+      "heading": "Practice method based on the supplied book",
+      "intro": "The supplied Telugu edition presents written exercises and grouped patterns. Use the printed page image for exact notation: scan/OCR text can confuse svara symbols and Telugu characters.",
+      "source_note": "Source-derived observations: contents on PDF pages 9–10; early grouped-count exercises on PDF pages 13–16; additional numbered notation patterns on PDF pages 19–40. These are PDF page numbers, not necessarily the printed page numbers.",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Read the notation before singing",
+          "explanation": "Identify the printed svara/solfa symbols, separators, rests or duration marks, and any count labels. Do not guess a blurred symbol; compare the page image or ask a teacher."
+        },
+        {
+          "step": 2,
+          "title": "Count the grouping",
+          "explanation": "The early pages use numbered groupings and examples of different sizes. First speak/count the group structure slowly before trying to sing it."
+        },
+        {
+          "step": 3,
+          "title": "Keep groups distinct",
+          "explanation": "Where the notation separates groups or indicates gaps, preserve those boundaries. Do not merge groups just to make the line flow."
+        },
+        {
+          "step": 4,
+          "title": "Practise slowly, then steadily",
+          "explanation": "Recite one written example at a comfortable pace, maintain an even pulse, then repeat without losing the grouping."
+        },
+        {
+          "step": 5,
+          "title": "Move from written pattern to musical understanding",
+          "explanation": "After the written exercise is secure, discuss with a teacher how the pattern relates to rāga, phrasing and improvisation. A numeric pattern alone does not establish rāga lakṣaṇa."
+        }
+      ],
+      "counting_example": {
+        "label": "How to approach a grouped exercise",
+        "example": "Group 1 → pause/separator if printed → Group 2 → maintain the stated count",
+        "explanation": "This is a reading method, not a transcription of a specific book line. Follow the actual group counts and svaras shown on the selected page."
+      },
+      "teacher_check": "Before publishing a book-derived musical example as playable audio, have its svaras, duration marks and grouping checked against the scanned page by a knowledgeable Carnatic music teacher."
+    }
+  },
+  "book_alignment": {
+    "primary_source": "Manodharma Sangeetham (Telugu scanned edition supplied by the user)",
+    "source_handling": "The source is a scanned Telugu book. This alignment records only elements that can be identified from the visible contents and early exercise pages. It does not claim a complete transcription of all 213 PDF pages.",
+    "observed_structure": [
+      {
+        "location": "PDF pages 9–10 (printed contents pages)",
+        "observation": "The contents are arranged into four major parts/sections with multiple numbered topics. Some headings are not reliably legible in the scan, so this application does not invent English translations for them."
+      },
+      {
+        "location": "PDF pages 13–16 (early teaching pages; printed pages approximately 3–6)",
+        "observation": "The book introduces graded numerical/grouping patterns, including counts in a range such as 2–10, with repeated groups and gaps. The exercise notation and counts should be taught as shown in the source, with a teacher checking the exact svara reading."
+      },
+      {
+        "location": "PDF pages 19–40 (printed pages approximately 9–30)",
+        "observation": "The scanned pages contain progressively varied notated patterns and examples, including material organised by numbered subdivisions and rhythmic groupings. These are suitable for guided recitation and notation-reading practice, but OCR alone is not reliable enough to transcribe every note."
+      }
+    ],
+    "source_based_teaching_sequence": [
+      {
+        "step": 1,
+        "title": "Read the notation before singing",
+        "explanation": "Identify the printed svara/solfa symbols, separators, rests or duration marks, and any count labels. Do not guess a blurred symbol; compare the page image or ask a teacher."
+      },
+      {
+        "step": 2,
+        "title": "Count the grouping",
+        "explanation": "The early pages use numbered groupings and examples of different sizes. First speak/count the group structure slowly before trying to sing it."
+      },
+      {
+        "step": 3,
+        "title": "Keep groups distinct",
+        "explanation": "Where the notation separates groups or indicates gaps, preserve those boundaries. Do not merge groups just to make the line flow."
+      },
+      {
+        "step": 4,
+        "title": "Practise slowly, then steadily",
+        "explanation": "Recite one written example at a comfortable pace, maintain an even pulse, then repeat without losing the grouping."
+      },
+      {
+        "step": 5,
+        "title": "Move from written pattern to musical understanding",
+        "explanation": "After the written exercise is secure, discuss with a teacher how the pattern relates to rāga, phrasing and improvisation. A numeric pattern alone does not establish rāga lakṣaṇa."
+      }
+    ],
+    "source_based_practice_rules": [
+      "Use the book page image as the authority for its notation; OCR text may misread Telugu characters and musical symbols.",
+      "Keep the book’s example and any newly composed teaching example clearly labelled as different items.",
+      "Do not claim that a pattern is a universal rule of Manodharma unless the book explicitly establishes that claim.",
+      "Record the printed page number as well as the PDF page number, because they differ."
+    ],
+    "not_transcribed_yet": [
+      "Exact svara-by-svara transcription of the scanned examples.",
+      "Reliable English translations of all contents headings.",
+      "A page-by-page mapping of every exercise to a modern lesson level."
+    ]
+  },
+  "book_alignment_manodharma_sangeetam": {
+    "author": "Padma Bhūṣaṇ Dr. Śrīpāda Pinākapāṇi",
+    "work_title": "Manodharma Saṅgeetam (మనోధర్మ సంగీతం)",
+    "publisher": "Andhra Saraswatha Parishad / Potti Sreeramulu Telugu University, Hyderabad (1992 / 1994)",
+    "source_file": "manodharmasamgee021262mbp_compressed.pdf",
+    "prakaranams": {
+      "prakaranam_1_swarakalpana": {
+        "title": "Swarakalpanā Prakaraṇam (స్వరకల్పనా ప్రకరణము) [Pages 1–53]",
+        "core_principles": [
+          "Sarvalaghu Principle: Improvised swara phrases must flow continuously and naturally with the tāḷa pulse, avoiding awkward pauses or artificial breaks.",
+          "Eḍuppu & Arudi Landing Rules: The final swara phrase of a Kalpanāswaram passage must land precisely on the target beat subdivision (Eḍuppu) and syllable of the composition line.",
+          "Kāla Krama (Speed Progression): Systematically transitioning from 1st speed (Prathama Kāla) to 2nd speed (Dvitīya Kāla) and 3rd speed (Tṛtīya Kāla) swara variations.",
+          "Avartana Expansion: Building from 1-āvarthanam short phrases to 2, 4, 8, and multi-āvarthanam Makuṭam cadences ending on a Kōrvai.",
+          "Rāga Lakṣaṇa Preservation: Swara patterns must incorporate the rāga's specific Jīva Swaras, Viseṣa Sancāras, and authentic gamakas rather than dry mathematical scale steps."
+        ],
+        "eight_pathamulu_lessons": [
+          {
+            "lesson_number": 1,
+            "title": "Sarvalaghu Swarakalpana in Prathama Kala",
+            "description": "Basic 1-āvarthanam swara phrases flowing evenly in 1st speed landing on Samam/Eḍuppu."
+          },
+          {
+            "lesson_number": 2,
+            "title": "Eḍuppu Shifts & Off-Beat Landings",
+            "description": "Constructing swara phrases landing on 1/2-beat, 3/4-beat, and Atīta/Anāgata Eḍuppus."
+          },
+          {
+            "lesson_number": 3,
+            "title": "Dvitīya Kala (2nd Speed) Swarakalpanai",
+            "description": "Doubling the swara density (2 notes per akṣara) while maintaining rhythmic pulse and rāga bhāva."
+          },
+          {
+            "lesson_number": 4,
+            "title": "Interlocking Swara Patterns & Janta/Dhātu Elements",
+            "description": "Incorporating stress swaras (Janta) and skipping intervals (Dhātu) into Kalpanāswaram."
+          },
+          {
+            "lesson_number": 5,
+            "title": "Makuṭam Construction",
+            "description": "Designing 3-part rhythmic swara cadences (Makuṭams) landing on the Eḍuppu."
+          },
+          {
+            "lesson_number": 6,
+            "title": "Multi-Āvarthanam Expansion (2 and 4 Āvarthanams)",
+            "description": "Building longer swara structures across 2 and 4 tāḷa cycles before landing."
+          },
+          {
+            "lesson_number": 7,
+            "title": "Tṛtīya Kala & Speed Modulation",
+            "description": "4th-speed rapid swara cascades and pulse shifts within Kalpanāswaram."
+          },
+          {
+            "lesson_number": 8,
+            "title": "Kōrvai Integration & Grand Finale",
+            "description": "Synthesizing Swarakalpanā with mathematical Kōrvai cadences for concert endings."
+          }
+        ]
+      },
+      "prakaranam_2_neravu_niraval": {
+        "title": "Neravu / Niraval Prakaraṇam (నెరవు / నిరవల్ ప్రకరణము) [Pages 54–103]",
+        "core_principles": [
+          "Sāhitya-Melodic Balance: Elaborating a single meaningful line of song lyrics melodically while preserving word boundaries and emotional prosody.",
+          "Padaccheda Doṣa Avoidance: Words must not be split unnaturally or spliced across beat divisions in a way that corrupts their meaning.",
+          "Eḍuppu & Arudi Maintenance: The starting point of the phrase (Eḍuppu) and the structural pause (Arudi) must be strictly maintained across all melodic variations.",
+          "Kāla Krama in Neravu: Executing 1st speed (Vilamba Kāla) Neravu for emotional depth, followed by 2nd speed (Madhyama Kāla) Neravu for rhythmic vigor."
+        ],
+        "talam_wise_raga_breakdowns": [
+          {
+            "talam": "Ādi Tāḷam (8 Akṣaras)",
+            "ragas_covered": [
+              "Śaṅkarābharaṇam",
+              "Kāmbhōji",
+              "Bhairavi",
+              "Ṣaṇmukhapriyā"
+            ],
+            "focus": "Elaborating Pallavi/Anupallavi lines across 8-count cycles with rich gamakas."
+          },
+          {
+            "talam": "Rūpaka Tāḷam (6 Akṣaras)",
+            "ragas_covered": [
+              "Māyāmāḷavagauḷa",
+              "Tōḍi",
+              "Pantuvarāḷi",
+              "Harikāmbhōji"
+            ],
+            "focus": "Handling 3+3 or 2+4 subdivision balances in 6-count cycles."
+          },
+          {
+            "talam": "Khaṇḍa Cāpu Tāḷam (5 Akṣaras)",
+            "ragas_covered": [
+              "Kalyāṇi",
+              "Sarasāṅgi",
+              "Bilahari"
+            ],
+            "focus": "Navigating the 2+3 asymmetrical gait in 5-beat cycles."
+          },
+          {
+            "talam": "Miśra Cāpu Tāḷam (7 Akṣaras)",
+            "ragas_covered": [
+              "Kalyāṇi",
+              "Tōḍi",
+              "Śaṅkarābharaṇam",
+              "Kharaharapriyā"
+            ],
+            "focus": "Mastering the 3+2+2 or 3+4 asymmetrical rhythmic bounce in 7-beat cycles."
+          }
+        ]
+      },
+      "prakaranam_3_raga_sangatulu": {
+        "title": "Rāga Saṅgatulu & Notation Prakaraṇam (రాగ సంగీతులు) [Pages 104–138]",
+        "core_principles": [
+          "Saṅgati Progression: Systematic step-by-step melodic variations designed by composers (like Saint Tyāgarāja) that build from simple line foundations to intricate rāga gems.",
+          "Grahābhyāsa: Practicing starting phrases from different swaras of the rāga to reveal diverse melodic angles.",
+          "Jīva Swara & Nyāsa Accentuation: Highlighting the vital resting notes (Jīva/Nyāsa Swaras) in every saṅgati."
+        ],
+        "major_ragas_annotated": [
+          "Śaṅkarābharaṇam",
+          "Tōḍi",
+          "Kalyāṇi",
+          "Kāmbhōji",
+          "Bhairavi",
+          "Khamās"
+        ]
+      }
+    }
+  },
+  "percussion_and_rhythmic_manodharma": {
+    "thani_avarthanam_structure": [
+      "1. Introduction: Solo exploration of composition's Tāḷa meter and Eḍuppu.",
+      "2. Purvaṅga & Uttaraṅga Development: Modulating through Gathis/Nadais (Chaturasra 4, Tiśra 3, Khaṇḍa 5, Miśra 7, Saṅkīrṇa 9).",
+      "3. Farans & Fast Cascades: Rapid finger stroke combinations (Tha-re-ke-da, Te-gu-cha-ka).",
+      "4. Mohara: A 4-āvarthanam structured rhythmic cadence played twice/thrice in fast speed.",
+      "5. Kōrvai: Rhythmic coda/cadence repeated 3 times, ending on Samam or Eḍuppu.",
+      "6. Concluding Landing: Merging seamlessly back into the main vocalist's Pallavi line."
+    ],
+    "mohara_spec": {
+      "definition": "A standardized fast-tempo 4-āvarthanam percussion cadence preceding the main Kōrvai.",
+      "structure": "4 Tāḷa cycles executed twice or thrice in 2nd/3rd speed."
+    },
+    "korvai_definition_and_rules": {
+      "definition": "A complex rhythmic cadence constructed at the end of a percussion solo or swara passage, repeated 3 times.",
+      "landing_rule": "The final stroke of the 3rd repetition must land exactly on Samam or the designated Eḍuppu beat."
+    },
+    "yatis_geometric_shapes": [
+      {
+        "name": "Samā Yati",
+        "shape": "Equal / Uniform",
+        "pattern": "3 - 3 - 3 or 5 - 5 - 5",
+        "description": "Uniform rhythmic phrases of equal length throughout."
+      },
+      {
+        "name": "Gopucchā Yati",
+        "shape": "Cow's Tail (Tapering)",
+        "pattern": "5 -> 4 -> 3 -> 2 -> 1",
+        "description": "Phrases progressively decrease in length (e.g. Ta-ka-thi-mi-thom -> Ta-ka-thi-nom -> Tha-ki-ta -> Tha-ka -> Thom)."
+      },
+      {
+        "name": "Srotogathā Yati",
+        "shape": "River Stream (Expanding)",
+        "pattern": "1 -> 2 -> 3 -> 4 -> 5",
+        "description": "Phrases progressively expand in length (e.g. Thom -> Tha-ka -> Tha-ki-ta -> Ta-ka-thi-nom -> Ta-ka-thi-mi-thom)."
+      },
+      {
+        "name": "Mṛdaṅga Yati",
+        "shape": "Waisted Drum (Expanding then Tapering)",
+        "pattern": "1 -> 2 -> 3 -> 4 -> 3 -> 2 -> 1",
+        "description": "Phrases expand to a central peak and then taper down."
+      },
+      {
+        "name": "Damaru Yati",
+        "shape": "Hourglass (Tapering then Expanding)",
+        "pattern": "4 -> 3 -> 2 -> 1 -> 2 -> 3 -> 4",
+        "description": "Phrases taper down to a narrow center and then expand."
+      },
+      {
+        "name": "Pipīlikā Yati",
+        "shape": "Ant Movement (Undulating)",
+        "pattern": "1 -> 3 -> 2 -> 4 -> 3 -> 5",
+        "description": "Phrases move back and forth in an undulating pattern."
+      }
+    ],
+    "arudi_spec": {
+      "definition": "A short rhythmic pause or landing point dividing Purvaṅga and Uttaraṅga."
+    },
+    "konnakol_syllables_and_solkattu": {
+      "strokes": [
+        "Tha",
+        "Thi",
+        "Thom",
+        "Nam",
+        "Din",
+        "Tha-re-ke-da",
+        "Te-gu-cha-ka"
+      ],
+      "description": "Vocal recitation of percussion syllables imitating Mṛdaṅgam head strokes."
+    }
+  },
+  "merge_manifest": {
+    "version": "4.0.0",
+    "source_archives": [
+      "Manodharma_book_aligned_updated_files(1).zip",
+      "manodharma-suite-updated (2).zip"
+    ],
+    "merge_policy": "No source JSON sections or Korvai records intentionally discarded. Original files preserved verbatim under original_versions/. Conflicting fields retained in distinct book_alignment and book_alignment_manodharma_sangeetam sections; each Korvai includes source_variant and source_record.",
+    "korvai_counts": {
+      "book_aligned": 4,
+      "expanded_rhythmic_suite": 6,
+      "merged": 10
+    },
+    "note": "Arithmetic and source transcription have not been independently certified by this merge."
+  }
+}

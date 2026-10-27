@@ -2,7 +2,7 @@
 import { createPortal } from 'react-dom'
 import { MELAKARTAS, CHAKRA_NAMES } from '../../data/ragas'
 import { useAppStore } from '../../store/useAppStore'
-import { getAudioContext, stopSequence } from '../../audio/engine'
+import { getAudioContext, getAudioOutputTime, stopSequence } from '../../audio/engine'
 import type { Melakarta } from '../../types/index'
 import { tokeniseNotation } from '../../audio/engine';
 import {
@@ -27,6 +27,7 @@ import {
   getMelakartaVariantMap,
 } from '../../music/svaraMapping'
 import { groupNotationTokens } from '../../music/notationLayout'
+import { RagaHandGuide, type PracticeClock } from '../../components/RagaHandGuide'
 
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -197,7 +198,7 @@ export function synthNoteJI(
   }
   const hz = tonicHz * ratio
   const dur = beatSec * durationMult
-  const isHeld = durationMult >= 2
+  const isHeld = durationMult >= 2 && dur >= 0.15
   const hasGlide = prevRatio !== null && Math.abs(prevRatio - ratio) > 0.001
 
   const masterGain = ctx.createGain()
@@ -215,15 +216,19 @@ export function synthNoteJI(
     case 'nadaswaram':attack = 0.025; decay = 0.06; sustain = 0.86; release = 0.12; break
   }
 
-  const peak = volume * (instrument === 'veena' || instrument === 'sitar' ? 1.4 : 1.0)
+  type HarmonicDef = [number, number, OscillatorType]
+  const harmonics: HarmonicDef[] = getHarmonics(instrument)
+  const peak = volume * 0.8 / harmonics.reduce((sum, [, amplitude]) => sum + amplitude, 0)
+  // Keep the envelope ordered and within the note, even at fast practice speeds.
+  const envelopeScale = Math.min(1, dur / (attack + decay + release))
+  attack *= envelopeScale
+  decay *= envelopeScale
+  release *= envelopeScale
   masterGain.gain.linearRampToValueAtTime(peak, startTime + attack)
   masterGain.gain.linearRampToValueAtTime(peak * sustain, startTime + attack + decay)
   const holdEnd = startTime + Math.max(attack + decay, dur - release)
   masterGain.gain.setValueAtTime(peak * sustain, holdEnd)
-  masterGain.gain.linearRampToValueAtTime(0, startTime + dur + 0.02)
-
-  type HarmonicDef = [number, number, OscillatorType]
-  const harmonics: HarmonicDef[] = getHarmonics(instrument)
+  masterGain.gain.linearRampToValueAtTime(0, startTime + dur)
 
   harmonics.forEach(([partialRatio, amp, wavetype]) => {
     const osc = trackSource(ctx.createOscillator())
@@ -307,37 +312,43 @@ function getHarmonics(instrument: string): [number, number, OscillatorType][] {
 function scheduleSequence(
   events: NoteEvent[], tonicHz: number, beatSec: number,
   instrument: string, volume: number,
-  onNote: (idx: number) => void, onDone: () => void
+  onNote: (idx: number) => void, onDone: () => void,
+  onClock: (clock: PracticeClock) => void
 ): () => void {
   const ctx = getAudioContext()
   let cancelled = false
   const startAt = ctx.currentTime + 0.06
   let cursor = startAt
   let prevRatio: number | null = null
-  const noteStarts: Array<{ idx: number; at: number }> = []
+  const eventStarts: Array<{ idx: number; at: number }> = []
   const cancelNotes: (() => void)[] = []
 
   events.forEach((ev, i) => {
+    eventStarts.push({ idx: i, at: cursor })
     if (!ev.isRest && ev.noteInfo) {
-      noteStarts.push({ idx: i, at: cursor })
       cancelNotes.push(synthNoteJI(tonicHz, ev.noteInfo.ratio, prevRatio, ev.durationMult, beatSec, instrument, volume, cursor))
       prevRatio = ev.noteInfo.ratio
     }
     cursor += beatSec * ev.durationMult
   })
 
+  onClock({ startAt, endAt: cursor })
   let raf = 0
   let next = 0
   let lastIdx = -1
   const tick = () => {
     if (cancelled) return
-    const now = ctx.currentTime
-    while (next < noteStarts.length && noteStarts[next].at <= now + 0.012) {
-      if (noteStarts[next].idx !== lastIdx) {
-        lastIdx = noteStarts[next].idx
+    const now = getAudioOutputTime(ctx)
+    while (next < eventStarts.length && eventStarts[next].at <= now) {
+      if (eventStarts[next].idx !== lastIdx) {
+        lastIdx = eventStarts[next].idx
         onNote(lastIdx)
       }
       next++
+    }
+    if (now >= cursor && lastIdx !== -1) {
+      lastIdx = -1
+      onNote(-1)
     }
     if (now >= cursor + 0.12) {
       onDone()
@@ -404,11 +415,15 @@ function tokenColour(tok: string): string {
 // ─────────────────────────────────────────────────────────────────────────────
 // COMPONENT
 // ─────────────────────────────────────────────────────────────────────────────
-export default function RagaLibrary({ settingsContainer }: { settingsContainer?: HTMLDivElement | null }) {
+export default function RagaLibrary({ settingsContainer, initialMelakarta = 15 }: { settingsContainer?: HTMLDivElement | null; initialMelakarta?: number }) {
   const { settings } = useAppStore()
   const [search, setSearch] = useState('')
   const [chakraFilter, setChakraFilter] = useState<number | null>(null)
-  const [selectedRaga, setSelectedRaga] = useState<Melakarta>(MELAKARTAS[14])
+  const [selectedRaga, setSelectedRaga] = useState<Melakarta>(() => {
+    const raga = MELAKARTAS.find(item => item.number === initialMelakarta)
+    if (!raga) throw new Error(`Unknown Melakarta practice target: ${initialMelakarta}`)
+    return raga
+  })
   const [curriculumExercises, setCurriculumExercises] =
   useState<Partial<Record<TabKey, PlayerExercise[]>>>({})
   
@@ -460,7 +475,11 @@ useEffect(() => {
   const [speedIdx, setSpeedIdx] = useState(0)
   const [playMode, setPlayMode] = useState<PlayMode>('both')
   const [loopMode, setLoopMode] = useState(false)
+  const [practiceClock, setPracticeClock] = useState<PracticeClock | null>(null)
+  const [handGuideSettingsContainer, setHandGuideSettingsContainer] = useState<HTMLDivElement | null>(null)
   const [playingIdx, setPlayingIdx] = useState(-1)
+  const [scalePlaying, setScalePlaying] = useState(false)
+  const [scalePlayError, setScalePlayError] = useState('')
   const [activeEvIdx, setActiveEvIdx] = useState<{ phase: 'aro' | 'avro'; evIdx: number } | null>(null)
   const [playPhase, setPlayPhase] = useState<'aro' | 'avro' | null>(null)
   const [selectedExercise, setSelectedExercise] = useState<{ tab: TabKey; idx: number } | null>(null)
@@ -500,10 +519,12 @@ useEffect(() => {
 
   // Identify the exact swarasthāna for the currently sounding exercise event.
   const getActiveNoteInfo = (): { info: NoteInfo; svaraInfo: typeof SVARA_INFO[string] } | null => {
-    if (!activeEvIdx || playingIdx < 0) return null
+    if (!activeEvIdx) return null
     const ex = exercises[playingIdx] as { aro: string; avro: string } | undefined
-    if (!ex) return null
-    const noteStr = activeEvIdx.phase === 'aro' ? ex.aro : ex.avro
+    const noteStr = scalePlaying
+      ? activeEvIdx.phase === 'aro' ? 's r g m p d n S' : 'S n d p m g r s'
+      : ex && (activeEvIdx.phase === 'aro' ? ex.aro : ex.avro)
+    if (!noteStr) return null
     const events = parseToEvents(noteStr, noteInfoMap)
     const ev = events[activeEvIdx.evIdx]
     if (!ev?.noteInfo) return null
@@ -524,8 +545,10 @@ useEffect(() => {
     stopSequence()
     stopRef.current = null
     setPlayingIdx(-1)
+    setScalePlaying(false)
     setActiveEvIdx(null)
     setPlayPhase(null)
+    setPracticeClock(null)
   }, [])
 
   useEffect(() => stopCurrent, [stopCurrent])
@@ -569,7 +592,7 @@ useEffect(() => {
         setPlayPhase(phase)
         const cancel = scheduleSequence(
           events, tonicHz, beatSec, settings.instrument, settings.volume,
-          (evIdx) => setActiveEvIdx({ phase, evIdx }), onDone
+          (evIdx) => setActiveEvIdx({ phase, evIdx }), onDone, setPracticeClock
         )
         stopRef.current = cancel
       }
@@ -597,6 +620,55 @@ useEffect(() => {
     },
     [playingIdx, selectedRaga, settings, speedIdx, playMode, loopMode, exercises, stopCurrent]
   )
+
+  const handleScalePlay = useCallback(async () => {
+    stopCurrent()
+    setScalePlayError('')
+    const playbackVersion = ++playbackVersionRef.current
+    try {
+      const ctx = getAudioContext()
+      if (ctx.state === 'suspended') await ctx.resume()
+      if (playbackVersion !== playbackVersionRef.current) return
+      if (ctx.state !== 'running') throw new Error('Audio is not running. Check browser audio permissions.')
+
+      const noteInfoMap = buildNoteInfoMap(selectedRaga)
+      const aroEvents = parseToEvents('s r g m p d n S', noteInfoMap)
+      const avroEvents = parseToEvents('S n d p m g r s', noteInfoMap)
+      const phases = playMode === 'aro' ? [aroEvents]
+        : playMode === 'avro' ? [avroEvents]
+          : [aroEvents, avroEvents]
+      const beatSec = (60 / settings.bpm) / SPEEDS[speedIdx].mult
+      loopRef.current = loopMode
+      setScalePlaying(true)
+
+      const runPhase = (phaseIndex: number) => {
+        if (playbackVersion !== playbackVersionRef.current) return
+        const phase = playMode === 'avro' || phaseIndex === 1 ? 'avro' : 'aro'
+        setPlayPhase(phase)
+        const cancel = scheduleSequence(
+          phases[phaseIndex], settings.tonicHz, beatSec, settings.instrument, settings.volume,
+          evIdx => setActiveEvIdx(evIdx >= 0 ? { phase, evIdx } : null), () => {
+            if (playbackVersion !== playbackVersionRef.current) return
+            setActiveEvIdx(null)
+            setPlayPhase(null)
+            if (phaseIndex + 1 < phases.length) {
+              playbackTimerRef.current = setTimeout(() => runPhase(phaseIndex + 1), beatSec * 500)
+            } else if (loopRef.current) {
+              playbackTimerRef.current = setTimeout(() => runPhase(0), 300)
+            } else {
+              setScalePlaying(false)
+            }
+          }, setPracticeClock
+        )
+        stopRef.current = cancel
+      }
+      runPhase(0)
+    } catch (error) {
+      if (playbackVersion !== playbackVersionRef.current) return
+      stopCurrent()
+      setScalePlayError(error instanceof Error ? error.message : String(error))
+    }
+  }, [loopMode, playMode, selectedRaga, settings, speedIdx, stopCurrent])
 
   // Keep a current callable for queue transitions across tab changes.
   handlePlayRef.current = (idx: number, preserveQueue = false) => { void handlePlay(idx, preserveQueue) }
@@ -692,23 +764,6 @@ function buildDisplayMap(
         flexDirection: 'column',
         overflow: 'hidden',
       }}>
-        <div style={{ padding: 'var(--space-3)', borderBottom: '1px solid var(--border)' }}>
-          <input
-            placeholder="Search rāga or number"
-            value={search}
-            onChange={e => setSearch(e.target.value)}
-            style={{ width: '100%', background: 'var(--surface2)', border: '1px solid var(--border)', borderRadius: 'var(--radius-sm)', padding: '6px 10px', fontSize: '0.8rem', color: 'var(--text)' }}
-          />
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 3, marginTop: 'var(--space-2)' }}>
-            <button onClick={() => setChakraFilter(null)}
-              style={{ fontSize: '0.6rem', padding: '2px 7px', borderRadius: 99, border: '1px solid', cursor: 'pointer', background: chakraFilter === null ? 'var(--accent)' : 'transparent', borderColor: chakraFilter === null ? 'var(--accent)' : 'var(--border)', color: chakraFilter === null ? '#000' : 'var(--text-muted)' }}>All</button>
-            {CHAKRA_NAMES.map((cn, i) => (
-              <button key={i} onClick={() => setChakraFilter(chakraFilter === i + 1 ? null : i + 1)}
-                style={{ fontSize: '0.58rem', padding: '2px 5px', borderRadius: 99, border: '1px solid', cursor: 'pointer', background: chakraFilter === i + 1 ? 'var(--accent)' : 'transparent', borderColor: chakraFilter === i + 1 ? 'var(--accent)' : 'var(--border)', color: chakraFilter === i + 1 ? '#000' : 'var(--text-faint)' }}>{cn}</button>
-            ))}
-          </div>
-        </div>
-
         <div style={{ flex: 1, overflowY: 'auto', padding: 'var(--space-2)' }}>
           {filtered.map(raga => (
             <button key={raga.number} onClick={() => handleRagaSelect(raga)}
@@ -757,6 +812,26 @@ function buildDisplayMap(
 
         {settingsContainer && createPortal(
           <div className="raga-practice-settings" style={{ padding: '0 16px 16px', minWidth: 0 }}>
+          <div ref={setHandGuideSettingsContainer}/>
+          <h3 style={{ fontSize: '1rem', marginTop: 12 }}>Choose a rāga</h3>
+          <label style={{ display: 'block' }}>Search rāga or number
+            <input aria-label="Search rāga or number" placeholder="Search rāga or number" value={search}
+              onChange={e => setSearch(e.target.value)}
+              style={{ width: '100%', background: 'var(--surface2)', border: '1px solid var(--border)', borderRadius: 'var(--radius-sm)', padding: '6px 10px', color: 'var(--text)' }} />
+          </label>
+          <div role="group" aria-label="Chakra filter" style={{ display: 'flex', flexWrap: 'wrap', gap: 4, marginTop: 8 }}>
+            <button onClick={() => setChakraFilter(null)} aria-pressed={chakraFilter === null}>All</button>
+            {CHAKRA_NAMES.map((name, index) => <button key={name} aria-pressed={chakraFilter === index + 1}
+              onClick={() => setChakraFilter(chakraFilter === index + 1 ? null : index + 1)}>{name}</button>)}
+          </div>
+          <label style={{ display: 'block', marginTop: 8 }}>Selected rāga
+            <select aria-label="Selected Melakarta" value={filtered.some(raga => raga.number === selectedRaga.number) ? selectedRaga.number : ''}
+              onChange={event => { const raga = filtered.find(value => value.number === Number(event.target.value)); if (raga) handleRagaSelect(raga) }}
+              style={{ width: '100%', padding: 6 }}>
+              {!filtered.some(raga => raga.number === selectedRaga.number) && <option value="">Choose a matching rāga</option>}
+              {filtered.map(raga => <option key={raga.number} value={raga.number}>{raga.number}. {raga.name}</option>)}
+            </select>
+          </label>
           <h3 style={{ fontSize: '1rem', marginTop: 12 }}>{selectedRaga.name}</h3>
           <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{selectedRaga.nameDevanagari} · {selectedRaga.nameTelugu}</div>
           <div style={{ fontSize: '0.7rem', color: 'var(--text-faint)', marginTop: 2 }}>
@@ -784,15 +859,17 @@ function buildDisplayMap(
               <span style={{ fontSize: '0.6rem', color: 'var(--text-faint)', marginRight: 2, minWidth: 40 }}>↑ Āro</span>
               {Object.entries(noteInfoMap).filter(([k]) => k.length === 1 && k === k.toLowerCase()).map(([k, info]) => (
                 <button key={'asc-' + k} onClick={() => playSingleNote(info)}
+                  aria-current={scalePlaying && activeNoteDisplay?.info.token === info.token ? 'true' : undefined}
                   title={`${SVARA_INFO[info.svaraKey]?.name} — play swara`}
-                  style={{ padding: '3px 10px', borderRadius: 'var(--radius-sm)', border: `1px solid ${SVARA_INFO[info.svaraKey]?.colour ?? 'var(--border)'}44`, background: 'var(--surface2)', color: SVARA_INFO[info.svaraKey]?.colour ?? 'var(--text)', fontSize: '0.75rem', fontFamily: 'monospace', cursor: 'pointer', fontWeight: 600 }}>
+                  style={{ padding: '3px 10px', borderRadius: 'var(--radius-sm)', border: `1px solid ${SVARA_INFO[info.svaraKey]?.colour ?? 'var(--border)'}44`, background: scalePlaying && activeNoteDisplay?.info.token === info.token ? '#facc15' : 'var(--surface2)', color: scalePlaying && activeNoteDisplay?.info.token === info.token ? '#172421' : SVARA_INFO[info.svaraKey]?.colour ?? 'var(--text)', fontSize: '0.75rem', fontFamily: 'monospace', cursor: 'pointer', fontWeight: 600 }}>
                   <span>{k}</span><span style={{ display: 'block', marginTop: 1, fontSize: '0.62rem', color: '#243B38', fontWeight: 800 }}>{SVARA_INFO[info.svaraKey]?.name}</span>
                 </button>
               ))}
               {(() => { const info = noteInfoMap['S']; return info ? (
                 <button key="upper-S" onClick={() => playSingleNote(info)}
+                  aria-current={scalePlaying && activeNoteDisplay?.info.token === info.token ? 'true' : undefined}
                   title={`${SVARA_INFO['S']?.name} — play swara`}
-                  style={{ padding: '3px 10px', borderRadius: 'var(--radius-sm)', border: `1px solid ${SVARA_INFO['S']?.colour ?? 'var(--border)'}44`, background: 'var(--surface2)', color: '#c4b5fd', fontSize: '0.75rem', fontFamily: 'monospace', cursor: 'pointer', fontWeight: 600 }}>
+                  style={{ padding: '3px 10px', borderRadius: 'var(--radius-sm)', border: `1px solid ${SVARA_INFO['S']?.colour ?? 'var(--border)'}44`, background: scalePlaying && activeNoteDisplay?.info.token === info.token ? '#facc15' : 'var(--surface2)', color: scalePlaying && activeNoteDisplay?.info.token === info.token ? '#172421' : '#c4b5fd', fontSize: '0.75rem', fontFamily: 'monospace', cursor: 'pointer', fontWeight: 600 }}>
                   <span>S</span><span style={{ display: 'block', marginTop: 1, fontSize: '0.62rem', color: '#243B38', fontWeight: 800 }}>{SVARA_INFO.S.name}</span>
                 </button>
               ) : null })()}
@@ -817,6 +894,10 @@ function buildDisplayMap(
 
           <h3 style={{ fontSize: '1rem', marginTop: 16 }}>Playback</h3>
           <div style={{ marginTop: 'var(--space-2)', display: 'flex', gap: 'var(--space-3)', alignItems: 'center', flexWrap: 'wrap' }}>
+            <button onClick={() => scalePlaying ? stopCurrent() : void handleScalePlay()}
+              style={{ padding: '4px 12px', borderRadius: 99, fontSize: '0.7rem', fontWeight: 600, border: '1px solid var(--accent)', cursor: 'pointer', background: scalePlaying ? 'var(--accent)' : 'var(--surface2)', color: scalePlaying ? '#000' : 'var(--accent)' }}>
+              {scalePlaying ? '⏹ Stop scale' : `▶ Play ${playMode === 'aro' ? 'Ārohaṇa' : playMode === 'avro' ? 'Avarohaṇa' : 'both scales'}`}
+            </button>
             <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
               <span style={{ fontSize: '0.65rem', color: 'var(--text-faint)' }}>Speed</span>
               {SPEEDS.map((sp, i) => (
@@ -842,6 +923,7 @@ function buildDisplayMap(
               🔁 Loop
             </button>
           </div>
+          {scalePlayError && <p role="alert" style={{ color: 'var(--red)', fontSize: '0.75rem', margin: '6px 0 0' }}>Scale playback unavailable: {scalePlayError}</p>}
 
           {/* Playing status bar */}
           {playingIdx !== -1 && (
@@ -894,6 +976,7 @@ function buildDisplayMap(
 
         {/* ── Exercise grid ── */}
         <div className={`raga-exercise-grid raga-tab-${tab}`} style={{ flex: 1, minWidth: 0, minHeight: 0, overflowY: 'auto', padding: 'var(--space-3)', display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'stretch' }}>
+          <RagaHandGuide clock={practiceClock} bpm={settings.bpm} settingsContainer={handGuideSettingsContainer}/>
           {exercises.map((ex, idx) => {
             const isPlaying = playingIdx === idx
             const nim = buildNoteInfoMap(selectedRaga)

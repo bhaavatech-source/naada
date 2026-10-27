@@ -1,4 +1,5 @@
 import type { InstrumentId } from '../types/index'
+import type { KriyaAction } from '../music/talaPractice'
 
 
 let _ctx: AudioContext | null = null
@@ -33,6 +34,16 @@ export function getAudioContext(): AudioContext {
   if (!_ctx) _ctx = new (window.AudioContext ?? (window as any).webkitAudioContext)()
   if (_ctx.state === 'suspended') _ctx.resume()
   return _ctx
+}
+export function getAudioOutputTime(
+  ctx: { currentTime: number; baseLatency?: number; outputLatency?: number; getOutputTimestamp?: () => AudioTimestamp },
+  performanceTime = performance.now()
+): number {
+  const timestamp = ctx.getOutputTimestamp?.()
+  if (timestamp?.performanceTime !== undefined && timestamp.performanceTime > 0 && timestamp.contextTime !== undefined) {
+    return Math.min(ctx.currentTime, timestamp.contextTime + (performanceTime - timestamp.performanceTime) / 1000)
+  }
+  return ctx.currentTime - (ctx.baseLatency || 0) - (ctx.outputLatency || 0)
 }
 export function unlockAudio() {
   const ctx = getAudioContext()
@@ -359,6 +370,38 @@ export function synthNote(
 // ── Fix violin case that fell through ──────────────────────────────────────────
 // (violin handled in the default case above with proper vibrato)
 
+let clapBuffer: AudioBuffer | null = null
+
+/** A short filtered noise burst distinguishes a hand clap from counting cues. */
+export function playKriyaSound(action: KriyaAction, volume: number, accent: boolean, when: number): AudioScheduledSourceNode {
+  if (action !== 'tap') {
+    return playClick(action === 'wave' ? 660 : 1100, volume * (accent ? 0.5 : 0.38), 0.045, when)
+  }
+  const ctx = getAudioContext()
+  if (!clapBuffer) {
+    clapBuffer = ctx.createBuffer(1, Math.ceil(ctx.sampleRate * 0.13), ctx.sampleRate)
+    const data = clapBuffer.getChannelData(0)
+    for (let i = 0; i < data.length; i++) {
+      const t = i / ctx.sampleRate
+      const burst = Math.exp(-t * 45) + (t >= 0.012 ? 0.6 * Math.exp(-(t - 0.012) * 65) : 0)
+      data[i] = (Math.random() * 2 - 1) * burst * 0.6
+    }
+  }
+  const source = ctx.createBufferSource()
+  source.buffer = clapBuffer
+  const filter = ctx.createBiquadFilter()
+  filter.type = 'highpass'
+  filter.frequency.value = 700
+  const gain = ctx.createGain()
+  gain.gain.value = Math.max(0, Math.min(1, volume)) * (accent ? 0.85 : 0.65)
+  source.connect(filter)
+  filter.connect(gain)
+  gain.connect(ctx.destination)
+  source.addEventListener('ended', () => { source.disconnect(); filter.disconnect(); gain.disconnect() }, { once: true })
+  source.start(Math.max(ctx.currentTime, when))
+  return source
+}
+
 export function playClick(freq: number, vol: number, duration: number, when?: number) {
   const ctx = getAudioContext()
   const startAt = Math.max(ctx.currentTime, when ?? ctx.currentTime)
@@ -369,6 +412,8 @@ export function playClick(freq: number, vol: number, duration: number, when?: nu
   g.gain.exponentialRampToValueAtTime(0.001, startAt + duration)
   osc.connect(g); g.connect(ctx.destination)
   osc.start(startAt); osc.stop(startAt + duration + 0.01)
+  osc.addEventListener('ended', () => { osc.disconnect(); g.disconnect() }, { once: true })
+  return osc
 }
 
 interface SequenceNote { hz: number; duration: number }

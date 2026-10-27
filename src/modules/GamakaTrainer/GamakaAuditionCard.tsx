@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { Square, Volume2, Sparkles } from 'lucide-react';
 import type { GamakaProfile } from '../../types/gamaka';
 import { gamakaAudioEngine } from '../../audio/GamakaAudioEngine';
@@ -19,51 +19,48 @@ export const GamakaAuditionCard: React.FC<Props> = ({ profile }) => {
     setIsPlaying,
     enableTambura
   } = useGamakaStore();
+  const multiplier = useGamakaStore(state => state.practiceMultiplier);
+  const [playbackError, setPlaybackError] = useState('');
+  const requestRef = useRef(0);
 
   const settings = useAppStore(state => state.settings);
   const isThisActive = activeGamakaId === profile.id && isPlaying;
+  const minimumCents = Math.min(...profile.trajectory.map(point => point.cents));
+  const maximumCents = Math.max(...profile.trajectory.map(point => point.cents));
+  const contourDuration = profile.trajectory[profile.trajectory.length - 1].t_ms;
+  const contourPoints = profile.trajectory.map(point =>
+    `${8 + point.t_ms / contourDuration * 224},${48 - (point.cents - minimumCents) / Math.max(1, maximumCents - minimumCents) * 36}`,
+  ).join(' ');
 
-  const handlePlayAB = async () => {
+  const play = async (mode: 'plain' | 'gamaka' | 'both') => {
+    const request = ++requestRef.current;
+    const current = () => requestRef.current === request && useGamakaStore.getState().activeGamakaId === profile.id && useGamakaStore.getState().isPlaying;
+    setPlaybackError('');
     setActiveGamakaId(profile.id);
-    setIsPlaying(true, 'A');
-    gamakaAudioEngine.setKattai(settings.tonicHz);
-    gamakaAudioEngine.setVolume(settings.volume);
-
-    if (enableTambura && !gamakaAudioEngine.isTamburaRunning) {
-      await gamakaAudioEngine.startTambura();
-    }
-
+    setIsPlaying(true, mode === 'gamaka' ? 'B' : 'A');
     try {
-      await gamakaAudioEngine.playABComparison(profile, selectedInstrument, {
-        onTrackChange: (track) => setIsPlaying(true, track),
-        onEnd: () => setIsPlaying(false, null)
-      });
+      gamakaAudioEngine.setKattai(settings.tonicHz);
+      gamakaAudioEngine.setVolume(settings.volume);
+      if (enableTambura && !gamakaAudioEngine.isTamburaRunning) await gamakaAudioEngine.startTambura();
+      if (!current()) return;
+      if (mode === 'plain') await gamakaAudioEngine.playPlainNote(profile, selectedInstrument, multiplier);
+      else if (mode === 'gamaka') await gamakaAudioEngine.playGamaka(profile, selectedInstrument, multiplier);
+      else await gamakaAudioEngine.playABComparison(profile, selectedInstrument, {
+        onTrackChange: track => { if (current()) setIsPlaying(true, track); },
+      }, multiplier);
+    } catch (error) {
+      if (current()) setPlaybackError(error instanceof Error ? error.message : String(error));
     } finally {
-      setIsPlaying(false, null);
+      if (current()) setIsPlaying(false, null);
     }
   };
 
-  const handlePlayPlain = async () => {
-    setActiveGamakaId(profile.id);
-    setIsPlaying(true, 'A');
-    gamakaAudioEngine.setKattai(settings.tonicHz);
-    gamakaAudioEngine.setVolume(settings.volume);
-    if (enableTambura && !gamakaAudioEngine.isTamburaRunning) await gamakaAudioEngine.startTambura();
-    try { await gamakaAudioEngine.playPlainNote(profile, selectedInstrument); }
-    finally { setIsPlaying(false, null); }
-  };
-
-  const handlePlayGamaka = async () => {
-    setActiveGamakaId(profile.id);
-    setIsPlaying(true, 'B');
-    gamakaAudioEngine.setKattai(settings.tonicHz);
-    gamakaAudioEngine.setVolume(settings.volume);
-    if (enableTambura && !gamakaAudioEngine.isTamburaRunning) await gamakaAudioEngine.startTambura();
-    try { await gamakaAudioEngine.playGamaka(profile, selectedInstrument); }
-    finally { setIsPlaying(false, null); }
-  };
+  const handlePlayAB = () => void play('both');
+  const handlePlayPlain = () => void play('plain');
+  const handlePlayGamaka = () => void play('gamaka');
 
   const handleStop = () => {
+    requestRef.current++;
     gamakaAudioEngine.stopAll();
     setIsPlaying(false, null);
   };
@@ -142,9 +139,18 @@ export const GamakaAuditionCard: React.FC<Props> = ({ profile }) => {
           lineHeight: '1.4'
         }}
       >
-        <span style={{ color: '#38BDF8', fontWeight: 600, marginRight: '4px' }}>Listen For:</span>
+        <span style={{ color: '#38BDF8', fontWeight: 600, marginRight: '4px' }}>Supplied listening cue (teacher review needed):</span>
         {profile.listeningCue}
       </div>
+      <figure style={{margin:0}}>
+        <svg viewBox="0 0 240 60" role="img" aria-label={`Supplied pitch movement from ${minimumCents.toFixed(0)} to ${maximumCents.toFixed(0)} cents above Sa`}
+          style={{display:'block',width:'100%',height:64}}>
+          <polyline points={contourPoints} fill="none" stroke="#38BDF8" strokeWidth="2" strokeLinejoin="round"/>
+        </svg>
+        <figcaption style={{fontSize:12,color:'#CBD5E1'}}>
+          Contour range: {minimumCents.toFixed(0)}–{maximumCents.toFixed(0)} cents above Sa. Each card scales its own pitch range.
+        </figcaption>
+      </figure>
 
       {/* Active Track Indicator */}
       {isThisActive && (
@@ -164,9 +170,11 @@ export const GamakaAuditionCard: React.FC<Props> = ({ profile }) => {
           <Volume2 size={16} />
           {currentTrack === 'A'
             ? '▶ Now Playing Track A: Plain Note (12-TET Flat)'
-            : '▶ Now Playing Track B: Authentic Gamaka (22-Śruti Living Curve)'}
+            : '▶ Now Playing Track B: Synthesized Gamaka contour'}
         </div>
       )}
+      <small style={{color:'#CBD5E1'}}>Plain: {(3 * multiplier).toFixed(1)} s · Gamaka: {(3.8 * multiplier).toFixed(1)} s · A/B gap: 0.3 s. Supplied contours are not musician-certified.</small>
+      {playbackError && <div role="alert" style={{color:'#fca5a5'}}>{playbackError}</div>}
 
       {/* Action Buttons */}
       <div className="gamaka-audition-actions">

@@ -1,4 +1,4 @@
-export type InstrumentType = 'veena' | 'flute' | 'voice_formants' | 'tambura';
+export type InstrumentType = 'reference' | 'veena' | 'flute' | 'voice_formants' | 'tambura';
 
 export type ABMode = 'A_ONLY' | 'B_ONLY' | 'A_B_ALTERNATING' | 'A_B_CROSSFADE';
 

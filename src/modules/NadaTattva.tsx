@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useState } from 'react'
 import library from '../data/nada-philosophy-and-sound-metaphysics.json'
 
 type Props = { onClose: () => void }
@@ -10,20 +10,121 @@ const stages = framework.sarirotpatti_five_stages_of_nada
 const sources = divisions.ahata_nada.five_sources_classification
 const sthayis = framework.three_sthayis_and_body_registers
 
+
+type QuizQuestion = {
+  prompt: string
+  options: string[]
+  correct: number
+  explanation: string
+}
+
+const quizQuestions: QuizQuestion[] = [
+  {
+    prompt: 'Which classification describes physical, audible sound produced through friction, impact, or vibration?',
+    options: ['Anāhata Nāda', 'Āhata Nāda', 'Mandra Sthāyī', 'Nāda Brahma'],
+    correct: 1,
+    explanation: 'Āhata Nāda is physical, audible sound. The supplied framework associates it with friction, impact, or vibration.',
+  },
+  {
+    prompt: 'According to the supplied Nāda Tattva framework, what is Anāhata Nāda?',
+    options: [
+      'Sound produced by a drum',
+      'A musical note sung in the middle octave',
+      'Unstruck, transcendental sound',
+      'Sound produced only by wooden instruments',
+    ],
+    correct: 2,
+    explanation: 'The framework describes Anāhata Nāda as uncreated, eternal sound experienced in deep meditation.',
+  },
+  {
+    prompt: 'Which source category refers to vocal or body-born sound?',
+    options: ['Lohaja', 'Vāyuja', 'Dāruja', 'Śārīraja'],
+    correct: 3,
+    explanation: 'Śārīraja refers to sound produced by the human vocal apparatus as breath passes through the throat and head cavities.',
+  },
+  {
+    prompt: 'Which category describes sound produced by wooden instruments?',
+    options: ['Dāruja', 'Charmaja', 'Lohaja', 'Śārīraja'],
+    correct: 0,
+    explanation: 'Dāruja means wood-born sound. The supplied framework gives the vīṇā and flute as examples.',
+  },
+  {
+    prompt: 'Mṛdaṅgam and Kanjira are examples of which sound-source category in the supplied framework?',
+    options: ['Vāyuja', 'Charmaja', 'Dāruja', 'Lohaja'],
+    correct: 1,
+    explanation: 'Charmaja refers to sound produced by stretched skin or percussion membranes.',
+  },
+  {
+    prompt: 'Which category refers to sound produced by metallic instruments such as cymbals and gongs?',
+    options: ['Śārīraja', 'Dāruja', 'Lohaja', 'Charmaja'],
+    correct: 2,
+    explanation: 'Lohaja means metal-born sound. Tāḷam, cymbals, and gongs are examples in the supplied JSON.',
+  },
+  {
+    prompt: 'Which stage is listed first in the five stages of sound manifestation?',
+    options: ['Puṣṭa', 'Apuṣṭa', 'Kṛtrimā / Vyakta', 'Ati-Sūkṣma'],
+    correct: 3,
+    explanation: 'Ati-Sūkṣma, or ultra-subtle, is stage 1 in the supplied framework.',
+  },
+  {
+    prompt: 'Which stage describes sound emerging in the throat register, where svaras are articulated?',
+    options: ['Sūkṣma', 'Apuṣṭa', 'Ati-Sūkṣma', 'Puṣṭa'],
+    correct: 1,
+    explanation: 'Apuṣṭa is stage 4 and is associated with Kaṇṭha (the throat) and Madhya Sthāyī in the source JSON.',
+  },
+  {
+    prompt: 'Which sthāyī corresponds to the lower octave in the supplied framework?',
+    options: ['Tāra Sthāyī', 'Madhya Sthāyī', 'Mandra Sthāyī', 'Apuṣṭa Sthāyī'],
+    correct: 2,
+    explanation: 'Mandra Sthāyī is the lower octave and is associated with Uras (chest) in the supplied framework.',
+  },
+  {
+    prompt: 'Which body register is associated with Madhya Sthāyī in the supplied JSON?',
+    options: ['Kaṇṭha (throat)', 'Uras (chest)', 'Mūrdhā (head)', 'Pāda (foot)'],
+    correct: 0,
+    explanation: 'Madhya Sthāyī is the middle octave and is associated with Kaṇṭha (throat).',
+  },
+  {
+    prompt: 'What is Nādopāsanā according to the supplied framework?',
+    options: [
+      'A method of tuning only percussion instruments',
+      'A classification of the five elements',
+      'A technique for measuring sound frequency',
+      'Spiritual practice or adoration through sound',
+    ],
+    correct: 3,
+    explanation: 'The framework presents Nādopāsanā as a spiritual sādhana through sound, directed toward mokṣa rather than entertainment alone.',
+  },
+  {
+    prompt: 'According to the supplied framework, what does Svarasya Rañjakatva emphasize?',
+    options: [
+      'Every rāga must use all seven svaras',
+      'A svara inherently pleases and elevates the listener',
+      'Sound can only be produced by the human voice',
+      'All musical notes have the same register',
+    ],
+    correct: 1,
+    explanation: 'The JSON explains Svarasya Rañjakatva through the idea that a svara inherently pleases and elevates the listener’s mind.',
+  },
+]
+
+
 export default function NadaTattva({ onClose }: Props) {
   const [tab, setTab] = useState<'journey' | 'sound' | 'registers' | 'quiz'>('journey')
   const [stageIndex, setStageIndex] = useState(0)
   const [soundType, setSoundType] = useState<'ahata_nada' | 'anahata_nada'>('ahata_nada')
   const [sourceIndex, setSourceIndex] = useState(0)
+  const [questionIndex, setQuestionIndex] = useState(0)
   const [answer, setAnswer] = useState<number | null>(null)
   const [checked, setChecked] = useState(false)
 
-  const question = useMemo(() => ({
-    prompt: 'Which classification describes audible sound produced by vibration or impact?',
-    options: ['Anāhata Nāda', 'Āhata Nāda', 'Madhyama Sthāyī'],
-    correct: 1,
-    explanation: divisions.ahata_nada.description,
-  }), [])
+  const question = quizQuestions[questionIndex]
+
+  const nextQuestion = () => {
+    setQuestionIndex((current) => (current + 1) % quizQuestions.length)
+    setAnswer(null)
+    setChecked(false)
+  }
 
   return <section className="nw-panel" aria-labelledby="nw-tattva-title">
     <style>{`
@@ -53,7 +154,7 @@ export default function NadaTattva({ onClose }: Props) {
       .nw-source strong{display:block;color:#17675a;margin-bottom:5px}
       .nw-source small{color:#69776f;line-height:1.4;display:block}
       .nw-source[aria-pressed=true]{border-color:#17675a;box-shadow:0 0 0 2px #17675a22}
-      .nw-quiz-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}
+      .nw-quiz-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0}
       .nw-answer{white-space:normal;border-radius:14px;text-align:left;min-height:56px}
       .nw-answer[aria-pressed=true]{border-color:#17675a;box-shadow:0 0 0 2px #17675a22}
       .nw-feedback{border-radius:14px;padding:13px 15px;background:#e5f0e6;color:#24543c;line-height:1.5}
@@ -96,7 +197,53 @@ export default function NadaTattva({ onClose }: Props) {
         {soundType==='ahata_nada' && <><h3 style={{marginTop:22}}>Five sources of audible sound</h3><div className="nw-source-grid">{sources.map((source,i)=><button type="button" className="nw-source" key={source.category} aria-pressed={sourceIndex===i} onClick={()=>setSourceIndex(i)}><strong>{source.category}</strong><small>{source.meaning}</small></button>)}</div><article className="nw-feature-card" style={{marginTop:10}}><h3>{sources[sourceIndex].meaning}</h3><p>{sources[sourceIndex].description}</p></article></>}
       </>}
       {tab==='registers' && <><h3>Three sthāyis and body registers</h3><p>Select a register to explore its traditional description in the supplied data.</p><div className="nw-source-grid" style={{gridTemplateColumns:'repeat(3,minmax(0,1fr))'}}>{sthayis.map((item,i)=><button className="nw-source" key={item.sthayi} onClick={()=>setSourceIndex(i)} aria-pressed={sourceIndex===i}><strong>{item.sthayi}</strong><small>{item.octave}</small></button>)}</div><article className="nw-feature-card" style={{marginTop:12}}><h3>{sthayis[Math.min(sourceIndex,2)].sthayi}</h3><p><strong>Register:</strong> {sthayis[Math.min(sourceIndex,2)].body_register}</p><p><strong>Associated chakra:</strong> {sthayis[Math.min(sourceIndex,2)].associated_chakra}</p><p>{sthayis[Math.min(sourceIndex,2)].acoustic_quality}</p></article></>}
-      {tab==='quiz' && <><h3>Quick knowledge challenge</h3><p>{question.prompt}</p><div className="nw-quiz-options">{question.options.map((option,i)=><button className="nw-answer" key={option} aria-pressed={answer===i} onClick={()=>{setAnswer(i);setChecked(false)}}>{option}</button>)}</div>{checked && <div className={`nw-feedback ${answer===question.correct?'':'bad'}`} role="status"><strong>{answer===question.correct?'Correct!':'Not quite.'}</strong> {question.explanation}</div>}<div className="nw-actions"><button className="nw-action" disabled={answer===null} onClick={()=>setChecked(true)}>Check answer</button><button className="nw-action secondary" onClick={()=>{setAnswer(null);setChecked(false)}}>Try again</button></div></>}
+      {tab==='quiz' && <>
+        <h3>Quick knowledge challenge</h3>
+        <p>Question {questionIndex + 1} of {quizQuestions.length}</p>
+        <div
+          role="progressbar"
+          aria-label="Quiz progress"
+          aria-valuemin={1}
+          aria-valuemax={quizQuestions.length}
+          aria-valuenow={questionIndex + 1}
+          style={{ height: 6, borderRadius: 999, background: '#dfd0b3', overflow: 'hidden', margin: '12px 0 20px' }}
+        >
+          <div style={{ height: '100%', width: `${((questionIndex + 1) / quizQuestions.length) * 100}%`, background: '#17675a', transition: 'width 200ms ease' }} />
+        </div>
+        <p>{question.prompt}</p>
+        <div className="nw-quiz-options">
+          {question.options.map((option, i) => (
+            <button
+              type="button"
+              className="nw-answer"
+              key={option}
+              aria-pressed={answer === i}
+              disabled={checked}
+              onClick={() => { setAnswer(i); setChecked(false) }}
+            >
+              {String.fromCharCode(65 + i)}. {option}
+            </button>
+          ))}
+        </div>
+        {checked && (
+          <div className={`nw-feedback ${answer === question.correct ? '' : 'bad'}`} role="status">
+            <strong>{answer === question.correct ? 'Correct!' : 'Not quite.'}</strong> {question.explanation}
+          </div>
+        )}
+        <div className="nw-actions">
+          <button type="button" className="nw-action" disabled={answer === null || checked} onClick={() => setChecked(true)}>
+            Check answer
+          </button>
+          {checked && (
+            <button type="button" className="nw-action" onClick={nextQuestion}>
+              Next question →
+            </button>
+          )}
+          <button type="button" className="nw-action secondary" onClick={() => { setAnswer(null); setChecked(false) }}>
+            Try again
+          </button>
+        </div>
+      </>}
     </div>
   </section>
 }

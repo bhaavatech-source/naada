@@ -1,4 +1,4 @@
-export type AppModule = 'home' | 'raga' | 'wisdom' | 'tala' | 'shruti' | 'gamaka' | 'resources' | 'builder' | 'progress' | 'about'
+export type AppModule = 'home' | 'raga' | 'wisdom' | 'tala' | 'shruti' | 'resources' | 'builder' | 'progress' | 'about'
 
 export type InstrumentId = 'veena' | 'violin' | 'flute' | 'sitar' | 'harmonium' | 'piano' | 'nadaswaram' | 'sarangi' | 'voice'
 
@@ -34,6 +34,8 @@ export interface Tala {
   structure: string
   description: string
   hindustaniEquivalent: string
+  family: 'sapta' | 'adi' | 'capu'
+  angas: { kind: 'laghu' | 'drutam' | 'anudrutam' | 'group'; count: number }[]
 }
 
 export interface Nadai {
