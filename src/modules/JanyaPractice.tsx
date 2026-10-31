@@ -313,20 +313,23 @@ export default function JanyaPractice({ settingsContainer, initialRagaId }: { se
       <option value="">All parents</option>
       {MELAKARTAS.map(mela => <option key={mela.number} value={mela.number}>{mela.number}. {mela.name}</option>)}
     </select></label>
-    <label>Selected rāga<select aria-label="Selected rāga" value={selected?.id ?? ''}
-      onChange={event => { stop(); setSelectedId(event.target.value); setCategory('exercises'); setPage(Math.floor(matches.findIndex(raga => raga.id === event.target.value) / pageSize)) }}>
-      {!matches.length && <option value="">No matching rāgas</option>}
-      {matches.map(raga => <option key={raga.id} value={raga.id}>{raga.name} · Mel {raga.parent}</option>)}
-    </select></label>
   </div>
 
   return <div className="janya-practice">
     {!data && !loadError && <p role="status">Loading Janya catalogue and exercise notes…</p>}
     {loadError && <div role="alert"><p>Could not load Janya practice: {loadError}</p><button onClick={() => setAttempt(value => value + 1)}>Retry loading</button></div>}
     {data && <>
-      <p className="janya-match-count" role="status">{matches.length.toLocaleString()} rāgas</p>
+      <div className="janya-browser">
+        <label>Choose a Janya or Vakra rāga<select aria-label="Choose a Janya or Vakra rāga" value={selected?.id ?? ''}
+          onChange={event => { stop(); setSelectedId(event.target.value); setCategory('exercises'); setPage(Math.floor(matches.findIndex(raga => raga.id === event.target.value) / pageSize)) }}>
+          {!matches.length && <option value="">No matching rāgas</option>}
+          {matches.map(raga => <option key={raga.id} value={raga.id}>{raga.name} · Mel {raga.parent}{raga.isVakra ? ' · Vakra' : ''}</option>)}
+        </select></label>
+        <p className="janya-match-count" role="status">{matches.length.toLocaleString()} rāgas · Choose above or tap one in the list</p>
+      </div>
       <div className="janya-layout">
         <aside className="janya-list-pane" aria-label="Janya and Vakra rāgas">
+          <div className="janya-list-heading"><strong>Browse rāgas</strong><span>Scroll the list to see more</span></div>
           <div className="janya-results">
             {matches.slice(currentPage * pageSize, (currentPage + 1) * pageSize).map(raga =>
               <button key={raga.id} aria-pressed={selected?.id === raga.id}
@@ -336,7 +339,7 @@ export default function JanyaPractice({ settingsContainer, initialRagaId }: { se
           </div>
           <div className="janya-pages">
             <button disabled={currentPage === 0} onClick={() => setPage(currentPage - 1)}>Previous</button>
-            <span>{currentPage + 1} / {lastPage + 1}</span>
+            <span>Page {currentPage + 1} of {lastPage + 1}</span>
             <button disabled={currentPage === lastPage} onClick={() => setPage(currentPage + 1)}>Next</button>
           </div>
         </aside>

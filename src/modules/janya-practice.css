@@ -22,19 +22,30 @@
 .janya-practice button, .janya-settings button { cursor: pointer; }
 .janya-practice button:disabled, .janya-settings button:disabled { cursor: not-allowed; opacity: .55; }
 .janya-practice button[aria-pressed="true"], .janya-settings button[aria-pressed="true"] { background: var(--accent-dim); border-color: var(--accent); }
+.janya-browser { display: flex; align-items: center; gap: 12px; padding: 8px 12px 4px; border-bottom: 1px solid var(--border); background: var(--surface); }
+.janya-browser label { display: flex; flex: 1 1 auto; align-items: center; gap: 10px; min-width: 0; font-size: .82rem; font-weight: 700; }
+.janya-browser select { flex: 1 1 auto; width: 0; min-height: 40px; border-color: var(--accent2); font-weight: 600; }
 .janya-filters { display: flex; gap: 10px; flex-wrap: wrap; padding: 8px 12px 2px; }
 .janya-filters label { display: flex; flex: 1 1 150px; flex-direction: column; gap: 4px; min-width: 0; font-size: .72rem; color: var(--text-muted); }
 .janya-filters select, .janya-filters input { width: 100%; box-sizing: border-box; }
 .janya-match-count { margin: 3px 12px 6px !important; font-size: .75rem; color: var(--text-muted); }
+.janya-browser .janya-match-count { flex: 0 0 auto; margin: 0 !important; font-size: .7rem; }
 .janya-layout { display: grid; grid-template-columns: minmax(190px, 260px) minmax(0, 1fr); gap: 12px; flex: 1; min-height: 0; padding: 0 12px 12px; }
 .janya-layout aside, .janya-layout article { min-width: 0; min-height: 0; }
 .janya-list-pane { display: flex; flex-direction: column; overflow: hidden; }
-.janya-results { flex: 1; min-height: 0; overflow: auto; display: flex; flex-direction: column; gap: 5px; padding-right: 2px; }
+.janya-list-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 4px 2px 6px; font-size: .75rem; }
+.janya-list-heading span { color: var(--text-muted); font-size: .68rem; }
+.janya-results { flex: 1; min-height: 0; overflow: auto; overflow-y: scroll; scrollbar-color: var(--accent2) var(--surface2); scrollbar-width: auto; display: flex; flex-direction: column; gap: 5px; padding-right: 2px; }
+.janya-results::-webkit-scrollbar { width: 10px; }
+.janya-results::-webkit-scrollbar-track { background: var(--surface2); border-radius: 99px; }
+.janya-results::-webkit-scrollbar-thumb { background: var(--accent2); border: 2px solid var(--surface2); border-radius: 99px; }
 .janya-results button { text-align: left; flex-shrink: 0; }
 .janya-results button[aria-pressed="true"] { background: var(--accent-dim); border-color: var(--accent); }
 .janya-results strong, .janya-results small { display: block; overflow-wrap: anywhere; }
 .janya-results small { margin-top: 3px; color: var(--text-muted); font-size: .68rem; }
 .janya-pages { display: flex; align-items: center; justify-content: space-between; gap: 4px; margin-top: 8px; flex-wrap: wrap; font-size: .75rem; }
+.janya-pages span { white-space: nowrap; }
+.janya-pages button { min-height: 36px; }
 .janya-detail-pane { display: flex; flex-direction: column; min-height: 0; overflow: hidden; border-left: 1px solid var(--border); }
 .janya-detail-header { display: flex; align-items: center; gap: 10px; flex: 0 0 auto; padding: 4px 12px 10px; border-bottom: 1px solid var(--border); }
 .janya-detail-header h2 { margin: 0; font-family: var(--font-display); color: var(--accent); }
@@ -102,10 +113,12 @@
 .janya-setting-tabs { flex-wrap: wrap; }
 .janya-mobile-hidden { display: none !important; }
 @media (max-width: 700px) {
-  .janya-layout { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(90px, 140px) minmax(0, 1fr); gap: 6px; }
+  .janya-layout { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(150px, 27dvh) minmax(0, 1fr); gap: 6px; }
   .janya-detail-pane { border-left: 0; }
 }
 @media (max-width: 420px) {
+  .janya-browser { align-items: stretch; flex-direction: column; gap: 4px; }
+  .janya-browser label { align-items: stretch; flex-direction: column; gap: 3px; }
   .janya-filters label { flex-basis: 100%; }
   .janya-about dl { grid-template-columns: minmax(0, 1fr); gap: 3px; }
   .janya-about dd { margin-bottom: 7px; }
