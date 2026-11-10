@@ -139,7 +139,7 @@ export default function Home({ wisdomOnly = false }: HomeProps) {
       {!wisdomOnly && <section className="nada-proposal-bottom" aria-label="Nāda musical inspiration"><div className="nada-proposal-mantra"><span className="small">Nāda </span><h2> Understand the variations of sounds and enjoy the ultimate bliss.</h2><p>A space for attentive listening, disciplined practice, and the living tradition of Carnatic music.</p></div><div className="nada-proposal-gallery" aria-label="Explore the tradition"><figure><img src="/images/nada-raga.webp" alt="Ornate vīṇā" loading="lazy"/><figcaption>Rāga</figcaption></figure><figure><img src="/images/nada-tala.webp" alt="Mṛdaṅgam" loading="lazy"/><figcaption>Tāla</figcaption></figure><figure><img src="/images/nada-gamaka.webp" alt="Bamboo flute" loading="lazy"/><figcaption>Gamaka</figcaption></figure></div></section>}
     </div>
     {!wisdomOnly && <footer aria-label="Related websites" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '8px 20px', padding: '22px 12px 28px', fontSize: '0.85rem' }}>
-      <a href="https://samskrita.medhaa.net" style={{ color: '#17675a', textUnderlineOffset: '3px' }}>samskrita.medhaa.net</a>
+      <a href="https://samskritam.medhaa.net/" style={{ color: '#17675a', textUnderlineOffset: '3px' }}>samskritam.medhaa.net</a>
       <a href="https://medhaa.net" style={{ color: '#17675a', textUnderlineOffset: '3px' }}>medhaa.net</a>
     </footer>}
     {wisdomView && <div className="nada-wisdom-fullscreen" role="dialog" aria-modal="true" aria-label="Nāda Wisdom learning experience">
