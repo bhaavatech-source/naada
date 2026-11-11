@@ -857,7 +857,7 @@ function buildDisplayMap(
           <div style={{ marginTop: 'var(--space-2)', display: 'flex', flexDirection: 'column', gap: 4 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 4, flexWrap: 'wrap' }}>
               <span style={{ fontSize: '0.6rem', color: 'var(--text-faint)', marginRight: 2, minWidth: 40 }}>↑ Āro</span>
-              {Object.entries(noteInfoMap).filter(([k]) => k.length === 1 && k === k.toLowerCase()).map(([k, info]) => (
+              {Object.entries(noteInfoMap).filter(([k]) => /^[srgmpdn]$/.test(k)).map(([k, info]) => (
                 <button key={'asc-' + k} onClick={() => playSingleNote(info)}
                   aria-current={scalePlaying && activeNoteDisplay?.info.token === info.token ? 'true' : undefined}
                   title={`${SVARA_INFO[info.svaraKey]?.name} — play swara`}

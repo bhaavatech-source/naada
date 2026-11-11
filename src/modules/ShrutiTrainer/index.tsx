@@ -2,6 +2,14 @@ import { useState, useRef, useCallback, useEffect } from 'react'
 import { useAppStore } from '../../store/useAppStore'
 import { tanpura, getAudioContext } from '../../audio/engine'
 import { setPendingVocalImport } from '../../store/pendingVocalImport'
+import {
+  blobToDataUrl,
+  deleteShrutiRecording,
+  getShrutiRecording,
+  listShrutiRecordings,
+  migrateLegacyShrutiRecordings,
+  saveShrutiRecording,
+} from './recordingStorage'
 import './shruti.css'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -16,7 +24,7 @@ interface SavedRecording {
   name: string
   date: string
   durationSec: number
-  dataUrl: string   // base64 audio/webm
+  mimeType: string
 }
 
 // ─── Autocorrelate ────────────────────────────────────────────────────────────
@@ -70,27 +78,41 @@ function hzToNote(hz: number, tonicHz: number): PitchState | null {
   return { note: closest.name, cents: Math.round(centsOff), direction, hz: Math.round(hz) }
 }
 
-// ─── localStorage helpers ─────────────────────────────────────────────────────
-const LS_KEY = 'shruti_recordings'
+// Recording audio is stored as Blob data in IndexedDB. Metadata stays in React state.
 
-function loadRecordings(): SavedRecording[] {
-  try {
-    return JSON.parse(localStorage.getItem(LS_KEY) ?? '[]')
-  } catch {
-    return []
+function recordingErrorMessage(error: unknown): string {
+  if (error instanceof DOMException) {
+    if (error.name === 'NotAllowedError' || error.name === 'SecurityError') {
+      return 'Microphone permission was denied. Allow microphone access and try again.'
+    }
+    if (error.name === 'NotFoundError' || error.name === 'DevicesNotFoundError') {
+      return 'No microphone was found. Connect or enable a microphone and try again.'
+    }
+    if (error.name === 'NotReadableError' || error.name === 'TrackStartError') {
+      return 'The microphone is already in use or unavailable. Close other recording apps and try again.'
+    }
   }
+  return error instanceof Error ? error.message : 'Recording could not be completed. Please try again.'
 }
 
-function saveRecordings(recs: SavedRecording[]): boolean {
-  try {
-    localStorage.setItem(LS_KEY, JSON.stringify(recs))
-    return true
-  } catch (err) {
-    console.error('Could not save Śruti recordings:', err)
-    return false
+function chooseRecordingMimeType(): string | undefined {
+  if (typeof MediaRecorder === 'undefined') {
+    throw new Error('Audio recording is not supported by this browser.')
   }
+  const candidates = [
+    'audio/webm;codecs=opus',
+    'audio/webm',
+    'audio/ogg;codecs=opus',
+    'audio/mp4',
+  ]
+  return candidates.find(type => MediaRecorder.isTypeSupported?.(type))
 }
 
+function fileExtensionForMime(mimeType: string): string {
+  if (mimeType.includes('ogg')) return 'ogg'
+  if (mimeType.includes('mp4') || mimeType.includes('aac')) return 'm4a'
+  return 'webm'
+}
 
 // ─── Component ────────────────────────────────────────────────────────────────
 export default function ShrutiTrainer() {
@@ -112,8 +134,9 @@ export default function ShrutiTrainer() {
 
   // ── Recording state ──────────────────────────────────────────────────────
   const [isRecording, setIsRecording]   = useState(false)
+  const [isSavingRecording, setIsSavingRecording] = useState(false)
   const [recDuration, setRecDuration]   = useState(0)
-  const [recordings, setRecordings]     = useState<SavedRecording[]>(loadRecordings)
+  const [recordings, setRecordings]     = useState<SavedRecording[]>([])
   const [playingId, setPlayingId]       = useState<string | null>(null)
 
   const streamRef    = useRef<MediaStream | null>(null)
@@ -129,10 +152,35 @@ export default function ShrutiTrainer() {
 
   // Recording refs
   const mediaRecRef  = useRef<MediaRecorder | null>(null)
+  const recordingStreamRef = useRef<MediaStream | null>(null)
   const chunksRef    = useRef<Blob[]>([])
   const recTimerRef  = useRef<ReturnType<typeof setInterval> | null>(null)
   const recStartRef  = useRef<number>(0)
   const audioElemRef = useRef<HTMLAudioElement | null>(null)
+  const playbackUrlRef = useRef<string | null>(null)
+
+  // Load recordings and migrate legacy Base64 data without discarding it on failure.
+  useEffect(() => {
+    let cancelled = false
+    const load = async () => {
+      try {
+        await migrateLegacyShrutiRecordings()
+        const items = await listShrutiRecordings()
+        if (!cancelled) setRecordings(items)
+      } catch (loadError) {
+        console.error('Could not load Śruti recordings:', loadError)
+        if (!cancelled) setError(recordingErrorMessage(loadError))
+        try {
+          const items = await listShrutiRecordings()
+          if (!cancelled) setRecordings(items)
+        } catch {
+          // The first error is already shown to the user.
+        }
+      }
+    }
+    void load()
+    return () => { cancelled = true }
+  }, [])
 
   // ── Pitch session ────────────────────────────────────────────────────────
   const startSession = useCallback(async () => {
@@ -258,118 +306,217 @@ export default function ShrutiTrainer() {
     return () => {
       tanpura.stop()
       stopSession()
-      if (audioElemRef.current) {
-        audioElemRef.current.pause()
-        audioElemRef.current = null
+
+      const recorder = mediaRecRef.current
+      if (recorder && recorder.state !== 'inactive') {
+        try { recorder.stop() } catch { /* It may already have stopped. */ }
       }
+      mediaRecRef.current = null
+      if (recTimerRef.current) clearInterval(recTimerRef.current)
+      recTimerRef.current = null
+      recordingStreamRef.current?.getTracks().forEach(track => track.stop())
+      recordingStreamRef.current = null
+
+      audioElemRef.current?.pause()
+      audioElemRef.current = null
+      if (playbackUrlRef.current) URL.revokeObjectURL(playbackUrlRef.current)
+      playbackUrlRef.current = null
     }
   }, [stopSession])
 
   // ── Recording ─────────────────────────────────────────────────────────────
   const startRecording = useCallback(async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
-      const mr = new MediaRecorder(stream, { mimeType: 'audio/webm' })
-      chunksRef.current = []
-      mr.ondataavailable = e => { if (e.data.size > 0) chunksRef.current.push(e.data) }
-      mr.onstop = () => {
-        const blob = new Blob(chunksRef.current, { type: mr.mimeType || 'audio/webm' })
-        const reader = new FileReader()
-        reader.onload = () => {
-          const durationSec = Math.round((Date.now() - recStartRef.current) / 1000)
-          const rec: SavedRecording = {
-            id: Date.now().toString(),
-            name: `Recording ${new Date().toLocaleTimeString()}`,
-            date: new Date().toLocaleString(),
-            durationSec,
-            dataUrl: reader.result as string,
-          }
-          
-setRecordings(prev => {
-  const next = [rec, ...prev]
-  saveRecordings(next)
-  return next
-})
+    if (mediaRecRef.current && mediaRecRef.current.state !== 'inactive') return
+    setError('')
 
-        }
-        reader.readAsDataURL(blob)
-        stream.getTracks().forEach(t => t.stop())
+    let stream: MediaStream | null = null
+    try {
+      if (!navigator.mediaDevices?.getUserMedia) {
+        throw new Error('Microphone recording requires a secure connection (HTTPS) and a supported browser.')
       }
-      mr.start()
-      mediaRecRef.current = mr
+
+      stream = await navigator.mediaDevices.getUserMedia({ audio: true })
+      recordingStreamRef.current = stream
+
+      const mimeType = chooseRecordingMimeType()
+      let mr: MediaRecorder
+      try {
+        mr = mimeType
+          ? new MediaRecorder(stream, { mimeType })
+          : new MediaRecorder(stream)
+      } catch {
+        // Some browsers expose MediaRecorder but reject all advertised MIME candidates.
+        mr = new MediaRecorder(stream)
+      }
+
+      chunksRef.current = []
       recStartRef.current = Date.now()
+      mediaRecRef.current = mr
+
+      mr.ondataavailable = event => {
+        if (event.data && event.data.size > 0) chunksRef.current.push(event.data)
+      }
+
+      mr.onerror = () => {
+        setError('The browser encountered an audio recording error. Please try again.')
+        if (recTimerRef.current) clearInterval(recTimerRef.current)
+        recTimerRef.current = null
+        setIsRecording(false)
+        recordingStreamRef.current?.getTracks().forEach(track => track.stop())
+        recordingStreamRef.current = null
+        mediaRecRef.current = null
+      }
+
+      mr.onstop = async () => {
+        const actualMimeType = mr.mimeType || chunksRef.current[0]?.type || mimeType || 'application/octet-stream'
+        const blob = new Blob(chunksRef.current, { type: actualMimeType })
+        const durationSec = Math.max(0, Math.round((Date.now() - recStartRef.current) / 1000))
+        chunksRef.current = []
+        mediaRecRef.current = null
+
+        if (recTimerRef.current) clearInterval(recTimerRef.current)
+        recTimerRef.current = null
+        recordingStreamRef.current?.getTracks().forEach(track => track.stop())
+        recordingStreamRef.current = null
+        setIsRecording(false)
+        setIsSavingRecording(true)
+
+        try {
+          if (!blob.size) throw new Error('No audio data was captured. Check your microphone and try again.')
+
+          const now = Date.now()
+          const saved: SavedRecording = {
+            id: `${now}-${Math.random().toString(36).slice(2, 8)}`,
+            name: `Recording ${new Date(now).toLocaleTimeString()}`,
+            date: new Date(now).toLocaleString(),
+            durationSec,
+            mimeType: actualMimeType,
+          }
+
+          await saveShrutiRecording({ ...saved, blob })
+          setRecordings(previous => [saved, ...previous])
+          setError('')
+        } catch (saveError) {
+          console.error('Could not save Śruti recording:', saveError)
+          setError(recordingErrorMessage(saveError))
+        } finally {
+          setIsSavingRecording(false)
+          setRecDuration(0)
+        }
+      }
+
+      mr.start(1000)
       setRecDuration(0)
-      recTimerRef.current = setInterval(() => setRecDuration(d => d + 1), 1000)
+      recTimerRef.current = setInterval(() => setRecDuration(value => value + 1), 1000)
       setIsRecording(true)
-    } catch {
-      setError('Microphone access denied for recording.')
+    } catch (startError) {
+      stream?.getTracks().forEach(track => track.stop())
+      recordingStreamRef.current = null
+      mediaRecRef.current = null
+      setIsRecording(false)
+      setError(recordingErrorMessage(startError))
     }
   }, [])
 
   const stopRecording = useCallback(() => {
-    mediaRecRef.current?.stop()
+    const recorder = mediaRecRef.current
+    if (recorder && recorder.state !== 'inactive') {
+      try {
+        recorder.stop()
+      } catch (stopError) {
+        setError(recordingErrorMessage(stopError))
+        recordingStreamRef.current?.getTracks().forEach(track => track.stop())
+        recordingStreamRef.current = null
+        mediaRecRef.current = null
+        setIsRecording(false)
+      }
+    }
     if (recTimerRef.current) clearInterval(recTimerRef.current)
-    setIsRecording(false)
+    recTimerRef.current = null
   }, [])
 
-  const playRecording = useCallback((rec: SavedRecording) => {
-    if (audioElemRef.current) {
-      audioElemRef.current.pause()
-      audioElemRef.current = null
-    }
-    const audio = new Audio(rec.dataUrl)
-    audioElemRef.current = audio
-    audio.play().then(() => {
-      setPlayingId(rec.id)
-    }).catch(() => {
-      setPlayingId(null)
-      setError('Could not play this recording in the current browser.')
-    })
-    audio.onended = () => {
-      setPlayingId(null)
-      audioElemRef.current = null
-    }
-  }, [])
-
-  const stopPlayback = useCallback(() => {
-    if (audioElemRef.current) {
-      audioElemRef.current.pause()
-      audioElemRef.current = null
-    }
+  const releasePlayback = useCallback(() => {
+    audioElemRef.current?.pause()
+    audioElemRef.current = null
+    if (playbackUrlRef.current) URL.revokeObjectURL(playbackUrlRef.current)
+    playbackUrlRef.current = null
     setPlayingId(null)
   }, [])
 
-  const downloadRecording = useCallback((rec: SavedRecording) => {
-    const a = document.createElement('a')
-    a.href = rec.dataUrl
-    a.download = `${rec.name.replace(/\s+/g, '_')}.webm`
-    document.body.appendChild(a)
-    a.click()
-    document.body.removeChild(a)
+  const playRecording = useCallback(async (rec: SavedRecording) => {
+    releasePlayback()
+    try {
+      const stored = await getShrutiRecording(rec.id)
+      if (!stored?.blob?.size) throw new Error('The saved audio file could not be found.')
+      const url = URL.createObjectURL(stored.blob)
+      playbackUrlRef.current = url
+      const audio = new Audio(url)
+      audioElemRef.current = audio
+      audio.onended = releasePlayback
+      audio.onerror = () => {
+        releasePlayback()
+        setError('Could not play this recording in the current browser.')
+      }
+      await audio.play()
+      setPlayingId(rec.id)
+      setError('')
+    } catch (playError) {
+      releasePlayback()
+      setError(recordingErrorMessage(playError))
+    }
+  }, [releasePlayback])
+
+  const stopPlayback = useCallback(() => {
+    releasePlayback()
+  }, [releasePlayback])
+
+  const downloadRecording = useCallback(async (rec: SavedRecording) => {
+    try {
+      const stored = await getShrutiRecording(rec.id)
+      if (!stored?.blob?.size) throw new Error('The saved audio file could not be found.')
+      const url = URL.createObjectURL(stored.blob)
+      const anchor = document.createElement('a')
+      anchor.href = url
+      anchor.download = `${rec.name.replace(/[^a-z0-9-_]+/gi, '_')}.${fileExtensionForMime(stored.mimeType || rec.mimeType)}`
+      document.body.appendChild(anchor)
+      anchor.click()
+      anchor.remove()
+      window.setTimeout(() => URL.revokeObjectURL(url), 1000)
+      setError('')
+    } catch (downloadError) {
+      setError(recordingErrorMessage(downloadError))
+    }
   }, [])
 
-  const deleteRecording = useCallback((id: string) => {
-    setRecordings(prev => {
-      const next = prev.filter(r => r.id !== id)
-      saveRecordings(next)
-      return next
-    })
-    if (playingId === id) stopPlayback()
+  const deleteRecording = useCallback(async (id: string) => {
+    try {
+      await deleteShrutiRecording(id)
+      if (playingId === id) stopPlayback()
+      setRecordings(previous => previous.filter(recording => recording.id !== id))
+      setError('')
+    } catch (deleteError) {
+      setError(recordingErrorMessage(deleteError))
+    }
   }, [playingId, stopPlayback])
 
-  // ── Share to Music Builder ─────────────────────────────────────────────────
-  
-const shareToMusicBuilder = useCallback((rec: SavedRecording) => {
-  setPendingVocalImport({
-    type: 'shruti-recording',
-    name: rec.name,
-    date: rec.date,
-    dataUrl: rec.dataUrl,
-  })
-
-  useAppStore.getState().setModule('builder')
-}, [])
-
+  // Gāna Builder retains its existing dataUrl contract; conversion happens only at hand-off.
+  const shareToMusicBuilder = useCallback(async (rec: SavedRecording) => {
+    try {
+      const stored = await getShrutiRecording(rec.id)
+      if (!stored?.blob?.size) throw new Error('The saved audio file could not be found.')
+      const dataUrl = await blobToDataUrl(stored.blob)
+      setPendingVocalImport({
+        type: 'shruti-recording',
+        name: rec.name,
+        date: rec.date,
+        dataUrl,
+      })
+      useAppStore.getState().setModule('builder')
+      setError('')
+    } catch (shareError) {
+      setError(recordingErrorMessage(shareError))
+    }
+  }, [])
 
   // ── Derived ───────────────────────────────────────────────────────────────
   const accuracy = totalRef.current > 0 ? Math.round((goodRef.current / totalRef.current) * 100) : null
@@ -418,9 +565,10 @@ const shareToMusicBuilder = useCallback((rec: SavedRecording) => {
         {/* 🔴 Record button */}
         <button
           aria-label={isRecording ? 'Stop recording' : 'Start recording'}
-          onClick={() => isRecording ? stopRecording() : startRecording()}
-          style={{ borderRadius: 'var(--radius-sm)', fontWeight: 700, fontSize: '0.9rem', background: isRecording ? 'rgba(248,113,113,0.2)' : 'var(--surface)', border: `1px solid ${isRecording ? 'var(--red)' : 'var(--border)'}`, color: isRecording ? 'var(--red)' : 'var(--text-muted)', cursor: 'pointer' }}>
-          <span>{isRecording ? '⏹ Stop Rec' : '⏺ Record'}</span>
+          onClick={() => isRecording ? stopRecording() : void startRecording()}
+          disabled={isSavingRecording}
+          style={{ opacity: isSavingRecording ? 0.65 : 1, borderRadius: 'var(--radius-sm)', fontWeight: 700, fontSize: '0.9rem', background: isRecording ? 'rgba(248,113,113,0.2)' : 'var(--surface)', border: `1px solid ${isRecording ? 'var(--red)' : 'var(--border)'}`, color: isRecording ? 'var(--red)' : 'var(--text-muted)', cursor: 'pointer' }}>
+          <span>{isSavingRecording ? 'Saving…' : isRecording ? '⏹ Stop Rec' : '⏺ Record'}</span>
           <span className="shruti-recording-time" style={{visibility:isRecording ? 'visible' : 'hidden'}} aria-hidden={!isRecording}>{recDuration}s</span>
         </button>
       </div>
@@ -530,7 +678,7 @@ const shareToMusicBuilder = useCallback((rec: SavedRecording) => {
 
               {/* Play / Stop */}
               <button
-                onClick={() => playingId === rec.id ? stopPlayback() : playRecording(rec)}
+                onClick={() => playingId === rec.id ? stopPlayback() : void playRecording(rec)}
                 title={playingId === rec.id ? 'Stop' : 'Play'}
                 style={{ padding: '6px 14px', borderRadius: 99, fontSize: '0.78rem', cursor: 'pointer', border: '1px solid var(--accent)', background: playingId === rec.id ? 'var(--accent-dim)' : 'transparent', color: 'var(--accent)', fontWeight: 600 }}>
                 {playingId === rec.id ? '⏹ Stop' : '▶ Play'}
@@ -538,7 +686,7 @@ const shareToMusicBuilder = useCallback((rec: SavedRecording) => {
 
               {/* Download */}
               <button
-                onClick={() => downloadRecording(rec)}
+                onClick={() => void downloadRecording(rec)}
                 title="Download"
                 style={{ padding: '6px 14px', borderRadius: 99, fontSize: '0.78rem', cursor: 'pointer', border: '1px solid var(--border)', background: 'transparent', color: 'var(--text-muted)', fontWeight: 500 }}>
                 ⬇ Download
@@ -546,7 +694,7 @@ const shareToMusicBuilder = useCallback((rec: SavedRecording) => {
 
               {/* Share to Music Builder */}
               <button
-                onClick={() => shareToMusicBuilder(rec)}
+                onClick={() => void shareToMusicBuilder(rec)}
                 title="Send to Gāna Builder to add instruments"
                 style={{ padding: '6px 14px', borderRadius: 99, fontSize: '0.78rem', cursor: 'pointer', border: '1px solid var(--teal, #2dd4bf)', background: 'rgba(45,212,191,0.08)', color: 'var(--teal, #2dd4bf)', fontWeight: 600 }}>
                 🎵 Add Instruments
@@ -554,7 +702,7 @@ const shareToMusicBuilder = useCallback((rec: SavedRecording) => {
 
               {/* Delete */}
               <button
-                onClick={() => deleteRecording(rec.id)}
+                onClick={() => void deleteRecording(rec.id)}
                 title="Delete"
                 style={{ padding: '6px 12px', borderRadius: 99, fontSize: '0.78rem', cursor: 'pointer', border: '1px solid var(--red)', background: 'transparent', color: 'var(--red)', fontWeight: 500 }}>
                 🗑 Delete

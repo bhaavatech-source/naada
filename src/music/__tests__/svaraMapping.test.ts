@@ -6,6 +6,7 @@ import { TONIC_OPTIONS } from '../../data/tonics';
 import { runJanyaTests } from './janyaCurriculum.test';
 import { runTrainerTests } from './trainerPractice.test';
 import { runWellbeingTests } from './wellbeingCatalogue.test';
+import { runRagaScaleAudioTests } from './ragaScaleAudio.test';
 
 import {
   ALL_SVARA_IDS,
@@ -268,6 +269,7 @@ export function runAllTests(): { passed: boolean; testCount: number } {
   count += runJanyaTests();
   count += runTrainerTests();
   count += runWellbeingTests();
+  count += runRagaScaleAudioTests();
   return { passed: true, testCount: count };
 }
 

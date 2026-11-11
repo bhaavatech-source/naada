@@ -795,7 +795,7 @@ useEffect(() => {
             ↑ Āro
           </span>
           {Object.entries(noteInfoMap)
-            .filter(([k]) => k.length === 1 && k === k.toLowerCase())
+            .filter(([k]) => /^[srgmpdn]$/.test(k))
             .map(([k, info]) => (
               <button
                 key={'asc-' + k}
