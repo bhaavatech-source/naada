@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+﻿import React, { useState } from 'react'
 import { useAppStore } from '../store/useAppStore'
 import NadaTattva from './NadaTattva'
 import SaptaSwaraExplorer from './SaptaSwaraExplorer'
@@ -28,12 +28,40 @@ function SoundMandala() {
   </svg>
 }
 
+function SupportField({ label, value }: { label: string; value: string }) {
+  const [copied, setCopied] = useState(false)
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(value)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1600)
+    } catch { /* clipboard unavailable — the value is still visible to select */ }
+  }
+  return (
+    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '4px 8px', padding: '6px 10px', borderRadius: 10, background: '#f8f4ec', border: '1px solid rgba(37,33,58,.1)' }}>
+      <span style={{ flex: '1 1 100%', fontSize: '0.66rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.03em', color: '#6b677f' }}>{label}</span>
+      <span style={{ flex: '1 1 auto', fontSize: '0.84rem', fontWeight: 700, color: '#25213a', overflowWrap: 'anywhere' }}>{value}</span>
+      <button
+        type="button" onClick={copy}
+        style={{ flex: '0 0 auto', minHeight: 26, padding: '0 10px', border: 'none', borderRadius: 99, fontSize: '0.7rem', fontWeight: 700, color: '#fff', background: '#17675a', cursor: 'pointer' }}
+      >
+        {copied ? 'Copied ✓' : 'Copy'}
+      </button>
+    </div>
+  )
+}
+
 type HomeProps = { wisdomOnly?: boolean }
 
 export default function Home({ wisdomOnly = false }: HomeProps) {
   const setModule = useAppStore((s) => s.setModule)
   const [activeCard, setActiveCard] = useState<ModuleId | null>(null)
   const [wisdomView, setWisdomView] = useState<'tattva' | 'swaras' | 'shruti' | 'ragas' | 'mmg' | 'rasa' | null>(null)
+  const [supportOpen, setSupportOpen] = useState(false)
+  const supportPanelRef = React.useRef<HTMLDivElement | null>(null)
+  React.useEffect(() => {
+    if (supportOpen) requestAnimationFrame(() => supportPanelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' }))
+  }, [supportOpen])
   return <div className="nada-proposal-page">
     <style>{`
       .nada-proposal-page{--ink:#25213a;width:100%;min-width:0;min-height:0;height:100%;overflow-y:auto;overflow-x:hidden;color:var(--ink);background:linear-gradient(180deg,#f8f1e6,#f1e5d3);font-family:inherit;isolation:isolate}
@@ -136,11 +164,37 @@ export default function Home({ wisdomOnly = false }: HomeProps) {
 
       </section>
 
-      {!wisdomOnly && <section className="nada-proposal-bottom" aria-label="Nāda musical inspiration"><div className="nada-proposal-mantra"><span className="small">Nāda </span><h2> Understand the variations of sounds and enjoy the ultimate bliss.</h2><p>A space for attentive listening, disciplined practice, and the living tradition of Carnatic music.</p></div><div className="nada-proposal-gallery" aria-label="Explore the tradition"><figure><img src="/images/nada-raga.webp" alt="Ornate vīṇā" loading="lazy"/><figcaption>Rāga</figcaption></figure><figure><img src="/images/nada-tala.webp" alt="Mṛdaṅgam" loading="lazy"/><figcaption>Tāla</figcaption></figure><figure><img src="/images/nada-gamaka.webp" alt="Bamboo flute" loading="lazy"/><figcaption>Gamaka</figcaption></figure></div></section>}
+      {!wisdomOnly && <section className="nada-proposal-bottom" aria-label="Nāda musical inspiration"><div className="nada-proposal-mantra"><span className="small">Nāda </span><h2> Understand the variations of sounds and enjoy the ultimate bliss.</h2><p>A space for attentive listening, disciplined practice, and the living tradition of Carnatic music.</p></div><div className="nada-proposal-gallery" aria-label="Explore the tradition"><figure><img src="/images/nada-raga.webp" alt="Ornate vīṇā" loading="lazy"/><figcaption>Rāga</figcaption></figure><figure><img src="/images/nada-tala.webp" alt="Mṛdaṅgam" loading="lazy"/><figcaption>Tāla</figcaption></figure></div></section>}
     </div>
     {!wisdomOnly && <footer aria-label="Related websites" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '8px 20px', padding: '22px 12px 28px', fontSize: '0.85rem' }}>
       <a href="https://samskritam.medhaa.net/" style={{ color: '#17675a', textUnderlineOffset: '3px' }}>samskritam.medhaa.net</a>
       <a href="https://medhaa.net" style={{ color: '#17675a', textUnderlineOffset: '3px' }}>medhaa.net</a>
+      <button
+        type="button" onClick={() => setSupportOpen((o) => !o)} aria-expanded={supportOpen} aria-controls="nada-support-panel"
+        style={{ padding: 0, border: 'none', background: 'none', cursor: 'pointer', font: 'inherit', color: '#17675a', textDecoration: 'underline', textUnderlineOffset: '3px' }}
+      >
+        सहयोगं कुरुत
+      </button>
+      {supportOpen && (
+        <div
+          id="nada-support-panel" ref={supportPanelRef}
+          style={{ flexBasis: '100%', width: 'min(360px, 92vw)', margin: '6px auto 0', padding: 14, borderRadius: 14, background: '#fff', border: '1px solid rgba(37,33,58,.14)', boxShadow: '0 10px 28px rgba(37,33,58,.12)', textAlign: 'left' }}
+        >
+          <p style={{ margin: '0 0 12px', color: '#4b4760', fontSize: '0.82rem', lineHeight: 1.5 }}>
+            Contributions fund continued development of Nāda and the wider Bhāva Fine Arts Platform — new content,
+            better tools, and wider coverage.
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+            <SupportField label="Account name" value="Bhava Tech" />
+            <SupportField label="Account number" value="45096165105" />
+            <SupportField label="IFSC code" value="SBIN0016490" />
+            <SupportField label="Bank & branch" value="State Bank of India, Gurudwara Junction, Visakhapatnam" />
+          </div>
+          <p style={{ margin: '12px 0 0', color: '#6b677f', fontSize: '0.74rem', lineHeight: 1.45 }}>
+            Transfer via NEFT / IMPS / RTGS using the details above.
+          </p>
+        </div>
+      )}
     </footer>}
     {wisdomView && <div className="nada-wisdom-fullscreen" role="dialog" aria-modal="true" aria-label="Nāda Wisdom learning experience">
       <nav className="nada-wisdom-nav" aria-label="Learning page navigation">
